@@ -884,6 +884,17 @@ Manual status updates via:
 | **@react-pdf/renderer** | Latest | PDF preview | Client-side live preview, native text layer (ATS-compliant), React JSX |
 | **Recharts** | Latest | Charts | Insight dashboard visualizations |
 
+### 17.1b Mobile
+
+| Technology | Version | Purpose | Decision Basis |
+|-----------|---------|---------|----------------|
+| **Expo** | SDK 52+ | React Native framework | Managed workflow, EAS Build for app stores, OTA updates, same TS ecosystem |
+| **NativeWind** | v4 | Styling | Tailwind syntax in React Native, shared design tokens with web |
+| **React Navigation** | v7 | Navigation | Native stack/tab navigation, deep linking |
+| **expo-notifications** | Latest | Push notifications | Reliable on iOS + Android (unlike PWA push) |
+| **react-native-webview** | Latest | CV editor (Phase 2a) | Wraps web CV editor until native alternative built |
+| **Turborepo** | Latest | Monorepo orchestration | Shared packages between web + mobile, parallel builds |
+
 ### 17.2 Backend
 
 | Technology | Purpose | Decision Basis |
@@ -918,7 +929,9 @@ Manual status updates via:
 | User analytics | PostHog (free tier, 1M events/mo) | $0 |
 | Payments | Stripe | 2.9% + $0.30/transaction |
 | Domain + DNS | Cloudflare | $10/year |
-| **Total MVP** | | **$52-135/mo** |
+| Mobile builds | EAS Build (free tier) | $0-39/mo |
+| App Store accounts | Apple ($99/yr) + Google ($25) | ~$10/mo amortized |
+| **Total MVP** | | **$62-184/mo** |
 
 ### 17.5 Rendering Strategy
 
@@ -1290,14 +1303,61 @@ Popup shows:
 | Insights | Multi-chart grid | Scrollable cards, one metric each |
 | Interview Prep | Full layout | Accordion sections |
 
-### 22.3 React Native (Phase 5, Conditional)
+### 22.3 Expo / React Native — App Store Presence (Phase 2)
 
-Build only if data shows:
-- Push notification engagement drives significant retention (PWA push unreliable on iOS)
-- App store presence measurably increases signups
-- Users request native app features
+**Decision reversal:** App store presence is non-negotiable for user acquisition and trust. Users expect to find tools in Play Store / App Store. A web-only product limits discoverability and perceived legitimacy.
 
-If built: React Native (not Flutter) — same React/TypeScript ecosystem, shared business logic and types with Next.js app.
+**Approach:** Expo (React Native) — lightweight wrapper at launch, progressively native.
+
+| Phase | Scope | Timeline |
+|-------|-------|----------|
+| Phase 2a | Thin wrapper: WebView of Next.js app + native push notifications + app store listing | With MVP launch |
+| Phase 2b | Native screens for: Dashboard, Tracker, Notifications, Job Analysis results | Post-MVP sprint |
+| Phase 3 | Full native: CV viewer (read-only), Interview Prep, Insights charts | Growth phase |
+
+**Why Expo:**
+- Same React/TypeScript ecosystem as Next.js — shared types, business logic, Zod schemas
+- EAS Build handles app store submissions (no Xcode/Android Studio locally)
+- OTA updates via `expo-updates` — push fixes without app store review
+- Push notifications via `expo-notifications` (reliable on both iOS and Android, unlike PWA)
+- 80% of code (types, API clients, validation, state logic) shared via monorepo
+
+**Monorepo Structure:**
+```
+jobloop/
+├── apps/
+│   ├── web/          → Next.js (main product)
+│   └── mobile/       → Expo (React Native)
+├── packages/
+│   ├── shared/       → Types, Zod schemas, API client, constants
+│   ├── ui/           → Shared design tokens (Tailwind → NativeWind mapping)
+│   └── store/        → Zustand stores (shared state logic)
+├── turbo.json
+└── package.json
+```
+
+**Mobile-specific tech:**
+| Technology | Purpose |
+|-----------|---------|
+| Expo SDK 52+ | Framework + managed workflow |
+| NativeWind v4 | Tailwind-compatible styling for React Native |
+| React Navigation v7 | Native navigation stack |
+| expo-notifications | Push notifications (APNs + FCM) |
+| expo-secure-store | Token storage |
+| react-native-webview | WebView for CV editor (Phase 2a) |
+| EAS Build + Submit | CI/CD for app stores |
+
+**Cost addition:**
+| Item | Cost |
+|------|------|
+| Apple Developer Account | $99/year |
+| Google Play Developer | $25 one-time |
+| EAS Build (free tier → Pro) | $0-39/mo |
+
+**What stays web-only (initially):**
+- CV Editor (Plate is web-only; mobile shows read-only preview)
+- PDF generation (server-side, downloads to device)
+- Admin/settings pages
 
 ---
 
@@ -1921,7 +1981,8 @@ Key events to track:
 | Company intelligence | Phase 5 | Nice-to-have, not core |
 | Networking/referral tracker | Phase 5 | Separate module, not critical path |
 | Salary negotiation tools | Phase 5 | Post-offer feature |
-| React Native app | Phase 5+ | Only if data shows need |
+| Expo mobile app (thin wrapper) | Phase 2a | App store presence from launch |
+| Expo mobile app (native screens) | Phase 2b-3 | Progressive native conversion |
 | Auto-apply | Never | Proven failure strategy |
 | Job scraping | Never | Legal risk, no value over paste/extension |
 | Advanced agents | Future | Autonomous job-search agents |
@@ -1969,6 +2030,8 @@ Key events to track:
 - [ ] AutoResearch suitability calibration: queue for monthly (once 500+ scored outcomes)
 
 ### Phase 4: Distribution (Weeks 15-18)
+- [ ] Expo mobile app — thin wrapper (WebView + native push + app store listing)
+- [ ] Submit to Google Play Store + Apple App Store
 - [ ] Chrome browser extension (Manifest V3)
 - [ ] SEO landing pages (SSG, job search content)
 - [ ] Referral program
@@ -1982,7 +2045,7 @@ Key events to track:
 - [ ] Networking/referral tracker
 - [ ] Salary negotiation tools
 - [ ] Career services partnerships (B2B2C)
-- [ ] React Native app (conditional on data)
+- [ ] Expo native screens (Phase 2b-3 progressive conversion)
 
 ---
 
