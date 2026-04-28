@@ -3,6 +3,9 @@ node_modules/
 .pnp
 .pnp.js
 
+# Turborepo
+.turbo/
+
 # Environment
 .env
 .env.local
@@ -31,3 +34,17 @@ Thumbs.db
 
 # Supabase
 supabase/.temp/
+
+# Expo
+.expo/
+ios/
+android/
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.orig.*
+
+# TypeScript
+*.tsbuildinfo

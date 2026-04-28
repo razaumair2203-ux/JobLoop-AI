@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JobLoop AI — Competitive Comparison (April 2026) — BRUTAL TRUTH EDITION</title>
+<style>
+  @page { size: A3 landscape; margin: 12mm; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; color: #1a1a2e; background: #fff; padding: 24px; line-height: 1.5; font-size: 13px; }
+  h1 { font-size: 28px; font-weight: 800; margin-bottom: 4px; color: #0f172a; }
+  h1 span { color: #6366f1; }
+  .subtitle { font-size: 14px; color: #64748b; margin-bottom: 8px; }
+  .honesty-banner { background: #fef2f2; border: 2px solid #ef4444; border-radius: 8px; padding: 12px 16px; margin-bottom: 20px; font-size: 13px; color: #991b1b; }
+  .honesty-banner strong { color: #7f1d1d; }
+  h2 { font-size: 18px; font-weight: 700; margin: 28px 0 12px; color: #1e293b; border-bottom: 3px solid #6366f1; padding-bottom: 6px; page-break-after: avoid; }
+  h3 { font-size: 15px; font-weight: 600; margin: 20px 0 8px; color: #334155; }
+  p, li { font-size: 13px; color: #475569; margin-bottom: 6px; }
+  ul { padding-left: 18px; margin-bottom: 12px; }
+
+  table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 12px; page-break-inside: avoid; }
+  th { background: #1e293b; color: #fff; padding: 8px 10px; text-align: left; font-weight: 600; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; }
+  th.us { background: #4f46e5; }
+  td { padding: 7px 10px; border-bottom: 1px solid #e2e8f0; vertical-align: top; }
+  tr:nth-child(even) { background: #f8fafc; }
+  tr:hover { background: #eef2ff; }
+
+  .yes { color: #059669; font-weight: 600; }
+  .no { color: #dc2626; font-weight: 600; }
+  .partial { color: #d97706; font-weight: 600; }
+  .unique { color: #4f46e5; font-weight: 700; }
+  .best { background: #ecfdf5 !important; }
+  .worst { background: #fef2f2 !important; }
+  .highlight { background: #eef2ff !important; border-left: 3px solid #6366f1; }
+
+  /* Status badges */
+  .badge { display: inline-block; font-size: 9px; font-weight: 700; padding: 1px 5px; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.5px; vertical-align: middle; margin-left: 3px; }
+  .badge-built { background: #059669; color: #fff; }
+  .badge-specced { background: #d97706; color: #fff; }
+  .badge-planned { background: #94a3b8; color: #fff; }
+  .badge-none { background: #ef4444; color: #fff; }
+  .caveat { font-size: 10px; color: #94a3b8; font-style: italic; }
+
+  .legend { display: flex; gap: 20px; margin-bottom: 16px; flex-wrap: wrap; font-size: 12px; }
+  .legend span { display: inline-flex; align-items: center; gap: 4px; }
+  .legend .dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+  .dot-yes { background: #059669; }
+  .dot-no { background: #dc2626; }
+  .dot-partial { background: #d97706; }
+  .dot-unique { background: #4f46e5; }
+
+  .status-legend { display: flex; gap: 16px; margin-bottom: 20px; flex-wrap: wrap; font-size: 12px; padding: 10px 14px; background: #f1f5f9; border-radius: 6px; border: 1px solid #e2e8f0; }
+  .status-legend strong { font-size: 13px; margin-right: 8px; }
+
+  .summary-box { background: #f0f0ff; border: 2px solid #6366f1; border-radius: 8px; padding: 16px 20px; margin-bottom: 24px; }
+  .summary-box h3 { margin-top: 0; color: #4f46e5; }
+  .threat-box { background: #fef3c7; border: 2px solid #f59e0b; border-radius: 8px; padding: 16px 20px; margin-bottom: 24px; }
+  .threat-box h3 { margin-top: 0; color: #b45309; }
+  .win-box { background: #ecfdf5; border: 2px solid #10b981; border-radius: 8px; padding: 16px 20px; margin-bottom: 24px; }
+  .win-box h3 { margin-top: 0; color: #047857; }
+  .reality-box { background: #fef2f2; border: 2px solid #ef4444; border-radius: 8px; padding: 16px 20px; margin-bottom: 24px; }
+  .reality-box h3 { margin-top: 0; color: #991b1b; }
+
+  .quadrant { text-align: center; font-family: monospace; font-size: 13px; background: #f8fafc; padding: 20px; border-radius: 8px; margin: 16px 0; white-space: pre; line-height: 1.6; }
+
+  @media print {
+    body { padding: 0; font-size: 11px; }
+    table { font-size: 10px; }
+    th { padding: 5px 7px; font-size: 9px; }
+    td { padding: 5px 7px; }
+    h1 { font-size: 22px; }
+    h2 { font-size: 15px; margin: 16px 0 8px; }
+    .summary-box, .threat-box, .win-box, .reality-box { padding: 10px 14px; }
+    .no-print { display: none; }
+    .badge { font-size: 8px; padding: 1px 4px; }
+  }
+</style>
+</head>
+<body>
+
+<h1>JobLoop <span>AI</span> — Competitive Comparison</h1>
+<p class="subtitle">Deep analysis of 10 competitors across 35+ dimensions | April 2026 | BRUTAL TRUTH EDITION</p>
+
+<div class="honesty-banner">
+  <strong>HONESTY NOTICE:</strong> Every JobLoop feature is tagged with its REAL status. We are pre-launch with ~35% of core engine built. This document does NOT inflate what we have. Competitor data is sourced from public sources (Trustpilot, Reddit, Crunchbase, product pages) — estimates and unverified claims are marked.
+</div>
+
+<div class="legend">
+  <span><span class="dot dot-yes"></span> Yes / Has it</span>
+  <span><span class="dot dot-no"></span> No / Missing</span>
+  <span><span class="dot dot-partial"></span> Partial / Limited</span>
+  <span><span class="dot dot-unique"></span> Unique to us</span>
+</div>
+
+<div class="status-legend">
+  <strong>JobLoop Status Tags:</strong>
+  <span><span class="badge badge-built">BUILT</span> In codebase, working</span>
+  <span><span class="badge badge-specced">SPECCED</span> In spec (v4), not coded</span>
+  <span><span class="badge badge-planned">PLANNED</span> Future phase idea</span>
+  <span><span class="badge badge-none">ZERO</span> Nothing exists</span>
+</div>
+
+<!-- ============================================================ -->
+<h2>1. Company Snapshot</h2>
+<p>Who we're up against — size, funding, and user base at a glance.</p>
+
+<table>
+  <tr>
+    <th style="width:13%">Metric</th>
+    <th class="us" style="width:11%">JobLoop AI</th>
+    <th>Teal HQ</th>
+    <th>Jobscan</th>
+    <th>Jobright</th>
+    <th>Huntr</th>
+    <th>Careerflow</th>
+    <th>Rezi</th>
+    <th>Kickresume</th>
+    <th>Simplify</th>
+  </tr>
+  <tr>
+    <td><strong>Users</strong></td>
+    <td class="highlight">Pre-launch (0 users)</td>
+    <td><strong>4M</strong></td>
+    <td>Tens of K paid</td>
+    <td>500K</td>
+    <td>Unknown</td>
+    <td>Claims 1.2M <span class="caveat">(unverified, thin reviews)</span></td>
+    <td>4M+</td>
+    <td><strong>8M</strong></td>
+    <td>1M+ (ext.)</td>
+  </tr>
+  <tr>
+    <td><strong>Funding</strong></td>
+    <td class="highlight">$0</td>
+    <td><strong>$19M</strong> Series A</td>
+    <td>$0 (profitable)</td>
+    <td>$7.7M Seed</td>
+    <td>Unknown</td>
+    <td>Unknown</td>
+    <td>Unknown</td>
+    <td>Unknown</td>
+    <td>YC-backed</td>
+  </tr>
+  <tr>
+    <td><strong>Revenue</strong></td>
+    <td class="highlight">$0</td>
+    <td>~$52.9M <span class="caveat">(GetLatka est., unreliable)</span></td>
+    <td>~$2M+ (profitable)</td>
+    <td>Unknown</td>
+    <td>Unknown</td>
+    <td>Unknown</td>
+    <td>Unknown</td>
+    <td>Unknown</td>
+    <td>Unknown</td>
+  </tr>
+  <tr>
+    <td><strong>Team size</strong></td>
+    <td class="highlight">1 person</td>
+    <td>~258</td>
+    <td>~20</td>
+    <td>83</td>
+    <td>Small</td>
+    <td>Small</td>
+    <td>Small</td>
+    <td>Small</td>
+    <td>Small</td>
+  </tr>
+  <tr>
+    <td><strong>Primary type</strong></td>
+    <td class="highlight">AI Advocate <span class="badge badge-built">BUILT</span><br><span class="caveat">(philosophy built into prompts)</span></td>
+    <td>All-in-one platform</td>
+    <td>ATS optimizer</td>
+    <td>AI job copilot</td>
+    <td>Job tracker</td>
+    <td>LinkedIn + tracker</td>
+    <td>ATS resume builder</td>
+    <td>Template builder</td>
+    <td>Autofill extension</td>
+  </tr>
+</table>
+
+<!-- ============================================================ -->
+<h2>2. Pricing</h2>
+<p>What each tool costs. Our pricing exists ONLY in the spec — no billing system, no Stripe, no payment processing is built.</p>
+
+<table>
+  <tr>
+    <th style="width:13%">Plan</th>
+    <th class="us">JobLoop AI</th>
+    <th>Teal</th>
+    <th>Jobscan</th>
+    <th>Jobright</th>
+    <th>Huntr</th>
+    <th>Careerflow</th>
+    <th>Rezi</th>
+    <th>Kickresume</th>
+    <th>Simplify</th>
+  </tr>
+  <tr>
+    <td><strong>Free tier</strong></td>
+    <td class="highlight">3 analyses/mo + unlimited tracking <span class="badge badge-specced">SPECCED</span></td>
+    <td class="best">Unlimited resumes + tracking + extension</td>
+    <td class="worst">5 scans/mo only</td>
+    <td>Basic matching</td>
+    <td>100 jobs, 2 tailored CVs</td>
+    <td class="worst">10 jobs only</td>
+    <td>1 resume, 3 downloads</td>
+    <td>4 templates</td>
+    <td class="best">Unlimited autofill + tracking</td>
+  </tr>
+  <tr>
+    <td><strong>Monthly</strong></td>
+    <td class="highlight"><strong>$19/mo</strong> <span class="badge badge-specced">SPECCED</span><br><span class="caveat">No billing system exists</span></td>
+    <td>$29/mo</td>
+    <td class="worst">$49.95/mo</td>
+    <td>$39.99/mo</td>
+    <td>$40/mo</td>
+    <td>$23.99/mo</td>
+    <td>$29/mo</td>
+    <td>$24/mo</td>
+    <td>$39.99/mo</td>
+  </tr>
+  <tr>
+    <td><strong>Annual equiv.</strong></td>
+    <td class="highlight">$12.42/mo ($149/yr) <span class="badge badge-specced">SPECCED</span></td>
+    <td>$15/mo ($179/yr)</td>
+    <td>~$30/mo (quarterly)</td>
+    <td>$20/mo (~$240/yr)</td>
+    <td>$26.67/mo</td>
+    <td>$14.41/mo</td>
+    <td>--</td>
+    <td class="best">$8/mo ($96/yr)</td>
+    <td>--</td>
+  </tr>
+  <tr>
+    <td><strong>Special</strong></td>
+    <td class="highlight"><strong>$9/week Sprint</strong> (unique!) <span class="badge badge-specced">SPECCED</span></td>
+    <td>$13/week</td>
+    <td>--</td>
+    <td>$17.99/week</td>
+    <td>--</td>
+    <td>$44.99/mo premium+</td>
+    <td><strong>$149 lifetime</strong></td>
+    <td>--</td>
+    <td>--</td>
+  </tr>
+</table>
+
+<!-- ============================================================ -->
+<h2>3. Core Philosophy — The Deepest Difference</h2>
+<p>This is where we fundamentally diverge from every competitor. The philosophy IS built into the codebase.</p>
+
+<table>
+  <tr>
+    <th style="width:18%">Dimension</th>
+    <th class="us" style="width:32%">JobLoop AI</th>
+    <th style="width:50%">Every Competitor</th>
+  </tr>
+  <tr>
+    <td><strong>Match scoring</strong></td>
+    <td class="highlight"><span class="unique">NO SCORES.</span> Position labels: "Strong position" / "Competitive" / "Stretch" / "Major gaps" — with transparent basis <span class="badge badge-built">BUILT</span><br><span class="caveat">In packages/shared/types.ts + insights.ts</span></td>
+    <td>0-100% match score (Teal, Jobscan, Rezi, Jobright, Huntr, Careerflow). All opaque black boxes. Jobscan admits on their own blog that real ATS systems don't score resumes.</td>
+  </tr>
+  <tr>
+    <td><strong>Framing</strong></td>
+    <td class="highlight"><span class="unique">ADVOCATE</span> — "Here's how to apply strongest." Never says "don't apply." Every gap comes with positioning advice. <span class="badge badge-built">BUILT</span><br><span class="caveat">In insights.ts system prompt + types.ts (no "skip" recommendation)</span></td>
+    <td>GATEKEEPER — shows red/green, leaves you to figure it out. "Your score is 45%, add these keywords." No guidance on HOW to present your experience.</td>
+  </tr>
+  <tr>
+    <td><strong>Profile model</strong></td>
+    <td class="highlight"><span class="unique">Living Profile Cloud</span> — evidence graph with 9 evidence types (roles, impacts, certs, projects, awards, education, workshops, publications, Socratic answers). Compounds over time. <span class="badge badge-built">BUILT</span><br><span class="caveat">In cloud.ts — data model + builder + enrichment all working</span></td>
+    <td>Flat text profiles. Resume text pasted in, parsed to keywords. No evidence depth, no compounding, no enrichment.</td>
+  </tr>
+  <tr>
+    <td><strong>Reasoning</strong></td>
+    <td class="highlight"><span class="unique">"Because" chains</span> — every insight cites specific evidence. "Competitive BECAUSE: 6/8 requirements met, 12yr adjacent domain, K8s gap addressable via Docker." <span class="badge badge-built">BUILT</span><br><span class="caveat">In insights.ts — AI prompt enforces evidence citation</span></td>
+    <td>Black box. "Match Rate 67%" — why? "Missing keywords: Kubernetes" — so what? No reasoning shown.</td>
+  </tr>
+  <tr>
+    <td><strong>Profile enrichment</strong></td>
+    <td class="highlight"><span class="unique">Socratic Questioning</span> — 3-gate system (relevance, evidence gap, marginal value). Gets quieter as cloud grows richer. <span class="badge badge-built">BUILT</span><br><span class="caveat">In socratic.ts — gates + question gen working</span></td>
+    <td>None. Every competitor accepts CV text as-is. No tool surfaces hidden achievements.</td>
+  </tr>
+  <tr>
+    <td><strong>ATS honesty</strong></td>
+    <td class="highlight"><span class="unique">HONEST:</span> "There is no real ATS score. ATS systems are databases, not scoring engines." <span class="badge badge-specced">SPECCED</span><br><span class="caveat">Philosophy in spec; no UI to display this yet</span></td>
+    <td>Most perpetuate the myth. Jobscan sells a "Match Rate" they admit isn't real. Rezi has "23 checkpoints." Creates anxiety around fake numbers.</td>
+  </tr>
+</table>
+
+<!-- ============================================================ -->
+<h2>4. Job Analysis & Matching</h2>
+<p>How each tool analyzes your fit for a job description.</p>
+
+<table>
+  <tr>
+    <th style="width:14%">Feature</th>
+    <th class="us">JobLoop</th>
+    <th>Teal</th>
+    <th>Jobscan</th>
+    <th>Jobright</th>
+    <th>Huntr</th>
+    <th>Careerflow</th>
+  </tr>
+  <tr>
+    <td><strong>What it shows</strong><br><small>After pasting a JD</small></td>
+    <td class="highlight">Position assessment + insights with evidence chains + actionable advice <span class="badge badge-built">BUILT</span> + Socratic gap-filling <span class="badge badge-built">BUILT</span><br><span class="caveat">No UI yet — engine only</span></td>
+    <td>% match + missing keywords list</td>
+    <td>% Match Rate + hard/soft skills breakdown with frequency counts</td>
+    <td>0-100 score + Orion coach tips</td>
+    <td>0-100 score across 4 weighted dimensions</td>
+    <td>% match + gap list</td>
+  </tr>
+  <tr>
+    <td><strong>Matching method</strong><br><small>How it compares you to the JD</small></td>
+    <td class="highlight">Word-boundary regex + 40+ alias map + evidence depth check <span class="badge badge-built">BUILT</span><br><span class="caveat">In skill-matching.ts + cloud-matcher.ts</span></td>
+    <td>Basic string matching ("Java" matches "JavaScript")</td>
+    <td>Keyword frequency (derivative matching unreliable)</td>
+    <td>Proprietary ML on 10M+ JDs</td>
+    <td>LLM-powered semantic (best in class)</td>
+    <td>Basic string matching</td>
+  </tr>
+  <tr>
+    <td><strong>Evidence depth</strong><br><small>Does it understand HOW well you know a skill?</small></td>
+    <td class="highlight"><span class="unique">Yes</span> — roles, impacts, certs, projects, Socratic answers <span class="badge badge-built">BUILT</span></td>
+    <td><span class="no">No</span> — keyword present/absent</td>
+    <td><span class="no">No</span> — keyword count only</td>
+    <td><span class="no">No</span> — skills list</td>
+    <td><span class="no">No</span> — semantic match only</td>
+    <td><span class="no">No</span></td>
+  </tr>
+  <tr>
+    <td><strong>Actionable advice</strong><br><small>Does it tell you what to DO?</small></td>
+    <td class="highlight"><span class="yes">Yes</span> — "Lead with X, address Y gap by Z" <span class="badge badge-built">BUILT</span><br><span class="caveat">insights.ts generates positioning advice</span></td>
+    <td><span class="no">No</span> — shows gaps only</td>
+    <td><span class="no">No</span> — "add these keywords"</td>
+    <td><span class="partial">Partial</span> — Orion gives tips</td>
+    <td><span class="no">No</span></td>
+    <td><span class="no">No</span></td>
+  </tr>
+  <tr>
+    <td><strong>ATS detection</strong><br><small>Which ATS the company uses</small></td>
+    <td><span class="no">No</span> <span class="badge badge-none">ZERO</span></td>
+    <td><span class="no">No</span></td>
+    <td><span class="yes">Yes</span> — identifies Workday/Greenhouse/Taleo + system-specific tips</td>
+    <td><span class="no">No</span></td>
+    <td><span class="no">No</span></td>
+    <td><span class="no">No</span></td>
+  </tr>
+</table>
+
+<!-- ============================================================ -->
+<h2>5. Resume / CV Generation</h2>
+<p>How each tool creates or improves your resume.</p>
+
+<table>
+  <tr>
+    <th style="width:14%">Feature</th>
+    <th class="us">JobLoop</th>
+    <th>Teal</th>
+    <th>Jobscan</th>
+    <th>Jobright</th>
+    <th>Rezi</th>
+    <th>Kickresume</th>
+  </tr>
+  <tr>
+    <td><strong>Content source</strong><br><small>Where the AI gets info to write your bullets</small></td>
+    <td class="highlight"><span class="unique">Living Profile Cloud</span> — real metrics, real achievements, real certifications <span class="badge badge-built">BUILT</span><br><span class="caveat">generateCloudTailoredCV() in generate-cv.ts</span></td>
+    <td>Resume text only</td>
+    <td>Resume text only</td>
+    <td>Resume text only</td>
+    <td>Resume text only</td>
+    <td>20K pre-written phrases for 3.2K roles</td>
+  </tr>
+  <tr>
+    <td><strong>Hallucination risk</strong><br><small>Does the AI invent skills/metrics you don't have?</small></td>
+    <td class="highlight"><strong>DESIGNED LOW</strong> — Cloud-constrained generation <span class="badge badge-built">BUILT</span><br><span class="caveat">Prompt instructs "only use Cloud evidence" — untested with real users</span></td>
+    <td class="worst"><span class="no">MEDIUM</span> — hallucinates skills from JD</td>
+    <td><span class="partial">MEDIUM</span> — suggests keywords you may not have</td>
+    <td class="worst"><span class="no">HIGH</span> — 7+ Reddit reports of fabricated skills/metrics</td>
+    <td><span class="partial">MEDIUM</span> — "creates metrics out of thin air"</td>
+    <td><span class="partial">MEDIUM</span> — generic for senior roles</td>
+  </tr>
+  <tr>
+    <td><strong>Voice preservation</strong><br><small>Does it sound like YOU or ChatGPT?</small></td>
+    <td class="highlight"><span class="partial">Partial</span> — prompt says "preserve authentic voice" <span class="badge badge-specced">SPECCED</span><br><span class="caveat">No writing_samples mechanism built. Just a prompt instruction. Spec plans tone profile but ZERO code for it.</span></td>
+    <td><span class="no">No</span></td>
+    <td><span class="no">No</span></td>
+    <td><span class="no">No</span></td>
+    <td><span class="no">No</span></td>
+    <td><span class="no">No</span></td>
+  </tr>
+  <tr>
+    <td><strong>Export formats</strong></td>
+    <td class="highlight"><span class="partial">PDF + DOCX</span> <span class="badge badge-specced">SPECCED</span><br><span class="caveat">Tech chosen (@react-pdf + docx npm), ZERO export code written</span></td>
+    <td class="worst"><span class="partial">PDF only</span> (no DOCX!)</td>
+    <td><span class="yes">PDF + DOCX</span></td>
+    <td>PDF</td>
+    <td>PDF</td>
+    <td><span class="yes">PDF + DOCX</span></td>
+  </tr>
+  <tr>
+    <td><strong>Templates</strong></td>
+    <td class="highlight">5 ATS-enforced (single-column, standard fonts) <span class="badge badge-specced">SPECCED</span><br><span class="caveat">Zero templates built</span></td>
+    <td>~10 free (some 2-col break ATS)</td>
+    <td>Basic ATS</td>
+    <td>Not template-focused</td>
+    <td>Small library, minimalist</td>
+    <td class="best"><strong>40+ premium</strong> (best design quality)</td>
+  </tr>
+  <tr>
+    <td><strong>CV versioning</strong><br><small>Track different versions per job</small></td>
+    <td class="highlight">Linked to JD + AI change summary <span class="badge badge-specced">SPECCED</span><br><span class="caveat">No persistence layer built</span></td>
+    <td><span class="yes">Yes</span> — unlimited</td>
+    <td><span class="no">No</span></td>
+    <td><span class="no">No</span></td>
+    <td><span class="yes">Unlimited resumes</span></td>
+    <td><span class="no">No</span></td>
+  </tr>
+  <tr>
+    <td><strong>Split-screen editing</strong><br><small>Edit resume while seeing JD</small></td>
+    <td class="highlight">Editor + live PDF preview <span class="badge badge-specced">SPECCED</span><br><span class="caveat">No UI exists at all</span></td>
+    <td><span class="yes">Yes</span> — JD visible while editing</td>
+    <td><span class="no">No</span></td>
+    <td><span class="no">No</span></td>
+    <td><span class="no">No</span> — section-by-section</td>
+    <td><span class="no">No</span> — drag-and-drop</td>
+  </tr>
+</table>
+
+<!-- ============================================================ -->
+<h2>6. Cover Letters</h2>
+
+<table>
+  <tr>
+    <th style="width:14%">Feature</th>
+    <th class="us">JobLoop</th>
+    <th>Teal</th>
+    <th>Jobscan</th>
+    <th>Jobright</th>
+    <th>Rezi</th>
+    <th>Kickresume</th>
+  </tr>
+  <tr>
+    <td><strong>AI generation</strong></td>
+    <td class="highlight"><span class="no">No</span> <span class="badge badge-none">ZERO</span><br><span class="caveat">CoverLetter type exists in shared. Zero generation code.</span></td>
+    <td><span class="yes">Yes</span></td>
+    <td><span class="yes">Yes</span></td>
+    <td><span class="yes">Yes</span></td>
+    <td><span class="yes">Yes</span></td>
+    <td><span class="yes">Yes</span></td>
+  </tr>
+  <tr>
+    <td><strong>Evidence-backed</strong><br><small>Uses your real achievements?</small></td>
+    <td class="highlight">Planned: select 2-3 strongest from Cloud <span class="badge badge-specced">SPECCED</span></td>
+    <td><span class="no">No</span> — from resume text</td>
+    <td><span class="no">No</span> — keyword-focused</td>
+    <td><span class="no">No</span></td>
+    <td><span class="no">No</span></td>
+    <td><span class="no">No</span></td>
+  </tr>
+  <tr>
+    <td><strong>Tone options</strong></td>
+    <td class="highlight">4 tones planned: Professional, Assertive, Technical, Conversational <span class="badge badge-specced">SPECCED</span></td>
+    <td>Casual / Formal / Match JD</td>
+    <td>Single style</td>
+    <td>Single style</td>
+    <td>Single style</td>
+    <td>Single style</td>
+  </tr>
+  <tr>
+    <td><strong>Quality approach</strong></td>
+    <td class="highlight">Planned: avoid generic openers, use company/role specifics <span class="badge badge-specced">SPECCED</span></td>
+    <td>Generic but configurable</td>
+    <td>Generic</td>
+    <td>Generic</td>
+    <td>Generic</td>
+    <td>Generic</td>
+  </tr>
+</table>
+
+<!-- ============================================================ -->
+<h2>7. Job Tracking</h2>
+
+<table>
+  <tr>
+    <th style="width:14%">Feature</th>
+    <th class="us">JobLoop</th>
+    <th>Teal</th>
+    <th>Jobright</th>
+    <th>Huntr</th>
+    <th>Careerflow</th>
+    <th>Simplify</th>
+  </tr>
+  <tr>
+    <td><strong>Board type</strong></td>
+    <td class="highlight">Table + Kanban toggle <span class="badge badge-specced">SPECCED</span><br><span class="caveat">No UI, no database schema</span></td>
+    <td>Kanban + table hybrid</td>
+    <td>Dashboard</td>
+    <td class="best"><strong>Best Kanban</strong> in category</td>
+    <td>Kanban</td>
+    <td>Dashboard</td>
+  </tr>
+  <tr>
+    <td><strong>Free limit</strong></td>
+    <td class="highlight">25 applications <span class="badge badge-specced">SPECCED</span></td>
+    <td class="best"><strong>Unlimited</strong></td>
+    <td>Included with paid</td>
+    <td>100 jobs</td>
+    <td class="worst">10 jobs</td>
+    <td class="best"><strong>Unlimited</strong></td>
+  </tr>
+  <tr>
+    <td><strong>Outcome learning</strong><br><small>Learns what worked?</small></td>
+    <td class="highlight">Links CV versions to outcomes, pattern detection after 10+ apps <span class="badge badge-specced">SPECCED</span><br><span class="caveat">Spec section 11. Zero code.</span></td>
+    <td><span class="no">No</span></td>
+    <td><span class="no">No</span></td>
+    <td><span class="no">No</span></td>
+    <td><span class="no">No</span></td>
+    <td><span class="no">No</span></td>
+  </tr>
+  <tr>
+    <td><strong>Follow-up reminders</strong></td>
+    <td><span class="no">No</span> <span class="badge badge-planned">PLANNED</span></td>
+    <td><span class="yes">Yes</span> + 40 email templates</td>
+    <td><span class="no">No</span></td>
+    <td><span class="yes">Yes</span></td>
+    <td><span class="yes">Yes</span></td>
+    <td><span class="no">No</span></td>
+  </tr>
+  <tr>
+    <td><strong>Contact management</strong></td>
+    <td><span class="no">No</span> <span class="badge badge-planned">PLANNED</span></td>
+    <td><span class="yes">Yes</span></td>
+    <td><span class="no">No</span></td>
+    <td><span class="yes">Yes</span></td>
+    <td><span class="yes">Yes</span></td>
+    <td><span class="no">No</span></td>
+  </tr>
+</table>
+
+<!-- ============================================================ -->
+<h2>8. AI Quality — The Trust Factor</h2>
+<p>AI quality is the #1 complaint across all tools. Here's how each stacks up.</p>
+
+<table>
+  <tr>
+    <th style="width:14%">Dimension</th>
+    <th class="us">JobLoop</th>
+    <th>Teal</th>
+    <th>Jobscan</th>
+    <th>Jobright</th>
+    <th>Rezi</th>
+    <th>Kickresume</th>
+  </tr>
+  <tr>
+    <td><strong>AI model</strong></td>
+    <td class="highlight">Claude Haiku 4.5 (fast) + Sonnet 4.6 (quality) <span class="badge badge-built">BUILT</span><br><span class="caveat">In client.ts</span></td>
+    <td>OpenAI/GPT (version unknown)</td>
+    <td>GPT-4</td>
+    <td>Undisclosed proprietary</td>
+    <td>Undisclosed</td>
+    <td>GPT-4.1</td>
+  </tr>
+  <tr>
+    <td><strong>Hallucination</strong><br><small>Invents things?</small></td>
+    <td class="highlight"><strong>DESIGNED LOW</strong> — Cloud-constrained <span class="badge badge-built">BUILT</span><br><span class="caveat">Prompt-enforced, not structurally guaranteed. No user testing done.</span></td>
+    <td class="worst">Hallucinates skills from JD, misspells names</td>
+    <td>Suggests keywords you may not have</td>
+    <td class="worst"><strong>HIGH</strong> — fabricated skills/metrics (7+ Reddit reports)</td>
+    <td>"Creates metrics out of thin air"</td>
+    <td>Generic for senior roles</td>
+  </tr>
+  <tr>
+    <td><strong>Personalization</strong><br><small>How much does it know about YOU?</small></td>
+    <td class="highlight"><span class="unique">DEEP</span> — career trajectory + achievements + Socratic depth <span class="badge badge-built">BUILT</span><br><span class="caveat">Cloud data model is rich. No voice/tone profiling built.</span></td>
+    <td>Resume text only</td>
+    <td>Keywords only</td>
+    <td>Resume text only</td>
+    <td>Section-by-section text</td>
+    <td>Pre-written phrases</td>
+  </tr>
+  <tr>
+    <td><strong>Output quality</strong><br><small>Real-world</small></td>
+    <td class="highlight"><strong>UNTESTED</strong> — designed to be evidence-backed <span class="badge badge-built">BUILT</span><br><span class="caveat">Zero real users. Can't claim quality until tested.</span></td>
+    <td>"Brainstorm-level, needs heavy editing"</td>
+    <td>"22-26 min editing" per session</td>
+    <td>"Keyword-stuffed templates"</td>
+    <td>"Solid starting point, generic"</td>
+    <td>"Good start, needs editing"</td>
+  </tr>
+</table>
+
+<!-- ============================================================ -->
+<h2>9. Additional Features</h2>
+
+<table>
+  <tr>
+    <th style="width:14%">Feature</th>
+    <th class="us">JobLoop</th>
+    <th>Teal</th>
+    <th>Jobscan</th>
+    <th>Jobright</th>
+    <th>Huntr</th>
+    <th>Simplify</th>
+  </tr>
+  <tr>
+    <td><strong>Browser extension</strong></td>
+    <td><span class="no">No</span> <span class="badge badge-planned">PLANNED</span> Phase 4</td>
+    <td><span class="yes">4.9/5</span> Featured</td>
+    <td><span class="yes">4.8/5</span></td>
+    <td><span class="yes">100K+ users</span></td>
+    <td><span class="yes">4.9/5</span></td>
+    <td><span class="yes">1M+ installs</span></td>
+  </tr>
+  <tr>
+    <td><strong>Interview prep</strong></td>
+    <td class="highlight">STAR builder from Cloud + company briefing <span class="badge badge-specced">SPECCED</span><br><span class="caveat">Spec section 13. Zero code.</span></td>
+    <td><span class="yes">AI practice</span> with voice</td>
+    <td><span class="no">No</span></td>
+    <td><span class="yes">Mock interviews</span> + STAR coaching</td>
+    <td><span class="no">No</span></td>
+    <td><span class="no">No</span></td>
+  </tr>
+  <tr>
+    <td><strong>Networking / referrals</strong></td>
+    <td><span class="no">No</span> <span class="badge badge-planned">PLANNED</span> Phase 3 (CSV import)<br><span class="caveat">LinkedIn API blocks programmatic access</span></td>
+    <td><span class="partial">Contact mgmt</span></td>
+    <td><span class="no">No</span></td>
+    <td class="best"><span class="yes">"Insider Connections"</span> — finds people at target companies</td>
+    <td><span class="no">No</span></td>
+    <td><span class="no">No</span></td>
+  </tr>
+  <tr>
+    <td><strong>LinkedIn optimization</strong></td>
+    <td><span class="no">Not planned</span> <span class="badge badge-none">ZERO</span></td>
+    <td><span class="partial">Summary generator</span></td>
+    <td><span class="yes">Full profile optimizer</span></td>
+    <td><span class="no">No</span></td>
+    <td><span class="no">No</span></td>
+    <td><span class="no">No</span></td>
+  </tr>
+  <tr>
+    <td><strong>Insights dashboard</strong></td>
+    <td class="highlight">Funnel viz + trend charts + AI recommendations <span class="badge badge-specced">SPECCED</span><br><span class="caveat">Spec section 15. Zero code, zero UI.</span></td>
+    <td><span class="no">No</span></td>
+    <td><span class="no">No</span></td>
+    <td><span class="no">No</span></td>
+    <td><span class="no">No</span></td>
+    <td><span class="no">No</span></td>
+  </tr>
+  <tr>
+    <td><strong>Experimentation engine</strong><br><small>A/B test CV variations</small></td>
+    <td class="highlight">Test hypotheses, track callbacks <span class="badge badge-specced">SPECCED</span><br><span class="caveat">Spec section 12. Zero code.</span></td>
+    <td><span class="no">No</span></td>
+    <td><span class="no">No</span></td>
+    <td><span class="no">No</span></td>
+    <td><span class="no">No</span></td>
+    <td><span class="no">No</span></td>
+  </tr>
+  <tr>
+    <td><strong>Mobile app</strong></td>
+    <td><span class="no">No</span> <span class="badge badge-planned">PLANNED</span> Phase 2 (Expo)<br><span class="caveat">Scaffolded only</span></td>
+    <td><span class="no">No</span></td>
+    <td><span class="no">No</span></td>
+    <td><span class="yes">iOS app</span></td>
+    <td><span class="no">No</span></td>
+    <td><span class="no">No</span></td>
+  </tr>
+  <tr>
+    <td><strong>Auto-apply</strong></td>
+    <td class="best"><strong>NEVER</strong> — proven failure <span class="badge badge-built">BUILT</span><br><span class="caveat">Philosophy decision, not a feature</span></td>
+    <td><span class="partial">Coming</span> (Ramped acquisition)</td>
+    <td><span class="no">No</span></td>
+    <td><span class="partial">Beta/waitlist</span></td>
+    <td><span class="no">No</span></td>
+    <td><span class="no">No</span></td>
+  </tr>
+</table>
+
+<!-- ============================================================ -->
+<h2>10. User Trust — Reviews & Complaints</h2>
+<p>Real user ratings and the most common complaints. Billing issues plague the industry.</p>
+
+<table>
+  <tr>
+    <th style="width:14%">Metric</th>
+    <th class="us">JobLoop</th>
+    <th>Teal</th>
+    <th>Jobscan</th>
+    <th>Jobright</th>
+    <th>Rezi</th>
+    <th>Kickresume</th>
+    <th>Simplify</th>
+  </tr>
+  <tr>
+    <td><strong>Trustpilot</strong></td>
+    <td class="highlight">N/A (0 users)</td>
+    <td>4.3/5 (93 reviews)</td>
+    <td>~4.5/5 (313 reviews)</td>
+    <td>Polarized (lots of 1-star and 5-star)</td>
+    <td>4.4/5</td>
+    <td class="best"><strong>4.6/5</strong> (3,666 reviews)</td>
+    <td class="worst">3.0/5 (9 reviews)</td>
+  </tr>
+  <tr>
+    <td><strong>#1 complaint</strong></td>
+    <td class="highlight">N/A</td>
+    <td>Billing after cancellation</td>
+    <td>Score doesn't predict callbacks</td>
+    <td><strong>Billing</strong> (72% of 1-star reviews)</td>
+    <td>Buggy interface</td>
+    <td>Free tier too limited</td>
+    <td>AI writing quality</td>
+  </tr>
+  <tr>
+    <td><strong>#2 complaint</strong></td>
+    <td class="highlight">N/A</td>
+    <td>Generic AI output</td>
+    <td>Keyword stuffing suggestions</td>
+    <td>Resume hallucinations</td>
+    <td>AI fabricates metrics</td>
+    <td>AI generic for senior</td>
+    <td>No refund policy</td>
+  </tr>
+  <tr>
+    <td><strong>Our advantage</strong></td>
+    <td class="highlight">PLANNED: transparent billing, $9/wk Sprint, easy cancel <span class="badge badge-specced">SPECCED</span><br><span class="caveat">No billing system exists. Cannot claim this advantage yet.</span></td>
+    <td colspan="6">We AIM to address the top 2 complaints: (1) generic/hallucinated AI via evidence-only Cloud generation <span class="badge badge-built">BUILT</span>, (2) billing trust via transparent pricing <span class="badge badge-specced">SPECCED</span></td>
+  </tr>
+</table>
+
+<!-- ============================================================ -->
+<h2>11. Competitive Positioning Map</h2>
+<p>Where each tool sits on the two axes that matter most. JobLoop's position is ASPIRATIONAL — engine is built, but no users or UI exist yet.</p>
+
+<div class="quadrant">
+                        TOOL                                    ADVISOR
+                   (Shows gaps)                          (Helps you win)
+                        |
+          Jobscan       |          Teal
+          Rezi          |          Careerflow
+          Kickresume    |
+                        |
+  SHALLOW ──────────────┼────────────────────── DEEP
+  (Keywords only)       |               (Evidence-based)
+                        |
+          Simplify      |          Huntr (semantic)
+          LazyApply     |          Jobright (ML + Orion)
+                        |
+                        |
+                        |               * JOBLOOP AI *
+                        |          (Engine: BUILT. UI: ZERO.
+                        |           Evidence graph + Advocate +
+                        |           Transparent reasoning +
+                        |           Socratic enrichment)
+</div>
+
+<!-- ============================================================ -->
+<h2>12. Emerging Threats</h2>
+
+<table>
+  <tr>
+    <th style="width:16%">Threat</th>
+    <th style="width:12%">Risk Level</th>
+    <th style="width:36%">What They Do</th>
+    <th style="width:36%">Our Defense</th>
+  </tr>
+  <tr class="worst">
+    <td><strong>OpenAI Jobs Platform</strong></td>
+    <td><strong>HIGH</strong></td>
+    <td>Launching mid-2026. Walmart, Accenture, BCG partnerships. Integrates OpenAI Academy certs. Aims to compete with LinkedIn.</td>
+    <td>They optimize for employers (B2B revenue). We optimize for candidates (advocate framing). Different philosophical stance. <span class="caveat">But they have billions in resources vs our $0.</span></td>
+  </tr>
+  <tr>
+    <td><strong>ChatGPT / Claude direct</strong></td>
+    <td><strong>MEDIUM</strong></td>
+    <td>Covers 80% of use cases for technical users. Free. No persistence or workflow.</td>
+    <td>Persistent memory (Cloud), structured workflow, version tracking, outcome learning. <span class="caveat">Most of these are SPECCED, not built.</span></td>
+  </tr>
+  <tr>
+    <td><strong>Adzuna ApplyIQ</strong></td>
+    <td><strong>MEDIUM</strong></td>
+    <td>Free AI agent. Quality-over-quantity. 10M+ users (existing Adzuna audience). Does NOT modify resumes.</td>
+    <td>They submit applications; we help prepare them. Complementary, not competitive.</td>
+  </tr>
+  <tr>
+    <td><strong>Skill-Graph.com</strong></td>
+    <td><strong>LOW-MED</strong></td>
+    <td>Closest to our architecture. Skills extracted from evidence, interactive graph, gap analysis. B2B focused.</td>
+    <td>We're B2C-first with advocate framing + Socratic coaching they don't have. <span class="caveat">Their graph is likely more mature than ours.</span></td>
+  </tr>
+  <tr>
+    <td><strong>Torre.ai</strong></td>
+    <td><strong>LOW</strong></td>
+    <td>130K+ skills, 2M+ relationships in graph. "Professional genome." B2B + B2C.</td>
+    <td>Impressive tech but opaque matching. Not focused on job application optimization.</td>
+  </tr>
+</table>
+
+<!-- ============================================================ -->
+<h2>13. What We Do That NOBODY Else Does</h2>
+<p>Honest status of each unique feature. Only 5 of 9 are actually built.</p>
+
+<table>
+  <tr>
+    <th style="width:20%">Unique Feature</th>
+    <th style="width:8%">Status</th>
+    <th style="width:14%">Closest Competitor</th>
+    <th style="width:58%">Why Ours Is Different (When Complete)</th>
+  </tr>
+  <tr>
+    <td><strong>Living Profile Cloud</strong><br><small>Evidence-based skill graph</small></td>
+    <td><span class="badge badge-built">BUILT</span></td>
+    <td>Skill-Graph.com (B2B)</td>
+    <td>9 evidence types, compounding value, Socratic enrichment. In cloud.ts — data model, builder, CV parser integration all working. No competitor has this in B2C.</td>
+  </tr>
+  <tr>
+    <td><strong>Socratic Questioning</strong><br><small>3-gate enrichment system</small></td>
+    <td><span class="badge badge-built">BUILT</span></td>
+    <td>Nobody</td>
+    <td>3 gates (relevance, evidence gap, marginal value) in socratic.ts. Generates contextual questions. Gets quieter as cloud grows richer. Fully functional.</td>
+  </tr>
+  <tr>
+    <td><strong>Advocate Framing</strong><br><small>Never discourages applying</small></td>
+    <td><span class="badge badge-built">BUILT</span></td>
+    <td>Jobright Orion (partial)</td>
+    <td>Built into insights.ts system prompt + types.ts. No "skip" recommendation exists in the type system. Every insight includes positioning advice.</td>
+  </tr>
+  <tr>
+    <td><strong>"Because" Chains</strong><br><small>Transparent reasoning</small></td>
+    <td><span class="badge badge-built">BUILT</span></td>
+    <td>Nobody (Pexelle B2B only)</td>
+    <td>insights.ts prompt enforces evidence citation. Not "72% match" but "Competitive BECAUSE: [specific evidence]."</td>
+  </tr>
+  <tr>
+    <td><strong>Cloud-Enriched CV Gen</strong><br><small>Bullets from real achievements</small></td>
+    <td><span class="badge badge-built">BUILT</span></td>
+    <td>Nobody</td>
+    <td>generateCloudTailoredCV() in generate-cv.ts uses Cloud evidence in prompt context. Not from resume text or pre-written phrases.</td>
+  </tr>
+  <tr>
+    <td><strong>Voice Preservation</strong><br><small>Sounds like you, not ChatGPT</small></td>
+    <td><span class="badge badge-specced">SPECCED</span></td>
+    <td>Nobody</td>
+    <td><strong>HONEST:</strong> Only a prompt instruction ("preserve authentic voice") exists. No writing_samples collection, no tone profiling system, no style analysis code. This is a GOAL, not a feature.</td>
+  </tr>
+  <tr>
+    <td><strong>Outcome Intelligence</strong><br><small>Learns what actually works</small></td>
+    <td><span class="badge badge-specced">SPECCED</span></td>
+    <td>Nobody at this depth</td>
+    <td>Spec section 11 describes linking CV versions to outcomes. Zero code. No database schema. Would need 10+ tracked applications before any patterns emerge.</td>
+  </tr>
+  <tr>
+    <td><strong>Experimentation Engine</strong><br><small>A/B test CV variations</small></td>
+    <td><span class="badge badge-specced">SPECCED</span></td>
+    <td>Nobody</td>
+    <td>Spec section 12 describes hypothesis testing for CV variations. Zero code. Depends on outcome tracking (also not built).</td>
+  </tr>
+  <tr>
+    <td><strong>$9/week Sprint</strong><br><small>Short-commitment billing</small></td>
+    <td><span class="badge badge-specced">SPECCED</span></td>
+    <td>Jobright ($17.99/wk)</td>
+    <td>Pricing defined in spec. No Stripe integration, no billing system, no payment processing code exists.</td>
+  </tr>
+</table>
+
+<!-- ============================================================ -->
+<div class="reality-box">
+  <h3>REALITY CHECK: What's Actually Built vs. Specced</h3>
+  <p><strong>BUILT (in codebase, working):</strong> Living Profile Cloud (9 evidence types), Socratic Questioning (3-gate system), Cloud-based matching (40+ skill aliases, word boundaries), "Because" chain insights, Advocate framing (no scores, no "skip"), Cloud-enriched CV generation, AI client (Haiku + Sonnet), dev mode (file-based AI), safe JSON parsing + Zod validation, unique ID generation.</p>
+  <p style="margin-top:6px"><strong>NOT BUILT (spec only):</strong> ALL UI, ALL database/persistence, ALL auth, ALL billing/payments, cover letters, PDF/DOCX export, templates, job tracker, outcome learning, experimentation engine, insights dashboard, interview prep, voice/tone profiling, browser extension, mobile app, follow-up reminders, contact management, rate limiting, prompt caching.</p>
+  <p style="margin-top:6px"><strong>Bottom line:</strong> We have a working AI engine (~35% of the vision). We have ZERO user-facing product. Every competitor in this document has shipped a product that real people use today.</p>
+</div>
+
+<div class="win-box">
+  <h3>THE REAL ADVANTAGE</h3>
+  <p><strong>Our white space is real but narrow.</strong> No production B2C tool combines evidence-based skill graphs + advocate framing + transparent reasoning + Socratic coaching. That's genuinely unique. But it's only valuable if we ship it. The engine works. The hard part — UI, persistence, auth, billing, polish — is 100% ahead of us.</p>
+  <p style="margin-top:8px"><strong>What's truly differentiated TODAY:</strong> The Cloud data model (9 evidence types vs everyone's flat keywords), the Socratic enrichment (nobody does this), and the philosophical stance (advocate vs gatekeeper, built into every prompt). These three things are built, working, and genuinely novel.</p>
+</div>
+
+<div class="threat-box">
+  <h3>THE BIGGEST RISKS</h3>
+  <p><strong>1. OpenAI Jobs Platform</strong> (mid-2026, Walmart/Accenture/BCG) could redefine the category with resources we can't match.</p>
+  <p><strong>2. ChatGPT + Google Docs</strong> is already the de facto competitor for 80% of what paid tools offer — free.</p>
+  <p><strong>3. We haven't shipped anything.</strong> Every insight in this document is theoretical until real users validate it. The #1 risk isn't competition — it's never launching.</p>
+</div>
+
+<p style="text-align:center; color:#94a3b8; font-size:11px; margin-top:32px;">
+  JobLoop AI Competitive Comparison — BRUTAL TRUTH EDITION | April 2026 | Every JobLoop claim verified against codebase
+</p>
+
+</body>
+</html>
