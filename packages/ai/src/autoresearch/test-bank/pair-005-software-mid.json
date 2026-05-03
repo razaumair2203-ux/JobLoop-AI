@@ -1,0 +1,115 @@
+{
+  "id": "pair-005",
+  "split": "train",
+  "persona": "mid_career",
+  "synthetic": true,
+  "framing": "Full-Stack Software Engineer targeting Senior role",
+  "coverage": { "industry": "IT/Software", "seniority": "mid", "pattern": "linear", "region": "north_america" },
+  "jd": {
+    "title": "Senior Full-Stack Engineer",
+    "company": "Stripe",
+    "location": "San Francisco, CA (Hybrid)",
+    "experience_years": 5,
+    "requirements": [
+      { "text": "5+ years of professional software engineering experience", "type": "must_have" },
+      { "text": "Strong proficiency in TypeScript and React", "type": "must_have" },
+      { "text": "Experience building and maintaining production APIs (REST or GraphQL)", "type": "must_have" },
+      { "text": "Experience with relational databases (PostgreSQL preferred)", "type": "must_have" },
+      { "text": "Experience with CI/CD pipelines and automated testing", "type": "must_have" },
+      { "text": "Familiarity with cloud infrastructure (AWS, GCP, or Azure)", "type": "must_have" },
+      { "text": "Experience with payment systems or financial technology", "type": "nice_to_have" },
+      { "text": "Contributions to open source projects", "type": "nice_to_have" },
+      { "text": "BS or MS in Computer Science or related field", "type": "must_have" },
+      { "text": "Experience mentoring junior engineers", "type": "nice_to_have" }
+    ],
+    "responsibilities": [
+      "Design and implement full-stack features for Stripe's merchant dashboard",
+      "Build and maintain RESTful APIs serving millions of requests per day",
+      "Collaborate with product managers and designers to ship user-facing features",
+      "Write comprehensive unit and integration tests",
+      "Participate in code reviews and contribute to engineering best practices",
+      "Mentor junior team members and contribute to technical documentation"
+    ]
+  },
+  "expected_output": {
+    "summary": "Full-Stack Software Engineer with 6 years of experience building production web applications using TypeScript, React, and Node.js. Track record of delivering user-facing features at scale, maintaining RESTful APIs handling 500K+ daily requests, and improving CI/CD pipeline reliability. BS Computer Science with hands-on experience in PostgreSQL, AWS, and automated testing.",
+    "experience": [
+      {
+        "company": "Plaid",
+        "title": "Software Engineer II",
+        "start_date": "2022-03",
+        "end_date": "2024-12",
+        "bullets": [
+          "Built and maintained full-stack features for financial data aggregation platform using TypeScript, React, and Node.js",
+          "Designed RESTful APIs serving 500K+ daily requests with 99.9% uptime SLA",
+          "Reduced API response latency by 35% through database query optimization and Redis caching",
+          "Mentored 2 junior engineers through onboarding and code review processes",
+          "Implemented comprehensive integration test suite covering 85% of critical payment flows"
+        ]
+      },
+      {
+        "company": "Shopify",
+        "title": "Software Engineer",
+        "start_date": "2019-06",
+        "end_date": "2022-02",
+        "bullets": [
+          "Developed merchant-facing dashboard features using React and GraphQL",
+          "Built automated CI/CD pipeline reducing deployment time from 45 minutes to 12 minutes",
+          "Contributed to checkout flow optimization resulting in 8% conversion rate improvement",
+          "Wrote technical documentation for API integration guides used by 200+ partners"
+        ]
+      },
+      {
+        "company": "Various (University of Waterloo Co-op Program)",
+        "title": "Software Engineering Intern — 3 terms",
+        "start_date": "2017-01",
+        "end_date": "2018-12",
+        "bullets": [
+          "Wealthsimple: Built transaction categorization pipeline using Python and PostgreSQL",
+          "Shopify (1st term): Developed internal admin dashboard components in React",
+          "Faire: Built REST API endpoints for supplier onboarding flow"
+        ]
+      }
+    ],
+    "skills": {
+      "languages": ["TypeScript", "JavaScript", "Python", "SQL"],
+      "frontend": ["React", "Next.js", "HTML/CSS", "Tailwind CSS"],
+      "backend": ["Node.js", "Express", "GraphQL", "REST APIs"],
+      "infrastructure": ["AWS (EC2, S3, Lambda)", "PostgreSQL", "Redis", "Docker", "GitHub Actions CI/CD"],
+      "practices": ["automated testing", "code review", "technical documentation", "Agile/Scrum"]
+    },
+    "certifications": [
+      "AWS Certified Solutions Architect — Associate"
+    ],
+    "education": [
+      "BS Computer Science — University of Waterloo (2015-2019)"
+    ]
+  },
+  "jd_requirements": [
+    "5+ years software engineering",
+    "TypeScript React proficiency",
+    "production APIs REST GraphQL",
+    "PostgreSQL relational databases",
+    "CI/CD pipelines automated testing",
+    "cloud infrastructure AWS GCP Azure",
+    "payment systems financial technology",
+    "open source contributions",
+    "BS MS Computer Science",
+    "mentoring junior engineers"
+  ],
+  "cloud_skills": [
+    "TypeScript", "JavaScript", "Python", "SQL",
+    "React", "Next.js", "Node.js", "Express", "GraphQL", "REST APIs",
+    "AWS", "PostgreSQL", "Redis", "Docker", "GitHub Actions",
+    "automated testing", "CI/CD", "code review",
+    "financial data platform", "payment flows",
+    "API design", "database optimization", "caching",
+    "technical documentation", "mentoring",
+    "Agile/Scrum", "merchant dashboard"
+  ],
+  "deliberate_flaws": [
+    "No direct payment processing/gateway experience (Plaid is data aggregation, not payment processing)",
+    "No open source contributions listed",
+    "Intern experience is thin — only 2 bullets"
+  ]
+}

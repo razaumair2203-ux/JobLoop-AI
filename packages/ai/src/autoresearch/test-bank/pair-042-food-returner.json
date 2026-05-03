@@ -1,0 +1,111 @@
+{
+  "id": "pair-042",
+  "split": "held_out",
+  "persona": "returner",
+  "synthetic": true,
+  "jd_style": "graduate_friendly",
+  "framing": "Food scientist returning after career break to quality assurance role at Nestlé Singapore",
+  "coverage": { "industry": "Food/Beverage", "seniority": "mid", "pattern": "returner", "region": "asia" },
+  "jd": {
+    "title": "Quality Assurance Manager — ASEAN",
+    "company": "Nestlé",
+    "location": "Singapore (Nestlé R&D Centre)",
+    "experience_years": 6,
+    "style_note": "Graduate-friendly/corporate: structured but welcoming, explains role context, values growth",
+    "about": "Nestlé is the world's largest food and beverage company. Our Singapore R&D Centre supports product development and quality assurance for the ASEAN region. We're looking for a QA Manager to lead food safety and quality systems across our Southeast Asian factories.",
+    "requirements": [
+      { "text": "6+ years of experience in food quality assurance, food safety, or food science in a manufacturing environment", "type": "must_have" },
+      { "text": "Expert knowledge of HACCP principles and food safety management systems (FSSC 22000 or BRC Global Standard for Food Safety)", "type": "must_have" },
+      { "text": "Experience managing food safety audits (internal audits, third-party certification audits, customer audits)", "type": "must_have" },
+      { "text": "Knowledge of ASEAN food regulations: Singapore Food Agency (SFA), Malaysia BKKM/NPRA, Thailand FDA, Indonesia BPOM", "type": "must_have" },
+      { "text": "Experience with laboratory quality systems: microbiological testing, chemical analysis (HPLC, GC-MS), and allergen management", "type": "must_have" },
+      { "text": "Familiarity with Nestlé Quality Management System (NQMS) or equivalent FMCG quality frameworks", "type": "nice_to_have" },
+      { "text": "Experience with food fraud vulnerability assessments (TACCP/VACCP)", "type": "nice_to_have" },
+      { "text": "SAP QM module experience", "type": "nice_to_have" }
+    ],
+    "responsibilities": [
+      "Lead quality assurance systems across 4 Nestlé factories in Singapore, Malaysia, Thailand, and Indonesia",
+      "Manage FSSC 22000 certification maintenance and drive continuous improvement in food safety culture",
+      "Oversee laboratory operations including microbiological testing, chemical analysis, and sensory evaluation",
+      "Coordinate with Singapore Food Agency (SFA) and regional regulators on product compliance and recalls",
+      "Lead root cause analysis (RCA) and corrective action processes for quality incidents across ASEAN"
+    ]
+  },
+  "expected_output": {
+    "summary": "Food scientist with 7 years of quality assurance experience at Danone (Singapore and Indonesia), returning after a 3-year career break (2023-2026) for family relocation. Previously QA Lead at Danone's Bekasi factory (Indonesia) managing FSSC 22000 certification for dairy products. Experience with HACCP, microbiological testing, and BPOM regulatory compliance. BSc Food Science from National University of Singapore. Seeking return to food quality management in ASEAN region.",
+    "experience": [
+      {
+        "company": "Danone — Bekasi Factory, Indonesia",
+        "title": "Quality Assurance Lead — Dairy Products",
+        "start_date": "2020-01",
+        "end_date": "2023-03",
+        "bullets": [
+          "Led QA team of 12 for Danone's Bekasi dairy factory (SGD $200M annual production, 500+ SKUs)",
+          "Managed FSSC 22000 certification across 3 consecutive audit cycles with zero major non-conformances",
+          "Oversaw microbiological testing laboratory: Salmonella, Listeria, E.coli, and aerobic plate counts for finished products and raw materials",
+          "Coordinated with BPOM (Indonesia FDA) on product registration renewals and halal certification (LPPOM MUI)",
+          "Led 4 root cause investigations for quality incidents, implementing corrective actions that reduced customer complaints by 30%"
+        ]
+      },
+      {
+        "company": "Danone — Singapore R&D Centre",
+        "title": "Food Safety Specialist (promoted from QA Analyst, 2019)",
+        "start_date": "2016-07",
+        "end_date": "2019-12",
+        "bullets": [
+          "Developed HACCP plans for 8 new product launches in the Early Life Nutrition (infant formula) category",
+          "Performed allergen management assessments and validated cleaning procedures for shared production lines",
+          "Conducted internal food safety audits across 3 ASEAN factories (Singapore, Malaysia, Indonesia)",
+          "Managed chemical analysis programme (HPLC for vitamins, ICP-MS for heavy metals) for infant nutrition products"
+        ]
+      }
+    ],
+    "skills": {
+      "food_safety": ["HACCP", "FSSC 22000 certification", "food safety auditing", "allergen management", "cleaning validation", "root cause analysis"],
+      "laboratory": ["microbiological testing (Salmonella, Listeria, E.coli)", "HPLC (vitamin analysis)", "ICP-MS (heavy metals)", "sensory evaluation (basic)"],
+      "regulatory": ["BPOM (Indonesia)", "SFA (Singapore, familiar)", "halal certification (LPPOM MUI)", "infant formula regulations"],
+      "management": ["QA team management (12 staff)", "FSSC 22000 audit management", "customer complaint handling", "quality incident investigation"]
+    },
+    "certifications": [
+      "FSSC 22000 Lead Auditor — SGS Academy (2020)",
+      "HACCP Certification — Royal Society for Public Health (RSPH) (2017)"
+    ],
+    "education": [
+      "BSc Food Science and Technology — National University of Singapore (2012-2016)"
+    ]
+  },
+  "jd_requirements": [
+    "6+ years food quality assurance food safety manufacturing",
+    "HACCP FSSC 22000 BRC food safety management systems",
+    "food safety audits internal third-party customer",
+    "ASEAN food regulations SFA BKKM NPRA Thailand FDA BPOM",
+    "laboratory microbiological HPLC GC-MS allergen management",
+    "Nestlé NQMS FMCG quality frameworks",
+    "food fraud TACCP VACCP vulnerability assessments",
+    "SAP QM module"
+  ],
+  "cloud_skills": [
+    "HACCP", "FSSC 22000", "food safety auditing",
+    "allergen management", "cleaning validation",
+    "root cause analysis", "microbiological testing",
+    "HPLC", "ICP-MS", "sensory evaluation",
+    "BPOM Indonesia", "SFA Singapore",
+    "halal certification", "LPPOM MUI",
+    "infant formula regulations",
+    "QA team management", "customer complaints",
+    "FSSC 22000 Lead Auditor"
+  ],
+  "deliberate_flaws": [
+    "3-year career break (2023-2026) — FSSC 22000 standard has been updated, regulations have changed",
+    "No BRC Global Standard experience (only FSSC 22000 — different certification scheme)",
+    "No Malaysia BKKM/NPRA or Thailand FDA regulatory experience (Indonesia and Singapore only)",
+    "No GC-MS experience (JD specifies it — candidate has HPLC and ICP-MS only)",
+    "No Nestlé NQMS experience (worked at Danone with Danone's quality system)",
+    "No TACCP/VACCP food fraud vulnerability assessment experience",
+    "No SAP QM experience (used Danone's internal quality management system)",
+    "No experience managing multi-country QA (led single factory in Indonesia, supported ASEAN audits from Singapore)",
+    "Danone to Nestlé competitor move — potential knowledge transfer restrictions on infant nutrition",
+    "Career break means certifications may need renewal and regulatory knowledge needs updating",
+    "No experience with food safety culture programmes (newer industry emphasis since 2023)"
+  ]
+}

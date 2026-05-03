@@ -1,0 +1,110 @@
+{
+  "id": "pair-035",
+  "split": "held_out",
+  "persona": "mid_career",
+  "synthetic": true,
+  "jd_style": "enterprise_saas",
+  "framing": "Operations manager at Maersk Dubai applying to DP World logistics technology role",
+  "coverage": { "industry": "Logistics/Shipping", "seniority": "mid", "pattern": "linear", "region": "middle_east" },
+  "jd": {
+    "title": "Manager — Digital Solutions & Trade Automation",
+    "company": "DP World",
+    "location": "Dubai, UAE (Jebel Ali Free Zone)",
+    "experience_years": 7,
+    "style_note": "Enterprise SaaS: structured, specific platform knowledge, trade/logistics domain requirements",
+    "requirements": [
+      { "text": "7+ years of experience in logistics, supply chain management, or trade facilitation", "type": "must_have" },
+      { "text": "Experience with TOS (Terminal Operating Systems): Navis N4, TBA OPUS, or Kalmar TLS", "type": "must_have" },
+      { "text": "Knowledge of trade documentation systems (bill of lading, letters of credit, customs declarations)", "type": "must_have" },
+      { "text": "Experience with container tracking platforms and EDI/API integrations (INTTRA, CargoSmart, or TradeLens successor platforms)", "type": "must_have" },
+      { "text": "Familiarity with UAE customs systems (Dubai Trade Portal, Mirsal 2) and Free Zone regulations", "type": "must_have" },
+      { "text": "Project management skills with PMP or PRINCE2 certification", "type": "nice_to_have" },
+      { "text": "Experience with blockchain-based trade finance or smart B/L platforms (e.g., CargoX, Bolero)", "type": "nice_to_have" },
+      { "text": "Arabic language skills", "type": "nice_to_have" }
+    ],
+    "responsibilities": [
+      "Lead implementation of DP World's digital trade platform across 5 Middle East terminals",
+      "Drive automation of customs clearance and trade documentation workflows",
+      "Manage integration between TOS, shipping line systems, and government customs platforms",
+      "Coordinate with Dubai Customs and Free Zone authorities on regulatory compliance",
+      "Develop business cases for digital transformation initiatives in terminal operations"
+    ]
+  },
+  "expected_output": {
+    "summary": "Logistics operations professional with 8 years of experience at Maersk, most recently Operations Manager at Jebel Ali Container Terminal (JACT). Managed daily container throughput of 4,000+ TEUs. Deep expertise in terminal operations, vessel planning, and Navis N4 TOS. Experience with EDI integrations between shipping lines, terminals, and customs systems. Led process improvement projects that reduced truck turnaround time by 22%. Seeking digital transformation role combining logistics domain expertise with technology platform management.",
+    "experience": [
+      {
+        "company": "Maersk — APM Terminals, Jebel Ali (Dubai)",
+        "title": "Operations Manager — Container Terminal",
+        "start_date": "2022-01",
+        "end_date": "2025-12",
+        "bullets": [
+          "Managed daily operations for Jebel Ali container terminal processing 4,000+ TEUs/day across 8 berths",
+          "Oversaw Navis N4 TOS configuration for vessel planning, yard management, and gate operations",
+          "Led EDI integration project connecting terminal systems with 12 major shipping lines and Dubai Customs (Mirsal 2)",
+          "Reduced truck turnaround time from 45 to 35 minutes through gate automation and appointment system implementation",
+          "Managed team of 25 operations staff across 3 shifts including planners, controllers, and equipment operators"
+        ]
+      },
+      {
+        "company": "Maersk — APM Terminals, Jebel Ali (Dubai)",
+        "title": "Terminal Planner (promoted from Operations Coordinator, 2020)",
+        "start_date": "2018-03",
+        "end_date": "2021-12",
+        "bullets": [
+          "Planned vessel stowage and yard allocation for weekly vessel calls from Asia-Europe and intra-Gulf services",
+          "Operated Navis N4 for container tracking, hold/release management, and customs status updates",
+          "Processed trade documentation (bills of lading, delivery orders, customs declarations) for import/export containers",
+          "Coordinated with Dubai Trade Portal for electronic customs clearance and Free Zone documentation"
+        ]
+      }
+    ],
+    "skills": {
+      "terminal_ops": ["container terminal operations", "vessel planning", "yard management", "gate operations", "equipment management", "TEU throughput optimisation"],
+      "systems": ["Navis N4 TOS (advanced user)", "EDI integrations", "Mirsal 2 (Dubai Customs)", "Dubai Trade Portal", "INTTRA (basic)"],
+      "trade": ["bill of lading processing", "customs declarations", "delivery orders", "Free Zone regulations", "import/export documentation"],
+      "management": ["operations team management (25 staff)", "shift management", "process improvement", "truck turnaround optimisation", "gate automation"]
+    },
+    "certifications": [
+      "APICS CSCP — Certified Supply Chain Professional (2023)",
+      "Navis N4 Certified User — Navis (Cargotec) (2019)"
+    ],
+    "education": [
+      "BSc Supply Chain Management — University of Sharjah (2014-2018)"
+    ]
+  },
+  "jd_requirements": [
+    "7+ years logistics supply chain trade facilitation",
+    "TOS Navis N4 TBA OPUS Kalmar TLS terminal operating systems",
+    "trade documentation bill of lading letters of credit customs declarations",
+    "container tracking INTTRA CargoSmart TradeLens EDI API",
+    "UAE customs Dubai Trade Portal Mirsal 2 Free Zone regulations",
+    "PMP PRINCE2 project management",
+    "blockchain trade finance CargoX Bolero smart B/L",
+    "Arabic language"
+  ],
+  "cloud_skills": [
+    "container terminal operations", "vessel planning",
+    "yard management", "gate operations",
+    "Navis N4 TOS", "EDI integrations",
+    "Mirsal 2", "Dubai Trade Portal",
+    "INTTRA", "bill of lading",
+    "customs declarations", "Free Zone regulations",
+    "import/export documentation",
+    "truck turnaround optimisation", "gate automation",
+    "TEU throughput", "process improvement",
+    "APICS CSCP", "team management"
+  ],
+  "deliberate_flaws": [
+    "No TBA OPUS or Kalmar TLS experience — only Navis N4",
+    "No letters of credit experience (trade documentation was B/L and customs, not trade finance)",
+    "No CargoSmart experience, only basic INTTRA",
+    "No blockchain or smart B/L platform experience (CargoX, Bolero)",
+    "No PMP or PRINCE2 certification (has CSCP which is supply chain, not PM)",
+    "No API integration experience — managed EDI projects as stakeholder, not technical implementer",
+    "No digital platform product management experience (operations manager, not product/tech)",
+    "No Arabic language skills (Emirati university but international background)",
+    "Operations background — transition to 'Digital Solutions' requires technology management skills",
+    "TradeLens shut down in 2022 — JD references 'successor platforms' which are evolving"
+  ]
+}

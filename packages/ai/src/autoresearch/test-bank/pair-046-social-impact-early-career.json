@@ -1,0 +1,109 @@
+{
+  "id": "pair-046",
+  "split": "validation",
+  "persona": "early_career",
+  "synthetic": true,
+  "jd_style": "graduate_friendly",
+  "framing": "Social sciences graduate applying to impact measurement analyst role at B Corp in Bogotá",
+  "coverage": { "industry": "Social Impact/B-Corp", "seniority": "entry", "pattern": "early_career", "region": "latin_america" },
+  "jd": {
+    "title": "Analista de Medición de Impacto (Impact Measurement Analyst)",
+    "company": "Sistema B (B Lab Latin America)",
+    "location": "Bogotá, Colombia (Hybrid)",
+    "experience_years": 1,
+    "style_note": "Graduate-friendly: mission-driven, bilingual, values passion over experience, explains B Corp context",
+    "about": "Sistema B is the B Lab affiliate for Latin America, supporting the B Corp movement across 20+ countries. We help companies measure, manage, and improve their social and environmental impact using the B Impact Assessment (BIA). We're looking for a data-driven analyst to support our certification and impact measurement programmes.",
+    "requirements": [
+      { "text": "Bachelor's degree in Economics, Sociology, Environmental Science, Business Administration, or related field", "type": "must_have" },
+      { "text": "1+ years of experience in data analysis, impact measurement, research, or sustainability consulting (internships count)", "type": "must_have" },
+      { "text": "Proficiency in Excel/Google Sheets and at least one data analysis tool (R, Python, Stata, or SPSS)", "type": "must_have" },
+      { "text": "Understanding of impact measurement frameworks (B Impact Assessment, SDGs, Theory of Change, or IRIS+ metrics)", "type": "must_have" },
+      { "text": "Native Spanish proficiency and professional English", "type": "must_have" },
+      { "text": "Experience with survey design and qualitative research methods", "type": "nice_to_have" },
+      { "text": "Knowledge of ESG reporting frameworks (GRI, SASB) and their application in Latin American context", "type": "nice_to_have" },
+      { "text": "Portuguese language skills", "type": "nice_to_have" }
+    ],
+    "responsibilities": [
+      "Support B Corp certification process: review B Impact Assessment submissions from Latin American companies",
+      "Analyse impact data from 500+ certified B Corps across the region to identify trends and best practices",
+      "Develop impact reports and data visualisations for Sistema B's annual State of B Corps in Latin America publication",
+      "Support capacity-building workshops for companies preparing for B Corp certification",
+      "Collaborate with B Lab Global on methodology updates and regional data standardisation"
+    ]
+  },
+  "expected_output": {
+    "summary": "Recent Economics graduate from Universidad de los Andes (Bogotá) with research focus on social enterprise and impact measurement. Completed 6-month internship at UNDP Colombia's SDG Integration team analysing Voluntary National Review (VNR) data. Undergraduate thesis on 'Measuring Social Value Creation in Colombian B Corps' using B Impact Assessment data (sample of 45 companies). Proficient in Stata and Excel. Native Spanish, professional English. Active in Bogotá's B Corp community as university B Leaders programme participant.",
+    "experience": [
+      {
+        "company": "UNDP Colombia — SDG Integration Unit",
+        "title": "Research Intern — SDG Data Analysis",
+        "start_date": "2025-06",
+        "end_date": "2025-12",
+        "bullets": [
+          "Analysed Colombia's Voluntary National Review (VNR) data, cleaning and processing SDG indicator datasets (170+ indicators) in Stata",
+          "Created data visualisations (charts, maps) for UNDP Colombia's SDG progress dashboard using Excel and Google Data Studio",
+          "Supported stakeholder consultations with 15 Colombian municipalities on localised SDG monitoring frameworks",
+          "Co-authored 2 sections of UNDP Colombia's 2025 SDG Progress Report on Goal 8 (Decent Work) and Goal 10 (Reduced Inequalities)"
+        ]
+      },
+      {
+        "company": "Universidad de los Andes — CEDE (Centro de Estudios sobre Desarrollo Económico)",
+        "title": "Undergraduate Research Assistant",
+        "start_date": "2024-06",
+        "end_date": "2025-05",
+        "bullets": [
+          "Conducted undergraduate thesis: 'Measuring Social Value Creation in Colombian B Corps: A Quantitative Analysis Using BIA Data'",
+          "Collected and analysed B Impact Assessment scores for 45 certified Colombian B Corps using Stata regression analysis",
+          "Designed and administered surveys to 25 B Corp founders on impact measurement practices and challenges",
+          "Presented findings at CEDE's annual undergraduate research symposium (awarded Honorable Mention)"
+        ]
+      }
+    ],
+    "skills": {
+      "data_analysis": ["Stata (intermediate)", "Excel/Google Sheets (advanced)", "Google Data Studio", "descriptive statistics", "regression analysis"],
+      "impact": ["B Impact Assessment (research user)", "SDG indicators", "Voluntary National Review", "impact measurement", "Theory of Change (coursework)"],
+      "research": ["survey design", "quantitative analysis", "stakeholder consultation", "report writing"],
+      "languages": ["Spanish (native)", "English (professional — IELTS 7.5)"]
+    },
+    "certifications": [
+      "B Leaders Programme — Sistema B Colombia (2024)",
+      "IELTS Academic — Band 7.5 (2024)"
+    ],
+    "education": [
+      "BA Economics (Economía) — Universidad de los Andes, Bogotá (2021-2025)"
+    ]
+  },
+  "jd_requirements": [
+    "Bachelor's Economics Sociology Environmental Science Business",
+    "1+ years data analysis impact measurement research sustainability",
+    "Excel Google Sheets R Python Stata SPSS",
+    "B Impact Assessment SDGs Theory of Change IRIS+ metrics",
+    "Spanish native English professional",
+    "survey design qualitative research",
+    "GRI SASB ESG reporting Latin America",
+    "Portuguese language"
+  ],
+  "cloud_skills": [
+    "Stata", "Excel", "Google Sheets",
+    "Google Data Studio", "regression analysis",
+    "B Impact Assessment", "SDG indicators",
+    "Voluntary National Review", "impact measurement",
+    "Theory of Change", "survey design",
+    "quantitative analysis", "stakeholder consultation",
+    "report writing", "Spanish native",
+    "English professional", "B Leaders programme"
+  ],
+  "deliberate_flaws": [
+    "No R or Python experience — only Stata (JD lists R, Python, Stata, or SPSS)",
+    "No IRIS+ metrics experience (GIIN's impact measurement system — different from BIA)",
+    "No GRI or SASB experience (SDG framework only)",
+    "No ESG reporting experience",
+    "No Portuguese language skills",
+    "B Impact Assessment experience is as researcher analysing scores, not as assessor reviewing submissions",
+    "No capacity-building or workshop facilitation experience",
+    "No experience with B Lab's internal certification review process",
+    "Internship and research only — no professional full-time experience",
+    "No qualitative research methods beyond basic survey design (JD mentions qualitative methods)",
+    "University of los Andes is elite — may not represent typical B Corp applicant pipeline from diverse backgrounds"
+  ]
+}

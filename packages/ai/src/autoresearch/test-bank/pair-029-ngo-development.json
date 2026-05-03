@@ -1,0 +1,119 @@
+{
+  "id": "pair-029",
+  "split": "validation",
+  "persona": "career_changer",
+  "synthetic": true,
+  "jd_style": "graduate_friendly",
+  "framing": "Management consultant transitioning to programme manager role at international development NGO in Nairobi",
+  "coverage": { "industry": "NGO/Development", "seniority": "mid", "pattern": "career_changer", "region": "africa" },
+  "jd": {
+    "title": "Programme Manager — Digital Health",
+    "company": "PATH",
+    "location": "Nairobi, Kenya",
+    "experience_years": 5,
+    "style_note": "Graduate-friendly/NGO: mission-driven, explains impact, values-based requirements",
+    "about": "PATH is a global nonprofit dedicated to health equity. We're looking for a Programme Manager to lead our East Africa digital health portfolio, working with ministries of health to strengthen health information systems and expand mobile health (mHealth) solutions.",
+    "requirements": [
+      { "text": "5+ years of experience in programme management, health systems strengthening, or digital health implementation in low- and middle-income countries (LMICs)", "type": "must_have" },
+      { "text": "Experience working with government stakeholders (Ministry of Health, county health departments) in East Africa", "type": "must_have" },
+      { "text": "Knowledge of health information systems (DHIS2, OpenMRS, or CommCare)", "type": "must_have" },
+      { "text": "Experience managing donor-funded programmes (USAID, BMGF, Global Fund, or DFID/FCDO)", "type": "must_have" },
+      { "text": "Strong M&E (monitoring and evaluation) skills using logical frameworks and theory of change", "type": "must_have" },
+      { "text": "Experience with budget management for programmes of $2M+ annually", "type": "must_have" },
+      { "text": "Master's degree in Public Health, International Development, or related field", "type": "nice_to_have" },
+      { "text": "Familiarity with WHO digital health guidelines and the Principles for Digital Development", "type": "nice_to_have" },
+      { "text": "Proficiency in Swahili is an advantage", "type": "nice_to_have" }
+    ],
+    "responsibilities": [
+      "Lead implementation of USAID-funded digital health programme across 12 counties in Kenya",
+      "Manage relationships with Kenya Ministry of Health, county health management teams, and implementing partners",
+      "Oversee deployment and scale-up of DHIS2-based health information systems",
+      "Coordinate M&E activities and produce quarterly donor reports",
+      "Manage programme budget (USD 3.2M annually) and sub-grantee financial oversight",
+      "Represent PATH at health sector coordination meetings and donor forums"
+    ]
+  },
+  "expected_output": {
+    "summary": "Management consultant with 7 years at McKinsey's Social Sector Practice transitioning to international development programme management. Led health system strategy engagements for 3 African governments (Kenya, Nigeria, Ethiopia) and the Bill & Melinda Gates Foundation. MPH from Johns Hopkins with thesis on mHealth adoption in East Africa. Seeks to move from advisory to implementation, applying strategy and stakeholder management skills to direct programme delivery.",
+    "experience": [
+      {
+        "company": "McKinsey & Company — Social Sector Practice",
+        "title": "Engagement Manager",
+        "start_date": "2022-06",
+        "end_date": "2025-06",
+        "bullets": [
+          "Led health system strategy engagements for Kenya Ministry of Health (Universal Health Coverage roadmap) and Nigeria Federal Ministry of Health (PHC revitalisation)",
+          "Managed 4-person McKinsey teams across 6-month engagements with government and donor stakeholders",
+          "Developed digital health investment case for BMGF resulting in $15M funding allocation for DHIS2 scale-up across 3 countries",
+          "Designed M&E frameworks for 2 national health programmes using theory of change methodology",
+          "Built financial models and budget scenarios for donor-funded programmes (USAID, BMGF)"
+        ]
+      },
+      {
+        "company": "McKinsey & Company — Social Sector Practice",
+        "title": "Associate",
+        "start_date": "2020-01",
+        "end_date": "2022-05",
+        "bullets": [
+          "Led workstreams on healthcare and public sector engagements across East Africa and Middle East",
+          "Managed day-to-day client relationships with government health officials in Kenya and Ethiopia",
+          "Developed analytical frameworks for Ethiopian health workforce planning study (100+ stakeholder interviews)"
+        ]
+      },
+      {
+        "company": "McKinsey & Company",
+        "title": "Business Analyst",
+        "start_date": "2018-01",
+        "end_date": "2019-12",
+        "bullets": [
+          "Supported healthcare and public sector engagements in East Africa and Middle East as junior team member",
+          "Conducted primary research and stakeholder interviews for health system strategy projects",
+          "Built data models in Excel and Tableau for health system performance dashboards"
+        ]
+      }
+    ],
+    "skills": {
+      "strategy": ["health system strategy", "stakeholder management (government, donors)", "investment case development", "financial modelling", "budget scenario planning"],
+      "health": ["Universal Health Coverage", "primary healthcare", "digital health investment", "DHIS2 (advisory, not hands-on)", "mHealth (research)"],
+      "programme": ["M&E framework design", "theory of change", "logical frameworks", "donor reporting (USAID, BMGF)", "sub-grantee oversight (limited)"],
+      "analytical": ["Excel modelling", "Tableau dashboards", "stakeholder interviews", "qualitative research"]
+    },
+    "certifications": [],
+    "education": [
+      "MPH — Johns Hopkins Bloomberg School of Public Health (2016-2018)",
+      "BA Economics — University of Nairobi (2012-2016)"
+    ]
+  },
+  "jd_requirements": [
+    "5+ years programme management health systems digital health LMICs",
+    "government stakeholders Ministry of Health East Africa",
+    "DHIS2 OpenMRS CommCare health information systems",
+    "donor-funded programmes USAID BMGF Global Fund DFID FCDO",
+    "M&E monitoring evaluation logical frameworks theory of change",
+    "budget management $2M+ annually",
+    "Master's Public Health International Development",
+    "WHO digital health guidelines Principles for Digital Development",
+    "Swahili proficiency"
+  ],
+  "cloud_skills": [
+    "health system strategy", "stakeholder management",
+    "government engagement", "Ministry of Health",
+    "DHIS2", "digital health", "mHealth",
+    "Universal Health Coverage", "primary healthcare",
+    "M&E framework", "theory of change", "logical frameworks",
+    "donor reporting", "USAID", "BMGF",
+    "budget management", "financial modelling",
+    "Excel", "Tableau", "qualitative research",
+    "East Africa", "Kenya", "Nigeria", "Ethiopia"
+  ],
+  "deliberate_flaws": [
+    "No direct programme implementation experience — all advisory/consulting (McKinsey advises, doesn't implement)",
+    "No hands-on DHIS2 experience (advised on investment, never deployed or configured it)",
+    "No CommCare or OpenMRS experience",
+    "No sub-grantee financial management experience (modelled budgets, didn't manage them)",
+    "No USAID compliance experience (FAR, ADS 303, cost principles) — only built budget scenarios",
+    "Career changer — consulting to NGO culture shock (pace, hierarchy, compensation)",
+    "No Swahili proficiency despite being Kenyan (university-educated in English)",
+    "WHO digital health guidelines and Principles for Digital Development — awareness only, not applied"
+  ]
+}

@@ -1,0 +1,119 @@
+{
+  "id": "pair-011",
+  "split": "train",
+  "persona": "returner",
+  "synthetic": true,
+  "framing": "Marketing manager returning after 3-year career break (childcare)",
+  "coverage": { "industry": "IT/Software", "seniority": "mid", "pattern": "returner", "region": "north_america" },
+  "jd": {
+    "title": "Marketing Manager — Growth",
+    "company": "HubSpot",
+    "location": "Boston, MA (Hybrid)",
+    "experience_years": 5,
+    "requirements": [
+      { "text": "5+ years of B2B marketing experience with focus on growth or demand generation", "type": "must_have" },
+      { "text": "Experience managing paid acquisition channels (Google Ads, LinkedIn Ads, Meta)", "type": "must_have" },
+      { "text": "Experience with marketing automation platforms (HubSpot, Marketo, or Pardot)", "type": "must_have" },
+      { "text": "Data-driven approach with experience in marketing analytics and attribution modeling", "type": "must_have" },
+      { "text": "Experience managing marketing budgets of $500K+", "type": "must_have" },
+      { "text": "Content marketing strategy experience (blog, webinars, whitepapers)", "type": "must_have" },
+      { "text": "Experience with SEO and organic growth strategies", "type": "nice_to_have" },
+      { "text": "MBA or degree in Marketing, Business, or related field", "type": "nice_to_have" },
+      { "text": "Experience in SaaS or technology industry", "type": "must_have" },
+      { "text": "Team management experience (3+ direct reports)", "type": "nice_to_have" }
+    ],
+    "responsibilities": [
+      "Develop and execute multi-channel growth marketing strategy to drive qualified leads",
+      "Manage $1.2M annual paid acquisition budget across Google, LinkedIn, and Meta platforms",
+      "Build and optimize lead nurture campaigns using marketing automation",
+      "Analyze campaign performance and provide actionable insights to leadership",
+      "Collaborate with sales team on lead scoring, handoff processes, and pipeline reporting",
+      "Manage team of 2 marketing coordinators and 1 content specialist"
+    ]
+  },
+  "expected_output": {
+    "summary": "B2B Growth Marketing leader with 6 years of SaaS marketing experience at Zendesk and Intercom, returning from a 3-year career break. Managed $800K annual paid acquisition budget generating 2,500+ qualified leads per quarter. Expert in HubSpot marketing automation, Google Ads, and LinkedIn Ads with strong attribution modeling skills. Previously managed team of 4 across demand generation and content marketing.",
+    "experience": [
+      {
+        "company": "Intercom",
+        "title": "Senior Growth Marketing Manager",
+        "start_date": "2019-01",
+        "end_date": "2021-06",
+        "bullets": [
+          "Managed $800K annual paid acquisition budget across Google Ads, LinkedIn Ads, and Meta, generating 2,500+ MQLs per quarter",
+          "Built 15 automated lead nurture campaigns in HubSpot, improving MQL-to-SQL conversion rate by 28%",
+          "Led team of 4 (2 marketing coordinators, 1 content specialist, 1 paid media contractor)",
+          "Developed attribution modeling framework connecting marketing spend to pipeline revenue ($4.2M influenced ARR)",
+          "Launched monthly webinar program (20 webinars over tenure) averaging 350 registrants per session"
+        ]
+      },
+      {
+        "company": "Zendesk",
+        "title": "Growth Marketing Specialist",
+        "start_date": "2016-03",
+        "end_date": "2018-12",
+        "bullets": [
+          "Executed demand generation campaigns for mid-market segment across paid search, email, and content channels",
+          "Managed HubSpot marketing automation including email workflows, landing pages, and lead scoring",
+          "Optimized Google Ads campaigns reducing cost-per-lead by 35% while maintaining lead volume",
+          "Collaborated with sales on lead handoff process and monthly pipeline review meetings"
+        ]
+      },
+      {
+        "company": "Career Break",
+        "title": "Primary Caregiver",
+        "start_date": "2021-07",
+        "end_date": "2024-09",
+        "bullets": [
+          "Maintained industry knowledge through HubSpot Academy certifications and marketing community involvement",
+          "Completed Google Analytics 4 certification and HubSpot Marketing Software certification during break",
+          "Freelanced on 3 small marketing projects (SEO audit, email campaign, landing page design)"
+        ]
+      }
+    ],
+    "skills": {
+      "growth_marketing": ["demand generation", "paid acquisition (Google Ads, LinkedIn Ads, Meta)", "lead nurturing", "marketing automation (HubSpot)", "conversion optimization"],
+      "analytics": ["attribution modeling", "marketing analytics", "Google Analytics 4", "campaign performance analysis", "lead scoring"],
+      "content": ["content marketing strategy", "webinar programs", "landing page optimization", "email marketing", "SEO (basic)"],
+      "leadership": ["team management (4 reports)", "budget management ($800K)", "cross-functional collaboration with sales", "pipeline reporting"]
+    },
+    "certifications": [
+      "HubSpot Marketing Software Certification (renewed 2024)",
+      "Google Analytics 4 Certification (2024)",
+      "Google Ads Search Certification"
+    ],
+    "education": [
+      "BA Marketing — Boston University (2012-2016)"
+    ]
+  },
+  "jd_requirements": [
+    "5+ years B2B marketing growth demand generation",
+    "paid acquisition Google Ads LinkedIn Meta",
+    "marketing automation HubSpot Marketo Pardot",
+    "marketing analytics attribution modeling",
+    "marketing budgets $500K+",
+    "content marketing blog webinars whitepapers",
+    "SEO organic growth strategies",
+    "MBA Marketing Business degree",
+    "SaaS technology industry",
+    "team management 3+ direct reports"
+  ],
+  "cloud_skills": [
+    "demand generation", "paid acquisition", "Google Ads", "LinkedIn Ads", "Meta Ads",
+    "lead nurturing", "HubSpot", "marketing automation",
+    "attribution modeling", "marketing analytics", "Google Analytics 4",
+    "lead scoring", "conversion optimization",
+    "content marketing", "webinar programs", "email marketing",
+    "landing page optimization", "SEO",
+    "team management", "budget management",
+    "pipeline reporting", "sales collaboration"
+  ],
+  "deliberate_flaws": [
+    "3-year career break (2021-2024) — gap in employment",
+    "No Marketo or Pardot experience (only HubSpot)",
+    "No MBA",
+    "Budget $800K vs required $500K+ (meets threshold but JD manages $1.2M)",
+    "SEO skills are basic, not strategic",
+    "Marketing landscape changed significantly during break (GA4, cookie deprecation, AI content)"
+  ]
+}

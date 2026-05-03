@@ -1,0 +1,115 @@
+{
+  "id": "pair-033",
+  "split": "held_out",
+  "persona": "senior",
+  "synthetic": true,
+  "jd_style": "startup_technical",
+  "framing": "Senior powertrain engineer at BMW applying to Rivian's new Germany engineering office",
+  "coverage": { "industry": "Automotive/EV", "seniority": "senior", "pattern": "linear", "region": "europe" },
+  "jd": {
+    "title": "Staff Battery Systems Engineer",
+    "company": "Rivian",
+    "location": "Frankfurt am Main, Germany (On-site)",
+    "experience_years": 8,
+    "style_note": "Startup-technical: specific EV technology, fast-paced, mission-driven, deep technical requirements",
+    "requirements": [
+      { "text": "8+ years of experience in battery systems engineering, battery management systems (BMS), or high-voltage powertrain development", "type": "must_have" },
+      { "text": "Expert knowledge of lithium-ion cell chemistries (NMC, LFP) and cell-to-pack architectures", "type": "must_have" },
+      { "text": "Experience with BMS software development: cell balancing algorithms, SOC/SOH estimation, thermal management", "type": "must_have" },
+      { "text": "Proficiency in MATLAB/Simulink for battery system modelling and HIL/SIL testing", "type": "must_have" },
+      { "text": "Experience with automotive functional safety (ISO 26262) for high-voltage systems", "type": "must_have" },
+      { "text": "Familiarity with CAN/CAN-FD and automotive communication protocols", "type": "must_have" },
+      { "text": "Experience with battery test equipment: Bitrode, Arbin, or Maccor cyclers", "type": "nice_to_have" },
+      { "text": "Knowledge of UN ECE R100 and EU Battery Regulation (2023/1542) compliance", "type": "nice_to_have" },
+      { "text": "Experience with 800V architecture platforms", "type": "nice_to_have" }
+    ],
+    "responsibilities": [
+      "Lead battery pack system design for next-generation Rivian platform (800V architecture)",
+      "Develop and validate BMS algorithms for thermal management, cell balancing, and state estimation",
+      "Collaborate with cell suppliers (Samsung SDI, CATL) on cell characterisation and incoming quality",
+      "Drive FMEA and functional safety analysis (ISO 26262 ASIL-D) for battery system",
+      "Mentor team of 3 battery engineers at Germany engineering office"
+    ]
+  },
+  "expected_output": {
+    "summary": "Powertrain engineer with 10 years of experience at BMW Group, most recently Senior Engineer in the eDrive division working on high-voltage battery systems for the BMW iX and i4 platforms. Deep expertise in 400V battery pack integration, thermal management system design, and MATLAB/Simulink-based powertrain modelling. Experience with ISO 26262 functional safety up to ASIL-C. Led battery pack integration for 2 production vehicle programmes. Seeking transition from OEM to EV-native company.",
+    "experience": [
+      {
+        "company": "BMW Group — Munich",
+        "title": "Senior Engineer — eDrive Battery Systems",
+        "start_date": "2021-01",
+        "end_date": "2025-09",
+        "bullets": [
+          "Led battery pack thermal management system design for BMW iX (Gen5 eDrive, 400V, 111.5 kWh NMC cells)",
+          "Developed MATLAB/Simulink models for battery thermal behaviour validated against dyno test data (>95% correlation)",
+          "Performed FMEA and ISO 26262 functional safety analysis (ASIL-C) for battery disconnect unit and contactors",
+          "Collaborated with Samsung SDI and CATL on cell characterisation, incoming quality specs, and ageing models",
+          "Managed CAN communication interface specifications between BMS and vehicle control units"
+        ]
+      },
+      {
+        "company": "BMW Group — Munich",
+        "title": "Development Engineer — Electric Powertrain (promoted from Junior Engineer, 2018)",
+        "start_date": "2016-01",
+        "end_date": "2020-12",
+        "bullets": [
+          "Supported battery pack integration for BMW i3 facelift (120 Ah cell upgrade) and BMW iX3",
+          "Built HIL test environments for BMS software validation using dSPACE MicroAutoBox",
+          "Conducted high-voltage safety testing according to UN ECE R100 homologation requirements",
+          "Performed battery pack abuse testing (nail penetration, thermal runaway propagation) at BMW's Aschheim test centre",
+          "Completed BMW's internal electric mobility specialist training programme"
+        ]
+      }
+    ],
+    "skills": {
+      "battery_engineering": ["battery pack design (400V)", "thermal management systems", "NMC cell chemistry", "cell characterisation", "ageing models", "cell-to-module architecture"],
+      "tools": ["MATLAB/Simulink", "dSPACE MicroAutoBox (HIL)", "CAN (Vector CANalyzer)", "DOORS (requirements)", "Teamcenter PLM"],
+      "safety": ["ISO 26262 (ASIL-C)", "FMEA", "UN ECE R100 homologation", "high-voltage safety testing", "abuse testing"],
+      "automotive": ["battery pack integration", "powertrain modelling", "CAN communication", "supplier collaboration (Samsung SDI, CATL)", "production vehicle programmes"]
+    },
+    "certifications": [
+      "BMW Certified High-Voltage Specialist (Stufe 3)",
+      "ISO 26262 Functional Safety Professional — TÜV Rheinland (2022)"
+    ],
+    "education": [
+      "MSc Electrical Engineering — Technical University of Munich (TUM) (2013-2015)",
+      "BSc Electrical and Electronic Engineering — Technical University of Munich (TUM) (2010-2013)"
+    ]
+  },
+  "jd_requirements": [
+    "8+ years battery systems BMS high-voltage powertrain",
+    "lithium-ion NMC LFP cell-to-pack architectures",
+    "BMS software cell balancing SOC SOH thermal management",
+    "MATLAB Simulink battery modelling HIL SIL",
+    "ISO 26262 functional safety high-voltage",
+    "CAN CAN-FD automotive communication",
+    "Bitrode Arbin Maccor battery test cyclers",
+    "UN ECE R100 EU Battery Regulation 2023/1542",
+    "800V architecture"
+  ],
+  "cloud_skills": [
+    "battery pack design", "400V architecture",
+    "thermal management", "NMC cell chemistry",
+    "cell characterisation", "ageing models",
+    "MATLAB/Simulink", "dSPACE HIL",
+    "CAN communication", "Vector CANalyzer",
+    "ISO 26262 ASIL-C", "FMEA",
+    "UN ECE R100", "high-voltage safety",
+    "battery abuse testing", "powertrain modelling",
+    "supplier collaboration", "Samsung SDI", "CATL",
+    "production vehicle programmes",
+    "BMW iX", "BMW i4", "BMW i3"
+  ],
+  "deliberate_flaws": [
+    "No 800V architecture experience — BMW iX/i4 are 400V platforms (Rivian wants 800V)",
+    "No LFP cell chemistry experience — BMW uses NMC (JD wants both NMC and LFP knowledge)",
+    "No cell-to-pack (CTP) architecture experience — BMW uses cell-to-module (CTM)",
+    "ISO 26262 experience is ASIL-C, not ASIL-D (JD requires ASIL-D for battery system)",
+    "No BMS software development experience — thermal management system design, not BMS algorithms",
+    "No SOC/SOH estimation algorithm development (used BMW's proprietary BMS, didn't develop algorithms)",
+    "No Bitrode, Arbin, or Maccor cycler experience (used BMW's in-house test equipment)",
+    "No EU Battery Regulation (2023/1542) compliance experience (regulation is newer than his BMW work)",
+    "OEM to startup transition — BMW's structured processes vs Rivian's fast-paced environment",
+    "No SIL testing experience (only HIL with dSPACE)"
+  ]
+}

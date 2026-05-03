@@ -1,0 +1,94 @@
+{
+  "id": "pair-015",
+  "split": "train",
+  "persona": "mid_career",
+  "synthetic": true,
+  "jd_style": "vague_culture_first",
+  "framing": "Backend engineer applying to a vague startup JD with minimal requirements",
+  "coverage": { "industry": "IT/Software", "seniority": "mid", "pattern": "linear", "region": "north_america" },
+  "jd": {
+    "title": "Software Engineer",
+    "company": "Series B Developer Tools Startup",
+    "location": "Remote (US)",
+    "experience_years": null,
+    "requirements": [
+      { "text": "You write clean, well-tested code and care deeply about software craft", "type": "must_have" },
+      { "text": "You've shipped production software used by real users", "type": "must_have" },
+      { "text": "You're comfortable working across the stack when needed", "type": "must_have" },
+      { "text": "You communicate clearly in writing — we're a remote-first team", "type": "must_have" }
+    ],
+    "responsibilities": [
+      "Build and own core platform features end to end",
+      "Work closely with our founding team to shape product direction",
+      "We don't care about your degree or years of experience. We care about what you've built and how you think."
+    ]
+  },
+  "expected_output": {
+    "summary": "Backend-leaning full-stack engineer with 5 years of experience building developer tools and APIs. Most recently at a YC startup shipping CLI tooling and SDK integrations used by 3K+ developers. Comfortable working across the stack, strong async communicator, and experienced in small-team environments where ownership is end-to-end.",
+    "experience": [
+      {
+        "company": "DevKit (YC W22)",
+        "title": "Software Engineer",
+        "start_date": "2022-06",
+        "end_date": "2024-11",
+        "bullets": [
+          "Built and maintained CLI tooling and TypeScript SDK used by 3K+ developer accounts",
+          "Owned end-to-end feature delivery from design doc to production deployment for 8 major releases",
+          "Wrote comprehensive test suites (unit + integration) achieving 90% coverage on core modules",
+          "Authored technical blog posts and SDK documentation read by 15K+ monthly visitors"
+        ]
+      },
+      {
+        "company": "Vercel",
+        "title": "Software Engineer",
+        "start_date": "2020-01",
+        "end_date": "2022-05",
+        "bullets": [
+          "Developed internal platform features for serverless deployment infrastructure",
+          "Contributed to open-source Next.js tooling and developer experience improvements",
+          "Worked in fully remote team across 4 time zones, communicating primarily through written RFCs and async standups"
+        ]
+      },
+      {
+        "company": "Freelance",
+        "title": "Contract Developer",
+        "start_date": "2019-03",
+        "end_date": "2019-12",
+        "bullets": [
+          "Built 3 web applications for small business clients using React and Node.js"
+        ]
+      }
+    ],
+    "skills": {
+      "languages": ["TypeScript", "Go", "Python"],
+      "tools": ["PostgreSQL", "Redis", "Docker", "GitHub Actions", "Vercel"],
+      "practices": ["test-driven development", "async communication", "RFC-driven design", "end-to-end ownership"]
+    },
+    "certifications": [],
+    "education": [
+      "Self-taught — no formal degree"
+    ]
+  },
+  "jd_requirements": [
+    "clean well-tested code software craft",
+    "shipped production software real users",
+    "comfortable across the stack",
+    "clear written communication remote"
+  ],
+  "cloud_skills": [
+    "TypeScript", "Go", "Python", "PostgreSQL", "Redis", "Docker",
+    "React", "Node.js", "Next.js",
+    "CLI tooling", "SDK development", "API design",
+    "test-driven development", "async communication",
+    "RFC-driven design", "end-to-end ownership",
+    "open-source contribution", "technical writing",
+    "serverless infrastructure", "developer experience",
+    "remote-first teamwork"
+  ],
+  "deliberate_flaws": [
+    "No degree — JD says they don't care, but scorecard education check may flag",
+    "Vague JD makes it hard to prove specific requirement coverage",
+    "Short freelance stint with minimal detail",
+    "No leadership/mentoring experience"
+  ]
+}

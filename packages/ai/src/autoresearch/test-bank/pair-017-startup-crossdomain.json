@@ -1,0 +1,107 @@
+{
+  "id": "pair-017",
+  "split": "train",
+  "persona": "career_changer",
+  "synthetic": true,
+  "jd_style": "startup_technical",
+  "framing": "Pharmacist applying to health-tech startup requiring clinical + coding (Layer Health-style JD)",
+  "coverage": { "industry": "Healthcare", "seniority": "mid", "pattern": "career_changer", "region": "north_america" },
+  "jd": {
+    "title": "Clinical Informatician",
+    "company": "Health AI Startup (Series A, MIT/Harvard founders)",
+    "location": "Boston, MA or New York, NY (in-person required)",
+    "experience_years": null,
+    "requirements": [
+      { "text": "Exceptional clinical informatician with significant experience analyzing and redesigning healthcare IT workflows", "type": "must_have" },
+      { "text": "History of successfully launching new products/features in hospital settings (EPIC, Cerner, etc.)", "type": "must_have" },
+      { "text": "Fluency with at least one programming language, preferably Python", "type": "must_have" },
+      { "text": "Beginner to intermediate SQL skills", "type": "must_have" },
+      { "text": "Working knowledge of natural language processing (NLP) methods", "type": "nice_to_have" },
+      { "text": "Understanding of common healthcare standards and ontologies (FHIR, HL7, ICD10, CPT, RxNorm, etc.)", "type": "must_have" },
+      { "text": "MD/DO who has completed primary specialty training, OR PharmD/DNP with clinical informatics fellowship or equivalent work experience", "type": "must_have" },
+      { "text": "Advanced training in clinical informatics through fellowships, post-graduate training, or work experience", "type": "must_have" },
+      { "text": "Willingness to work in-person in Boston or New York City", "type": "must_have" }
+    ],
+    "responsibilities": [
+      "Perform detailed workflow analysis at client hospitals in collaboration with customer success and product teams",
+      "Contribute to an advanced interoperability layer, transforming FHIR, HL7, CCDA, and other data standards",
+      "Participate in data modeling, harmonization, normalization, and transformation efforts",
+      "Work collaboratively across cross-functional teams including engineering/research, customer success, and business",
+      "Create documentation enabling team members to self-serve on informatics topics, workflows, and data sources"
+    ]
+  },
+  "expected_output": {
+    "summary": "Clinical pharmacist with 6 years of hospital pharmacy experience and growing clinical informatics expertise in Boston and New York. PharmD with CPOE and medication safety informatics experience at two major academic medical centers. Self-taught Python and SQL through clinical data projects. Seeking to transition fully into clinical informatics at a health-tech startup.",
+    "experience": [
+      {
+        "company": "Massachusetts General Hospital",
+        "title": "Clinical Pharmacy Informaticist",
+        "start_date": "2022-01",
+        "end_date": "2024-09",
+        "bullets": [
+          "Led redesign of CPOE (Computerized Physician Order Entry) medication alerts in Epic, reducing alert fatigue by 35%",
+          "Built Python scripts to analyze 2 years of medication error data (18K+ incidents) identifying top alert override patterns",
+          "Collaborated with IT team to implement FHIR-based medication reconciliation interface between Epic and pharmacy dispensing system",
+          "Authored clinical decision support rules for 12 high-risk drug interactions, reviewed by P&T committee",
+          "Trained 40+ pharmacists and residents on new Epic medication management workflows"
+        ]
+      },
+      {
+        "company": "Brigham and Women's Hospital",
+        "title": "Clinical Pharmacist — Inpatient",
+        "start_date": "2019-07",
+        "end_date": "2021-12",
+        "bullets": [
+          "Provided clinical pharmacy services on internal medicine and ICU units",
+          "Participated in pharmacy informatics committee developing medication use evaluation criteria",
+          "Used SQL queries on pharmacy data warehouse to generate monthly medication utilization reports",
+          "Completed PGY-2 pharmacy informatics residency (2019-2020)"
+        ]
+      }
+    ],
+    "skills": {
+      "clinical_informatics": ["CPOE optimization", "clinical decision support", "medication safety", "alert fatigue reduction", "workflow analysis"],
+      "technical": ["Python (pandas, data analysis)", "SQL (pharmacy data warehouse)", "Epic EHR", "FHIR interfaces"],
+      "healthcare_standards": ["FHIR", "HL7", "ICD-10", "CPT", "RxNorm", "CCDA (exposure)"],
+      "clinical": ["inpatient pharmacy", "medication reconciliation", "P&T committee", "drug interaction management"]
+    },
+    "certifications": [
+      "PharmD — Licensed Pharmacist (Massachusetts)",
+      "Board Certified Pharmacotherapy Specialist (BCPS)",
+      "Epic Willow (Pharmacy) Certified"
+    ],
+    "education": [
+      "PGY-2 Pharmacy Informatics Residency — Brigham and Women's Hospital (2019-2020)",
+      "PharmD — Northeastern University (2015-2019)"
+    ]
+  },
+  "jd_requirements": [
+    "clinical informatics workflow redesign",
+    "products features hospital settings EPIC Cerner",
+    "programming Python fluency",
+    "SQL beginner intermediate",
+    "NLP natural language processing",
+    "FHIR HL7 ICD10 CPT RxNorm ontologies",
+    "MD DO PharmD clinical training",
+    "clinical informatics fellowship advanced training",
+    "in-person Boston New York"
+  ],
+  "cloud_skills": [
+    "CPOE optimization", "clinical decision support",
+    "medication safety", "alert fatigue reduction",
+    "workflow analysis", "Python", "pandas",
+    "SQL", "Epic EHR", "Epic Willow",
+    "FHIR", "HL7", "ICD-10", "RxNorm",
+    "medication reconciliation", "pharmacy informatics",
+    "clinical data analysis", "staff training",
+    "P&T committee", "drug interactions"
+  ],
+  "deliberate_flaws": [
+    "PharmD not MD/DO — JD prefers MD but lists PharmD as acceptable with informatics fellowship",
+    "Python is self-taught through data projects, not CS-trained",
+    "No NLP experience",
+    "CCDA exposure only, not deep expertise",
+    "SQL skills are intermediate (pharmacy warehouse), not production database",
+    "Career changer — clinical pharmacist moving to startup, culture fit uncertain"
+  ]
+}

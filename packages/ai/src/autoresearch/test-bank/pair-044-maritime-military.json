@@ -1,0 +1,123 @@
+{
+  "id": "pair-044",
+  "split": "held_out",
+  "persona": "military",
+  "synthetic": true,
+  "jd_style": "defense_cleared",
+  "framing": "Royal Navy Warfare Officer transitioning to maritime defence systems role at BAE Systems in Glasgow",
+  "coverage": { "industry": "Maritime/Defence", "seniority": "senior", "pattern": "military_transition", "region": "europe" },
+  "jd": {
+    "title": "Senior Systems Engineer — Naval Combat Systems",
+    "company": "BAE Systems — Naval Ships",
+    "location": "Glasgow, Scotland (Govan Shipyard, SC/DV clearance required)",
+    "experience_years": 10,
+    "style_note": "Defence-cleared: UK security clearance mandatory, specific naval platform experience, MOD procurement context",
+    "requirements": [
+      { "text": "Active SC or DV security clearance (or eligibility to obtain)", "type": "must_have" },
+      { "text": "10+ years of experience in naval combat management systems, platform systems integration, or naval architecture", "type": "must_have" },
+      { "text": "Knowledge of CMS (Combat Management System) architecture: CMS variants used on Type 26, Type 45, or Queen Elizabeth class", "type": "must_have" },
+      { "text": "Experience with naval sensor and weapon system integration (radar, sonar, missile systems, electronic warfare)", "type": "must_have" },
+      { "text": "Understanding of MOD acquisition framework: CADMID lifecycle, DE&S (Defence Equipment & Support) processes", "type": "must_have" },
+      { "text": "Familiarity with Def Stan 00-56 (Safety Management) and Def Stan 00-55 (Safety Critical Software)", "type": "must_have" },
+      { "text": "Experience with MBSE tools (Sparx Enterprise Architect, IBM Rhapsody, or Cameo Systems Modeler)", "type": "nice_to_have" },
+      { "text": "Chartered Engineer (CEng) status with IMarEST or IET", "type": "nice_to_have" }
+    ],
+    "responsibilities": [
+      "Lead combat system integration for Type 26 Global Combat Ship programme",
+      "Develop system requirements and interface specifications for CMS, sensors, and weapons integration",
+      "Coordinate with DE&S Naval Authority on technical assurance and safety case development",
+      "Support factory acceptance testing (FAT) and harbour acceptance testing (HAT) of combat system equipment",
+      "Manage technical interfaces between BAE Systems, Thales UK (sonar), and MBDA (missile systems)"
+    ]
+  },
+  "expected_output": {
+    "summary": "Royal Navy officer (Commander, retiring) with 15 years of warfare and combat systems experience. Currently Principal Warfare Officer on a Type 45 destroyer. Previously served as Combat Systems Engineering Officer on Type 23 frigate and as Flag Lieutenant. Extensive operational experience with BAE Systems CMS, Sea Viper missile system, and Artisan 3D radar. SC cleared. Operational deployments to Gulf, Mediterranean, and Indo-Pacific. Seeking transition to defence industry naval combat systems role.",
+    "experience": [
+      {
+        "company": "Royal Navy — HMS Diamond (Type 45 Destroyer)",
+        "title": "Principal Warfare Officer (Commander, OF-4)",
+        "start_date": "2022-06",
+        "end_date": "2026-06",
+        "bullets": [
+          "Led warfare department (45 personnel) responsible for operation of all combat systems: CMS, Sea Viper (Aster 15/30), Phalanx CIWS, and EW suite",
+          "Directed tactical operations during Indo-Pacific deployment (2023) including air defence exercises with JMSDF and RAN",
+          "Managed combat system readiness and maintenance programme achieving 95% system availability",
+          "Coordinated with BAE Systems and Thales UK on software updates and system defect resolution during refit periods",
+          "Qualified as Anti-Air Warfare Director (AAWD) — Type 45's primary air defence coordination role"
+        ]
+      },
+      {
+        "company": "Royal Navy — HMS Portland (Type 23 Frigate)",
+        "title": "Combat Systems Engineering Officer (Lieutenant Commander, OF-3)",
+        "start_date": "2018-01",
+        "end_date": "2022-05",
+        "bullets": [
+          "Managed combat systems engineering team (18 ratings and 3 officers) for Type 23 frigate's sensor and weapon systems",
+          "Oversaw operation and maintenance of Artisan 3D radar, Sonar 2087 (towed array), and Sea Ceptor missile system",
+          "Led combat system operational testing during major NATO exercise (Joint Warrior 2021)",
+          "Coordinated with HMNB Devonport shore support for combat system deep maintenance and urgent defect repairs"
+        ]
+      },
+      {
+        "company": "Royal Navy — HMS Collingwood (Maritime Warfare School)",
+        "title": "Warfare Training Officer (Lieutenant, OF-2)",
+        "start_date": "2014-09",
+        "end_date": "2017-12",
+        "bullets": [
+          "Delivered Above Water Warfare (AWW) and Electronic Warfare (EW) training to junior warfare officers",
+          "Developed tactical simulation scenarios using BAE Systems Tactical Trainer",
+          "Completed Principal Warfare Officer course at HMS Collingwood"
+        ]
+      }
+    ],
+    "skills": {
+      "combat_systems": ["CMS (BAE Systems)", "Sea Viper (Aster 15/30)", "Sea Ceptor", "Phalanx CIWS", "Artisan 3D radar", "Sonar 2087", "EW suite"],
+      "operational": ["Anti-Air Warfare Director (AAWD)", "tactical operations", "NATO interoperability", "operational readiness", "combat system availability management"],
+      "engineering": ["combat system maintenance", "software defect management", "operational testing", "shore support coordination"],
+      "leadership": ["warfare department management (45 personnel)", "engineering team management (21 staff)", "training delivery", "multi-national exercise coordination"],
+      "clearance": ["SC security clearance (active)"]
+    },
+    "certifications": [
+      "Principal Warfare Officer — Royal Navy (2018)",
+      "Anti-Air Warfare Director (AAWD) — Royal Navy (2023)",
+      "NEBOSH General Certificate — Occupational Health and Safety (2021)"
+    ],
+    "education": [
+      "BEng Marine Engineering — Britannia Royal Naval College / University of Plymouth (2009-2012)",
+      "MA Defence Studies — King's College London (distance learning, 2019-2021)"
+    ]
+  },
+  "jd_requirements": [
+    "SC DV security clearance",
+    "10+ years naval combat management platform integration naval architecture",
+    "CMS combat management system Type 26 Type 45 Queen Elizabeth",
+    "sensor weapon system radar sonar missile electronic warfare integration",
+    "MOD acquisition CADMID DE&S Defence Equipment Support",
+    "Def Stan 00-56 safety management Def Stan 00-55 safety critical software",
+    "MBSE Sparx Enterprise Architect IBM Rhapsody Cameo",
+    "CEng IMarEST IET Chartered Engineer"
+  ],
+  "cloud_skills": [
+    "CMS BAE Systems", "Sea Viper Aster", "Sea Ceptor",
+    "Phalanx CIWS", "Artisan 3D radar", "Sonar 2087",
+    "electronic warfare", "Anti-Air Warfare Director",
+    "tactical operations", "NATO interoperability",
+    "combat system maintenance", "operational testing",
+    "SC clearance", "Type 45", "Type 23",
+    "warfare department management",
+    "multi-national exercises", "Joint Warrior"
+  ],
+  "deliberate_flaws": [
+    "No Type 26 experience — served on Type 45 and Type 23 (Type 26 is the programme being recruited for)",
+    "No CADMID or DE&S acquisition experience — operational Navy, not MOD procurement",
+    "No Def Stan 00-56 or Def Stan 00-55 experience (used systems, didn't develop safety cases)",
+    "No MBSE tools experience (Sparx EA, Rhapsody, Cameo) — operational user, not systems engineer",
+    "No CEng status — military career didn't include professional engineering registration",
+    "No systems requirements development or ICD authoring experience",
+    "No factory acceptance or harbour acceptance testing from the contractor side",
+    "Military to industry transition — different working culture, commercial vs operational mindset",
+    "No experience managing technical interfaces between prime contractors and sub-system suppliers",
+    "Warfare Officer background, not engineering branch — deep operational knowledge but limited formal systems engineering methodology",
+    "No naval architecture knowledge (JD mentions it as alternative experience path)"
+  ]
+}

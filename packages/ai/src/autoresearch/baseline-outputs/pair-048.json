@@ -1,0 +1,51 @@
+{
+  "summary": "Digital banking executive with 18 years at Standard Chartered Bank, currently Managing Director and Head of Digital Channels for ASEAN and South Asia. Led digital transformation serving 8M retail customers across 8 markets. Manages SGD 85M P&L and a cross-functional team of 180 spanning product, engineering, and UX. Drove the launch of Standard Chartered's mobile app refresh and the nexus open banking API platform enabling fintech partnerships across Singapore and Hong Kong. Strong regulatory experience with MAS Technology Risk Management (TRM) Guidelines. Seeking a senior digital banking leadership role at a top-tier ASEAN bank.",
+  "experience": [
+    {
+      "company": "Standard Chartered Bank — Singapore",
+      "title": "Managing Director — Head of Digital Channels, ASEAN & South Asia",
+      "start_date": "2020-01",
+      "end_date": "2025-12",
+      "bullets": [
+        "Led digital banking strategy for 8M retail customers across Singapore, Hong Kong, India, Malaysia, Indonesia, Thailand, Vietnam, and UAE",
+        "Managed cross-functional team of 180 (product managers, engineers, UX designers, data analysts) with P&L responsibility of SGD 85M",
+        "Launched SC Mobile app refresh (2022) featuring redesigned onboarding, biometric authentication, and integrated investment platform — achieving 35% increase in monthly active users",
+        "Delivered nexus open banking API platform enabling 15 fintech partnerships including PayNow, SGQR, and FPS Hong Kong integrations",
+        "Ensured compliance with MAS Technology Risk Management (TRM) Guidelines across all digital banking initiatives"
+      ]
+    },
+    {
+      "company": "Standard Chartered Bank — Singapore",
+      "title": "Director — Digital Products, Consumer Banking",
+      "start_date": "2015-06",
+      "end_date": "2019-12",
+      "bullets": [
+        "Led product development for SC Mobile (Singapore) and the online banking platform across 5 ASEAN markets",
+        "Managed integration with Finacle core banking system (Infosys) for real-time balance enquiries, fund transfers, and credit card servicing",
+        "Delivered PayNow (FAST) integration enabling instant P2P transfers and SGQR merchant payment capabilities",
+        "Built digital credit card acquisition funnel that achieved 60% of new card applications via mobile channel"
+      ]
+    },
+    {
+      "company": "Standard Chartered Bank — London / Mumbai",
+      "title": "Vice President — Internet Banking (promoted from AVP, 2012)",
+      "start_date": "2008-03",
+      "end_date": "2015-05",
+      "bullets": [
+        "Managed internet banking platform serving 3M users for India retail banking operations",
+        "Led migration from legacy internet banking system to responsive web platform",
+        "Supported Group Technology on core banking evaluation including Temenos T24 pilot for Africa markets"
+      ]
+    }
+  ],
+  "skills": {
+    "digital_banking": ["mobile banking app strategy", "open banking APIs", "digital onboarding", "biometric authentication", "digital acquisition funnels"],
+    "leadership": ["P&L management (SGD 85M)", "team management (180 staff)", "fintech partnerships", "board reporting", "regulatory engagement"],
+    "platforms": ["Finacle (Infosys) core banking", "Temenos T24 (evaluation)", "PayNow/FAST", "SGQR", "FPS Hong Kong"],
+    "regulatory": ["MAS TRM Guidelines", "MAS BCM Guidelines", "MAS outsourcing guidelines"],
+    "markets": ["Singapore", "Hong Kong", "India", "Malaysia", "Indonesia", "Thailand", "Vietnam", "UAE"]
+  },
+  "certifications": [
+    "IBF Certified — Technology and Operations, Institute of Banking and Finance Singapore (2021)"
+  ]
+}

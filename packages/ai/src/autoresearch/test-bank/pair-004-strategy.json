@@ -1,0 +1,143 @@
+{
+  "id": "pair-004",
+  "split": "validation",
+  "persona": "military",
+  "source_cv": "Alpha_CVs/Resume of BE_Jan26.pdf",
+  "framing": "Strategy & Defense Programs Manager",
+  "sensitivity": {
+    "platform_names": {
+      "JF-17 Thunder": "Lead Fighter Aircraft Program",
+      "SAAB 2000 Erieye AEW&C": "Airborne Early Warning & Control Fleet",
+      "Crotale SHORAD": "Short-Range Air Defense System"
+    },
+    "recommendation": "sanitize_for_generic_employers",
+    "region_aware": true,
+    "note": "Defense/ME employers: keep real names. Generic corporate: use sanitized versions. Always ask user."
+  },
+  "jd": {
+    "title": "Director of Strategy — Defense & Aerospace Programs",
+    "company": "EDGE Group",
+    "location": "Abu Dhabi, UAE",
+    "experience_years": 15,
+    "requirements": [
+      { "text": "15+ years in defense or aerospace industry with progressive leadership", "type": "must_have" },
+      { "text": "Experience with international defense cooperation programs", "type": "must_have" },
+      { "text": "Track record in defense export strategy and market development", "type": "must_have" },
+      { "text": "Knowledge of fighter aircraft or advanced weapons programs", "type": "must_have" },
+      { "text": "Experience building partnerships between defense OEMs and national air forces", "type": "must_have" },
+      { "text": "Understanding of defense procurement cycles and offset programs", "type": "nice_to_have" },
+      { "text": "MS or higher in Engineering, MBA, or related field", "type": "nice_to_have" },
+      { "text": "PMI-ACP, PMP, or equivalent certification", "type": "nice_to_have" },
+      { "text": "Experience with technology transfer and indigenous capability development", "type": "must_have" },
+      { "text": "Executive-level stakeholder management across government and industry", "type": "must_have" }
+    ],
+    "responsibilities": [
+      "Develop defense program strategy for fighter aircraft and advanced systems portfolio",
+      "Lead business development for international defense cooperation programs",
+      "Build and maintain strategic partnerships with OEMs, air forces, and defense ministries",
+      "Assess technology transfer opportunities and indigenous capability development",
+      "Coordinate with senior military and government stakeholders",
+      "Present strategic recommendations to executive leadership"
+    ]
+  },
+  "expected_output": {
+    "summary": "Defense strategy and programs leader with 16+ years in Pakistan Air Force spanning JF-17 Thunder joint development (China), SAAB 2000 Erieye AEW&C fleet programs (Sweden), and indigenous capability building at PAC Kamra. Unique combination of hands-on systems engineering, senior PMO leadership, international technology transfer experience, and export program coordination across 11+ countries. Bridges technical depth with strategic program vision.",
+    "experience": [
+      {
+        "company": "Pakistan Air Force — PMO JF-17",
+        "title": "Deputy Director, Program Management Office — JF-17 Aircraft",
+        "start_date": "2022-09",
+        "end_date": "2023-12",
+        "bullets": [
+          "Led strategic oversight of JF-17 Thunder program including production, modification, and export coordination",
+          "Managed export variant coordination for international customers (Myanmar, Nigeria, and 9+ prospect nations)",
+          "Directed engineering change management and technology evolution roadmap for Block III development",
+          "Represented PAF in program reviews with CADI and international stakeholders"
+        ]
+      },
+      {
+        "company": "AVIC/CADI Chengdu",
+        "title": "Aerospace Systems Integration Lead",
+        "start_date": "2017-11",
+        "end_date": "2019-12",
+        "bullets": [
+          "Led Pakistan's engineering team at CADI for JF-17 Block III development — key technology transfer program",
+          "Managed indigenous capability development: mission computer, EW suite replacing legacy foreign components",
+          "Bridged cross-cultural partnership between PAF and Chinese aerospace industry",
+          "Supported strategic decisions on make-vs-buy for avionics subsystems"
+        ]
+      },
+      {
+        "company": "Pakistan Air Force — PMO AEW&C",
+        "title": "PMO Officer, AEW&C Aircraft",
+        "start_date": "2023-12",
+        "end_date": "2024-07",
+        "bullets": [
+          "Managed SAAB 2000 Erieye AEW&C fleet sustainment strategy and vendor relationships with SAAB (Sweden)",
+          "Coordinated obsolescence management and system upgrade programs for 9-aircraft fleet"
+        ]
+      },
+      {
+        "company": "Pakistan Air Force — PMO JF-17",
+        "title": "Assistant Director, Program Management Office — JF-17 Aircraft",
+        "start_date": "2020-01",
+        "end_date": "2021-04",
+        "bullets": [
+          "Coordinated program strategy between CADI (OEM), PAC Kamra (manufacturing), and operational squadrons",
+          "Managed configuration and technology baseline decisions for indigenous systems integration"
+        ]
+      },
+      {
+        "company": "Pakistan Aeronautical Complex (PAC) Kamra",
+        "title": "Integrated Systems & Design Specialist",
+        "start_date": "2008-10",
+        "end_date": "2013-10",
+        "bullets": [
+          "Built foundational aerospace engineering expertise through hands-on avionics integration",
+          "Contributed to indigenous manufacturing capability for military aircraft platforms"
+        ]
+      }
+    ],
+    "skills": {
+      "strategy": ["defense program strategy", "export market development", "technology transfer", "indigenous capability building", "make-vs-buy analysis"],
+      "partnerships": ["international OEM partnerships (CADI, SAAB)", "government-to-government coordination", "cross-cultural collaboration (China, Sweden)", "executive stakeholder management"],
+      "programs": ["fighter aircraft programs (JF-17 Thunder)", "AEW&C programs (SAAB Erieye)", "defense acquisition lifecycle", "engineering change management"],
+      "leadership": ["senior PMO leadership", "cross-functional team direction", "program reviews", "strategic planning"]
+    },
+    "certifications": [
+      "PMI-ACP — Project Management Institute",
+      "Google Project Management Professional Certificate",
+      "Engineering Project Management Specialization — Rice University"
+    ],
+    "education": [
+      "MS Avionics Engineering — Air University (2013-2015)",
+      "BE Avionics Engineering — College of Aeronautical Engineering, PAF (2004-2008)"
+    ]
+  },
+  "jd_requirements": [
+    "15+ years defense aerospace progressive leadership",
+    "international defense cooperation programs",
+    "defense export strategy market development",
+    "fighter aircraft advanced weapons programs",
+    "partnerships defense OEMs national air forces",
+    "defense procurement offset programs",
+    "MS Engineering MBA",
+    "PMI-ACP PMP certification",
+    "technology transfer indigenous capability",
+    "executive stakeholder management government industry"
+  ],
+  "cloud_skills": [
+    "avionics design", "systems integration", "V&V testing", "configuration management",
+    "aircraft maintenance engineering", "operational readiness", "fault diagnosis",
+    "maintenance planning", "team leadership", "radar systems", "C4ISR", "SAAB 2000 Erieye",
+    "weapons integration", "flight testing", "mission computer", "EW systems", "JF-17 Thunder",
+    "program management", "defense acquisition", "budget management", "risk management",
+    "milestone tracking", "engineering change management", "production oversight",
+    "export coordination", "stakeholder coordination", "CADI coordination",
+    "field operations", "weapons systems", "SAM systems", "Crotale",
+    "fleet sustainment", "international vendor management", "logistics coordination",
+    "academic quality assurance", "systems engineering instruction",
+    "cross-cultural collaboration", "PMI-ACP", "Agile/Scrum",
+    "glass cockpit", "aircraft modification", "technical documentation"
+  ]
+}

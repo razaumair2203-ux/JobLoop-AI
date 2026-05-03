@@ -1,0 +1,36 @@
+{
+  "summary": "Full-stack software engineer with 6 years of experience building and shipping production web applications for startups and small businesses. Built 15+ client projects using Next.js, TypeScript, PostgreSQL, and Vercel. Created RentTrack, a SaaS lease management platform for property managers that grew to 200 paying users before being acqui-hired by a competitor. Former software engineer at Opendoor working on property valuation tools. Comfortable owning the entire stack from database schema design to deployment pipelines.",
+  "experience": [
+    {
+      "company": "Self-Employed — Full-Stack Development",
+      "title": "Freelance Software Engineer",
+      "start_date": "2021-06",
+      "end_date": "2025-09",
+      "bullets": [
+        "Shipped 15+ production web applications for startup clients using Next.js, TypeScript, PostgreSQL, and Vercel",
+        "Built RentTrack, a SaaS lease management and maintenance request tool for small landlords using Next.js, Supabase, and Stripe — grew to 200 paying users",
+        "Negotiated acqui-hire of RentTrack by a competitor in 2024, integrating the codebase and transitioning users over a 3-month period",
+        "Designed database schemas, built REST APIs, implemented authentication (Supabase Auth, NextAuth), and managed deployments across Vercel and Railway",
+        "Scoped and delivered fixed-price client projects ranging from $5K to $40K, managing end-to-end client relationships"
+      ]
+    },
+    {
+      "company": "Opendoor",
+      "title": "Software Engineer",
+      "start_date": "2019-03",
+      "end_date": "2021-05",
+      "bullets": [
+        "Built internal tools for the property valuation pipeline using React, Node.js, and PostgreSQL",
+        "Developed automated comparable property analysis feature processing 50K+ listings daily",
+        "Participated in on-call rotation for production systems serving 15K+ monthly home offers"
+      ]
+    }
+  ],
+  "skills": {
+    "frontend": ["Next.js", "React", "TypeScript", "Tailwind CSS"],
+    "backend": ["Node.js", "PostgreSQL", "Supabase", "REST APIs", "Stripe integration"],
+    "infrastructure": ["Vercel", "Railway", "GitHub Actions CI/CD", "Docker"],
+    "product": ["full-stack ownership", "database schema design", "auth implementation", "SaaS product development"]
+  },
+  "certifications": []
+}

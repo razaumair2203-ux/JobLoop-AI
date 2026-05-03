@@ -1,0 +1,40 @@
+{
+  "summary": "Registered Nurse with 7 years of hands-on clinical experience seeking to transition into Clinical Informatics. Combines deep understanding of patient care workflows and care coordination with developing technical skills in data analysis, EHR optimization, and clinical process improvement. Spearheaded unit-level quality initiatives that reduced medication errors by 22%. Currently pursuing Health Informatics certificate with Epic EHR project experience.",
+  "experience": [
+    {
+      "company": "Stanford Health Care",
+      "title": "Clinical Nurse II — Medical-Surgical Unit",
+      "start_date": "2020-06",
+      "end_date": "2024-08",
+      "bullets": [
+        "Provided direct patient care on a 36-bed medical-surgical unit, utilizing Epic EHR for documentation, ordering, and care coordination",
+        "Led unit-level quality improvement initiative that reduced medication administration errors by 22% through clinical workflow redesign",
+        "Served as designated Epic super-user, troubleshooting EHR issues and training 15 nursing staff on new Epic module rollouts",
+        "Analyzed patient flow data in Excel to identify discharge bottlenecks, resulting in a 40-minute reduction in average discharge time",
+        "Collaborated with IT department on Epic upgrade testing, providing clinical validation for order set changes"
+      ]
+    },
+    {
+      "company": "Sutter Health",
+      "title": "Registered Nurse — Emergency Department",
+      "start_date": "2017-09",
+      "end_date": "2020-05",
+      "bullets": [
+        "Managed patient care in a high-acuity emergency department (Level II trauma center, 60K annual visits)",
+        "Documented clinical assessments and interventions using Cerner EHR system",
+        "Participated in department-wide process improvement initiatives to optimize patient throughput"
+      ]
+    }
+  ],
+  "skills": {
+    "clinical": ["patient care", "care coordination", "clinical assessment", "medication administration", "quality improvement"],
+    "informatics": ["Epic EHR (super-user)", "Cerner EHR", "clinical workflow analysis", "EHR optimization", "end-user training"],
+    "technical": ["Excel (pivot tables, VLOOKUP)", "data analysis", "clinical dashboards", "EHR report building"],
+    "communication": ["clinical-IT liaison", "staff training", "process documentation", "stakeholder communication"]
+  },
+  "certifications": [
+    "Registered Nurse (RN) — California Board of Registered Nursing",
+    "BLS/ACLS Certified",
+    "Epic EHR Proficiency (super-user designation)"
+  ]
+}

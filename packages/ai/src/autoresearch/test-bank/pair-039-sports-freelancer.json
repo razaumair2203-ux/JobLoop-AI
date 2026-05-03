@@ -1,0 +1,103 @@
+{
+  "id": "pair-039",
+  "split": "validation",
+  "persona": "freelancer",
+  "synthetic": true,
+  "jd_style": "vague_culture_first",
+  "framing": "Freelance sports data analyst applying to head of analytics at MLS club",
+  "coverage": { "industry": "Sports/Athletics", "seniority": "mid", "pattern": "freelancer", "region": "north_america" },
+  "jd": {
+    "title": "Head of Football Analytics",
+    "company": "Inter Miami CF",
+    "location": "Fort Lauderdale, FL",
+    "experience_years": 5,
+    "style_note": "Vague/culture-first: passion for the game, light on technical specifics, relationships-focused",
+    "requirements": [
+      { "text": "You live and breathe football — you watch matches not just for enjoyment but to understand tactical patterns and player tendencies", "type": "must_have" },
+      { "text": "5+ years working with football/soccer data in a professional capacity (club, agency, media, or data provider)", "type": "must_have" },
+      { "text": "You can build models and visualisations that help coaches and scouts make better decisions", "type": "must_have" },
+      { "text": "You're comfortable presenting insights to football people, not just data people", "type": "must_have" },
+      { "text": "Bonus: experience with tracking data (Second Spectrum, SkillCorner, or Metrica Sports)", "type": "nice_to_have" },
+      { "text": "Bonus: experience working inside a professional football club", "type": "nice_to_have" },
+      { "text": "Bonus: Spanish language skills", "type": "nice_to_have" }
+    ],
+    "responsibilities": [
+      "Build and lead the analytics department for Inter Miami's first team and academy",
+      "Develop player recruitment models and opposition scouting reports using event and tracking data",
+      "Collaborate with coaching staff to deliver match preparation and post-match analysis",
+      "Manage relationships with data providers (Stats Perform/Opta, Second Spectrum)",
+      "Present analytical findings to sporting director, head coach, and ownership group"
+    ]
+  },
+  "expected_output": {
+    "summary": "Freelance football data analyst with 6 years of experience building analytics tools and player evaluation models for professional clubs and agencies. Clients include 3 MLS clubs, 2 Championship (EFL) clubs, and 1 football agency. Built xG model used by 4 clubs for player recruitment. Published football analytics newsletter with 8,000 subscribers. Proficient in Python (pandas, scikit-learn), R (ggplot2), and Tableau. Former semi-professional footballer (USL League Two). No experience in full-time club analytics role.",
+    "experience": [
+      {
+        "company": "Self-Employed — Football Analytics Consulting",
+        "title": "Freelance Football Data Analyst",
+        "start_date": "2020-06",
+        "end_date": "2026-01",
+        "bullets": [
+          "Built custom expected goals (xG) and expected threat (xT) models for 4 professional clubs using StatsBomb Open Data and Opta event data",
+          "Delivered player recruitment shortlists for 3 MLS clubs using data-driven filtering and similarity models (Python, scikit-learn)",
+          "Created opposition scouting report templates in Tableau used by 2 EFL Championship coaching staffs",
+          "Built automated match report pipeline (Python) processing Opta event data into coaching-friendly PDF reports",
+          "Published weekly 'The xG Files' newsletter analysing MLS tactical trends — 8,000 subscribers"
+        ]
+      },
+      {
+        "company": "Stats Perform (Opta)",
+        "title": "Junior Data Analyst — Football",
+        "start_date": "2018-08",
+        "end_date": "2020-05",
+        "bullets": [
+          "Coded live match events for MLS and USL Championship matches using Opta's proprietary coding platform",
+          "Performed data quality assurance on coded match event data (passes, shots, tackles) across 200+ matches",
+          "Supported client-facing analytics team with custom data extracts and visualisations for MLS club clients",
+          "Learned football analytics domain: expected goals, passing networks, pressing intensity, possession value models"
+        ]
+      }
+    ],
+    "skills": {
+      "analytics": ["expected goals (xG) modelling", "expected threat (xT)", "player similarity models", "player recruitment analytics", "opposition scouting reports"],
+      "technical": ["Python (pandas, scikit-learn, matplotlib)", "R (ggplot2)", "Tableau", "SQL (PostgreSQL)", "StatsBomb API", "Opta data feeds"],
+      "football": ["tactical analysis", "match coding (Opta)", "MLS analytics", "EFL Championship", "live event coding", "coaching staff presentations"],
+      "business": ["freelance client management", "newsletter publishing", "data visualisation for non-technical audiences"]
+    },
+    "certifications": [],
+    "education": [
+      "BSBA Sport Business Management — University of Central Florida (2014-2018)"
+    ]
+  },
+  "jd_requirements": [
+    "football soccer data 5+ years professional club agency media data provider",
+    "models visualisations coaches scouts decisions",
+    "presenting insights football people not data people",
+    "tracking data Second Spectrum SkillCorner Metrica Sports",
+    "professional football club experience",
+    "Spanish language skills"
+  ],
+  "cloud_skills": [
+    "expected goals xG", "expected threat xT",
+    "player similarity models", "player recruitment analytics",
+    "opposition scouting", "tactical analysis",
+    "Python pandas scikit-learn", "R ggplot2",
+    "Tableau", "SQL PostgreSQL",
+    "StatsBomb API", "Opta data feeds",
+    "match coding", "MLS analytics",
+    "coaching staff presentations",
+    "newsletter publishing", "data visualisation"
+  ],
+  "deliberate_flaws": [
+    "No tracking data experience (Second Spectrum, SkillCorner, Metrica Sports) — only event data (Opta/StatsBomb)",
+    "Never worked inside a professional football club full-time (freelancer, always external)",
+    "No experience building or leading an analytics department (solo freelancer)",
+    "No Spanish language skills (Inter Miami has significant Spanish-speaking staff)",
+    "No academy analytics experience",
+    "No experience managing data provider relationships from the club side (was the provider at Opta)",
+    "No video analysis platform experience (Hudl Sportscode, Wyscout, InStat) — only data-driven, not video-driven",
+    "Freelancer — no experience with club politics, dressing room dynamics, or daily coaching staff interaction",
+    "Sports Management degree, not data science or statistics — technical skills are self-taught",
+    "MLS and EFL Championship experience — no top-5 European league analytics experience"
+  ]
+}

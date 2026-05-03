@@ -1,0 +1,47 @@
+{
+  "summary": "Recent Statistics graduate from the University of Toronto with hands-on internship experience in data analytics and business intelligence. Skilled in SQL, Python, and Tableau with demonstrated ability to build executive-level dashboards and perform data-driven analyses. Capstone research involved analyzing 2M+ retail transactions using statistical methods including regression and clustering. Experienced presenting analytical findings to non-technical audiences.",
+  "experience": [
+    {
+      "company": "RBC Royal Bank",
+      "title": "Data Analytics Intern",
+      "start_date": "2024-05",
+      "end_date": "2024-08",
+      "bullets": [
+        "Developed 4 Tableau dashboards to track customer acquisition KPIs for the retail banking division",
+        "Wrote SQL queries to extract and transform data from 3 source systems including Oracle and PostgreSQL",
+        "Conducted cohort analysis that identified a 15% drop-off in mobile banking activation, informing a UX redesign initiative",
+        "Delivered weekly analytics presentations to senior manager and marketing analytics team of 6"
+      ]
+    },
+    {
+      "company": "University of Toronto — Statistics Department",
+      "title": "Research Assistant",
+      "start_date": "2023-09",
+      "end_date": "2024-04",
+      "bullets": [
+        "Performed analysis on 2M+ retail transaction records using Python (pandas, scikit-learn) for capstone research",
+        "Applied regression analysis and K-means clustering to uncover customer segmentation patterns",
+        "Designed data visualizations in matplotlib and Tableau to support thesis defense presentation"
+      ]
+    },
+    {
+      "company": "Student Data Club — University of Toronto",
+      "title": "VP Analytics",
+      "start_date": "2023-01",
+      "end_date": "2024-04",
+      "bullets": [
+        "Organized 12 workshops on SQL and Python fundamentals for 80+ undergraduate students",
+        "Led a team of 5 students in a campus-wide survey data analysis project"
+      ]
+    }
+  ],
+  "skills": {
+    "programming": ["Python (pandas, scikit-learn, matplotlib)", "SQL (PostgreSQL, Oracle)", "R (coursework)"],
+    "analytics": ["regression analysis", "hypothesis testing", "cohort analysis", "K-means clustering", "customer segmentation"],
+    "visualization": ["Tableau", "Excel (pivot tables, VLOOKUP, charts)", "matplotlib"],
+    "communication": ["stakeholder presentations", "dashboard reporting", "technical writing", "data documentation"]
+  },
+  "certifications": [
+    "Google Data Analytics Professional Certificate"
+  ]
+}

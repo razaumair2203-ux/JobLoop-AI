@@ -1,0 +1,113 @@
+{
+  "id": "pair-012",
+  "split": "held_out",
+  "persona": "laid_off",
+  "synthetic": true,
+  "framing": "Product Manager laid off in tech downsizing, seeking similar role quickly",
+  "coverage": { "industry": "IT/Software", "seniority": "mid", "pattern": "laid_off", "region": "north_america" },
+  "jd": {
+    "title": "Senior Product Manager — Platform",
+    "company": "Datadog",
+    "location": "New York, NY (Hybrid)",
+    "experience_years": 6,
+    "requirements": [
+      { "text": "6+ years of product management experience in B2B SaaS or developer tools", "type": "must_have" },
+      { "text": "Experience defining product strategy and roadmaps for platform or infrastructure products", "type": "must_have" },
+      { "text": "Strong technical background — ability to engage deeply with engineering on API design and architecture", "type": "must_have" },
+      { "text": "Experience with data-driven product decisions (experimentation, cohort analysis, funnel metrics)", "type": "must_have" },
+      { "text": "Experience managing products used by developers or technical users", "type": "must_have" },
+      { "text": "Track record of launching products that achieved measurable business impact", "type": "must_have" },
+      { "text": "Experience with observability, monitoring, or cloud infrastructure products", "type": "nice_to_have" },
+      { "text": "CS degree or equivalent technical background", "type": "nice_to_have" },
+      { "text": "Experience with PLG (product-led growth) motions", "type": "nice_to_have" },
+      { "text": "Excellent written communication for PRDs, strategy docs, and stakeholder alignment", "type": "must_have" }
+    ],
+    "responsibilities": [
+      "Define product vision, strategy, and roadmap for platform API products",
+      "Partner with engineering to design APIs, define technical requirements, and ship high-quality features",
+      "Drive product launches end-to-end including go-to-market coordination with sales and marketing",
+      "Analyze product usage data to identify opportunities, measure impact, and prioritize features",
+      "Write detailed PRDs and specifications that enable engineering execution",
+      "Present product strategy and results to VP Product and executive stakeholders"
+    ]
+  },
+  "expected_output": {
+    "summary": "Product Manager with 7 years of B2B SaaS experience at Twilio and Atlassian, specializing in developer platform and API products. Led API platform team at Twilio shipping features adopted by 15K+ developer accounts. CS background with hands-on technical depth in API design, experimentation frameworks, and PLG growth motions. Recently impacted by workforce reduction; seeking senior PM role in developer tools or platform products.",
+    "experience": [
+      {
+        "company": "Twilio",
+        "title": "Senior Product Manager — Communications Platform",
+        "start_date": "2021-04",
+        "end_date": "2024-10",
+        "bullets": [
+          "Owned product strategy and roadmap for Twilio's Programmable Messaging API serving 15K+ developer accounts",
+          "Launched 3 major API features (Conversations API v2, Content Templates, Delivery Insights) driving $8M incremental ARR",
+          "Designed experimentation framework for API adoption; ran 12 A/B tests on onboarding flows improving day-7 activation by 22%",
+          "Partnered with engineering team of 14 to define API contracts, rate limiting strategy, and backward compatibility policies",
+          "Wrote product strategy documents and quarterly business reviews for VP Product and CTO"
+        ]
+      },
+      {
+        "company": "Atlassian",
+        "title": "Product Manager — Jira Platform",
+        "start_date": "2018-06",
+        "end_date": "2021-03",
+        "bullets": [
+          "Managed Jira REST API and webhook products used by 5K+ marketplace app developers",
+          "Led PLG initiative for Jira Cloud free tier, contributing to 40% increase in self-serve signups",
+          "Defined and tracked platform health metrics (API latency P95, error rates, developer NPS)",
+          "Coordinated cross-team dependencies across 4 squads for quarterly platform releases"
+        ]
+      },
+      {
+        "company": "Microsoft",
+        "title": "Program Manager Intern",
+        "start_date": "2017-05",
+        "end_date": "2017-08",
+        "bullets": [
+          "Contributed to Azure DevOps feature planning and user research for CI/CD pipeline experience"
+        ]
+      }
+    ],
+    "skills": {
+      "product_management": ["product strategy", "roadmap planning", "PRD writing", "stakeholder alignment", "product launches", "go-to-market"],
+      "technical": ["API design", "developer platforms", "experimentation/A/B testing", "cohort analysis", "funnel metrics", "PLG growth"],
+      "domain": ["B2B SaaS", "developer tools", "communications APIs", "project management tools", "cloud infrastructure"],
+      "leadership": ["cross-team coordination", "engineering partnership", "executive presentations", "quarterly business reviews"]
+    },
+    "certifications": [],
+    "education": [
+      "BS Computer Science — University of Michigan (2014-2018)"
+    ]
+  },
+  "jd_requirements": [
+    "6+ years product management B2B SaaS developer tools",
+    "product strategy roadmaps platform infrastructure",
+    "technical background API design architecture",
+    "data-driven experimentation cohort analysis funnel",
+    "developer technical user products",
+    "product launches measurable business impact",
+    "observability monitoring cloud infrastructure",
+    "CS degree technical background",
+    "PLG product-led growth",
+    "written communication PRDs strategy docs"
+  ],
+  "cloud_skills": [
+    "product strategy", "roadmap planning", "PRD writing",
+    "stakeholder alignment", "product launches", "go-to-market",
+    "API design", "developer platforms", "A/B testing",
+    "cohort analysis", "funnel metrics", "PLG growth",
+    "B2B SaaS", "developer tools", "communications APIs",
+    "cross-team coordination", "engineering partnership",
+    "executive presentations", "quarterly business reviews",
+    "experimentation frameworks", "onboarding optimization",
+    "Jira", "REST APIs", "webhooks", "Azure DevOps"
+  ],
+  "deliberate_flaws": [
+    "Laid off from Twilio (workforce reduction) — gap since Oct 2024",
+    "No observability/monitoring experience (communications, not infra)",
+    "No certifications",
+    "Intern experience is very thin (1 bullet)",
+    "PLG experience is indirect (Jira free tier, not core PLG product)"
+  ]
+}

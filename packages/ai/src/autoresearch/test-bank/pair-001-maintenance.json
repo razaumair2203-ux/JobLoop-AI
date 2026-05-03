@@ -1,0 +1,134 @@
+{
+  "id": "pair-001",
+  "split": "train",
+  "persona": "military",
+  "source_cv": "Alpha_CVs/Resume KSA-ME_JAN25.pdf",
+  "framing": "Senior Avionics & Maintenance Supervisor",
+  "sensitivity": {
+    "platform_names": {
+      "JF-17 Thunder": "Lead Fighter Aircraft Program",
+      "SAAB 2000 Erieye AEW&C": "Airborne Early Warning & Control Fleet",
+      "Crotale SHORAD": "Short-Range Air Defense System"
+    },
+    "recommendation": "sanitize_for_generic_employers",
+    "region_aware": true,
+    "note": "Defense/ME employers: keep real names. Generic corporate: use sanitized versions. Always ask user."
+  },
+  "jd": {
+    "title": "Senior Avionics Maintenance Manager",
+    "company": "Embraer Defense & Security",
+    "location": "Riyadh, Saudi Arabia",
+    "experience_years": 12,
+    "requirements": [
+      { "text": "12+ years experience in military or commercial avionics maintenance and sustainment", "type": "must_have" },
+      { "text": "Demonstrated experience managing aircraft maintenance operations for multi-aircraft fleets (5+ aircraft)", "type": "must_have" },
+      { "text": "Hands-on experience with AEW&C, ISR, or surveillance aircraft avionics and mission systems", "type": "must_have" },
+      { "text": "Experience supervising and mentoring maintenance engineering teams (10+ personnel)", "type": "must_have" },
+      { "text": "Knowledge of short-range air defense (SHORAD) or ground-based weapons systems maintenance", "type": "nice_to_have" },
+      { "text": "MS or higher in Avionics, Electrical, Aerospace, or Systems Engineering", "type": "must_have" },
+      { "text": "Proficiency in maintenance planning, scheduling, and fleet availability KPI management", "type": "must_have" },
+      { "text": "Experience coordinating with international OEMs for spares, technical data, and field support", "type": "must_have" },
+      { "text": "Knowledge of military airworthiness standards and compliance documentation (MIL-STD, EASA Part-145 or equivalent)", "type": "must_have" },
+      { "text": "Familiarity with IETM/IETP electronic technical manuals or AMOS/SAP maintenance management systems", "type": "nice_to_have" },
+      { "text": "PMP, PMI-ACP, or equivalent project management certification", "type": "nice_to_have" }
+    ],
+    "responsibilities": [
+      "Lead all avionics maintenance operations for a fleet of surveillance/AEW aircraft ensuring mission readiness targets",
+      "Develop and manage preventive/corrective maintenance schedules, including deep maintenance staggering plans",
+      "Coordinate with OEM field service representatives for technical support, warranty claims, and spare parts provisioning",
+      "Track and report fleet readiness metrics (Mission Capable Rate, Aircraft Availability) to program leadership",
+      "Develop maintenance training programs and competency assessments for avionics engineering staff",
+      "Ensure compliance with airworthiness directives, service bulletins, and safety standards",
+      "Manage maintenance documentation, configuration records, and technical library systems",
+      "Support fleet modification and upgrade programs in coordination with engineering teams"
+    ]
+  },
+  "expected_output": {
+    "summary": "Senior Avionics & Maintenance professional with 16+ years of Pakistan Air Force experience managing maintenance operations for SAAB 2000 Erieye AEW&C and JF-17 Thunder aircraft. Proven track record in fleet readiness management, field engineering command, and international OEM coordination with SAAB (Sweden) and CADI (China). MS Avionics Engineering with hands-on expertise across radar systems, air defense weapons, and aircraft modification programs.",
+    "experience": [
+      {
+        "company": "Pakistan Air Force — AEW&C Squadron",
+        "title": "Maintenance Support Engineer, AEW&C Aircraft",
+        "start_date": "2015-12",
+        "end_date": "2017-11",
+        "bullets": [
+          "Managed maintenance engineering for SAAB 2000 Erieye AEW&C fleet (9 aircraft) including radar, mission systems, and airframe",
+          "Ensured operational readiness through maintenance scheduling, staggering, and resource allocation for multi-aircraft fleet",
+          "Performed technical fault diagnosis and coordinated component repair/replacement activities",
+          "Led maintenance teams for field operations, ensuring aircraft availability for surveillance missions"
+        ]
+      },
+      {
+        "company": "Pakistan Air Force — Field Unit",
+        "title": "Senior Engineering Officer, Crotale Weapons System",
+        "start_date": "2021-04",
+        "end_date": "2022-09",
+        "bullets": [
+          "Commanded engineering operations for Crotale short-range air defense weapons system",
+          "Managed operational readiness of SAM battery including launcher, radar, fire control, and missile systems",
+          "Led field maintenance teams responsible for weapons system availability during operational deployments",
+          "Coordinated maintenance staggering and resource allocation across multiple system components"
+        ]
+      },
+      {
+        "company": "Pakistan Air Force — PMO AEW&C",
+        "title": "PMO Officer, AEW&C Aircraft",
+        "start_date": "2023-12",
+        "end_date": "2024-07",
+        "bullets": [
+          "Managed program activities for SAAB 2000 Erieye AEW&C fleet sustainment (9 aircraft)",
+          "Coordinated maintenance contracts, spare parts logistics, and system upgrade programs with SAAB (Sweden)",
+          "Tracked fleet availability metrics and mission readiness reporting"
+        ]
+      },
+      {
+        "company": "Pakistan Aeronautical Complex (PAC) Kamra",
+        "title": "Integrated Systems & Design Specialist",
+        "start_date": "2008-10",
+        "end_date": "2013-10",
+        "bullets": [
+          "Designed and integrated avionics subsystems for military aircraft platforms",
+          "Performed system-level testing, verification, and validation of integrated avionics suites",
+          "Supported production line engineering for avionics installation and wiring harness integration"
+        ]
+      }
+    ],
+    "skills": {
+      "maintenance": ["fleet maintenance management", "maintenance planning & staggering", "fault diagnosis", "airworthiness compliance", "operational readiness"],
+      "systems": ["avionics systems", "radar systems", "C4ISR", "air defense (Crotale SHORAD)", "SAAB 2000 Erieye AEW&C"],
+      "management": ["team leadership (15+ personnel)", "OEM coordination (SAAB, CADI)", "KPI tracking", "resource management"],
+      "tools": ["maintenance documentation systems", "configuration management"]
+    },
+    "certifications": [
+      "PMI-ACP — Project Management Institute",
+      "Google Project Management Professional Certificate",
+      "Engineering Project Management Specialization — Rice University"
+    ],
+    "education": [
+      "MS Avionics Engineering — Air University (2013-2015)",
+      "BE Avionics Engineering — College of Aeronautical Engineering, PAF (2004-2008)"
+    ]
+  },
+  "jd_requirements": [
+    "12+ years avionics maintenance",
+    "AEW&C or ISR aircraft",
+    "maintenance team management 15+",
+    "air defense weapons systems",
+    "SAAB radar systems",
+    "MS Avionics Engineering",
+    "fleet availability KPI tracking",
+    "maintenance planning staggering",
+    "international OEM coordination",
+    "airworthiness compliance"
+  ],
+  "cloud_skills": [
+    "avionics design", "systems integration", "V&V testing", "configuration management",
+    "aircraft maintenance engineering", "operational readiness", "fault diagnosis",
+    "maintenance planning", "team leadership", "radar systems", "C4ISR", "SAAB 2000 Erieye",
+    "weapons integration", "flight testing", "mission computer", "EW systems", "JF-17 Thunder",
+    "program management", "defense acquisition", "budget management",
+    "field operations", "weapons systems", "SAM systems", "Crotale",
+    "fleet sustainment", "international vendor management", "logistics coordination",
+    "academic quality assurance", "systems engineering instruction"
+  ]
+}

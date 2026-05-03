@@ -1,0 +1,1326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JobLoop AI — Final Approach: Socratic Engine + Outcome Intelligence + AutoResearch</title>
+<style>
+  :root {
+    --bg: #0a0a0f;
+    --surface: #12121a;
+    --surface-2: #1a1a25;
+    --surface-3: #22222f;
+    --border: #2a2a3a;
+    --text: #e4e4ef;
+    --text-muted: #8888a0;
+    --text-dim: #555568;
+    --emerald: #34d399;
+    --emerald-dim: #134e3a;
+    --sky: #38bdf8;
+    --sky-dim: #0c3d5e;
+    --amber: #fbbf24;
+    --amber-dim: #5c4a0a;
+    --red: #f87171;
+    --red-dim: #5c1a1a;
+    --purple: #a78bfa;
+    --purple-dim: #3b2d6e;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    padding: 40px 20px;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  h1 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    background: linear-gradient(135deg, var(--emerald), var(--sky));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .subtitle {
+    color: var(--text-muted);
+    font-size: 14px;
+    margin-bottom: 48px;
+  }
+
+  h2 {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 48px 0 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 32px 0 12px;
+    color: var(--sky);
+  }
+
+  h4 {
+    font-size: 15px;
+    font-weight: 600;
+    margin: 20px 0 8px;
+    color: var(--text);
+  }
+
+  p, li { font-size: 14px; margin-bottom: 8px; }
+  ul { padding-left: 20px; margin-bottom: 16px; }
+
+  /* Flow Diagram Styles */
+  .flow-diagram {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 32px;
+    margin: 24px 0;
+    overflow-x: auto;
+  }
+
+  .flow-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin: 16px 0;
+    flex-wrap: wrap;
+  }
+
+  .flow-node {
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px 20px;
+    text-align: center;
+    font-size: 13px;
+    min-width: 160px;
+    position: relative;
+  }
+
+  .flow-node.primary {
+    border-color: var(--emerald);
+    background: var(--emerald-dim);
+  }
+
+  .flow-node.action {
+    border-color: var(--sky);
+    background: var(--sky-dim);
+  }
+
+  .flow-node.warning {
+    border-color: var(--amber);
+    background: var(--amber-dim);
+  }
+
+  .flow-node.danger {
+    border-color: var(--red);
+    background: var(--red-dim);
+  }
+
+  .flow-node.purple {
+    border-color: var(--purple);
+    background: var(--purple-dim);
+  }
+
+  .flow-node.wide { min-width: 280px; }
+  .flow-node.narrow { min-width: 120px; }
+
+  .flow-node .label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+  }
+
+  .flow-node .title {
+    font-weight: 600;
+    font-size: 14px;
+  }
+
+  .flow-node .detail {
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-top: 4px;
+  }
+
+  .flow-arrow {
+    font-size: 20px;
+    color: var(--text-dim);
+    flex-shrink: 0;
+  }
+
+  .flow-arrow-down {
+    text-align: center;
+    font-size: 20px;
+    color: var(--text-dim);
+    margin: 8px 0;
+  }
+
+  .flow-label {
+    font-size: 11px;
+    color: var(--text-muted);
+    text-align: center;
+    font-style: italic;
+  }
+
+  /* Comparison Tables */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0;
+    font-size: 13px;
+  }
+
+  th {
+    background: var(--surface-2);
+    padding: 10px 14px;
+    text-align: left;
+    font-weight: 600;
+    border-bottom: 2px solid var(--border);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-muted);
+  }
+
+  td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+
+  tr:hover { background: var(--surface); }
+
+  .tag {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 600;
+  }
+
+  .tag-green { background: var(--emerald-dim); color: var(--emerald); }
+  .tag-blue { background: var(--sky-dim); color: var(--sky); }
+  .tag-amber { background: var(--amber-dim); color: var(--amber); }
+  .tag-red { background: var(--red-dim); color: var(--red); }
+  .tag-purple { background: var(--purple-dim); color: var(--purple); }
+
+  /* Card Grid */
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 16px;
+    margin: 20px 0;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px;
+  }
+
+  .card-header {
+    font-weight: 600;
+    font-size: 15px;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .card p { font-size: 13px; color: var(--text-muted); }
+
+  /* Section Dividers */
+  .section-divider {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 56px 0 32px;
+  }
+
+  .section-divider::before,
+  .section-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  .section-divider span {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--text-muted);
+    white-space: nowrap;
+  }
+
+  /* Correction Callouts */
+  .correction {
+    background: var(--red-dim);
+    border-left: 3px solid var(--red);
+    padding: 16px 20px;
+    border-radius: 0 8px 8px 0;
+    margin: 16px 0;
+  }
+
+  .correction .label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--red);
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+
+  .insight {
+    background: var(--emerald-dim);
+    border-left: 3px solid var(--emerald);
+    padding: 16px 20px;
+    border-radius: 0 8px 8px 0;
+    margin: 16px 0;
+  }
+
+  .insight .label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--emerald);
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+
+  .research {
+    background: var(--sky-dim);
+    border-left: 3px solid var(--sky);
+    padding: 16px 20px;
+    border-radius: 0 8px 8px 0;
+    margin: 16px 0;
+  }
+
+  .research .label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--sky);
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+
+  /* Persona Cards */
+  .persona-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 12px;
+    margin: 20px 0;
+  }
+
+  .persona-card {
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 14px;
+  }
+
+  .persona-card .name {
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 4px;
+  }
+
+  .persona-card .signal {
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+  }
+
+  .persona-card .approach {
+    font-size: 12px;
+    color: var(--text);
+  }
+
+  /* Big Number */
+  .stat-row {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin: 20px 0;
+  }
+
+  .stat-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px 20px;
+    flex: 1;
+    min-width: 140px;
+    text-align: center;
+  }
+
+  .stat-box .number {
+    font-size: 28px;
+    font-weight: 700;
+  }
+
+  .stat-box .desc {
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-top: 4px;
+  }
+
+  /* Timeline */
+  .timeline {
+    position: relative;
+    margin: 20px 0 20px 20px;
+    padding-left: 24px;
+    border-left: 2px solid var(--border);
+  }
+
+  .timeline-item {
+    position: relative;
+    margin-bottom: 20px;
+  }
+
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -29px;
+    top: 6px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--sky);
+    border: 2px solid var(--bg);
+  }
+
+  .timeline-item .time {
+    font-size: 12px;
+    color: var(--sky);
+    font-weight: 600;
+    margin-bottom: 2px;
+  }
+
+  .timeline-item .content {
+    font-size: 13px;
+    color: var(--text-muted);
+  }
+
+  /* Separator */
+  .wall {
+    background: var(--surface-3);
+    border: 2px dashed var(--red);
+    border-radius: 8px;
+    padding: 12px 20px;
+    text-align: center;
+    margin: 16px 0;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--red);
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>JobLoop AI — Final Approach</h1>
+<p class="subtitle">Socratic Engine + Outcome Intelligence + AutoResearch | Research-validated, corrected for fabrications | April 2026</p>
+
+<!-- ============================================================ -->
+<div class="section-divider"><span>The Big Picture</span></div>
+
+<h2>Three Systems, Two Boundaries</h2>
+<p>JobLoop has three systems that people confuse. They are separate. They serve different purposes. They have a hard privacy wall between them.</p>
+
+<div class="flow-diagram">
+  <div class="flow-row">
+    <div class="flow-node primary wide">
+      <div class="label">System 1</div>
+      <div class="title">Socratic Engine</div>
+      <div class="detail">Asks user questions &rarr; fills Cloud with evidence</div>
+    </div>
+    <div class="flow-arrow">&rarr;</div>
+    <div class="flow-node action wide">
+      <div class="label">The Cloud</div>
+      <div class="title">Living Profile Cloud</div>
+      <div class="detail">Per-user evidence database (skills, metrics, projects)</div>
+    </div>
+    <div class="flow-arrow">&rarr;</div>
+    <div class="flow-node purple wide">
+      <div class="label">Output</div>
+      <div class="title">CV Generation + Analysis</div>
+      <div class="detail">Uses Cloud evidence to create tailored CVs</div>
+    </div>
+  </div>
+
+  <div class="flow-arrow-down">&darr; user applies to jobs</div>
+
+  <div class="flow-row">
+    <div class="flow-node warning wide">
+      <div class="label">System 2</div>
+      <div class="title">Outcome Intelligence (v3)</div>
+      <div class="detail">Application memory: outcome feedback enriches Cloud &rarr; smarter CV gen over time<br>Per-user niche profiles. Same company recall. Gap accumulation.</div>
+    </div>
+  </div>
+
+  <div class="wall">PRIVACY WALL &mdash; User data never crosses this boundary</div>
+
+  <div class="flow-row">
+    <div class="flow-node danger wide">
+      <div class="label">System 3</div>
+      <div class="title">AutoResearch Loop</div>
+      <div class="detail">Optimizes prompts on OUR test bank (50 synthetic profiles)<br>No user data. Ever. Better prompts ship to all users equally.</div>
+    </div>
+  </div>
+</div>
+
+<div class="insight">
+  <div class="label">Key Insight</div>
+  Systems 1 &amp; 2 run on USER data (private, per-user). System 3 runs on OUR data (synthetic test bank). Cross-user aggregate learning was researched and REJECTED (Simpson's Paradox, 100K+ outcomes needed, bias amplification). Per-user contextual memory is the correct approach.
+</div>
+
+<!-- ============================================================ -->
+<div class="section-divider"><span>System 1: Socratic Engine</span></div>
+
+<h2>What It Actually Is</h2>
+<p>A <strong>structured data collection system</strong> with an LLM as the conversational interface. NOT an AI that gets wiser. NOT a chatbot. The intelligence is in the <strong>architecture</strong> (what to ask, when to stop), not the prompt phrasing.</p>
+
+<div class="card-grid">
+  <div class="card">
+    <div class="card-header" style="color: var(--emerald)">Architecture Matters Most</div>
+    <p>Which signal is missing? Ask about it. Has the user already answered? Don't ask again. 3-5 questions max? Stop. This is if/else logic, not AI magic.</p>
+  </div>
+  <div class="card">
+    <div class="card-header" style="color: var(--sky)">Data Accumulation, Not Learning</div>
+    <p>The engine doesn't get "smarter." The Cloud gets more data. Application #1 needs 5 questions because the Cloud is empty. Application #15 needs 0 because the Cloud is full.</p>
+  </div>
+  <div class="card">
+    <div class="card-header" style="color: var(--amber)">LLM Is the Interface Layer</div>
+    <p>The LLM makes questions conversational instead of form fields. The phrasing matters, but a decent prompt is 90% of the way there. Nightly optimization adds marginal value.</p>
+  </div>
+</div>
+
+<h3>The 3-Gate System</h3>
+
+<div class="research">
+  <div class="label">Research Basis</div>
+  Conversion decreases 7% per additional required field. &gt;7 fields = 50% higher bounce rate vs 3 fields. Best practice: 3 questions maximum per interaction. (Form Abandonment Statistics 2026)
+</div>
+
+<div class="flow-diagram">
+  <h4 style="text-align:center; margin-bottom: 20px;">When Does the Socratic Engine Wake Up?</h4>
+
+  <!-- Gate 1 -->
+  <div class="flow-row">
+    <div class="flow-node primary wide">
+      <div class="label">Trigger</div>
+      <div class="title">CV Uploaded</div>
+    </div>
+    <div class="flow-arrow">&rarr;</div>
+    <div class="flow-node action wide">
+      <div class="label">Action</div>
+      <div class="title">Parse CV &rarr; Build Cloud</div>
+      <div class="detail">Classify evidence types, extract signals</div>
+    </div>
+    <div class="flow-arrow">&rarr;</div>
+    <div class="flow-node warning wide">
+      <div class="label">Gate 1</div>
+      <div class="title">3-5 Questions</div>
+      <div class="detail">Target: self-declared skills + missing metrics<br>Stop: after 5 OR user skips 2 in a row</div>
+    </div>
+  </div>
+
+  <div class="flow-arrow-down">&darr; Cloud now has base evidence</div>
+
+  <!-- Gate 2 -->
+  <div class="flow-row">
+    <div class="flow-node primary wide">
+      <div class="label">Trigger</div>
+      <div class="title">JD Pasted/Analyzed</div>
+    </div>
+    <div class="flow-arrow">&rarr;</div>
+    <div class="flow-node action wide">
+      <div class="label">Action</div>
+      <div class="title">Stream Analysis</div>
+      <div class="detail">Compare JD requirements vs Cloud evidence</div>
+    </div>
+    <div class="flow-arrow">&rarr;</div>
+    <div class="flow-node warning wide">
+      <div class="label">Gate 2 (AFTER analysis)</div>
+      <div class="title">2-3 Questions</div>
+      <div class="detail">Target: JD-critical skills where Cloud is thin<br>Only if enrichment would change the result</div>
+    </div>
+  </div>
+
+  <div class="flow-arrow-down">&darr; answer updates Cloud &rarr; analysis re-evaluates in real-time</div>
+
+  <!-- Gate 3 -->
+  <div class="flow-row">
+    <div class="flow-node primary wide">
+      <div class="label">Trigger</div>
+      <div class="title">User Clicks [Strengthen &rarr;]</div>
+    </div>
+    <div class="flow-arrow">&rarr;</div>
+    <div class="flow-node warning wide">
+      <div class="label">Gate 3 (User-Initiated)</div>
+      <div class="title">Unlimited Questions</div>
+      <div class="detail">Deep dive on one specific evidence item<br>User chose to be here &mdash; no budget limit</div>
+    </div>
+  </div>
+</div>
+
+<h3>Question Generation Logic</h3>
+<p>Not AI magic. Priority-based template selection:</p>
+
+<div class="flow-diagram">
+  <h4 style="text-align:center; margin-bottom: 20px;">Decision Tree: What to Ask</h4>
+
+  <div class="flow-row">
+    <div class="flow-node danger">
+      <div class="title">Skill has NO evidence?</div>
+      <div class="detail">(self-declared only)</div>
+    </div>
+    <div class="flow-arrow">&rarr; YES &rarr;</div>
+    <div class="flow-node primary">
+      <div class="title">Ask: "Describe a project"</div>
+      <div class="detail">"You list [skill]. Can you describe a specific project where you used it?"</div>
+    </div>
+  </div>
+
+  <div class="flow-label">&darr; NO (has some evidence)</div>
+
+  <div class="flow-row">
+    <div class="flow-node warning">
+      <div class="title">Has evidence but NO outcome?</div>
+      <div class="detail">(no metrics, no result)</div>
+    </div>
+    <div class="flow-arrow">&rarr; YES &rarr;</div>
+    <div class="flow-node primary">
+      <div class="title">Ask: "What changed?"</div>
+      <div class="detail">"You [evidence]. What changed as a result? Any measurable outcome?"</div>
+    </div>
+  </div>
+
+  <div class="flow-label">&darr; NO (has outcome)</div>
+
+  <div class="flow-row">
+    <div class="flow-node action">
+      <div class="title">Has outcome but NO scope?</div>
+      <div class="detail">(no team size, no scale)</div>
+    </div>
+    <div class="flow-arrow">&rarr; YES &rarr;</div>
+    <div class="flow-node primary">
+      <div class="title">Ask: "Solo or team?"</div>
+      <div class="detail">"Was this solo or team? How many people?"</div>
+    </div>
+  </div>
+
+  <div class="flow-label">&darr; NO (has outcome + scope)</div>
+
+  <div class="flow-row">
+    <div class="flow-node primary" style="border-color: var(--emerald);">
+      <div class="title">Skill is sufficiently evidenced</div>
+      <div class="detail">Don't ask. Move to next skill or stop.</div>
+    </div>
+  </div>
+</div>
+
+<h3>The "I Don't Have Metrics" Path</h3>
+
+<div class="flow-diagram">
+  <div class="flow-row">
+    <div class="flow-node warning">
+      <div class="title">User: "I don't have metrics"</div>
+    </div>
+    <div class="flow-arrow">&rarr;</div>
+    <div class="flow-node action wide">
+      <div class="title">Pivot to Qualitative Evidence</div>
+      <div class="detail">
+        "No problem. Can you describe:"<br>
+        &bull; SCOPE: how many people/systems?<br>
+        &bull; OUTCOME: what changed?<br>
+        &bull; RECOGNITION: feedback, promotion?
+      </div>
+    </div>
+    <div class="flow-arrow">&rarr;</div>
+    <div class="flow-node primary">
+      <div class="title">Can still reach "Strong"</div>
+      <div class="detail">Qualitative-but-specific evidence<br>reaches medium-high specificity</div>
+    </div>
+  </div>
+</div>
+
+<div class="insight">
+  <div class="label">Key Decision</div>
+  has_outcome is the most important signal. "What changed because of your work?" is always answerable, even without numbers. HR, design, support, admin roles can all reach Strong confidence.
+</div>
+
+<h3>7 Persona Framings</h3>
+<p>Same logic, different words. Persona detection is automatic from CV analysis.</p>
+
+<div class="persona-grid">
+  <div class="persona-card">
+    <div class="name" style="color: var(--emerald)">Veteran</div>
+    <div class="signal">Single employer &gt;10yr + military keywords</div>
+    <div class="approach">Ask about TYPE not details (classified). Translate rank &rarr; leadership. Security clearances = Tier 1 evidence.</div>
+  </div>
+  <div class="persona-card">
+    <div class="name" style="color: var(--sky)">Recent Graduate</div>
+    <div class="signal">Education only, no work experience</div>
+    <div class="approach">"Let's find what you DO have." Capstone &gt; internship &gt; coursework &gt; projects. Never make them feel inadequate.</div>
+  </div>
+  <div class="persona-card">
+    <div class="name" style="color: var(--amber)">Career Changer</div>
+    <div class="signal">Different industries across roles</div>
+    <div class="approach">Previous domain = valuable. Probe transferable tools. Don't ask about target domain experience.</div>
+  </div>
+  <div class="persona-card">
+    <div class="name" style="color: var(--purple)">Freelancer</div>
+    <div class="signal">Many short engagements, varied clients</div>
+    <div class="approach">Ask for top 3-5 projects, not all 50. Aggregate stats are valid. Client names + portfolio if possible.</div>
+  </div>
+  <div class="persona-card">
+    <div class="name" style="color: var(--red)">Executive</div>
+    <div class="signal">VP/Director/C-level titles</div>
+    <div class="approach">Ask about scope/budget/team, not technical details. Before/after states. Business outcomes.</div>
+  </div>
+  <div class="persona-card">
+    <div class="name" style="color: var(--emerald)">Returner</div>
+    <div class="signal">Timeline gap &gt;1 year</div>
+    <div class="approach">Don't ask WHY they took a break. Pre-gap strength + during-gap activity. Domain knowledge doesn't decay.</div>
+  </div>
+  <div class="persona-card">
+    <div class="name" style="color: var(--sky)">Long Tenure</div>
+    <div class="signal">Single employer &gt;10yr (non-military)</div>
+    <div class="approach">Role progression within org. Internal transfers count. Depth = strength, not limitation.</div>
+  </div>
+</div>
+
+<h3>Answer Parsing &amp; Contradiction Handling</h3>
+
+<div class="flow-diagram">
+  <div class="flow-row">
+    <div class="flow-node action">
+      <div class="title">User Answers</div>
+    </div>
+    <div class="flow-arrow">&rarr;</div>
+    <div class="flow-node purple">
+      <div class="title">LLM Parser</div>
+      <div class="detail">Extract structured signals<br>from natural language</div>
+    </div>
+    <div class="flow-arrow">&rarr;</div>
+    <div class="flow-node narrow" style="border-color: var(--text-dim);">
+      <div class="title">Confidence?</div>
+    </div>
+  </div>
+
+  <div style="display: flex; justify-content: center; gap: 40px; margin-top: 16px; flex-wrap: wrap;">
+    <div>
+      <div class="flow-arrow-down" style="color: var(--emerald);">&darr; HIGH</div>
+      <div class="flow-node primary" style="margin: 0 auto;">
+        <div class="title">Update Cloud Directly</div>
+        <div class="detail">"Got it. Stored: [summary]"</div>
+      </div>
+    </div>
+    <div>
+      <div class="flow-arrow-down" style="color: var(--amber);">&darr; MEDIUM</div>
+      <div class="flow-node warning" style="margin: 0 auto;">
+        <div class="title">Show &amp; Confirm</div>
+        <div class="detail">"I captured: [X]. Right?"<br>User confirms or corrects</div>
+      </div>
+    </div>
+    <div>
+      <div class="flow-arrow-down" style="color: var(--red);">&darr; LOW</div>
+      <div class="flow-node danger" style="margin: 0 auto;">
+        <div class="title">Store Raw Text Only</div>
+        <div class="detail">"Saved your answer."<br>Flag for re-review later</div>
+      </div>
+    </div>
+    <div>
+      <div class="flow-arrow-down" style="color: var(--purple);">&darr; CONTRADICTION</div>
+      <div class="flow-node purple" style="margin: 0 auto;">
+        <div class="title">Ask User to Resolve</div>
+        <div class="detail">"CV says X, you said Y.<br>Which should we use?"</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="correction">
+  <div class="label">What Parser Must NOT Do</div>
+  <ul style="margin-top: 8px;">
+    <li><strong>Never hallucinate numbers</strong> &mdash; "large team" &rarr; has_team_scope: true, NOT team_size: 50</li>
+    <li><strong>Never rewrite user's words</strong> &mdash; preserve original phrasing</li>
+    <li><strong>Never auto-resolve contradictions</strong> &mdash; always ask user</li>
+    <li><strong>Never claim verification</strong> &mdash; we describe, never vouch for truth</li>
+  </ul>
+</div>
+
+<h3>The Quieting Mechanism</h3>
+<p>Not AI getting smarter. Database getting fuller.</p>
+
+<div class="timeline">
+  <div class="timeline-item">
+    <div class="time">Application #1</div>
+    <div class="content">Cloud empty &rarr; 5-8 questions (Gate 1 + Gate 2). Building the foundation.</div>
+  </div>
+  <div class="timeline-item">
+    <div class="time">Application #3</div>
+    <div class="content">Cloud has core skills &rarr; 1-2 questions (new gaps only for this specific JD).</div>
+  </div>
+  <div class="timeline-item">
+    <div class="time">Application #8</div>
+    <div class="content">Cloud rich for this domain &rarr; 0-1 questions. System message: "Your evidence covers this role well."</div>
+  </div>
+  <div class="timeline-item">
+    <div class="time">Application #15</div>
+    <div class="content">Cloud covers all requirements &rarr; "No questions needed." Unless genuinely novel skill appears.</div>
+  </div>
+  <div class="timeline-item">
+    <div class="time">Application #30 (new domain)</div>
+    <div class="content">User shifts from fintech to healthtech &rarr; questions resume for new domain skills only. Core skills still covered.</div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<div class="section-divider"><span>System 2: Outcome Intelligence</span></div>
+
+<h2>What It Actually Is (v3)</h2>
+<p>A <strong>per-user application memory system</strong> that enriches the Living Profile Cloud through outcome feedback, enabling smarter CV generation over time. NOT a dashboard showing rejection counts. NOT cross-user learning.</p>
+
+<div class="insight">
+  <div class="label">Key Innovation</div>
+  The Cloud gets smarter about what matters in each niche &mdash; for THIS user, from THEIR outcomes. When the user reports "they liked my data pipeline work but wanted more K8s," the system parses this, enriches the Cloud, and silently uses it in future CV generation for similar roles. Zero competitors do this.
+</div>
+
+<h3>The 8-Step Loop</h3>
+
+<div class="flow-diagram">
+  <h4 style="text-align:center; margin-bottom: 20px;">Application Memory System</h4>
+
+  <div class="flow-row">
+    <div class="flow-node primary">
+      <div class="label">Step 1</div>
+      <div class="title">JD Analyzed</div>
+      <div class="detail">Footprint created automatically<br>JD + match analysis + strategies</div>
+    </div>
+    <div class="flow-arrow">&rarr;</div>
+    <div class="flow-node action">
+      <div class="label">Step 2</div>
+      <div class="title">CV + Letter Generated</div>
+      <div class="detail">Stored in footprint<br>Cloud snapshot saved</div>
+    </div>
+    <div class="flow-arrow">&rarr;</div>
+    <div class="flow-node" style="border-color: var(--text-dim);">
+      <div class="label">Step 3</div>
+      <div class="title">User Applies</div>
+      <div class="detail">Status: Pending<br>Shown on dashboard</div>
+    </div>
+  </div>
+
+  <div class="flow-arrow-down">&darr; time passes</div>
+
+  <div class="flow-row">
+    <div class="flow-node warning">
+      <div class="label">Step 4</div>
+      <div class="title">Outcome Update</div>
+      <div class="detail">Dropdown: Callback / Interview /<br>Offer / Rejected / Ghosted</div>
+    </div>
+    <div class="flow-arrow">&rarr;</div>
+    <div class="flow-node purple">
+      <div class="label">Step 5 (optional)</div>
+      <div class="title">"Anything worth noting?"</div>
+      <div class="detail">Free text: "They liked my data<br>pipeline work but wanted more K8s"</div>
+    </div>
+    <div class="flow-arrow">&rarr;</div>
+    <div class="flow-node action">
+      <div class="label">Step 6</div>
+      <div class="title">Haiku Parses Feedback</div>
+      <div class="detail">1 API call ($0.004)<br>Maps to Cloud skills<br>Extracts positive/gap signals</div>
+    </div>
+  </div>
+
+  <div class="flow-arrow-down">&darr; Cloud enriched with outcome signals</div>
+
+  <div class="flow-row">
+    <div class="flow-node primary wide">
+      <div class="label">Step 7</div>
+      <div class="title">Silent Context Injection</div>
+      <div class="detail">Next similar role: CV generation prompt includes application history as context.<br>~200 extra tokens. $0 extra cost. AI silently generates better CV.</div>
+    </div>
+  </div>
+
+  <div class="flow-arrow-down">&darr;</div>
+
+  <div class="flow-row">
+    <div class="flow-node warning" style="min-width: 240px;">
+      <div class="label">Step 8a</div>
+      <div class="title">Same Company Alert</div>
+      <div class="detail">UI notification only ($0)<br>"You applied here before.<br>Here's what happened."</div>
+    </div>
+    <div class="flow-node purple" style="min-width: 240px;">
+      <div class="label">Step 8b</div>
+      <div class="title">Gap Accumulation</div>
+      <div class="detail">2+ employers flag same gap<br>&rarr; Socratic question surfaces it<br>1 Haiku call ($0.004)</div>
+    </div>
+  </div>
+</div>
+
+<h3>What Accumulates Over Time (Niche Profiles)</h3>
+
+<div class="card-grid">
+  <div class="card" style="border-color: var(--emerald);">
+    <div class="card-header" style="color: var(--emerald)">Fintech (8 applications)</div>
+    <p><strong>Strong signals:</strong> data pipeline (2 positive), quantified metrics (in all 3 callbacks)</p>
+    <p><strong>Gaps:</strong> Kubernetes (2 employers), real-time streaming (1 employer)</p>
+    <p><strong>No signal:</strong> system design emphasis (ghosted twice &mdash; no info)</p>
+  </div>
+  <div class="card" style="border-color: var(--sky);">
+    <div class="card-header" style="color: var(--sky)">Healthcare (6 applications)</div>
+    <p><strong>Strong signals:</strong> HIPAA compliance (1 positive), patient data experience (1 positive)</p>
+    <p><strong>Gaps:</strong> clinical workflow knowledge (1 employer)</p>
+    <p><strong>Table stakes:</strong> Python (never mentioned &mdash; assumed, not differentiator)</p>
+  </div>
+</div>
+
+<p>CV generation for fintech role #9 automatically leads with data pipelines and quantified metrics. CV generation for healthcare role #7 leads with HIPAA and patient data. <strong>Same user, same Cloud, different emphasis &mdash; informed by accumulated niche context.</strong></p>
+
+<h3>Competitive Landscape</h3>
+
+<table>
+  <tr>
+    <th>Feature</th>
+    <th>Teal / Huntr</th>
+    <th>Loopcv</th>
+    <th style="color: var(--emerald)">JobLoop</th>
+  </tr>
+  <tr>
+    <td>Track applications</td>
+    <td>Yes</td>
+    <td>Yes</td>
+    <td>Yes</td>
+  </tr>
+  <tr>
+    <td>Track outcomes</td>
+    <td>Kanban drag</td>
+    <td>Email open/reply rates</td>
+    <td>Dropdown + free text</td>
+  </tr>
+  <tr>
+    <td>Parse WHY (feedback)</td>
+    <td><span class="tag tag-red">No</span></td>
+    <td><span class="tag tag-red">No</span></td>
+    <td><span class="tag tag-green">Yes &mdash; Haiku parses</span></td>
+  </tr>
+  <tr>
+    <td>Enrich profile from outcomes</td>
+    <td><span class="tag tag-red">No</span></td>
+    <td><span class="tag tag-red">No</span></td>
+    <td><span class="tag tag-green">Cloud gets signals</span></td>
+  </tr>
+  <tr>
+    <td>Use history in next CV</td>
+    <td><span class="tag tag-red">No</span></td>
+    <td><span class="tag tag-red">No</span></td>
+    <td><span class="tag tag-green">Silent context injection</span></td>
+  </tr>
+  <tr>
+    <td>Same company memory</td>
+    <td>Prevents duplicates</td>
+    <td><span class="tag tag-red">No</span></td>
+    <td><span class="tag tag-green">Full history recall</span></td>
+  </tr>
+  <tr>
+    <td>Niche intelligence</td>
+    <td><span class="tag tag-red">No</span></td>
+    <td><span class="tag tag-red">No</span></td>
+    <td><span class="tag tag-green">Accumulates per niche</span></td>
+  </tr>
+</table>
+
+<div class="correction">
+  <div class="label">Retained from v2 &mdash; Psychological Safety Principles</div>
+  <ul style="margin-top: 8px;">
+    <li>Never show raw rejection counts without context (causes learned helplessness &mdash; Abramson 1978)</li>
+    <li>Lead with controllables (process quality, not outcome luck)</li>
+    <li>Temporal comparison only (your improvement over time, never social)</li>
+    <li>Advocate framing always &mdash; celebrate wins, contextualize setbacks</li>
+    <li>ATS myth debunked: only 8% use content auto-rejection. Show timing as description, not diagnosis.</li>
+  </ul>
+</div>
+
+<!-- ============================================================ -->
+<div class="section-divider"><span>System 3: AutoResearch Loop</span></div>
+
+<h2>What It Actually Is</h2>
+<p>Karpathy's AutoResearch pattern applied to <strong>prompt optimization on our synthetic test bank</strong>. Not invention &mdash; application of known techniques (DSPy, OPRO, TextGrad all exist).</p>
+
+<div class="research">
+  <div class="label">Prior Art</div>
+  <ul style="margin-top: 8px;">
+    <li><strong>DSPy</strong> (Stanford, 2023): 10-40% improvement over manual prompting</li>
+    <li><strong>OPRO</strong> (Google): LLM proposes better instructions from scores + history</li>
+    <li><strong>TextGrad</strong>: autograd-for-text, LLM feedback as gradients</li>
+    <li><strong>Karpathy Loop for prompts</strong> (March 2026): multiple implementations within weeks of release</li>
+    <li>We APPLY known techniques to job search domain. We don't invent.</li>
+  </ul>
+</div>
+
+<h3>The Loop (Karpathy-Faithful)</h3>
+
+<div class="flow-diagram">
+  <h4 style="text-align:center; margin-bottom: 20px;">Nightly AutoResearch: 2 AM UTC</h4>
+
+  <div class="flow-row">
+    <div class="flow-node action">
+      <div class="label">Step 1</div>
+      <div class="title">Select Prompt</div>
+      <div class="detail">cv-generation.ts<br>OR jd-parser.ts</div>
+    </div>
+    <div class="flow-arrow">&rarr;</div>
+    <div class="flow-node purple">
+      <div class="label">Step 2</div>
+      <div class="title">AI Reads History</div>
+      <div class="detail">results.tsv + current prompt<br>What worked before? What didn't?</div>
+    </div>
+    <div class="flow-arrow">&rarr;</div>
+    <div class="flow-node warning">
+      <div class="label">Step 3</div>
+      <div class="title">Propose Modification</div>
+      <div class="detail">AI modifies prompt text<br>(guided by program.md rules)</div>
+    </div>
+  </div>
+
+  <div class="flow-arrow-down">&darr;</div>
+
+  <div class="flow-row">
+    <div class="flow-node primary">
+      <div class="label">Step 4</div>
+      <div class="title">Run Against Test Bank</div>
+      <div class="detail">50 synthetic CV/JD pairs<br>OUR data, not user data</div>
+    </div>
+    <div class="flow-arrow">&rarr;</div>
+    <div class="flow-node action">
+      <div class="label">Step 5</div>
+      <div class="title">Composite Scorecard</div>
+      <div class="detail">Structural checks + BERTScore F1<br>Both must improve. No weights.</div>
+    </div>
+    <div class="flow-arrow">&rarr;</div>
+    <div class="flow-node" style="border-color: var(--text-dim);">
+      <div class="title">Better?</div>
+    </div>
+  </div>
+
+  <div style="display: flex; justify-content: center; gap: 80px; margin-top: 16px;">
+    <div>
+      <div class="flow-arrow-down" style="color: var(--emerald);">&darr; YES</div>
+      <div class="flow-node primary" style="margin: 0 auto;">
+        <div class="title">KEEP</div>
+        <div class="detail">Advance to new version</div>
+      </div>
+    </div>
+    <div>
+      <div class="flow-arrow-down" style="color: var(--red);">&darr; NO</div>
+      <div class="flow-node danger" style="margin: 0 auto;">
+        <div class="title">DISCARD</div>
+        <div class="detail">Stay on current version</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="flow-arrow-down">&darr; repeat (~15-20 runs per night, $5-10 cost)</div>
+
+  <div class="flow-row">
+    <div class="flow-node primary wide">
+      <div class="label">Result</div>
+      <div class="title">Better prompt ships to all users equally</div>
+      <div class="detail">No user data was used. Improvement is system-wide.</div>
+    </div>
+  </div>
+</div>
+
+<h3>What's In vs Out of the Loop</h3>
+
+<table>
+  <tr>
+    <th>Prompt</th>
+    <th>In Nightly Loop?</th>
+    <th>Metric</th>
+    <th>Why</th>
+  </tr>
+  <tr>
+    <td>cv-generation.ts</td>
+    <td><span class="tag tag-green">YES &mdash; HIGH VALUE</span></td>
+    <td>Composite scorecard (8 structural checks + BERTScore F1)</td>
+    <td>Prompt quality = CV output quality. Users see this directly. Small prompt changes &rarr; big impact.</td>
+  </tr>
+  <tr>
+    <td>jd-parser.ts</td>
+    <td><span class="tag tag-blue">YES &mdash; MEDIUM VALUE</span></td>
+    <td>Composite scorecard (7 structural checks + BERTScore F1)</td>
+    <td>Parsing accuracy affects everything downstream. Measurable, improvable.</td>
+  </tr>
+  <tr>
+    <td>socratic.ts</td>
+    <td><span class="tag tag-amber">NO &mdash; Manual Review</span></td>
+    <td>Human evaluation of question quality</td>
+    <td>Architecture matters more than phrasing. Hand-craft and test manually.</td>
+  </tr>
+  <tr>
+    <td>socratic-parser.ts</td>
+    <td><span class="tag tag-amber">NO &mdash; Manual Review</span></td>
+    <td>Parsing precision on edge cases</td>
+    <td>Modern LLMs handle this well. Improve by adding test cases, not prompt tweaks.</td>
+  </tr>
+  <tr>
+    <td>insights.ts</td>
+    <td><span class="tag tag-amber">NO &mdash; Manual Review</span></td>
+    <td>User engagement (post-launch)</td>
+    <td>Needs real user data to evaluate. Monthly manual review.</td>
+  </tr>
+</table>
+
+<h3>Why This Metric Works</h3>
+
+<table>
+  <tr>
+    <th>Property</th>
+    <th>Karpathy's val_bpb</th>
+    <th>Our Composite Scorecard</th>
+  </tr>
+  <tr>
+    <td>Deterministic?</td>
+    <td>Yes (math)</td>
+    <td>Yes (code checks + frozen BERT model)</td>
+  </tr>
+  <tr>
+    <td>Comparable?</td>
+    <td>Lower = better</td>
+    <td>Higher = better (both dimensions)</td>
+  </tr>
+  <tr>
+    <td>Non-circular?</td>
+    <td>Yes (no LLM judges)</td>
+    <td>Yes (structural checks are code, BERTScore uses frozen BERT)</td>
+  </tr>
+  <tr>
+    <td>Available day 1?</td>
+    <td>Yes (training data)</td>
+    <td>Yes (test bank + scorecard functions)</td>
+  </tr>
+  <tr>
+    <td>Correlates with quality?</td>
+    <td>Yes (model accuracy)</td>
+    <td>Yes (checks = correctness, BERT = semantic quality)</td>
+  </tr>
+</table>
+
+<div class="correction">
+  <div class="label">Edit Distance Rejected</div>
+  No prompt optimization framework uses edit distance. It penalizes valid paraphrases ("Led 8 engineers" vs "Managed 8 engineers" = high edit distance, same quality). Composite scorecard: structural checks (deterministic code) + BERTScore F1 (frozen model, semantic). Both must improve &mdash; no invented weights.
+</div>
+
+<!-- ============================================================ -->
+<div class="section-divider"><span>What We Corrected</span></div>
+
+<h2>Fabrications Removed</h2>
+
+<table>
+  <tr>
+    <th>Original Claim</th>
+    <th>Problem</th>
+    <th>Correction</th>
+  </tr>
+  <tr>
+    <td>"~95% evidence type classification"</td>
+    <td>Fabricated number, never tested</td>
+    <td>Unknown &mdash; need real benchmark from 50-CV test</td>
+  </tr>
+  <tr>
+    <td>"~90% specificity extraction"</td>
+    <td>Fabricated number, never tested</td>
+    <td>Unknown &mdash; need real benchmark</td>
+  </tr>
+  <tr>
+    <td>"Multi-question probing catches 95%"</td>
+    <td>No research on Socratic method for CV enrichment</td>
+    <td>Removed. Research supports Socratic for education, not professional profiling</td>
+  </tr>
+  <tr>
+    <td>Composite behavior score (0.4/0.2/0.2/0.1/0.1)</td>
+    <td>Invented weights with zero data</td>
+    <td>Removed. Log raw signals. Let data determine weights (if ever needed).</td>
+  </tr>
+  <tr>
+    <td>"Fast rejection = ATS keyword failure"</td>
+    <td>ATS myth &mdash; only 8% use content auto-rejection</td>
+    <td>Usually knockout question filters. Show timing as descriptive stat, not diagnosis.</td>
+  </tr>
+  <tr>
+    <td>"Karpathy loop for all 5 prompts"</td>
+    <td>Socratic prompts get marginal value from nightly optimization</td>
+    <td>Nightly loop for 2 prompts (cv-gen, jd-parser). Manual review for 3 others.</td>
+  </tr>
+  <tr>
+    <td>"Compound effect: outcomes &rarr; better prompts"</td>
+    <td>Breaks at privacy wall &mdash; user data can't feed system prompts</td>
+    <td>Two separate systems. AutoResearch uses our data. Outcomes stay per-user.</td>
+  </tr>
+  <tr>
+    <td>"LLM-as-judge question quality rubric"</td>
+    <td>Circular &mdash; LLM judging LLM</td>
+    <td>Removed. Human evaluation for test bank. User behavior post-launch.</td>
+  </tr>
+  <tr>
+    <td>"specificity_delta as primary metric"</td>
+    <td>Depends on LLM parser &mdash; circular</td>
+    <td>Demoted. Primary: human evaluation. Secondary: user behavior signals.</td>
+  </tr>
+</table>
+
+<!-- ============================================================ -->
+<div class="section-divider"><span>Pre-Launch Requirements</span></div>
+
+<h2>The 50-CV Test (Non-Negotiable)</h2>
+
+<div class="flow-diagram">
+  <div class="flow-row">
+    <div class="flow-node action">
+      <div class="label">Step 1</div>
+      <div class="title">Build Test Corpus</div>
+      <div class="detail">50 diverse CVs (tech, military,<br>freelancer, grad, executive, etc.)<br>Human annotates ground truth</div>
+    </div>
+    <div class="flow-arrow">&rarr;</div>
+    <div class="flow-node primary">
+      <div class="label">Step 2</div>
+      <div class="title">Run Full Pipeline</div>
+      <div class="detail">CV parse &rarr; Cloud build &rarr;<br>Socratic questions &rarr; answer parse &rarr;<br>CV generation</div>
+    </div>
+    <div class="flow-arrow">&rarr;</div>
+    <div class="flow-node warning">
+      <div class="label">Step 3</div>
+      <div class="title">Measure Accuracy</div>
+      <div class="detail">Compare AI output vs<br>human ground truth<br>Real numbers, not fabricated</div>
+    </div>
+  </div>
+
+  <div class="flow-arrow-down">&darr;</div>
+
+  <div class="flow-row">
+    <div class="flow-node purple">
+      <div class="label">Step 4</div>
+      <div class="title">Compare to ChatGPT</div>
+      <div class="detail">Same CV through ChatGPT<br>Is our output better?<br>If not &mdash; we have no product</div>
+    </div>
+    <div class="flow-arrow">&rarr;</div>
+    <div class="flow-node" style="border-color: var(--text-dim);">
+      <div class="title">Pass?</div>
+    </div>
+    <div class="flow-arrow">&rarr;</div>
+    <div class="flow-node primary">
+      <div class="title">Launch</div>
+      <div class="detail">With REAL accuracy numbers<br>documented, not fabricated</div>
+    </div>
+  </div>
+</div>
+
+<table>
+  <tr>
+    <th>Capability</th>
+    <th>Claimed (Fabricated)</th>
+    <th>Minimum Threshold</th>
+    <th>Judged By</th>
+  </tr>
+  <tr>
+    <td>Evidence type classification</td>
+    <td><s>~95%</s></td>
+    <td>&gt;90%</td>
+    <td>Human ground truth comparison</td>
+  </tr>
+  <tr>
+    <td>Specificity signal extraction</td>
+    <td><s>~90%</s></td>
+    <td>&gt;80%</td>
+    <td>Human ground truth comparison</td>
+  </tr>
+  <tr>
+    <td>Socratic question relevance</td>
+    <td><s>~95%</s></td>
+    <td>&gt;85%</td>
+    <td>Human judgment (not LLM)</td>
+  </tr>
+  <tr>
+    <td>Answer parser precision</td>
+    <td>never tested</td>
+    <td>&gt;90% (never hallucinate)</td>
+    <td>Human ground truth comparison</td>
+  </tr>
+  <tr>
+    <td>Better than ChatGPT</td>
+    <td>assumed</td>
+    <td>Blind evaluation: ours preferred &gt;60%</td>
+    <td>Human blind comparison</td>
+  </tr>
+</table>
+
+<!-- ============================================================ -->
+<div class="section-divider"><span>Summary</span></div>
+
+<h2>Three Systems, Clearly Separated</h2>
+
+<div class="card-grid">
+  <div class="card" style="border-color: var(--emerald);">
+    <div class="card-header" style="color: var(--emerald)">1. Socratic Engine</div>
+    <p><strong>What:</strong> Structured data collection via conversational questions</p>
+    <p><strong>Intelligence:</strong> Architecture (what to ask, when to stop), not AI magic</p>
+    <p><strong>Data:</strong> Per-user Cloud (private)</p>
+    <p><strong>Improvement:</strong> Cloud fills up (data accumulation), not system learning</p>
+    <p><strong>Optimization:</strong> Hand-crafted templates, manually reviewed</p>
+  </div>
+  <div class="card" style="border-color: var(--amber);">
+    <div class="card-header" style="color: var(--amber)">2. Outcome Intelligence (v3)</div>
+    <p><strong>What:</strong> Per-user application memory system that enriches the Cloud</p>
+    <p><strong>Intelligence:</strong> Outcome feedback parsed by Haiku &rarr; niche-specific signals on Cloud skills</p>
+    <p><strong>Data:</strong> Per-user applications (private, never cross-user)</p>
+    <p><strong>Improvement:</strong> Cloud accumulates niche context &rarr; CV gen silently uses it ($0 extra)</p>
+    <p><strong>Active features:</strong> Same company recall, gap accumulation (2+ mentions &rarr; Socratic), niche profiles</p>
+  </div>
+  <div class="card" style="border-color: var(--red);">
+    <div class="card-header" style="color: var(--red)">3. AutoResearch Loop</div>
+    <p><strong>What:</strong> Nightly prompt optimization on our synthetic test bank</p>
+    <p><strong>Intelligence:</strong> Karpathy's keep/discard loop (not invention, application)</p>
+    <p><strong>Data:</strong> Our 50 synthetic CV/JD pairs (never user data)</p>
+    <p><strong>Improvement:</strong> Prompts get better &rarr; all users benefit equally</p>
+    <p><strong>Optimization:</strong> 2 prompts nightly (cv-gen, jd-parser). 3 manual review.</p>
+  </div>
+</div>
+
+<div class="wall" style="margin-top: 32px;">
+  User data NEVER crosses into AutoResearch.<br>
+  AutoResearch NEVER uses user outcomes.<br>
+  Cross-user learning REJECTED after research (Simpson's Paradox, bias amplification).<br>
+  Outcome Intelligence enriches THIS user's Cloud only.
+</div>
+
+<p style="text-align: center; color: var(--text-dim); margin-top: 48px; font-size: 12px;">
+  JobLoop AI &mdash; Final Approach &mdash; May 2026<br>
+  Research-validated. Fabrications removed. Outcome Intelligence v3. Ready for implementation.
+</p>
+
+</div>
+</body>
+</html>

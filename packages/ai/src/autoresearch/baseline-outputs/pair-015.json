@@ -1,0 +1,43 @@
+{
+  "summary": "Backend-leaning full-stack engineer with 5 years of experience shipping developer tools and production APIs. Most recently at DevKit (YC W22) building CLI tooling and a TypeScript SDK used by 3,000+ developers. Strong proponent of test-driven development and async-first communication. Experienced working end-to-end in small, remote-first teams where ownership spans from design doc to deployment.",
+  "experience": [
+    {
+      "company": "DevKit (YC W22)",
+      "title": "Software Engineer",
+      "start_date": "2022-06",
+      "end_date": "2024-11",
+      "bullets": [
+        "Built and maintained CLI tooling and TypeScript SDK adopted by 3K+ developer accounts",
+        "Owned features end-to-end from design doc through production deployment across 8 major releases",
+        "Wrote unit and integration test suites achieving 90% code coverage on core modules",
+        "Authored technical blog posts and SDK documentation reaching 15K+ monthly visitors"
+      ]
+    },
+    {
+      "company": "Vercel",
+      "title": "Software Engineer",
+      "start_date": "2020-01",
+      "end_date": "2022-05",
+      "bullets": [
+        "Built internal platform features for serverless deployment infrastructure",
+        "Contributed to open-source Next.js tooling focused on developer experience improvements",
+        "Operated in a fully remote team spanning 4 time zones, communicating through written RFCs and async standups"
+      ]
+    },
+    {
+      "company": "Freelance",
+      "title": "Contract Developer",
+      "start_date": "2019-03",
+      "end_date": "2019-12",
+      "bullets": [
+        "Built 3 web applications for small business clients using React and Node.js"
+      ]
+    }
+  ],
+  "skills": {
+    "languages": ["TypeScript", "Go", "Python"],
+    "infrastructure": ["PostgreSQL", "Redis", "Docker", "GitHub Actions", "Vercel"],
+    "practices": ["test-driven development", "async communication", "RFC-driven design", "end-to-end ownership"]
+  },
+  "certifications": []
+}

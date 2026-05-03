@@ -1,0 +1,127 @@
+{
+  "id": "pair-049",
+  "split": "held_out",
+  "persona": "mid_career",
+  "synthetic": true,
+  "jd_style": "enterprise_saas",
+  "framing": "Clinical operations associate director at Pfizer seeking VP role at mid-size CRO",
+  "coverage": { "industry": "Pharmaceutical/CRO", "seniority": "mid", "pattern": "linear", "region": "north_america" },
+  "jd": {
+    "title": "Vice President — Clinical Operations",
+    "company": "Medpace",
+    "location": "Cincinnati, OH (Hybrid)",
+    "experience_years": 12,
+    "style_note": "Enterprise: specific regulatory and clinical trial knowledge, structured requirements, CRO-specific",
+    "requirements": [
+      { "text": "12+ years of clinical operations experience in pharma, biotech, or CRO with progressive leadership", "type": "must_have" },
+      { "text": "Experience managing global clinical trials across Phases I-III with 50+ sites and 1,000+ patients", "type": "must_have" },
+      { "text": "Deep knowledge of ICH-GCP (E6(R2)/E6(R3)) guidelines and FDA 21 CFR Part 11 compliance", "type": "must_have" },
+      { "text": "Experience with EDC systems (Medidata Rave, Oracle Clinical/InForm, or Veeva Vault CDMS)", "type": "must_have" },
+      { "text": "Experience with risk-based monitoring (RBM) and centralized statistical monitoring approaches", "type": "must_have" },
+      { "text": "Track record managing clinical operations teams of 30+ including CRAs, CTMs, and data managers", "type": "must_have" },
+      { "text": "Experience with decentralized clinical trials (DCT): ePRO, eConsent, home nursing, wearable integration", "type": "nice_to_have" },
+      { "text": "Therapeutic area expertise in oncology, rare disease, or immunology", "type": "nice_to_have" },
+      { "text": "Experience with CTMS (Clinical Trial Management Systems): Veeva Vault, Oracle Siebel CTMS, or Medidata CTMS", "type": "nice_to_have" }
+    ],
+    "responsibilities": [
+      "Lead clinical operations for Medpace's oncology and rare disease therapeutic units",
+      "Oversee portfolio of 15-20 active clinical trials across Phases I-III globally",
+      "Manage clinical operations team of 80+ (clinical research associates, trial managers, regulatory coordinators)",
+      "Drive adoption of risk-based monitoring and decentralized trial technologies across Medpace",
+      "Interface with sponsor companies (biotech and pharma) on study execution, timelines, and budget management"
+    ]
+  },
+  "expected_output": {
+    "summary": "Clinical operations leader with 14 years at Pfizer, most recently Associate Director of Clinical Operations in the Oncology division. Managed Phase II-III clinical trials across 35 countries for immuno-oncology programmes (anti-PD-1/PD-L1, ADC). Led trial execution for studies with 80+ sites and 800+ patients. Experience with Medidata Rave EDC, risk-based monitoring, and ICH-GCP compliance. Managed team of 22 CRAs and CTMs. Seeking VP-level step-up at mid-size CRO.",
+    "experience": [
+      {
+        "company": "Pfizer — New York, NY",
+        "title": "Associate Director — Clinical Operations, Oncology",
+        "start_date": "2020-06",
+        "end_date": "2025-12",
+        "bullets": [
+          "Led clinical operations for 3 Phase II-III oncology trials (anti-PD-L1 + ADC combination therapies) across 35 countries, 80+ sites, 800+ patients",
+          "Managed team of 22 clinical research associates (CRAs) and clinical trial managers (CTMs) across US, EU, and Asia-Pacific",
+          "Implemented risk-based monitoring (RBM) using Medidata Rave and centralized statistical monitoring for signal detection",
+          "Delivered ICH-GCP E6(R2) compliance across all study sites with zero critical audit findings over 4 FDA inspections",
+          "Managed CRO oversight for 2 outsourced trials (Covance/Labcorp and ICON) with combined budget of $45M"
+        ]
+      },
+      {
+        "company": "Pfizer — New York, NY",
+        "title": "Clinical Trial Manager (promoted from Senior CRA, 2017)",
+        "start_date": "2015-03",
+        "end_date": "2020-05",
+        "bullets": [
+          "Managed site activation and enrollment for Phase II immunology trial (JAK inhibitor, 60 sites across 12 countries)",
+          "Conducted monitoring visits (on-site and remote) as Senior CRA for 15 oncology trial sites in US Northeast",
+          "Led implementation of Medidata Rave EDC for 3 study starts, including CRF design and edit check programming",
+          "Coordinated with data management team on database lock activities and SAE reconciliation"
+        ]
+      },
+      {
+        "company": "Pfizer — Groton, CT",
+        "title": "Clinical Research Associate (entry level)",
+        "start_date": "2012-01",
+        "end_date": "2015-02",
+        "bullets": [
+          "Performed site monitoring visits for cardiovascular and metabolic disease clinical trials",
+          "Managed TMF (Trial Master File) documentation and regulatory document collection",
+          "Completed Pfizer's Clinical Research Training Programme"
+        ]
+      }
+    ],
+    "skills": {
+      "clinical_ops": ["Phase II-III trial management", "site activation", "enrollment management", "CRO oversight", "monitoring visit execution", "database lock"],
+      "regulatory": ["ICH-GCP E6(R2)", "FDA 21 CFR Part 11", "FDA inspection readiness", "TMF management", "SAE reconciliation"],
+      "systems": ["Medidata Rave EDC", "Medidata CTMS", "IVRS/IXRS", "eTMF (Veeva Vault)", "SharePoint"],
+      "leadership": ["team management (22 CRAs/CTMs)", "CRO oversight ($45M budget)", "multi-country trial execution (35 countries)", "vendor management"],
+      "therapeutic": ["oncology (anti-PD-L1, ADC)", "immunology (JAK inhibitor)", "cardiovascular"]
+    },
+    "certifications": [
+      "ACRP Certified Clinical Research Associate (CCRA) — 2014",
+      "SoCRA Certified Clinical Research Professional (CCRP) — 2016"
+    ],
+    "education": [
+      "MS Clinical Research — George Washington University (2010-2012)",
+      "BS Biology — University of Virginia (2006-2010)"
+    ]
+  },
+  "jd_requirements": [
+    "12+ years clinical operations pharma biotech CRO progressive leadership",
+    "global clinical trials Phases I-III 50+ sites 1000+ patients",
+    "ICH-GCP E6(R2) E6(R3) FDA 21 CFR Part 11",
+    "EDC Medidata Rave Oracle Clinical InForm Veeva Vault CDMS",
+    "risk-based monitoring RBM centralized statistical monitoring",
+    "clinical operations teams 30+ CRAs CTMs data managers",
+    "decentralized clinical trials DCT ePRO eConsent wearable",
+    "oncology rare disease immunology therapeutic",
+    "CTMS Veeva Vault Oracle Siebel Medidata CTMS"
+  ],
+  "cloud_skills": [
+    "Phase II-III trial management", "site activation",
+    "enrollment management", "CRO oversight",
+    "ICH-GCP E6(R2)", "FDA 21 CFR Part 11",
+    "Medidata Rave EDC", "Medidata CTMS",
+    "risk-based monitoring", "centralized monitoring",
+    "team management", "multi-country trials",
+    "oncology anti-PD-L1 ADC", "immunology JAK",
+    "FDA inspection readiness", "TMF management",
+    "SAE reconciliation", "database lock",
+    "ACRP CCRA", "SoCRA CCRP"
+  ],
+  "deliberate_flaws": [
+    "Never exceeded 800 patients — JD requires 1,000+ patient trial experience",
+    "Never exceeded 80 sites — JD requires 50+ but VP role typically manages multiple studies with 100+ sites each",
+    "Team of 22, not 30+ — JD requires managing 30+ team, VP role manages 80+",
+    "No Phase I experience (JD requires I-III, candidate has II-III only)",
+    "No ICH-GCP E6(R3) experience (new revision, only E6(R2))",
+    "No Oracle Clinical/InForm or Veeva Vault CDMS experience (only Medidata)",
+    "No decentralized clinical trial (DCT) experience — no ePRO, eConsent, or wearable integration",
+    "No rare disease therapeutic experience (oncology and immunology only)",
+    "No CRO-side experience — entire career at pharma sponsor (Pfizer), different operating model",
+    "No sponsor-facing experience from CRO perspective — has always been the sponsor",
+    "Associate Director to VP is a significant title jump — no VP experience",
+    "No Oracle Siebel CTMS experience (used Medidata CTMS)"
+  ]
+}

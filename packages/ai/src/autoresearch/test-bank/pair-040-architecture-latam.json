@@ -1,0 +1,111 @@
+{
+  "id": "pair-040",
+  "split": "held_out",
+  "persona": "mid_career",
+  "synthetic": true,
+  "jd_style": "startup_technical",
+  "framing": "Architect at Gensler São Paulo applying to BIM technology lead role at construction tech startup in Mexico City",
+  "coverage": { "industry": "Architecture/Design", "seniority": "mid", "pattern": "linear", "region": "latin_america" },
+  "jd": {
+    "title": "BIM Technology Lead",
+    "company": "Procore Technologies",
+    "location": "Mexico City, Mexico (Hybrid)",
+    "experience_years": 6,
+    "style_note": "Startup-technical: specific BIM/AEC technology stack, integration-heavy, platform-focused",
+    "requirements": [
+      { "text": "6+ years of experience in architecture, structural engineering, or AEC technology with deep BIM expertise", "type": "must_have" },
+      { "text": "Expert-level proficiency in Autodesk Revit and BIM 360 / Autodesk Construction Cloud (ACC)", "type": "must_have" },
+      { "text": "Experience with BIM standards: ISO 19650, LOD specifications (100-500), and model coordination workflows", "type": "must_have" },
+      { "text": "Knowledge of IFC (Industry Foundation Classes) and openBIM data exchange formats", "type": "must_have" },
+      { "text": "Programming skills for BIM automation: Dynamo (visual scripting), Revit API (C# or Python), or Grasshopper", "type": "must_have" },
+      { "text": "Experience with construction project management platforms (Procore, PlanGrid, or Fieldwire)", "type": "nice_to_have" },
+      { "text": "Familiarity with GIS integration and digital twin platforms (Autodesk Tandem, Bentley iTwin, or Esri ArcGIS)", "type": "nice_to_have" },
+      { "text": "Spanish and Portuguese language skills", "type": "nice_to_have" }
+    ],
+    "responsibilities": [
+      "Lead BIM integration strategy for Procore's Latin America expansion",
+      "Develop technical workflows connecting Procore with Revit, Navisworks, and ACC for LATAM construction projects",
+      "Support enterprise AEC clients in Mexico, Brazil, and Colombia with BIM implementation and data migration",
+      "Build Revit API plugins and Dynamo scripts to automate data exchange between BIM models and Procore platform",
+      "Represent Procore at AEC industry events in Latin America (Expo CIHAC, Construtech LATAM)"
+    ]
+  },
+  "expected_output": {
+    "summary": "Architect and BIM specialist with 8 years of experience at Gensler São Paulo, leading BIM implementation for commercial and mixed-use projects across Brazil. Expert in Autodesk Revit, Navisworks, and BIM 360. Developed Dynamo scripts automating quantity take-offs and clash detection workflows. Experience with ISO 19650 BIM standards on 3 LEED-certified projects. Registered architect (CAU/BR). Native Portuguese, fluent Spanish, business English. Seeking transition from design practice to AEC technology platform role.",
+    "experience": [
+      {
+        "company": "Gensler — São Paulo",
+        "title": "Senior BIM Manager",
+        "start_date": "2021-06",
+        "end_date": "2026-01",
+        "bullets": [
+          "Led BIM implementation for 5 commercial tower projects in São Paulo (combined 250,000m² GFA) using Revit and BIM 360",
+          "Developed office-wide BIM Execution Plan (BEP) aligned with ISO 19650 information management standards",
+          "Created 30+ Dynamo scripts automating quantity take-offs, room data sheets, and drawing sheet generation",
+          "Managed model coordination and clash detection using Navisworks for multi-discipline coordination (architecture, structure, MEP)",
+          "Trained 25 architects and designers on Revit standards, family creation, and BIM workflows"
+        ]
+      },
+      {
+        "company": "Gensler — São Paulo",
+        "title": "Architect / BIM Coordinator (promoted from Architect, 2020)",
+        "start_date": "2018-03",
+        "end_date": "2021-05",
+        "bullets": [
+          "Coordinated BIM models for mixed-use development in Porto Alegre (LEED Gold, 45,000m²)",
+          "Developed Revit families and templates for Gensler São Paulo office standardisation",
+          "Managed IFC exports and openBIM data exchange with structural and MEP consultants using BIM Collab",
+          "Supported LOD 300-400 model development for construction documentation phase"
+        ]
+      }
+    ],
+    "skills": {
+      "bim": ["Autodesk Revit (expert)", "Navisworks", "BIM 360 / ACC", "Dynamo (visual scripting)", "clash detection", "model coordination"],
+      "standards": ["ISO 19650", "LOD 100-400", "BIM Execution Plans (BEP)", "IFC / openBIM", "BIM Collab"],
+      "architecture": ["commercial architecture", "mixed-use design", "construction documentation", "LEED coordination", "Revit family creation"],
+      "programming": ["Dynamo scripts", "Python (basic — Dynamo Python nodes)", "Revit templates and standards"],
+      "languages": ["Portuguese (native)", "Spanish (fluent)", "English (business)"]
+    },
+    "certifications": [
+      "CAU/BR — Registered Architect, Conselho de Arquitetura e Urbanismo do Brasil",
+      "Autodesk Certified Professional — Revit Architecture (2020)",
+      "buildingSMART openBIM Professional Certification (2022)"
+    ],
+    "education": [
+      "Bacharelado em Arquitetura e Urbanismo — Universidade de São Paulo (FAU-USP) (2012-2017)"
+    ]
+  },
+  "jd_requirements": [
+    "6+ years architecture structural AEC BIM expertise",
+    "Autodesk Revit BIM 360 Autodesk Construction Cloud ACC",
+    "ISO 19650 LOD specifications model coordination",
+    "IFC Industry Foundation Classes openBIM",
+    "Dynamo Revit API C# Python Grasshopper BIM automation",
+    "Procore PlanGrid Fieldwire construction project management",
+    "GIS digital twin Autodesk Tandem Bentley iTwin Esri ArcGIS",
+    "Spanish Portuguese language"
+  ],
+  "cloud_skills": [
+    "Autodesk Revit", "Navisworks", "BIM 360", "ACC",
+    "Dynamo", "clash detection", "model coordination",
+    "ISO 19650", "LOD 100-400", "BIM Execution Plans",
+    "IFC", "openBIM", "BIM Collab",
+    "commercial architecture", "LEED coordination",
+    "Revit family creation", "construction documentation",
+    "Python basic", "Revit templates",
+    "Portuguese", "Spanish", "English"
+  ],
+  "deliberate_flaws": [
+    "No Revit API (C#) programming experience — only Dynamo visual scripting with basic Python nodes",
+    "No Grasshopper experience (Rhino ecosystem, not Revit)",
+    "No Procore, PlanGrid, or Fieldwire experience (used BIM 360 / ACC)",
+    "No GIS or digital twin platform experience (Autodesk Tandem, Bentley iTwin, ArcGIS)",
+    "No construction project management platform experience — architect, not construction manager",
+    "LOD experience tops at 400, not 500 (fabrication level)",
+    "No experience in Mexico or Colombia — only Brazil (different building codes, CICA standards)",
+    "No enterprise client support experience — internal BIM management, not client-facing platform support",
+    "Architecture practice to tech company transition — different product development cadence",
+    "No data migration experience (JD involves helping clients migrate to Procore)",
+    "Python skills are basic (Dynamo Python nodes only) — not production-grade scripting"
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "summary": "Experienced audit professional with 9 years at KPMG London, currently Audit Manager in the Financial Services practice. Specialises in banking and fintech engagements, having led audits for 6 FCA-regulated fintech firms including e-money institutions and payment service providers. ACA qualified (ICAEW) with CISA certification. Hands-on experience with SOC 2 attestation, PSD2 compliance auditing, cloud infrastructure assessment, and technology risk evaluation across financial services.",
+  "experience": [
+    {
+      "company": "KPMG — London",
+      "title": "Audit Manager — Financial Services",
+      "start_date": "2021-01",
+      "end_date": "2025-03",
+      "bullets": [
+        "Led external audit engagements for 6 FCA-regulated fintech clients including e-money institutions, payment service providers, and challenger banks",
+        "Managed audit teams of 4-8 staff across planning, fieldwork, and completion phases for clients with revenues up to GBP 500M",
+        "Executed SOC 2 Type II attestation engagements for 3 cloud-native fintech platforms hosted on AWS infrastructure",
+        "Assessed PSD2 safeguarding compliance and EMR/PSR safeguarding requirements across 4 annual audit cycles for e-money and payment institution clients",
+        "Developed KPMG's fintech audit methodology for e-money and payment institution engagements, adopted across the UK Financial Services practice"
+      ]
+    },
+    {
+      "company": "KPMG — London",
+      "title": "Assistant Manager / Audit Senior (promoted from Associate 2018, to Assistant Manager 2020)",
+      "start_date": "2016-09",
+      "end_date": "2020-12",
+      "bullets": [
+        "Progressed from graduate associate to assistant manager on banking and insurance audit engagements",
+        "Performed IT general controls testing (ITGC) across core banking platforms including Temenos Transact and Finastra",
+        "Supported 2 AML/KYC compliance audits for mid-tier UK banks, assessing transaction monitoring and customer due diligence controls",
+        "Achieved ACA qualification (ICAEW) in 2019 and CISA certification in 2020"
+      ]
+    }
+  ],
+  "skills": {
+    "regulatory": ["FCA regulation", "PSD2 safeguarding", "EMR/PSR safeguarding", "AML/KYC compliance", "e-money institution audits"],
+    "audit": ["external audit (Big Four)", "SOC 2 Type II attestation", "risk-based audit planning", "ITGC testing", "continuous auditing methodology"],
+    "technical": ["Temenos Transact (formerly T24)", "Finastra", "AWS cloud infrastructure auditing", "ACL Analytics", "Excel/Power BI for audit analytics"],
+    "leadership": ["audit team management (4-8 staff)", "client relationship management", "audit methodology development"]
+  },
+  "certifications": [
+    "ACA — Institute of Chartered Accountants in England and Wales (ICAEW, 2019)",
+    "CISA — Certified Information Systems Auditor (ISACA, 2020)"
+  ]
+}

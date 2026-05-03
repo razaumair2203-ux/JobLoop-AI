@@ -1,0 +1,123 @@
+{
+  "id": "pair-036",
+  "split": "validation",
+  "persona": "military",
+  "synthetic": true,
+  "jd_style": "defense_cleared",
+  "framing": "Air Force avionics officer transitioning to defense contractor flight systems role",
+  "coverage": { "industry": "Aviation/Aerospace", "seniority": "senior", "pattern": "military_transition", "region": "north_america" },
+  "jd": {
+    "title": "Senior Flight Systems Engineer",
+    "company": "L3Harris Technologies",
+    "location": "Arlington, TX (On-site, TS/SCI clearance required)",
+    "experience_years": 10,
+    "style_note": "Defense-cleared: security clearance mandatory, ITAR-controlled, specific military platform experience valued",
+    "requirements": [
+      { "text": "Active TS/SCI security clearance", "type": "must_have" },
+      { "text": "10+ years of experience in avionics systems engineering, flight test, or aircraft modification programmes", "type": "must_have" },
+      { "text": "Experience with DO-178C (airborne software) and DO-254 (airborne hardware) certification processes", "type": "must_have" },
+      { "text": "Knowledge of MIL-STD-1553 data bus architecture and ARINC 429 communication protocols", "type": "must_have" },
+      { "text": "Experience with flight test instrumentation (FTI) and telemetry systems", "type": "must_have" },
+      { "text": "Familiarity with F-35, F-16, or C-130 avionics systems", "type": "nice_to_have" },
+      { "text": "Experience with Model-Based Systems Engineering (MBSE) using Cameo Systems Modeler or IBM Rhapsody", "type": "nice_to_have" },
+      { "text": "PE license or INCOSE CSEP certification", "type": "nice_to_have" }
+    ],
+    "responsibilities": [
+      "Lead avionics integration and flight test activities for military aircraft modification programmes",
+      "Develop system requirements and interface control documents (ICDs) for avionics subsystems",
+      "Coordinate DO-178C/DO-254 certification activities with FAA/DCMA designated engineering representatives",
+      "Support flight test planning, execution, and data analysis for modified military aircraft",
+      "Interface with USAF Programme Offices (AFLCMC) on technical reviews and milestone decisions"
+    ]
+  },
+  "expected_output": {
+    "summary": "US Air Force officer (Major, separating) with 12 years of avionics engineering and flight test experience. Currently Avionics Flight Commander at Edwards AFB, 412th Test Wing, leading flight test of F-16 avionics upgrades. Previously avionics engineer on C-130J sustainment programme at Warner Robins ALC. Active TS/SCI clearance. Experience with MIL-STD-1553, DO-178C certification coordination, and flight test instrumentation. MS Electrical Engineering from AFIT. Transitioning to defense industry.",
+    "experience": [
+      {
+        "company": "US Air Force — 412th Test Wing, Edwards AFB",
+        "title": "Avionics Flight Commander (Major, O-4)",
+        "start_date": "2022-01",
+        "end_date": "2026-03",
+        "bullets": [
+          "Led 18-person flight test team executing F-16 Block 70 avionics upgrade developmental testing",
+          "Managed flight test instrumentation (FTI) installation and telemetry system configuration for 6 test aircraft",
+          "Coordinated MIL-STD-1553 data bus integration testing between radar (AN/APG-83 AESA), EW suite, and mission computer",
+          "Reviewed and approved test plans, test cards, and safety review board packages for 120+ test sorties",
+          "Interfaced with AFLCMC Programme Office on technical baseline reviews and deficiency report adjudication"
+        ]
+      },
+      {
+        "company": "US Air Force — Warner Robins Air Logistics Complex (ALC)",
+        "title": "Avionics Systems Engineer (Captain, O-3)",
+        "start_date": "2018-06",
+        "end_date": "2021-12",
+        "bullets": [
+          "Managed C-130J avionics sustainment engineering for fleet of 130+ aircraft across Air Mobility Command",
+          "Coordinated DO-178C certification activities for 3 software updates to C-130J mission computer",
+          "Developed engineering investigation reports for 12 avionics-related mishap/incident investigations",
+          "Led ARINC 429 interface analysis for CNS/ATM upgrade (ADS-B Out compliance) across C-130J fleet"
+        ]
+      },
+      {
+        "company": "US Air Force — Undergraduate Pilot Training (UPT) Selection, Sheppard AFB",
+        "title": "Avionics Maintenance Officer (1st Lieutenant, O-2)",
+        "start_date": "2014-09",
+        "end_date": "2018-05",
+        "bullets": [
+          "Led avionics maintenance section (45 enlisted technicians) for T-38C trainer aircraft fleet",
+          "Managed avionics component repair and calibration for radar altimeter, TACAN, and UHF/VHF systems",
+          "Achieved 94% mission capable rate for assigned aircraft, exceeding Air Education and Training Command standard"
+        ]
+      }
+    ],
+    "skills": {
+      "avionics": ["MIL-STD-1553 data bus", "ARINC 429", "flight test instrumentation (FTI)", "telemetry systems", "radar systems (AN/APG-83)", "EW systems", "CNS/ATM"],
+      "certification": ["DO-178C coordination", "airworthiness certification", "safety review boards", "deficiency reporting"],
+      "platforms": ["F-16 (Block 70)", "C-130J", "T-38C"],
+      "leadership": ["flight test team management (18 staff)", "maintenance section leadership (45 technicians)", "AFLCMC interface", "test planning and execution"],
+      "clearance": ["TS/SCI (active)"]
+    },
+    "certifications": [
+      "USAF Test and Evaluation certification — Air Force Test Center (2022)",
+      "Acquisition Professional Development Program (APDP) Level II — Engineering (2019)"
+    ],
+    "education": [
+      "MS Electrical Engineering — Air Force Institute of Technology (AFIT) (2016-2018)",
+      "BS Electrical and Computer Engineering — US Air Force Academy (2010-2014)"
+    ]
+  },
+  "jd_requirements": [
+    "TS/SCI security clearance active",
+    "10+ years avionics systems engineering flight test aircraft modification",
+    "DO-178C airborne software DO-254 airborne hardware certification",
+    "MIL-STD-1553 ARINC 429 communication protocols",
+    "flight test instrumentation FTI telemetry",
+    "F-35 F-16 C-130 avionics systems",
+    "MBSE Cameo Systems Modeler IBM Rhapsody",
+    "PE license INCOSE CSEP"
+  ],
+  "cloud_skills": [
+    "MIL-STD-1553", "ARINC 429",
+    "flight test instrumentation", "telemetry systems",
+    "DO-178C coordination", "airworthiness certification",
+    "F-16 Block 70", "C-130J", "T-38C",
+    "AN/APG-83 AESA radar", "EW systems",
+    "CNS/ATM", "ADS-B Out",
+    "flight test planning", "test execution",
+    "AFLCMC interface", "safety review boards",
+    "avionics maintenance", "TS/SCI clearance",
+    "team leadership"
+  ],
+  "deliberate_flaws": [
+    "No DO-254 (airborne hardware) experience — only DO-178C (software) coordination",
+    "No MBSE experience — no Cameo Systems Modeler or IBM Rhapsody",
+    "No PE license or INCOSE CSEP certification",
+    "No F-35 experience (JD lists F-35 as preferred)",
+    "DO-178C experience is coordination/oversight, not hands-on certification engineering",
+    "No ICD development experience — reviewed ICDs, didn't author them",
+    "Military officer transitioning to industry — different procurement culture, contractor dynamics",
+    "No commercial aviation experience (all military platforms)",
+    "No systems requirements development using formal tools (DOORS, Jama) — used military formats",
+    "Flight test experience is developmental test (DT), not operational test (OT) — different perspective"
+  ]
+}

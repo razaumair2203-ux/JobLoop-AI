@@ -1,0 +1,53 @@
+{
+  "summary": "Senior infrastructure project manager with 16 years of experience delivering large-scale transport and civil engineering projects across the GCC region. Currently serving as Programme Manager at WSP overseeing a USD 800M highway expansion project in Saudi Arabia. Previously delivered a USD 350M interchange project in Abu Dhabi. Chartered Civil Engineer (ICE) with PMP certification and deep expertise in NEC3/NEC4 contracts, FIDIC Red Book, Primavera P6 scheduling, and GCC regulatory compliance.",
+  "experience": [
+    {
+      "company": "WSP — Middle East",
+      "title": "Programme Manager — Highways",
+      "start_date": "2021-01",
+      "end_date": "2024-12",
+      "bullets": [
+        "Directed programme delivery for USD 800M highway expansion in Jeddah comprising 42km dual carriageway with 6 interchanges",
+        "Managed integrated multi-disciplinary team of 35 engineers spanning design review, construction supervision, and contract administration",
+        "Administered NEC3 Engineering and Construction Contracts across 4 main contractors, ensuring compliance with contractual obligations",
+        "Maintained master programme schedule in Primavera P6 with over 8,000 activities, achieving 94% schedule adherence",
+        "Oversaw risk register with 200+ active risks and conducted monthly quantitative schedule risk analysis (QSRA)"
+      ]
+    },
+    {
+      "company": "Parsons — Abu Dhabi",
+      "title": "Senior Project Manager — Infrastructure",
+      "start_date": "2015-06",
+      "end_date": "2020-12",
+      "bullets": [
+        "Delivered USD 350M Musaffah interchange and road network upgrade for Abu Dhabi Department of Transport",
+        "Coordinated with Abu Dhabi Municipality (ADM) and Estidama team to achieve Pearl 1 sustainability rating",
+        "Led multi-disciplinary team of 22 professionals (civil, structural, MEP, landscape) through detailed design and construction phases",
+        "Administered FIDIC Red Book contracts covering 3 construction packages",
+        "Successfully resolved USD 28M in contractor claims through structured negotiation and Dispute Adjudication Board (DAB) referrals"
+      ]
+    },
+    {
+      "company": "Mott MacDonald — UK",
+      "title": "Project Engineer (promoted from Graduate Engineer, 2011)",
+      "start_date": "2009-01",
+      "end_date": "2015-05",
+      "bullets": [
+        "Progressed from graduate engineer to project engineer on UK highways and rail infrastructure projects",
+        "Supported delivery of A14 Cambridge to Huntingdon improvement scheme (GBP 1.5B)",
+        "Developed proficiency in Primavera P6 and earned PMP certification (2013)"
+      ]
+    }
+  ],
+  "skills": {
+    "technical": ["highway design review", "interchange engineering", "construction supervision", "BIM coordination"],
+    "project_management": ["programme delivery (USD 800M+)", "Primavera P6", "risk management (QSRA)", "stakeholder management", "NEC3/NEC4 contracts", "FIDIC Red Book"],
+    "regulatory": ["Abu Dhabi Municipality (ADM)", "Estidama Pearl Rating System", "Saudi MoMRAH regulations", "UK Highways England standards"],
+    "leadership": ["multi-disciplinary team management (35 engineers)", "contractor management (4 main contractors)", "claims resolution (USD 28M)", "government DOT liaison"]
+  },
+  "certifications": [
+    "Chartered Civil Engineer (CEng MICE) — Institution of Civil Engineers",
+    "PMP — Project Management Institute (2013)",
+    "NEBOSH Construction Certificate"
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "id": "pair-038",
+  "split": "train",
+  "persona": "career_changer",
+  "synthetic": true,
+  "jd_style": "vague_culture_first",
+  "framing": "Management accountant at Unilever transitioning to sustainability analyst role at climate tech startup in Paris",
+  "coverage": { "industry": "Climate/Sustainability", "seniority": "mid", "pattern": "career_changer", "region": "europe" },
+  "jd": {
+    "title": "Sustainability Analyst",
+    "company": "Sweep",
+    "location": "Paris, France (Remote-first, EU)",
+    "experience_years": 3,
+    "style_note": "Vague/culture-first: mission-driven, light on specifics, values passion and self-direction",
+    "requirements": [
+      { "text": "You care deeply about climate action and want your work to make a measurable difference", "type": "must_have" },
+      { "text": "You have 3+ years of experience working with data — we don't care if that's in sustainability, finance, consulting, or engineering", "type": "must_have" },
+      { "text": "You're comfortable building models in Excel/Google Sheets and picking up new tools quickly", "type": "must_have" },
+      { "text": "You can communicate complex topics to non-technical stakeholders clearly and concisely", "type": "must_have" },
+      { "text": "Bonus: you know GHG Protocol, CSRD, or carbon accounting fundamentals", "type": "nice_to_have" },
+      { "text": "Bonus: you've worked with sustainability reporting frameworks (GRI, SASB, TCFD, or ISSB/IFRS S1-S2)", "type": "nice_to_have" },
+      { "text": "Bonus: Python or SQL skills for data analysis", "type": "nice_to_have" }
+    ],
+    "responsibilities": [
+      "Help enterprise customers measure, track, and report their carbon emissions using Sweep's platform",
+      "Build custom carbon accounting models for complex supply chains (Scope 1, 2, and 3)",
+      "Onboard new customers and train their sustainability teams on carbon measurement methodology",
+      "Analyse customer emissions data for accuracy and completeness before external reporting",
+      "Stay current with evolving regulations (EU CSRD, SEC climate disclosure, ISSB standards)"
+    ]
+  },
+  "expected_output": {
+    "summary": "Management accountant with 6 years at Unilever Netherlands, most recently in the sustainability reporting team supporting Unilever's annual Climate Transition Action Plan disclosure. Previously in group management accounting handling P&L consolidation for Benelux markets. Volunteered for Unilever's internal carbon footprint measurement pilot project (Scope 1 and 2). CIMA qualified. Strong Excel modelling and financial reporting skills. Seeking full transition to climate/sustainability career.",
+    "experience": [
+      {
+        "company": "Unilever — Rotterdam",
+        "title": "Management Accountant — Sustainability Reporting",
+        "start_date": "2023-01",
+        "end_date": "2026-01",
+        "bullets": [
+          "Supported preparation of Unilever's annual Climate Transition Action Plan (CTAP) and TCFD-aligned disclosures",
+          "Built Excel models consolidating Scope 1 and Scope 2 emissions data from 15 Benelux manufacturing sites",
+          "Reconciled energy consumption data (natural gas, electricity, diesel) with financial records for GHG calculations",
+          "Collaborated with external auditors (PwC) on limited assurance engagement for Unilever's sustainability report",
+          "Trained 8 site finance managers on emissions data collection templates and GHG Protocol methodology"
+        ]
+      },
+      {
+        "company": "Unilever — Rotterdam",
+        "title": "Management Accountant — Group Reporting (promoted from Graduate Trainee, 2022)",
+        "start_date": "2020-03",
+        "end_date": "2022-12",
+        "bullets": [
+          "Performed monthly P&L consolidation for Unilever Benelux markets (EUR 2.1B revenue)",
+          "Prepared variance analysis and management commentary for quarterly business reviews",
+          "Built financial models for brand profitability analysis across Home Care and Personal Care divisions",
+          "Completed CIMA qualification while working full-time (2020-2022)"
+        ]
+      }
+    ],
+    "skills": {
+      "financial": ["management accounting", "P&L consolidation", "variance analysis", "financial modelling", "brand profitability analysis"],
+      "sustainability": ["GHG Protocol (Scope 1 & 2)", "TCFD disclosure", "emissions data consolidation", "energy consumption reconciliation", "sustainability report assurance"],
+      "tools": ["Excel (advanced — pivot tables, VLOOKUP, macros)", "SAP (financial reporting)", "Power BI (basic dashboards)", "Unilever internal reporting tools"],
+      "communication": ["management commentary", "site manager training", "auditor coordination (PwC)", "stakeholder reporting"]
+    },
+    "certifications": [
+      "CIMA — Chartered Institute of Management Accountants (2022)",
+      "GHG Protocol Corporate Standard — Self-study completion (2023)"
+    ],
+    "education": [
+      "BSc Business Economics — University of Amsterdam (2016-2020)"
+    ]
+  },
+  "jd_requirements": [
+    "climate action measurable difference",
+    "3+ years working with data sustainability finance consulting engineering",
+    "Excel Google Sheets models new tools",
+    "communicate complex topics non-technical stakeholders",
+    "GHG Protocol CSRD carbon accounting",
+    "GRI SASB TCFD ISSB IFRS S1-S2 sustainability reporting",
+    "Python SQL data analysis"
+  ],
+  "cloud_skills": [
+    "management accounting", "P&L consolidation",
+    "financial modelling", "variance analysis",
+    "GHG Protocol Scope 1 2", "TCFD disclosure",
+    "emissions data consolidation", "energy reconciliation",
+    "sustainability reporting", "assurance coordination",
+    "Excel advanced", "SAP", "Power BI",
+    "site manager training", "stakeholder reporting",
+    "CIMA qualified", "Unilever CTAP"
+  ],
+  "deliberate_flaws": [
+    "No Scope 3 emissions experience — only Scope 1 and 2 (Sweep's core value prop is Scope 3 supply chain)",
+    "No CSRD experience (EU directive is new, Unilever was reporting under earlier frameworks)",
+    "No ISSB/IFRS S1-S2 experience (new standards, not yet applied at Unilever during her tenure)",
+    "No GRI or SASB direct experience (contributed to TCFD only)",
+    "No Python or SQL skills — all Excel-based",
+    "No carbon accounting platform experience (Sweep, Watershed, Sweep, etc.)",
+    "No customer-facing experience — internal accounting role, not client-facing",
+    "No startup experience — Unilever is large corporate, different pace and structure",
+    "Career changer — accounting to sustainability, no formal sustainability qualification beyond self-study",
+    "GHG Protocol knowledge is self-study, not formal training or certification",
+    "No supply chain carbon modelling experience (financial supply chain, not emissions supply chain)"
+  ]
+}

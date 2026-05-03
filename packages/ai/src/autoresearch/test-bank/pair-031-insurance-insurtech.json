@@ -1,0 +1,108 @@
+{
+  "id": "pair-031",
+  "split": "validation",
+  "persona": "laid_off",
+  "synthetic": true,
+  "jd_style": "enterprise_saas",
+  "framing": "Laid-off underwriter at Zurich seeking product role at insurtech startup in Berlin",
+  "coverage": { "industry": "Insurance/Insurtech", "seniority": "mid", "pattern": "laid_off", "region": "europe" },
+  "jd": {
+    "title": "Senior Product Manager — Commercial Lines",
+    "company": "wefox",
+    "location": "Berlin, Germany (Hybrid)",
+    "experience_years": 5,
+    "style_note": "Enterprise SaaS: structured requirements, specific insurance domain knowledge, platform-focused",
+    "requirements": [
+      { "text": "5+ years of experience in insurance, insurtech, or B2B SaaS product management", "type": "must_have" },
+      { "text": "Deep understanding of commercial insurance underwriting workflows and rating engines", "type": "must_have" },
+      { "text": "Experience with API-first insurance platforms or embedded insurance distribution", "type": "must_have" },
+      { "text": "Proficiency in product analytics tools (Amplitude, Mixpanel, or Pendo)", "type": "must_have" },
+      { "text": "Experience writing PRDs and working with engineering teams using Jira and Confluence", "type": "must_have" },
+      { "text": "Knowledge of Solvency II regulatory requirements and EIOPA guidelines", "type": "nice_to_have" },
+      { "text": "Experience with Guidewire, Duck Creek, or Socotra insurance platforms", "type": "nice_to_have" },
+      { "text": "German language skills (B2+)", "type": "nice_to_have" }
+    ],
+    "responsibilities": [
+      "Own the commercial lines product roadmap for wefox's B2B insurance platform",
+      "Define underwriting workflow automation features for broker and MGA partners",
+      "Collaborate with data science team on pricing model integration and risk scoring APIs",
+      "Manage stakeholder alignment across insurance carriers, brokers, and engineering",
+      "Drive product discovery through user research with insurance professionals across DACH region"
+    ]
+  },
+  "expected_output": {
+    "summary": "Insurance professional with 7 years of underwriting experience at Zurich Insurance (London), most recently Senior Underwriter in Commercial Property. Led underwriting for GBP 80M portfolio across UK mid-market commercial property risks. Made redundant in Q1 2026 during Zurich's global operations restructuring. Deep domain expertise in commercial lines rating, pricing models, and broker distribution. Seeking transition from underwriting to insurtech product management.",
+    "experience": [
+      {
+        "company": "Zurich Insurance — London",
+        "title": "Senior Underwriter — Commercial Property",
+        "start_date": "2022-01",
+        "end_date": "2026-02",
+        "bullets": [
+          "Underwrote GBP 80M commercial property portfolio across UK mid-market segment (SME and mid-corporate)",
+          "Developed pricing guidelines and referral rules for automated quoting platform (Guidewire PolicyCenter)",
+          "Trained and mentored 3 junior underwriters on risk assessment and broker relationship management",
+          "Collaborated with actuarial team on loss ratio analysis and reserve adequacy reviews",
+          "Achieved combined ratio of 94% across managed portfolio, 6 points below divisional average"
+        ]
+      },
+      {
+        "company": "Zurich Insurance — London",
+        "title": "Underwriter — Commercial Property (promoted from Graduate Trainee, 2021)",
+        "start_date": "2019-09",
+        "end_date": "2021-12",
+        "bullets": [
+          "Completed Zurich's 2-year graduate programme rotating through underwriting, claims, and actuarial",
+          "Assessed and quoted commercial property risks up to GBP 5M sum insured",
+          "Built Excel-based pricing tools for quick-quote scenarios used by 8 underwriters in the team",
+          "Passed CII Diploma in Insurance (Dip CII) examinations"
+        ]
+      }
+    ],
+    "skills": {
+      "insurance": ["commercial property underwriting", "risk assessment", "pricing models", "combined ratio management", "broker distribution", "referral rules"],
+      "platforms": ["Guidewire PolicyCenter (underwriter user, not admin)", "Excel pricing models", "Zurich internal systems"],
+      "analytical": ["loss ratio analysis", "reserve adequacy", "portfolio management", "actuarial collaboration"],
+      "product_adjacent": ["pricing guideline development", "automated quoting workflows", "junior team mentoring"]
+    },
+    "certifications": [
+      "Dip CII — Chartered Insurance Institute (2021)",
+      "Certificate in Insurance — Chartered Insurance Institute (2020)"
+    ],
+    "education": [
+      "BSc Mathematics — University of Bath (2016-2019)"
+    ]
+  },
+  "jd_requirements": [
+    "5+ years insurance insurtech B2B SaaS product management",
+    "commercial insurance underwriting workflows rating engines",
+    "API-first insurance platforms embedded insurance distribution",
+    "Amplitude Mixpanel Pendo product analytics",
+    "PRDs Jira Confluence engineering teams",
+    "Solvency II EIOPA regulatory",
+    "Guidewire Duck Creek Socotra insurance platforms",
+    "German language B2+"
+  ],
+  "cloud_skills": [
+    "commercial property underwriting", "risk assessment",
+    "pricing models", "combined ratio management",
+    "broker distribution", "Guidewire PolicyCenter",
+    "loss ratio analysis", "reserve adequacy",
+    "portfolio management", "actuarial collaboration",
+    "pricing guideline development", "automated quoting",
+    "Dip CII", "Excel pricing models",
+    "mid-market commercial", "SME underwriting"
+  ],
+  "deliberate_flaws": [
+    "No product management experience — entire career in underwriting (domain expert, not PM)",
+    "No experience with product analytics tools (Amplitude, Mixpanel, Pendo)",
+    "No experience writing PRDs or working with engineering teams",
+    "No API or platform experience — used Guidewire as end-user, never configured it",
+    "No Duck Creek or Socotra experience",
+    "No German language skills",
+    "No Solvency II regulatory knowledge (underwriter, not compliance/risk)",
+    "Laid-off framing — redundancy may require explanation in interviews",
+    "No startup or insurtech experience — only traditional insurance carrier",
+    "No Jira or Confluence experience (used internal Zurich project tools)"
+  ]
+}

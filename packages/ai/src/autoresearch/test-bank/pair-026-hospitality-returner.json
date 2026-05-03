@@ -1,0 +1,123 @@
+{
+  "id": "pair-026",
+  "split": "held_out",
+  "persona": "returner",
+  "synthetic": true,
+  "jd_style": "enterprise_saas",
+  "framing": "Hotel operations manager returning after 2-year career break, applying to hospitality group in Singapore",
+  "coverage": { "industry": "Hospitality", "seniority": "mid", "pattern": "returner", "region": "asia" },
+  "jd": {
+    "title": "Director of Rooms — Luxury Segment",
+    "company": "Mandarin Oriental Hotel Group",
+    "location": "Singapore",
+    "experience_years": 10,
+    "requirements": [
+      { "text": "10+ years of progressive experience in hotel operations, with at least 3 years as Rooms Division Manager or equivalent", "type": "must_have" },
+      { "text": "Experience in luxury or upper-upscale hotel brands (Forbes 5-star or equivalent)", "type": "must_have" },
+      { "text": "Strong knowledge of revenue management principles and dynamic pricing strategies", "type": "must_have" },
+      { "text": "Experience with Opera PMS and revenue management systems (IDeaS or Duetto)", "type": "must_have" },
+      { "text": "Proven track record of achieving guest satisfaction scores above brand benchmark (NPS, ReviewPro, or Medallia)", "type": "must_have" },
+      { "text": "Experience managing departments of 80+ staff across front office, housekeeping, and concierge", "type": "must_have" },
+      { "text": "Fluency in English; Mandarin or Japanese is a strong advantage", "type": "nice_to_have" },
+      { "text": "Degree in Hospitality Management or related field", "type": "must_have" },
+      { "text": "Experience with luxury service training programs (Forbes Travel Guide, LQA)", "type": "nice_to_have" },
+      { "text": "Pre-opening or renovation project experience", "type": "nice_to_have" }
+    ],
+    "responsibilities": [
+      "Oversee all rooms division operations (front office, housekeeping, concierge, guest relations) for 527-room luxury property",
+      "Drive RevPAR performance in collaboration with Revenue Management and Sales",
+      "Maintain Forbes 5-star service standards across all guest touchpoints",
+      "Manage annual rooms division budget of SGD 12M",
+      "Lead recruitment, training, and retention strategy for 95-person rooms team",
+      "Champion digital guest experience initiatives (mobile check-in, digital concierge)"
+    ]
+  },
+  "expected_output": {
+    "summary": "Luxury hotel operations leader with 11 years of experience at The Ritz-Carlton and Four Seasons, returning from a 2-year career break. Previously Rooms Division Manager at The Ritz-Carlton, Millenia Singapore managing 90-person team across a 608-room luxury property. Achieved highest guest satisfaction scores in Asia-Pacific region (2021). Deep expertise in Opera PMS, revenue management, and Forbes 5-star service standards. BSc Hotel Management from Ecole hoteliere de Lausanne.",
+    "experience": [
+      {
+        "company": "The Ritz-Carlton, Millenia Singapore",
+        "title": "Rooms Division Manager",
+        "start_date": "2019-03",
+        "end_date": "2023-06",
+        "bullets": [
+          "Managed rooms division (front office, housekeeping, concierge, guest relations) for 608-room Forbes 5-star property",
+          "Led team of 90 across 4 departments with annual staff budget of SGD 8.5M",
+          "Achieved highest Medallia guest satisfaction score in Ritz-Carlton Asia-Pacific portfolio (2021, 92.4/100)",
+          "Implemented IDeaS revenue management system, contributing to 12% RevPAR growth year-over-year",
+          "Oversaw COVID-19 safe management measures and government quarantine facility operations (2020-2021)"
+        ]
+      },
+      {
+        "company": "Four Seasons Hotel Singapore",
+        "title": "Assistant Front Office Manager (promoted from Guest Relations Manager, 2016)",
+        "start_date": "2014-01",
+        "end_date": "2019-02",
+        "bullets": [
+          "Promoted from Guest Relations Manager to Assistant Front Office Manager within 2 years",
+          "Managed front office team of 25 for 255-room luxury property",
+          "Led Forbes Travel Guide service training achieving 5-star rating retention for 4 consecutive years",
+          "Administered Opera PMS including rate configuration, guest profiles, and group block management"
+        ]
+      },
+      {
+        "company": "Career Break",
+        "title": "Primary Caregiver — Family Relocation",
+        "start_date": "2023-07",
+        "end_date": "2025-09",
+        "bullets": [
+          "Relocated with family to Japan (spouse assignment), managed international household transition",
+          "Completed Cornell University online certificate in Hotel Revenue Management (2024)",
+          "Maintained industry network through Singapore Hotel Association membership and regional conferences"
+        ]
+      }
+    ],
+    "skills": {
+      "operations": ["rooms division management (608 rooms, 90 staff)", "front office", "housekeeping", "concierge", "guest relations"],
+      "revenue": ["RevPAR optimization", "IDeaS revenue management", "dynamic pricing", "rate strategy", "Opera PMS"],
+      "quality": ["Forbes 5-star standards", "Medallia guest satisfaction", "LQA audits", "service training programs"],
+      "leadership": ["department management (90 staff)", "budget management (SGD 8.5M)", "recruitment and retention", "COVID-19 operations management"]
+    },
+    "certifications": [
+      "Cornell University — Hotel Revenue Management Certificate (2024)",
+      "Forbes Travel Guide — Star Service Training (online programme)",
+      "AHLEI — Certified Rooms Division Executive (CRDE)"
+    ],
+    "education": [
+      "BSc International Hospitality Management — Ecole hoteliere de Lausanne (2010-2014)"
+    ]
+  },
+  "jd_requirements": [
+    "10+ years hotel operations 3+ Rooms Division Manager",
+    "luxury upper-upscale Forbes 5-star",
+    "revenue management dynamic pricing",
+    "Opera PMS IDeaS Duetto",
+    "guest satisfaction NPS ReviewPro Medallia",
+    "departments 80+ staff front office housekeeping concierge",
+    "English Mandarin Japanese",
+    "degree Hospitality Management",
+    "Forbes Travel Guide LQA luxury training",
+    "pre-opening renovation experience"
+  ],
+  "cloud_skills": [
+    "rooms division management", "front office", "housekeeping",
+    "concierge", "guest relations",
+    "RevPAR optimization", "IDeaS", "dynamic pricing",
+    "Opera PMS", "rate strategy",
+    "Forbes 5-star", "Medallia", "LQA",
+    "service training", "department management",
+    "budget management", "recruitment",
+    "COVID-19 operations", "government quarantine",
+    "luxury hospitality", "Ritz-Carlton", "Four Seasons"
+  ],
+  "deliberate_flaws": [
+    "2-year career break (2023-2025) — gap in employment",
+    "No pre-opening or renovation experience (JD lists as nice-to-have)",
+    "No Mandarin or Japanese fluency (only English)",
+    "No Duetto experience (only IDeaS)",
+    "No digital guest experience implementation (mobile check-in, digital concierge)",
+    "Returner — hospitality industry changed significantly during break (AI concierge, contactless everything)",
+    "Budget SGD 8.5M vs JD's SGD 12M scope — scaling gap",
+    "No ReviewPro experience (only Medallia)"
+  ]
+}

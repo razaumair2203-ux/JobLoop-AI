@@ -1,0 +1,62 @@
+{
+  "summary": "Senior Avionics & Maintenance professional with over 16 years of Pakistan Air Force experience in maintenance operations for SAAB 2000 Erieye AEW&C and JF-17 Thunder platforms. Expertise in fleet readiness management, field engineering leadership, and international OEM coordination with SAAB (Sweden) and CADI (China). Holds MS in Avionics Engineering with deep hands-on knowledge of radar systems, air defense weapons systems, and aircraft modification programs.",
+  "experience": [
+    {
+      "company": "Pakistan Air Force — AEW&C Squadron",
+      "title": "Maintenance Support Engineer, AEW&C Aircraft",
+      "start_date": "2015-12",
+      "end_date": "2017-11",
+      "bullets": [
+        "Managed avionics maintenance engineering for SAAB 2000 Erieye AEW&C fleet of 9 aircraft, covering radar, mission systems, and airframe subsystems",
+        "Developed and executed maintenance schedules with staggering plans to ensure multi-aircraft fleet readiness",
+        "Conducted technical fault diagnosis and coordinated component-level repair and replacement activities",
+        "Supervised maintenance teams during field operations to maintain aircraft availability for surveillance missions"
+      ]
+    },
+    {
+      "company": "Pakistan Air Force — Field Unit",
+      "title": "Senior Engineering Officer, Crotale Weapons System",
+      "start_date": "2021-04",
+      "end_date": "2022-09",
+      "bullets": [
+        "Commanded engineering operations for Crotale short-range air defense (SHORAD) weapons system",
+        "Maintained operational readiness of SAM battery including launcher, radar, fire control, and missile subsystems",
+        "Led field maintenance teams ensuring weapons system availability during operational deployments",
+        "Managed maintenance staggering and resource allocation across multiple system components"
+      ]
+    },
+    {
+      "company": "Pakistan Air Force — PMO AEW&C",
+      "title": "PMO Officer, AEW&C Aircraft",
+      "start_date": "2023-12",
+      "end_date": "2024-07",
+      "bullets": [
+        "Managed program activities for SAAB 2000 Erieye AEW&C fleet sustainment covering 9 aircraft",
+        "Coordinated maintenance contracts, spare parts logistics, and system upgrade programs with SAAB (Sweden)",
+        "Tracked fleet availability metrics and produced mission readiness reports for program leadership"
+      ]
+    },
+    {
+      "company": "Pakistan Aeronautical Complex (PAC) Kamra",
+      "title": "Integrated Systems & Design Specialist",
+      "start_date": "2008-10",
+      "end_date": "2013-10",
+      "bullets": [
+        "Designed and integrated avionics subsystems for military aircraft platforms",
+        "Conducted system-level testing, verification, and validation of integrated avionics suites",
+        "Supported production line engineering for avionics installation and wiring harness integration"
+      ]
+    }
+  ],
+  "skills": {
+    "systems": ["avionics systems", "radar systems", "C4ISR", "air defense (Crotale SHORAD)", "SAAB 2000 Erieye AEW&C"],
+    "maintenance": ["fleet maintenance management", "maintenance planning & staggering", "fault diagnosis", "operational readiness", "airworthiness compliance"],
+    "management": ["team leadership (15+ personnel)", "OEM coordination (SAAB, CADI)", "KPI tracking", "resource management"],
+    "tools": ["configuration management", "maintenance documentation systems"]
+  },
+  "certifications": [
+    "PMI-ACP — Project Management Institute",
+    "Google Project Management Professional Certificate",
+    "Engineering Project Management Specialization — Rice University"
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "summary": "Seasoned manufacturing operations leader with 14 years of experience in automotive and industrial manufacturing. Currently serving as Plant Director at Continental AG, overseeing a 650-employee facility producing electronic brake control units. Achieved OEE improvement from 72% to 86% through lean manufacturing programs and MES deployment. Six Sigma Black Belt with proven track record managing EUR 15M capital investments and EUR 95M operating budgets.",
+  "experience": [
+    {
+      "company": "Continental AG",
+      "title": "Plant Director — Electronic Brake Systems",
+      "start_date": "2021-03",
+      "end_date": "2024-12",
+      "bullets": [
+        "Directed operations of 650-employee manufacturing plant producing electronic brake control units for BMW, VW, and Stellantis",
+        "Drove Overall Equipment Effectiveness (OEE) from 72% to 86% through lean manufacturing initiatives and Total Productive Maintenance programs",
+        "Managed EUR 95M annual operating budget and spearheaded EUR 15M capital investment project for new SMT production line",
+        "Led deployment of Manufacturing Execution System (MES) integrated with SAP PP, achieving 18% reduction in scrap rates",
+        "Maintained IATF 16949 recertification with zero major non-conformances across 3 consecutive audit cycles"
+      ]
+    },
+    {
+      "company": "Bosch",
+      "title": "Senior Production Manager — Powertrain Components",
+      "start_date": "2017-01",
+      "end_date": "2021-02",
+      "bullets": [
+        "Managed 3 production lines with 280 employees manufacturing fuel injection systems and turbocharger components",
+        "Executed Six Sigma improvement projects resulting in EUR 2.4M in annual cost savings",
+        "Introduced predictive maintenance program that reduced unplanned downtime by 32%",
+        "Coordinated with R&D on New Product Introduction (NPI) for electrified powertrain components"
+      ]
+    },
+    {
+      "company": "Siemens",
+      "title": "Lean Specialist (promoted from Production Engineer, 2014)",
+      "start_date": "2011-06",
+      "end_date": "2016-12",
+      "bullets": [
+        "Promoted from production engineer to lean specialist within industrial automation manufacturing division",
+        "Facilitated 25+ Kaizen events and provided lean manufacturing training to 100+ shop floor operators",
+        "Supported SAP PP implementation for production planning and shop floor data collection"
+      ]
+    }
+  ],
+  "skills": {
+    "operations": ["plant management (650 employees)", "lean manufacturing", "Toyota Production System", "Six Sigma", "TPM", "Kaizen"],
+    "technical": ["MES implementation", "SAP PP", "predictive maintenance", "OEE optimization", "SMT production"],
+    "leadership": ["operating budget management (EUR 95M)", "capital investment (EUR 15M)", "NPI coordination", "global operations reporting"],
+    "quality": ["IATF 16949", "ISO 14001", "quality management systems", "continuous improvement", "scrap reduction"]
+  },
+  "certifications": [
+    "Six Sigma Black Belt — ASQ",
+    "Lean Practitioner — SME (Society of Manufacturing Engineers)"
+  ]
+}

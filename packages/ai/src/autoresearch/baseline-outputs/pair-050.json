@@ -1,0 +1,38 @@
+{
+  "summary": "Freelance music producer and audio engineer based in Berlin with 7 years of professional experience across music production, podcast recording, and radio broadcast. Produced 3 albums for independent artists and recorded over 120 podcast episodes for German podcast networks. Built and operates a private recording studio (Studio Klang) in Berlin-Kreuzberg. Proficient in Pro Tools, Logic Pro, Ableton Live, and iZotope RX. Prior experience as audio engineer at Deutschlandfunk Kultur handling live recording, radio documentaries, and sound design. Seeking to transition from freelance work into a full-time audio leadership position.",
+  "experience": [
+    {
+      "company": "Self-Employed — Audio Production (Studio Klang, Berlin)",
+      "title": "Freelance Music Producer & Audio Engineer",
+      "start_date": "2019-06",
+      "end_date": "2026-01",
+      "bullets": [
+        "Produced, mixed, and mastered 3 full-length albums and 15+ singles for independent artists spanning electronic, indie rock, and hip-hop",
+        "Recorded and mixed 120+ podcast episodes for 4 clients including a Spotify-exclusive true crime series 'Mordsache' (German-language)",
+        "Designed and built Studio Klang — private recording studio in Berlin-Kreuzberg covering acoustic treatment, equipment selection, and signal chain architecture",
+        "Coordinated project timelines, client relationships, and freelance audio editors (2-3 per project) for music and podcast productions",
+        "Created audio branding packages including intro/outro music, sound design, and sonic identity for 6 podcast shows"
+      ]
+    },
+    {
+      "company": "Deutschlandfunk Kultur — Berlin",
+      "title": "Audio Engineer (Tonmeister contract)",
+      "start_date": "2017-03",
+      "end_date": "2019-05",
+      "bullets": [
+        "Engineered live recordings and studio sessions for Deutschlandfunk Kultur's music and cultural programming",
+        "Mixed radio documentaries and feature programmes for broadcast in stereo and binaural formats",
+        "Operated Lawo mixing console and Pyramix DAW for live-to-air broadcast sessions",
+        "Handled audio post-production for 40+ radio features including narrative editing, sound design, and final mixing"
+      ]
+    }
+  ],
+  "skills": {
+    "audio_production": ["music production", "podcast recording", "mixing (music and spoken word)", "mastering", "sound design", "audio branding"],
+    "tools": ["Pro Tools (expert)", "Logic Pro", "Ableton Live", "iZotope RX (audio restoration)", "Pyramix DAW", "Lawo mixing console"],
+    "podcast": ["podcast episode production", "narrative editing", "interview editing", "intro/outro production", "true crime production", "German-language podcasts"],
+    "studio": ["studio design and acoustics", "microphone selection and technique", "signal chain design", "equipment maintenance"],
+    "languages": ["English (native)", "German (C1)"]
+  },
+  "certifications": []
+}

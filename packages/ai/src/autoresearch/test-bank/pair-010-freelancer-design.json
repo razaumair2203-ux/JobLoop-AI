@@ -1,0 +1,117 @@
+{
+  "id": "pair-010",
+  "split": "validation",
+  "persona": "freelancer",
+  "synthetic": true,
+  "framing": "Freelance UX Designer seeking full-time product design role",
+  "coverage": { "industry": "IT/Software", "seniority": "mid", "pattern": "freelancer", "region": "north_america" },
+  "jd": {
+    "title": "Senior Product Designer",
+    "company": "Figma",
+    "location": "San Francisco, CA (Remote OK)",
+    "experience_years": 5,
+    "requirements": [
+      { "text": "5+ years of product design experience for web and mobile applications", "type": "must_have" },
+      { "text": "Strong portfolio demonstrating end-to-end design process from research to final UI", "type": "must_have" },
+      { "text": "Expert-level proficiency in Figma", "type": "must_have" },
+      { "text": "Experience conducting user research, usability testing, and synthesizing findings", "type": "must_have" },
+      { "text": "Experience building and maintaining design systems", "type": "must_have" },
+      { "text": "Ability to create interactive prototypes for user testing and stakeholder alignment", "type": "must_have" },
+      { "text": "Experience working in cross-functional agile teams with engineers and PMs", "type": "must_have" },
+      { "text": "Experience with data-informed design decisions (analytics, A/B testing)", "type": "nice_to_have" },
+      { "text": "Bachelor's degree in Design, HCI, or related field", "type": "nice_to_have" },
+      { "text": "Experience designing developer tools or B2B SaaS products", "type": "nice_to_have" }
+    ],
+    "responsibilities": [
+      "Design new features and improve existing experiences for Figma's core product",
+      "Conduct user research to validate design decisions and identify unmet needs",
+      "Build and maintain Figma's internal design system components",
+      "Create high-fidelity mockups and interactive prototypes",
+      "Collaborate with engineering to ensure pixel-perfect implementation",
+      "Present design work to stakeholders and incorporate feedback iteratively"
+    ]
+  },
+  "expected_output": {
+    "summary": "Product Designer with 7 years of experience across freelance and in-house roles, specializing in B2B SaaS and developer tools. Designed end-to-end experiences for 12+ clients including Notion, Linear, and 3 YC-backed startups. Expert Figma user who has built 2 published design systems. Strong in user research, prototyping, and design-to-engineering handoff. Seeking full-time role to go deeper on a single product.",
+    "experience": [
+      {
+        "company": "Independent — UX/Product Design Consultant",
+        "title": "Freelance Product Designer",
+        "start_date": "2021-01",
+        "end_date": "2024-11",
+        "bullets": [
+          "Designed product experiences for 12+ B2B SaaS clients including Notion (contract), Linear (contract), and 3 YC-backed startups",
+          "Built and published 2 Figma design systems adopted by client engineering teams (50+ components each)",
+          "Conducted 40+ user research interviews and usability tests across engagements, synthesizing findings into actionable recommendations",
+          "Created interactive Figma prototypes used for investor demos and user testing, contributing to $8M combined client funding",
+          "Managed end-to-end design process: discovery, wireframing, visual design, prototyping, and developer handoff"
+        ]
+      },
+      {
+        "company": "Calendly",
+        "title": "Product Designer",
+        "start_date": "2019-03",
+        "end_date": "2020-12",
+        "bullets": [
+          "Designed scheduling flow improvements resulting in 12% increase in completed bookings (A/B tested)",
+          "Contributed to Calendly's design system, creating 15 reusable components with usage documentation",
+          "Collaborated with 3 cross-functional squads (engineering, PM, data) in 2-week sprint cycles",
+          "Conducted bi-weekly usability testing sessions with 5 participants per round"
+        ]
+      },
+      {
+        "company": "Huge Inc.",
+        "title": "Junior UX Designer",
+        "start_date": "2017-06",
+        "end_date": "2019-02",
+        "bullets": [
+          "Designed responsive web experiences for enterprise clients in fintech and healthcare verticals",
+          "Created wireframes, user flows, and high-fidelity mockups in Sketch and Figma",
+          "Supported senior designers on user research planning and synthesis"
+        ]
+      }
+    ],
+    "skills": {
+      "design": ["product design", "UX/UI design", "design systems", "visual design", "responsive design", "interaction design"],
+      "tools": ["Figma (expert)", "Sketch", "Framer", "Adobe Creative Suite", "Miro", "FigJam"],
+      "research": ["user research", "usability testing", "user interviews", "A/B testing", "analytics interpretation"],
+      "process": ["end-to-end design", "prototyping", "developer handoff", "design documentation", "cross-functional collaboration"]
+    },
+    "certifications": [
+      "Google UX Design Professional Certificate",
+      "Interaction Design Foundation — UX Management certification"
+    ],
+    "education": [
+      "BFA Graphic Design — Rhode Island School of Design (2013-2017)"
+    ]
+  },
+  "jd_requirements": [
+    "5+ years product design web mobile",
+    "portfolio end-to-end design process",
+    "Figma expert proficiency",
+    "user research usability testing",
+    "design systems building maintaining",
+    "interactive prototypes user testing",
+    "cross-functional agile teams engineers PMs",
+    "data-informed A/B testing analytics",
+    "Bachelor's Design HCI",
+    "developer tools B2B SaaS"
+  ],
+  "cloud_skills": [
+    "product design", "UX/UI design", "design systems",
+    "Figma", "Sketch", "Framer", "Adobe Creative Suite",
+    "user research", "usability testing", "user interviews",
+    "A/B testing", "prototyping", "developer handoff",
+    "visual design", "responsive design", "interaction design",
+    "wireframing", "design documentation",
+    "cross-functional collaboration", "Agile/Scrum",
+    "B2B SaaS design", "developer tools",
+    "Miro", "FigJam"
+  ],
+  "deliberate_flaws": [
+    "Freelance history — no single long-tenure role (hiring concern for full-time)",
+    "Notion and Linear were contracts, not full-time (could be misinterpreted)",
+    "BFA not HCI degree",
+    "No formal analytics/data skills beyond A/B test interpretation"
+  ]
+}

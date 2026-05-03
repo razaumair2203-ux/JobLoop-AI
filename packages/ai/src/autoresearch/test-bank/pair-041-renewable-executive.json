@@ -1,0 +1,122 @@
+{
+  "id": "pair-041",
+  "split": "train",
+  "persona": "executive",
+  "synthetic": true,
+  "jd_style": "enterprise_saas",
+  "framing": "VP of Operations at NextEra Energy seeking CEO role at late-stage utility-scale battery storage company",
+  "coverage": { "industry": "Renewable Energy", "seniority": "executive", "pattern": "linear", "region": "north_america" },
+  "jd": {
+    "title": "Chief Executive Officer",
+    "company": "Form Energy (utility-scale iron-air battery storage, $1.2B+ raised)",
+    "location": "Somerville, MA (On-site)",
+    "experience_years": 20,
+    "style_note": "Enterprise: board-level hire, specific energy sector expertise, scale-up leadership",
+    "requirements": [
+      { "text": "20+ years of experience in energy, utilities, or energy storage with progressive leadership", "type": "must_have" },
+      { "text": "Track record as CEO, President, or COO of energy company with $100M+ revenue", "type": "must_have" },
+      { "text": "Experience scaling manufacturing operations from pilot to commercial production", "type": "must_have" },
+      { "text": "Deep relationships with US utility executives, PUCs (Public Utility Commissions), and FERC/DOE stakeholders", "type": "must_have" },
+      { "text": "Experience with IRA (Inflation Reduction Act) incentives: 45X manufacturing credits, ITC, and PTC structures", "type": "must_have" },
+      { "text": "Board governance experience (public company or PE/VC-backed board)", "type": "must_have" },
+      { "text": "Experience with battery storage, long-duration energy storage (LDES), or grid-scale storage technologies", "type": "nice_to_have" },
+      { "text": "Manufacturing background in energy hardware (solar panels, wind turbines, batteries, or electrolyzers)", "type": "nice_to_have" },
+      { "text": "Experience leading IPO readiness or major fundraising rounds ($200M+)", "type": "nice_to_have" }
+    ],
+    "responsibilities": [
+      "Lead Form Energy through commercialisation of iron-air battery technology and first utility-scale deployments",
+      "Drive manufacturing scale-up of Weirton, WV factory from pilot to GWh-scale production",
+      "Manage relationships with utility customers, DOE Loan Programs Office, and state regulators",
+      "Oversee company strategy, P&L, and team growth from 500 to 1,500+ employees",
+      "Represent company to board of directors, investors (Breakthrough Energy Ventures, ArcelorMittal), and media"
+    ]
+  },
+  "expected_output": {
+    "summary": "Energy executive with 22 years at NextEra Energy, most recently SVP of Development & Engineering for NextEra Energy Resources (utility-scale renewables). Managed $4B annual capital deployment across wind, solar, and battery storage projects. Led development of 8 GW renewable portfolio across 15 US states. Deep relationships with utility executives, state PUCs, and FERC commissioners. Board member of American Clean Power Association. Seeking CEO role at growth-stage energy storage company.",
+    "experience": [
+      {
+        "company": "NextEra Energy Resources",
+        "title": "Senior Vice President — Development & Engineering",
+        "start_date": "2019-01",
+        "end_date": "2025-12",
+        "bullets": [
+          "Led development and engineering organisation of 350 staff delivering 2-3 GW annually of wind, solar, and battery storage projects",
+          "Managed $4B annual capital deployment with P&L responsibility for project development pipeline",
+          "Secured IRA manufacturing credits (45X) and ITC allocations for 6 utility-scale battery storage projects (total 3.2 GWh)",
+          "Negotiated long-term PPAs and tolling agreements with 12 US utility customers (Duke Energy, Southern Company, Xcel Energy)",
+          "Testified before 4 state Public Utility Commissions on renewable energy procurement and grid reliability"
+        ]
+      },
+      {
+        "company": "NextEra Energy Resources",
+        "title": "Vice President — Wind Development",
+        "start_date": "2013-01",
+        "end_date": "2018-12",
+        "bullets": [
+          "Built NextEra's Midwest wind portfolio from 2 GW to 6 GW across 8 states",
+          "Managed relationships with GE Renewable Energy and Vestas for turbine supply agreements ($2B+ procurement)",
+          "Led due diligence and integration for 3 wind portfolio acquisitions (combined 1.5 GW)",
+          "Developed tax equity financing structures with JPMorgan, Goldman Sachs, and Bank of America for PTC monetization"
+        ]
+      },
+      {
+        "company": "NextEra Energy (FPL Group, pre-rebrand)",
+        "title": "Director, Business Development (promoted from Manager, 2008)",
+        "start_date": "2004-06",
+        "end_date": "2012-12",
+        "bullets": [
+          "Originated and developed wind and solar projects across Texas, Oklahoma, and California",
+          "Built financial models for project economics, PPA pricing, and tax equity structures",
+          "Managed environmental permitting and land acquisition for 15+ wind farm sites"
+        ]
+      }
+    ],
+    "skills": {
+      "executive": ["P&L management ($4B capital deployment)", "organisation leadership (350 staff)", "utility customer relationships", "PUC testimony", "board governance"],
+      "energy": ["utility-scale renewables", "battery storage development", "wind energy", "solar development", "PPA negotiation", "grid reliability"],
+      "financial": ["tax equity structures (PTC, ITC)", "IRA incentives (45X, ITC)", "project finance", "M&A due diligence", "capital deployment"],
+      "regulatory": ["FERC", "state PUC proceedings", "environmental permitting", "IRA compliance", "utility procurement"]
+    },
+    "certifications": [],
+    "education": [
+      "MBA — Wharton School of Business, University of Pennsylvania (2002-2004)",
+      "BS Mechanical Engineering — Georgia Institute of Technology (1998-2002)"
+    ]
+  },
+  "jd_requirements": [
+    "20+ years energy utilities energy storage progressive leadership",
+    "CEO President COO $100M+ revenue",
+    "manufacturing pilot to commercial production scaling",
+    "utility executives PUCs FERC DOE relationships",
+    "IRA 45X manufacturing credits ITC PTC",
+    "board governance public company PE VC",
+    "battery storage LDES long-duration grid-scale",
+    "manufacturing energy hardware solar wind batteries electrolyzers",
+    "IPO readiness fundraising $200M+"
+  ],
+  "cloud_skills": [
+    "utility-scale renewables", "battery storage development",
+    "wind energy", "solar development",
+    "P&L management", "capital deployment",
+    "PPA negotiation", "tax equity structures",
+    "IRA incentives", "45X credits", "ITC", "PTC",
+    "FERC", "state PUC proceedings",
+    "utility customer relationships",
+    "M&A due diligence", "project finance",
+    "organisation leadership", "board governance",
+    "GE Renewable Energy", "Vestas",
+    "American Clean Power Association"
+  ],
+  "deliberate_flaws": [
+    "Never held CEO, President, or COO title — highest is SVP (title gap for C-suite hire)",
+    "No manufacturing experience — NextEra develops and operates, doesn't manufacture hardware",
+    "No experience scaling factory operations (pilot to GWh production) — JD's core challenge",
+    "No iron-air or LDES technology experience — battery storage experience is lithium-ion procurement, not manufacturing",
+    "No public company board seat (industry association board only — American Clean Power)",
+    "No IPO or major fundraising experience — NextEra is publicly traded, different capital raising model",
+    "No experience managing manufacturing workforce (factory operations vs project development teams)",
+    "No PE/VC board governance experience — publicly traded utility company background",
+    "No startup or growth-stage company experience — entire career at one large company (NextEra/FPL)",
+    "No DOE Loan Programs Office relationship (FERC and PUCs yes, DOE LPO no)"
+  ]
+}

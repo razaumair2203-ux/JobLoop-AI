@@ -1,0 +1,106 @@
+{
+  "id": "pair-045",
+  "split": "train",
+  "persona": "laid_off",
+  "synthetic": true,
+  "jd_style": "vague_culture_first",
+  "framing": "Laid-off e-commerce merchandiser at Farfetch seeking digital product role at luxury fashion house in Paris",
+  "coverage": { "industry": "Fashion/Luxury", "seniority": "mid", "pattern": "laid_off", "region": "europe" },
+  "jd": {
+    "title": "Digital Merchandising Manager",
+    "company": "Kering",
+    "location": "Paris, France",
+    "experience_years": 5,
+    "style_note": "Vague/culture-first: luxury brand tone, emphasis on taste and instinct, light on technical requirements",
+    "requirements": [
+      { "text": "You understand luxury — not just the products, but the codes, the storytelling, and the emotional connection with clients", "type": "must_have" },
+      { "text": "5+ years of experience in digital merchandising, e-commerce buying, or online retail strategy", "type": "must_have" },
+      { "text": "You know how to read data and use it to curate — not just optimise, but create desirability", "type": "must_have" },
+      { "text": "You've managed assortment planning for fashion categories across multiple markets", "type": "must_have" },
+      { "text": "Bonus: experience with Salesforce Commerce Cloud, SAP Hybris, or similar e-commerce platforms", "type": "nice_to_have" },
+      { "text": "Bonus: experience in luxury (LVMH, Kering, Richemont, or independent luxury brands)", "type": "nice_to_have" },
+      { "text": "French language skills (business level)", "type": "nice_to_have" }
+    ],
+    "responsibilities": [
+      "Own digital merchandising strategy for Gucci.com across EMEA markets",
+      "Curate online product assortments by category, season, and market — balancing commercial KPIs with brand storytelling",
+      "Collaborate with buying, creative, and marketing teams on product launches and editorial content placement",
+      "Analyse sell-through rates, conversion funnels, and inventory levels to optimise product visibility and pricing",
+      "Lead A/B testing and personalisation initiatives for product discovery and recommendation engines"
+    ]
+  },
+  "expected_output": {
+    "summary": "E-commerce merchandising professional with 6 years of experience at Farfetch (London), most recently Senior Merchandiser managing womenswear category for UK and EU markets. Made redundant in January 2026 during Farfetch's post-acquisition restructuring under Coupang. Managed GBP 45M annual GMV across 200+ luxury brand partners. Expert in marketplace merchandising, sell-through analytics, and product curation. Deep knowledge of luxury fashion market. Seeking transition from marketplace to direct-to-consumer luxury brand.",
+    "experience": [
+      {
+        "company": "Farfetch — London",
+        "title": "Senior Merchandiser — Womenswear",
+        "start_date": "2022-06",
+        "end_date": "2026-01",
+        "bullets": [
+          "Managed digital merchandising for womenswear category across UK and EU markets (GBP 45M annual GMV, 200+ brand partners)",
+          "Curated seasonal product assortments and homepage merchandising for Farfetch.com, balancing editorial vision with sell-through targets",
+          "Analysed conversion funnels, product page performance, and search ranking data using Farfetch internal analytics and Google Analytics 4",
+          "Collaborated with buying team on seasonal open-to-buy planning and markdown strategy for luxury ready-to-wear",
+          "Led personalised product recommendation project with data science team — increased average order value by 12%"
+        ]
+      },
+      {
+        "company": "Farfetch — London",
+        "title": "Merchandising Coordinator (promoted from Assistant, 2021)",
+        "start_date": "2020-01",
+        "end_date": "2022-05",
+        "bullets": [
+          "Supported senior merchandisers with product uploads, categorisation, and taxonomy management across Farfetch marketplace",
+          "Managed product data quality for 15,000+ SKUs per season, ensuring accurate sizing, colour, and brand attribution",
+          "Created weekly sell-through reports and category performance dashboards using Looker",
+          "Coordinated with boutique partners on inventory availability and fulfilment SLAs"
+        ]
+      }
+    ],
+    "skills": {
+      "merchandising": ["digital merchandising strategy", "assortment planning", "product curation", "seasonal buying support", "markdown strategy", "homepage merchandising"],
+      "analytics": ["sell-through analysis", "conversion funnel analysis", "Google Analytics 4", "Looker dashboards", "product page performance", "search ranking analysis"],
+      "luxury": ["luxury womenswear", "200+ brand partner management", "editorial merchandising", "luxury marketplace operations", "ready-to-wear"],
+      "ecommerce": ["marketplace merchandising (Farfetch platform)", "product taxonomy", "SKU management", "personalised recommendations", "A/B testing support"]
+    },
+    "certifications": [
+      "Google Analytics 4 Certification — Google (2023)"
+    ],
+    "education": [
+      "BA Fashion Management — London College of Fashion, UAL (2016-2019)"
+    ]
+  },
+  "jd_requirements": [
+    "luxury products codes storytelling emotional connection",
+    "5+ years digital merchandising e-commerce buying online retail",
+    "data curate desirability",
+    "assortment planning fashion categories multiple markets",
+    "Salesforce Commerce Cloud SAP Hybris e-commerce platforms",
+    "luxury LVMH Kering Richemont",
+    "French language business level"
+  ],
+  "cloud_skills": [
+    "digital merchandising", "assortment planning",
+    "product curation", "seasonal buying",
+    "markdown strategy", "homepage merchandising",
+    "sell-through analysis", "conversion funnels",
+    "Google Analytics 4", "Looker dashboards",
+    "luxury womenswear", "marketplace operations",
+    "product taxonomy", "SKU management",
+    "personalised recommendations", "A/B testing",
+    "editorial merchandising", "brand partner management"
+  ],
+  "deliberate_flaws": [
+    "No Salesforce Commerce Cloud or SAP Hybris experience — used Farfetch's proprietary platform",
+    "No direct luxury brand experience (LVMH, Kering, Richemont) — only marketplace/multi-brand",
+    "No French language skills",
+    "Marketplace merchandising is different from DTC brand merchandising — different KPIs, different creative control",
+    "Laid off during Farfetch/Coupang restructuring — needs positive framing in interviews",
+    "No brand storytelling ownership — Farfetch merchandises other brands, doesn't create the brand narrative",
+    "No experience with single-brand e-commerce (Gucci.com is one brand, Farfetch is 200+)",
+    "No pricing strategy experience for luxury (Farfetch doesn't set prices, brands do)",
+    "No experience working with creative/design teams on product launches (merchandised existing collections)",
+    "No EMEA market experience beyond UK and EU (JD says EMEA which includes Middle East and Africa)"
+  ]
+}

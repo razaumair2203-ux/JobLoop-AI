@@ -1,0 +1,106 @@
+{
+  "id": "pair-006",
+  "split": "train",
+  "persona": "career_changer",
+  "synthetic": true,
+  "framing": "Nurse transitioning to Health IT / Clinical Informatics",
+  "coverage": { "industry": "Healthcare", "seniority": "mid", "pattern": "career_changer", "region": "north_america" },
+  "jd": {
+    "title": "Clinical Informatics Analyst",
+    "company": "Kaiser Permanente",
+    "location": "Oakland, CA (Hybrid)",
+    "experience_years": 3,
+    "requirements": [
+      { "text": "3+ years of clinical experience in a healthcare setting", "type": "must_have" },
+      { "text": "Experience with electronic health record (EHR) systems, preferably Epic", "type": "must_have" },
+      { "text": "Understanding of clinical workflows and care coordination processes", "type": "must_have" },
+      { "text": "Ability to analyze clinical data and generate reports using Excel or EHR reporting tools", "type": "must_have" },
+      { "text": "Knowledge of healthcare data standards (HL7, FHIR, ICD-10)", "type": "nice_to_have" },
+      { "text": "BS in Nursing, Health Informatics, or related field", "type": "must_have" },
+      { "text": "Informatics certification (CPHIMS, Epic certification) preferred", "type": "nice_to_have" },
+      { "text": "Experience leading clinical process improvement initiatives", "type": "nice_to_have" },
+      { "text": "Strong communication skills to bridge clinical and technical teams", "type": "must_have" },
+      { "text": "Experience with quality metrics and regulatory reporting (CMS, Joint Commission)", "type": "nice_to_have" }
+    ],
+    "responsibilities": [
+      "Analyze clinical workflows and identify opportunities for EHR optimization",
+      "Build and maintain clinical reports and dashboards using Epic reporting tools",
+      "Serve as liaison between clinical staff and IT teams during system implementations",
+      "Support Epic module configuration and testing for ambulatory and inpatient settings",
+      "Develop training materials and conduct end-user training sessions",
+      "Monitor clinical data quality and support regulatory reporting requirements"
+    ]
+  },
+  "expected_output": {
+    "summary": "Registered Nurse with 7 years of clinical experience transitioning to Clinical Informatics. Combines deep understanding of patient care workflows with growing technical skills in data analysis, EHR optimization, and process improvement. Led unit-level quality initiatives that reduced medication errors by 22%. Currently completing Health Informatics certificate with hands-on Epic EHR project experience.",
+    "experience": [
+      {
+        "company": "Stanford Health Care",
+        "title": "Clinical Nurse II — Medical-Surgical Unit",
+        "start_date": "2020-06",
+        "end_date": "2024-08",
+        "bullets": [
+          "Delivered direct patient care on 36-bed medical-surgical unit using Epic EHR for documentation, ordering, and care coordination",
+          "Led unit-level quality improvement project reducing medication administration errors by 22% through workflow redesign",
+          "Served as unit Epic super-user, troubleshooting EHR issues and training 15 nursing staff on new Epic modules",
+          "Analyzed patient flow data using Excel to identify bottlenecks, reducing average discharge time by 40 minutes",
+          "Coordinated with IT team on Epic upgrade testing, providing clinical validation for order set changes"
+        ]
+      },
+      {
+        "company": "Sutter Health",
+        "title": "Registered Nurse — Emergency Department",
+        "start_date": "2017-09",
+        "end_date": "2020-05",
+        "bullets": [
+          "Managed patient care in high-acuity emergency department (Level II trauma center, 60K annual visits)",
+          "Documented clinical assessments and interventions in Cerner EHR system",
+          "Participated in department-wide process improvement initiatives for patient throughput"
+        ]
+      }
+    ],
+    "skills": {
+      "clinical": ["patient care", "care coordination", "clinical assessment", "medication administration", "quality improvement"],
+      "informatics": ["Epic EHR (super-user)", "Cerner EHR", "clinical workflow analysis", "EHR optimization", "end-user training"],
+      "technical": ["Excel (pivot tables, VLOOKUP)", "data analysis", "EHR report building", "clinical dashboards"],
+      "communication": ["clinical-IT liaison", "staff training", "process documentation", "stakeholder communication"]
+    },
+    "certifications": [
+      "Registered Nurse (RN) — California Board of Registered Nursing",
+      "BLS/ACLS Certified",
+      "Epic EHR Proficiency (super-user designation)"
+    ],
+    "education": [
+      "Health Informatics Certificate — UC Davis Extension (2024, in progress)",
+      "BSN Nursing — San Jose State University (2013-2017)"
+    ]
+  },
+  "jd_requirements": [
+    "3+ years clinical experience healthcare",
+    "EHR systems Epic experience",
+    "clinical workflows care coordination",
+    "clinical data analysis Excel EHR reporting",
+    "healthcare data standards HL7 FHIR ICD-10",
+    "BS Nursing Health Informatics",
+    "informatics certification CPHIMS Epic",
+    "clinical process improvement",
+    "communication clinical technical teams",
+    "quality metrics regulatory reporting CMS"
+  ],
+  "cloud_skills": [
+    "patient care", "care coordination", "clinical assessment",
+    "Epic EHR", "Cerner EHR", "clinical workflow analysis",
+    "quality improvement", "medication administration",
+    "staff training", "process improvement",
+    "Excel data analysis", "report building",
+    "clinical-IT liaison", "process documentation",
+    "EHR optimization", "super-user support",
+    "clinical dashboards"
+  ],
+  "deliberate_flaws": [
+    "No HL7/FHIR/ICD-10 coding experience",
+    "No CPHIMS certification",
+    "Health Informatics certificate still in progress",
+    "Career changer — informatics is target field, not current field"
+  ]
+}

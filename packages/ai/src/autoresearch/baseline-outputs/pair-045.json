@@ -1,0 +1,39 @@
+{
+  "summary": "E-commerce merchandising professional with 6 years of luxury digital retail experience at Farfetch in London. Most recently served as Senior Merchandiser for womenswear, managing UK and EU markets with GBP 45M annual GMV across 200+ luxury brand partners. Deep expertise in product curation, sell-through analytics, and conversion optimisation for luxury fashion. Made redundant in January 2026 during Farfetch's post-acquisition restructuring. Experienced in marketplace merchandising, seasonal assortment planning, and personalised recommendation strategies. Looking to bring luxury e-commerce expertise to a direct-to-consumer brand environment.",
+  "experience": [
+    {
+      "company": "Farfetch — London",
+      "title": "Senior Merchandiser — Womenswear",
+      "start_date": "2022-06",
+      "end_date": "2026-01",
+      "bullets": [
+        "Managed digital merchandising strategy for womenswear across UK and EU markets (GBP 45M annual GMV, 200+ luxury brand partners)",
+        "Curated seasonal product assortments and homepage content for Farfetch.com, balancing editorial storytelling with sell-through performance targets",
+        "Analysed conversion funnels, product page metrics, and search ranking data using Farfetch analytics platform and Google Analytics 4",
+        "Partnered with buying team on open-to-buy planning and markdown strategy for luxury ready-to-wear categories",
+        "Led personalised product recommendation initiative with data science team, driving a 12% increase in average order value"
+      ]
+    },
+    {
+      "company": "Farfetch — London",
+      "title": "Merchandising Coordinator (promoted from Assistant, 2021)",
+      "start_date": "2020-01",
+      "end_date": "2022-05",
+      "bullets": [
+        "Supported senior merchandisers with product uploads, categorisation, and taxonomy management on Farfetch marketplace",
+        "Managed product data quality for 15,000+ SKUs per season, ensuring correct sizing, colour attribution, and brand mapping",
+        "Created weekly sell-through reports and category performance dashboards in Looker",
+        "Coordinated with boutique partners on inventory availability and fulfilment service level agreements"
+      ]
+    }
+  ],
+  "skills": {
+    "luxury": ["luxury womenswear", "200+ brand partner management", "editorial merchandising", "luxury marketplace operations", "ready-to-wear"],
+    "merchandising": ["digital merchandising strategy", "assortment planning", "product curation", "seasonal buying support", "markdown strategy", "homepage merchandising"],
+    "analytics": ["sell-through analysis", "conversion funnel analysis", "Google Analytics 4", "Looker dashboards", "product page performance"],
+    "ecommerce": ["marketplace merchandising (Farfetch platform)", "product taxonomy", "SKU management", "personalised recommendations", "A/B testing"]
+  },
+  "certifications": [
+    "Google Analytics 4 Certification — Google (2023)"
+  ]
+}

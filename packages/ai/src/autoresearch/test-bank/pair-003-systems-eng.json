@@ -1,0 +1,132 @@
+{
+  "id": "pair-003",
+  "split": "train",
+  "persona": "military",
+  "source_cv": "Alpha_CVs/Resume SE_Jan26.pdf",
+  "framing": "Aerosystems/Avionics Systems Engineer",
+  "sensitivity": {
+    "platform_names": {
+      "JF-17 Thunder": "Lead Fighter Aircraft Program",
+      "SAAB 2000 Erieye AEW&C": "Airborne Early Warning & Control Fleet",
+      "Crotale SHORAD": "Short-Range Air Defense System"
+    },
+    "recommendation": "sanitize_for_generic_employers",
+    "region_aware": true,
+    "note": "Defense/ME employers: keep real names. Generic corporate: use sanitized versions. Always ask user."
+  },
+  "jd": {
+    "title": "Senior Systems Engineer — Avionics & Mission Systems",
+    "company": "Leonardo DRS",
+    "location": "Jeddah, Saudi Arabia",
+    "experience_years": 10,
+    "requirements": [
+      { "text": "10+ years in avionics systems engineering or aerospace systems integration", "type": "must_have" },
+      { "text": "Experience with fighter aircraft avionics architecture and integration", "type": "must_have" },
+      { "text": "Hands-on experience with mission computer, EW suite, or radar integration", "type": "must_have" },
+      { "text": "Systems engineering lifecycle (requirements, design, V&V, deployment)", "type": "must_have" },
+      { "text": "Experience with AEW&C, SIGINT, or ISR platforms", "type": "nice_to_have" },
+      { "text": "MS in Avionics, Systems, Electrical, or Aerospace Engineering", "type": "must_have" },
+      { "text": "Knowledge of MIL-STD-1553, ARINC 429, or similar avionics bus standards", "type": "nice_to_have" },
+      { "text": "Cross-cultural engineering team collaboration experience", "type": "nice_to_have" },
+      { "text": "Flight test support and weapons integration experience", "type": "must_have" },
+      { "text": "Technical documentation and design review experience", "type": "must_have" }
+    ],
+    "responsibilities": [
+      "Lead avionics systems engineering for fighter aircraft modernization programs",
+      "Define requirements, perform functional analysis, and manage system baselines",
+      "Coordinate integration testing of mission systems, sensors, and weapons",
+      "Support flight test campaigns and analyze test data",
+      "Interface with customer engineering teams and subcontractors",
+      "Produce technical documentation for design reviews and certification"
+    ]
+  },
+  "expected_output": {
+    "summary": "Avionics Systems Engineer with 16+ years spanning hands-on integration at PAC Kamra, SAAB 2000 Erieye AEW&C maintenance, and JF-17 Thunder Block III development at CADI Chengdu. Deep expertise in mission computer integration, EW suite design, glass cockpit systems, and weapons qualification. MS Avionics Engineering with cross-cultural engineering collaboration experience across Pakistan, China, and Sweden.",
+    "experience": [
+      {
+        "company": "AVIC/CADI Chengdu",
+        "title": "Aerospace Systems Integration Lead",
+        "start_date": "2017-11",
+        "end_date": "2019-12",
+        "bullets": [
+          "Led avionics and weapons systems integration for JF-17 Thunder Block III development at CADI",
+          "Managed integration testing of indigenous mission computer, EW suite, and glass cockpit systems",
+          "Supported flight test campaigns for weapons integration and avionics qualification",
+          "Contributed to development of JF-17's indigenous systems replacing legacy Chinese/Russian components",
+          "Bridged cross-cultural engineering collaboration between Pakistani and Chinese technical teams"
+        ]
+      },
+      {
+        "company": "Pakistan Aeronautical Complex (PAC) Kamra",
+        "title": "Integrated Systems & Design Specialist",
+        "start_date": "2008-10",
+        "end_date": "2013-10",
+        "bullets": [
+          "Designed and integrated avionics subsystems for military aircraft platforms at PAC Kamra",
+          "Performed system-level testing, verification, and validation of integrated avionics suites",
+          "Developed technical documentation for design reviews, configuration baselines, and test procedures",
+          "Supported production line engineering for avionics installation and wiring harness integration"
+        ]
+      },
+      {
+        "company": "Pakistan Air Force — AEW&C Squadron",
+        "title": "Maintenance Support Engineer, AEW&C Aircraft",
+        "start_date": "2015-12",
+        "end_date": "2017-11",
+        "bullets": [
+          "Managed maintenance engineering for SAAB 2000 Erieye AEW&C fleet (9 aircraft) including radar and mission systems",
+          "Performed technical fault diagnosis at system and subsystem level",
+          "Ensured operational readiness through maintenance scheduling and resource allocation"
+        ]
+      },
+      {
+        "company": "College of Aeronautical Engineering",
+        "title": "Faculty — Systems Engineering",
+        "start_date": "2025-07",
+        "end_date": "present",
+        "bullets": [
+          "Teaches Systems Engineering courses to aeronautical engineering students",
+          "Coordinates research projects and industry-academia linkages"
+        ]
+      }
+    ],
+    "skills": {
+      "systems_engineering": ["avionics architecture", "systems integration", "requirements analysis", "V&V testing", "functional analysis", "system baselines"],
+      "platforms_technologies": ["JF-17 Thunder (Block I/II/III)", "SAAB 2000 Erieye AEW&C", "mission computer", "EW suite", "glass cockpit", "radar systems"],
+      "engineering": ["flight test support", "weapons integration", "wiring harness design", "technical documentation", "design reviews", "configuration management"],
+      "collaboration": ["cross-cultural engineering (China, Sweden)", "OEM coordination", "team leadership"]
+    },
+    "certifications": [
+      "PMI-ACP — Project Management Institute",
+      "Introduction to Systems Engineering Specialization — CU Boulder / Lockheed Martin"
+    ],
+    "education": [
+      "MS Avionics Engineering — Air University (2013-2015)",
+      "BE Avionics Engineering — College of Aeronautical Engineering, PAF (2004-2008)"
+    ]
+  },
+  "jd_requirements": [
+    "10+ years avionics systems engineering",
+    "fighter aircraft avionics architecture integration",
+    "mission computer EW suite radar integration",
+    "systems engineering lifecycle requirements V&V",
+    "AEW&C SIGINT ISR platforms",
+    "MS Avionics Systems Aerospace Engineering",
+    "MIL-STD-1553 ARINC avionics bus standards",
+    "cross-cultural engineering collaboration",
+    "flight test weapons integration",
+    "technical documentation design review"
+  ],
+  "cloud_skills": [
+    "avionics design", "systems integration", "V&V testing", "configuration management",
+    "aircraft maintenance engineering", "operational readiness", "fault diagnosis",
+    "maintenance planning", "team leadership", "radar systems", "C4ISR", "SAAB 2000 Erieye",
+    "weapons integration", "flight testing", "mission computer", "EW systems", "JF-17 Thunder",
+    "glass cockpit", "wiring harness", "aircraft modification", "technical documentation",
+    "program management", "defense acquisition", "budget management",
+    "field operations", "weapons systems", "SAM systems", "Crotale",
+    "fleet sustainment", "international vendor management",
+    "systems engineering instruction", "research coordination",
+    "cross-cultural collaboration", "CADI coordination"
+  ]
+}

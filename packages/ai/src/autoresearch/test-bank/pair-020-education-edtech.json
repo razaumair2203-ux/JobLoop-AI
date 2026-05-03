@@ -1,0 +1,107 @@
+{
+  "id": "pair-020",
+  "split": "validation",
+  "persona": "career_changer",
+  "synthetic": true,
+  "jd_style": "startup_technical",
+  "framing": "Secondary school teacher transitioning to instructional designer role at EdTech startup",
+  "coverage": { "industry": "Education/EdTech", "seniority": "mid", "pattern": "career_changer", "region": "north_america" },
+  "jd": {
+    "title": "Senior Instructional Designer — AI Learning Products",
+    "company": "Khan Academy",
+    "location": "Mountain View, CA or Remote (US)",
+    "experience_years": null,
+    "style_note": "Startup-technical: mission-driven, cross-domain (pedagogy + tech), flat requirements list",
+    "requirements": [
+      { "text": "Deep understanding of learning science, cognitive load theory, and evidence-based pedagogy", "type": "must_have" },
+      { "text": "Experience designing curriculum or instructional content for K-12 or higher education at scale", "type": "must_have" },
+      { "text": "Comfort working with engineers and data scientists to translate pedagogical goals into product requirements", "type": "must_have" },
+      { "text": "Experience with learning management systems (LMS) and content authoring tools", "type": "must_have" },
+      { "text": "Familiarity with AI/ML concepts as applied to adaptive learning or intelligent tutoring systems", "type": "nice_to_have" },
+      { "text": "Experience with A/B testing or learning outcome measurement at scale", "type": "nice_to_have" },
+      { "text": "Master's degree in Education, Learning Sciences, Instructional Design, or related field", "type": "nice_to_have" },
+      { "text": "Passion for free, world-class education for anyone, anywhere", "type": "must_have" }
+    ],
+    "responsibilities": [
+      "Design instructional frameworks for Khanmigo (AI tutor) interactions across math and science subjects",
+      "Collaborate with AI/ML engineers to define pedagogically-sound tutoring dialogue flows",
+      "Develop rubrics and evaluation criteria for AI-generated explanations and hints",
+      "Conduct learning outcome studies and iterate on content based on student performance data",
+      "Create instructor guides and training materials for teachers using Khanmigo in classrooms"
+    ]
+  },
+  "expected_output": {
+    "summary": "Secondary school mathematics teacher with 8 years of classroom experience transitioning to instructional design. Led curriculum redesign for AP Calculus and AP Statistics at a 2,000-student high school using backward design and spaced repetition principles. Created supplementary digital learning modules on Khan Academy and Desmos. MEd in Curriculum & Instruction with thesis on adaptive practice platforms. Seeking to apply pedagogical expertise to AI-powered learning product design.",
+    "experience": [
+      {
+        "company": "Thomas Jefferson High School for Science and Technology",
+        "title": "Mathematics Teacher & Curriculum Lead",
+        "start_date": "2018-08",
+        "end_date": "2024-06",
+        "bullets": [
+          "Taught AP Calculus AB/BC and AP Statistics to 150+ students annually, achieving 92% pass rate (vs. 58% national average)",
+          "Led 4-person curriculum committee redesigning mathematics sequence using backward design and Understanding by Design (UbD) framework",
+          "Created 40+ supplementary video lessons (YouTube) and interactive practice sets (Desmos, Google Forms) aligned to Khan Academy exercise sequences",
+          "Piloted Khanmigo AI tutor in 3 AP Calculus sections (2023-2024), providing qualitative feedback to Khan Academy's product team",
+          "Trained 25 mathematics teachers across Fairfax County on integrating adaptive practice platforms (Khan Academy, Desmos, DeltaMath)"
+        ]
+      },
+      {
+        "company": "Fairfax County Public Schools",
+        "title": "Mathematics Teacher",
+        "start_date": "2016-08",
+        "end_date": "2018-07",
+        "bullets": [
+          "Taught Algebra I, Geometry, and Pre-Calculus to diverse student population (35% ESL)",
+          "Designed differentiated instruction materials addressing 3 proficiency levels per class",
+          "Implemented formative assessment system using Google Forms and spreadsheet-based item analysis"
+        ]
+      }
+    ],
+    "skills": {
+      "pedagogy": ["backward design (UbD)", "cognitive load theory", "spaced repetition", "differentiated instruction", "formative assessment", "AP curriculum design"],
+      "educational_technology": ["Khan Academy (assignment & analytics)", "Khanmigo (pilot user)", "Desmos", "DeltaMath", "Google Classroom", "Canvas LMS"],
+      "content_creation": ["video lesson production", "interactive practice set design", "rubric development", "teacher training materials"],
+      "assessment": ["AP exam preparation", "item analysis", "learning outcome measurement", "qualitative feedback"]
+    },
+    "certifications": [
+      "Virginia Teaching License — Mathematics (6-12)",
+      "College Board AP Summer Institute — Calculus AB/BC, Statistics",
+      "Google Certified Educator Level 2"
+    ],
+    "education": [
+      "MEd Curriculum & Instruction — George Mason University (2019-2021, part-time)",
+      "BS Mathematics — University of Virginia (2012-2016)"
+    ]
+  },
+  "jd_requirements": [
+    "learning science cognitive load theory evidence-based pedagogy",
+    "curriculum instructional content K-12 higher education at scale",
+    "working with engineers data scientists pedagogical goals product requirements",
+    "learning management systems LMS content authoring tools",
+    "AI ML adaptive learning intelligent tutoring systems",
+    "A/B testing learning outcome measurement at scale",
+    "Master's Education Learning Sciences Instructional Design",
+    "passion free world-class education"
+  ],
+  "cloud_skills": [
+    "backward design", "UbD", "cognitive load theory",
+    "spaced repetition", "differentiated instruction",
+    "AP curriculum design", "formative assessment",
+    "Khan Academy", "Khanmigo", "Desmos", "DeltaMath",
+    "Canvas LMS", "Google Classroom",
+    "video lesson production", "interactive practice sets",
+    "rubric development", "teacher training",
+    "item analysis", "learning outcome measurement",
+    "curriculum committee leadership"
+  ],
+  "deliberate_flaws": [
+    "No professional instructional design experience — all teaching, not ID",
+    "No experience working with engineers or data scientists (only used products they built)",
+    "No A/B testing or quantitative learning outcome research experience",
+    "AI/ML knowledge is user-level only (piloted Khanmigo, didn't design tutoring flows)",
+    "No experience with content authoring tools beyond Google ecosystem and Khan Academy's platform",
+    "Career changer — no startup or tech company experience, moving from public school culture",
+    "Scale is classroom-level (150 students), not platform-level (millions of learners)"
+  ]
+}

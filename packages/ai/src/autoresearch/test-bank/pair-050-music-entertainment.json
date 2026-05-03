@@ -1,0 +1,106 @@
+{
+  "id": "pair-050",
+  "split": "train",
+  "persona": "freelancer",
+  "synthetic": true,
+  "jd_style": "vague_culture_first",
+  "framing": "Freelance music producer and audio engineer applying to Head of Audio at podcast startup in Berlin",
+  "coverage": { "industry": "Music/Entertainment", "seniority": "mid", "pattern": "freelancer", "region": "europe" },
+  "jd": {
+    "title": "Head of Audio",
+    "company": "Podimo",
+    "location": "Berlin, Germany (Hybrid)",
+    "experience_years": 5,
+    "style_note": "Vague/culture-first: creative company, emphasis on taste and storytelling, flexible on exact background",
+    "requirements": [
+      { "text": "You have exceptional ears — you know what great audio sounds like and you can make it happen", "type": "must_have" },
+      { "text": "5+ years of professional audio production experience (music, podcasts, radio, film, or advertising)", "type": "must_have" },
+      { "text": "You can manage a team of audio producers and editors while maintaining creative quality standards", "type": "must_have" },
+      { "text": "You understand podcast-specific production: narrative structure, interview editing, sound design, and mixing for spoken word", "type": "must_have" },
+      { "text": "Bonus: experience building or managing a podcast studio (technical setup, acoustics, workflow design)", "type": "nice_to_have" },
+      { "text": "Bonus: experience with audio-first content strategy and audience development", "type": "nice_to_have" },
+      { "text": "Bonus: German language skills", "type": "nice_to_have" }
+    ],
+    "responsibilities": [
+      "Lead Podimo's audio production team (8 producers and editors) across original podcast programming",
+      "Set and maintain audio quality standards for all Podimo Originals (50+ shows in production)",
+      "Oversee studio operations at Podimo's Berlin production facility",
+      "Collaborate with editorial and content teams on new show development and pilot production",
+      "Manage production workflows, scheduling, and freelancer relationships for audio production"
+    ]
+  },
+  "expected_output": {
+    "summary": "Freelance music producer and audio engineer with 7 years of experience producing, mixing, and mastering music and audio content in Berlin. Produced 3 albums for independent artists released on Spotify and Apple Music. Recorded and mixed 120+ podcast episodes for 4 German podcast networks. Built and operates private recording studio in Berlin-Kreuzberg. Expert in Pro Tools, Logic Pro, and Ableton Live. No experience managing audio teams or setting production standards at scale. Seeking transition from freelance to full-time audio leadership.",
+    "experience": [
+      {
+        "company": "Self-Employed — Audio Production (Studio Klang, Berlin)",
+        "title": "Freelance Music Producer & Audio Engineer",
+        "start_date": "2019-06",
+        "end_date": "2026-01",
+        "bullets": [
+          "Produced, mixed, and mastered 3 full-length albums and 15+ singles for independent artists across electronic, indie rock, and hip-hop genres",
+          "Recorded and mixed 120+ podcast episodes for 4 clients including Spotify-exclusive true crime series 'Mordsache' (German)",
+          "Built and operated Studio Klang — private recording studio in Berlin-Kreuzberg (acoustic design, equipment selection, signal chain)",
+          "Managed client relationships, project timelines, and freelance audio editors (2-3 per project) across music and podcast projects",
+          "Delivered audio branding packages (intro/outro music, sound design, sonic identity) for 6 podcast shows"
+        ]
+      },
+      {
+        "company": "Deutschlandfunk Kultur — Berlin",
+        "title": "Audio Engineer (Tonmeister contract)",
+        "start_date": "2017-03",
+        "end_date": "2019-05",
+        "bullets": [
+          "Engineered live recordings and studio sessions for Deutschlandfunk Kultur's music and culture programming",
+          "Mixed radio documentaries and feature programmes for broadcast (stereo and binaural formats)",
+          "Operated Lawo mixing console and Pyramix DAW for live-to-air broadcast recording",
+          "Managed audio post-production for 40+ radio features including narrative editing, sound design, and final mix"
+        ]
+      }
+    ],
+    "skills": {
+      "audio_production": ["music production", "podcast recording", "mixing (music and spoken word)", "mastering", "sound design", "audio branding"],
+      "tools": ["Pro Tools (expert)", "Logic Pro", "Ableton Live", "iZotope RX (audio restoration)", "Pyramix DAW", "Lawo mixing console"],
+      "studio": ["studio design and acoustics", "microphone selection and technique", "signal chain design", "equipment maintenance"],
+      "podcast": ["podcast episode production", "narrative editing", "interview editing", "intro/outro production", "true crime production", "German-language podcasts"],
+      "languages": ["English (native)", "German (C1)"]
+    },
+    "certifications": [],
+    "education": [
+      "BSc (Hons) Audio and Music Technology — University of the West of England (UWE Bristol) (2013-2016)"
+    ]
+  },
+  "jd_requirements": [
+    "exceptional ears great audio production",
+    "5+ years professional audio music podcasts radio film advertising",
+    "manage team audio producers editors creative quality",
+    "podcast narrative structure interview editing sound design mixing spoken word",
+    "podcast studio technical setup acoustics workflow",
+    "audio content strategy audience development",
+    "German language"
+  ],
+  "cloud_skills": [
+    "music production", "podcast recording",
+    "mixing", "mastering", "sound design",
+    "audio branding", "Pro Tools", "Logic Pro",
+    "Ableton Live", "iZotope RX", "Pyramix",
+    "studio design", "acoustics", "microphone technique",
+    "narrative editing", "interview editing",
+    "true crime production", "German-language podcasts",
+    "radio broadcast", "Deutschlandfunk",
+    "client management", "German C1"
+  ],
+  "deliberate_flaws": [
+    "No experience managing a permanent audio team (managed 2-3 freelancers per project, not 8+ staff)",
+    "No experience setting production standards at scale (50+ shows — freelancer handles 4-6 clients)",
+    "No content strategy or audience development experience (produces content, doesn't strategize it)",
+    "No experience with podcast platform operations (Podimo is a subscription platform, different from production)",
+    "Freelancer — no experience with organisational processes, HR, team performance reviews, or budget management",
+    "Music production is primary skill — podcast production is secondary and less experienced",
+    "No experience with editorial or show development (produces what clients commission, doesn't develop new shows)",
+    "120 podcast episodes across 4 clients is modest — Head of Audio manages 50+ shows simultaneously",
+    "German is C1, not native — Podimo creates German-language originals",
+    "No experience managing production scheduling across multiple concurrent shows",
+    "BA Music Technology is practical, not leadership-oriented — no management training or qualification"
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "id": "pair-030",
+  "split": "train",
+  "persona": "freelancer",
+  "synthetic": true,
+  "jd_style": "vague_culture_first",
+  "framing": "Freelance full-stack developer applying to vague 'founding engineer' role at PropTech startup",
+  "coverage": { "industry": "Real Estate/PropTech", "seniority": "mid", "pattern": "freelancer", "region": "north_america" },
+  "jd": {
+    "title": "Founding Engineer",
+    "company": "Stealth PropTech Startup (YC W26)",
+    "location": "San Francisco, CA or Remote (US)",
+    "experience_years": null,
+    "style_note": "Vague/culture-first: minimal requirements, founder-speak, no specific tech stack, equity-heavy",
+    "requirements": [
+      { "text": "You've shipped products that real users depend on — not just side projects", "type": "must_have" },
+      { "text": "You're comfortable owning the entire stack, from database schema to deployment pipeline", "type": "must_have" },
+      { "text": "You move fast and make pragmatic trade-offs — you know when good enough is good enough", "type": "must_have" },
+      { "text": "You've worked at an early-stage startup before, or you've built something from zero on your own", "type": "must_have" },
+      { "text": "Bonus: you know real estate, property management, or construction tech", "type": "nice_to_have" }
+    ],
+    "responsibilities": [
+      "Be the first engineering hire — you'll build the v1 product alongside the two co-founders",
+      "Own architecture decisions, tech stack selection, and infrastructure setup",
+      "Ship features directly to property managers and landlords who are testing the beta",
+      "Hire the next 2-3 engineers when we raise Series A"
+    ]
+  },
+  "expected_output": {
+    "summary": "Freelance full-stack developer with 6 years of experience building production web applications for startups and small businesses. Built and shipped 15+ client projects using Next.js, PostgreSQL, and Vercel. Created a SaaS tool for property managers (lease tracking + maintenance requests) that reached 200 paying users before acqui-hired by a competitor. Self-taught engineer, no CS degree. Comfortable across the full stack from database design to CI/CD.",
+    "experience": [
+      {
+        "company": "Self-Employed — Full-Stack Development",
+        "title": "Freelance Software Engineer",
+        "start_date": "2021-06",
+        "end_date": "2025-09",
+        "bullets": [
+          "Built and shipped 15+ production web applications for startup clients using Next.js, TypeScript, PostgreSQL, and Vercel",
+          "Created RentTrack — a SaaS lease management tool for small landlords (Next.js, Supabase, Stripe), grew to 200 paying users",
+          "Negotiated acqui-hire of RentTrack by competitor in 2024 — integrated codebase and transitioned users over 3-month period",
+          "Designed database schemas, built REST APIs, implemented auth (Supabase Auth, NextAuth), and deployed via Vercel and Railway",
+          "Managed client relationships, scoped projects, and delivered on fixed-price contracts ($5K-$40K range)"
+        ]
+      },
+      {
+        "company": "Opendoor",
+        "title": "Software Engineer",
+        "start_date": "2019-03",
+        "end_date": "2021-05",
+        "bullets": [
+          "Built internal tools for property valuation pipeline using React, Node.js, and PostgreSQL",
+          "Developed automated comparable property analysis feature processing 50K+ listings daily",
+          "Participated in on-call rotation for production systems serving 15K+ monthly home offers",
+          "Transitioned to freelancing after 2021 restructuring"
+        ]
+      }
+    ],
+    "skills": {
+      "frontend": ["Next.js", "React", "TypeScript", "Tailwind CSS"],
+      "backend": ["Node.js", "PostgreSQL", "Supabase", "REST APIs", "Stripe integration"],
+      "infrastructure": ["Vercel", "Railway", "GitHub Actions CI/CD", "Docker (basic)"],
+      "product": ["full-stack ownership", "database schema design", "auth implementation", "SaaS product development", "client scoping"]
+    },
+    "certifications": [],
+    "education": [
+      "Self-taught — freeCodeCamp, Codecademy, and open source contributions (2017-2019)"
+    ]
+  },
+  "jd_requirements": [
+    "shipped products real users depend on",
+    "entire stack database schema deployment pipeline",
+    "move fast pragmatic trade-offs",
+    "early-stage startup built something from zero",
+    "real estate property management construction tech"
+  ],
+  "cloud_skills": [
+    "Next.js", "React", "TypeScript", "Tailwind CSS",
+    "Node.js", "PostgreSQL", "Supabase", "REST APIs",
+    "Stripe", "Vercel", "Railway", "GitHub Actions",
+    "Docker", "full-stack ownership",
+    "database schema design", "auth implementation",
+    "SaaS development", "property management tech",
+    "lease tracking", "client management",
+    "fixed-price contracting", "acqui-hire experience"
+  ],
+  "deliberate_flaws": [
+    "No CS degree — self-taught (some startups care, most YC companies don't)",
+    "Freelancer — no experience on a permanent engineering team (Opendoor was 2 years, then freelance)",
+    "No experience hiring engineers (JD says 'hire next 2-3 engineers')",
+    "Vague JD means candidate must infer tech requirements — could be wrong stack entirely",
+    "RentTrack was small scale (200 users) — founding engineer role will need to scale to thousands",
+    "No mobile development experience (property managers often need mobile apps)",
+    "Docker experience is basic — production infrastructure knowledge may be shallow beyond Vercel/Railway",
+    "Fixed-price freelance model doesn't prepare for startup equity/salary dynamics"
+  ]
+}

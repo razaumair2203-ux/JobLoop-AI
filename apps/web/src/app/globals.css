@@ -1,26 +1,57 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-background: #ffffff;
+  --color-foreground: #171717;
+  --color-brand-50: #fdf2f8;
+  --color-brand-100: #fce7f3;
+  --color-brand-200: #fbcfe8;
+  --color-brand-300: #f9a8d4;
+  --color-brand-400: #f472b6;
+  --color-brand-500: #ec4899;
+  --color-brand-600: #db2777;
+  --color-brand-700: #be185d;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  /* 4-level dark surface system (Linear-quality LCH) */
+  --color-surface-0: var(--surface-0);
+  --color-surface-1: var(--surface-1);
+  --color-surface-2: var(--surface-2);
+  --color-surface-3: var(--surface-3);
+  --color-surface-border: var(--surface-border);
+  --color-surface-text: var(--surface-text);
+  --color-surface-text-secondary: var(--surface-text-secondary);
+  --color-surface-text-muted: var(--surface-text-muted);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Light mode surfaces */
+:root {
+  --surface-0: #ffffff;
+  --surface-1: #fafafa;
+  --surface-2: #f4f4f5;
+  --surface-3: #e4e4e7;
+  --surface-border: #e4e4e7;
+  --surface-text: #18181b;
+  --surface-text-secondary: #52525b;
+  --surface-text-muted: #a1a1aa;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Dark mode surfaces — LCH-derived for perceptual uniformity */
+.dark {
+  --surface-0: oklch(0.145 0.005 285);    /* Base: near-black with subtle blue */
+  --surface-1: oklch(0.178 0.005 285);    /* Raised: cards, panels */
+  --surface-2: oklch(0.215 0.006 285);    /* Elevated: hover, active */
+  --surface-3: oklch(0.260 0.006 285);    /* Highest: tooltips, popovers */
+  --surface-border: oklch(0.240 0.008 285); /* Subtle border */
+  --surface-text: oklch(0.935 0.000 0);     /* Primary text */
+  --surface-text-secondary: oklch(0.700 0.000 0); /* Secondary text */
+  --surface-text-muted: oklch(0.500 0.005 285);   /* Muted text */
+  color-scheme: dark;
+}
+
+/* Dark mode overrides for standard Tailwind utilities */
+.dark {
+  --color-background: oklch(0.145 0.005 285);
+  --color-foreground: oklch(0.935 0.000 0);
 }

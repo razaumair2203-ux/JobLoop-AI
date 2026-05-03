@@ -1,0 +1,62 @@
+{
+  "summary": "Defense Program Management leader with 16+ years of Pakistan Air Force experience across JF-17 Thunder and SAAB 2000 Erieye AEW&C programs. Progressed from Assistant Director to Deputy Director PMO, coordinating multi-stakeholder programs between CADI (China), SAAB (Sweden), PAC Kamra manufacturing, and operational squadrons. PMI-ACP certified with a strong engineering foundation in avionics integration and weapons systems.",
+  "experience": [
+    {
+      "company": "Pakistan Air Force — PMO JF-17",
+      "title": "Deputy Director, Program Management Office — JF-17 Aircraft",
+      "start_date": "2022-09",
+      "end_date": "2023-12",
+      "bullets": [
+        "Directed senior-level program management for JF-17 Thunder production lots, modification programs, and export coordination",
+        "Managed engineering change proposals, resource allocation, and technical baselines across multiple concurrent work packages",
+        "Coordinated flight test campaigns, weapons integration trials, and certification activities with cross-functional teams",
+        "Oversaw export variant coordination for international customers including Myanmar and Nigeria"
+      ]
+    },
+    {
+      "company": "Pakistan Air Force — PMO JF-17",
+      "title": "Assistant Director, Program Management Office — JF-17 Aircraft",
+      "start_date": "2020-01",
+      "end_date": "2021-04",
+      "bullets": [
+        "Coordinated program activities between CADI (OEM designer), PAC Kamra (manufacturing partner), and field squadrons",
+        "Tracked milestones across avionics integration, weapons systems qualification, and airframe production schedules",
+        "Managed configuration control for indigenous systems including mission computer and AESA radar integration efforts",
+        "Maintained budget tracking, contractor deliverable oversight, and schedule risk assessments"
+      ]
+    },
+    {
+      "company": "Pakistan Air Force — PMO AEW&C",
+      "title": "PMO Officer, AEW&C Aircraft",
+      "start_date": "2023-12",
+      "end_date": "2024-07",
+      "bullets": [
+        "Managed program activities for SAAB 2000 Erieye AEW&C fleet sustainment (9 aircraft)",
+        "Coordinated with SAAB (Sweden) on maintenance contracts, spare parts logistics, and obsolescence management",
+        "Tracked fleet availability metrics and mission readiness reporting for senior leadership"
+      ]
+    },
+    {
+      "company": "AVIC/CADI Chengdu",
+      "title": "Aerospace Systems Integration Lead",
+      "start_date": "2017-11",
+      "end_date": "2019-12",
+      "bullets": [
+        "Led avionics and weapons systems integration for JF-17 Thunder Block III at CADI in Chengdu, China",
+        "Facilitated cross-cultural engineering collaboration between Pakistani and Chinese technical teams",
+        "Supported flight test campaigns for weapons integration and avionics qualification milestones"
+      ]
+    }
+  ],
+  "skills": {
+    "program_management": ["defense acquisition", "milestone tracking", "budget management", "schedule risk analysis", "engineering change management", "configuration control"],
+    "technical": ["fighter aircraft programs (JF-17)", "AEW&C programs (SAAB Erieye)", "avionics integration", "weapons systems qualification"],
+    "stakeholder_management": ["international OEM coordination (CADI, SAAB)", "cross-functional team leadership", "export program coordination", "customer representation"],
+    "tools_certifications": ["PMI-ACP", "Agile/Scrum", "project management methodologies"]
+  },
+  "certifications": [
+    "PMI-ACP — Project Management Institute",
+    "Google Project Management Professional Certificate (6 courses)",
+    "Engineering Project Management Specialization — Rice University (38 PDUs)"
+  ]
+}

@@ -1,0 +1,121 @@
+{
+  "id": "pair-013",
+  "split": "held_out",
+  "persona": "senior",
+  "synthetic": true,
+  "framing": "Senior Electrical Engineer in oil & gas seeking renewables transition",
+  "coverage": { "industry": "Energy", "seniority": "senior", "pattern": "career_changer", "region": "middle_east" },
+  "jd": {
+    "title": "Lead Electrical Engineer — Solar & Battery Storage",
+    "company": "ACWA Power",
+    "location": "Riyadh, Saudi Arabia",
+    "experience_years": 10,
+    "requirements": [
+      { "text": "10+ years of electrical engineering experience in power generation or energy sector", "type": "must_have" },
+      { "text": "Experience with utility-scale solar PV or battery energy storage systems (BESS)", "type": "must_have" },
+      { "text": "Knowledge of power system protection, SCADA, and grid interconnection", "type": "must_have" },
+      { "text": "Experience with ETAP, PSS/E, or equivalent power system simulation software", "type": "must_have" },
+      { "text": "Familiarity with IEC, IEEE, and GCC Interconnection Authority (GCCIA) standards for grid-connected systems", "type": "must_have" },
+      { "text": "Experience managing EPC contractor deliverables and design reviews", "type": "must_have" },
+      { "text": "PE license or Chartered Engineer (CEng) status", "type": "must_have" },
+      { "text": "Experience with Saudi Electricity Company (SEC) grid code", "type": "nice_to_have" },
+      { "text": "MS in Electrical/Power Engineering", "type": "nice_to_have" },
+      { "text": "Experience with NEOM or Vision 2030 energy projects", "type": "nice_to_have" }
+    ],
+    "responsibilities": [
+      "Lead electrical engineering for 1.5GW solar PV and 500MWh BESS projects",
+      "Review and approve EPC contractor electrical designs, single-line diagrams, and protection schemes",
+      "Perform power system studies (load flow, short circuit, transient stability) using ETAP",
+      "Coordinate grid interconnection studies and compliance with SEC grid code",
+      "Manage electrical engineering team of 6 engineers across design and commissioning phases",
+      "Ensure compliance with IEC/IEEE standards and Saudi building codes"
+    ]
+  },
+  "expected_output": {
+    "summary": "Senior Electrical Engineer with 13 years of power generation experience transitioning from oil & gas to renewables. 8 years at Saudi Aramco managing electrical systems for gas turbine power plants (2.4GW combined capacity), followed by 2 years at NEOM leading electrical infrastructure for green hydrogen project. PE licensed with deep expertise in power protection, SCADA systems, and ETAP modeling. MS Power Engineering.",
+    "experience": [
+      {
+        "company": "NEOM",
+        "title": "Senior Electrical Engineer — Green Hydrogen",
+        "start_date": "2023-01",
+        "end_date": "2024-12",
+        "bullets": [
+          "Led electrical engineering for 400MW electrolyzer facility powered by 4GW wind and solar",
+          "Reviewed EPC contractor electrical designs including MV/HV switchgear, transformers, and protection systems",
+          "Performed grid interconnection studies using ETAP for connection to Saudi national grid",
+          "Coordinated with SEC on grid code compliance for intermittent renewable generation sources"
+        ]
+      },
+      {
+        "company": "Saudi Aramco",
+        "title": "Electrical Engineer III — Power Generation",
+        "start_date": "2015-03",
+        "end_date": "2022-12",
+        "bullets": [
+          "Managed electrical maintenance and reliability for gas turbine power plants (2.4GW combined capacity across 3 facilities)",
+          "Performed power system protection coordination studies for 230kV and 115kV transmission systems",
+          "Led SCADA system upgrade project integrating ABB and Siemens PLCs with central control room",
+          "Supervised team of 8 electrical technicians across preventive and corrective maintenance programs",
+          "Achieved 98.5% electrical system availability through predictive maintenance and thermal imaging programs"
+        ]
+      },
+      {
+        "company": "Schneider Electric — Saudi Arabia",
+        "title": "Electrical Design Engineer",
+        "start_date": "2012-01",
+        "end_date": "2015-02",
+        "bullets": [
+          "Designed MV/LV power distribution systems for industrial and commercial projects",
+          "Performed load flow and short circuit analysis using ETAP for 10+ projects",
+          "Prepared single-line diagrams, cable sizing calculations, and equipment specifications"
+        ]
+      }
+    ],
+    "skills": {
+      "power_systems": ["power system protection", "load flow analysis", "short circuit studies", "transient stability", "grid interconnection"],
+      "tools": ["ETAP", "SCADA (ABB, Siemens)", "AutoCAD Electrical", "relay coordination software"],
+      "standards": ["IEC 61850", "IEEE C37", "Saudi Electricity Company grid code", "NFPA 70E"],
+      "leadership": ["team management (8 technicians)", "EPC contractor management", "design reviews", "commissioning oversight"]
+    },
+    "certifications": [
+      "Professional Engineer (PE) — Saudi Council of Engineers",
+      "NEBOSH HSE Certificate"
+    ],
+    "education": [
+      "MS Power Engineering — KFUPM (2018-2020, part-time)",
+      "BSc Electrical Engineering — University of Jordan (2007-2012)"
+    ]
+  },
+  "jd_requirements": [
+    "10+ years electrical engineering power generation energy",
+    "utility-scale solar PV battery BESS",
+    "power system protection SCADA grid interconnection",
+    "ETAP PSS/E power system simulation",
+    "IEC IEEE GCCIA grid standards",
+    "EPC contractor deliverables design reviews",
+    "PE license Chartered Engineer CEng",
+    "Saudi Electricity Company SEC grid code",
+    "MS Electrical Power Engineering",
+    "NEOM Vision 2030 energy projects"
+  ],
+  "cloud_skills": [
+    "power system protection", "load flow analysis", "short circuit studies",
+    "transient stability", "grid interconnection",
+    "ETAP", "SCADA", "ABB", "Siemens", "AutoCAD Electrical",
+    "IEC 61850", "IEEE C37", "SEC grid code",
+    "gas turbine power plants", "power generation",
+    "electrical maintenance", "predictive maintenance",
+    "MV/LV distribution", "cable sizing", "single-line diagrams",
+    "team management", "EPC contractor management",
+    "commissioning", "renewable energy", "green hydrogen",
+    "electrolyzer", "wind and solar",
+    "PE license"
+  ],
+  "deliberate_flaws": [
+    "No direct solar PV or BESS experience (NEOM was green hydrogen / electrolyzer, not solar farm)",
+    "Oil & gas background — needs to frame transferable skills for renewables",
+    "SCADA experience is industrial, not utility-scale renewable",
+    "No PSS/E experience (only ETAP)",
+    "PE is Saudi, may need local equivalence verification"
+  ]
+}

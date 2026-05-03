@@ -1,0 +1,40 @@
+{
+  "summary": "Management accountant with 6 years of experience at Unilever Netherlands, transitioning from finance into sustainability. Most recently part of the sustainability reporting team supporting Unilever's annual Climate Transition Action Plan disclosure and TCFD-aligned reporting. Previously handled P&L consolidation and variance analysis for Benelux markets. Participated in Unilever's internal carbon footprint measurement pilot covering Scope 1 and Scope 2 emissions. CIMA qualified with strong Excel modelling capabilities. Passionate about climate action and eager to apply data and financial rigour to carbon accounting.",
+  "experience": [
+    {
+      "company": "Unilever — Rotterdam",
+      "title": "Management Accountant — Sustainability Reporting",
+      "start_date": "2023-01",
+      "end_date": "2026-01",
+      "bullets": [
+        "Supported preparation of Unilever's annual Climate Transition Action Plan (CTAP) and TCFD-aligned disclosures for external stakeholders",
+        "Built Excel models to consolidate Scope 1 and Scope 2 emissions data from 15 manufacturing sites across the Benelux region",
+        "Reconciled energy consumption records (natural gas, electricity, diesel) against financial data to support GHG Protocol calculations",
+        "Coordinated with PwC on limited assurance engagement for Unilever's annual sustainability report",
+        "Trained 8 site finance managers on emissions data collection processes and GHG Protocol methodology"
+      ]
+    },
+    {
+      "company": "Unilever — Rotterdam",
+      "title": "Management Accountant — Group Reporting (promoted from Graduate Trainee, 2022)",
+      "start_date": "2020-03",
+      "end_date": "2022-12",
+      "bullets": [
+        "Performed monthly P&L consolidation for Unilever Benelux markets (EUR 2.1B revenue)",
+        "Prepared variance analysis and management commentary for quarterly business reviews",
+        "Built financial models analysing brand profitability across Home Care and Personal Care divisions",
+        "Completed CIMA qualification while working full-time (2020-2022)"
+      ]
+    }
+  ],
+  "skills": {
+    "sustainability": ["GHG Protocol (Scope 1 & 2)", "TCFD disclosure", "emissions data consolidation", "energy consumption reconciliation", "sustainability report assurance"],
+    "financial": ["management accounting", "P&L consolidation", "variance analysis", "financial modelling", "brand profitability analysis"],
+    "tools": ["Excel (advanced — pivot tables, VLOOKUP, macros)", "SAP (financial reporting)", "Power BI (basic dashboards)"],
+    "communication": ["stakeholder reporting", "management commentary", "site manager training", "auditor coordination (PwC)"]
+  },
+  "certifications": [
+    "CIMA — Chartered Institute of Management Accountants (2022)",
+    "GHG Protocol Corporate Standard — Self-study completion (2023)"
+  ]
+}

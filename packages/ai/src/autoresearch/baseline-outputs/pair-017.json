@@ -1,0 +1,41 @@
+{
+  "summary": "Clinical pharmacist with 6 years of hospital pharmacy experience transitioning into clinical informatics. PharmD with hands-on CPOE optimization and medication safety informatics work at Massachusetts General Hospital and Brigham and Women's Hospital. Self-taught in Python and SQL through clinical data analysis projects. Experienced with Epic EHR, FHIR-based interfaces, and healthcare data standards. Based in Boston and available for in-person work.",
+  "experience": [
+    {
+      "company": "Massachusetts General Hospital",
+      "title": "Clinical Pharmacy Informaticist",
+      "start_date": "2022-01",
+      "end_date": "2024-09",
+      "bullets": [
+        "Led redesign of CPOE medication alerts in Epic, reducing alert fatigue by 35% across the institution",
+        "Developed Python scripts to analyze 2 years of medication error data (18K+ incidents), identifying top alert override patterns",
+        "Collaborated with IT to implement FHIR-based medication reconciliation interface between Epic and pharmacy dispensing system",
+        "Authored clinical decision support rules for 12 high-risk drug interactions reviewed by the P&T committee",
+        "Trained 40+ pharmacists and residents on updated Epic medication management workflows"
+      ]
+    },
+    {
+      "company": "Brigham and Women's Hospital",
+      "title": "Clinical Pharmacist — Inpatient",
+      "start_date": "2019-07",
+      "end_date": "2021-12",
+      "bullets": [
+        "Delivered clinical pharmacy services on internal medicine and ICU units",
+        "Served on pharmacy informatics committee to develop medication use evaluation criteria",
+        "Wrote SQL queries against pharmacy data warehouse to produce monthly medication utilization reports",
+        "Completed PGY-2 pharmacy informatics residency (2019-2020)"
+      ]
+    }
+  ],
+  "skills": {
+    "clinical_informatics": ["CPOE optimization", "clinical decision support", "medication safety", "alert fatigue reduction", "workflow analysis"],
+    "technical": ["Python (pandas, data analysis)", "SQL (pharmacy data warehouse)", "Epic EHR", "FHIR interfaces"],
+    "healthcare_standards": ["FHIR", "HL7", "ICD-10", "RxNorm", "CCDA (exposure)"],
+    "clinical": ["inpatient pharmacy", "medication reconciliation", "drug interaction management", "P&T committee"]
+  },
+  "certifications": [
+    "PharmD — Licensed Pharmacist (Massachusetts)",
+    "Board Certified Pharmacotherapy Specialist (BCPS)",
+    "Epic Willow (Pharmacy) Certified"
+  ]
+}

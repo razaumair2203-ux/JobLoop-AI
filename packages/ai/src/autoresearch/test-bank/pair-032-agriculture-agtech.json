@@ -1,0 +1,105 @@
+{
+  "id": "pair-032",
+  "split": "validation",
+  "persona": "early_career",
+  "synthetic": true,
+  "jd_style": "graduate_friendly",
+  "framing": "Agricultural science graduate applying to precision agriculture startup in Nairobi",
+  "coverage": { "industry": "Agriculture/AgTech", "seniority": "entry", "pattern": "early_career", "region": "africa" },
+  "jd": {
+    "title": "Associate Data Analyst — Precision Agriculture",
+    "company": "Apollo Agriculture",
+    "location": "Nairobi, Kenya",
+    "experience_years": 1,
+    "style_note": "Graduate-friendly: explains mission, values learning, flexible on exact experience",
+    "about": "Apollo Agriculture helps small-scale farmers across Kenya access financing, high-quality farm inputs, and data-driven agronomic advice. We use satellite imagery, machine learning, and mobile money to serve farmers who have never had access to formal credit.",
+    "requirements": [
+      { "text": "Bachelor's degree in Agricultural Science, Data Science, Statistics, or related field", "type": "must_have" },
+      { "text": "Proficiency in Python or R for data analysis", "type": "must_have" },
+      { "text": "Familiarity with geospatial data formats (GeoJSON, shapefiles) and tools (QGIS, Google Earth Engine)", "type": "must_have" },
+      { "text": "Understanding of agricultural systems in East Africa (crop cycles, soil types, smallholder farming)", "type": "must_have" },
+      { "text": "Experience with SQL and data visualization tools (Looker, Metabase, or Tableau)", "type": "nice_to_have" },
+      { "text": "Familiarity with satellite imagery analysis (Sentinel-2, Landsat) for crop monitoring", "type": "nice_to_have" },
+      { "text": "Experience with M-Pesa or mobile money data systems", "type": "nice_to_have" },
+      { "text": "Swahili fluency", "type": "nice_to_have" }
+    ],
+    "responsibilities": [
+      "Analyse satellite imagery and weather data to generate crop yield predictions for smallholder farms",
+      "Build dashboards tracking farmer repayment rates, input adoption, and agronomic outcomes",
+      "Support credit scoring model development by cleaning and preparing agricultural datasets",
+      "Conduct field data validation visits to farming communities in central Kenya",
+      "Collaborate with agronomists and product team to translate data insights into farmer-facing recommendations"
+    ]
+  },
+  "expected_output": {
+    "summary": "Recent BSc Agricultural Science graduate from University of Nairobi with research experience in soil science and crop modelling. Completed 6-month internship at CGIAR's International Livestock Research Institute (ILRI) in Nairobi analysing livestock feed data. Undergraduate thesis on maize yield prediction using NDVI satellite data for Kiambu County smallholders. Proficient in R and QGIS. Fluent in Swahili and English. Passionate about applying data to improve smallholder farmer outcomes.",
+    "experience": [
+      {
+        "company": "CGIAR — International Livestock Research Institute (ILRI)",
+        "title": "Research Intern — Feed and Forage Development",
+        "start_date": "2025-06",
+        "end_date": "2025-12",
+        "bullets": [
+          "Cleaned and analysed livestock feed trial datasets (500+ records) using R and tidyverse",
+          "Created geospatial maps of feed resource availability across 4 Kenyan counties using QGIS",
+          "Supported senior researchers in preparing data visualisations for donor reports (BMGF-funded project)",
+          "Participated in field data collection visits to pastoral communities in Kajiado County"
+        ]
+      },
+      {
+        "company": "University of Nairobi — Department of Land Resource Management",
+        "title": "Undergraduate Research Assistant",
+        "start_date": "2024-09",
+        "end_date": "2025-05",
+        "bullets": [
+          "Conducted undergraduate thesis: 'Maize Yield Prediction Using NDVI Time Series in Kiambu County'",
+          "Processed Sentinel-2 satellite imagery in Google Earth Engine to extract NDVI values for 200+ farm plots",
+          "Built simple linear regression model in R correlating NDVI with reported yields (R² = 0.62)",
+          "Collected ground-truth yield data through farmer interviews across 3 sub-counties"
+        ]
+      }
+    ],
+    "skills": {
+      "data_analysis": ["R (tidyverse, ggplot2)", "basic Python (pandas)", "Excel", "descriptive statistics", "linear regression"],
+      "geospatial": ["QGIS", "Google Earth Engine", "Sentinel-2 imagery", "NDVI analysis", "GeoJSON", "shapefiles"],
+      "agricultural": ["crop modelling (basic)", "soil science", "smallholder farming systems", "livestock feed analysis", "East African agriculture"],
+      "tools": ["R Studio", "QGIS", "Google Earth Engine", "Microsoft Office"]
+    },
+    "certifications": [],
+    "education": [
+      "BSc Agricultural Science — University of Nairobi (2021-2025)"
+    ]
+  },
+  "jd_requirements": [
+    "Bachelor's Agricultural Science Data Science Statistics",
+    "Python R data analysis",
+    "geospatial GeoJSON shapefiles QGIS Google Earth Engine",
+    "agricultural systems East Africa crop cycles soil smallholder",
+    "SQL Looker Metabase Tableau data visualization",
+    "satellite imagery Sentinel-2 Landsat crop monitoring",
+    "M-Pesa mobile money data",
+    "Swahili fluency"
+  ],
+  "cloud_skills": [
+    "R", "tidyverse", "ggplot2", "basic Python",
+    "QGIS", "Google Earth Engine", "Sentinel-2",
+    "NDVI analysis", "GeoJSON", "shapefiles",
+    "crop modelling", "soil science",
+    "smallholder farming", "East African agriculture",
+    "livestock feed analysis", "field data collection",
+    "linear regression", "descriptive statistics",
+    "Swahili fluency"
+  ],
+  "deliberate_flaws": [
+    "No professional Python experience — only 'basic pandas', JD wants proficiency",
+    "No SQL experience at all",
+    "No data visualization tool experience (Looker, Metabase, Tableau) — only ggplot2 in R",
+    "No M-Pesa or mobile money data experience",
+    "No Landsat experience (only Sentinel-2)",
+    "Research experience is academic, not commercial — ILRI internship was 6 months only",
+    "Linear regression model was simple (R²=0.62) — not ML-grade crop yield prediction",
+    "No credit scoring or financial data experience (key for Apollo's business model)",
+    "No dashboard building experience beyond static R plots",
+    "Entry-level — no professional data analyst experience"
+  ]
+}

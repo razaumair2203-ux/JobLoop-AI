@@ -1,0 +1,48 @@
+{
+  "summary": "Senior energy executive with 22 years at NextEra Energy, currently SVP of Development & Engineering for NextEra Energy Resources. Oversees $4B in annual capital deployment across utility-scale wind, solar, and battery storage projects. Led development of an 8 GW renewable portfolio spanning 15 US states. Established deep relationships with utility executives, state Public Utility Commissions, and FERC commissioners. Board member of the American Clean Power Association. Experienced with IRA incentive structures including 45X manufacturing credits and ITC allocations. Seeking CEO opportunity at a growth-stage energy storage company.",
+  "experience": [
+    {
+      "company": "NextEra Energy Resources",
+      "title": "Senior Vice President — Development & Engineering",
+      "start_date": "2019-01",
+      "end_date": "2025-12",
+      "bullets": [
+        "Led development and engineering organisation of 350 professionals delivering 2-3 GW annually across wind, solar, and battery storage projects",
+        "Managed $4B annual capital deployment with full P&L responsibility for the project development pipeline",
+        "Secured IRA manufacturing credits (45X) and ITC allocations for 6 utility-scale battery storage projects totalling 3.2 GWh",
+        "Negotiated long-term PPAs and tolling agreements with 12 major US utility customers including Duke Energy, Southern Company, and Xcel Energy",
+        "Provided expert testimony before 4 state Public Utility Commissions on renewable energy procurement and grid reliability matters"
+      ]
+    },
+    {
+      "company": "NextEra Energy Resources",
+      "title": "Vice President — Wind Development",
+      "start_date": "2013-01",
+      "end_date": "2018-12",
+      "bullets": [
+        "Grew NextEra's Midwest wind portfolio from 2 GW to 6 GW across 8 states",
+        "Managed strategic relationships with GE Renewable Energy and Vestas for turbine supply agreements valued at $2B+",
+        "Led due diligence and integration for 3 wind portfolio acquisitions (combined 1.5 GW capacity)",
+        "Structured tax equity financing with JPMorgan, Goldman Sachs, and Bank of America for PTC monetization"
+      ]
+    },
+    {
+      "company": "NextEra Energy (FPL Group, pre-rebrand)",
+      "title": "Director, Business Development (promoted from Manager, 2008)",
+      "start_date": "2004-06",
+      "end_date": "2012-12",
+      "bullets": [
+        "Originated and developed wind and solar projects across Texas, Oklahoma, and California",
+        "Built financial models for project economics, PPA pricing, and tax equity structures",
+        "Managed environmental permitting and land acquisition for 15+ wind farm sites"
+      ]
+    }
+  ],
+  "skills": {
+    "energy": ["utility-scale renewables", "battery storage development", "wind energy", "solar development", "PPA negotiation", "grid reliability"],
+    "executive": ["P&L management ($4B capital deployment)", "organisation leadership (350 staff)", "utility customer relationships", "PUC testimony", "board governance"],
+    "regulatory": ["FERC", "state PUC proceedings", "environmental permitting", "IRA compliance", "utility procurement"],
+    "financial": ["tax equity structures (PTC, ITC)", "IRA incentives (45X, ITC)", "project finance", "M&A due diligence", "capital deployment"]
+  },
+  "certifications": []
+}

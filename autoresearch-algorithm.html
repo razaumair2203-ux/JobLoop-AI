@@ -1,0 +1,1340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AutoResearch Algorithm — JobLoop AI</title>
+<style>
+  :root {
+    --bg: #0f172a;
+    --surface: #1e293b;
+    --surface2: #334155;
+    --border: #475569;
+    --text: #e2e8f0;
+    --muted: #94a3b8;
+    --emerald: #10b981;
+    --emerald-dim: #065f46;
+    --sky: #38bdf8;
+    --sky-dim: #0c4a6e;
+    --amber: #f59e0b;
+    --amber-dim: #78350f;
+    --red: #ef4444;
+    --red-dim: #7f1d1d;
+    --purple: #a78bfa;
+    --purple-dim: #4c1d95;
+    --pink: #f472b6;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+    background: var(--bg);
+    color: var(--text);
+    padding: 40px 20px;
+    line-height: 1.6;
+  }
+
+  .container { max-width: 1200px; margin: 0 auto; }
+
+  h1 {
+    font-size: 2rem;
+    color: var(--emerald);
+    margin-bottom: 8px;
+    border-bottom: 2px solid var(--emerald-dim);
+    padding-bottom: 12px;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+    color: var(--sky);
+    margin: 40px 0 16px;
+    padding-left: 12px;
+    border-left: 3px solid var(--sky);
+  }
+
+  h3 {
+    font-size: 1.1rem;
+    color: var(--amber);
+    margin: 24px 0 12px;
+  }
+
+  .subtitle {
+    color: var(--muted);
+    font-size: 0.9rem;
+    margin-bottom: 32px;
+  }
+
+  /* ========== MAIN FLOW DIAGRAM ========== */
+  .flow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    margin: 32px 0;
+  }
+
+  .flow-node {
+    background: var(--surface);
+    border: 2px solid var(--border);
+    border-radius: 12px;
+    padding: 16px 24px;
+    text-align: center;
+    width: 100%;
+    max-width: 700px;
+    position: relative;
+  }
+
+  .flow-node.start {
+    border-color: var(--emerald);
+    background: var(--emerald-dim);
+  }
+
+  .flow-node.process {
+    border-color: var(--sky);
+  }
+
+  .flow-node.decision {
+    border-color: var(--amber);
+    background: var(--amber-dim);
+    transform: none;
+    border-radius: 12px;
+  }
+
+  .flow-node.end {
+    border-color: var(--red);
+    background: var(--red-dim);
+  }
+
+  .flow-node.keep {
+    border-color: var(--emerald);
+    background: var(--emerald-dim);
+  }
+
+  .flow-node.discard {
+    border-color: var(--red);
+    background: var(--red-dim);
+  }
+
+  .flow-arrow {
+    width: 2px;
+    height: 32px;
+    background: var(--border);
+    position: relative;
+  }
+
+  .flow-arrow::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: -5px;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 8px solid var(--border);
+  }
+
+  .flow-arrow.yes { background: var(--emerald); }
+  .flow-arrow.yes::after { border-top-color: var(--emerald); }
+  .flow-arrow.no { background: var(--red); }
+  .flow-arrow.no::after { border-top-color: var(--red); }
+
+  .flow-label {
+    font-size: 0.75rem;
+    color: var(--muted);
+    padding: 4px 0;
+    font-weight: bold;
+  }
+  .flow-label.yes { color: var(--emerald); }
+  .flow-label.no { color: var(--red); }
+
+  .flow-branch {
+    display: flex;
+    gap: 24px;
+    width: 100%;
+    max-width: 700px;
+    justify-content: center;
+  }
+
+  .flow-branch > div {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+
+  .node-title {
+    font-weight: bold;
+    font-size: 1rem;
+    margin-bottom: 6px;
+  }
+
+  .node-detail {
+    font-size: 0.8rem;
+    color: var(--muted);
+  }
+
+  .step-num {
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--sky);
+    color: var(--bg);
+    text-align: center;
+    line-height: 28px;
+    font-weight: bold;
+    font-size: 0.85rem;
+    margin-right: 8px;
+  }
+
+  /* ========== CODE BLOCKS ========== */
+  .code-block {
+    background: #0d1117;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 20px;
+    margin: 16px 0;
+    overflow-x: auto;
+    font-size: 0.85rem;
+    line-height: 1.7;
+  }
+
+  .code-block .keyword { color: var(--purple); }
+  .code-block .func { color: var(--sky); }
+  .code-block .string { color: var(--emerald); }
+  .code-block .comment { color: var(--muted); font-style: italic; }
+  .code-block .type { color: var(--amber); }
+  .code-block .num { color: var(--pink); }
+  .code-block .op { color: var(--text); }
+
+  /* ========== SCORECARD ========== */
+  .scorecard {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin: 24px 0;
+  }
+
+  @media (max-width: 768px) {
+    .scorecard { grid-template-columns: 1fr; }
+  }
+
+  .scorecard-panel {
+    background: var(--surface);
+    border: 2px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+  }
+
+  .scorecard-panel h3 {
+    margin-top: 0;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .check-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(71,85,105,0.3);
+    font-size: 0.85rem;
+  }
+
+  .check-icon {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    font-weight: bold;
+    margin-top: 2px;
+  }
+
+  .check-icon.structural {
+    background: var(--sky-dim);
+    color: var(--sky);
+    border: 1px solid var(--sky);
+  }
+
+  .check-icon.semantic {
+    background: var(--purple-dim);
+    color: var(--purple);
+    border: 1px solid var(--purple);
+  }
+
+  .check-method {
+    color: var(--muted);
+    font-size: 0.75rem;
+    display: block;
+  }
+
+  .weight-bar {
+    display: flex;
+    height: 24px;
+    border-radius: 6px;
+    overflow: hidden;
+    margin: 16px 0;
+    border: 1px solid var(--border);
+  }
+
+  .weight-segment {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: bold;
+  }
+
+  .weight-segment.structural {
+    background: var(--sky-dim);
+    color: var(--sky);
+  }
+
+  .weight-segment.semantic {
+    background: var(--purple-dim);
+    color: var(--purple);
+  }
+
+  /* ========== MUTATION OPERATORS ========== */
+  .mutations-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin: 24px 0;
+  }
+
+  @media (max-width: 768px) {
+    .mutations-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  .mutation-card {
+    background: var(--surface);
+    border: 2px solid var(--border);
+    border-radius: 10px;
+    padding: 16px;
+    text-align: center;
+    transition: border-color 0.2s;
+  }
+
+  .mutation-card:nth-child(1) { border-color: #ef4444; }
+  .mutation-card:nth-child(2) { border-color: #f59e0b; }
+  .mutation-card:nth-child(3) { border-color: #10b981; }
+  .mutation-card:nth-child(4) { border-color: #38bdf8; }
+  .mutation-card:nth-child(5) { border-color: #a78bfa; }
+  .mutation-card:nth-child(6) { border-color: #f472b6; }
+
+  .mutation-num {
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin-bottom: 4px;
+  }
+
+  .mutation-card:nth-child(1) .mutation-num { color: #ef4444; }
+  .mutation-card:nth-child(2) .mutation-num { color: #f59e0b; }
+  .mutation-card:nth-child(3) .mutation-num { color: #10b981; }
+  .mutation-card:nth-child(4) .mutation-num { color: #38bdf8; }
+  .mutation-card:nth-child(5) .mutation-num { color: #a78bfa; }
+  .mutation-card:nth-child(6) .mutation-num { color: #f472b6; }
+
+  .mutation-name {
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+  }
+
+  .mutation-desc {
+    font-size: 0.78rem;
+    color: var(--muted);
+  }
+
+  .mutation-example {
+    font-size: 0.75rem;
+    color: var(--emerald);
+    margin-top: 8px;
+    font-style: italic;
+  }
+
+  /* ========== SPLIT DIAGRAM ========== */
+  .split-diagram {
+    display: flex;
+    gap: 16px;
+    margin: 24px 0;
+    align-items: stretch;
+  }
+
+  .split-box {
+    flex: 1;
+    background: var(--surface);
+    border: 2px solid var(--border);
+    border-radius: 10px;
+    padding: 16px;
+    text-align: center;
+  }
+
+  .split-box.train { border-color: var(--sky); }
+  .split-box.val { border-color: var(--amber); }
+  .split-box.test { border-color: var(--red); }
+
+  .split-num {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+
+  .split-box.train .split-num { color: var(--sky); }
+  .split-box.val .split-num { color: var(--amber); }
+  .split-box.test .split-num { color: var(--red); }
+
+  .split-label { font-size: 0.85rem; font-weight: bold; margin: 4px 0; }
+  .split-desc { font-size: 0.75rem; color: var(--muted); }
+
+  /* ========== PLATEAU DIAGRAM ========== */
+  .plateau-flow {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 24px 0;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .plateau-box {
+    background: var(--surface);
+    border: 2px solid var(--border);
+    border-radius: 8px;
+    padding: 12px 16px;
+    text-align: center;
+    font-size: 0.85rem;
+  }
+
+  .plateau-arrow {
+    color: var(--muted);
+    font-size: 1.2rem;
+  }
+
+  /* ========== RESULTS TABLE ========== */
+  .results-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0;
+    font-size: 0.8rem;
+  }
+
+  .results-table th {
+    background: var(--surface2);
+    padding: 10px 12px;
+    text-align: left;
+    color: var(--sky);
+    border-bottom: 2px solid var(--border);
+  }
+
+  .results-table td {
+    padding: 8px 12px;
+    border-bottom: 1px solid rgba(71,85,105,0.3);
+  }
+
+  .results-table tr:nth-child(even) { background: rgba(30,41,59,0.5); }
+
+  .status-keep {
+    color: var(--emerald);
+    font-weight: bold;
+  }
+
+  .status-discard {
+    color: var(--red);
+    font-weight: bold;
+  }
+
+  /* ========== INFO BOXES ========== */
+  .info-box {
+    background: var(--surface);
+    border-left: 4px solid var(--sky);
+    border-radius: 0 8px 8px 0;
+    padding: 16px 20px;
+    margin: 20px 0;
+    font-size: 0.85rem;
+  }
+
+  .info-box.warning {
+    border-left-color: var(--amber);
+    background: rgba(120, 53, 15, 0.2);
+  }
+
+  .info-box.danger {
+    border-left-color: var(--red);
+    background: rgba(127, 29, 29, 0.2);
+  }
+
+  .info-box.success {
+    border-left-color: var(--emerald);
+    background: rgba(6, 95, 70, 0.2);
+  }
+
+  .info-box strong { color: var(--text); }
+
+  /* ========== TIMELINE ========== */
+  .timeline {
+    position: relative;
+    margin: 24px 0;
+    padding-left: 32px;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 12px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--border);
+  }
+
+  .timeline-item {
+    position: relative;
+    margin-bottom: 20px;
+    padding: 12px 16px;
+    background: var(--surface);
+    border-radius: 8px;
+    border: 1px solid var(--border);
+  }
+
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -26px;
+    top: 16px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--sky);
+    border: 2px solid var(--bg);
+  }
+
+  .timeline-item .time {
+    font-size: 0.75rem;
+    color: var(--amber);
+    font-weight: bold;
+  }
+
+  /* ========== FILES DIAGRAM ========== */
+  .files-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin: 24px 0;
+  }
+
+  @media (max-width: 768px) {
+    .files-grid { grid-template-columns: 1fr; }
+  }
+
+  .file-card {
+    background: var(--surface);
+    border: 2px solid var(--border);
+    border-radius: 10px;
+    padding: 16px;
+  }
+
+  .file-card.editable { border-color: var(--emerald); }
+  .file-card.readonly { border-color: var(--red); }
+  .file-card.rules { border-color: var(--amber); }
+
+  .file-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+  }
+
+  .file-card.editable .file-label { color: var(--emerald); }
+  .file-card.readonly .file-label { color: var(--red); }
+  .file-card.rules .file-label { color: var(--amber); }
+
+  .file-name {
+    font-weight: bold;
+    font-size: 1rem;
+    margin-bottom: 8px;
+  }
+
+  .file-desc {
+    font-size: 0.8rem;
+    color: var(--muted);
+  }
+
+  /* ========== FORMULA ========== */
+  .formula {
+    background: #0d1117;
+    border: 2px solid var(--sky);
+    border-radius: 10px;
+    padding: 24px;
+    text-align: center;
+    margin: 24px 0;
+    font-size: 1.1rem;
+  }
+
+  .formula .var { color: var(--sky); font-weight: bold; }
+  .formula .op { color: var(--muted); }
+  .formula .num { color: var(--pink); font-weight: bold; }
+  .formula .eq { color: var(--amber); font-size: 1.3rem; }
+
+  .section-divider {
+    border: none;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--border), transparent);
+    margin: 48px 0;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>AutoResearch Algorithm</h1>
+<p class="subtitle">Karpathy loop adapted for prompt optimization | Validated April 30, 2026</p>
+
+<!-- ========== ARCHITECTURE ========== -->
+<h2>1. Architecture: 3 Files (Karpathy-Faithful)</h2>
+
+<div class="files-grid">
+  <div class="file-card editable">
+    <div class="file-label">EDITABLE (AI modifies this)</div>
+    <div class="file-name">cv-generation.ts</div>
+    <div class="file-desc">OR jd-parser.ts — ONE file per session. The AI agent proposes modifications to the prompt instructions.</div>
+  </div>
+  <div class="file-card readonly">
+    <div class="file-label">READ-ONLY (Ground Truth)</div>
+    <div class="file-name">test-bank/</div>
+    <div class="file-desc">50 CV/JD pairs + human-verified ideal outputs. Split into 20 train / 15 validation / 15 held-out. NEVER modified by the loop.</div>
+  </div>
+  <div class="file-card rules">
+    <div class="file-label">RULES (Agent Instructions)</div>
+    <div class="file-name">program.md</div>
+    <div class="file-desc">What the AI agent can/cannot do. Mutation operators, constraints, history format, stop conditions.</div>
+  </div>
+</div>
+
+<hr class="section-divider">
+
+<!-- ========== MAIN LOOP ========== -->
+<h2>2. The Main Loop</h2>
+
+<div class="flow">
+  <div class="flow-node start">
+    <div class="node-title"><span class="step-num">1</span> START: Load Current State</div>
+    <div class="node-detail">Read results.tsv (last 20 + top 5 best) + current prompt file</div>
+  </div>
+
+  <div class="flow-arrow"></div>
+
+  <div class="flow-node process">
+    <div class="node-title"><span class="step-num">2</span> SELECT Mutation Operator</div>
+    <div class="node-detail">Rotate through 6 operators. Log which one is used. If plateau detected, force RESTRUCTURE.</div>
+  </div>
+
+  <div class="flow-arrow"></div>
+
+  <div class="flow-node process">
+    <div class="node-title"><span class="step-num">3</span> AI Agent Modifies Prompt</div>
+    <div class="node-detail">Agent reads program.md rules + history + selected operator, applies ONE mutation to prompt file</div>
+  </div>
+
+  <div class="flow-arrow"></div>
+
+  <div class="flow-node process">
+    <div class="node-title"><span class="step-num">4</span> Git Commit the Change</div>
+    <div class="node-detail">git add cv-generation.ts && git commit -m "[autoresearch] {mutation_type}: {description}"</div>
+  </div>
+
+  <div class="flow-arrow"></div>
+
+  <div class="flow-node process">
+    <div class="node-title"><span class="step-num">5</span> Run Against Training Set</div>
+    <div class="node-detail">Pick 10 random pairs from 20 training pairs. Run modified prompt on each. Collect outputs.</div>
+  </div>
+
+  <div class="flow-arrow"></div>
+
+  <div class="flow-node process">
+    <div class="node-title"><span class="step-num">6</span> Score with Composite Scorecard</div>
+    <div class="node-detail">Compute checks_avg (structural checks passed / total) and bert_avg (mean BERTScore F1) per pair. Average each across 10 pairs. Track separately.</div>
+  </div>
+
+  <div class="flow-arrow"></div>
+
+  <div class="flow-node decision">
+    <div class="node-title"><span class="step-num">7</span> BOTH checks_avg AND bert_avg ≥ Previous Best?</div>
+  </div>
+
+  <div class="flow-branch">
+    <div>
+      <div class="flow-label yes">YES</div>
+      <div class="flow-arrow yes"></div>
+      <div class="flow-node keep">
+        <div class="node-title">KEEP</div>
+        <div class="node-detail">Advance branch. This prompt becomes the new baseline. Reset consecutive_discards = 0.</div>
+      </div>
+    </div>
+    <div>
+      <div class="flow-label no">NO</div>
+      <div class="flow-arrow no"></div>
+      <div class="flow-node discard">
+        <div class="node-title">DISCARD</div>
+        <div class="node-detail">git reset --hard HEAD~1. Revert to previous prompt. consecutive_discards++.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="flow-arrow"></div>
+
+  <div class="flow-node process">
+    <div class="node-title"><span class="step-num">8</span> Log to results.tsv</div>
+    <div class="node-detail">[version, checks_avg, bert_avg, mutation_type, status, description]</div>
+  </div>
+
+  <div class="flow-arrow"></div>
+
+  <div class="flow-node decision">
+    <div class="node-title"><span class="step-num">9</span> Every 10th Iteration?</div>
+  </div>
+
+  <div class="flow-branch">
+    <div>
+      <div class="flow-label yes">YES</div>
+      <div class="flow-arrow yes"></div>
+      <div class="flow-node process" style="border-color: var(--amber);">
+        <div class="node-title">Validate Against 15 Val Pairs</div>
+        <div class="node-detail">Full validation run. If val score drops while train rises = OVERFITTING. Stop and alert.</div>
+      </div>
+    </div>
+    <div>
+      <div class="flow-label no">NO</div>
+      <div class="flow-arrow no"></div>
+      <div class="flow-node process" style="border-color: var(--muted);">
+        <div class="node-title">Continue</div>
+        <div class="node-detail">Skip validation, proceed to stop check.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="flow-arrow"></div>
+
+  <div class="flow-node decision">
+    <div class="node-title"><span class="step-num">10</span> Stop Condition Met?</div>
+    <div class="node-detail">iteration >= 50 OR consecutive_discards >= 20 OR overfitting_detected</div>
+  </div>
+
+  <div class="flow-branch">
+    <div>
+      <div class="flow-label yes">YES</div>
+      <div class="flow-arrow yes"></div>
+      <div class="flow-node end">
+        <div class="node-title">STOP</div>
+        <div class="node-detail">Log final summary. Report best score, total keeps, improvement %.</div>
+      </div>
+    </div>
+    <div>
+      <div class="flow-label no">NO</div>
+      <div class="flow-arrow no"></div>
+      <div class="flow-node process" style="border-color: var(--emerald);">
+        <div class="node-title">LOOP BACK to Step 2</div>
+        <div class="node-detail">Select next mutation operator and repeat.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="section-divider">
+
+<!-- ========== COMPOSITE SCORECARD ========== -->
+<h2>3. Composite Scorecard (The Metric)</h2>
+
+<div class="info-box">
+<strong>Why not edit distance?</strong> No prompt optimization framework uses it. It penalizes valid paraphrases ("Led 8 engineers" vs "Managed 8 engineers" = high edit distance, same quality). We use structural checks + BERTScore instead — deterministic, non-circular, semantically meaningful.
+</div>
+
+<div class="formula">
+  <span class="var">checks_avg</span>
+  <span class="eq"> = </span>
+  <span class="var">checks_passed</span>
+  <span class="op"> / </span>
+  <span class="var">total_checks</span>
+  <span class="op"> &nbsp;&nbsp;&nbsp; </span>
+  <span class="var">bert_avg</span>
+  <span class="eq"> = </span>
+  <span class="op">mean(</span><span class="var">BERTScore_F1</span><span class="op"> per pair)</span>
+  <br><br>
+  <span class="op">KEEP if </span>
+  <span class="var">checks_avg</span>
+  <span class="op"> >= prev </span>
+  <span class="op">AND </span>
+  <span class="var">bert_avg</span>
+  <span class="op"> >= prev</span>
+  <br>
+  <span style="color: var(--muted); font-size: 0.85rem;">No invented weights. No thresholds. Just: did BOTH improve?</span>
+</div>
+
+<div class="weight-bar">
+  <div class="weight-segment structural" style="width: 50%;">Structural Checks — tracked separately</div>
+  <div class="weight-segment semantic" style="width: 50%;">BERTScore F1 — tracked separately</div>
+</div>
+
+<div class="scorecard">
+  <div class="scorecard-panel">
+    <h3>cv-generation.ts Scorecard</h3>
+
+    <div class="check-item">
+      <div class="check-icon structural">S1</div>
+      <div>All JD-required skills addressed?<br><span class="check-method">Method: count(jd_skills in cv_output) / count(jd_skills)</span></div>
+    </div>
+    <div class="check-item">
+      <div class="check-icon structural">S2</div>
+      <div>Each skill claim has Cloud evidence?<br><span class="check-method">Method: set(cv_skills) subset_of set(cloud_skills) — no fabrication</span></div>
+    </div>
+    <div class="check-item">
+      <div class="check-icon structural">S3</div>
+      <div>Metrics/numbers preserved from source?<br><span class="check-method">Method: regex extract numbers from source CV, check present in output</span></div>
+    </div>
+    <div class="check-item">
+      <div class="check-icon structural">S4</div>
+      <div>Within page limit (2 pages)?<br><span class="check-method">Method: word_count(output) <= 800</span></div>
+    </div>
+    <div class="check-item">
+      <div class="check-icon structural">S5</div>
+      <div>No fabricated skills?<br><span class="check-method">Method: set(output_skills) - set(source_cv_skills + cloud_skills) == empty</span></div>
+    </div>
+    <div class="check-item">
+      <div class="check-icon structural">S6</div>
+      <div>Action verbs on bullet starts?<br><span class="check-method">Method: each bullet[0] is verb (Led, Built, Reduced, Designed...)</span></div>
+    </div>
+    <div class="check-item">
+      <div class="check-icon structural">S7</div>
+      <div>ATS-parseable structure?<br><span class="check-method">Method: has standard sections (Experience, Education, Skills), reverse chronological</span></div>
+    </div>
+    <div class="check-item">
+      <div class="check-icon structural">S8</div>
+      <div>Company names, dates, titles preserved?<br><span class="check-method">Method: exact_match(source.companies, output.companies)</span></div>
+    </div>
+    <div class="check-item">
+      <div class="check-icon semantic">B1</div>
+      <div>Bullet quality vs human ideal<br><span class="check-method">Method: BERTScore F1 of generated bullets vs human-written ideal bullets</span></div>
+    </div>
+  </div>
+
+  <div class="scorecard-panel">
+    <h3>jd-parser.ts Scorecard</h3>
+
+    <div class="check-item">
+      <div class="check-icon structural">S1</div>
+      <div>All requirements extracted?<br><span class="check-method">Method: count(extracted_reqs) / count(ideal_reqs) per JD</span></div>
+    </div>
+    <div class="check-item">
+      <div class="check-icon structural">S2</div>
+      <div>Must-have vs nice-to-have correct?<br><span class="check-method">Method: classification_match(extracted.type, ideal.type) per requirement</span></div>
+    </div>
+    <div class="check-item">
+      <div class="check-icon structural">S3</div>
+      <div>Company name extracted correctly?<br><span class="check-method">Method: exact_match(extracted.company, ideal.company)</span></div>
+    </div>
+    <div class="check-item">
+      <div class="check-icon structural">S4</div>
+      <div>Role level correctly identified?<br><span class="check-method">Method: exact_match(extracted.seniority, ideal.seniority)</span></div>
+    </div>
+    <div class="check-item">
+      <div class="check-icon structural">S5</div>
+      <div>No phantom requirements invented?<br><span class="check-method">Method: set(extracted_reqs) - set(ideal_reqs) == empty</span></div>
+    </div>
+    <div class="check-item">
+      <div class="check-icon structural">S6</div>
+      <div>Location / remote status correct?<br><span class="check-method">Method: exact_match(extracted.location, ideal.location)</span></div>
+    </div>
+    <div class="check-item">
+      <div class="check-icon structural">S7</div>
+      <div>Experience years extracted?<br><span class="check-method">Method: numeric_match(extracted.years, ideal.years, tolerance=0)</span></div>
+    </div>
+    <div class="check-item">
+      <div class="check-icon semantic">B1</div>
+      <div>Responsibilities text quality<br><span class="check-method">Method: BERTScore F1 of extracted responsibilities vs human-written ideal</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="info-box warning">
+  <strong>The Langfuse Warning:</strong> "If it's not measured, it gets cut." Their optimizer removed entire features because test cases didn't cover them. Every feature we care about MUST have a scorecard check. If it's not in the scorecard, the loop WILL remove it.
+</div>
+
+<hr class="section-divider">
+
+<!-- ========== MUTATION OPERATORS ========== -->
+<h2>4. Six Mutation Operators</h2>
+
+<p style="color: var(--muted); font-size: 0.85rem; margin-bottom: 16px;">
+  Each iteration, the agent selects one operator (rotating). Logging which operator produced keeps vs discards reveals which mutation types are most productive.
+</p>
+
+<div class="mutations-grid">
+  <div class="mutation-card">
+    <div class="mutation-num">1</div>
+    <div class="mutation-name">ADD_CONSTRAINT</div>
+    <div class="mutation-desc">Add a specific rule or boundary condition to the prompt</div>
+    <div class="mutation-example">"Never use more than 5 bullets per role"</div>
+  </div>
+  <div class="mutation-card">
+    <div class="mutation-num">2</div>
+    <div class="mutation-name">ADD_NEGATIVE</div>
+    <div class="mutation-desc">Add a "do NOT do this" example showing what to avoid</div>
+    <div class="mutation-example">"BAD: Leveraged synergies to optimize..."</div>
+  </div>
+  <div class="mutation-card">
+    <div class="mutation-num">3</div>
+    <div class="mutation-name">RESTRUCTURE</div>
+    <div class="mutation-desc">Reorganize prompt sections, reorder instructions</div>
+    <div class="mutation-example">Move quality checklist before output format</div>
+  </div>
+  <div class="mutation-card">
+    <div class="mutation-num">4</div>
+    <div class="mutation-name">TIGHTEN_LANGUAGE</div>
+    <div class="mutation-desc">Replace vague instructions with precise, specific ones</div>
+    <div class="mutation-example">"add metrics" -> "prefix each bullet with a number"</div>
+  </div>
+  <div class="mutation-card">
+    <div class="mutation-num">5</div>
+    <div class="mutation-name">REMOVE_BLOAT</div>
+    <div class="mutation-desc">Delete redundant, low-value, or over-specified instructions</div>
+    <div class="mutation-example">Remove duplicate rules, trim verbose explanations</div>
+  </div>
+  <div class="mutation-card">
+    <div class="mutation-num">6</div>
+    <div class="mutation-name">ADD_COUNTEREXAMPLE</div>
+    <div class="mutation-desc">Add an edge case example showing correct handling</div>
+    <div class="mutation-example">"If candidate has no metrics: describe scope instead"</div>
+  </div>
+</div>
+
+<hr class="section-divider">
+
+<!-- ========== TEST BANK SPLIT ========== -->
+<h2>5. Test Bank: 50 Pairs (20/15/15 Split)</h2>
+
+<div class="info-box success">
+  <strong>Research-validated:</strong> Decagon found 20-100 is optimal. 500 samples actively HURTS (-2% performance, 75% longer prompts). 50 is in the sweet spot.
+</div>
+
+<div class="split-diagram">
+  <div class="split-box train">
+    <div class="split-num">20</div>
+    <div class="split-label">TRAIN</div>
+    <div class="split-desc">Random 10 selected each iteration. Optimization runs against these. The loop sees this data.</div>
+  </div>
+  <div class="split-box val">
+    <div class="split-num">15</div>
+    <div class="split-label">VALIDATION</div>
+    <div class="split-desc">Checked every 10th iteration. Detects overfitting: if val drops while train rises = STOP.</div>
+  </div>
+  <div class="split-box test">
+    <div class="split-num">15</div>
+    <div class="split-label">HELD-OUT</div>
+    <div class="split-desc">NEVER touched during optimization. Final quality gate only. Run once after loop completes.</div>
+  </div>
+</div>
+
+<h3>Persona Coverage (minimum per category)</h3>
+<div class="code-block">
+<span class="comment">// 50 pairs distributed across 9 persona categories</span>
+<span class="comment">// Minimum 3 per category, more for common ones</span>
+
+Tech (junior-senior):    <span class="num">10</span> pairs    <span class="comment">// most common user type</span>
+Military/Government:      <span class="num">5</span> pairs
+Career Changers:          <span class="num">5</span> pairs
+Freelancers:              <span class="num">5</span> pairs
+Recent Graduates:         <span class="num">5</span> pairs
+Executives:               <span class="num">5</span> pairs
+Returners (career gaps):  <span class="num">5</span> pairs
+Non-English Background:   <span class="num">5</span> pairs
+Non-Tech (HR/design/etc): <span class="num">5</span> pairs
+                         --------
+                Total:   <span class="num">50</span> pairs
+
+<span class="comment">// Quarterly rotation:</span>
+<span class="comment">// - Add 10-15 new pairs</span>
+<span class="comment">// - Retire 10-15 oldest pairs</span>
+<span class="comment">// - Maintain minimum 3 per category</span>
+</div>
+
+<hr class="section-divider">
+
+<!-- ========== PLATEAU HANDLING ========== -->
+<h2>6. Plateau Detection & Recovery</h2>
+
+<div class="plateau-flow">
+  <div class="plateau-box" style="border-color: var(--emerald);">
+    Normal operation<br>
+    <span style="font-size:0.75rem; color:var(--muted);">consecutive_discards &lt; 10</span>
+  </div>
+  <div class="plateau-arrow">--></div>
+  <div class="plateau-box" style="border-color: var(--amber);">
+    10 consecutive discards<br>
+    <span style="font-size:0.75rem; color:var(--amber);">Force RESTRUCTURE operator</span>
+  </div>
+  <div class="plateau-arrow">--></div>
+  <div class="plateau-box" style="border-color: var(--red);">
+    20 consecutive discards<br>
+    <span style="font-size:0.75rem; color:var(--red);">Reset to best-known prompt.<br>Try different operator sequence.</span>
+  </div>
+  <div class="plateau-arrow">--></div>
+  <div class="plateau-box" style="border-color: var(--purple);">
+    Still stuck after reset?<br>
+    <span style="font-size:0.75rem; color:var(--purple);">STOP. Prompt has reached<br>its optimization ceiling.</span>
+  </div>
+</div>
+
+<hr class="section-divider">
+
+<!-- ========== NIGHTLY TIMELINE ========== -->
+<h2>7. What One Night Looks Like</h2>
+
+<div class="timeline">
+  <div class="timeline-item">
+    <div class="time">00:00 — Cron triggers</div>
+    <div>Load current prompt, results.tsv history, test bank. Select target: cv-generation.ts tonight.</div>
+  </div>
+  <div class="timeline-item">
+    <div class="time">00:05 — Iterations 1-10</div>
+    <div>Agent cycles through first 4 mutation operators. 2 keeps, 8 discards (typical ~20% keep rate early on).</div>
+  </div>
+  <div class="timeline-item" style="border-color: var(--amber);">
+    <div class="time">00:50 — Iteration 10: Validation check</div>
+    <div>Run against 15 validation pairs. Val score: 0.78 (train: 0.81). No overfitting. Continue.</div>
+  </div>
+  <div class="timeline-item">
+    <div class="time">01:00 — Iterations 11-20</div>
+    <div>1 keep, 9 discards. Improvements getting harder. Operator #5 (REMOVE_BLOAT) produces a keep.</div>
+  </div>
+  <div class="timeline-item" style="border-color: var(--amber);">
+    <div class="time">01:50 — Iteration 20: Validation check</div>
+    <div>Val score: 0.80 (train: 0.83). Tracking together. Good. Context summarized (keep last 20 + top 5).</div>
+  </div>
+  <div class="timeline-item">
+    <div class="time">02:00 — Iterations 21-30</div>
+    <div>0 keeps, 10 discards. Plateau detected at iteration 30. Force RESTRUCTURE.</div>
+  </div>
+  <div class="timeline-item" style="border-color: var(--emerald);">
+    <div class="time">02:30 — Iteration 31: Restructure breakthrough</div>
+    <div>Moving the quality checklist before output format = score jump. 1 keep.</div>
+  </div>
+  <div class="timeline-item">
+    <div class="time">03:00 — Iterations 32-50</div>
+    <div>2 more keeps. Total: 6 keeps / 50 iterations (12% keep rate). Final train score: 0.86.</div>
+  </div>
+  <div class="timeline-item" style="border-color: var(--red);">
+    <div class="time">03:30 — Final held-out test</div>
+    <div>Run against 15 held-out pairs. Score: 0.82. Delta from start: +0.09. Improvement confirmed on unseen data.</div>
+  </div>
+</div>
+
+<hr class="section-divider">
+
+<!-- ========== RESULTS.TSV ========== -->
+<h2>8. results.tsv — What Gets Logged</h2>
+
+<table class="results-table">
+  <thead>
+    <tr>
+      <th>version</th>
+      <th>checks_avg</th>
+      <th>bert_avg</th>
+      <th>mutation</th>
+      <th>status</th>
+      <th>description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>v001</td>
+      <td>6/8 (0.75)</td>
+      <td>0.71</td>
+      <td>—</td>
+      <td class="status-keep">baseline</td>
+      <td>Initial prompt, no modification</td>
+    </tr>
+    <tr>
+      <td>v002</td>
+      <td>5/8 (0.63)</td>
+      <td>0.72</td>
+      <td>ADD_CONSTRAINT</td>
+      <td class="status-discard">discard</td>
+      <td>Added "max 4 bullets per role" — too aggressive, missed JD skills</td>
+    </tr>
+    <tr>
+      <td>v003</td>
+      <td>7/8 (0.88)</td>
+      <td>0.69</td>
+      <td>ADD_NEGATIVE</td>
+      <td class="status-keep">keep</td>
+      <td>Added banned phrases list — eliminated generic language</td>
+    </tr>
+    <tr>
+      <td>v004</td>
+      <td>7/8 (0.88)</td>
+      <td>0.65</td>
+      <td>RESTRUCTURE</td>
+      <td class="status-discard">discard</td>
+      <td>Moved skills section first — confused output ordering</td>
+    </tr>
+    <tr>
+      <td>v005</td>
+      <td>7/8 (0.88)</td>
+      <td>0.73</td>
+      <td>TIGHTEN_LANGUAGE</td>
+      <td class="status-keep">keep</td>
+      <td>"Add metrics" -> "Start each bullet with [number] [unit]"</td>
+    </tr>
+    <tr>
+      <td>v006</td>
+      <td>7/8 (0.88)</td>
+      <td>0.71</td>
+      <td>REMOVE_BLOAT</td>
+      <td class="status-discard">discard</td>
+      <td>Removed ATS section — but S7 check failed (no section headers)</td>
+    </tr>
+    <tr>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <td>v050</td>
+      <td>8/8 (1.00)</td>
+      <td>0.78</td>
+      <td>ADD_COUNTER</td>
+      <td class="status-keep">keep</td>
+      <td>Added veteran persona handling — military rank -> leadership level</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr class="section-divider">
+
+<!-- ========== VALIDATION GATE ========== -->
+<h2>9. Validation Gate (Before Committing to Nightly)</h2>
+
+<div class="info-box danger">
+  <strong>"Prompt Optimization Is a Coin Flip"</strong> (April 2026, arXiv:2604.14585) — 49% of optimization runs showed improvement, statistically indistinguishable from random. We MUST prove the loop works before running it nightly.
+</div>
+
+<div class="flow">
+  <div class="flow-node process">
+    <div class="node-title">Run 20 Manual Iterations</div>
+    <div class="node-detail">One-time test. Takes ~1 day of compute.</div>
+  </div>
+  <div class="flow-arrow"></div>
+  <div class="flow-node process">
+    <div class="node-title">Compare: Optimized vs Original Prompt</div>
+    <div class="node-detail">Run both on held-out 15 test pairs. Collect scores.</div>
+  </div>
+  <div class="flow-arrow"></div>
+  <div class="flow-node process">
+    <div class="node-title">ANOVA Test</div>
+    <div class="node-detail">Is the improvement statistically significant?</div>
+  </div>
+  <div class="flow-arrow"></div>
+  <div class="flow-node decision">
+    <div class="node-title">p < 0.05?</div>
+  </div>
+  <div class="flow-branch">
+    <div>
+      <div class="flow-label yes">YES (p < 0.05)</div>
+      <div class="flow-arrow yes"></div>
+      <div class="flow-node keep">
+        <div class="node-title">Proceed with Nightly Runs</div>
+        <div class="node-detail">Loop delivers statistically significant improvement. Worth the compute.</div>
+      </div>
+    </div>
+    <div>
+      <div class="flow-label no">NO (p >= 0.05)</div>
+      <div class="flow-arrow no"></div>
+      <div class="flow-node discard">
+        <div class="node-title">STOP. Investigate.</div>
+        <div class="node-detail">Loop may not help for this prompt. Check: test bank quality? Scorecard coverage? Prompt already near ceiling?</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="section-divider">
+
+<!-- ========== PSEUDOCODE ========== -->
+<h2>10. Full Algorithm (Pseudocode)</h2>
+
+<div class="code-block">
+<span class="keyword">function</span> <span class="func">runAutoResearch</span>(<span class="type">config</span>: {
+  <span class="type">targetPrompt</span>: <span class="string">'cv-generation'</span> | <span class="string">'jd-parser'</span>,
+  <span class="type">maxIterations</span>: <span class="num">50</span>,
+  <span class="type">maxConsecutiveDiscards</span>: <span class="num">20</span>,
+  <span class="type">validationInterval</span>: <span class="num">10</span>,
+  <span class="type">trainBatchSize</span>: <span class="num">10</span>
+}) {
+
+  <span class="comment">// --- SETUP ---</span>
+  <span class="keyword">const</span> testBank = <span class="func">loadTestBank</span>()  <span class="comment">// 50 pairs total</span>
+  <span class="keyword">const</span> { train, validation, heldOut } = <span class="func">splitTestBank</span>(testBank, [<span class="num">20</span>, <span class="num">15</span>, <span class="num">15</span>])
+  <span class="keyword">const</span> history = <span class="func">loadResults</span>(<span class="string">'results.tsv'</span>)
+  <span class="keyword">const</span> scorecard = <span class="func">getScorecard</span>(config.targetPrompt)
+  <span class="keyword">let</span> currentPrompt = <span class="func">readFile</span>(config.targetPrompt + <span class="string">'.ts'</span>)
+  <span class="keyword">let</span> bestScore = <span class="func">scorePrompt</span>(currentPrompt, train, scorecard)
+  <span class="keyword">let</span> consecutiveDiscards = <span class="num">0</span>
+  <span class="keyword">let</span> iteration = <span class="num">0</span>
+  <span class="keyword">const</span> mutationOrder = [
+    <span class="string">'ADD_CONSTRAINT'</span>, <span class="string">'ADD_NEGATIVE'</span>, <span class="string">'RESTRUCTURE'</span>,
+    <span class="string">'TIGHTEN_LANGUAGE'</span>, <span class="string">'REMOVE_BLOAT'</span>, <span class="string">'ADD_COUNTEREXAMPLE'</span>
+  ]
+
+  <span class="comment">// --- MAIN LOOP ---</span>
+  <span class="keyword">while</span> (iteration < config.maxIterations) {
+    iteration++
+
+    <span class="comment">// Step 1: Select mutation operator</span>
+    <span class="keyword">let</span> mutation = mutationOrder[iteration % <span class="num">6</span>]
+    <span class="keyword">if</span> (consecutiveDiscards >= <span class="num">10</span>) mutation = <span class="string">'RESTRUCTURE'</span>  <span class="comment">// plateau override</span>
+
+    <span class="comment">// Step 2: AI agent modifies prompt</span>
+    <span class="keyword">const</span> contextForAgent = {
+      currentPrompt,
+      recentHistory: history.<span class="func">slice</span>(-<span class="num">20</span>),
+      topResults: history.<span class="func">sortBy</span>(<span class="string">'score'</span>).<span class="func">slice</span>(<span class="num">0</span>, <span class="num">5</span>),
+      mutation,
+      rules: <span class="func">readFile</span>(<span class="string">'program.md'</span>)
+    }
+    <span class="keyword">const</span> modifiedPrompt = <span class="keyword">await</span> <span class="func">askAgent</span>(contextForAgent)
+
+    <span class="comment">// Step 3: Git commit</span>
+    <span class="func">writeFile</span>(config.targetPrompt + <span class="string">'.ts'</span>, modifiedPrompt)
+    <span class="func">gitCommit</span>(<span class="string">`[autoresearch] ${mutation}: ${modifiedPrompt.description}`</span>)
+
+    <span class="comment">// Step 4: Score against random training batch</span>
+    <span class="keyword">const</span> batch = <span class="func">randomSample</span>(train, config.trainBatchSize)  <span class="comment">// 10 of 20</span>
+    <span class="keyword">const</span> { checks_avg, bert_avg } = <span class="func">scorePrompt</span>(modifiedPrompt, batch, scorecard)
+
+    <span class="comment">// Step 5: Keep if BOTH dimensions improved (no weights, no thresholds)</span>
+    <span class="keyword">if</span> (checks_avg >= best.checks_avg && bert_avg >= best.bert_avg) {
+      best = { checks_avg, bert_avg }
+      consecutiveDiscards = <span class="num">0</span>
+      <span class="func">log</span>(history, { iteration, checks_avg, bert_avg, mutation, <span class="string">status: 'keep'</span> })
+    } <span class="keyword">else</span> {
+      <span class="func">gitReset</span>()  <span class="comment">// revert to previous prompt</span>
+      consecutiveDiscards++
+      <span class="func">log</span>(history, { iteration, checks_avg, bert_avg, mutation, <span class="string">status: 'discard'</span> })
+
+      <span class="comment">// Plateau: reset to best known prompt</span>
+      <span class="keyword">if</span> (consecutiveDiscards >= config.maxConsecutiveDiscards) {
+        currentPrompt = <span class="func">getBestPromptFromHistory</span>(history)
+        consecutiveDiscards = <span class="num">0</span>  <span class="comment">// give it another chance</span>
+      }
+    }
+
+    <span class="comment">// Step 6: Periodic validation</span>
+    <span class="keyword">if</span> (iteration % config.validationInterval === <span class="num">0</span>) {
+      <span class="keyword">const</span> val = <span class="func">scorePrompt</span>(currentPrompt, validation, scorecard)
+      <span class="keyword">if</span> (val.checks_avg < best.checks_avg - <span class="num">0.05</span> || val.bert_avg < best.bert_avg - <span class="num">0.05</span>) {
+        <span class="comment">// Validation diverging from training on either dimension = overfitting</span>
+        <span class="func">log</span>(<span class="string">'OVERFITTING DETECTED: train='</span> + JSON.<span class="func">stringify</span>(best) + <span class="string">' val='</span> + JSON.<span class="func">stringify</span>(val))
+        <span class="keyword">break</span>
+      }
+    }
+  }
+
+  <span class="comment">// --- FINAL EVALUATION ---</span>
+  <span class="keyword">const</span> final = <span class="func">scorePrompt</span>(currentPrompt, heldOut, scorecard)
+  <span class="func">log</span>(<span class="string">'FINAL: held-out checks_avg='</span> + final.checks_avg + <span class="string">' bert_avg='</span> + final.bert_avg)
+
+  <span class="keyword">return</span> { best, final, totalKeeps: history.<span class="func">filter</span>(h => h.status === <span class="string">'keep'</span>).length }
+}
+</div>
+
+<div class="code-block">
+<span class="keyword">function</span> <span class="func">scorePrompt</span>(prompt, testPairs, scorecard) {
+  <span class="keyword">const</span> scores = testPairs.<span class="func">map</span>(pair => {
+    <span class="comment">// Run the prompt against this test pair</span>
+    <span class="keyword">const</span> output = <span class="keyword">await</span> <span class="func">runLLM</span>(prompt, pair.cv, pair.jd)
+
+    <span class="comment">// Structural checks (deterministic, code-only)</span>
+    <span class="keyword">const</span> checks = scorecard.<span class="func">map</span>(check => <span class="func">check.evaluate</span>(output, pair))
+    <span class="keyword">const</span> structuralScore = checks.<span class="func">filter</span>(c => c.passed).length / checks.length
+
+    <span class="comment">// BERTScore (frozen BERT model, non-circular)</span>
+    <span class="keyword">const</span> bertScore = <span class="func">computeBERTScore</span>(output.freeText, pair.ideal.freeText)
+
+    <span class="keyword">return</span> { structuralScore, bertScore }
+  })
+
+  <span class="keyword">return</span> {
+    checks_avg: <span class="func">average</span>(scores.<span class="func">map</span>(s => s.structuralScore)),
+    bert_avg: <span class="func">average</span>(scores.<span class="func">map</span>(s => s.bertScore))
+  }
+}
+</div>
+
+<hr class="section-divider">
+
+<!-- ========== WHAT THIS IS NOT ========== -->
+<h2>11. What This Is NOT</h2>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 24px 0;">
+  <div class="info-box danger" style="margin:0;">
+    <strong>NOT training a model.</strong> The LLM (Claude/GPT) is frozen. We're optimizing the INSTRUCTIONS we give it, not its weights.
+  </div>
+  <div class="info-box danger" style="margin:0;">
+    <strong>NOT using user data.</strong> The test bank is OUR synthetic data. User CVs, JDs, and outcomes never enter the loop.
+  </div>
+  <div class="info-box danger" style="margin:0;">
+    <strong>NOT LLM-as-judge.</strong> Structural checks are code. BERTScore uses a frozen BERT model. Neither uses the same LLM that generates output.
+  </div>
+  <div class="info-box danger" style="margin:0;">
+    <strong>NOT guaranteed to work.</strong> 49% of optimization runs show no improvement. ANOVA pre-test required before nightly runs.
+  </div>
+</div>
+
+<hr class="section-divider">
+
+<!-- ========== WHAT WE NEED TO BUILD ========== -->
+<h2>12. Implementation Checklist</h2>
+
+<div style="margin: 24px 0; font-size: 0.9rem;">
+  <div style="padding: 8px 0; border-bottom: 1px solid var(--border);">
+    <span style="color: var(--red);">[ ]</span> <strong>Test bank</strong> — 50 CV/JD pairs with human-written ideal outputs (the hardest part)
+  </div>
+  <div style="padding: 8px 0; border-bottom: 1px solid var(--border);">
+    <span style="color: var(--red);">[ ]</span> <strong>Scorecard functions</strong> — 8 structural checks for cv-gen, 7 for jd-parser (pure TypeScript)
+  </div>
+  <div style="padding: 8px 0; border-bottom: 1px solid var(--border);">
+    <span style="color: var(--red);">[ ]</span> <strong>BERTScore integration</strong> — Python subprocess or sentence-transformers API
+  </div>
+  <div style="padding: 8px 0; border-bottom: 1px solid var(--border);">
+    <span style="color: var(--red);">[ ]</span> <strong>program.md</strong> — Rules for what the AI agent can/cannot modify
+  </div>
+  <div style="padding: 8px 0; border-bottom: 1px solid var(--border);">
+    <span style="color: var(--red);">[ ]</span> <strong>Loop orchestrator</strong> — The main loop with git, scoring, logging
+  </div>
+  <div style="padding: 8px 0; border-bottom: 1px solid var(--border);">
+    <span style="color: var(--red);">[ ]</span> <strong>results.tsv logger</strong> — Append-only, tab-separated
+  </div>
+  <div style="padding: 8px 0; border-bottom: 1px solid var(--border);">
+    <span style="color: var(--red);">[ ]</span> <strong>ANOVA validation gate</strong> — 20-iteration pre-test before committing to nightly
+  </div>
+  <div style="padding: 8px 0; border-bottom: 1px solid var(--border);">
+    <span style="color: var(--red);">[ ]</span> <strong>Cron trigger</strong> — Nightly schedule (after validation gate passes)
+  </div>
+</div>
+
+<div class="info-box" style="margin-top: 32px;">
+  <strong>Priority order:</strong> Test bank first (blocks everything else) -> Scorecard functions -> Loop orchestrator -> program.md -> Validation gate -> Cron. The test bank is the bottleneck — without good human-written ideals, the loop optimizes toward the wrong target.
+</div>
+
+</div>
+</body>
+</html>

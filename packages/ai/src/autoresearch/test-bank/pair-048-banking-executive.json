@@ -1,0 +1,125 @@
+{
+  "id": "pair-048",
+  "split": "train",
+  "persona": "executive",
+  "synthetic": true,
+  "jd_style": "enterprise_saas",
+  "framing": "MD at Standard Chartered seeking Group Head of Digital Banking at DBS Singapore",
+  "coverage": { "industry": "Banking/Payments", "seniority": "executive", "pattern": "linear", "region": "asia" },
+  "jd": {
+    "title": "Group Head of Digital Banking",
+    "company": "DBS Bank",
+    "location": "Singapore (Marina Bay Financial Centre)",
+    "experience_years": 15,
+    "style_note": "Enterprise: structured, specific banking domain, regulatory awareness, leadership-focused",
+    "requirements": [
+      { "text": "15+ years of experience in banking, fintech, or financial services with progressive digital leadership", "type": "must_have" },
+      { "text": "Proven track record leading digital banking transformation at a top-tier bank with 10M+ retail customers", "type": "must_have" },
+      { "text": "Experience with digital banking platforms: core banking modernisation (Temenos, Finacle, Mambu, or Thought Machine)", "type": "must_have" },
+      { "text": "Deep knowledge of MAS (Monetary Authority of Singapore) regulatory requirements: Technology Risk Management (TRM) Guidelines, Business Continuity Management (BCM)", "type": "must_have" },
+      { "text": "Experience with open banking / API ecosystems (PSD2/PSD3, SGQR, PayNow, or similar real-time payment schemes)", "type": "must_have" },
+      { "text": "Track record managing P&L of SGD 100M+ and team of 200+ across engineering, product, and design", "type": "must_have" },
+      { "text": "Experience with AI/ML in banking: credit decisioning, fraud detection, or personalised recommendations", "type": "nice_to_have" },
+      { "text": "Board or C-suite advisory experience in financial services", "type": "nice_to_have" },
+      { "text": "Mandarin language proficiency for Greater China business stakeholders", "type": "nice_to_have" }
+    ],
+    "responsibilities": [
+      "Lead DBS's digital banking strategy across consumer, SME, and wealth management segments for 18 markets",
+      "Oversee digibank platform (mobile and web) serving 16M+ digital customers",
+      "Drive core banking modernisation programme and cloud migration (AWS/GCP)",
+      "Manage digital banking P&L (SGD 200M+ budget) and team of 500+ across Singapore, India, and Indonesia",
+      "Represent digital banking at board level and MAS regulatory discussions"
+    ]
+  },
+  "expected_output": {
+    "summary": "Digital banking executive with 18 years at Standard Chartered Bank, most recently Managing Director and Head of Digital Channels for ASEAN and South Asia. Led digital transformation for 8M retail customers across 8 markets. Managed P&L of SGD 85M and team of 180 across product, engineering, and UX. Launched Standard Chartered's mobile banking app refresh (2022) and nexus API platform for open banking in Singapore and Hong Kong. Deep MAS regulatory experience. Seeking step-up to Group Head of Digital Banking at a leading ASEAN bank.",
+    "experience": [
+      {
+        "company": "Standard Chartered Bank — Singapore",
+        "title": "Managing Director — Head of Digital Channels, ASEAN & South Asia",
+        "start_date": "2020-01",
+        "end_date": "2025-12",
+        "bullets": [
+          "Led digital banking strategy for 8M retail customers across Singapore, Hong Kong, India, Malaysia, Indonesia, Thailand, Vietnam, and UAE",
+          "Managed P&L of SGD 85M and cross-functional team of 180 (product managers, engineers, UX designers, data analysts)",
+          "Launched SC Mobile app refresh (2022): redesigned onboarding, biometric authentication, and investment platform — 35% increase in MAU",
+          "Delivered nexus open banking API platform enabling 15 fintech partnerships (PayNow, SGQR, FPS Hong Kong)",
+          "Coordinated with MAS on Technology Risk Management (TRM) Guidelines compliance for all digital banking initiatives"
+        ]
+      },
+      {
+        "company": "Standard Chartered Bank — Singapore",
+        "title": "Director — Digital Products, Consumer Banking",
+        "start_date": "2015-06",
+        "end_date": "2019-12",
+        "bullets": [
+          "Led product development for SC Mobile (Singapore) and online banking platform across 5 ASEAN markets",
+          "Managed integration with Finacle core banking system (Infosys) for real-time balance, transfers, and credit card servicing",
+          "Delivered PayNow (FAST) integration for instant P2P transfers and SGQR merchant payments",
+          "Built credit card digital acquisition funnel achieving 60% of new card applications through mobile channel"
+        ]
+      },
+      {
+        "company": "Standard Chartered Bank — London / Mumbai",
+        "title": "Vice President — Internet Banking (promoted from AVP, 2012)",
+        "start_date": "2008-03",
+        "end_date": "2015-05",
+        "bullets": [
+          "Managed internet banking platform for India retail banking (3M users)",
+          "Led migration from legacy internet banking to responsive web platform",
+          "Supported Standard Chartered's Group Technology on core banking evaluation (Temenos T24 pilot for Africa markets)"
+        ]
+      }
+    ],
+    "skills": {
+      "digital_banking": ["mobile banking app strategy", "open banking APIs", "digital onboarding", "biometric authentication", "digital acquisition funnels"],
+      "platforms": ["Finacle (Infosys) core banking", "Temenos T24 (evaluation only)", "PayNow/FAST", "SGQR", "FPS Hong Kong"],
+      "regulatory": ["MAS TRM Guidelines", "MAS BCM Guidelines", "MAS outsourcing guidelines", "PSD2 awareness"],
+      "leadership": ["P&L management (SGD 85M)", "team management (180 staff)", "fintech partnerships", "board reporting", "regulatory engagement"],
+      "markets": ["Singapore", "Hong Kong", "India", "Malaysia", "Indonesia", "Thailand", "Vietnam", "UAE"]
+    },
+    "certifications": [
+      "IBF Certified — Technology and Operations, Institute of Banking and Finance Singapore (2021)"
+    ],
+    "education": [
+      "MBA — INSEAD (2006-2008)",
+      "BTech Computer Science — Indian Institute of Technology (IIT) Bombay (2002-2006)"
+    ]
+  },
+  "jd_requirements": [
+    "15+ years banking fintech digital leadership",
+    "digital banking transformation 10M+ retail customers",
+    "core banking Temenos Finacle Mambu Thought Machine",
+    "MAS TRM Guidelines BCM regulatory",
+    "open banking API PSD2 PSD3 SGQR PayNow real-time payments",
+    "P&L SGD 100M+ team 200+",
+    "AI ML credit decisioning fraud detection personalisation",
+    "board C-suite advisory financial services",
+    "Mandarin Greater China"
+  ],
+  "cloud_skills": [
+    "mobile banking strategy", "open banking APIs",
+    "digital onboarding", "biometric authentication",
+    "Finacle core banking", "Temenos T24",
+    "PayNow FAST", "SGQR", "FPS Hong Kong",
+    "MAS TRM Guidelines", "MAS BCM",
+    "P&L management", "fintech partnerships",
+    "digital acquisition funnels", "Singapore",
+    "Hong Kong", "India", "Malaysia",
+    "Indonesia", "INSEAD MBA", "IIT Bombay"
+  ],
+  "deliberate_flaws": [
+    "P&L is SGD 85M, not SGD 100M+ (JD requires 100M+)",
+    "Team is 180, not 200+ (JD requires 200+)",
+    "8M customers, not 10M+ (JD requires 10M+)",
+    "No Mambu or Thought Machine experience (modern cloud-native core banking — only Finacle and Temenos evaluation)",
+    "No core banking modernisation or cloud migration leadership (used existing Finacle, didn't modernise it)",
+    "No AI/ML in banking experience (credit decisioning, fraud detection, personalisation)",
+    "No Mandarin language skills (IIT/INSEAD educated, Indian background)",
+    "No board or C-suite advisory experience (reports to Group Head, not board-level)",
+    "No PSD2/PSD3 hands-on experience (awareness only — Standard Chartered's European presence is limited)",
+    "Standard Chartered is smaller than DBS in digital banking maturity — DBS is 'World's Best Digital Bank', different scale",
+    "No wealth management digital experience (JD covers consumer, SME, and wealth segments)",
+    "No experience managing 500+ team (JD says 500+, candidate managed 180)"
+  ]
+}

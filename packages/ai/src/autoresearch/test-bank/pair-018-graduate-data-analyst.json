@@ -1,0 +1,100 @@
+{
+  "id": "pair-018",
+  "split": "train",
+  "persona": "early_career",
+  "synthetic": true,
+  "jd_style": "graduate_friendly",
+  "framing": "Recent statistics graduate applying to junior data scientist role at QuantumBlack (graduate-friendly JD style)",
+  "coverage": { "industry": "Consulting", "seniority": "entry", "pattern": "early_career", "region": "europe" },
+  "jd": {
+    "title": "Junior Data Scientist",
+    "company": "McKinsey & Company — QuantumBlack",
+    "location": "London, UK",
+    "experience_years": null,
+    "style_note": "Graduate-friendly: sells the role, explains what you'll learn, loose requirements, 'Who You Are' framing",
+    "about": "This is an entry-level, full-time opportunity designed for recent graduates who want to apply data science to solve real business problems. You'll work alongside experienced analysts and consultants on engagements across industries — from healthcare to financial services to retail. You'll learn to translate messy real-world data into actionable insights that drive executive decisions.",
+    "requirements": [
+      { "text": "Recently completed (or completing by summer 2026) a bachelor's or master's degree in Statistics, Mathematics, Computer Science, Economics, or a related quantitative field", "type": "must_have" },
+      { "text": "Strong programming skills in Python and SQL; familiarity with R or Scala is a plus", "type": "must_have" },
+      { "text": "Genuine curiosity about how businesses work and a desire to learn consulting", "type": "must_have" },
+      { "text": "Strong communication skills — you can explain a regression to a non-technical audience", "type": "must_have" },
+      { "text": "Experience with data visualization tools (Tableau, Power BI, or matplotlib/seaborn)", "type": "nice_to_have" },
+      { "text": "Internship or project experience involving real datasets (academic projects count)", "type": "nice_to_have" },
+      { "text": "Familiarity with cloud platforms (AWS, GCP, or Azure)", "type": "nice_to_have" }
+    ],
+    "what_youll_do": [
+      "Work with real datasets from client engagements — not toy problems",
+      "Build dashboards, statistical models, and data pipelines under guidance from senior analysts",
+      "Present findings to client teams and learn to tailor your message to different audiences",
+      "Participate in a structured 6-month onboarding program with mentorship and technical training",
+      "Work across different client engagements spanning multiple industries in your first year"
+    ]
+  },
+  "expected_output": {
+    "summary": "Recent Statistics graduate from the University of Edinburgh with strong quantitative foundation and hands-on project experience in Python and R. Completed dissertation on predictive modeling for NHS patient readmission rates using real hospital data. Data visualization experience through academic projects and a 3-month summer internship at Monzo. Eager to apply analytical skills to data science consulting.",
+    "experience": [
+      {
+        "company": "Monzo",
+        "title": "Associate Data Scientist — Intern",
+        "start_date": "2025-06",
+        "end_date": "2025-08",
+        "bullets": [
+          "Analyzed customer transaction data (2M+ rows) using Python and pandas to identify spending pattern segments",
+          "Built Tableau dashboard tracking weekly customer acquisition funnel metrics for product team",
+          "Wrote SQL queries against BigQuery data warehouse to extract cohort-level retention data",
+          "Presented findings on dormant account reactivation to 15-person product team"
+        ]
+      },
+      {
+        "company": "University of Edinburgh — School of Mathematics",
+        "title": "Undergraduate Research Assistant",
+        "start_date": "2024-09",
+        "end_date": "2025-05",
+        "bullets": [
+          "Built predictive model for patient readmission rates using logistic regression and random forest (R, tidyverse) as part of supervisor's NHS Lothian research programme",
+          "Cleaned and merged 3 anonymised NHS datasets (45K patient records, accessed under supervisor's existing ethics approval) handling missing values and date mismatches",
+          "Achieved AUC of 0.78 on held-out test set, presented results at university statistics symposium",
+          "Co-authored poster accepted at Royal Statistical Society conference (2025)"
+        ]
+      }
+    ],
+    "skills": {
+      "programming": ["Python (pandas, scikit-learn, matplotlib)", "R (tidyverse, ggplot2)", "SQL (BigQuery)"],
+      "analytics": ["logistic regression", "random forest", "cohort analysis", "A/B testing (coursework)"],
+      "visualization": ["Tableau", "matplotlib", "seaborn", "ggplot2"],
+      "soft_skills": ["presentation to non-technical audiences", "written communication", "collaborative project work"]
+    },
+    "certifications": [],
+    "education": [
+      "BSc (Hons) Statistics — University of Edinburgh (2022-2026, expected First Class)"
+    ]
+  },
+  "jd_requirements": [
+    "bachelor's master's degree Statistics Mathematics Computer Science Economics quantitative",
+    "Python SQL strong programming R Scala familiarity",
+    "curiosity business consulting desire to learn",
+    "communication explain regression non-technical",
+    "data visualization Tableau Power BI matplotlib seaborn",
+    "internship project real datasets academic",
+    "cloud platforms AWS GCP Azure"
+  ],
+  "cloud_skills": [
+    "Python", "pandas", "scikit-learn", "matplotlib",
+    "R", "tidyverse", "ggplot2",
+    "SQL", "BigQuery",
+    "Tableau", "data visualization",
+    "logistic regression", "random forest",
+    "cohort analysis", "data cleaning",
+    "presentation skills", "NHS data",
+    "predictive modeling", "statistical analysis"
+  ],
+  "deliberate_flaws": [
+    "Only 3 months of work experience (single internship) — rest is academic",
+    "No cloud platform experience (AWS/GCP/Azure)",
+    "No Power BI experience (only Tableau)",
+    "A/B testing is coursework only, not production",
+    "No consulting exposure — doesn't know what 'client engagement' looks like",
+    "R is stronger than Python — JD requires strong Python + SQL, candidate's Python is secondary",
+    "No Scala or PySpark experience (QuantumBlack's actual stack)"
+  ]
+}

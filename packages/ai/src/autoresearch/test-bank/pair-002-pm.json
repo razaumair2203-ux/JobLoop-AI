@@ -1,0 +1,135 @@
+{
+  "id": "pair-002",
+  "split": "train",
+  "persona": "military",
+  "source_cv": "Alpha_CVs/Resume PM_Jan26.pdf",
+  "framing": "Program & Project Management Lead",
+  "sensitivity": {
+    "platform_names": {
+      "JF-17 Thunder": "Lead Fighter Aircraft Program",
+      "SAAB 2000 Erieye AEW&C": "Airborne Early Warning & Control Fleet",
+      "Crotale SHORAD": "Short-Range Air Defense System",
+      "AESA radar": "Active Electronically Scanned Array radar"
+    },
+    "recommendation": "sanitize_for_generic_employers",
+    "region_aware": true,
+    "note": "Defense/ME employers: keep real names. Generic corporate: use sanitized versions. Always ask user."
+  },
+  "jd": {
+    "title": "Senior Program Manager — Defense Systems",
+    "company": "BAE Systems",
+    "location": "Abu Dhabi, UAE (Hybrid)",
+    "experience_years": 10,
+    "requirements": [
+      { "text": "10+ years in defense program management", "type": "must_have" },
+      { "text": "Experience managing multi-stakeholder defense acquisition programs", "type": "must_have" },
+      { "text": "Track record of managing programs worth $50M+", "type": "nice_to_have" },
+      { "text": "Experience with fighter aircraft or weapons systems programs", "type": "must_have" },
+      { "text": "PMP, PMI-ACP, or PRINCE2 certification", "type": "must_have" },
+      { "text": "Experience coordinating between international OEMs and national air forces", "type": "must_have" },
+      { "text": "Engineering change management and configuration control", "type": "must_have" },
+      { "text": "MS in Engineering or related field", "type": "nice_to_have" },
+      { "text": "Budget management, schedule risk analysis, and milestone tracking", "type": "must_have" },
+      { "text": "Experience with export programs and international customers", "type": "nice_to_have" }
+    ],
+    "responsibilities": [
+      "Lead defense program management for fighter aircraft sustainment and upgrade programs",
+      "Manage cross-functional teams across engineering, logistics, and operations",
+      "Coordinate with international defense customers and OEM partners",
+      "Oversee engineering change proposals, configuration management, and technical baselines",
+      "Track program milestones, budgets, and risk registers",
+      "Present program status to senior leadership and customer representatives"
+    ]
+  },
+  "expected_output": {
+    "summary": "Defense Program Management leader with 16+ years in Pakistan Air Force spanning JF-17 Thunder and SAAB 2000 Erieye AEW&C programs. Progressed from Assistant Director to Deputy Director PMO, managing cross-stakeholder coordination between CADI (China), SAAB (Sweden), PAC Kamra manufacturing, and operational squadrons. PMI-ACP certified with hands-on engineering background in avionics integration and weapons systems qualification.",
+    "experience": [
+      {
+        "company": "Pakistan Air Force — PMO JF-17",
+        "title": "Deputy Director, Program Management Office — JF-17 Aircraft",
+        "start_date": "2022-09",
+        "end_date": "2023-12",
+        "bullets": [
+          "Led senior program management for JF-17 Thunder production lots, modification programs, and export coordination",
+          "Managed engineering change proposals, resource allocation, and technical baselines across multiple work packages",
+          "Coordinated flight test campaigns, weapons integration trials, and certification activities",
+          "Oversaw export variant coordination for international customers including Myanmar and Nigeria"
+        ]
+      },
+      {
+        "company": "Pakistan Air Force — PMO JF-17",
+        "title": "Assistant Director, Program Management Office — JF-17 Aircraft",
+        "start_date": "2020-01",
+        "end_date": "2021-04",
+        "bullets": [
+          "Coordinated program activities between CADI (OEM designer), PAC Kamra (manufacturing), and field squadrons",
+          "Tracked milestones across avionics integration, weapons systems qualification, and airframe production",
+          "Managed configuration control for indigenous systems including mission computer and AESA radar integration",
+          "Oversaw budget tracking, contractor deliverables, and schedule risk management"
+        ]
+      },
+      {
+        "company": "Pakistan Air Force — PMO AEW&C",
+        "title": "PMO Officer, AEW&C Aircraft",
+        "start_date": "2023-12",
+        "end_date": "2024-07",
+        "bullets": [
+          "Managed program activities for SAAB 2000 Erieye AEW&C fleet sustainment (9 aircraft)",
+          "Coordinated with SAAB (Sweden) for maintenance contracts, spare parts logistics, and obsolescence management",
+          "Tracked fleet availability metrics and mission readiness reporting"
+        ]
+      },
+      {
+        "company": "AVIC/CADI Chengdu",
+        "title": "Aerospace Systems Integration Lead",
+        "start_date": "2017-11",
+        "end_date": "2019-12",
+        "bullets": [
+          "Led avionics and weapons systems integration for JF-17 Thunder Block III at CADI, Chengdu",
+          "Bridged cross-cultural engineering collaboration between Pakistani and Chinese technical teams",
+          "Supported flight test campaigns for weapons integration and avionics qualification"
+        ]
+      }
+    ],
+    "skills": {
+      "program_management": ["defense acquisition", "milestone tracking", "budget management", "schedule risk analysis", "engineering change management", "configuration control"],
+      "stakeholder_management": ["international OEM coordination (CADI, SAAB)", "cross-functional team leadership", "export program coordination", "customer representation"],
+      "technical": ["fighter aircraft programs (JF-17)", "AEW&C programs (SAAB Erieye)", "avionics integration", "weapons systems qualification"],
+      "certifications_tools": ["PMI-ACP", "Agile/Scrum", "project management methodologies"]
+    },
+    "certifications": [
+      "PMI-ACP — Project Management Institute",
+      "Google Project Management Professional Certificate (6 courses)",
+      "Engineering Project Management Specialization — Rice University (38 PDUs)"
+    ],
+    "education": [
+      "MS Avionics Engineering — Air University (2013-2015)",
+      "BE Avionics Engineering — College of Aeronautical Engineering, PAF (2004-2008)"
+    ]
+  },
+  "jd_requirements": [
+    "10+ years defense program management",
+    "multi-stakeholder defense acquisition",
+    "programs worth $50M+",
+    "fighter aircraft weapons systems programs",
+    "PMP PMI-ACP PRINCE2 certification",
+    "international OEM coordination",
+    "engineering change management configuration control",
+    "MS Engineering",
+    "budget schedule risk milestone tracking",
+    "export programs international customers"
+  ],
+  "cloud_skills": [
+    "avionics design", "systems integration", "V&V testing", "configuration management",
+    "aircraft maintenance engineering", "operational readiness", "fault diagnosis",
+    "maintenance planning", "team leadership", "radar systems", "C4ISR", "SAAB 2000 Erieye",
+    "weapons integration", "flight testing", "mission computer", "EW systems", "JF-17 Thunder",
+    "program management", "defense acquisition", "budget management", "risk management",
+    "milestone tracking", "engineering change management", "production oversight",
+    "export coordination", "stakeholder coordination", "CADI coordination",
+    "field operations", "weapons systems", "SAM systems", "Crotale",
+    "fleet sustainment", "international vendor management", "logistics coordination",
+    "academic quality assurance", "systems engineering instruction",
+    "cross-cultural collaboration", "PMI-ACP", "Agile/Scrum"
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "id": "pair-009",
+  "split": "train",
+  "persona": "senior",
+  "synthetic": true,
+  "framing": "Manufacturing Operations Director moving to new company",
+  "coverage": { "industry": "Manufacturing", "seniority": "senior", "pattern": "linear", "region": "europe" },
+  "jd": {
+    "title": "Director of Operations — Automotive Manufacturing",
+    "company": "BMW Group",
+    "location": "Munich, Germany",
+    "experience_years": 12,
+    "requirements": [
+      { "text": "12+ years in manufacturing operations with at least 5 years in automotive", "type": "must_have" },
+      { "text": "Experience managing production facilities with 500+ employees", "type": "must_have" },
+      { "text": "Deep knowledge of lean manufacturing, Six Sigma, and Toyota Production System (TPS)", "type": "must_have" },
+      { "text": "Experience with EV or electrified powertrain manufacturing is a strong advantage", "type": "nice_to_have" },
+      { "text": "Track record of achieving OEE improvements of 10%+ year-over-year", "type": "must_have" },
+      { "text": "Experience with MES (Manufacturing Execution Systems) and SAP PP", "type": "must_have" },
+      { "text": "MS in Industrial Engineering, Manufacturing Engineering, or MBA", "type": "must_have" },
+      { "text": "Six Sigma Black Belt certification", "type": "must_have" },
+      { "text": "Fluency in English; German language skills preferred", "type": "nice_to_have" },
+      { "text": "Experience managing capital investment projects ($10M+)", "type": "must_have" }
+    ],
+    "responsibilities": [
+      "Oversee daily operations of automotive component manufacturing plant (800 employees)",
+      "Drive continuous improvement programs across quality, cost, delivery, and safety KPIs",
+      "Manage annual operating budget of EUR 120M and capital investment pipeline",
+      "Lead digital transformation initiatives including MES deployment and predictive maintenance",
+      "Ensure compliance with IATF 16949, ISO 14001, and German workplace safety regulations",
+      "Report plant performance to VP Manufacturing and participate in global operations reviews"
+    ]
+  },
+  "expected_output": {
+    "summary": "Manufacturing Operations leader with 14 years of progressive experience across automotive and industrial manufacturing. Currently Plant Director at Continental AG managing 650-employee facility producing electronic brake systems. Delivered OEE improvement from 72% to 86% over 3 years through lean manufacturing and MES implementation. Six Sigma Black Belt with MS Industrial Engineering and EUR 15M capital investment track record.",
+    "experience": [
+      {
+        "company": "Continental AG",
+        "title": "Plant Director — Electronic Brake Systems",
+        "start_date": "2021-03",
+        "end_date": "2024-12",
+        "bullets": [
+          "Directed operations of 650-employee manufacturing plant producing electronic brake control units for BMW, VW, and Stellantis",
+          "Improved Overall Equipment Effectiveness (OEE) from 72% to 86% through lean manufacturing and TPM programs",
+          "Managed annual operating budget of EUR 95M and led EUR 15M capital investment for new SMT production line",
+          "Deployed Manufacturing Execution System (MES) integrating SAP PP with shop floor equipment, reducing scrap by 18%",
+          "Achieved IATF 16949 recertification with zero major non-conformances for 3 consecutive years"
+        ]
+      },
+      {
+        "company": "Bosch",
+        "title": "Senior Production Manager — Powertrain Components",
+        "start_date": "2017-01",
+        "end_date": "2021-02",
+        "bullets": [
+          "Managed 3 production lines (280 employees) manufacturing fuel injection systems and turbocharger components",
+          "Led Six Sigma improvement projects delivering EUR 2.4M annual cost savings",
+          "Implemented predictive maintenance program reducing unplanned downtime by 32%",
+          "Coordinated with R&D on NPI (New Product Introduction) for electrified powertrain components"
+        ]
+      },
+      {
+        "company": "Siemens",
+        "title": "Lean Specialist (promoted from Production Engineer, 2014)",
+        "start_date": "2011-06",
+        "end_date": "2016-12",
+        "bullets": [
+          "Promoted from production engineer to lean specialist in industrial automation manufacturing",
+          "Facilitated 25+ Kaizen events and trained 100+ operators on lean manufacturing principles",
+          "Supported SAP PP implementation for production planning and shop floor data collection"
+        ]
+      }
+    ],
+    "skills": {
+      "operations": ["plant management (650 employees)", "lean manufacturing", "Toyota Production System", "Six Sigma", "TPM", "Kaizen"],
+      "technical": ["MES implementation", "SAP PP", "predictive maintenance", "OEE optimization", "SMT production"],
+      "quality": ["IATF 16949", "ISO 14001", "quality management systems", "scrap reduction", "continuous improvement"],
+      "leadership": ["operating budget management (EUR 95M)", "capital investment (EUR 15M)", "NPI coordination", "global operations reporting"]
+    },
+    "certifications": [
+      "Six Sigma Black Belt — ASQ",
+      "Lean Practitioner — SME (Society of Manufacturing Engineers)"
+    ],
+    "education": [
+      "MS Industrial Engineering — RWTH Aachen University (2009-2011)",
+      "BS Mechanical Engineering — Technical University of Munich (2005-2009)"
+    ]
+  },
+  "jd_requirements": [
+    "12+ years manufacturing operations automotive",
+    "production facilities 500+ employees",
+    "lean manufacturing Six Sigma TPS",
+    "EV electrified powertrain manufacturing",
+    "OEE improvements 10%+ year-over-year",
+    "MES Manufacturing Execution SAP PP",
+    "MS Industrial Engineering MBA",
+    "Six Sigma Black Belt certification",
+    "English German fluency",
+    "capital investment projects $10M+"
+  ],
+  "cloud_skills": [
+    "plant management", "lean manufacturing", "Six Sigma", "TPM", "Kaizen",
+    "Toyota Production System", "OEE optimization",
+    "MES implementation", "SAP PP", "predictive maintenance",
+    "IATF 16949", "ISO 14001", "quality management",
+    "operating budget management", "capital investment",
+    "NPI coordination", "production planning",
+    "scrap reduction", "continuous improvement",
+    "team leadership", "SMT production",
+    "automotive manufacturing", "electronic brake systems",
+    "fuel injection systems", "powertrain components"
+  ],
+  "deliberate_flaws": [
+    "No direct EV/electrified manufacturing experience (only NPI coordination for electrified components)",
+    "No German language proficiency mentioned",
+    "Budget EUR 95M vs required EUR 120M scope",
+    "650 employees vs 800+ required",
+    "OEE improvement 14pp over 3 years (~4.7pp/yr) does not meet JD's 10%+ YoY requirement"
+  ]
+}

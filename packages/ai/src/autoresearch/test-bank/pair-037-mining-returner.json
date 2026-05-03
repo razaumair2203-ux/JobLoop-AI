@@ -1,0 +1,112 @@
+{
+  "id": "pair-037",
+  "split": "held_out",
+  "persona": "returner",
+  "synthetic": true,
+  "jd_style": "enterprise_saas",
+  "framing": "Mining geologist returning after 4-year career break to BHP automation role in Perth",
+  "coverage": { "industry": "Mining/Resources", "seniority": "mid", "pattern": "returner", "region": "oceania" },
+  "jd": {
+    "title": "Senior Mine Geologist — Resource Modelling",
+    "company": "BHP",
+    "location": "Perth, Western Australia (FIFO to Pilbara sites)",
+    "experience_years": 7,
+    "style_note": "Enterprise: structured requirements, specific mining software, safety culture emphasis",
+    "requirements": [
+      { "text": "7+ years of experience in mine geology, resource estimation, or grade control for open-pit mining operations", "type": "must_have" },
+      { "text": "Proficiency in Leapfrog Geo, Vulcan, or Surpac for geological modelling and resource estimation", "type": "must_have" },
+      { "text": "Experience with JORC Code (2012) reporting and Competent Person sign-off requirements", "type": "must_have" },
+      { "text": "Knowledge of geostatistical methods (variography, kriging, conditional simulation) for resource estimation", "type": "must_have" },
+      { "text": "Valid WA Mining Act authorisation and current mine site induction (or willingness to obtain)", "type": "must_have" },
+      { "text": "Experience with autonomous mining systems (autonomous haul trucks, drill systems) and their interaction with grade control workflows", "type": "nice_to_have" },
+      { "text": "Familiarity with BHP's proprietary data platforms or SAP S/4HANA for mining", "type": "nice_to_have" },
+      { "text": "MAusIMM membership (Member of the Australasian Institute of Mining and Metallurgy)", "type": "nice_to_have" }
+    ],
+    "responsibilities": [
+      "Deliver JORC-compliant resource models for BHP's Pilbara iron ore operations",
+      "Lead grade control modelling for active mining areas using Leapfrog Geo and blast hole data",
+      "Manage geological data collection programmes (drilling, sampling, assaying) at mine site",
+      "Collaborate with mine planning engineers on ore/waste boundary classification and short-range mine plans",
+      "Support resource estimation updates for quarterly Ore Reserve reporting"
+    ]
+  },
+  "expected_output": {
+    "summary": "Mine geologist with 8 years of experience at Rio Tinto's Pilbara iron ore operations, returning to work after a 4-year career break (2021-2025) to raise children. Previously Senior Geologist at Hope Downs mine delivering grade control models and JORC resource estimates using Vulcan and Leapfrog Geo. MAusIMM member and Competent Person (iron ore). Experienced with blast hole sampling, drill programme management, and geostatistical estimation. Seeking return to mine geology in Pilbara.",
+    "experience": [
+      {
+        "company": "Rio Tinto Iron Ore — Hope Downs, Pilbara",
+        "title": "Senior Mine Geologist",
+        "start_date": "2017-01",
+        "end_date": "2021-06",
+        "bullets": [
+          "Delivered grade control models for active mining areas at Hope Downs 1 using Vulcan software and blast hole assay data",
+          "Produced JORC Code (2012) compliant resource estimates for Hope Downs deposits as named Competent Person",
+          "Managed diamond and RC drilling programmes (15,000m annually) for resource definition and grade control",
+          "Performed variography and ordinary kriging for iron ore resource estimation (Fe, SiO2, Al2O3, P, LOI domains)",
+          "Collaborated with mine planning engineers on monthly ore/waste classification and stockpile management"
+        ]
+      },
+      {
+        "company": "Rio Tinto Iron Ore — Brockman Operations, Pilbara",
+        "title": "Mine Geologist (promoted from Graduate Geologist, 2015)",
+        "start_date": "2013-06",
+        "end_date": "2016-12",
+        "bullets": [
+          "Performed daily grade control logging, sampling, and modelling at Brockman 2 mine",
+          "Built geological cross-sections and wireframes in Vulcan for short-range mine planning",
+          "Collected and validated blast hole and face sampling data for grade control database",
+          "Completed Rio Tinto's Graduate Development Programme (2-year rotation: geology, mine planning, processing)"
+        ]
+      }
+    ],
+    "skills": {
+      "geology": ["grade control modelling", "resource estimation (JORC 2012)", "Competent Person reporting", "iron ore geology", "blast hole sampling", "drill programme management"],
+      "geostatistics": ["variography", "ordinary kriging", "domain modelling (Fe, SiO2, Al2O3, P, LOI)", "geological wireframing"],
+      "software": ["Vulcan (Maptek)", "Leapfrog Geo (Seequent)", "acQuire (geological database)", "Microsoft Excel"],
+      "operations": ["FIFO operations", "mine site safety", "ore/waste classification", "stockpile management", "short-range mine planning support"]
+    },
+    "certifications": [
+      "MAusIMM — Member, Australasian Institute of Mining and Metallurgy",
+      "JORC Code Competent Person — Iron Ore (accredited 2019)",
+      "WA Mining Act First Aid Certificate (expired 2022 — needs renewal)"
+    ],
+    "education": [
+      "BSc Geology (Honours) — University of Western Australia (2009-2013)"
+    ]
+  },
+  "jd_requirements": [
+    "7+ years mine geology resource estimation grade control open-pit",
+    "Leapfrog Geo Vulcan Surpac geological modelling",
+    "JORC Code 2012 Competent Person",
+    "geostatistics variography kriging conditional simulation",
+    "WA Mining Act authorisation mine site induction",
+    "autonomous mining haul trucks drill systems grade control",
+    "BHP data platforms SAP S/4HANA mining",
+    "MAusIMM membership"
+  ],
+  "cloud_skills": [
+    "grade control modelling", "resource estimation",
+    "JORC 2012", "Competent Person",
+    "iron ore geology", "blast hole sampling",
+    "drill programme management",
+    "variography", "ordinary kriging",
+    "domain modelling", "geological wireframing",
+    "Vulcan", "Leapfrog Geo", "acQuire",
+    "FIFO operations", "mine site safety",
+    "ore/waste classification", "stockpile management",
+    "MAusIMM", "Pilbara iron ore"
+  ],
+  "deliberate_flaws": [
+    "4-year career break (2021-2025) — software skills may be outdated, Leapfrog Geo has had major updates",
+    "WA Mining Act authorisations and site inductions expired — needs renewal",
+    "First Aid certificate expired — needs renewal before site access",
+    "No Surpac experience (JD lists it as alternative to Vulcan/Leapfrog)",
+    "No autonomous mining experience (Rio Tinto uses autonomous haul trucks but candidate's role was geology, not automation interface)",
+    "No BHP systems experience (Rio Tinto has different internal platforms)",
+    "No SAP S/4HANA experience",
+    "No conditional simulation experience (only ordinary kriging — JD lists conditional simulation)",
+    "Rio Tinto to BHP transition — competitor move in Pilbara, potential knowledge transfer sensitivities",
+    "Career break means missed industry shift toward real-time grade control and machine learning in resource estimation",
+    "No experience with modern cloud-based geological data platforms that have emerged since 2021"
+  ]
+}

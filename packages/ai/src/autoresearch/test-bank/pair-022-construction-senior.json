@@ -1,0 +1,127 @@
+{
+  "id": "pair-022",
+  "split": "train",
+  "persona": "senior",
+  "synthetic": true,
+  "jd_style": "enterprise_saas",
+  "framing": "Senior construction project manager applying to infrastructure megaproject role in UAE",
+  "coverage": { "industry": "Construction/Infrastructure", "seniority": "senior", "pattern": "linear", "region": "middle_east" },
+  "jd": {
+    "title": "Senior Project Manager — Infrastructure",
+    "company": "AECOM",
+    "location": "Abu Dhabi, UAE",
+    "experience_years": 15,
+    "requirements": [
+      { "text": "15+ years of project management experience in large-scale infrastructure or civil engineering projects", "type": "must_have" },
+      { "text": "Experience managing projects valued at USD 500M+ from concept through handover", "type": "must_have" },
+      { "text": "Chartered Engineer (CEng) or Professional Engineer (PE) status", "type": "must_have" },
+      { "text": "PMP certification from Project Management Institute", "type": "must_have" },
+      { "text": "Experience with NEC or FIDIC contract forms", "type": "must_have" },
+      { "text": "Knowledge of UAE building codes, Abu Dhabi Municipality (ADM) regulations, and Estidama sustainability requirements", "type": "must_have" },
+      { "text": "Experience managing multi-disciplinary project teams of 20+", "type": "must_have" },
+      { "text": "Proficiency in Primavera P6 and cost management tools", "type": "must_have" },
+      { "text": "Experience with BIM (Building Information Modelling) Level 2+ implementation", "type": "nice_to_have" },
+      { "text": "Arabic language skills", "type": "nice_to_have" },
+      { "text": "BSc or MSc in Civil Engineering", "type": "must_have" }
+    ],
+    "responsibilities": [
+      "Lead project delivery for USD 1.2B urban transit infrastructure programme",
+      "Manage integrated project team across design, construction, and commissioning phases",
+      "Oversee programme schedule, budget, risk register, and stakeholder reporting",
+      "Coordinate with Abu Dhabi Department of Municipalities and Transport (DMT) and regulatory authorities",
+      "Ensure compliance with Estidama Pearl Rating System and sustainability targets",
+      "Manage design consultant and contractor interfaces under NEC4 contract framework"
+    ]
+  },
+  "expected_output": {
+    "summary": "Senior infrastructure project manager with 16 years of experience delivering large-scale transport and civil engineering projects across the GCC. Currently Programme Manager at WSP overseeing USD 800M highway expansion in Saudi Arabia. Previously delivered USD 350M interchange project for Abu Dhabi's Musaffah area. Chartered Civil Engineer (ICE) with PMP certification. Deep experience with NEC3/NEC4 contracts, Primavera P6, and GCC regulatory frameworks.",
+    "experience": [
+      {
+        "company": "WSP — Middle East",
+        "title": "Programme Manager — Highways",
+        "start_date": "2021-01",
+        "end_date": "2024-12",
+        "bullets": [
+          "Led programme delivery for USD 800M highway expansion project in Jeddah (42km dual carriageway with 6 interchanges)",
+          "Managed integrated team of 35 engineers across design review, construction supervision, and contract administration",
+          "Administered NEC3 Engineering and Construction Contract with 4 main contractors",
+          "Maintained programme schedule in Primavera P6 with 8,000+ activities, achieving 94% schedule adherence",
+          "Managed risk register with 200+ active risks, conducting monthly quantitative risk analysis (QSRA)"
+        ]
+      },
+      {
+        "company": "Parsons — Abu Dhabi",
+        "title": "Senior Project Manager — Infrastructure",
+        "start_date": "2015-06",
+        "end_date": "2020-12",
+        "bullets": [
+          "Delivered USD 350M Musaffah interchange and road network upgrade project for Abu Dhabi DoT",
+          "Coordinated with Abu Dhabi Municipality (ADM) and Estidama team on sustainability compliance (achieved Pearl 1 rating)",
+          "Managed multi-disciplinary team of 22 (civil, structural, MEP, landscape) through detailed design and construction",
+          "Administered FIDIC Red Book contracts with 3 construction packages",
+          "Resolved USD 28M in contractor claims through structured negotiation and DAB referrals"
+        ]
+      },
+      {
+        "company": "Mott MacDonald — UK",
+        "title": "Project Engineer (promoted from Graduate Engineer, 2011)",
+        "start_date": "2009-01",
+        "end_date": "2015-05",
+        "bullets": [
+          "Progressed from graduate to project engineer on UK highways and rail infrastructure projects",
+          "Supported delivery of A14 Cambridge to Huntingdon improvement scheme (GBP 1.5B)",
+          "Developed proficiency in Primavera P6 and earned PMP certification (2013)"
+        ]
+      }
+    ],
+    "skills": {
+      "project_management": ["programme delivery (USD 800M+)", "NEC3/NEC4 contracts", "FIDIC Red Book", "Primavera P6", "risk management (QSRA)", "stakeholder management"],
+      "technical": ["highway design review", "interchange engineering", "construction supervision", "BIM coordination (exposure)"],
+      "regulatory": ["Abu Dhabi Municipality (ADM)", "Estidama Pearl Rating", "Saudi MoMRAH regulations", "UK Highways England standards"],
+      "leadership": ["multi-disciplinary team (35 engineers)", "contractor management (4 main contractors)", "claims resolution (USD 28M)", "client liaison (government DOTs)"]
+    },
+    "certifications": [
+      "Chartered Civil Engineer (CEng MICE) — Institution of Civil Engineers",
+      "PMP — Project Management Institute (2013)",
+      "NEBOSH Construction Certificate"
+    ],
+    "education": [
+      "MSc Construction Project Management — Loughborough University (2007-2008)",
+      "BEng Civil Engineering — University of Leeds (2004-2007)"
+    ]
+  },
+  "jd_requirements": [
+    "15+ years project management infrastructure civil engineering",
+    "projects USD 500M+ concept through handover",
+    "Chartered Engineer CEng Professional Engineer PE",
+    "PMP certification",
+    "NEC FIDIC contract forms",
+    "UAE building codes Abu Dhabi Municipality ADM Estidama",
+    "multi-disciplinary teams 20+",
+    "Primavera P6 cost management tools",
+    "BIM Building Information Modelling Level 2+",
+    "Arabic language",
+    "BSc MSc Civil Engineering"
+  ],
+  "cloud_skills": [
+    "programme delivery", "NEC3", "NEC4", "FIDIC Red Book",
+    "Primavera P6", "risk management", "QSRA",
+    "highway design", "interchange engineering",
+    "construction supervision", "BIM",
+    "Abu Dhabi Municipality", "Estidama Pearl Rating",
+    "MoMRAH", "Highways England",
+    "team management", "contractor management",
+    "claims resolution", "DAB referrals",
+    "stakeholder management", "government liaison",
+    "PMP", "CEng MICE", "NEBOSH"
+  ],
+  "deliberate_flaws": [
+    "No transit/metro experience — JD is for urban transit programme, candidate's experience is highways and interchanges",
+    "No BIM Level 2+ implementation experience (only exposure/coordination)",
+    "No Arabic language skills",
+    "Highways experience is Saudi (MoMRAH), not Abu Dhabi-specific — ADM experience is from a prior role (2015-2020)",
+    "USD 800M project vs USD 1.2B scope — scaling gap",
+    "NEC4 experience limited (administered NEC3, JD implies NEC4 framework)",
+    "No cost management tool proficiency beyond Primavera P6 (no mention of Ecosys, CATO, or equivalent)"
+  ]
+}

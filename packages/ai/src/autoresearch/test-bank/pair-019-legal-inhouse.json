@@ -1,0 +1,107 @@
+{
+  "id": "pair-019",
+  "split": "validation",
+  "persona": "mid_career",
+  "synthetic": true,
+  "jd_style": "enterprise_saas",
+  "framing": "Corporate solicitor at magic circle firm seeking move to in-house counsel at fintech",
+  "coverage": { "industry": "Legal", "seniority": "mid", "pattern": "linear", "region": "europe" },
+  "jd": {
+    "title": "Senior Legal Counsel — Commercial & Product",
+    "company": "Revolut",
+    "location": "London, UK (Hybrid)",
+    "experience_years": 6,
+    "requirements": [
+      { "text": "6+ years PQE in commercial, technology, or financial services law", "type": "must_have" },
+      { "text": "Experience drafting and negotiating SaaS/platform agreements, API licensing, and data processing agreements", "type": "must_have" },
+      { "text": "Knowledge of UK/EU financial services regulation (FCA, PSD2, EMD2)", "type": "must_have" },
+      { "text": "Experience advising product teams on regulatory implications of new features", "type": "must_have" },
+      { "text": "Familiarity with UK/EU data protection law (UK GDPR, EU GDPR, ePrivacy)", "type": "must_have" },
+      { "text": "Experience working in-house at a technology or fintech company", "type": "nice_to_have" },
+      { "text": "Qualified solicitor (England & Wales) or equivalent jurisdiction", "type": "must_have" },
+      { "text": "Experience with open banking or payments infrastructure", "type": "nice_to_have" },
+      { "text": "Ability to operate autonomously in a fast-paced, high-growth environment", "type": "must_have" }
+    ],
+    "responsibilities": [
+      "Draft and negotiate commercial agreements with enterprise clients, banking partners, and technology vendors",
+      "Advise product and engineering teams on regulatory compliance for new financial products across UK and EU markets",
+      "Manage outside counsel relationships and litigation matters",
+      "Develop scalable legal playbooks and contract templates to support high-volume deal flow",
+      "Support regulatory licensing applications and ongoing compliance with FCA requirements"
+    ]
+  },
+  "expected_output": {
+    "summary": "Corporate solicitor with 7 years PQE at Freshfields Bruckhaus Deringer, specialising in technology and financial services transactions. Led legal workstreams on 15+ fintech M&A and investment deals (combined value GBP 2.1B). Deep knowledge of FCA regulatory framework, PSD2, and UK GDPR. Experienced in SaaS licensing, data processing agreements, and cross-border commercial contracts. Seeking transition to in-house counsel role at a high-growth fintech.",
+    "experience": [
+      {
+        "company": "Freshfields Bruckhaus Deringer",
+        "title": "Senior Associate — Technology & Financial Services",
+        "start_date": "2020-09",
+        "end_date": "2024-12",
+        "bullets": [
+          "Led legal due diligence and drafting on 15+ fintech M&A and investment transactions (combined value GBP 2.1B)",
+          "Drafted and negotiated SaaS licensing agreements, API access agreements, and data processing addenda for financial technology clients",
+          "Advised e-money institutions and payment service providers on FCA authorisation, PSD2 compliance, and safeguarding requirements",
+          "Developed firm's template GDPR data processing agreement used across 50+ client engagements",
+          "Seconded to a major UK digital bank (6 months, 2022) supporting commercial contracts and product compliance"
+        ]
+      },
+      {
+        "company": "Freshfields Bruckhaus Deringer",
+        "title": "Associate — Corporate & Commercial",
+        "start_date": "2017-09",
+        "end_date": "2020-08",
+        "bullets": [
+          "Supported partners on cross-border M&A transactions in technology and financial services sectors",
+          "Drafted commercial agreements including software licensing, reseller agreements, and service contracts",
+          "Assisted with regulatory filings for FCA-authorised clients including variation of permissions applications",
+          "Trained 3 trainee solicitors on commercial contract drafting and negotiation"
+        ]
+      }
+    ],
+    "skills": {
+      "legal": ["SaaS/platform agreements", "API licensing", "data processing agreements", "M&A due diligence", "commercial contract negotiation"],
+      "regulatory": ["FCA authorisation", "PSD2", "EMD2", "UK GDPR", "EU GDPR", "safeguarding requirements", "open banking regulation"],
+      "commercial": ["legal playbook development", "outside counsel management", "cross-border transactions", "digital bank secondment"],
+      "sector": ["fintech", "e-money institutions", "payment service providers", "banking partnerships"]
+    },
+    "certifications": [
+      "Qualified Solicitor — England & Wales (2017)",
+      "GDPR Practitioner Certificate — International Association of Privacy Professionals (IAPP CIPP/E)"
+    ],
+    "education": [
+      "LPC (Legal Practice Course) — BPP University (2016-2017)",
+      "LLB Law (First Class Honours) — University of Bristol (2012-2015)"
+    ]
+  },
+  "jd_requirements": [
+    "6+ years PQE commercial technology financial services law",
+    "SaaS platform agreements API licensing data processing agreements",
+    "UK EU financial services regulation FCA PSD2 EMD2",
+    "advising product teams regulatory implications new features",
+    "UK EU data protection GDPR ePrivacy",
+    "in-house technology fintech company",
+    "qualified solicitor England Wales",
+    "open banking payments infrastructure",
+    "autonomous fast-paced high-growth"
+  ],
+  "cloud_skills": [
+    "SaaS agreements", "API licensing", "data processing agreements",
+    "M&A due diligence", "commercial contract negotiation",
+    "FCA authorisation", "PSD2", "EMD2",
+    "UK GDPR", "EU GDPR", "ePrivacy",
+    "open banking", "payment services",
+    "legal playbook development", "outside counsel management",
+    "cross-border transactions", "fintech",
+    "e-money institutions", "safeguarding",
+    "training junior lawyers"
+  ],
+  "deliberate_flaws": [
+    "No in-house experience (entire career at one law firm) — JD prefers in-house",
+    "Only 6-month secondment at a digital bank, not sustained in-house work",
+    "No direct payments infrastructure experience (advised PSPs but didn't build payment products)",
+    "Magic circle culture is very different from startup/scaleup pace — culture fit risk",
+    "No ePrivacy expertise mentioned explicitly",
+    "No experience with scalable legal operations or legal tech tooling (CLM platforms, etc.)"
+  ]
+}

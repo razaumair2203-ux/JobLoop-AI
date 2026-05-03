@@ -1,0 +1,104 @@
+{
+  "id": "pair-034",
+  "split": "validation",
+  "persona": "early_career",
+  "synthetic": true,
+  "jd_style": "startup_technical",
+  "framing": "Computer science graduate and competitive gamer applying to game studio in Seoul",
+  "coverage": { "industry": "Gaming/Esports", "seniority": "entry", "pattern": "early_career", "region": "asia" },
+  "jd": {
+    "title": "Junior Gameplay Programmer",
+    "company": "Krafton",
+    "location": "Seoul, South Korea",
+    "experience_years": 1,
+    "style_note": "Startup-technical: game studio posting, specific engine/language requirements, portfolio-focused",
+    "requirements": [
+      { "text": "Bachelor's degree in Computer Science, Game Engineering, or equivalent", "type": "must_have" },
+      { "text": "Strong C++ programming skills with understanding of memory management and multithreading", "type": "must_have" },
+      { "text": "Experience with Unreal Engine 5 (Blueprints and C++ gameplay framework)", "type": "must_have" },
+      { "text": "Understanding of game physics, collision detection, and character controller systems", "type": "must_have" },
+      { "text": "Portfolio demonstrating shipped game projects or game jam entries", "type": "must_have" },
+      { "text": "Experience with networked multiplayer gameplay programming (replication, lag compensation)", "type": "nice_to_have" },
+      { "text": "Familiarity with Perforce or similar version control for large binary repositories", "type": "nice_to_have" },
+      { "text": "Korean language proficiency (business level)", "type": "nice_to_have" }
+    ],
+    "responsibilities": [
+      "Implement gameplay systems for Krafton's next multiplayer title using Unreal Engine 5",
+      "Develop character movement, weapon mechanics, and interaction systems in C++",
+      "Collaborate with designers to prototype and iterate on gameplay features",
+      "Optimise gameplay code for target frame rate (60fps) on PC and console platforms",
+      "Participate in code reviews and contribute to team coding standards"
+    ]
+  },
+  "expected_output": {
+    "summary": "Recent BSc Computer Science graduate from KAIST (Korea Advanced Institute of Science and Technology) with game development focus. Created 3 game projects using Unity and C# during university, including a 2D roguelike that won Best Gameplay at Global Game Jam Seoul 2025. Competitive Valorant player (Immortal rank). 6-month internship at Nexon's Devcat studio working on Mabinogi content tools. Passionate about multiplayer gameplay systems.",
+    "experience": [
+      {
+        "company": "Nexon — Devcat Studio",
+        "title": "Game Development Intern",
+        "start_date": "2025-01",
+        "end_date": "2025-06",
+        "bullets": [
+          "Developed internal content creation tools for Mabinogi franchise using C# and Unity Editor scripting",
+          "Implemented NPC dialogue branching system used by 4 content designers",
+          "Fixed 15+ gameplay bugs in live service title during internship period",
+          "Participated in weekly sprint reviews and daily standups with 12-person development team"
+        ]
+      },
+      {
+        "company": "KAIST Game Development Club (SPARCS)",
+        "title": "Project Lead — Student Game Projects",
+        "start_date": "2023-09",
+        "end_date": "2024-12",
+        "bullets": [
+          "Led 4-person team developing '던전러너' (Dungeon Runner), a 2D roguelike in Unity (C#) — won Best Gameplay at Global Game Jam Seoul 2025",
+          "Built procedural dungeon generation system using BSP tree algorithm",
+          "Created enemy AI behaviour trees and combat system with hit detection and damage calculation",
+          "Published game on itch.io — 2,400+ downloads in first month"
+        ]
+      }
+    ],
+    "skills": {
+      "programming": ["C# (strong)", "C++ (intermediate — university coursework)", "Python (scripting)", "Git"],
+      "game_dev": ["Unity (2D and 3D)", "Unity Editor scripting", "procedural generation", "behaviour trees", "combat systems", "NPC dialogue systems"],
+      "cs_fundamentals": ["data structures", "algorithms", "object-oriented programming", "memory management (coursework)", "multithreading (coursework)"],
+      "tools": ["Unity", "Visual Studio", "Git/GitHub", "Plastic SCM (basic)", "Photoshop (basic asset editing)"]
+    },
+    "certifications": [],
+    "education": [
+      "BSc Computer Science — KAIST (Korea Advanced Institute of Science and Technology) (2021-2025)"
+    ]
+  },
+  "jd_requirements": [
+    "Bachelor's Computer Science Game Engineering",
+    "C++ memory management multithreading",
+    "Unreal Engine 5 Blueprints C++ gameplay framework",
+    "game physics collision detection character controller",
+    "portfolio shipped games game jam",
+    "networked multiplayer replication lag compensation",
+    "Perforce version control large binary",
+    "Korean language business level"
+  ],
+  "cloud_skills": [
+    "C#", "Unity", "Unity Editor scripting",
+    "procedural generation", "behaviour trees",
+    "combat systems", "NPC dialogue systems",
+    "C++ coursework", "Python scripting",
+    "Git", "data structures", "algorithms",
+    "OOP", "game development",
+    "2D roguelike", "game jam winner",
+    "Korean native speaker"
+  ],
+  "deliberate_flaws": [
+    "No Unreal Engine experience — all projects in Unity (JD requires UE5)",
+    "C++ is intermediate/coursework level only — JD wants 'strong C++ programming skills'",
+    "No game physics or character controller experience (built 2D roguelike, not 3D character movement)",
+    "No multiplayer/networked gameplay experience (all projects are single-player)",
+    "No Perforce experience (used Git and Plastic SCM)",
+    "No console platform experience (PC/web only)",
+    "No performance optimisation experience (60fps target, frame budgeting)",
+    "No collision detection system implementation (used Unity's built-in physics)",
+    "All experience is Unity/C# — would need significant ramp-up for UE5/C++ codebase",
+    "Internship was on content tools, not gameplay programming"
+  ]
+}

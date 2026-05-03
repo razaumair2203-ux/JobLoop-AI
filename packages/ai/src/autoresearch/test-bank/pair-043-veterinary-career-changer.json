@@ -1,0 +1,111 @@
+{
+  "id": "pair-043",
+  "split": "validation",
+  "persona": "career_changer",
+  "synthetic": true,
+  "jd_style": "graduate_friendly",
+  "framing": "Veterinary surgeon transitioning to animal health biotech product development role in Melbourne",
+  "coverage": { "industry": "Veterinary/Animal Health", "seniority": "mid", "pattern": "career_changer", "region": "oceania" },
+  "jd": {
+    "title": "Product Development Manager — Companion Animal Diagnostics",
+    "company": "IDEXX Laboratories",
+    "location": "Melbourne, Australia",
+    "experience_years": 5,
+    "style_note": "Graduate-friendly/corporate: explains business context, values clinical expertise, flexible on exact product experience",
+    "about": "IDEXX is a global leader in veterinary diagnostics, software, and water testing. Our Melbourne team develops next-generation point-of-care diagnostic tests for companion animals. We're looking for someone who combines clinical veterinary knowledge with product development instincts.",
+    "requirements": [
+      { "text": "DVM/BVSc or equivalent veterinary degree with clinical practice experience", "type": "must_have" },
+      { "text": "5+ years of combined experience in veterinary clinical practice and/or veterinary diagnostics industry", "type": "must_have" },
+      { "text": "Strong understanding of companion animal clinical pathology (haematology, biochemistry, urinalysis, cytology)", "type": "must_have" },
+      { "text": "Experience interpreting diagnostic test results and understanding sensitivity/specificity trade-offs", "type": "must_have" },
+      { "text": "Experience with product development lifecycle: from concept through validation to market launch", "type": "nice_to_have" },
+      { "text": "Knowledge of in-vitro diagnostic (IVD) regulatory requirements (TGA, FDA 510(k), or EU IVDR)", "type": "nice_to_have" },
+      { "text": "Experience with lateral flow immunoassay or ELISA development", "type": "nice_to_have" },
+      { "text": "Published research in veterinary clinical pathology or diagnostics", "type": "nice_to_have" }
+    ],
+    "responsibilities": [
+      "Lead product development for new companion animal point-of-care diagnostic tests (SNAP platform)",
+      "Define clinical requirements and performance specifications based on veterinary practice workflows",
+      "Design and execute clinical validation studies with partner veterinary hospitals across Australia and New Zealand",
+      "Collaborate with R&D engineers on assay development and prototype testing",
+      "Support TGA regulatory submissions and CE marking documentation for new diagnostic products"
+    ]
+  },
+  "expected_output": {
+    "summary": "Veterinary surgeon with 8 years of small animal clinical practice experience in Melbourne, most recently Senior Veterinarian at a multi-vet referral hospital. Specialised in internal medicine and diagnostic imaging. Extensive daily experience with IDEXX in-house analysers (Catalyst One, ProCyte Dx, SediVue) and SNAP point-of-care tests. Published 2 case reports in Australian Veterinary Journal. Member of Australian Veterinary Association (AVA). Seeking career transition from clinical practice to veterinary diagnostics product development.",
+    "experience": [
+      {
+        "company": "Melbourne Veterinary Specialist Centre",
+        "title": "Senior Veterinarian — Internal Medicine",
+        "start_date": "2021-03",
+        "end_date": "2026-01",
+        "bullets": [
+          "Managed caseload of 20+ patients/day with focus on internal medicine, endocrinology, and gastroenterology",
+          "Interpreted 50+ diagnostic panels daily using IDEXX Catalyst One (biochemistry), ProCyte Dx (haematology), and SediVue (urinalysis)",
+          "Performed and interpreted cytology, fine needle aspirates, and bone marrow aspirates for oncology referrals",
+          "Mentored 4 new graduate veterinarians on diagnostic workup protocols and clinical pathology interpretation",
+          "Published 2 case reports in Australian Veterinary Journal on atypical endocrine presentations"
+        ]
+      },
+      {
+        "company": "Greencross Vets — Brunswick, Melbourne",
+        "title": "Veterinary Surgeon (promoted from New Graduate, 2019)",
+        "start_date": "2018-01",
+        "end_date": "2021-02",
+        "bullets": [
+          "Provided primary care veterinary services including surgery, dentistry, and preventive medicine",
+          "Used IDEXX SNAP tests (4Dx Plus, cPL, fPL, Parvo) daily as first-line point-of-care diagnostics",
+          "Managed client communication around diagnostic results and treatment planning",
+          "Completed Membership examination (MANZCVS) in Small Animal Internal Medicine (2020)"
+        ]
+      }
+    ],
+    "skills": {
+      "clinical": ["small animal internal medicine", "clinical pathology interpretation", "haematology", "biochemistry", "urinalysis", "cytology", "endocrinology"],
+      "diagnostics": ["IDEXX Catalyst One", "IDEXX ProCyte Dx", "IDEXX SediVue", "IDEXX SNAP tests", "diagnostic imaging (radiography, ultrasound)"],
+      "clinical_research": ["case report publication", "diagnostic workup design", "clinical mentoring", "evidence-based medicine"],
+      "communication": ["client communication", "treatment planning", "new graduate mentoring", "referral case management"]
+    },
+    "certifications": [
+      "DVM — Doctor of Veterinary Medicine, University of Melbourne (2013-2017)",
+      "MANZCVS (Small Animal Internal Medicine) — Australian and New Zealand College of Veterinary Scientists (2020)",
+      "Veterinary Surgeons Board of Victoria — Registration (current)"
+    ],
+    "education": [
+      "DVM — Doctor of Veterinary Medicine, University of Melbourne (2013-2017)"
+    ]
+  },
+  "jd_requirements": [
+    "DVM BVSc veterinary degree clinical practice",
+    "5+ years veterinary clinical practice diagnostics industry",
+    "companion animal clinical pathology haematology biochemistry urinalysis cytology",
+    "diagnostic test sensitivity specificity interpretation",
+    "product development lifecycle concept validation market launch",
+    "IVD regulatory TGA FDA 510(k) EU IVDR",
+    "lateral flow immunoassay ELISA development",
+    "published research veterinary clinical pathology diagnostics"
+  ],
+  "cloud_skills": [
+    "small animal internal medicine", "clinical pathology",
+    "haematology", "biochemistry", "urinalysis", "cytology",
+    "endocrinology", "IDEXX Catalyst One", "IDEXX ProCyte Dx",
+    "IDEXX SediVue", "IDEXX SNAP tests",
+    "diagnostic imaging", "case report publication",
+    "evidence-based medicine", "MANZCVS",
+    "client communication", "clinical mentoring",
+    "veterinary surgery", "dentistry"
+  ],
+  "deliberate_flaws": [
+    "No product development experience — entire career in clinical veterinary practice",
+    "No IVD regulatory experience (TGA, FDA 510(k), EU IVDR)",
+    "No lateral flow immunoassay or ELISA development experience (uses SNAP tests, doesn't develop them)",
+    "No industry experience — veterinary practice is different from diagnostics company R&D",
+    "No product lifecycle management experience (concept, validation, launch)",
+    "No clinical validation study design experience (published case reports, not validation studies)",
+    "No engineering or R&D collaboration experience",
+    "No experience with assay performance metrics beyond clinical interpretation (sensitivity/specificity from user perspective, not development perspective)",
+    "Career changer — clinical practice to product development requires significant mindset shift",
+    "Research output is case reports (2), not peer-reviewed diagnostic validation studies",
+    "No experience with regulatory submissions or technical documentation"
+  ]
+}

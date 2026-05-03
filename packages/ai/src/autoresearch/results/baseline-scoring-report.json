@@ -1,0 +1,583 @@
+{
+  "timestamp": "2026-05-03T12:23:49.783Z",
+  "total_pairs": 20,
+  "missing_pairs": [],
+  "baseline_pass_rate": 0.6,
+  "ceiling_pass_rate": 1,
+  "per_pair": [
+    {
+      "id": "pair-001",
+      "persona": "military",
+      "baseline": {
+        "gate1_verdict": "fail",
+        "gate1_passed": 7,
+        "gate1_total": 8,
+        "failures": [
+          "metrics_preserved"
+        ],
+        "structural_avg": 0.9526098901098902,
+        "check_scores": {
+          "jd_requirements_coverage": 1,
+          "no_fabrication": 1,
+          "metrics_preserved": 0.6923076923076923,
+          "word_count": 1,
+          "no_fabricated_skills": 1,
+          "action_verbs": 0.9285714285714286,
+          "ats_structure": 1,
+          "factual_preservation": 1
+        }
+      },
+      "ceiling": {
+        "gate1_verdict": "pass",
+        "gate1_passed": 8,
+        "structural_avg": 0.9910714285714286
+      },
+      "delta_structural": -0.038461538461538436
+    },
+    {
+      "id": "pair-002",
+      "persona": "military",
+      "baseline": {
+        "gate1_verdict": "fail",
+        "gate1_passed": 7,
+        "gate1_total": 8,
+        "failures": [
+          "metrics_preserved"
+        ],
+        "structural_avg": 0.9722222222222222,
+        "check_scores": {
+          "jd_requirements_coverage": 1,
+          "no_fabrication": 1,
+          "metrics_preserved": 0.7777777777777778,
+          "word_count": 1,
+          "no_fabricated_skills": 1,
+          "action_verbs": 1,
+          "ats_structure": 1,
+          "factual_preservation": 1
+        }
+      },
+      "ceiling": {
+        "gate1_verdict": "pass",
+        "gate1_passed": 8,
+        "structural_avg": 1
+      },
+      "delta_structural": -0.02777777777777779
+    },
+    {
+      "id": "pair-003",
+      "persona": "military",
+      "baseline": {
+        "gate1_verdict": "fail",
+        "gate1_passed": 7,
+        "gate1_total": 8,
+        "failures": [
+          "metrics_preserved"
+        ],
+        "structural_avg": 0.9615384615384616,
+        "check_scores": {
+          "jd_requirements_coverage": 1,
+          "no_fabrication": 1,
+          "metrics_preserved": 0.6923076923076923,
+          "word_count": 1,
+          "no_fabricated_skills": 1,
+          "action_verbs": 1,
+          "ats_structure": 1,
+          "factual_preservation": 1
+        }
+      },
+      "ceiling": {
+        "gate1_verdict": "pass",
+        "gate1_passed": 8,
+        "structural_avg": 1
+      },
+      "delta_structural": -0.038461538461538436
+    },
+    {
+      "id": "pair-005",
+      "persona": "mid_career",
+      "industry": "IT/Software",
+      "baseline": {
+        "gate1_verdict": "pass",
+        "gate1_passed": 8,
+        "gate1_total": 8,
+        "failures": [],
+        "structural_avg": 0.9592261904761905,
+        "check_scores": {
+          "jd_requirements_coverage": 0.9,
+          "no_fabrication": 1,
+          "metrics_preserved": 0.8571428571428571,
+          "word_count": 1,
+          "no_fabricated_skills": 1,
+          "action_verbs": 0.9166666666666666,
+          "ats_structure": 1,
+          "factual_preservation": 1
+        }
+      },
+      "ceiling": {
+        "gate1_verdict": "pass",
+        "gate1_passed": 8,
+        "structural_avg": 0.9770833333333334
+      },
+      "delta_structural": -0.017857142857142905
+    },
+    {
+      "id": "pair-006",
+      "persona": "career_changer",
+      "industry": "Healthcare",
+      "baseline": {
+        "gate1_verdict": "fail",
+        "gate1_passed": 7,
+        "gate1_total": 8,
+        "failures": [
+          "metrics_preserved"
+        ],
+        "structural_avg": 0.9625,
+        "check_scores": {
+          "jd_requirements_coverage": 1,
+          "no_fabrication": 1,
+          "metrics_preserved": 0.7,
+          "word_count": 1,
+          "no_fabricated_skills": 1,
+          "action_verbs": 1,
+          "ats_structure": 1,
+          "factual_preservation": 1
+        }
+      },
+      "ceiling": {
+        "gate1_verdict": "pass",
+        "gate1_passed": 8,
+        "structural_avg": 1
+      },
+      "delta_structural": -0.03749999999999998
+    },
+    {
+      "id": "pair-008",
+      "persona": "early_career",
+      "industry": "Consulting",
+      "baseline": {
+        "gate1_verdict": "pass",
+        "gate1_passed": 8,
+        "gate1_total": 8,
+        "failures": [],
+        "structural_avg": 0.9522727272727273,
+        "check_scores": {
+          "jd_requirements_coverage": 0.8,
+          "no_fabrication": 1,
+          "metrics_preserved": 0.8181818181818182,
+          "word_count": 1,
+          "no_fabricated_skills": 1,
+          "action_verbs": 1,
+          "ats_structure": 1,
+          "factual_preservation": 1
+        }
+      },
+      "ceiling": {
+        "gate1_verdict": "pass",
+        "gate1_passed": 8,
+        "structural_avg": 0.975
+      },
+      "delta_structural": -0.022727272727272707
+    },
+    {
+      "id": "pair-009",
+      "persona": "senior",
+      "industry": "Manufacturing",
+      "baseline": {
+        "gate1_verdict": "pass",
+        "gate1_passed": 8,
+        "gate1_total": 8,
+        "failures": [],
+        "structural_avg": 0.9604166666666667,
+        "check_scores": {
+          "jd_requirements_coverage": 0.9,
+          "no_fabrication": 1,
+          "metrics_preserved": 0.8666666666666667,
+          "word_count": 1,
+          "no_fabricated_skills": 1,
+          "action_verbs": 0.9166666666666666,
+          "ats_structure": 1,
+          "factual_preservation": 1
+        }
+      },
+      "ceiling": {
+        "gate1_verdict": "pass",
+        "gate1_passed": 8,
+        "structural_avg": 0.9770833333333334
+      },
+      "delta_structural": -0.01666666666666672
+    },
+    {
+      "id": "pair-011",
+      "persona": "returner",
+      "industry": "IT/Software",
+      "baseline": {
+        "gate1_verdict": "pass",
+        "gate1_passed": 8,
+        "gate1_total": 8,
+        "failures": [],
+        "structural_avg": 0.9705459770114943,
+        "check_scores": {
+          "jd_requirements_coverage": 1,
+          "no_fabrication": 1,
+          "metrics_preserved": 0.9310344827586207,
+          "word_count": 1,
+          "no_fabricated_skills": 1,
+          "action_verbs": 0.8333333333333334,
+          "ats_structure": 1,
+          "factual_preservation": 1
+        }
+      },
+      "ceiling": {
+        "gate1_verdict": "pass",
+        "gate1_passed": 8,
+        "structural_avg": 0.9895833333333334
+      },
+      "delta_structural": -0.019037356321839116
+    },
+    {
+      "id": "pair-015",
+      "persona": "mid_career",
+      "industry": "IT/Software",
+      "baseline": {
+        "gate1_verdict": "pass",
+        "gate1_passed": 8,
+        "gate1_total": 8,
+        "failures": [],
+        "structural_avg": 1,
+        "check_scores": {
+          "jd_requirements_coverage": 1,
+          "no_fabrication": 1,
+          "metrics_preserved": 1,
+          "word_count": 1,
+          "no_fabricated_skills": 1,
+          "action_verbs": 1,
+          "ats_structure": 1,
+          "factual_preservation": 1
+        }
+      },
+      "ceiling": {
+        "gate1_verdict": "pass",
+        "gate1_passed": 8,
+        "structural_avg": 1
+      },
+      "delta_structural": 0
+    },
+    {
+      "id": "pair-017",
+      "persona": "career_changer",
+      "industry": "Healthcare",
+      "baseline": {
+        "gate1_verdict": "pass",
+        "gate1_passed": 8,
+        "gate1_total": 8,
+        "failures": [],
+        "structural_avg": 0.9777777777777777,
+        "check_scores": {
+          "jd_requirements_coverage": 0.8888888888888888,
+          "no_fabrication": 1,
+          "metrics_preserved": 0.9333333333333333,
+          "word_count": 1,
+          "no_fabricated_skills": 1,
+          "action_verbs": 1,
+          "ats_structure": 1,
+          "factual_preservation": 1
+        }
+      },
+      "ceiling": {
+        "gate1_verdict": "pass",
+        "gate1_passed": 8,
+        "structural_avg": 0.9861111111111112
+      },
+      "delta_structural": -0.008333333333333415
+    },
+    {
+      "id": "pair-018",
+      "persona": "early_career",
+      "industry": "Consulting",
+      "baseline": {
+        "gate1_verdict": "fail",
+        "gate1_passed": 7,
+        "gate1_total": 8,
+        "failures": [
+          "metrics_preserved"
+        ],
+        "structural_avg": 0.9543650793650793,
+        "check_scores": {
+          "jd_requirements_coverage": 0.8571428571428571,
+          "no_fabrication": 1,
+          "metrics_preserved": 0.7777777777777778,
+          "word_count": 1,
+          "no_fabricated_skills": 1,
+          "action_verbs": 1,
+          "ats_structure": 1,
+          "factual_preservation": 1
+        }
+      },
+      "ceiling": {
+        "gate1_verdict": "pass",
+        "gate1_passed": 8,
+        "structural_avg": 0.9821428571428572
+      },
+      "delta_structural": -0.0277777777777779
+    },
+    {
+      "id": "pair-022",
+      "persona": "senior",
+      "industry": "Construction/Infrastructure",
+      "baseline": {
+        "gate1_verdict": "pass",
+        "gate1_passed": 8,
+        "gate1_total": 8,
+        "failures": [],
+        "structural_avg": 0.9515484515484515,
+        "check_scores": {
+          "jd_requirements_coverage": 0.9090909090909091,
+          "no_fabrication": 1,
+          "metrics_preserved": 0.8571428571428571,
+          "word_count": 1,
+          "no_fabricated_skills": 1,
+          "action_verbs": 0.8461538461538461,
+          "ats_structure": 1,
+          "factual_preservation": 1
+        }
+      },
+      "ceiling": {
+        "gate1_verdict": "pass",
+        "gate1_passed": 8,
+        "structural_avg": 0.9790209790209791
+      },
+      "delta_structural": -0.027472527472527597
+    },
+    {
+      "id": "pair-024",
+      "persona": "executive",
+      "industry": "Biotech/Pharma",
+      "baseline": {
+        "gate1_verdict": "fail",
+        "gate1_passed": 7,
+        "gate1_total": 8,
+        "failures": [
+          "metrics_preserved"
+        ],
+        "structural_avg": 0.9696969696969697,
+        "check_scores": {
+          "jd_requirements_coverage": 1,
+          "no_fabrication": 1,
+          "metrics_preserved": 0.7575757575757576,
+          "word_count": 1,
+          "no_fabricated_skills": 1,
+          "action_verbs": 1,
+          "ats_structure": 1,
+          "factual_preservation": 1
+        }
+      },
+      "ceiling": {
+        "gate1_verdict": "pass",
+        "gate1_passed": 8,
+        "structural_avg": 0.9895833333333334
+      },
+      "delta_structural": -0.019886363636363646
+    },
+    {
+      "id": "pair-027",
+      "persona": "mid_career",
+      "industry": "Accounting/Audit",
+      "baseline": {
+        "gate1_verdict": "pass",
+        "gate1_passed": 8,
+        "gate1_total": 8,
+        "failures": [],
+        "structural_avg": 0.9608585858585859,
+        "check_scores": {
+          "jd_requirements_coverage": 0.8888888888888888,
+          "no_fabrication": 1,
+          "metrics_preserved": 0.9090909090909091,
+          "word_count": 1,
+          "no_fabricated_skills": 1,
+          "action_verbs": 0.8888888888888888,
+          "ats_structure": 1,
+          "factual_preservation": 1
+        }
+      },
+      "ceiling": {
+        "gate1_verdict": "pass",
+        "gate1_passed": 8,
+        "structural_avg": 0.9722222222222223
+      },
+      "delta_structural": -0.011363636363636465
+    },
+    {
+      "id": "pair-030",
+      "persona": "freelancer",
+      "industry": "Real Estate/PropTech",
+      "baseline": {
+        "gate1_verdict": "fail",
+        "gate1_passed": 6,
+        "gate1_total": 8,
+        "failures": [
+          "metrics_preserved",
+          "action_verbs"
+        ],
+        "structural_avg": 0.9169642857142857,
+        "check_scores": {
+          "jd_requirements_coverage": 0.8,
+          "no_fabrication": 1,
+          "metrics_preserved": 0.7857142857142857,
+          "word_count": 1,
+          "no_fabricated_skills": 1,
+          "action_verbs": 0.75,
+          "ats_structure": 1,
+          "factual_preservation": 1
+        }
+      },
+      "ceiling": {
+        "gate1_verdict": "pass",
+        "gate1_passed": 8,
+        "structural_avg": 0.961111111111111
+      },
+      "delta_structural": -0.04414682539682535
+    },
+    {
+      "id": "pair-038",
+      "persona": "career_changer",
+      "industry": "Climate/Sustainability",
+      "baseline": {
+        "gate1_verdict": "pass",
+        "gate1_passed": 8,
+        "gate1_total": 8,
+        "failures": [],
+        "structural_avg": 0.9787581699346406,
+        "check_scores": {
+          "jd_requirements_coverage": 1,
+          "no_fabrication": 1,
+          "metrics_preserved": 0.9411764705882353,
+          "word_count": 1,
+          "no_fabricated_skills": 1,
+          "action_verbs": 0.8888888888888888,
+          "ats_structure": 1,
+          "factual_preservation": 1
+        }
+      },
+      "ceiling": {
+        "gate1_verdict": "pass",
+        "gate1_passed": 8,
+        "structural_avg": 0.9682539682539684
+      },
+      "delta_structural": 0.010504201680672232
+    },
+    {
+      "id": "pair-041",
+      "persona": "executive",
+      "industry": "Renewable Energy",
+      "baseline": {
+        "gate1_verdict": "fail",
+        "gate1_passed": 7,
+        "gate1_total": 8,
+        "failures": [
+          "action_verbs"
+        ],
+        "structural_avg": 0.9321338383838385,
+        "check_scores": {
+          "jd_requirements_coverage": 0.8888888888888888,
+          "no_fabrication": 1,
+          "metrics_preserved": 0.8181818181818182,
+          "word_count": 1,
+          "no_fabricated_skills": 1,
+          "action_verbs": 0.75,
+          "ats_structure": 1,
+          "factual_preservation": 1
+        }
+      },
+      "ceiling": {
+        "gate1_verdict": "pass",
+        "gate1_passed": 8,
+        "structural_avg": 0.9652777777777778
+      },
+      "delta_structural": -0.03314393939393934
+    },
+    {
+      "id": "pair-045",
+      "persona": "laid_off",
+      "industry": "Fashion/Luxury",
+      "baseline": {
+        "gate1_verdict": "pass",
+        "gate1_passed": 8,
+        "gate1_total": 8,
+        "failures": [],
+        "structural_avg": 0.9852941176470589,
+        "check_scores": {
+          "jd_requirements_coverage": 1,
+          "no_fabrication": 1,
+          "metrics_preserved": 0.8823529411764706,
+          "word_count": 1,
+          "no_fabricated_skills": 1,
+          "action_verbs": 1,
+          "ats_structure": 1,
+          "factual_preservation": 1
+        }
+      },
+      "ceiling": {
+        "gate1_verdict": "pass",
+        "gate1_passed": 8,
+        "structural_avg": 0.9821428571428572
+      },
+      "delta_structural": 0.0031512605042016695
+    },
+    {
+      "id": "pair-048",
+      "persona": "executive",
+      "industry": "Banking/Payments",
+      "baseline": {
+        "gate1_verdict": "pass",
+        "gate1_passed": 8,
+        "gate1_total": 8,
+        "failures": [],
+        "structural_avg": 0.9643719806763285,
+        "check_scores": {
+          "jd_requirements_coverage": 0.8888888888888888,
+          "no_fabrication": 1,
+          "metrics_preserved": 0.8260869565217391,
+          "word_count": 1,
+          "no_fabricated_skills": 1,
+          "action_verbs": 1,
+          "ats_structure": 1,
+          "factual_preservation": 1
+        }
+      },
+      "ceiling": {
+        "gate1_verdict": "pass",
+        "gate1_passed": 8,
+        "structural_avg": 0.9861111111111112
+      },
+      "delta_structural": -0.021739130434782705
+    },
+    {
+      "id": "pair-050",
+      "persona": "freelancer",
+      "industry": "Music/Entertainment",
+      "baseline": {
+        "gate1_verdict": "pass",
+        "gate1_passed": 8,
+        "gate1_total": 8,
+        "failures": [],
+        "structural_avg": 0.9682539682539684,
+        "check_scores": {
+          "jd_requirements_coverage": 1,
+          "no_fabrication": 1,
+          "metrics_preserved": 0.8571428571428571,
+          "word_count": 1,
+          "no_fabricated_skills": 1,
+          "action_verbs": 0.8888888888888888,
+          "ats_structure": 1,
+          "factual_preservation": 1
+        }
+      },
+      "ceiling": {
+        "gate1_verdict": "pass",
+        "gate1_passed": 8,
+        "structural_avg": 1
+      },
+      "delta_structural": -0.03174603174603163
+    }
+  ]
+}

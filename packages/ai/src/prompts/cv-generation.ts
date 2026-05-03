@@ -106,6 +106,14 @@ Return a JSON object:
   ]
 }
 
+## Sensitive Platform Names (Military/Defense)
+
+When the candidate's profile contains specific military platform names (e.g., specific aircraft, weapons systems, classified programs):
+- Default to sanitized descriptions for generic corporate employers (e.g., "JF-17 Thunder" -> "Lead Fighter Aircraft Program")
+- Keep real platform names for defense industry and Middle East employers
+- Always include a "sensitivity_note" in warnings if platform names were detected
+- The candidate's sensitivity preferences (if provided) override these defaults
+
 ## Quality Checklist (verify before responding)
 
 - [ ] Every bullet has a measurable or qualitative result
@@ -115,7 +123,8 @@ Return a JSON object:
 - [ ] Summary directly addresses this JD's priorities
 - [ ] Skills section leads with JD-relevant items
 - [ ] changes_made explains every significant modification
-- [ ] warnings flag any risky gaps honestly`;
+- [ ] warnings flag any risky gaps honestly
+- [ ] Education listed separately from certifications (MS/BS degrees are NOT certifications)`;
 
 export function buildCVGenerationUserPrompt(
   cv: string,

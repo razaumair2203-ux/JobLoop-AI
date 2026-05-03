@@ -1,0 +1,52 @@
+{
+  "summary": "B2B growth marketing professional with 6 years of SaaS marketing experience at Intercom and Zendesk, currently returning from a 3-year career break. Managed $800K annual paid acquisition budget driving 2,500+ qualified leads per quarter across Google Ads, LinkedIn Ads, and Meta. Experienced with HubSpot marketing automation, attribution modeling, and team leadership. Previously led a team of 4 spanning demand generation and content marketing functions.",
+  "experience": [
+    {
+      "company": "Intercom",
+      "title": "Senior Growth Marketing Manager",
+      "start_date": "2019-01",
+      "end_date": "2021-06",
+      "bullets": [
+        "Managed $800K annual budget across Google Ads, LinkedIn Ads, and Meta platforms, generating 2,500+ MQLs per quarter",
+        "Designed and deployed 15 automated lead nurture workflows in HubSpot, boosting MQL-to-SQL conversion by 28%",
+        "Led team of 4 including 2 marketing coordinators, 1 content specialist, and 1 paid media contractor",
+        "Built attribution modeling framework tying marketing spend to $4.2M in pipeline-influenced ARR",
+        "Launched recurring webinar program with 20 sessions over tenure, averaging 350 registrants per event"
+      ]
+    },
+    {
+      "company": "Zendesk",
+      "title": "Growth Marketing Specialist",
+      "start_date": "2016-03",
+      "end_date": "2018-12",
+      "bullets": [
+        "Ran demand generation campaigns targeting mid-market segment across paid search, email, and content channels",
+        "Managed HubSpot platform including email workflows, landing pages, and lead scoring configuration",
+        "Optimized Google Ads campaigns, reducing cost-per-lead by 35% while sustaining lead volume",
+        "Partnered with sales team on lead handoff processes and monthly pipeline review meetings"
+      ]
+    },
+    {
+      "company": "Career Break",
+      "title": "Primary Caregiver",
+      "start_date": "2021-07",
+      "end_date": "2024-09",
+      "bullets": [
+        "Stayed current with industry trends through HubSpot Academy certifications and marketing community participation",
+        "Earned Google Analytics 4 certification and renewed HubSpot Marketing Software certification",
+        "Completed 3 freelance marketing projects including SEO audit, email campaign, and landing page design"
+      ]
+    }
+  ],
+  "skills": {
+    "growth_marketing": ["demand generation", "paid acquisition (Google Ads, LinkedIn Ads, Meta)", "lead nurturing", "conversion optimization", "marketing automation (HubSpot)"],
+    "analytics": ["attribution modeling", "marketing analytics", "Google Analytics 4", "lead scoring", "campaign performance analysis"],
+    "content": ["content marketing strategy", "webinar programs", "email marketing", "landing page optimization", "SEO (basic)"],
+    "leadership": ["team management (4 reports)", "budget management ($800K)", "pipeline reporting", "cross-functional collaboration with sales"]
+  },
+  "certifications": [
+    "HubSpot Marketing Software Certification (renewed 2024)",
+    "Google Analytics 4 Certification (2024)",
+    "Google Ads Search Certification"
+  ]
+}

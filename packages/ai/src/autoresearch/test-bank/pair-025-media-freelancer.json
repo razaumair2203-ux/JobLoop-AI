@@ -1,0 +1,98 @@
+{
+  "id": "pair-025",
+  "split": "validation",
+  "persona": "freelancer",
+  "synthetic": true,
+  "jd_style": "vague_culture_first",
+  "framing": "Freelance content strategist applying to vague Head of Content role at Series B fintech (culture-first JD)",
+  "coverage": { "industry": "Media/Content", "seniority": "mid", "pattern": "freelancer", "region": "europe" },
+  "jd": {
+    "title": "Head of Content",
+    "company": "Monzo",
+    "location": "London, UK (Hybrid)",
+    "experience_years": null,
+    "style_note": "Vague/culture-first: minimal requirements, personality-focused, no specific tools or years listed",
+    "requirements": [
+      { "text": "You've built content programs that people actually want to read — not just SEO filler", "type": "must_have" },
+      { "text": "You think in systems, not just individual pieces of content", "type": "must_have" },
+      { "text": "You can write, edit, and give feedback that makes writers better", "type": "must_have" },
+      { "text": "You've managed a small team or a roster of freelancers", "type": "must_have" },
+      { "text": "You care about financial literacy and making money less confusing for everyone", "type": "must_have" }
+    ],
+    "responsibilities": [
+      "Own Monzo's content strategy across blog, in-app messaging, email, and social",
+      "Build a content team (currently 1 writer, growing to 4)",
+      "Set the editorial voice and quality bar for everything Monzo publishes",
+      "Work with product, marketing, and CRM teams to align content with business goals",
+      "Figure out how to measure whether content is actually working"
+    ]
+  },
+  "expected_output": {
+    "summary": "Freelance content strategist with 7 years of experience across fintech, SaaS, and media — 4 years freelancing for clients including Starling Bank, Wise, and GoCardless, and 3 years in-house at The Guardian's branded content studio. Built editorial systems and content programs that drove measurable engagement, not just traffic. Portfolio includes long-form guides, product communications, and email sequences. Managed teams of writers and freelancer rosters up to 8.",
+    "experience": [
+      {
+        "company": "Self-Employed — Content Strategy & Editorial",
+        "title": "Freelance Content Strategist",
+        "start_date": "2021-01",
+        "end_date": "2025-03",
+        "bullets": [
+          "Built content programs for 12 fintech and SaaS clients including Starling Bank, Wise, GoCardless, and Tide",
+          "Created Starling Bank's financial literacy blog series (24 articles) — became their highest-traffic organic content, averaging 45K monthly visits",
+          "Designed editorial guidelines and content governance frameworks for 4 scaling startups",
+          "Managed roster of 6-8 freelance writers per project, providing briefs, edits, and quality feedback",
+          "Developed content measurement frameworks linking blog engagement to product sign-up attribution"
+        ]
+      },
+      {
+        "company": "The Guardian — Guardian Labs",
+        "title": "Senior Content Producer — Branded Content",
+        "start_date": "2018-03",
+        "end_date": "2020-12",
+        "bullets": [
+          "Produced branded content campaigns for financial services clients (Barclays, HSBC, Nationwide)",
+          "Managed team of 3 writers and 2 designers creating long-form editorial content",
+          "Led Guardian Labs' fintech content vertical, producing 60+ sponsored articles over 3 years",
+          "Won The Drum Awards for Content (2019) for Nationwide financial wellbeing campaign"
+        ]
+      }
+    ],
+    "skills": {
+      "content_strategy": ["editorial systems design", "content governance", "brand voice development", "content measurement frameworks", "SEO strategy"],
+      "writing_editing": ["long-form editorial", "product communications", "email sequences", "in-app messaging", "financial literacy content"],
+      "leadership": ["freelancer roster management (6-8)", "team management (5 direct)", "editorial feedback", "brief development"],
+      "domain": ["fintech content (Starling, Wise, GoCardless)", "financial services branded content", "SaaS product marketing"]
+    },
+    "certifications": [],
+    "education": [
+      "MA Magazine Journalism — City St George's, University of London (2016-2017)",
+      "BA English Literature — University of Leeds (2013-2016)"
+    ]
+  },
+  "jd_requirements": [
+    "content programs people want to read not SEO filler",
+    "think in systems not individual pieces",
+    "write edit feedback makes writers better",
+    "managed small team roster freelancers",
+    "financial literacy money less confusing"
+  ],
+  "cloud_skills": [
+    "content strategy", "editorial systems", "content governance",
+    "brand voice", "content measurement", "SEO strategy",
+    "long-form editorial", "product communications",
+    "email sequences", "in-app messaging",
+    "financial literacy content", "fintech content",
+    "freelancer management", "team management",
+    "editorial feedback", "brief development",
+    "branded content", "content attribution",
+    "Starling Bank", "Wise", "GoCardless"
+  ],
+  "deliberate_flaws": [
+    "Freelancer — no permanent in-house experience at a tech company (Guardian Labs is media, not tech)",
+    "Has worked for Monzo competitor Starling — potential conflict or bias perception",
+    "No experience with in-app messaging or CRM content (all blog/editorial focused)",
+    "Content measurement is self-described frameworks, not proven analytics tooling (no Amplitude, Mixpanel, etc.)",
+    "Vague JD makes it hard to match — candidate must infer what 'thinking in systems' means",
+    "No social media content experience mentioned",
+    "Team management was project-based freelancer rosters, not permanent employees"
+  ]
+}

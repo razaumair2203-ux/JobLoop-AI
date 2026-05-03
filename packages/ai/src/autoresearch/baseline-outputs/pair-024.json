@@ -1,0 +1,52 @@
+{
+  "summary": "Physician-scientist with 16 years of experience in academic oncology and biopharma clinical development. Currently Vice President of Clinical Development at Bristol Myers Squibb, leading immuno-oncology programmes including checkpoint inhibitors and CAR-T cell therapy across Phase I-III trials. Previously Associate Professor of Medicine at Memorial Sloan Kettering Cancer Center. Track record includes 8 IND filings, 3 NDA/BLA submissions, and 35+ peer-reviewed publications. Board-certified in Medical Oncology (ABIM).",
+  "experience": [
+    {
+      "company": "Bristol Myers Squibb",
+      "title": "Vice President, Clinical Development — Immuno-Oncology",
+      "start_date": "2019-01",
+      "end_date": "2024-12",
+      "bullets": [
+        "Led clinical development strategy for 3 immuno-oncology programs spanning checkpoint inhibitors and CAR-T cell therapy across Phase I through Phase III",
+        "Built and managed clinical development team of 22 including medical directors, clinical scientists, and medical monitors",
+        "Oversaw 5 IND filings and 2 supplemental BLA submissions, all accepted by FDA without clinical hold",
+        "Presented pivotal trial data at ASCO Annual Meeting (2022, 2023) and AACR Annual Meeting (2021)",
+        "Served as medical monitor for registrational Phase III trial enrolling 1,200 patients across 180 global sites"
+      ]
+    },
+    {
+      "company": "Memorial Sloan Kettering Cancer Center",
+      "title": "Associate Professor of Medicine — Solid Tumor Oncology",
+      "start_date": "2012-07",
+      "end_date": "2018-12",
+      "bullets": [
+        "Conducted investigator-initiated clinical trials in non-small cell lung cancer (NSCLC) and melanoma",
+        "Published 28 peer-reviewed papers including 12 as first or senior author in Journal of Clinical Oncology, NEJM, and Lancet Oncology",
+        "Served as site principal investigator for 6 industry-sponsored Phase I-II trials in solid tumor oncology",
+        "Mentored 8 oncology fellows and 3 post-doctoral researchers in clinical and translational research",
+        "Served on MSK's Institutional Review Board (IRB) for 4 years"
+      ]
+    },
+    {
+      "company": "Johns Hopkins Hospital",
+      "title": "Medical Oncology Fellow",
+      "start_date": "2009-07",
+      "end_date": "2012-06",
+      "bullets": [
+        "Completed 3-year fellowship in Medical Oncology with research focus on tumor immunology",
+        "Awarded NIH K08 Career Development Award for translational immuno-oncology research"
+      ]
+    }
+  ],
+  "skills": {
+    "clinical_development": ["Phase I-III trial design and execution", "IND/BLA/sBLA filings", "medical monitoring", "regulatory strategy", "FDA interactions"],
+    "therapeutic_expertise": ["immuno-oncology", "checkpoint inhibitors", "CAR-T cell therapy", "NSCLC", "melanoma", "solid tumor oncology"],
+    "scientific": ["peer-reviewed publications (35+)", "investigator-initiated trials", "translational research", "tumor immunology"],
+    "leadership": ["clinical team management (22 direct reports)", "conference presentations (ASCO, AACR)", "investor communications", "IRB membership", "fellow mentorship"]
+  },
+  "certifications": [
+    "Board Certified — Medical Oncology (ABIM)",
+    "Board Certified — Internal Medicine (ABIM)",
+    "MD — Licensed Physician (Massachusetts, New York)"
+  ]
+}

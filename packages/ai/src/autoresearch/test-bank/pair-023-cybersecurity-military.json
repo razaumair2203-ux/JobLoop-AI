@@ -1,0 +1,114 @@
+{
+  "id": "pair-023",
+  "split": "held_out",
+  "persona": "military",
+  "synthetic": true,
+  "jd_style": "defense_cleared",
+  "framing": "U.S. Army Signal Corps officer transitioning to cybersecurity analyst role at defense contractor",
+  "coverage": { "industry": "Cybersecurity/Defense", "seniority": "mid", "pattern": "military", "region": "north_america" },
+  "jd": {
+    "title": "Cybersecurity Analyst III — Defensive Cyber Operations",
+    "company": "Leidos",
+    "location": "Fort Meade, MD (on-site required)",
+    "experience_years": 5,
+    "style_note": "Defense/cleared: clearance required, specific certifications, government contract language",
+    "requirements": [
+      { "text": "Active TS/SCI clearance with CI polygraph", "type": "must_have" },
+      { "text": "5+ years of experience in cybersecurity operations, incident response, or threat analysis", "type": "must_have" },
+      { "text": "DoD 8140 compliant certification (CASP+, CISSP, or CCNP Security)", "type": "must_have" },
+      { "text": "Experience with SIEM platforms (Splunk, ArcSight, or Elastic)", "type": "must_have" },
+      { "text": "Knowledge of MITRE ATT&CK framework and adversary TTPs", "type": "must_have" },
+      { "text": "Experience with host-based and network-based intrusion detection systems", "type": "must_have" },
+      { "text": "Familiarity with NIST 800-53 and RMF (Risk Management Framework) processes", "type": "must_have" },
+      { "text": "Experience supporting DoD or IC networks", "type": "must_have" },
+      { "text": "Scripting ability in Python, PowerShell, or Bash for automation", "type": "nice_to_have" },
+      { "text": "Experience with cloud security (AWS GovCloud or Azure Government)", "type": "nice_to_have" },
+      { "text": "BS in Computer Science, Cybersecurity, or related field (or equivalent military training)", "type": "must_have" }
+    ],
+    "responsibilities": [
+      "Monitor and defend DoD networks against advanced persistent threats (APTs)",
+      "Conduct incident response and forensic analysis on compromised systems",
+      "Develop and tune SIEM detection rules and correlation logic",
+      "Produce threat intelligence reports and briefings for government stakeholders",
+      "Support RMF authorization packages and continuous monitoring requirements",
+      "Collaborate with red team and vulnerability assessment teams"
+    ]
+  },
+  "expected_output": {
+    "summary": "U.S. Army Signal Corps Captain (separating) with 7 years of military cybersecurity experience including 3 years leading a Cyber Protection Team (CPT) at U.S. Cyber Command. TS/SCI with CI polygraph (active). CompTIA CASP+ certified. Hands-on experience with incident response, SIEM operations (Splunk), and network defense on classified DoD networks. BS Information Technology from West Point.",
+    "experience": [
+      {
+        "company": "U.S. Army Cyber Command (ARCYBER)",
+        "title": "Cyber Protection Team Leader (CPT-12)",
+        "start_date": "2021-06",
+        "end_date": "2025-03",
+        "bullets": [
+          "Led 15-person Cyber Protection Team conducting defensive cyber operations on DoD Information Networks (DoDIN)",
+          "Directed incident response for 25+ cyber incidents including APT intrusions on classified networks",
+          "Managed Splunk SIEM deployment monitoring 50K+ endpoints, authoring 40+ custom detection rules",
+          "Produced weekly threat intelligence briefings for brigade-level commanders using MITRE ATT&CK framework",
+          "Achieved 98% compliance on RMF continuous monitoring requirements across 3 authorization boundaries"
+        ]
+      },
+      {
+        "company": "U.S. Army — 1st Signal Brigade, Camp Humphreys, South Korea",
+        "title": "Signal Officer / Platoon Leader",
+        "start_date": "2018-06",
+        "end_date": "2021-05",
+        "bullets": [
+          "Managed tactical communications and network security for 800-person infantry battalion",
+          "Implemented NIST 800-53 security controls during NIPR/SIPR network consolidation project",
+          "Led team of 22 signal soldiers maintaining satellite, radio, and network infrastructure",
+          "Completed Army Cyber School (16 weeks) and earned CompTIA CASP+ certification"
+        ]
+      }
+    ],
+    "skills": {
+      "cybersecurity": ["incident response", "threat analysis", "SIEM operations (Splunk)", "intrusion detection", "network defense", "forensic analysis"],
+      "frameworks": ["MITRE ATT&CK", "NIST 800-53", "RMF", "DoD 8140", "DISA STIGs"],
+      "technical": ["Splunk (custom detection rules)", "Wireshark", "EnCase (basic)", "PowerShell scripting", "Linux command line"],
+      "leadership": ["team leadership (15-person CPT)", "threat briefings to senior leaders", "cross-functional coordination", "classified network operations"]
+    },
+    "certifications": [
+      "CompTIA CASP+ (DoD 8140 compliant)",
+      "CompTIA Security+ (active)",
+      "TS/SCI with CI Polygraph (active)"
+    ],
+    "education": [
+      "BS Computer Science — United States Military Academy at West Point (2014-2018)"
+    ]
+  },
+  "jd_requirements": [
+    "TS/SCI clearance CI polygraph",
+    "5+ years cybersecurity incident response threat analysis",
+    "DoD 8140 compliant CASP+ CISSP CCNP Security",
+    "SIEM Splunk ArcSight Elastic",
+    "MITRE ATT&CK adversary TTPs",
+    "host-based network-based intrusion detection",
+    "NIST 800-53 RMF Risk Management Framework",
+    "DoD IC networks",
+    "Python PowerShell Bash scripting automation",
+    "cloud security AWS GovCloud Azure Government",
+    "BS Computer Science Cybersecurity military training"
+  ],
+  "cloud_skills": [
+    "incident response", "threat analysis", "SIEM", "Splunk",
+    "intrusion detection", "network defense", "forensic analysis",
+    "MITRE ATT&CK", "NIST 800-53", "RMF", "DoD 8140",
+    "DISA STIGs", "Wireshark", "EnCase",
+    "PowerShell", "Linux", "classified networks",
+    "DoDIN", "NIPR", "SIPR",
+    "team leadership", "threat intelligence briefings",
+    "CompTIA CASP+", "CompTIA Security+",
+    "TS/SCI", "CI polygraph"
+  ],
+  "deliberate_flaws": [
+    "No CISSP (has CASP+ which meets DoD 8570 but CISSP is industry gold standard)",
+    "No Python scripting — only PowerShell and Linux CLI",
+    "No cloud security experience (AWS GovCloud or Azure Government)",
+    "Military jargon throughout — needs civilian translation for resume",
+    "No ArcSight or Elastic experience (only Splunk)",
+    "Forensic analysis is basic (EnCase exposure, not certified EnCE)",
+    "BS is Computer Science — strong match, but no graduate degree"
+  ]
+}

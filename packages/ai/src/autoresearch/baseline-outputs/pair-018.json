@@ -1,0 +1,36 @@
+{
+  "summary": "Recent Statistics graduate from the University of Edinburgh with hands-on experience in Python, R, and SQL. Completed a dissertation on predictive modelling for NHS patient readmission using real hospital data. Gained practical data science exposure through a summer internship at Monzo, including building dashboards and analysing large transaction datasets. Strong communicator with experience presenting technical findings to non-technical audiences.",
+  "experience": [
+    {
+      "company": "Monzo",
+      "title": "Associate Data Scientist — Intern",
+      "start_date": "2025-06",
+      "end_date": "2025-08",
+      "bullets": [
+        "Analysed customer transaction data (2M+ rows) using Python and pandas to identify spending segments and behavioural patterns",
+        "Built a Tableau dashboard to track weekly customer acquisition funnel metrics, used by the product team for decision-making",
+        "Wrote SQL queries in BigQuery to extract cohort-level retention and engagement data for product analysis",
+        "Presented findings on dormant account reactivation strategies to a 15-person cross-functional product team"
+      ]
+    },
+    {
+      "company": "University of Edinburgh — School of Mathematics",
+      "title": "Undergraduate Research Assistant",
+      "start_date": "2024-09",
+      "end_date": "2025-05",
+      "bullets": [
+        "Developed predictive model for patient readmission rates using logistic regression and random forest in R (tidyverse) as part of an NHS Lothian research collaboration",
+        "Cleaned and merged 3 anonymised NHS datasets comprising 45K patient records, resolving missing values and date inconsistencies",
+        "Achieved AUC of 0.78 on held-out test set and presented results at the university statistics symposium",
+        "Co-authored poster accepted at Royal Statistical Society conference (2025)"
+      ]
+    }
+  ],
+  "skills": {
+    "programming": ["Python (pandas, scikit-learn, matplotlib)", "R (tidyverse, ggplot2)", "SQL (BigQuery)"],
+    "data_science": ["logistic regression", "random forest", "predictive modeling", "cohort analysis"],
+    "visualization": ["Tableau", "matplotlib", "seaborn", "ggplot2"],
+    "communication": ["presenting to non-technical audiences", "written communication", "collaborative project work"]
+  },
+  "certifications": []
+}

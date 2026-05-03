@@ -1,0 +1,110 @@
+{
+  "id": "pair-021",
+  "split": "held_out",
+  "persona": "laid_off",
+  "synthetic": true,
+  "jd_style": "enterprise_saas",
+  "framing": "Supply chain manager laid off from Shopee (tech layoffs) applying to Unilever logistics role in Singapore",
+  "coverage": { "industry": "Retail/FMCG", "seniority": "mid", "pattern": "laid_off", "region": "asia" },
+  "jd": {
+    "title": "Supply Chain Planning Manager — Southeast Asia",
+    "company": "Unilever",
+    "location": "Singapore",
+    "experience_years": 7,
+    "requirements": [
+      { "text": "7+ years of supply chain planning experience in FMCG, retail, or manufacturing", "type": "must_have" },
+      { "text": "Experience with demand planning and S&OP (Sales & Operations Planning) processes", "type": "must_have" },
+      { "text": "Proficiency in SAP APO/IBP or equivalent supply chain planning software", "type": "must_have" },
+      { "text": "Experience managing supply chains across multiple Southeast Asian markets", "type": "must_have" },
+      { "text": "Strong analytical skills with experience in demand forecasting models", "type": "must_have" },
+      { "text": "Experience with warehouse management systems (WMS) and 3PL management", "type": "must_have" },
+      { "text": "APICS CSCP or CPIM certification", "type": "nice_to_have" },
+      { "text": "Experience with supply chain sustainability initiatives", "type": "nice_to_have" },
+      { "text": "Degree in Supply Chain Management, Industrial Engineering, or related field", "type": "must_have" },
+      { "text": "Experience managing teams of 5+ across planning and logistics functions", "type": "must_have" }
+    ],
+    "responsibilities": [
+      "Lead demand and supply planning for Unilever's home care and personal care categories across 6 SEA markets",
+      "Drive monthly S&OP process with commercial, finance, and manufacturing stakeholders",
+      "Manage relationships with 8 third-party logistics providers across the region",
+      "Implement demand sensing and forecast accuracy improvement initiatives",
+      "Lead team of 7 supply chain planners and analysts",
+      "Deliver service level targets (98.5% case fill rate) while optimizing inventory days"
+    ]
+  },
+  "expected_output": {
+    "summary": "Supply chain professional with 8 years of experience across e-commerce logistics and FMCG distribution in Southeast Asia. Most recently Supply Chain Lead at Shopee (Sea Group), managing last-mile logistics across 4 SEA markets before role was eliminated in October 2025 regional reorganisation. Previously at Procter & Gamble in supply planning roles. Experience with demand forecasting, S&OP, 3PL management, and warehouse operations. APICS CPIM certified.",
+    "experience": [
+      {
+        "company": "Shopee (Sea Group)",
+        "title": "Supply Chain Lead — Southeast Asia",
+        "start_date": "2021-06",
+        "end_date": "2025-10",
+        "bullets": [
+          "Managed end-to-end logistics operations across 4 SEA markets (Singapore, Malaysia, Thailand, Philippines) serving 2M+ daily orders",
+          "Led team of 6 logistics analysts optimizing last-mile delivery routes, reducing average delivery time from 3.2 to 2.1 days",
+          "Managed relationships with 12 third-party logistics providers, negotiating annual contracts worth USD 45M",
+          "Built demand forecasting models for peak events (9.9, 11.11, 12.12 sales) achieving 85% forecast accuracy at SKU level",
+          "Transitioned out when role was eliminated in regional operations reorganisation (October 2025) consolidating supply chain functions under central logistics team"
+        ]
+      },
+      {
+        "company": "Procter & Gamble — Singapore",
+        "title": "Supply Chain Planner",
+        "start_date": "2017-07",
+        "end_date": "2021-05",
+        "bullets": [
+          "Managed demand and supply planning for P&G's fabric care category across Singapore and Malaysia",
+          "Participated in monthly S&OP process, collaborating with sales, marketing, and manufacturing teams",
+          "Achieved 97.5% case fill rate while reducing inventory days from 42 to 35 through improved forecast accuracy",
+          "Used SAP APO for demand planning and supply network planning across 3 manufacturing sites"
+        ]
+      }
+    ],
+    "skills": {
+      "supply_chain": ["demand planning", "S&OP", "supply network planning", "last-mile logistics", "3PL management", "warehouse operations"],
+      "tools": ["SAP APO", "demand forecasting models", "route optimization", "Excel/Power BI dashboards"],
+      "leadership": ["team management (6 analysts)", "3PL contract negotiation (USD 45M)", "cross-market coordination (4 countries)"],
+      "sector": ["e-commerce logistics", "FMCG distribution", "peak event planning (11.11, 12.12)"]
+    },
+    "certifications": [
+      "APICS CPIM (Certified in Planning and Inventory Management)",
+      "Lean Six Sigma Green Belt"
+    ],
+    "education": [
+      "BSc Industrial & Systems Engineering — National University of Singapore (2013-2017)"
+    ]
+  },
+  "jd_requirements": [
+    "7+ years supply chain planning FMCG retail manufacturing",
+    "demand planning S&OP Sales Operations Planning",
+    "SAP APO IBP supply chain planning software",
+    "supply chains multiple Southeast Asian markets",
+    "analytical demand forecasting models",
+    "warehouse management systems WMS 3PL management",
+    "APICS CSCP CPIM certification",
+    "supply chain sustainability initiatives",
+    "degree Supply Chain Management Industrial Engineering",
+    "managing teams 5+ planning logistics"
+  ],
+  "cloud_skills": [
+    "demand planning", "S&OP", "supply network planning",
+    "last-mile logistics", "3PL management", "warehouse operations",
+    "SAP APO", "demand forecasting", "route optimization",
+    "Power BI", "Excel analytics",
+    "e-commerce logistics", "FMCG distribution",
+    "peak event planning", "case fill rate optimization",
+    "inventory management", "cross-market coordination",
+    "team management", "contract negotiation",
+    "Lean Six Sigma Green Belt", "APICS CPIM"
+  ],
+  "deliberate_flaws": [
+    "E-commerce logistics background, not traditional FMCG supply chain (Unilever wants FMCG experience, Shopee is e-commerce)",
+    "No SAP IBP experience (only APO, which is being phased out by SAP)",
+    "No WMS hands-on experience (managed 3PLs who ran warehouses, didn't operate WMS directly)",
+    "CPIM certified but not CSCP (JD lists CSCP as preferred)",
+    "No sustainability experience — JD mentions sustainability initiatives",
+    "Role eliminated in reorganisation (not mass layoff) — may still trigger hiring manager bias",
+    "P&G experience covers only 2 markets (Singapore, Malaysia) vs JD's 6-market scope"
+  ]
+}

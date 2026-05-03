@@ -1,0 +1,61 @@
+{
+  "summary": "Avionics Systems Engineer with 16+ years of experience spanning hands-on integration at PAC Kamra, SAAB 2000 Erieye AEW&C fleet maintenance, and JF-17 Thunder Block III development at CADI Chengdu. Strong expertise in mission computer integration, EW suite design, glass cockpit systems, and weapons qualification testing. MS Avionics Engineering with extensive cross-cultural engineering collaboration across Pakistan, China, and Sweden.",
+  "experience": [
+    {
+      "company": "AVIC/CADI Chengdu",
+      "title": "Aerospace Systems Integration Lead",
+      "start_date": "2017-11",
+      "end_date": "2019-12",
+      "bullets": [
+        "Led avionics and weapons systems integration for JF-17 Thunder Block III at CADI, Chengdu",
+        "Oversaw integration testing of indigenous mission computer, EW suite, and glass cockpit avionics",
+        "Supported flight test campaigns for weapons integration and systems qualification",
+        "Contributed to indigenous systems development replacing legacy Chinese and Russian components",
+        "Managed cross-cultural engineering coordination between Pakistani and Chinese technical teams"
+      ]
+    },
+    {
+      "company": "Pakistan Aeronautical Complex (PAC) Kamra",
+      "title": "Integrated Systems & Design Specialist",
+      "start_date": "2008-10",
+      "end_date": "2013-10",
+      "bullets": [
+        "Designed and integrated avionics subsystems for military aircraft platforms at PAC Kamra production facility",
+        "Performed system-level testing, verification, and validation of integrated avionics suites",
+        "Created technical documentation for design reviews, configuration baselines, and test procedures",
+        "Supported production line engineering for avionics installation and wiring harness integration"
+      ]
+    },
+    {
+      "company": "Pakistan Air Force — AEW&C Squadron",
+      "title": "Maintenance Support Engineer, AEW&C Aircraft",
+      "start_date": "2015-12",
+      "end_date": "2017-11",
+      "bullets": [
+        "Managed maintenance engineering for SAAB 2000 Erieye AEW&C fleet (9 aircraft) encompassing radar and mission systems",
+        "Performed technical fault diagnosis at system and subsystem level for complex avionics",
+        "Ensured operational readiness through structured maintenance scheduling and resource allocation"
+      ]
+    },
+    {
+      "company": "College of Aeronautical Engineering",
+      "title": "Faculty — Systems Engineering",
+      "start_date": "2025-07",
+      "end_date": "present",
+      "bullets": [
+        "Teaches Systems Engineering courses to aeronautical engineering students",
+        "Coordinates research projects and industry-academia linkages in aerospace domain"
+      ]
+    }
+  ],
+  "skills": {
+    "platforms_technologies": ["JF-17 Thunder (Block I/II/III)", "SAAB 2000 Erieye AEW&C", "mission computer", "EW suite", "glass cockpit", "radar systems"],
+    "systems_engineering": ["avionics architecture", "systems integration", "requirements analysis", "V&V testing", "functional analysis", "system baselines"],
+    "engineering": ["flight test support", "weapons integration", "wiring harness design", "technical documentation", "design reviews", "configuration management"],
+    "collaboration": ["cross-cultural engineering (China, Sweden)", "OEM coordination", "team leadership"]
+  },
+  "certifications": [
+    "PMI-ACP — Project Management Institute",
+    "Introduction to Systems Engineering Specialization — CU Boulder / Lockheed Martin"
+  ]
+}

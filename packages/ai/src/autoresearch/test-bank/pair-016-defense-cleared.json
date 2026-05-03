@@ -1,0 +1,125 @@
+{
+  "id": "pair-016",
+  "split": "validation",
+  "persona": "military",
+  "synthetic": true,
+  "jd_style": "defense_cleared",
+  "framing": "Military veteran applying to cleared defense manufacturing role (Anduril-style JD)",
+  "coverage": { "industry": "Defense/Aerospace", "seniority": "mid", "pattern": "military_transition", "region": "north_america" },
+  "jd": {
+    "title": "Manufacturing Operations Manager, Autonomous Systems",
+    "company": "Defense Technology Company",
+    "location": "Ashville, OH (on-site, relocation support provided)",
+    "experience_years": 7,
+    "requirements": [
+      { "text": "7+ years experience in production-oriented or electro-mechanical technician fields with at least 3+ years in a supervisor or production operations lead/manager role in a high volume mixed product production environment", "type": "must_have" },
+      { "text": "ERP and MES systems experience", "type": "must_have" },
+      { "text": "Complete understanding of product lifecycle from NPI to scaled production, LEAN manufacturing, and change management (ECOs)", "type": "must_have" },
+      { "text": "Ability to interpret technical documentation including mechanical drawings, schematics, and equipment specifications", "type": "must_have" },
+      { "text": "Process and equipment troubleshooting skills with adaptability to changing environments", "type": "must_have" },
+      { "text": "Knowledge of 5S, lean manufacturing, or 6-Sigma principles", "type": "must_have" },
+      { "text": "Currently possess and maintain active U.S. Secret security clearance", "type": "must_have" },
+      { "text": "Associate's or Bachelor's degree in technical field (engineering, business, applied science)", "type": "nice_to_have" },
+      { "text": "Lean Six Sigma green belt certification", "type": "nice_to_have" },
+      { "text": "AS9100 standards and OSHA laws knowledge", "type": "nice_to_have" },
+      { "text": "Small electronic assembly experience", "type": "nice_to_have" }
+    ],
+    "responsibilities": [
+      "Manage technician staff in production and hardware delivery through factory acceptance",
+      "Direct daily operations including work order issuance and completion",
+      "Ensure safety procedure compliance and maintain current safety training documentation",
+      "Coach, mentor, and support production technicians",
+      "Prioritize work to achieve on-time delivery targets",
+      "Complete daily production system transactions (NetSuite/JIRA)",
+      "Provide weekly production progress reports, identify blockers and risks",
+      "Lead cross-functional daily communication with engineering, technicians, supply chain, logistics, and quality teams",
+      "Demonstrate urgency and enthusiasm daily"
+    ]
+  },
+  "expected_output": {
+    "summary": "Production operations leader with 10 years of U.S. Air Force experience managing electro-mechanical maintenance and manufacturing operations. Supervised 30+ technicians across avionics and weapons system production lines with active Secret clearance. Strong foundation in lean manufacturing, technical documentation interpretation, and cross-functional team leadership in high-tempo defense environments.",
+    "experience": [
+      {
+        "company": "U.S. Air Force — 309th Maintenance Wing, Hill AFB",
+        "title": "Production Supervisor, Avionics Repair",
+        "start_date": "2020-01",
+        "end_date": "2024-06",
+        "bullets": [
+          "Supervised 30+ avionics repair technicians across 3 production cells performing depot-level maintenance on fighter aircraft systems",
+          "Managed daily work order flow using ABPDS (Air Force ERP system), tracking completion rates and backlog against delivery targets",
+          "Interpreted technical orders, schematics, and wiring diagrams for troubleshooting complex avionics failures",
+          "Led 5S implementation across repair facility, reducing tool search time by 40% and improving FOD compliance",
+          "Maintained 97% on-time delivery rate for critical avionics components supporting F-16 and F-35 fleet readiness"
+        ]
+      },
+      {
+        "company": "U.S. Air Force — 56th Component Maintenance Squadron, Luke AFB",
+        "title": "Avionics Systems Technician / Shift Lead",
+        "start_date": "2016-03",
+        "end_date": "2019-12",
+        "bullets": [
+          "Performed intermediate-level repair and testing of radar, EW, and navigation systems",
+          "Promoted to shift lead managing 12 technicians on swing shift operations",
+          "Trained 8 junior technicians on test equipment operation and technical order compliance",
+          "Supported NPI integration of upgraded radar warning receiver components into existing test workflows"
+        ]
+      },
+      {
+        "company": "U.S. Air Force — Technical Training",
+        "title": "Avionics Systems Apprentice",
+        "start_date": "2014-06",
+        "end_date": "2016-02",
+        "bullets": [
+          "Completed Air Force technical training in avionics systems maintenance (Sheppard AFB)",
+          "Qualified on 5 avionics test stations and earned 5-skill level certification"
+        ]
+      }
+    ],
+    "skills": {
+      "production_operations": ["production supervision (30+ technicians)", "work order management", "on-time delivery tracking", "daily operations coordination"],
+      "technical": ["electro-mechanical troubleshooting", "technical documentation interpretation", "schematics and wiring diagrams", "avionics repair and testing"],
+      "lean_quality": ["5S implementation", "lean manufacturing principles", "FOD prevention", "process improvement"],
+      "leadership": ["shift management", "technician training and mentoring", "cross-functional communication", "safety compliance"]
+    },
+    "certifications": [
+      "Active U.S. Secret Security Clearance",
+      "Air Force 5-level Avionics Systems Journeyman"
+    ],
+    "education": [
+      "AS Applied Science, Aviation Maintenance Technology — Community College of the Air Force (2018)",
+      "Lean Six Sigma Yellow Belt — Air Force Continuous Process Improvement"
+    ]
+  },
+  "jd_requirements": [
+    "7+ years production electro-mechanical supervisor",
+    "ERP MES systems experience",
+    "product lifecycle NPI scaled production lean ECOs",
+    "technical documentation drawings schematics",
+    "troubleshooting adaptability changing environments",
+    "5S lean manufacturing 6-Sigma",
+    "active U.S. Secret security clearance",
+    "Associate's Bachelor's technical field",
+    "Lean Six Sigma green belt",
+    "AS9100 OSHA",
+    "small electronic assembly"
+  ],
+  "cloud_skills": [
+    "production supervision", "work order management",
+    "avionics repair", "electro-mechanical troubleshooting",
+    "technical documentation", "schematics interpretation",
+    "5S implementation", "lean manufacturing", "FOD prevention",
+    "shift management", "technician training",
+    "cross-functional communication", "safety compliance",
+    "ERP systems (ABPDS)", "on-time delivery",
+    "NPI integration", "radar systems", "EW systems",
+    "Secret clearance"
+  ],
+  "deliberate_flaws": [
+    "Air Force ERP (ABPDS) not commercial ERP (NetSuite/SAP) — needs bridging",
+    "Yellow Belt only, not Green Belt",
+    "No AS9100 certification experience (military uses MIL-STD not AS9100)",
+    "No small electronic assembly (depot repair, not manufacturing)",
+    "AS degree from CCAF, not civilian institution — some employers undervalue this",
+    "Military jargon needs translation for civilian hiring managers"
+  ]
+}

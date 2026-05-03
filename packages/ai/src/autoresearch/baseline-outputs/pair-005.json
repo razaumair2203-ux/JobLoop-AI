@@ -1,0 +1,51 @@
+{
+  "summary": "Full-Stack Software Engineer with 6 years of experience building and shipping production web applications using TypeScript, React, and Node.js. Proven ability to deliver user-facing features at scale, maintaining RESTful APIs serving 500K+ daily requests, and improving CI/CD pipeline efficiency. BS in Computer Science with practical experience in PostgreSQL, AWS infrastructure, and automated testing practices.",
+  "experience": [
+    {
+      "company": "Plaid",
+      "title": "Software Engineer II",
+      "start_date": "2022-03",
+      "end_date": "2024-12",
+      "bullets": [
+        "Built and maintained full-stack features for a financial data aggregation platform using TypeScript, React, and Node.js",
+        "Designed and operated RESTful APIs serving 500K+ daily requests while maintaining 99.9% uptime",
+        "Optimized database queries and implemented Redis caching layer, reducing API response latency by 35%",
+        "Mentored 2 junior engineers through structured onboarding and regular code review sessions",
+        "Developed integration test suite achieving 85% coverage of critical payment flows"
+      ]
+    },
+    {
+      "company": "Shopify",
+      "title": "Software Engineer",
+      "start_date": "2019-06",
+      "end_date": "2022-02",
+      "bullets": [
+        "Developed merchant-facing dashboard features using React and GraphQL",
+        "Architected automated CI/CD pipeline that reduced deployment time from 45 minutes to 12 minutes",
+        "Contributed to checkout flow optimization that drove an 8% improvement in conversion rate",
+        "Authored technical documentation for API integration guides used by 200+ partner developers"
+      ]
+    },
+    {
+      "company": "Various (University of Waterloo Co-op Program)",
+      "title": "Software Engineering Intern — 3 terms",
+      "start_date": "2017-01",
+      "end_date": "2018-12",
+      "bullets": [
+        "Wealthsimple: Built transaction categorization pipeline using Python and PostgreSQL",
+        "Shopify (1st term): Developed internal admin dashboard components in React",
+        "Faire: Implemented REST API endpoints for supplier onboarding flow"
+      ]
+    }
+  ],
+  "skills": {
+    "frontend": ["React", "Next.js", "HTML/CSS", "Tailwind CSS"],
+    "languages": ["TypeScript", "JavaScript", "Python", "SQL"],
+    "backend": ["Node.js", "Express", "GraphQL", "REST APIs"],
+    "infrastructure": ["AWS (EC2, S3, Lambda)", "PostgreSQL", "Redis", "Docker", "GitHub Actions CI/CD"],
+    "practices": ["automated testing", "code review", "technical documentation", "Agile/Scrum"]
+  },
+  "certifications": [
+    "AWS Certified Solutions Architect — Associate"
+  ]
+}

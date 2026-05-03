@@ -1,0 +1,122 @@
+{
+  "id": "pair-028",
+  "split": "held_out",
+  "persona": "senior",
+  "synthetic": true,
+  "jd_style": "startup_technical",
+  "framing": "Senior RF engineer at Ericsson applying to 5G startup in Japan",
+  "coverage": { "industry": "Telecom/5G", "seniority": "senior", "pattern": "linear", "region": "asia" },
+  "jd": {
+    "title": "Principal RF Engineer — 5G mmWave",
+    "company": "Rakuten Symphony",
+    "location": "Tokyo, Japan",
+    "experience_years": 10,
+    "style_note": "Startup-technical: Open RAN disruptor, specific technology stack, mission-driven",
+    "requirements": [
+      { "text": "10+ years of RF engineering experience in cellular networks (LTE/5G)", "type": "must_have" },
+      { "text": "Deep expertise in 5G NR mmWave (FR2) radio planning, including beamforming and beam management", "type": "must_have" },
+      { "text": "Experience with O-RAN architecture and open fronthaul interfaces (7.2x split)", "type": "must_have" },
+      { "text": "Proficiency in RF planning tools: Atoll, ASSET, or Planet", "type": "must_have" },
+      { "text": "Experience with drive test analysis tools (TEMS Investigation, Nemo Outdoor) and post-processing (Actix Analyzer, XCAL)", "type": "must_have" },
+      { "text": "Knowledge of 3GPP Release 15-17 specifications for NR", "type": "must_have" },
+      { "text": "Experience with massive MIMO antenna systems (64T64R or higher)", "type": "must_have" },
+      { "text": "Experience with network densification strategies for urban mmWave deployment", "type": "nice_to_have" },
+      { "text": "Familiarity with Rakuten Symphony's Symworld platform or equivalent cloud-native RAN", "type": "nice_to_have" },
+      { "text": "Japanese language proficiency (JLPT N2 or higher)", "type": "nice_to_have" }
+    ],
+    "responsibilities": [
+      "Lead RF design and optimization for Rakuten Mobile's 5G mmWave network expansion across Tokyo metropolitan area",
+      "Design beamforming strategies and beam management algorithms for high-density urban environments",
+      "Collaborate with O-RAN software teams on RIC (RAN Intelligent Controller) integration for automated optimization",
+      "Conduct interference analysis and coexistence studies for mmWave/sub-6GHz dual-connectivity scenarios",
+      "Mentor team of 4 RF engineers on mmWave-specific design challenges"
+    ]
+  },
+  "expected_output": {
+    "summary": "Senior RF Engineer with 12 years of experience in cellular network design and optimization at Ericsson. Led 5G NR deployment projects across 3 markets (Japan, South Korea, Australia). Deep expertise in sub-6GHz massive MIMO (64T64R) and LTE-Advanced optimization. Proficient in Atoll, TEMS Investigation, and Actix Analyzer. 3GPP RAN4 contributor. Seeking to transition from vendor-side to operator/platform-side at an O-RAN innovator.",
+    "experience": [
+      {
+        "company": "Ericsson — Japan",
+        "title": "Senior RF Engineer — 5G Deployment",
+        "start_date": "2020-01",
+        "end_date": "2025-06",
+        "bullets": [
+          "Led RF planning and optimization for NTT Docomo's 5G NR sub-6GHz rollout across 8 prefectures (3,200+ sites)",
+          "Designed massive MIMO beamforming configurations (64T64R) for urban macro and small cell deployments",
+          "Conducted drive test campaigns using TEMS Investigation and post-processed data in Actix Analyzer for KPI benchmarking",
+          "Achieved 15% throughput improvement through SSB beam optimization and CSI-RS configuration tuning",
+          "Contributed to 3GPP RAN4 working group on NR performance requirements (Release 16-17)"
+        ]
+      },
+      {
+        "company": "Ericsson — South Korea",
+        "title": "RF Optimization Engineer",
+        "start_date": "2016-03",
+        "end_date": "2019-12",
+        "bullets": [
+          "Optimized SK Telecom's LTE-Advanced and early 5G trial networks using Atoll for RF planning",
+          "Performed interference analysis for 3.5GHz TDD-LTE and 28GHz mmWave trial sites in Seoul",
+          "Supported Korea's first commercial 5G launch (April 2019) with RF acceptance testing across 2,100 sites",
+          "Managed RF performance KPIs (RSRP, SINR, throughput) for cluster optimization across 5 districts"
+        ]
+      },
+      {
+        "company": "Ericsson — Australia",
+        "title": "RF Engineer",
+        "start_date": "2013-07",
+        "end_date": "2016-02",
+        "bullets": [
+          "Performed RF planning for Telstra's 4G/LTE network using Atoll and MapInfo",
+          "Conducted drive tests with Nemo Outdoor and produced coverage analysis reports",
+          "Supported antenna selection and tilt optimization for regional and suburban macro sites"
+        ]
+      }
+    ],
+    "skills": {
+      "rf_engineering": ["5G NR sub-6GHz", "massive MIMO (64T64R)", "beamforming (SSB, CSI-RS)", "LTE-Advanced optimization", "interference analysis"],
+      "tools": ["Atoll", "TEMS Investigation", "Actix Analyzer", "Nemo Outdoor", "MapInfo"],
+      "standards": ["3GPP Release 15-17 (NR)", "3GPP RAN4 contributor", "TDD-LTE", "FDD-LTE"],
+      "deployment": ["macro site planning", "small cell design", "drive test campaigns", "KPI benchmarking", "site acceptance"]
+    },
+    "certifications": [
+      "Ericsson Certified 5G RAN Engineer",
+      "JLPT N3 (Japanese Language Proficiency)"
+    ],
+    "education": [
+      "MSc Telecommunications Engineering — University of Melbourne (2011-2013)",
+      "BEng Electrical Engineering — University of Sydney (2007-2011)"
+    ]
+  },
+  "jd_requirements": [
+    "10+ years RF engineering cellular LTE 5G",
+    "5G NR mmWave FR2 beamforming beam management",
+    "O-RAN open fronthaul 7.2x split",
+    "Atoll ASSET Planet RF planning tools",
+    "TEMS Investigation Nemo Outdoor Actix Analyzer XCAL drive test",
+    "3GPP Release 15-17 NR specifications",
+    "massive MIMO 64T64R",
+    "network densification urban mmWave",
+    "Rakuten Symworld cloud-native RAN",
+    "Japanese JLPT N2"
+  ],
+  "cloud_skills": [
+    "5G NR", "sub-6GHz", "massive MIMO", "64T64R",
+    "beamforming", "SSB", "CSI-RS",
+    "LTE-Advanced", "TDD-LTE", "FDD-LTE",
+    "Atoll", "TEMS Investigation", "Actix Analyzer",
+    "Nemo Outdoor", "MapInfo",
+    "3GPP RAN4", "Release 15-17",
+    "interference analysis", "drive test",
+    "KPI benchmarking", "site acceptance",
+    "macro site planning", "small cell design"
+  ],
+  "deliberate_flaws": [
+    "No mmWave (FR2) hands-on experience — all sub-6GHz and LTE (28GHz was trial only in Korea)",
+    "No O-RAN experience — entire career at Ericsson (proprietary RAN vendor)",
+    "JLPT N3 not N2 — below preferred language threshold",
+    "No experience with ASSET or Planet RF tools (only Atoll)",
+    "No cloud-native RAN or RIC experience (vendor-side, not platform-side)",
+    "No network densification strategy design (executed plans, didn't design strategies)",
+    "Vendor-to-operator transition — different KPI ownership and commercial pressure"
+  ]
+}

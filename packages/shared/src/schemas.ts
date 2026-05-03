@@ -9,44 +9,42 @@ export const jdInputSchema = z.object({
 });
 export type JDInput = z.infer<typeof jdInputSchema>;
 
-// User Preferences
+// User Preferences (stored as JSONB on users table)
 export const userPreferencesSchema = z.object({
   target_roles: z.array(z.string()).min(1),
   location_type: z.enum(["remote", "hybrid", "onsite"]),
   location_city: z.string().optional(),
-  salary_min: z.number().optional(),
-  salary_max: z.number().optional(),
+  salary_min: z.number().positive().optional(),
+  salary_max: z.number().positive().optional(),
   salary_currency: z.string().default("USD"),
-  job_search_status: z.enum([
-    "actively_looking",
-    "casually_browsing",
-    "employed_exploring",
-  ]),
 });
-export type UserPreferences = z.infer<typeof userPreferencesSchema>;
 
 // Cover Letter Generation Request
 export const coverLetterRequestSchema = z.object({
   application_id: z.string().uuid(),
   tone: z.enum(["professional", "assertive", "technical", "conversational"]),
-  focus_points: z.array(z.string()).optional(),
+  focus_points: z.array(z.string()).max(5).optional(),
 });
 export type CoverLetterRequest = z.infer<typeof coverLetterRequestSchema>;
 
-// Application Status Update
-export const statusUpdateSchema = z.object({
+// Application Stage Update (pipeline stage)
+export const stageUpdateSchema = z.object({
   application_id: z.string().uuid(),
-  status: z.enum([
-    "saved",
-    "analyzing",
-    "ready_to_apply",
-    "applied",
-    "interviewing",
-    "offered",
-    "rejected",
-    "withdrawn",
-    "no_response",
-  ]),
-  notes: z.string().optional(),
+  stage: z.enum(["saved", "analyzing", "ready_to_apply", "applied"]),
 });
-export type StatusUpdate = z.infer<typeof statusUpdateSchema>;
+export type StageUpdate = z.infer<typeof stageUpdateSchema>;
+
+// Outcome Status Update (what happened after applying)
+export const outcomeUpdateSchema = z.object({
+  application_id: z.string().uuid(),
+  outcome_status: z.enum([
+    "pending",
+    "callback",
+    "interview",
+    "offer",
+    "rejected",
+    "ghosted",
+  ]),
+  user_feedback: z.string().optional(), // "Anything worth noting?"
+});
+export type OutcomeUpdate = z.infer<typeof outcomeUpdateSchema>;

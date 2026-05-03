@@ -1,0 +1,126 @@
+{
+  "id": "pair-007",
+  "split": "validation",
+  "persona": "executive",
+  "synthetic": true,
+  "framing": "CFO / VP Finance targeting C-suite",
+  "coverage": { "industry": "Finance", "seniority": "executive", "pattern": "linear", "region": "europe" },
+  "jd": {
+    "title": "Chief Financial Officer",
+    "company": "Revolut",
+    "location": "London, UK",
+    "experience_years": 15,
+    "requirements": [
+      { "text": "15+ years of progressive finance leadership experience", "type": "must_have" },
+      { "text": "Experience as CFO, VP Finance, or Finance Director at a high-growth technology company", "type": "must_have" },
+      { "text": "Deep understanding of fintech regulatory landscape (FCA, PRA, ECB)", "type": "must_have" },
+      { "text": "Experience managing finance teams of 50+ people across multiple geographies", "type": "must_have" },
+      { "text": "Track record of leading IPO preparation or major fundraising rounds ($100M+)", "type": "must_have" },
+      { "text": "CPA, ACA, ACCA, or equivalent professional qualification", "type": "must_have" },
+      { "text": "Experience with treasury management and FX risk in multi-currency environments", "type": "must_have" },
+      { "text": "MBA from a top-tier institution", "type": "nice_to_have" },
+      { "text": "Experience with IFRS and US GAAP dual reporting", "type": "nice_to_have" },
+      { "text": "Board-level presentation and investor relations experience", "type": "must_have" }
+    ],
+    "responsibilities": [
+      "Lead all finance functions including FP&A, accounting, tax, treasury, and investor relations",
+      "Prepare company for potential IPO including financial controls, SOX readiness, and auditor relationships",
+      "Manage regulatory capital requirements and compliance with FCA/PRA standards",
+      "Build and scale finance team across London, Dublin, and Singapore offices",
+      "Present quarterly financial results to the board and investors",
+      "Drive strategic planning and capital allocation across business units"
+    ]
+  },
+  "expected_output": {
+    "summary": "Finance executive with 18 years of progressive leadership across fintech, banking, and technology sectors. As VP Finance at TransferWise (now Wise), led finance team through IPO preparation and direct listing on LSE. Managed 65-person global finance team across 4 offices with P&L oversight exceeding $400M. ACA qualified with deep expertise in FCA/PRA regulatory compliance, multi-currency treasury, and IFRS reporting.",
+    "experience": [
+      {
+        "company": "Wise (formerly TransferWise)",
+        "title": "VP Finance",
+        "start_date": "2019-01",
+        "end_date": "2024-06",
+        "bullets": [
+          "Led 65-person global finance team across London, Tallinn, Singapore, and New York offices",
+          "Directed IPO preparation for Wise's direct listing on LSE (July 2021, $11B valuation)",
+          "Established SOX-equivalent internal controls and audit committee processes for public company readiness",
+          "Managed treasury operations across 50+ currencies with daily FX exposure exceeding $5B",
+          "Presented quarterly results to board of directors and 200+ institutional investors"
+        ]
+      },
+      {
+        "company": "Monzo Bank",
+        "title": "Finance Director",
+        "start_date": "2016-03",
+        "end_date": "2018-12",
+        "bullets": [
+          "Built finance function from 5 to 25 people during Series C through Series E growth ($300M raised)",
+          "Managed FCA regulatory capital reporting and PRA liquidity requirements",
+          "Implemented financial planning and budgeting processes supporting 100% YoY revenue growth",
+          "Coordinated external audit processes with Deloitte and managed investor due diligence"
+        ]
+      },
+      {
+        "company": "KPMG London",
+        "title": "Senior Manager — Financial Services Audit",
+        "start_date": "2008-09",
+        "end_date": "2016-02",
+        "bullets": [
+          "Led audit engagements for FTSE 250 financial services clients including Barclays and Standard Chartered",
+          "Managed teams of 15-20 across complex IFRS reporting engagements",
+          "Developed deep expertise in banking regulatory reporting and capital adequacy"
+        ]
+      },
+      {
+        "company": "PricewaterhouseCoopers",
+        "title": "Audit Associate",
+        "start_date": "2006-09",
+        "end_date": "2008-08",
+        "bullets": [
+          "Performed financial statement audits for mid-cap technology and financial services clients",
+          "Completed ACA qualification while working full-time"
+        ]
+      }
+    ],
+    "skills": {
+      "finance_leadership": ["FP&A", "treasury management", "multi-currency FX operations", "capital allocation", "budget management ($400M+ P&L)"],
+      "regulatory": ["FCA compliance", "PRA liquidity reporting", "regulatory capital", "UK Corporate Governance Code compliance", "IFRS reporting"],
+      "strategic": ["IPO preparation", "investor relations", "board presentations", "fundraising ($300M+)", "strategic planning"],
+      "team_leadership": ["global team management (65 people, 4 offices)", "finance function scaling", "audit committee", "external auditor relationships"]
+    },
+    "certifications": [
+      "ACA — Institute of Chartered Accountants in England and Wales (ICAEW)"
+    ],
+    "education": [
+      "MBA — London Business School (2018-2019, part-time)",
+      "BSc Accounting & Finance — University of Manchester (2003-2006)"
+    ]
+  },
+  "jd_requirements": [
+    "15+ years progressive finance leadership",
+    "CFO VP Finance high-growth technology",
+    "fintech regulatory FCA PRA ECB",
+    "finance teams 50+ multiple geographies",
+    "IPO preparation fundraising $100M+",
+    "CPA ACA ACCA qualification",
+    "treasury management FX multi-currency",
+    "MBA top-tier institution",
+    "IFRS US GAAP dual reporting",
+    "board presentation investor relations"
+  ],
+  "cloud_skills": [
+    "FP&A", "treasury management", "FX operations", "capital allocation",
+    "FCA compliance", "PRA reporting", "regulatory capital", "UK Corporate Governance Code",
+    "IFRS reporting", "IPO preparation", "investor relations",
+    "board presentations", "fundraising", "strategic planning",
+    "global team management", "finance function scaling",
+    "audit committee", "external audit", "Deloitte",
+    "budget management", "financial controls",
+    "multi-currency operations", "banking regulation",
+    "ACA qualification", "financial services audit"
+  ],
+  "deliberate_flaws": [
+    "No US GAAP experience (only IFRS)",
+    "No ECB regulatory experience (UK/FCA focused)",
+    "MBA part-time not full-time from top-tier"
+  ]
+}

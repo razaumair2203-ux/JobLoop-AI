@@ -1,0 +1,123 @@
+{
+  "id": "pair-024",
+  "split": "train",
+  "persona": "executive",
+  "synthetic": true,
+  "jd_style": "enterprise_saas",
+  "framing": "VP Clinical Development at BMS seeking Chief Medical Officer role at Series B immuno-oncology biotech",
+  "coverage": { "industry": "Biotech/Pharma", "seniority": "executive", "pattern": "linear", "region": "north_america" },
+  "jd": {
+    "title": "Chief Medical Officer",
+    "company": "Series B Immuno-Oncology Biotech (Cambridge, mRNA/cell therapy pipeline)",
+    "location": "Cambridge, MA",
+    "experience_years": 15,
+    "requirements": [
+      { "text": "MD with board certification in oncology, hematology, or related subspecialty", "type": "must_have" },
+      { "text": "15+ years of clinical and drug development experience, with 5+ in biopharma leadership", "type": "must_have" },
+      { "text": "Experience as medical monitor or clinical development lead for Phase I-III oncology trials", "type": "must_have" },
+      { "text": "Track record of successful IND filings and interactions with FDA and EMA", "type": "must_have" },
+      { "text": "Experience with mRNA therapeutics, cell therapy, or immuno-oncology modalities", "type": "nice_to_have" },
+      { "text": "Publications in peer-reviewed oncology journals (first or senior author)", "type": "must_have" },
+      { "text": "Experience building and leading clinical development teams of 20+", "type": "must_have" },
+      { "text": "Board or SAB experience at biotech companies", "type": "nice_to_have" },
+      { "text": "Demonstrated ability to present clinical data to investors, partners, and regulatory agencies", "type": "must_have" }
+    ],
+    "responsibilities": [
+      "Lead clinical development strategy for oncology pipeline (2 programs, Phase I-II)",
+      "Serve as company spokesperson for clinical data at medical conferences (ASCO, AACR)",
+      "Oversee medical monitoring across all active oncology trials",
+      "Drive regulatory strategy in collaboration with Regulatory Affairs for IND/BLA submissions",
+      "Build clinical development team from scratch (hiring first 8-10 clinical staff)",
+      "Represent clinical perspective to Board of Directors and investor audiences"
+    ]
+  },
+  "expected_output": {
+    "summary": "Physician-scientist and drug development leader with 16 years of experience spanning academic oncology and biopharma clinical development. Currently VP Clinical Operations at Bristol Myers Squibb leading clinical programs in immuno-oncology (checkpoint inhibitors, CAR-T). Previously Associate Professor of Medicine at Memorial Sloan Kettering. Led 8 IND filings, 3 successful NDA/BLA submissions. 35+ peer-reviewed publications. MD from Johns Hopkins, board-certified in Medical Oncology.",
+    "experience": [
+      {
+        "company": "Bristol Myers Squibb",
+        "title": "Vice President, Clinical Development — Immuno-Oncology",
+        "start_date": "2019-01",
+        "end_date": "2024-12",
+        "bullets": [
+          "Led clinical development strategy for 3 immuno-oncology programs (2 checkpoint inhibitors, 1 CAR-T) across Phase I-III",
+          "Managed clinical development team of 22 (medical directors, clinical scientists, medical monitors)",
+          "Oversaw 5 IND filings and 2 sBLA submissions, all accepted by FDA without clinical hold",
+          "Presented pivotal trial data at ASCO Annual Meeting (2022, 2023) and AACR (2021)",
+          "Served as medical monitor for registrational Phase III trial enrolling 1,200 patients across 180 sites globally"
+        ]
+      },
+      {
+        "company": "Memorial Sloan Kettering Cancer Center",
+        "title": "Associate Professor of Medicine — Solid Tumor Oncology",
+        "start_date": "2012-07",
+        "end_date": "2018-12",
+        "bullets": [
+          "Conducted investigator-initiated clinical trials in non-small cell lung cancer (NSCLC) and melanoma",
+          "Published 28 peer-reviewed papers (12 first/senior author) in Journal of Clinical Oncology, NEJM, and Lancet Oncology",
+          "Served as site PI for 6 industry-sponsored Phase I-II trials",
+          "Mentored 8 oncology fellows and 3 post-doctoral researchers",
+          "Member of MSK's Institutional Review Board (IRB) for 4 years"
+        ]
+      },
+      {
+        "company": "Johns Hopkins Hospital",
+        "title": "Medical Oncology Fellow",
+        "start_date": "2009-07",
+        "end_date": "2012-06",
+        "bullets": [
+          "Completed 3-year fellowship in Medical Oncology with research focus on tumor immunology",
+          "Awarded NIH K08 Career Development Award for translational immuno-oncology research"
+        ]
+      }
+    ],
+    "skills": {
+      "clinical_development": ["Phase I-III trial design", "IND/BLA/sBLA filings", "medical monitoring", "regulatory strategy", "FDA interactions"],
+      "therapeutic": ["immuno-oncology", "checkpoint inhibitors", "CAR-T cell therapy", "NSCLC", "melanoma", "solid tumor oncology"],
+      "leadership": ["team management (22 reports)", "conference presentations (ASCO, AACR)", "investor communications", "IRB membership", "fellow mentorship"],
+      "scientific": ["peer-reviewed publications (35+)", "investigator-initiated trials", "translational research", "tumor immunology"]
+    },
+    "certifications": [
+      "Board Certified — Medical Oncology (ABIM)",
+      "Board Certified — Internal Medicine (ABIM)",
+      "MD — Licensed Physician (Massachusetts, New York)"
+    ],
+    "education": [
+      "Medical Oncology Fellowship — Johns Hopkins Hospital (2009-2012)",
+      "Residency, Internal Medicine — Massachusetts General Hospital (2006-2009)",
+      "MD — Johns Hopkins University School of Medicine (2002-2006)",
+      "BS Molecular Biology — Princeton University (1998-2002)"
+    ]
+  },
+  "jd_requirements": [
+    "MD board certification oncology hematology",
+    "15+ years clinical drug development 5+ biopharma leadership",
+    "medical monitor clinical development lead Phase I-III oncology",
+    "IND filings FDA EMA interactions",
+    "mRNA therapeutics cell therapy immuno-oncology",
+    "publications peer-reviewed oncology journals first senior author",
+    "clinical development teams 20+",
+    "board SAB biotech",
+    "clinical data investors partners regulatory agencies"
+  ],
+  "cloud_skills": [
+    "Phase I-III trial design", "IND filings", "BLA submissions",
+    "medical monitoring", "regulatory strategy", "FDA interactions",
+    "immuno-oncology", "checkpoint inhibitors", "CAR-T",
+    "NSCLC", "melanoma", "solid tumor oncology",
+    "ASCO presentations", "AACR", "peer-reviewed publications",
+    "clinical development team leadership", "investor communications",
+    "IRB membership", "investigator-initiated trials",
+    "translational research", "tumor immunology",
+    "Medical Oncology board certification"
+  ],
+  "deliberate_flaws": [
+    "VP Clinical Operations, not CMO — title gap (has never held C-suite title)",
+    "No mRNA therapeutics experience — BMS is checkpoint inhibitors and CAR-T, not mRNA",
+    "No board or SAB experience at biotech companies",
+    "No EMA interaction experience — all FDA-focused (US only)",
+    "BMS is large pharma — culture fit risk for Series B startup (no startup experience, used to large teams and infrastructure)",
+    "No experience with early-stage company fundraising or investor pitch dynamics",
+    "Academic track ended in 2018 — publication pace may have slowed in industry role"
+  ]
+}
