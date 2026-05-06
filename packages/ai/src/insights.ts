@@ -132,7 +132,8 @@ RULES:
 export async function generateInsights(
   matchReport: CloudMatchReport,
   cloud: ProfileCloud,
-  parsedJD: ParsedJD
+  parsedJD: ParsedJD,
+  modelTier?: "fast" | "quality"
 ): Promise<SuitabilityInsights> {
   // Build the evidence summary for the AI
   const evidenceContext = buildEvidenceContext(matchReport, cloud, parsedJD);
@@ -157,7 +158,7 @@ export async function generateInsights(
   // API MODE
   const client = getClient();
   const response = await client.messages.create({
-    model: MODELS.quality, // Insights need the quality model — this is synthesis, not extraction
+    model: modelTier === "fast" ? MODELS.fast : MODELS.quality,
     max_tokens: 3000,
     system: INSIGHT_SYSTEM_PROMPT,
     messages: [{ role: "user", content: evidenceContext }],
@@ -248,6 +249,16 @@ Overlap: ${report.domain.overlapping.join(", ") || "none"}`);
   if (cloud.achievements.length > 0) {
     const relevantAchievements = cloud.achievements.slice(0, 5);
     sections.push(`TOP ACHIEVEMENTS:\n${relevantAchievements.map(a => `  • "${a.title}" at ${a.source_role}`).join("\n")}`);
+  }
+
+  // Socratic depth answers — additional context beyond the raw CV
+  const socraticEvidence = cloud.nodes
+    .flatMap(n => n.evidence.filter(e => e.type === "socratic"))
+    .map(e => e.type === "socratic" ? `  - Q: "${e.question}" A: "${e.answer}"` : "")
+    .filter(Boolean);
+
+  if (socraticEvidence.length > 0) {
+    sections.push(`CANDIDATE'S OWN WORDS (Socratic depth — cite these for stronger reasoning):\n${socraticEvidence.join("\n")}`);
   }
 
   // External validation

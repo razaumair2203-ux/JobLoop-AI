@@ -5,7 +5,12 @@
   "synthetic": true,
   "jd_style": "graduate_friendly",
   "framing": "Management consultant transitioning to programme manager role at international development NGO in Nairobi",
-  "coverage": { "industry": "NGO/Development", "seniority": "mid", "pattern": "career_changer", "region": "africa" },
+  "coverage": {
+    "industry": "NGO/Development",
+    "seniority": "mid",
+    "pattern": "career_changer",
+    "region": "africa"
+  },
   "jd": {
     "title": "Programme Manager — Digital Health",
     "company": "PATH",
@@ -14,15 +19,42 @@
     "style_note": "Graduate-friendly/NGO: mission-driven, explains impact, values-based requirements",
     "about": "PATH is a global nonprofit dedicated to health equity. We're looking for a Programme Manager to lead our East Africa digital health portfolio, working with ministries of health to strengthen health information systems and expand mobile health (mHealth) solutions.",
     "requirements": [
-      { "text": "5+ years of experience in programme management, health systems strengthening, or digital health implementation in low- and middle-income countries (LMICs)", "type": "must_have" },
-      { "text": "Experience working with government stakeholders (Ministry of Health, county health departments) in East Africa", "type": "must_have" },
-      { "text": "Knowledge of health information systems (DHIS2, OpenMRS, or CommCare)", "type": "must_have" },
-      { "text": "Experience managing donor-funded programmes (USAID, BMGF, Global Fund, or DFID/FCDO)", "type": "must_have" },
-      { "text": "Strong M&E (monitoring and evaluation) skills using logical frameworks and theory of change", "type": "must_have" },
-      { "text": "Experience with budget management for programmes of $2M+ annually", "type": "must_have" },
-      { "text": "Master's degree in Public Health, International Development, or related field", "type": "nice_to_have" },
-      { "text": "Familiarity with WHO digital health guidelines and the Principles for Digital Development", "type": "nice_to_have" },
-      { "text": "Proficiency in Swahili is an advantage", "type": "nice_to_have" }
+      {
+        "text": "5+ years of experience in programme management, health systems strengthening, or digital health implementation in low- and middle-income countries (LMICs)",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience working with government stakeholders (Ministry of Health, county health departments) in East Africa",
+        "type": "must_have"
+      },
+      {
+        "text": "Knowledge of health information systems (DHIS2, OpenMRS, or CommCare)",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience managing donor-funded programmes (USAID, BMGF, Global Fund, or DFID/FCDO)",
+        "type": "must_have"
+      },
+      {
+        "text": "Strong M&E (monitoring and evaluation) skills using logical frameworks and theory of change",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience with budget management for programmes of $2M+ annually",
+        "type": "must_have"
+      },
+      {
+        "text": "Master's degree in Public Health, International Development, or related field",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "Familiarity with WHO digital health guidelines and the Principles for Digital Development",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "Proficiency in Swahili is an advantage",
+        "type": "nice_to_have"
+      }
     ],
     "responsibilities": [
       "Lead implementation of USAID-funded digital health programme across 12 counties in Kenya",
@@ -73,10 +105,33 @@
       }
     ],
     "skills": {
-      "strategy": ["health system strategy", "stakeholder management (government, donors)", "investment case development", "financial modelling", "budget scenario planning"],
-      "health": ["Universal Health Coverage", "primary healthcare", "digital health investment", "DHIS2 (advisory, not hands-on)", "mHealth (research)"],
-      "programme": ["M&E framework design", "theory of change", "logical frameworks", "donor reporting (USAID, BMGF)", "sub-grantee oversight (limited)"],
-      "analytical": ["Excel modelling", "Tableau dashboards", "stakeholder interviews", "qualitative research"]
+      "strategy": [
+        "health system strategy",
+        "stakeholder management (government, donors)",
+        "investment case development",
+        "financial modelling",
+        "budget scenario planning"
+      ],
+      "health": [
+        "Universal Health Coverage",
+        "primary healthcare",
+        "digital health investment",
+        "DHIS2 (advisory, not hands-on)",
+        "mHealth (research)"
+      ],
+      "programme": [
+        "M&E framework design",
+        "theory of change",
+        "logical frameworks",
+        "donor reporting (USAID, BMGF)",
+        "sub-grantee oversight (limited)"
+      ],
+      "analytical": [
+        "Excel modelling",
+        "Tableau dashboards",
+        "stakeholder interviews",
+        "qualitative research"
+      ]
     },
     "certifications": [],
     "education": [
@@ -96,15 +151,30 @@
     "Swahili proficiency"
   ],
   "cloud_skills": [
-    "health system strategy", "stakeholder management",
-    "government engagement", "Ministry of Health",
-    "DHIS2", "digital health", "mHealth",
-    "Universal Health Coverage", "primary healthcare",
-    "M&E framework", "theory of change", "logical frameworks",
-    "donor reporting", "USAID", "BMGF",
-    "budget management", "financial modelling",
-    "Excel", "Tableau", "qualitative research",
-    "East Africa", "Kenya", "Nigeria", "Ethiopia"
+    "health system strategy",
+    "stakeholder management",
+    "government engagement",
+    "Ministry of Health",
+    "DHIS2",
+    "digital health",
+    "mHealth",
+    "Universal Health Coverage",
+    "primary healthcare",
+    "M&E framework",
+    "theory of change",
+    "logical frameworks",
+    "donor reporting",
+    "USAID",
+    "BMGF",
+    "budget management",
+    "financial modelling",
+    "Excel",
+    "Tableau",
+    "qualitative research",
+    "East Africa",
+    "Kenya",
+    "Nigeria",
+    "Ethiopia"
   ],
   "deliberate_flaws": [
     "No direct programme implementation experience — all advisory/consulting (McKinsey advises, doesn't implement)",
@@ -115,5 +185,14 @@
     "Career changer — consulting to NGO culture shock (pace, hierarchy, compensation)",
     "No Swahili proficiency despite being Kenyan (university-educated in English)",
     "WHO digital health guidelines and Principles for Digital Development — awareness only, not applied"
-  ]
+  ],
+  "provenance": {
+    "data_source": "synthetic",
+    "jd_basis": "modeled_from_real_jd_styles",
+    "jd_styles_doc": "REAL-JD-STYLES.md",
+    "expected_output_author": "claude",
+    "user_snap_checked": null,
+    "circularity_risk": "medium",
+    "notes": "Synthetic persona and JD. JD style modeled from real Greenhouse/Lever postings. Expected output and cloud_skills are AI-generated. 4/8 scorecard checks (jd_coverage, no_fabrication, metrics_preserved, no_fabricated_skills) evaluate AI vs AI reference. 4/8 checks (factual_preservation, word_count, ats_structure, action_verbs) are structurally valid regardless."
+  }
 }

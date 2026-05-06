@@ -5,7 +5,12 @@
   "synthetic": true,
   "jd_style": "vague_culture_first",
   "framing": "Management accountant at Unilever transitioning to sustainability analyst role at climate tech startup in Paris",
-  "coverage": { "industry": "Climate/Sustainability", "seniority": "mid", "pattern": "career_changer", "region": "europe" },
+  "coverage": {
+    "industry": "Climate/Sustainability",
+    "seniority": "mid",
+    "pattern": "career_changer",
+    "region": "europe"
+  },
   "jd": {
     "title": "Sustainability Analyst",
     "company": "Sweep",
@@ -13,13 +18,34 @@
     "experience_years": 3,
     "style_note": "Vague/culture-first: mission-driven, light on specifics, values passion and self-direction",
     "requirements": [
-      { "text": "You care deeply about climate action and want your work to make a measurable difference", "type": "must_have" },
-      { "text": "You have 3+ years of experience working with data — we don't care if that's in sustainability, finance, consulting, or engineering", "type": "must_have" },
-      { "text": "You're comfortable building models in Excel/Google Sheets and picking up new tools quickly", "type": "must_have" },
-      { "text": "You can communicate complex topics to non-technical stakeholders clearly and concisely", "type": "must_have" },
-      { "text": "Bonus: you know GHG Protocol, CSRD, or carbon accounting fundamentals", "type": "nice_to_have" },
-      { "text": "Bonus: you've worked with sustainability reporting frameworks (GRI, SASB, TCFD, or ISSB/IFRS S1-S2)", "type": "nice_to_have" },
-      { "text": "Bonus: Python or SQL skills for data analysis", "type": "nice_to_have" }
+      {
+        "text": "You care deeply about climate action and want your work to make a measurable difference",
+        "type": "must_have"
+      },
+      {
+        "text": "You have 3+ years of experience working with data — we don't care if that's in sustainability, finance, consulting, or engineering",
+        "type": "must_have"
+      },
+      {
+        "text": "You're comfortable building models in Excel/Google Sheets and picking up new tools quickly",
+        "type": "must_have"
+      },
+      {
+        "text": "You can communicate complex topics to non-technical stakeholders clearly and concisely",
+        "type": "must_have"
+      },
+      {
+        "text": "Bonus: you know GHG Protocol, CSRD, or carbon accounting fundamentals",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "Bonus: you've worked with sustainability reporting frameworks (GRI, SASB, TCFD, or ISSB/IFRS S1-S2)",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "Bonus: Python or SQL skills for data analysis",
+        "type": "nice_to_have"
+      }
     ],
     "responsibilities": [
       "Help enterprise customers measure, track, and report their carbon emissions using Sweep's platform",
@@ -59,10 +85,32 @@
       }
     ],
     "skills": {
-      "financial": ["management accounting", "P&L consolidation", "variance analysis", "financial modelling", "brand profitability analysis"],
-      "sustainability": ["GHG Protocol (Scope 1 & 2)", "TCFD disclosure", "emissions data consolidation", "energy consumption reconciliation", "sustainability report assurance"],
-      "tools": ["Excel (advanced — pivot tables, VLOOKUP, macros)", "SAP (financial reporting)", "Power BI (basic dashboards)", "Unilever internal reporting tools"],
-      "communication": ["management commentary", "site manager training", "auditor coordination (PwC)", "stakeholder reporting"]
+      "financial": [
+        "management accounting",
+        "P&L consolidation",
+        "variance analysis",
+        "financial modelling",
+        "brand profitability analysis"
+      ],
+      "sustainability": [
+        "GHG Protocol (Scope 1 & 2)",
+        "TCFD disclosure",
+        "emissions data consolidation",
+        "energy consumption reconciliation",
+        "sustainability report assurance"
+      ],
+      "tools": [
+        "Excel (advanced — pivot tables, VLOOKUP, macros)",
+        "SAP (financial reporting)",
+        "Power BI (basic dashboards)",
+        "Unilever internal reporting tools"
+      ],
+      "communication": [
+        "management commentary",
+        "site manager training",
+        "auditor coordination (PwC)",
+        "stakeholder reporting"
+      ]
     },
     "certifications": [
       "CIMA — Chartered Institute of Management Accountants (2022)",
@@ -82,14 +130,23 @@
     "Python SQL data analysis"
   ],
   "cloud_skills": [
-    "management accounting", "P&L consolidation",
-    "financial modelling", "variance analysis",
-    "GHG Protocol Scope 1 2", "TCFD disclosure",
-    "emissions data consolidation", "energy reconciliation",
-    "sustainability reporting", "assurance coordination",
-    "Excel advanced", "SAP", "Power BI",
-    "site manager training", "stakeholder reporting",
-    "CIMA qualified", "Unilever CTAP"
+    "management accounting",
+    "P&L consolidation",
+    "financial modelling",
+    "variance analysis",
+    "GHG Protocol Scope 1 2",
+    "TCFD disclosure",
+    "emissions data consolidation",
+    "energy reconciliation",
+    "sustainability reporting",
+    "assurance coordination",
+    "Excel advanced",
+    "SAP",
+    "Power BI",
+    "site manager training",
+    "stakeholder reporting",
+    "CIMA qualified",
+    "Unilever CTAP"
   ],
   "deliberate_flaws": [
     "No Scope 3 emissions experience — only Scope 1 and 2 (Sweep's core value prop is Scope 3 supply chain)",
@@ -103,5 +160,14 @@
     "Career changer — accounting to sustainability, no formal sustainability qualification beyond self-study",
     "GHG Protocol knowledge is self-study, not formal training or certification",
     "No supply chain carbon modelling experience (financial supply chain, not emissions supply chain)"
-  ]
+  ],
+  "provenance": {
+    "data_source": "synthetic",
+    "jd_basis": "modeled_from_real_jd_styles",
+    "jd_styles_doc": "REAL-JD-STYLES.md",
+    "expected_output_author": "claude",
+    "user_snap_checked": null,
+    "circularity_risk": "medium",
+    "notes": "Synthetic persona and JD. JD style modeled from real Greenhouse/Lever postings. Expected output and cloud_skills are AI-generated. 4/8 scorecard checks (jd_coverage, no_fabrication, metrics_preserved, no_fabricated_skills) evaluate AI vs AI reference. 4/8 checks (factual_preservation, word_count, ats_structure, action_verbs) are structurally valid regardless."
+  }
 }

@@ -1,0 +1,51 @@
+{
+  "_meta": {
+    "entry_id": "003",
+    "framing": "systems_engineering",
+    "source_cv": "Resume SE_Jan26.pdf",
+    "ground_truth_profile": "../ground-truth-profile.json",
+    "difficulty": "hard",
+    "industry": "defense_aerospace",
+    "seniority": "senior",
+    "region": "global"
+  },
+
+  "jd": {
+    "title": "Principal Systems Engineer — Airborne Platforms",
+    "company": "BAE Systems",
+    "location": "Warton, Lancashire, UK (hybrid)",
+    "type": "full_time",
+    "text": "Principal Systems Engineer — Airborne Platforms\nBAE Systems — Air Sector\nWarton, Lancashire, UK (hybrid: 3 days on-site)\n\nAbout BAE Systems Air:\nBAE Systems Air sector delivers some of the world's most advanced defense air platforms, including Typhoon, Hawk, and the Future Combat Air System (FCAS/Tempest). We are at the forefront of next-generation combat aircraft development.\n\nRole Summary:\nWe are looking for a Principal Systems Engineer to lead systems integration activities on our airborne platform programs. You will work across the full systems engineering lifecycle — from requirements capture through to integration, test, and certification — ensuring architectural coherence across complex avionics and mission systems.\n\nKey Responsibilities:\n- Lead systems architecture definition and integration for avionics and mission systems\n- Conduct requirements engineering using DOORS or equivalent (JAMA, Polarion)\n- Apply MBSE techniques (SysML, Cameo/MagicDraw) for system modeling and analysis\n- Plan and execute V&V activities including system-level ground testing and support to flight test\n- Drive interface management and configuration control across subsystem boundaries\n- Conduct trade studies, system performance analysis, and technical risk assessment\n- Support airworthiness and certification activities (DEFSTAN 00-970, Mil-Std-882)\n- Work with integrated project teams across multiple sites and international partners\n- Contribute to technology maturation for next-gen combat air concepts\n- Mentor systems engineering practitioners and contribute to SE capability development\n\nRequired Qualifications:\n- Degree in Systems Engineering, Aerospace, Electrical, or related engineering discipline\n- 10+ years of systems engineering experience in aerospace/defense\n- Demonstrated experience with MBSE tools and techniques\n- Strong requirements engineering background (DOORS or equivalent)\n- Experience with V&V planning and execution on complex platforms\n- Understanding of avionics architectures (sensors, EW, mission computing, datalinks)\n- INCOSE CSEP or working towards it\n- UK SC clearance or ability to obtain\n\nDesirable:\n- Experience with fighter aircraft programs\n- Knowledge of open architecture standards (MOSA, FACE, SOSA)\n- Flight test support experience\n- Experience with DO-178C/DO-254 certification\n- International collaboration experience\n- Teaching or mentoring experience in systems engineering\n\nWe offer:\n- Competitive salary + pension (up to 14% employer contribution)\n- Flexible working, compressed hours available\n- Share incentive plan\n- Annual bonus scheme"
+  },
+
+  "expected_output_notes": {
+    "key_matches": [
+      "15+ years SE in aerospace/defense (exceeds 10+)",
+      "MBSE: Cameo Systems Modeler (directly listed in CV)",
+      "IBM Rational DOORS for requirements engineering (directly listed)",
+      "V&V planning and execution (core competency listed)",
+      "Avionics architecture knowledge: mission computing, EW, sensors (deep JF-17 experience)",
+      "Fighter aircraft programs: JF-17 Thunder (directly relevant to Typhoon/FCAS context)",
+      "DO-178C/DO-254 certification experience (listed)",
+      "International collaboration: China/Pakistan joint program",
+      "Flight test support experience (participated in campaigns)",
+      "Teaching SE at NUTECH and College of Aero Eng (mentoring requirement met)",
+      "CSEP listed on SE-framed CV"
+    ],
+    "gaps_to_bridge": [
+      "UK SC clearance needed — bridge: 'held equivalent military clearance, SC obtainable for sponsored candidates'",
+      "No DEFSTAN 00-970 experience — bridge: 'familiar with MIL-STD equivalent, DEFSTAN adaptation straightforward'",
+      "No open architecture standards (MOSA, FACE, SOSA) — bridge: 'familiar with modular architecture principles from indigenous mission computer development'",
+      "No SysML mentioned explicitly (has Cameo which implies SysML) — bridge: clarify Cameo = SysML tool",
+      "No trade study experience listed explicitly — bridge: 'conducted system-level analysis during design rig integration'"
+    ],
+    "position_assessment": "Strong position — near-complete match, SE is core career, fighter aircraft experience directly relevant",
+    "cv_sections_to_emphasize": [
+      "Lead Systems Integration Expert at CADI (Role #4) — design rig, V&V, requirements",
+      "Integrated Systems & Design Specialist at PAC Kamra (Role #1) — mission computer, subsystem development",
+      "Deputy Director PMO (Role #7) — FMECA/LORA/RCM, configuration management",
+      "Current teaching role — SE instruction maps to mentoring requirement",
+      "CSEP + PMP + PMI-ACP in certifications"
+    ]
+  }
+}

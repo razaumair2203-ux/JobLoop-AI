@@ -5,7 +5,12 @@
   "synthetic": true,
   "jd_style": "enterprise_saas",
   "framing": "VP of Operations at NextEra Energy seeking CEO role at late-stage utility-scale battery storage company",
-  "coverage": { "industry": "Renewable Energy", "seniority": "executive", "pattern": "linear", "region": "north_america" },
+  "coverage": {
+    "industry": "Renewable Energy",
+    "seniority": "executive",
+    "pattern": "linear",
+    "region": "north_america"
+  },
   "jd": {
     "title": "Chief Executive Officer",
     "company": "Form Energy (utility-scale iron-air battery storage, $1.2B+ raised)",
@@ -13,15 +18,42 @@
     "experience_years": 20,
     "style_note": "Enterprise: board-level hire, specific energy sector expertise, scale-up leadership",
     "requirements": [
-      { "text": "20+ years of experience in energy, utilities, or energy storage with progressive leadership", "type": "must_have" },
-      { "text": "Track record as CEO, President, or COO of energy company with $100M+ revenue", "type": "must_have" },
-      { "text": "Experience scaling manufacturing operations from pilot to commercial production", "type": "must_have" },
-      { "text": "Deep relationships with US utility executives, PUCs (Public Utility Commissions), and FERC/DOE stakeholders", "type": "must_have" },
-      { "text": "Experience with IRA (Inflation Reduction Act) incentives: 45X manufacturing credits, ITC, and PTC structures", "type": "must_have" },
-      { "text": "Board governance experience (public company or PE/VC-backed board)", "type": "must_have" },
-      { "text": "Experience with battery storage, long-duration energy storage (LDES), or grid-scale storage technologies", "type": "nice_to_have" },
-      { "text": "Manufacturing background in energy hardware (solar panels, wind turbines, batteries, or electrolyzers)", "type": "nice_to_have" },
-      { "text": "Experience leading IPO readiness or major fundraising rounds ($200M+)", "type": "nice_to_have" }
+      {
+        "text": "20+ years of experience in energy, utilities, or energy storage with progressive leadership",
+        "type": "must_have"
+      },
+      {
+        "text": "Track record as CEO, President, or COO of energy company with $100M+ revenue",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience scaling manufacturing operations from pilot to commercial production",
+        "type": "must_have"
+      },
+      {
+        "text": "Deep relationships with US utility executives, PUCs (Public Utility Commissions), and FERC/DOE stakeholders",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience with IRA (Inflation Reduction Act) incentives: 45X manufacturing credits, ITC, and PTC structures",
+        "type": "must_have"
+      },
+      {
+        "text": "Board governance experience (public company or PE/VC-backed board)",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience with battery storage, long-duration energy storage (LDES), or grid-scale storage technologies",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "Manufacturing background in energy hardware (solar panels, wind turbines, batteries, or electrolyzers)",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "Experience leading IPO readiness or major fundraising rounds ($200M+)",
+        "type": "nice_to_have"
+      }
     ],
     "responsibilities": [
       "Lead Form Energy through commercialisation of iron-air battery technology and first utility-scale deployments",
@@ -72,10 +104,35 @@
       }
     ],
     "skills": {
-      "executive": ["P&L management ($4B capital deployment)", "organisation leadership (350 staff)", "utility customer relationships", "PUC testimony", "board governance"],
-      "energy": ["utility-scale renewables", "battery storage development", "wind energy", "solar development", "PPA negotiation", "grid reliability"],
-      "financial": ["tax equity structures (PTC, ITC)", "IRA incentives (45X, ITC)", "project finance", "M&A due diligence", "capital deployment"],
-      "regulatory": ["FERC", "state PUC proceedings", "environmental permitting", "IRA compliance", "utility procurement"]
+      "executive": [
+        "P&L management ($4B capital deployment)",
+        "organisation leadership (350 staff)",
+        "utility customer relationships",
+        "PUC testimony",
+        "board governance"
+      ],
+      "energy": [
+        "utility-scale renewables",
+        "battery storage development",
+        "wind energy",
+        "solar development",
+        "PPA negotiation",
+        "grid reliability"
+      ],
+      "financial": [
+        "tax equity structures (PTC, ITC)",
+        "IRA incentives (45X, ITC)",
+        "project finance",
+        "M&A due diligence",
+        "capital deployment"
+      ],
+      "regulatory": [
+        "FERC",
+        "state PUC proceedings",
+        "environmental permitting",
+        "IRA compliance",
+        "utility procurement"
+      ]
     },
     "certifications": [],
     "education": [
@@ -95,16 +152,27 @@
     "IPO readiness fundraising $200M+"
   ],
   "cloud_skills": [
-    "utility-scale renewables", "battery storage development",
-    "wind energy", "solar development",
-    "P&L management", "capital deployment",
-    "PPA negotiation", "tax equity structures",
-    "IRA incentives", "45X credits", "ITC", "PTC",
-    "FERC", "state PUC proceedings",
+    "utility-scale renewables",
+    "battery storage development",
+    "wind energy",
+    "solar development",
+    "P&L management",
+    "capital deployment",
+    "PPA negotiation",
+    "tax equity structures",
+    "IRA incentives",
+    "45X credits",
+    "ITC",
+    "PTC",
+    "FERC",
+    "state PUC proceedings",
     "utility customer relationships",
-    "M&A due diligence", "project finance",
-    "organisation leadership", "board governance",
-    "GE Renewable Energy", "Vestas",
+    "M&A due diligence",
+    "project finance",
+    "organisation leadership",
+    "board governance",
+    "GE Renewable Energy",
+    "Vestas",
     "American Clean Power Association"
   ],
   "deliberate_flaws": [
@@ -118,5 +186,14 @@
     "No PE/VC board governance experience — publicly traded utility company background",
     "No startup or growth-stage company experience — entire career at one large company (NextEra/FPL)",
     "No DOE Loan Programs Office relationship (FERC and PUCs yes, DOE LPO no)"
-  ]
+  ],
+  "provenance": {
+    "data_source": "synthetic",
+    "jd_basis": "modeled_from_real_jd_styles",
+    "jd_styles_doc": "REAL-JD-STYLES.md",
+    "expected_output_author": "claude",
+    "user_snap_checked": null,
+    "circularity_risk": "medium",
+    "notes": "Synthetic persona and JD. JD style modeled from real Greenhouse/Lever postings. Expected output and cloud_skills are AI-generated. 4/8 scorecard checks (jd_coverage, no_fabrication, metrics_preserved, no_fabricated_skills) evaluate AI vs AI reference. 4/8 checks (factual_preservation, word_count, ats_structure, action_verbs) are structurally valid regardless."
+  }
 }

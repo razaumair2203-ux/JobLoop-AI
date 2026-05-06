@@ -424,7 +424,8 @@ function parseEducation(
       institution: r.school_name || r.school || "Unknown Institution",
       degree: r.degree_name || r.degree || "",
       field: r.field_of_study || r.field || r.notes || "",
-      year: extractYear(r.end_date || r.finish_date) || "",
+      start_year: parseInt(extractYear(r.start_date || r.begin_date) || "", 10) || null,
+      end_year: parseInt(extractYear(r.end_date || r.finish_date) || "", 10) || null,
       highlights: r.activities ? [r.activities] : [],
     };
   });

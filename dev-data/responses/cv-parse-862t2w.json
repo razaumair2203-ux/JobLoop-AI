@@ -1,0 +1,144 @@
+{
+  "total_experience_years": 18,
+  "experience": [
+    {
+      "company": "Aerospace & Defence / Systems Development",
+      "title": "Program Lead, Avionics Systems Design",
+      "start_date": "Jan 2023",
+      "end_date": "Present",
+      "duration_months": 29,
+      "technologies_used": [
+        "Power BI",
+        "AI/ML"
+      ],
+      "metrics_mentioned": [],
+      "domain": "defense"
+    },
+    {
+      "company": "Air Force",
+      "title": "Deputy Director, Fighter Fleet Management",
+      "start_date": "Jan 2020",
+      "end_date": "Dec 2023",
+      "duration_months": 36,
+      "technologies_used": [
+        "EVM",
+        "RAID",
+        "AMOS"
+      ],
+      "metrics_mentioned": [],
+      "domain": "defense"
+    },
+    {
+      "company": "Chengdu Aircraft Design Institute (CADI), China",
+      "title": "Avionics Systems Integration Lead",
+      "start_date": "Jan 2018",
+      "end_date": "Dec 2019",
+      "duration_months": 24,
+      "technologies_used": [],
+      "metrics_mentioned": [],
+      "domain": "defense"
+    },
+    {
+      "company": "Airborne Early Warning & Control Systems, Air Force",
+      "title": "Maintenance Supervisor, AEW&C Aircraft",
+      "start_date": "Jan 2016",
+      "end_date": "Dec 2018",
+      "duration_months": 36,
+      "technologies_used": [
+        "AMOS",
+        "MTBF/MTTR"
+      ],
+      "metrics_mentioned": [
+        "team of 80 engineers and technicians",
+        "Airworthiness Directives"
+      ],
+      "domain": "aviation"
+    },
+    {
+      "company": "Pakistan Aeronautical Complex Kamra",
+      "title": "Maintenance & Systems Engineer",
+      "start_date": "Jan 2008",
+      "end_date": "Dec 2013",
+      "duration_months": 60,
+      "technologies_used": [
+        "Configuration Management"
+      ],
+      "metrics_mentioned": [],
+      "domain": "defense"
+    }
+  ],
+  "skills": {
+    "languages": [],
+    "frameworks": [
+      "Agile"
+    ],
+    "infrastructure": [
+      "AMOS"
+    ],
+    "databases": [],
+    "tools": [
+      "Power BI",
+      "EVM",
+      "RAID"
+    ],
+    "other": [
+      "Avionics Systems",
+      "Systems Integration",
+      "Configuration Management",
+      "Predictive Maintenance",
+      "MTBF/MTTR",
+      "C-check Management",
+      "Airworthiness Directives",
+      "Service Bulletins",
+      "CAMO/AMO",
+      "Work Package Design",
+      "Contract Negotiation",
+      "Maintenance Planning",
+      "Fleet Management",
+      "Program Management",
+      "Stakeholder Management"
+    ]
+  },
+  "all_technologies": [
+    "Power BI",
+    "AI/ML",
+    "EVM",
+    "RAID",
+    "AMOS",
+    "MTBF/MTTR",
+    "Configuration Management",
+    "Agile"
+  ],
+  "education": [
+    {
+      "institution": "College of Aeronautical Engineering, Risalpur",
+      "degree": "BE",
+      "field": "Avionics Engineering",
+      "start_year": 2004,
+      "end_year": 2008,
+      "research_topic": null,
+      "highlights": []
+    },
+    {
+      "institution": "Air University, Islamabad",
+      "degree": "MS",
+      "field": "Signal & Image Processing",
+      "start_year": 2014,
+      "end_year": 2015,
+      "research_topic": null,
+      "highlights": []
+    }
+  ],
+  "certifications": [
+    "Project Management Professional (PMP)",
+    "Agile Certified Practitioner (PMI-ACP)",
+    "Professional Engineer (PE)",
+    "System Engineering Specialization (University of Colorado Boulder)",
+    "Engineering Management Specialization (Rice University)",
+    "Project Management Specialization (Google)",
+    "Fighter Aircraft Type Rating Course",
+    "AWACS Aircraft Type Rating Course",
+    "Basic Staff Course",
+    "Senior Command & Staff Course"
+  ]
+}

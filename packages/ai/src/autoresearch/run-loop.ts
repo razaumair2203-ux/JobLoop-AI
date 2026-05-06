@@ -22,9 +22,11 @@
 
 import * as fs from "fs";
 import * as path from "path";
+import { safeParseJSON } from "../utils";
 import {
   initLoopState,
   selectTrainingBatch,
+  selectWeightedTrainingBatch,
   runIteration,
   shouldStop,
   shouldValidate,
@@ -38,6 +40,8 @@ import { scoreCVGeneration } from "./scorecard";
 import type { CVScorecardInput } from "./scorecard";
 import { analyzePretestResults } from "./anova-pretest";
 import { runSafeguardChecks } from "./safeguards";
+import { computeFeedbackWeights } from "./feedback-weighter";
+import type { FeedbackRecord, FeedbackWeights } from "./feedback-weighter";
 
 // ============================================================
 // CONFIG
@@ -121,6 +125,46 @@ function savePromptVersion(target: TargetPrompt, version: number, prompt: string
   fs.mkdirSync(PROMPT_VERSIONS_DIR, { recursive: true });
   const filename = `${target}-v${version.toString().padStart(3, "0")}.txt`;
   fs.writeFileSync(path.join(PROMPT_VERSIONS_DIR, filename), prompt);
+}
+
+/**
+ * Deploy an optimized prompt back to the source TypeScript file.
+ * Replaces the template literal content while preserving the file structure.
+ */
+function deployPromptToSource(target: TargetPrompt, prompt: string): void {
+  const filenameMap: Record<TargetPrompt, string> = {
+    "cv-generation": "cv-generation.ts",
+    "jd-parser": "jd-parser.ts",
+  };
+  const filename = filenameMap[target];
+  if (!filename) throw new Error(`No source file mapping for target: ${target}`);
+
+  const filepath = path.join(PROMPTS_DIR, filename);
+  const content = fs.readFileSync(filepath, "utf-8");
+
+  // Find the template literal between backticks (the system prompt)
+  // Pattern: export const XXXX = `...`;
+  const match = content.match(/(export\s+const\s+\w+\s*=\s*`)([^`]*?)(`)/s);
+  if (!match) {
+    throw new Error(`Could not find template literal in ${filepath} — deploy manually`);
+  }
+
+  // Escape backticks and ${} in the prompt to be safe inside a template literal
+  const safePrompt = prompt.replace(/\\/g, "\\\\").replace(/`/g, "\\`").replace(/\$\{/g, "\\${");
+  const newContent = content.replace(match[0], match[1] + safePrompt + match[3]);
+  fs.writeFileSync(filepath, newContent);
+
+  // Also save a deploy receipt
+  const receipt = {
+    target,
+    deployed_at: new Date().toISOString(),
+    source_file: filepath,
+    prompt_length: prompt.length,
+  };
+  fs.writeFileSync(
+    path.join(RESULTS_DIR, `${target}-last-deploy.json`),
+    JSON.stringify(receipt, null, 2),
+  );
 }
 
 // ============================================================
@@ -212,7 +256,7 @@ Return ONLY valid JSON.`;
   const response = await callLLM(prompt, userPrompt);
 
   try {
-    const parsed = JSON.parse(response.text);
+    const parsed = safeParseJSON<CVScorecardInput["generated"]>(response.text, "cv-generation-loop");
     return {
       summary: parsed.summary || "",
       experience: parsed.experience || [],
@@ -239,11 +283,13 @@ async function main() {
     ? parseInt(args[args.indexOf("--iterations") + 1])
     : 20;
   const runPretest = args.includes("--pretest");
+  const autoDeploy = args.includes("--deploy");
 
   console.log(`\n=== AutoResearch Loop ===`);
   console.log(`Target: ${target}`);
   console.log(`Max iterations: ${maxIterations}`);
   console.log(`Pretest mode: ${runPretest}`);
+  console.log(`Auto-deploy: ${autoDeploy}`);
   console.log();
 
   // Setup
@@ -258,6 +304,22 @@ async function main() {
   if (trainPairs.length === 0) {
     console.error("ERROR: No training pairs found. Add pairs with split='train' to test-bank/");
     process.exit(1);
+  }
+
+  // Load feedback weights (if exported by admin API or cron-entry)
+  let feedbackWeights: FeedbackWeights | undefined;
+  const feedbackPath = path.join(RESULTS_DIR, "feedback-weights.json");
+  if (fs.existsSync(feedbackPath)) {
+    try {
+      const raw: { feedback: FeedbackRecord[] } = JSON.parse(fs.readFileSync(feedbackPath, "utf-8"));
+      feedbackWeights = computeFeedbackWeights(raw.feedback, pairs);
+      const boosted = feedbackWeights.weights.filter(w => w.weight > 1.0).length;
+      console.log(`Feedback weights loaded: ${feedbackWeights.total_feedback_records} records, ${feedbackWeights.negative_signal_count} negative, ${boosted} pairs boosted`);
+    } catch (err) {
+      console.warn("Failed to load feedback weights:", err instanceof Error ? err.message : err);
+    }
+  } else {
+    console.log("No feedback weights file — using uniform sampling");
   }
 
   // Load prompt
@@ -329,8 +391,8 @@ async function main() {
     );
     const mutatedPrompt = mutationResponse.text;
 
-    // 4. Generate CVs with mutated prompt
-    const batch = selectTrainingBatch(pairs, config.training_batch_size);
+    // 4. Generate CVs with mutated prompt (feedback-weighted batch selection)
+    const batch = selectWeightedTrainingBatch(pairs, config.training_batch_size, feedbackWeights);
     const challengerOutputs: CVScorecardInput["generated"][] = [];
     for (const pair of batch) {
       const output = await generateCV(mutatedPrompt, pair);
@@ -515,6 +577,24 @@ async function main() {
     iteration_results: state.iteration_results.slice(-20),
   }, null, 2));
   console.log(`State: ${statePath}`);
+
+  // Auto-deploy: write winning prompt back to source file if safeguards pass
+  if (autoDeploy && state.total_kept > 0) {
+    if (safeguardReport.overall_safe) {
+      deployPromptToSource(target, currentPrompt);
+      console.log(`\n=== DEPLOYED ${target} prompt v${state.current_prompt_version} to source ===`);
+    } else {
+      console.log(`\n=== DEPLOY BLOCKED — safeguard checks failed ===`);
+      if (safeguardReport.deployment.blockers.length > 0) {
+        console.log("Blockers:", safeguardReport.deployment.blockers.join("; "));
+      }
+      if (safeguardReport.deployment.warnings.length > 0) {
+        console.log("Warnings:", safeguardReport.deployment.warnings.join("; "));
+      }
+      console.log("Winning prompt saved to:", path.join(PROMPT_VERSIONS_DIR, `${target}-v${state.current_prompt_version.toString().padStart(3, "0")}.txt`));
+      console.log("Review manually and copy to source if acceptable.");
+    }
+  }
 }
 
 main().catch(err => {

@@ -5,7 +5,12 @@
   "synthetic": true,
   "jd_style": "vague_culture_first",
   "framing": "Freelance content strategist applying to vague Head of Content role at Series B fintech (culture-first JD)",
-  "coverage": { "industry": "Media/Content", "seniority": "mid", "pattern": "freelancer", "region": "europe" },
+  "coverage": {
+    "industry": "Media/Content",
+    "seniority": "mid",
+    "pattern": "freelancer",
+    "region": "europe"
+  },
   "jd": {
     "title": "Head of Content",
     "company": "Monzo",
@@ -13,11 +18,26 @@
     "experience_years": null,
     "style_note": "Vague/culture-first: minimal requirements, personality-focused, no specific tools or years listed",
     "requirements": [
-      { "text": "You've built content programs that people actually want to read — not just SEO filler", "type": "must_have" },
-      { "text": "You think in systems, not just individual pieces of content", "type": "must_have" },
-      { "text": "You can write, edit, and give feedback that makes writers better", "type": "must_have" },
-      { "text": "You've managed a small team or a roster of freelancers", "type": "must_have" },
-      { "text": "You care about financial literacy and making money less confusing for everyone", "type": "must_have" }
+      {
+        "text": "You've built content programs that people actually want to read — not just SEO filler",
+        "type": "must_have"
+      },
+      {
+        "text": "You think in systems, not just individual pieces of content",
+        "type": "must_have"
+      },
+      {
+        "text": "You can write, edit, and give feedback that makes writers better",
+        "type": "must_have"
+      },
+      {
+        "text": "You've managed a small team or a roster of freelancers",
+        "type": "must_have"
+      },
+      {
+        "text": "You care about financial literacy and making money less confusing for everyone",
+        "type": "must_have"
+      }
     ],
     "responsibilities": [
       "Own Monzo's content strategy across blog, in-app messaging, email, and social",
@@ -57,10 +77,31 @@
       }
     ],
     "skills": {
-      "content_strategy": ["editorial systems design", "content governance", "brand voice development", "content measurement frameworks", "SEO strategy"],
-      "writing_editing": ["long-form editorial", "product communications", "email sequences", "in-app messaging", "financial literacy content"],
-      "leadership": ["freelancer roster management (6-8)", "team management (5 direct)", "editorial feedback", "brief development"],
-      "domain": ["fintech content (Starling, Wise, GoCardless)", "financial services branded content", "SaaS product marketing"]
+      "content_strategy": [
+        "editorial systems design",
+        "content governance",
+        "brand voice development",
+        "content measurement frameworks",
+        "SEO strategy"
+      ],
+      "writing_editing": [
+        "long-form editorial",
+        "product communications",
+        "email sequences",
+        "in-app messaging",
+        "financial literacy content"
+      ],
+      "leadership": [
+        "freelancer roster management (6-8)",
+        "team management (5 direct)",
+        "editorial feedback",
+        "brief development"
+      ],
+      "domain": [
+        "fintech content (Starling, Wise, GoCardless)",
+        "financial services branded content",
+        "SaaS product marketing"
+      ]
     },
     "certifications": [],
     "education": [
@@ -76,15 +117,27 @@
     "financial literacy money less confusing"
   ],
   "cloud_skills": [
-    "content strategy", "editorial systems", "content governance",
-    "brand voice", "content measurement", "SEO strategy",
-    "long-form editorial", "product communications",
-    "email sequences", "in-app messaging",
-    "financial literacy content", "fintech content",
-    "freelancer management", "team management",
-    "editorial feedback", "brief development",
-    "branded content", "content attribution",
-    "Starling Bank", "Wise", "GoCardless"
+    "content strategy",
+    "editorial systems",
+    "content governance",
+    "brand voice",
+    "content measurement",
+    "SEO strategy",
+    "long-form editorial",
+    "product communications",
+    "email sequences",
+    "in-app messaging",
+    "financial literacy content",
+    "fintech content",
+    "freelancer management",
+    "team management",
+    "editorial feedback",
+    "brief development",
+    "branded content",
+    "content attribution",
+    "Starling Bank",
+    "Wise",
+    "GoCardless"
   ],
   "deliberate_flaws": [
     "Freelancer — no permanent in-house experience at a tech company (Guardian Labs is media, not tech)",
@@ -94,5 +147,14 @@
     "Vague JD makes it hard to match — candidate must infer what 'thinking in systems' means",
     "No social media content experience mentioned",
     "Team management was project-based freelancer rosters, not permanent employees"
-  ]
+  ],
+  "provenance": {
+    "data_source": "synthetic",
+    "jd_basis": "modeled_from_real_jd_styles",
+    "jd_styles_doc": "REAL-JD-STYLES.md",
+    "expected_output_author": "claude",
+    "user_snap_checked": null,
+    "circularity_risk": "medium",
+    "notes": "Synthetic persona and JD. JD style modeled from real Greenhouse/Lever postings. Expected output and cloud_skills are AI-generated. 4/8 scorecard checks (jd_coverage, no_fabrication, metrics_preserved, no_fabricated_skills) evaluate AI vs AI reference. 4/8 checks (factual_preservation, word_count, ats_structure, action_verbs) are structurally valid regardless."
+  }
 }

@@ -5,7 +5,12 @@
   "synthetic": true,
   "jd_style": "graduate_friendly",
   "framing": "Food scientist returning after career break to quality assurance role at Nestlé Singapore",
-  "coverage": { "industry": "Food/Beverage", "seniority": "mid", "pattern": "returner", "region": "asia" },
+  "coverage": {
+    "industry": "Food/Beverage",
+    "seniority": "mid",
+    "pattern": "returner",
+    "region": "asia"
+  },
   "jd": {
     "title": "Quality Assurance Manager — ASEAN",
     "company": "Nestlé",
@@ -14,14 +19,38 @@
     "style_note": "Graduate-friendly/corporate: structured but welcoming, explains role context, values growth",
     "about": "Nestlé is the world's largest food and beverage company. Our Singapore R&D Centre supports product development and quality assurance for the ASEAN region. We're looking for a QA Manager to lead food safety and quality systems across our Southeast Asian factories.",
     "requirements": [
-      { "text": "6+ years of experience in food quality assurance, food safety, or food science in a manufacturing environment", "type": "must_have" },
-      { "text": "Expert knowledge of HACCP principles and food safety management systems (FSSC 22000 or BRC Global Standard for Food Safety)", "type": "must_have" },
-      { "text": "Experience managing food safety audits (internal audits, third-party certification audits, customer audits)", "type": "must_have" },
-      { "text": "Knowledge of ASEAN food regulations: Singapore Food Agency (SFA), Malaysia BKKM/NPRA, Thailand FDA, Indonesia BPOM", "type": "must_have" },
-      { "text": "Experience with laboratory quality systems: microbiological testing, chemical analysis (HPLC, GC-MS), and allergen management", "type": "must_have" },
-      { "text": "Familiarity with Nestlé Quality Management System (NQMS) or equivalent FMCG quality frameworks", "type": "nice_to_have" },
-      { "text": "Experience with food fraud vulnerability assessments (TACCP/VACCP)", "type": "nice_to_have" },
-      { "text": "SAP QM module experience", "type": "nice_to_have" }
+      {
+        "text": "6+ years of experience in food quality assurance, food safety, or food science in a manufacturing environment",
+        "type": "must_have"
+      },
+      {
+        "text": "Expert knowledge of HACCP principles and food safety management systems (FSSC 22000 or BRC Global Standard for Food Safety)",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience managing food safety audits (internal audits, third-party certification audits, customer audits)",
+        "type": "must_have"
+      },
+      {
+        "text": "Knowledge of ASEAN food regulations: Singapore Food Agency (SFA), Malaysia BKKM/NPRA, Thailand FDA, Indonesia BPOM",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience with laboratory quality systems: microbiological testing, chemical analysis (HPLC, GC-MS), and allergen management",
+        "type": "must_have"
+      },
+      {
+        "text": "Familiarity with Nestlé Quality Management System (NQMS) or equivalent FMCG quality frameworks",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "Experience with food fraud vulnerability assessments (TACCP/VACCP)",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "SAP QM module experience",
+        "type": "nice_to_have"
+      }
     ],
     "responsibilities": [
       "Lead quality assurance systems across 4 Nestlé factories in Singapore, Malaysia, Thailand, and Indonesia",
@@ -61,10 +90,32 @@
       }
     ],
     "skills": {
-      "food_safety": ["HACCP", "FSSC 22000 certification", "food safety auditing", "allergen management", "cleaning validation", "root cause analysis"],
-      "laboratory": ["microbiological testing (Salmonella, Listeria, E.coli)", "HPLC (vitamin analysis)", "ICP-MS (heavy metals)", "sensory evaluation (basic)"],
-      "regulatory": ["BPOM (Indonesia)", "SFA (Singapore, familiar)", "halal certification (LPPOM MUI)", "infant formula regulations"],
-      "management": ["QA team management (12 staff)", "FSSC 22000 audit management", "customer complaint handling", "quality incident investigation"]
+      "food_safety": [
+        "HACCP",
+        "FSSC 22000 certification",
+        "food safety auditing",
+        "allergen management",
+        "cleaning validation",
+        "root cause analysis"
+      ],
+      "laboratory": [
+        "microbiological testing (Salmonella, Listeria, E.coli)",
+        "HPLC (vitamin analysis)",
+        "ICP-MS (heavy metals)",
+        "sensory evaluation (basic)"
+      ],
+      "regulatory": [
+        "BPOM (Indonesia)",
+        "SFA (Singapore, familiar)",
+        "halal certification (LPPOM MUI)",
+        "infant formula regulations"
+      ],
+      "management": [
+        "QA team management (12 staff)",
+        "FSSC 22000 audit management",
+        "customer complaint handling",
+        "quality incident investigation"
+      ]
     },
     "certifications": [
       "FSSC 22000 Lead Auditor — SGS Academy (2020)",
@@ -85,14 +136,23 @@
     "SAP QM module"
   ],
   "cloud_skills": [
-    "HACCP", "FSSC 22000", "food safety auditing",
-    "allergen management", "cleaning validation",
-    "root cause analysis", "microbiological testing",
-    "HPLC", "ICP-MS", "sensory evaluation",
-    "BPOM Indonesia", "SFA Singapore",
-    "halal certification", "LPPOM MUI",
+    "HACCP",
+    "FSSC 22000",
+    "food safety auditing",
+    "allergen management",
+    "cleaning validation",
+    "root cause analysis",
+    "microbiological testing",
+    "HPLC",
+    "ICP-MS",
+    "sensory evaluation",
+    "BPOM Indonesia",
+    "SFA Singapore",
+    "halal certification",
+    "LPPOM MUI",
     "infant formula regulations",
-    "QA team management", "customer complaints",
+    "QA team management",
+    "customer complaints",
     "FSSC 22000 Lead Auditor"
   ],
   "deliberate_flaws": [
@@ -107,5 +167,14 @@
     "Danone to Nestlé competitor move — potential knowledge transfer restrictions on infant nutrition",
     "Career break means certifications may need renewal and regulatory knowledge needs updating",
     "No experience with food safety culture programmes (newer industry emphasis since 2023)"
-  ]
+  ],
+  "provenance": {
+    "data_source": "synthetic",
+    "jd_basis": "modeled_from_real_jd_styles",
+    "jd_styles_doc": "REAL-JD-STYLES.md",
+    "expected_output_author": "claude",
+    "user_snap_checked": null,
+    "circularity_risk": "medium",
+    "notes": "Synthetic persona and JD. JD style modeled from real Greenhouse/Lever postings. Expected output and cloud_skills are AI-generated. 4/8 scorecard checks (jd_coverage, no_fabrication, metrics_preserved, no_fabricated_skills) evaluate AI vs AI reference. 4/8 checks (factual_preservation, word_count, ats_structure, action_verbs) are structurally valid regardless."
+  }
 }

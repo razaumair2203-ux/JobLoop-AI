@@ -5,22 +5,54 @@
   "synthetic": true,
   "jd_style": "enterprise_saas",
   "framing": "Audit manager at Big Four seeking move to fintech internal audit lead",
-  "coverage": { "industry": "Accounting/Audit", "seniority": "mid", "pattern": "linear", "region": "europe" },
+  "coverage": {
+    "industry": "Accounting/Audit",
+    "seniority": "mid",
+    "pattern": "linear",
+    "region": "europe"
+  },
   "jd": {
     "title": "Head of Internal Audit",
     "company": "Klarna",
     "location": "Stockholm, Sweden (Hybrid)",
     "experience_years": 8,
     "requirements": [
-      { "text": "8+ years of audit experience, with at least 3 years in financial services or fintech", "type": "must_have" },
-      { "text": "Qualified accountant (ACA, ACCA, or equivalent) or CIA certification", "type": "must_have" },
-      { "text": "Experience auditing technology environments including cloud infrastructure (AWS, GCP), CI/CD pipelines, and SOC 2 controls", "type": "must_have" },
-      { "text": "Knowledge of PSD2, EMD2, and EU/EEA banking supervision requirements", "type": "must_have" },
-      { "text": "Experience with audit management software (TeamMate+, AuditBoard, or Diligent HighBond)", "type": "must_have" },
-      { "text": "Experience building internal audit functions from scratch or significantly scaling existing teams", "type": "must_have" },
-      { "text": "Data analytics skills using ACL Analytics, IDEA, or Python for audit sampling and continuous monitoring", "type": "nice_to_have" },
-      { "text": "Experience with BNPL (Buy Now Pay Later) or consumer lending risk frameworks", "type": "nice_to_have" },
-      { "text": "Fluency in English; Swedish is a plus", "type": "nice_to_have" }
+      {
+        "text": "8+ years of audit experience, with at least 3 years in financial services or fintech",
+        "type": "must_have"
+      },
+      {
+        "text": "Qualified accountant (ACA, ACCA, or equivalent) or CIA certification",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience auditing technology environments including cloud infrastructure (AWS, GCP), CI/CD pipelines, and SOC 2 controls",
+        "type": "must_have"
+      },
+      {
+        "text": "Knowledge of PSD2, EMD2, and EU/EEA banking supervision requirements",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience with audit management software (TeamMate+, AuditBoard, or Diligent HighBond)",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience building internal audit functions from scratch or significantly scaling existing teams",
+        "type": "must_have"
+      },
+      {
+        "text": "Data analytics skills using ACL Analytics, IDEA, or Python for audit sampling and continuous monitoring",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "Experience with BNPL (Buy Now Pay Later) or consumer lending risk frameworks",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "Fluency in English; Swedish is a plus",
+        "type": "nice_to_have"
+      }
     ],
     "responsibilities": [
       "Build and lead internal audit function reporting directly to Audit Committee and Board",
@@ -61,10 +93,33 @@
       }
     ],
     "skills": {
-      "audit": ["external audit (Big Four)", "SOC 2 attestation", "risk-based audit planning", "ITGC testing", "continuous auditing methodology"],
-      "regulatory": ["FCA regulation", "PSD2 safeguarding", "EMR/PSR safeguarding", "AML/KYC compliance", "e-money institution audits"],
-      "technical": ["Temenos Transact (formerly T24)", "Finastra", "AWS cloud infrastructure (audit perspective)", "ACL Analytics (basic)", "Excel/Power BI"],
-      "leadership": ["audit team management (4-8 staff)", "client relationship management", "audit methodology development", "external auditor coordination"]
+      "audit": [
+        "external audit (Big Four)",
+        "SOC 2 attestation",
+        "risk-based audit planning",
+        "ITGC testing",
+        "continuous auditing methodology"
+      ],
+      "regulatory": [
+        "FCA regulation",
+        "PSD2 safeguarding",
+        "EMR/PSR safeguarding",
+        "AML/KYC compliance",
+        "e-money institution audits"
+      ],
+      "technical": [
+        "Temenos Transact (formerly T24)",
+        "Finastra",
+        "AWS cloud infrastructure (audit perspective)",
+        "ACL Analytics (basic)",
+        "Excel/Power BI"
+      ],
+      "leadership": [
+        "audit team management (4-8 staff)",
+        "client relationship management",
+        "audit methodology development",
+        "external auditor coordination"
+      ]
     },
     "certifications": [
       "ACA — Institute of Chartered Accountants in England and Wales (ICAEW, 2019)",
@@ -86,14 +141,25 @@
     "English Swedish fluency"
   ],
   "cloud_skills": [
-    "external audit", "SOC 2 attestation", "risk-based audit planning",
-    "ITGC testing", "continuous auditing",
-    "FCA regulation", "PSD2", "EMR/PSR safeguarding",
-    "AML/KYC compliance", "e-money institution audits",
-    "Temenos Transact (formerly T24)", "Finastra", "AWS cloud audit",
-    "ACL Analytics", "Power BI",
-    "audit team management", "methodology development",
-    "ACA ICAEW", "CISA ISACA"
+    "external audit",
+    "SOC 2 attestation",
+    "risk-based audit planning",
+    "ITGC testing",
+    "continuous auditing",
+    "FCA regulation",
+    "PSD2",
+    "EMR/PSR safeguarding",
+    "AML/KYC compliance",
+    "e-money institution audits",
+    "Temenos Transact (formerly T24)",
+    "Finastra",
+    "AWS cloud audit",
+    "ACL Analytics",
+    "Power BI",
+    "audit team management",
+    "methodology development",
+    "ACA ICAEW",
+    "CISA ISACA"
   ],
   "deliberate_flaws": [
     "No internal audit experience — entire career in external audit (Big Four)",
@@ -104,5 +170,14 @@
     "No Swedish language skills",
     "Python skills are basic — JD wants data analytics for continuous monitoring",
     "External audit culture (compliance-focused) vs internal audit (advisory/business partner) — mindset shift needed"
-  ]
+  ],
+  "provenance": {
+    "data_source": "synthetic",
+    "jd_basis": "modeled_from_real_jd_styles",
+    "jd_styles_doc": "REAL-JD-STYLES.md",
+    "expected_output_author": "claude",
+    "user_snap_checked": null,
+    "circularity_risk": "medium",
+    "notes": "Synthetic persona and JD. JD style modeled from real Greenhouse/Lever postings. Expected output and cloud_skills are AI-generated. 4/8 scorecard checks (jd_coverage, no_fabrication, metrics_preserved, no_fabricated_skills) evaluate AI vs AI reference. 4/8 checks (factual_preservation, word_count, ats_structure, action_verbs) are structurally valid regardless."
+  }
 }

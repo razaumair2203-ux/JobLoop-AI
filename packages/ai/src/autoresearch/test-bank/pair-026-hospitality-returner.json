@@ -5,23 +5,58 @@
   "synthetic": true,
   "jd_style": "enterprise_saas",
   "framing": "Hotel operations manager returning after 2-year career break, applying to hospitality group in Singapore",
-  "coverage": { "industry": "Hospitality", "seniority": "mid", "pattern": "returner", "region": "asia" },
+  "coverage": {
+    "industry": "Hospitality",
+    "seniority": "mid",
+    "pattern": "returner",
+    "region": "asia"
+  },
   "jd": {
     "title": "Director of Rooms — Luxury Segment",
     "company": "Mandarin Oriental Hotel Group",
     "location": "Singapore",
     "experience_years": 10,
     "requirements": [
-      { "text": "10+ years of progressive experience in hotel operations, with at least 3 years as Rooms Division Manager or equivalent", "type": "must_have" },
-      { "text": "Experience in luxury or upper-upscale hotel brands (Forbes 5-star or equivalent)", "type": "must_have" },
-      { "text": "Strong knowledge of revenue management principles and dynamic pricing strategies", "type": "must_have" },
-      { "text": "Experience with Opera PMS and revenue management systems (IDeaS or Duetto)", "type": "must_have" },
-      { "text": "Proven track record of achieving guest satisfaction scores above brand benchmark (NPS, ReviewPro, or Medallia)", "type": "must_have" },
-      { "text": "Experience managing departments of 80+ staff across front office, housekeeping, and concierge", "type": "must_have" },
-      { "text": "Fluency in English; Mandarin or Japanese is a strong advantage", "type": "nice_to_have" },
-      { "text": "Degree in Hospitality Management or related field", "type": "must_have" },
-      { "text": "Experience with luxury service training programs (Forbes Travel Guide, LQA)", "type": "nice_to_have" },
-      { "text": "Pre-opening or renovation project experience", "type": "nice_to_have" }
+      {
+        "text": "10+ years of progressive experience in hotel operations, with at least 3 years as Rooms Division Manager or equivalent",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience in luxury or upper-upscale hotel brands (Forbes 5-star or equivalent)",
+        "type": "must_have"
+      },
+      {
+        "text": "Strong knowledge of revenue management principles and dynamic pricing strategies",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience with Opera PMS and revenue management systems (IDeaS or Duetto)",
+        "type": "must_have"
+      },
+      {
+        "text": "Proven track record of achieving guest satisfaction scores above brand benchmark (NPS, ReviewPro, or Medallia)",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience managing departments of 80+ staff across front office, housekeeping, and concierge",
+        "type": "must_have"
+      },
+      {
+        "text": "Fluency in English; Mandarin or Japanese is a strong advantage",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "Degree in Hospitality Management or related field",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience with luxury service training programs (Forbes Travel Guide, LQA)",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "Pre-opening or renovation project experience",
+        "type": "nice_to_have"
+      }
     ],
     "responsibilities": [
       "Oversee all rooms division operations (front office, housekeeping, concierge, guest relations) for 527-room luxury property",
@@ -73,10 +108,32 @@
       }
     ],
     "skills": {
-      "operations": ["rooms division management (608 rooms, 90 staff)", "front office", "housekeeping", "concierge", "guest relations"],
-      "revenue": ["RevPAR optimization", "IDeaS revenue management", "dynamic pricing", "rate strategy", "Opera PMS"],
-      "quality": ["Forbes 5-star standards", "Medallia guest satisfaction", "LQA audits", "service training programs"],
-      "leadership": ["department management (90 staff)", "budget management (SGD 8.5M)", "recruitment and retention", "COVID-19 operations management"]
+      "operations": [
+        "rooms division management (608 rooms, 90 staff)",
+        "front office",
+        "housekeeping",
+        "concierge",
+        "guest relations"
+      ],
+      "revenue": [
+        "RevPAR optimization",
+        "IDeaS revenue management",
+        "dynamic pricing",
+        "rate strategy",
+        "Opera PMS"
+      ],
+      "quality": [
+        "Forbes 5-star standards",
+        "Medallia guest satisfaction",
+        "LQA audits",
+        "service training programs"
+      ],
+      "leadership": [
+        "department management (90 staff)",
+        "budget management (SGD 8.5M)",
+        "recruitment and retention",
+        "COVID-19 operations management"
+      ]
     },
     "certifications": [
       "Cornell University — Hotel Revenue Management Certificate (2024)",
@@ -100,15 +157,28 @@
     "pre-opening renovation experience"
   ],
   "cloud_skills": [
-    "rooms division management", "front office", "housekeeping",
-    "concierge", "guest relations",
-    "RevPAR optimization", "IDeaS", "dynamic pricing",
-    "Opera PMS", "rate strategy",
-    "Forbes 5-star", "Medallia", "LQA",
-    "service training", "department management",
-    "budget management", "recruitment",
-    "COVID-19 operations", "government quarantine",
-    "luxury hospitality", "Ritz-Carlton", "Four Seasons"
+    "rooms division management",
+    "front office",
+    "housekeeping",
+    "concierge",
+    "guest relations",
+    "RevPAR optimization",
+    "IDeaS",
+    "dynamic pricing",
+    "Opera PMS",
+    "rate strategy",
+    "Forbes 5-star",
+    "Medallia",
+    "LQA",
+    "service training",
+    "department management",
+    "budget management",
+    "recruitment",
+    "COVID-19 operations",
+    "government quarantine",
+    "luxury hospitality",
+    "Ritz-Carlton",
+    "Four Seasons"
   ],
   "deliberate_flaws": [
     "2-year career break (2023-2025) — gap in employment",
@@ -119,5 +189,14 @@
     "Returner — hospitality industry changed significantly during break (AI concierge, contactless everything)",
     "Budget SGD 8.5M vs JD's SGD 12M scope — scaling gap",
     "No ReviewPro experience (only Medallia)"
-  ]
+  ],
+  "provenance": {
+    "data_source": "synthetic",
+    "jd_basis": "modeled_from_real_jd_styles",
+    "jd_styles_doc": "REAL-JD-STYLES.md",
+    "expected_output_author": "claude",
+    "user_snap_checked": null,
+    "circularity_risk": "medium",
+    "notes": "Synthetic persona and JD. JD style modeled from real Greenhouse/Lever postings. Expected output and cloud_skills are AI-generated. 4/8 scorecard checks (jd_coverage, no_fabrication, metrics_preserved, no_fabricated_skills) evaluate AI vs AI reference. 4/8 checks (factual_preservation, word_count, ats_structure, action_verbs) are structurally valid regardless."
+  }
 }

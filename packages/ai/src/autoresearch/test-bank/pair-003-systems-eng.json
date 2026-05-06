@@ -20,16 +20,46 @@
     "location": "Jeddah, Saudi Arabia",
     "experience_years": 10,
     "requirements": [
-      { "text": "10+ years in avionics systems engineering or aerospace systems integration", "type": "must_have" },
-      { "text": "Experience with fighter aircraft avionics architecture and integration", "type": "must_have" },
-      { "text": "Hands-on experience with mission computer, EW suite, or radar integration", "type": "must_have" },
-      { "text": "Systems engineering lifecycle (requirements, design, V&V, deployment)", "type": "must_have" },
-      { "text": "Experience with AEW&C, SIGINT, or ISR platforms", "type": "nice_to_have" },
-      { "text": "MS in Avionics, Systems, Electrical, or Aerospace Engineering", "type": "must_have" },
-      { "text": "Knowledge of MIL-STD-1553, ARINC 429, or similar avionics bus standards", "type": "nice_to_have" },
-      { "text": "Cross-cultural engineering team collaboration experience", "type": "nice_to_have" },
-      { "text": "Flight test support and weapons integration experience", "type": "must_have" },
-      { "text": "Technical documentation and design review experience", "type": "must_have" }
+      {
+        "text": "10+ years in avionics systems engineering or aerospace systems integration",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience with fighter aircraft avionics architecture and integration",
+        "type": "must_have"
+      },
+      {
+        "text": "Hands-on experience with mission computer, EW suite, or radar integration",
+        "type": "must_have"
+      },
+      {
+        "text": "Systems engineering lifecycle (requirements, design, V&V, deployment)",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience with AEW&C, SIGINT, or ISR platforms",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "MS in Avionics, Systems, Electrical, or Aerospace Engineering",
+        "type": "must_have"
+      },
+      {
+        "text": "Knowledge of MIL-STD-1553, ARINC 429, or similar avionics bus standards",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "Cross-cultural engineering team collaboration experience",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "Flight test support and weapons integration experience",
+        "type": "must_have"
+      },
+      {
+        "text": "Technical documentation and design review experience",
+        "type": "must_have"
+      }
     ],
     "responsibilities": [
       "Lead avionics systems engineering for fighter aircraft modernization programs",
@@ -91,10 +121,35 @@
       }
     ],
     "skills": {
-      "systems_engineering": ["avionics architecture", "systems integration", "requirements analysis", "V&V testing", "functional analysis", "system baselines"],
-      "platforms_technologies": ["JF-17 Thunder (Block I/II/III)", "SAAB 2000 Erieye AEW&C", "mission computer", "EW suite", "glass cockpit", "radar systems"],
-      "engineering": ["flight test support", "weapons integration", "wiring harness design", "technical documentation", "design reviews", "configuration management"],
-      "collaboration": ["cross-cultural engineering (China, Sweden)", "OEM coordination", "team leadership"]
+      "systems_engineering": [
+        "avionics architecture",
+        "systems integration",
+        "requirements analysis",
+        "V&V testing",
+        "functional analysis",
+        "system baselines"
+      ],
+      "platforms_technologies": [
+        "JF-17 Thunder (Block I/II/III)",
+        "SAAB 2000 Erieye AEW&C",
+        "mission computer",
+        "EW suite",
+        "glass cockpit",
+        "radar systems"
+      ],
+      "engineering": [
+        "flight test support",
+        "weapons integration",
+        "wiring harness design",
+        "technical documentation",
+        "design reviews",
+        "configuration management"
+      ],
+      "collaboration": [
+        "cross-cultural engineering (China, Sweden)",
+        "OEM coordination",
+        "team leadership"
+      ]
     },
     "certifications": [
       "PMI-ACP — Project Management Institute",
@@ -118,15 +173,48 @@
     "technical documentation design review"
   ],
   "cloud_skills": [
-    "avionics design", "systems integration", "V&V testing", "configuration management",
-    "aircraft maintenance engineering", "operational readiness", "fault diagnosis",
-    "maintenance planning", "team leadership", "radar systems", "C4ISR", "SAAB 2000 Erieye",
-    "weapons integration", "flight testing", "mission computer", "EW systems", "JF-17 Thunder",
-    "glass cockpit", "wiring harness", "aircraft modification", "technical documentation",
-    "program management", "defense acquisition", "budget management",
-    "field operations", "weapons systems", "SAM systems", "Crotale",
-    "fleet sustainment", "international vendor management",
-    "systems engineering instruction", "research coordination",
-    "cross-cultural collaboration", "CADI coordination"
-  ]
+    "avionics design",
+    "systems integration",
+    "V&V testing",
+    "configuration management",
+    "aircraft maintenance engineering",
+    "operational readiness",
+    "fault diagnosis",
+    "maintenance planning",
+    "team leadership",
+    "radar systems",
+    "C4ISR",
+    "SAAB 2000 Erieye",
+    "weapons integration",
+    "flight testing",
+    "mission computer",
+    "EW systems",
+    "JF-17 Thunder",
+    "glass cockpit",
+    "wiring harness",
+    "aircraft modification",
+    "technical documentation",
+    "program management",
+    "defense acquisition",
+    "budget management",
+    "field operations",
+    "weapons systems",
+    "SAM systems",
+    "Crotale",
+    "fleet sustainment",
+    "international vendor management",
+    "systems engineering instruction",
+    "research coordination",
+    "cross-cultural collaboration",
+    "CADI coordination"
+  ],
+  "provenance": {
+    "data_source": "real_cv",
+    "ground_truth": "Alpha_CVs/ground-truth-profile.json",
+    "jd_basis": "modeled_from_real_postings",
+    "user_snap_checked": "2026-05-03",
+    "expected_output_author": "claude_with_user_review",
+    "circularity_risk": "low",
+    "notes": "Real user career data. JDs modeled from real defense/aerospace postings. User snap-checked during creation session. Expected outputs derived from verified ground truth profile."
+  }
 }

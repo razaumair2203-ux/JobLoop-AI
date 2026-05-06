@@ -5,7 +5,12 @@
   "synthetic": true,
   "jd_style": "vague_culture_first",
   "framing": "Laid-off e-commerce merchandiser at Farfetch seeking digital product role at luxury fashion house in Paris",
-  "coverage": { "industry": "Fashion/Luxury", "seniority": "mid", "pattern": "laid_off", "region": "europe" },
+  "coverage": {
+    "industry": "Fashion/Luxury",
+    "seniority": "mid",
+    "pattern": "laid_off",
+    "region": "europe"
+  },
   "jd": {
     "title": "Digital Merchandising Manager",
     "company": "Kering",
@@ -13,13 +18,34 @@
     "experience_years": 5,
     "style_note": "Vague/culture-first: luxury brand tone, emphasis on taste and instinct, light on technical requirements",
     "requirements": [
-      { "text": "You understand luxury — not just the products, but the codes, the storytelling, and the emotional connection with clients", "type": "must_have" },
-      { "text": "5+ years of experience in digital merchandising, e-commerce buying, or online retail strategy", "type": "must_have" },
-      { "text": "You know how to read data and use it to curate — not just optimise, but create desirability", "type": "must_have" },
-      { "text": "You've managed assortment planning for fashion categories across multiple markets", "type": "must_have" },
-      { "text": "Bonus: experience with Salesforce Commerce Cloud, SAP Hybris, or similar e-commerce platforms", "type": "nice_to_have" },
-      { "text": "Bonus: experience in luxury (LVMH, Kering, Richemont, or independent luxury brands)", "type": "nice_to_have" },
-      { "text": "French language skills (business level)", "type": "nice_to_have" }
+      {
+        "text": "You understand luxury — not just the products, but the codes, the storytelling, and the emotional connection with clients",
+        "type": "must_have"
+      },
+      {
+        "text": "5+ years of experience in digital merchandising, e-commerce buying, or online retail strategy",
+        "type": "must_have"
+      },
+      {
+        "text": "You know how to read data and use it to curate — not just optimise, but create desirability",
+        "type": "must_have"
+      },
+      {
+        "text": "You've managed assortment planning for fashion categories across multiple markets",
+        "type": "must_have"
+      },
+      {
+        "text": "Bonus: experience with Salesforce Commerce Cloud, SAP Hybris, or similar e-commerce platforms",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "Bonus: experience in luxury (LVMH, Kering, Richemont, or independent luxury brands)",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "French language skills (business level)",
+        "type": "nice_to_have"
+      }
     ],
     "responsibilities": [
       "Own digital merchandising strategy for Gucci.com across EMEA markets",
@@ -59,10 +85,36 @@
       }
     ],
     "skills": {
-      "merchandising": ["digital merchandising strategy", "assortment planning", "product curation", "seasonal buying support", "markdown strategy", "homepage merchandising"],
-      "analytics": ["sell-through analysis", "conversion funnel analysis", "Google Analytics 4", "Looker dashboards", "product page performance", "search ranking analysis"],
-      "luxury": ["luxury womenswear", "200+ brand partner management", "editorial merchandising", "luxury marketplace operations", "ready-to-wear"],
-      "ecommerce": ["marketplace merchandising (Farfetch platform)", "product taxonomy", "SKU management", "personalised recommendations", "A/B testing support"]
+      "merchandising": [
+        "digital merchandising strategy",
+        "assortment planning",
+        "product curation",
+        "seasonal buying support",
+        "markdown strategy",
+        "homepage merchandising"
+      ],
+      "analytics": [
+        "sell-through analysis",
+        "conversion funnel analysis",
+        "Google Analytics 4",
+        "Looker dashboards",
+        "product page performance",
+        "search ranking analysis"
+      ],
+      "luxury": [
+        "luxury womenswear",
+        "200+ brand partner management",
+        "editorial merchandising",
+        "luxury marketplace operations",
+        "ready-to-wear"
+      ],
+      "ecommerce": [
+        "marketplace merchandising (Farfetch platform)",
+        "product taxonomy",
+        "SKU management",
+        "personalised recommendations",
+        "A/B testing support"
+      ]
     },
     "certifications": [
       "Google Analytics 4 Certification — Google (2023)"
@@ -81,15 +133,24 @@
     "French language business level"
   ],
   "cloud_skills": [
-    "digital merchandising", "assortment planning",
-    "product curation", "seasonal buying",
-    "markdown strategy", "homepage merchandising",
-    "sell-through analysis", "conversion funnels",
-    "Google Analytics 4", "Looker dashboards",
-    "luxury womenswear", "marketplace operations",
-    "product taxonomy", "SKU management",
-    "personalised recommendations", "A/B testing",
-    "editorial merchandising", "brand partner management"
+    "digital merchandising",
+    "assortment planning",
+    "product curation",
+    "seasonal buying",
+    "markdown strategy",
+    "homepage merchandising",
+    "sell-through analysis",
+    "conversion funnels",
+    "Google Analytics 4",
+    "Looker dashboards",
+    "luxury womenswear",
+    "marketplace operations",
+    "product taxonomy",
+    "SKU management",
+    "personalised recommendations",
+    "A/B testing",
+    "editorial merchandising",
+    "brand partner management"
   ],
   "deliberate_flaws": [
     "No Salesforce Commerce Cloud or SAP Hybris experience — used Farfetch's proprietary platform",
@@ -102,5 +163,14 @@
     "No pricing strategy experience for luxury (Farfetch doesn't set prices, brands do)",
     "No experience working with creative/design teams on product launches (merchandised existing collections)",
     "No EMEA market experience beyond UK and EU (JD says EMEA which includes Middle East and Africa)"
-  ]
+  ],
+  "provenance": {
+    "data_source": "synthetic",
+    "jd_basis": "modeled_from_real_jd_styles",
+    "jd_styles_doc": "REAL-JD-STYLES.md",
+    "expected_output_author": "claude",
+    "user_snap_checked": null,
+    "circularity_risk": "medium",
+    "notes": "Synthetic persona and JD. JD style modeled from real Greenhouse/Lever postings. Expected output and cloud_skills are AI-generated. 4/8 scorecard checks (jd_coverage, no_fabrication, metrics_preserved, no_fabricated_skills) evaluate AI vs AI reference. 4/8 checks (factual_preservation, word_count, ats_structure, action_verbs) are structurally valid regardless."
+  }
 }

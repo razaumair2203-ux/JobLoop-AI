@@ -47,7 +47,11 @@ export async function middleware(request: NextRequest) {
   }
 
   // Redirect unauthenticated users to /auth
+  // In dev mode with bypass enabled, skip auth redirect
   if (!user) {
+    if (process.env.DEV_AUTH_BYPASS === "true") {
+      return supabaseResponse;
+    }
     const url = request.nextUrl.clone();
     url.pathname = "/auth";
     return NextResponse.redirect(url);

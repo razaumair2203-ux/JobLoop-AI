@@ -1,0 +1,50 @@
+{
+  "_meta": {
+    "entry_id": "002",
+    "framing": "program_management",
+    "source_cv": "Resume PM_Jan26.pdf",
+    "ground_truth_profile": "../ground-truth-profile.json",
+    "difficulty": "medium",
+    "industry": "defense_aerospace",
+    "seniority": "senior",
+    "region": "middle_east"
+  },
+
+  "jd": {
+    "title": "Senior Program Manager — Defense & Aerospace",
+    "company": "EDGE Group",
+    "location": "Abu Dhabi, UAE",
+    "type": "full_time",
+    "text": "Senior Program Manager — Defense & Aerospace\nEDGE Group\nAbu Dhabi, UAE\n\nAbout EDGE:\nEDGE is the UAE's leading advanced technology group for defense and beyond. We develop innovative solutions across five core clusters: Platforms & Systems, Missiles & Weapons, Electronic Warfare & Cyber Technologies, Mission Support, and Trading & Mission Support.\n\nRole Summary:\nWe are seeking a Senior Program Manager to lead complex defense acquisition and development programs from inception through delivery. You will manage cross-functional teams, international partners, and government stakeholders to deliver mission-critical systems on time and within budget.\n\nKey Responsibilities:\n- Lead end-to-end program execution for defense platform development and integration programs ($10M-$100M value)\n- Manage program scope, schedule, cost, and risk using EVM methodology\n- Chair program reviews (PDR, CDR, TRR, FQR) and present to executive leadership\n- Coordinate cross-functional IPTs (Integrated Product Teams) across engineering, test, manufacturing, and logistics\n- Manage international partnerships and OEM relationships (technology transfer, co-development)\n- Drive configuration management and change control processes\n- Oversee systems integration, V&V, and acceptance testing activities\n- Prepare and manage RAID logs, risk registries, and mitigation plans\n- Support capture and proposal activities for new business opportunities\n- Ensure compliance with defense standards (MIL-STD, DO-178C, DO-254)\n\nRequired Qualifications:\n- Bachelor's degree in Engineering (Aerospace, Electrical, Mechanical, or Systems)\n- 12+ years of experience in defense/aerospace program management\n- PMP or equivalent certification\n- Experience managing programs with international partners\n- Strong knowledge of EVM, configuration management, and defense acquisition lifecycle\n- Experience with systems integration and test campaigns\n- Excellent stakeholder management and executive communication skills\n\nPreferred:\n- Master's degree in Engineering or MBA\n- PMI-ACP or Agile certification\n- Experience with fighter aircraft or UAV programs\n- Arabic language skills\n- Active security clearance (UAE or transferable)\n\nBenefits:\n- Competitive tax-free salary\n- Housing and transport allowance\n- Annual flights + 30 days leave\n- World-class facilities and R&D environment"
+  },
+
+  "expected_output_notes": {
+    "key_matches": [
+      "15+ years defense/aerospace (exceeds 12+ requirement)",
+      "PMP certified (required) + PMI-ACP (preferred — both met)",
+      "EVM methodology (directly mentioned across PMO roles)",
+      "RAID logs and risk management (directly mentioned)",
+      "International partnerships: China/CADI JF-17 joint development",
+      "Configuration management and change control (core competency)",
+      "Systems integration and V&V (multiple roles)",
+      "MIL-STD, DO-178C, DO-254 compliance (listed in competencies)",
+      "Fighter aircraft programs: JF-17 Thunder (directly relevant)",
+      "Master's degree in engineering (preferred — met)",
+      "IPT leadership across engineering, test, manufacturing"
+    ],
+    "gaps_to_bridge": [
+      "No explicit $10M-$100M budget numbers — bridge: 'JF-17 program is multi-billion, managed work packages within it'",
+      "No PDR/CDR/TRR/FQR review chair experience listed explicitly — bridge: 'led program reviews (equivalent gates in military lifecycle)'",
+      "No capture/proposal experience listed — bridge: 'supported export programs to 11 countries, government-to-government negotiations'",
+      "UAE security clearance needed — bridge: 'held Pakistan military clearance, transferable process familiar'"
+    ],
+    "position_assessment": "Strong position — direct match on nearly all requirements, defense program management is core career",
+    "cv_sections_to_emphasize": [
+      "Deputy Director PMO JF-17 (Role #7) — most senior PM role",
+      "Asst Director PMO JF-17 (Role #5) — continuity shows progression",
+      "China/CADI role (Role #4) — international partnership management",
+      "Glass cockpit export to 11 countries — captures/BD adjacent",
+      "Both PMP and PMI-ACP in certifications"
+    ]
+  }
+}

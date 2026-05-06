@@ -5,23 +5,58 @@
   "synthetic": true,
   "jd_style": "enterprise_saas",
   "framing": "Supply chain manager laid off from Shopee (tech layoffs) applying to Unilever logistics role in Singapore",
-  "coverage": { "industry": "Retail/FMCG", "seniority": "mid", "pattern": "laid_off", "region": "asia" },
+  "coverage": {
+    "industry": "Retail/FMCG",
+    "seniority": "mid",
+    "pattern": "laid_off",
+    "region": "asia"
+  },
   "jd": {
     "title": "Supply Chain Planning Manager — Southeast Asia",
     "company": "Unilever",
     "location": "Singapore",
     "experience_years": 7,
     "requirements": [
-      { "text": "7+ years of supply chain planning experience in FMCG, retail, or manufacturing", "type": "must_have" },
-      { "text": "Experience with demand planning and S&OP (Sales & Operations Planning) processes", "type": "must_have" },
-      { "text": "Proficiency in SAP APO/IBP or equivalent supply chain planning software", "type": "must_have" },
-      { "text": "Experience managing supply chains across multiple Southeast Asian markets", "type": "must_have" },
-      { "text": "Strong analytical skills with experience in demand forecasting models", "type": "must_have" },
-      { "text": "Experience with warehouse management systems (WMS) and 3PL management", "type": "must_have" },
-      { "text": "APICS CSCP or CPIM certification", "type": "nice_to_have" },
-      { "text": "Experience with supply chain sustainability initiatives", "type": "nice_to_have" },
-      { "text": "Degree in Supply Chain Management, Industrial Engineering, or related field", "type": "must_have" },
-      { "text": "Experience managing teams of 5+ across planning and logistics functions", "type": "must_have" }
+      {
+        "text": "7+ years of supply chain planning experience in FMCG, retail, or manufacturing",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience with demand planning and S&OP (Sales & Operations Planning) processes",
+        "type": "must_have"
+      },
+      {
+        "text": "Proficiency in SAP APO/IBP or equivalent supply chain planning software",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience managing supply chains across multiple Southeast Asian markets",
+        "type": "must_have"
+      },
+      {
+        "text": "Strong analytical skills with experience in demand forecasting models",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience with warehouse management systems (WMS) and 3PL management",
+        "type": "must_have"
+      },
+      {
+        "text": "APICS CSCP or CPIM certification",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "Experience with supply chain sustainability initiatives",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "Degree in Supply Chain Management, Industrial Engineering, or related field",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience managing teams of 5+ across planning and logistics functions",
+        "type": "must_have"
+      }
     ],
     "responsibilities": [
       "Lead demand and supply planning for Unilever's home care and personal care categories across 6 SEA markets",
@@ -62,10 +97,30 @@
       }
     ],
     "skills": {
-      "supply_chain": ["demand planning", "S&OP", "supply network planning", "last-mile logistics", "3PL management", "warehouse operations"],
-      "tools": ["SAP APO", "demand forecasting models", "route optimization", "Excel/Power BI dashboards"],
-      "leadership": ["team management (6 analysts)", "3PL contract negotiation (USD 45M)", "cross-market coordination (4 countries)"],
-      "sector": ["e-commerce logistics", "FMCG distribution", "peak event planning (11.11, 12.12)"]
+      "supply_chain": [
+        "demand planning",
+        "S&OP",
+        "supply network planning",
+        "last-mile logistics",
+        "3PL management",
+        "warehouse operations"
+      ],
+      "tools": [
+        "SAP APO",
+        "demand forecasting models",
+        "route optimization",
+        "Excel/Power BI dashboards"
+      ],
+      "leadership": [
+        "team management (6 analysts)",
+        "3PL contract negotiation (USD 45M)",
+        "cross-market coordination (4 countries)"
+      ],
+      "sector": [
+        "e-commerce logistics",
+        "FMCG distribution",
+        "peak event planning (11.11, 12.12)"
+      ]
     },
     "certifications": [
       "APICS CPIM (Certified in Planning and Inventory Management)",
@@ -88,15 +143,27 @@
     "managing teams 5+ planning logistics"
   ],
   "cloud_skills": [
-    "demand planning", "S&OP", "supply network planning",
-    "last-mile logistics", "3PL management", "warehouse operations",
-    "SAP APO", "demand forecasting", "route optimization",
-    "Power BI", "Excel analytics",
-    "e-commerce logistics", "FMCG distribution",
-    "peak event planning", "case fill rate optimization",
-    "inventory management", "cross-market coordination",
-    "team management", "contract negotiation",
-    "Lean Six Sigma Green Belt", "APICS CPIM"
+    "demand planning",
+    "S&OP",
+    "supply network planning",
+    "last-mile logistics",
+    "3PL management",
+    "warehouse operations",
+    "SAP APO",
+    "demand forecasting",
+    "route optimization",
+    "Power BI",
+    "Excel analytics",
+    "e-commerce logistics",
+    "FMCG distribution",
+    "peak event planning",
+    "case fill rate optimization",
+    "inventory management",
+    "cross-market coordination",
+    "team management",
+    "contract negotiation",
+    "Lean Six Sigma Green Belt",
+    "APICS CPIM"
   ],
   "deliberate_flaws": [
     "E-commerce logistics background, not traditional FMCG supply chain (Unilever wants FMCG experience, Shopee is e-commerce)",
@@ -106,5 +173,14 @@
     "No sustainability experience — JD mentions sustainability initiatives",
     "Role eliminated in reorganisation (not mass layoff) — may still trigger hiring manager bias",
     "P&G experience covers only 2 markets (Singapore, Malaysia) vs JD's 6-market scope"
-  ]
+  ],
+  "provenance": {
+    "data_source": "synthetic",
+    "jd_basis": "modeled_from_real_jd_styles",
+    "jd_styles_doc": "REAL-JD-STYLES.md",
+    "expected_output_author": "claude",
+    "user_snap_checked": null,
+    "circularity_risk": "medium",
+    "notes": "Synthetic persona and JD. JD style modeled from real Greenhouse/Lever postings. Expected output and cloud_skills are AI-generated. 4/8 scorecard checks (jd_coverage, no_fabrication, metrics_preserved, no_fabricated_skills) evaluate AI vs AI reference. 4/8 checks (factual_preservation, word_count, ats_structure, action_verbs) are structurally valid regardless."
+  }
 }

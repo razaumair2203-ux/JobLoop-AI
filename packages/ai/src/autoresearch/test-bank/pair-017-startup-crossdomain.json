@@ -5,22 +5,54 @@
   "synthetic": true,
   "jd_style": "startup_technical",
   "framing": "Pharmacist applying to health-tech startup requiring clinical + coding (Layer Health-style JD)",
-  "coverage": { "industry": "Healthcare", "seniority": "mid", "pattern": "career_changer", "region": "north_america" },
+  "coverage": {
+    "industry": "Healthcare",
+    "seniority": "mid",
+    "pattern": "career_changer",
+    "region": "north_america"
+  },
   "jd": {
     "title": "Clinical Informatician",
     "company": "Health AI Startup (Series A, MIT/Harvard founders)",
     "location": "Boston, MA or New York, NY (in-person required)",
     "experience_years": null,
     "requirements": [
-      { "text": "Exceptional clinical informatician with significant experience analyzing and redesigning healthcare IT workflows", "type": "must_have" },
-      { "text": "History of successfully launching new products/features in hospital settings (EPIC, Cerner, etc.)", "type": "must_have" },
-      { "text": "Fluency with at least one programming language, preferably Python", "type": "must_have" },
-      { "text": "Beginner to intermediate SQL skills", "type": "must_have" },
-      { "text": "Working knowledge of natural language processing (NLP) methods", "type": "nice_to_have" },
-      { "text": "Understanding of common healthcare standards and ontologies (FHIR, HL7, ICD10, CPT, RxNorm, etc.)", "type": "must_have" },
-      { "text": "MD/DO who has completed primary specialty training, OR PharmD/DNP with clinical informatics fellowship or equivalent work experience", "type": "must_have" },
-      { "text": "Advanced training in clinical informatics through fellowships, post-graduate training, or work experience", "type": "must_have" },
-      { "text": "Willingness to work in-person in Boston or New York City", "type": "must_have" }
+      {
+        "text": "Exceptional clinical informatician with significant experience analyzing and redesigning healthcare IT workflows",
+        "type": "must_have"
+      },
+      {
+        "text": "History of successfully launching new products/features in hospital settings (EPIC, Cerner, etc.)",
+        "type": "must_have"
+      },
+      {
+        "text": "Fluency with at least one programming language, preferably Python",
+        "type": "must_have"
+      },
+      {
+        "text": "Beginner to intermediate SQL skills",
+        "type": "must_have"
+      },
+      {
+        "text": "Working knowledge of natural language processing (NLP) methods",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "Understanding of common healthcare standards and ontologies (FHIR, HL7, ICD10, CPT, RxNorm, etc.)",
+        "type": "must_have"
+      },
+      {
+        "text": "MD/DO who has completed primary specialty training, OR PharmD/DNP with clinical informatics fellowship or equivalent work experience",
+        "type": "must_have"
+      },
+      {
+        "text": "Advanced training in clinical informatics through fellowships, post-graduate training, or work experience",
+        "type": "must_have"
+      },
+      {
+        "text": "Willingness to work in-person in Boston or New York City",
+        "type": "must_have"
+      }
     ],
     "responsibilities": [
       "Perform detailed workflow analysis at client hospitals in collaboration with customer success and product teams",
@@ -60,10 +92,33 @@
       }
     ],
     "skills": {
-      "clinical_informatics": ["CPOE optimization", "clinical decision support", "medication safety", "alert fatigue reduction", "workflow analysis"],
-      "technical": ["Python (pandas, data analysis)", "SQL (pharmacy data warehouse)", "Epic EHR", "FHIR interfaces"],
-      "healthcare_standards": ["FHIR", "HL7", "ICD-10", "CPT", "RxNorm", "CCDA (exposure)"],
-      "clinical": ["inpatient pharmacy", "medication reconciliation", "P&T committee", "drug interaction management"]
+      "clinical_informatics": [
+        "CPOE optimization",
+        "clinical decision support",
+        "medication safety",
+        "alert fatigue reduction",
+        "workflow analysis"
+      ],
+      "technical": [
+        "Python (pandas, data analysis)",
+        "SQL (pharmacy data warehouse)",
+        "Epic EHR",
+        "FHIR interfaces"
+      ],
+      "healthcare_standards": [
+        "FHIR",
+        "HL7",
+        "ICD-10",
+        "CPT",
+        "RxNorm",
+        "CCDA (exposure)"
+      ],
+      "clinical": [
+        "inpatient pharmacy",
+        "medication reconciliation",
+        "P&T committee",
+        "drug interaction management"
+      ]
     },
     "certifications": [
       "PharmD — Licensed Pharmacist (Massachusetts)",
@@ -87,14 +142,26 @@
     "in-person Boston New York"
   ],
   "cloud_skills": [
-    "CPOE optimization", "clinical decision support",
-    "medication safety", "alert fatigue reduction",
-    "workflow analysis", "Python", "pandas",
-    "SQL", "Epic EHR", "Epic Willow",
-    "FHIR", "HL7", "ICD-10", "RxNorm",
-    "medication reconciliation", "pharmacy informatics",
-    "clinical data analysis", "staff training",
-    "P&T committee", "drug interactions"
+    "CPOE optimization",
+    "clinical decision support",
+    "medication safety",
+    "alert fatigue reduction",
+    "workflow analysis",
+    "Python",
+    "pandas",
+    "SQL",
+    "Epic EHR",
+    "Epic Willow",
+    "FHIR",
+    "HL7",
+    "ICD-10",
+    "RxNorm",
+    "medication reconciliation",
+    "pharmacy informatics",
+    "clinical data analysis",
+    "staff training",
+    "P&T committee",
+    "drug interactions"
   ],
   "deliberate_flaws": [
     "PharmD not MD/DO — JD prefers MD but lists PharmD as acceptable with informatics fellowship",
@@ -103,5 +170,14 @@
     "CCDA exposure only, not deep expertise",
     "SQL skills are intermediate (pharmacy warehouse), not production database",
     "Career changer — clinical pharmacist moving to startup, culture fit uncertain"
-  ]
+  ],
+  "provenance": {
+    "data_source": "synthetic",
+    "jd_basis": "modeled_from_real_jd_styles",
+    "jd_styles_doc": "REAL-JD-STYLES.md",
+    "expected_output_author": "claude",
+    "user_snap_checked": null,
+    "circularity_risk": "medium",
+    "notes": "Synthetic persona and JD. JD style modeled from real Greenhouse/Lever postings. Expected output and cloud_skills are AI-generated. 4/8 scorecard checks (jd_coverage, no_fabrication, metrics_preserved, no_fabricated_skills) evaluate AI vs AI reference. 4/8 checks (factual_preservation, word_count, ats_structure, action_verbs) are structurally valid regardless."
+  }
 }

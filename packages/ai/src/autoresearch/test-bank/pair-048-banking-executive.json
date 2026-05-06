@@ -5,7 +5,12 @@
   "synthetic": true,
   "jd_style": "enterprise_saas",
   "framing": "MD at Standard Chartered seeking Group Head of Digital Banking at DBS Singapore",
-  "coverage": { "industry": "Banking/Payments", "seniority": "executive", "pattern": "linear", "region": "asia" },
+  "coverage": {
+    "industry": "Banking/Payments",
+    "seniority": "executive",
+    "pattern": "linear",
+    "region": "asia"
+  },
   "jd": {
     "title": "Group Head of Digital Banking",
     "company": "DBS Bank",
@@ -13,15 +18,42 @@
     "experience_years": 15,
     "style_note": "Enterprise: structured, specific banking domain, regulatory awareness, leadership-focused",
     "requirements": [
-      { "text": "15+ years of experience in banking, fintech, or financial services with progressive digital leadership", "type": "must_have" },
-      { "text": "Proven track record leading digital banking transformation at a top-tier bank with 10M+ retail customers", "type": "must_have" },
-      { "text": "Experience with digital banking platforms: core banking modernisation (Temenos, Finacle, Mambu, or Thought Machine)", "type": "must_have" },
-      { "text": "Deep knowledge of MAS (Monetary Authority of Singapore) regulatory requirements: Technology Risk Management (TRM) Guidelines, Business Continuity Management (BCM)", "type": "must_have" },
-      { "text": "Experience with open banking / API ecosystems (PSD2/PSD3, SGQR, PayNow, or similar real-time payment schemes)", "type": "must_have" },
-      { "text": "Track record managing P&L of SGD 100M+ and team of 200+ across engineering, product, and design", "type": "must_have" },
-      { "text": "Experience with AI/ML in banking: credit decisioning, fraud detection, or personalised recommendations", "type": "nice_to_have" },
-      { "text": "Board or C-suite advisory experience in financial services", "type": "nice_to_have" },
-      { "text": "Mandarin language proficiency for Greater China business stakeholders", "type": "nice_to_have" }
+      {
+        "text": "15+ years of experience in banking, fintech, or financial services with progressive digital leadership",
+        "type": "must_have"
+      },
+      {
+        "text": "Proven track record leading digital banking transformation at a top-tier bank with 10M+ retail customers",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience with digital banking platforms: core banking modernisation (Temenos, Finacle, Mambu, or Thought Machine)",
+        "type": "must_have"
+      },
+      {
+        "text": "Deep knowledge of MAS (Monetary Authority of Singapore) regulatory requirements: Technology Risk Management (TRM) Guidelines, Business Continuity Management (BCM)",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience with open banking / API ecosystems (PSD2/PSD3, SGQR, PayNow, or similar real-time payment schemes)",
+        "type": "must_have"
+      },
+      {
+        "text": "Track record managing P&L of SGD 100M+ and team of 200+ across engineering, product, and design",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience with AI/ML in banking: credit decisioning, fraud detection, or personalised recommendations",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "Board or C-suite advisory experience in financial services",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "Mandarin language proficiency for Greater China business stakeholders",
+        "type": "nice_to_have"
+      }
     ],
     "responsibilities": [
       "Lead DBS's digital banking strategy across consumer, SME, and wealth management segments for 18 markets",
@@ -72,11 +104,43 @@
       }
     ],
     "skills": {
-      "digital_banking": ["mobile banking app strategy", "open banking APIs", "digital onboarding", "biometric authentication", "digital acquisition funnels"],
-      "platforms": ["Finacle (Infosys) core banking", "Temenos T24 (evaluation only)", "PayNow/FAST", "SGQR", "FPS Hong Kong"],
-      "regulatory": ["MAS TRM Guidelines", "MAS BCM Guidelines", "MAS outsourcing guidelines", "PSD2 awareness"],
-      "leadership": ["P&L management (SGD 85M)", "team management (180 staff)", "fintech partnerships", "board reporting", "regulatory engagement"],
-      "markets": ["Singapore", "Hong Kong", "India", "Malaysia", "Indonesia", "Thailand", "Vietnam", "UAE"]
+      "digital_banking": [
+        "mobile banking app strategy",
+        "open banking APIs",
+        "digital onboarding",
+        "biometric authentication",
+        "digital acquisition funnels"
+      ],
+      "platforms": [
+        "Finacle (Infosys) core banking",
+        "Temenos T24 (evaluation only)",
+        "PayNow/FAST",
+        "SGQR",
+        "FPS Hong Kong"
+      ],
+      "regulatory": [
+        "MAS TRM Guidelines",
+        "MAS BCM Guidelines",
+        "MAS outsourcing guidelines",
+        "PSD2 awareness"
+      ],
+      "leadership": [
+        "P&L management (SGD 85M)",
+        "team management (180 staff)",
+        "fintech partnerships",
+        "board reporting",
+        "regulatory engagement"
+      ],
+      "markets": [
+        "Singapore",
+        "Hong Kong",
+        "India",
+        "Malaysia",
+        "Indonesia",
+        "Thailand",
+        "Vietnam",
+        "UAE"
+      ]
     },
     "certifications": [
       "IBF Certified — Technology and Operations, Institute of Banking and Finance Singapore (2021)"
@@ -98,15 +162,27 @@
     "Mandarin Greater China"
   ],
   "cloud_skills": [
-    "mobile banking strategy", "open banking APIs",
-    "digital onboarding", "biometric authentication",
-    "Finacle core banking", "Temenos T24",
-    "PayNow FAST", "SGQR", "FPS Hong Kong",
-    "MAS TRM Guidelines", "MAS BCM",
-    "P&L management", "fintech partnerships",
-    "digital acquisition funnels", "Singapore",
-    "Hong Kong", "India", "Malaysia",
-    "Indonesia", "INSEAD MBA", "IIT Bombay"
+    "mobile banking strategy",
+    "open banking APIs",
+    "digital onboarding",
+    "biometric authentication",
+    "Finacle core banking",
+    "Temenos T24",
+    "PayNow FAST",
+    "SGQR",
+    "FPS Hong Kong",
+    "MAS TRM Guidelines",
+    "MAS BCM",
+    "P&L management",
+    "fintech partnerships",
+    "digital acquisition funnels",
+    "Singapore",
+    "Hong Kong",
+    "India",
+    "Malaysia",
+    "Indonesia",
+    "INSEAD MBA",
+    "IIT Bombay"
   ],
   "deliberate_flaws": [
     "P&L is SGD 85M, not SGD 100M+ (JD requires 100M+)",
@@ -121,5 +197,14 @@
     "Standard Chartered is smaller than DBS in digital banking maturity — DBS is 'World's Best Digital Bank', different scale",
     "No wealth management digital experience (JD covers consumer, SME, and wealth segments)",
     "No experience managing 500+ team (JD says 500+, candidate managed 180)"
-  ]
+  ],
+  "provenance": {
+    "data_source": "synthetic",
+    "jd_basis": "modeled_from_real_jd_styles",
+    "jd_styles_doc": "REAL-JD-STYLES.md",
+    "expected_output_author": "claude",
+    "user_snap_checked": null,
+    "circularity_risk": "medium",
+    "notes": "Synthetic persona and JD. JD style modeled from real Greenhouse/Lever postings. Expected output and cloud_skills are AI-generated. 4/8 scorecard checks (jd_coverage, no_fabrication, metrics_preserved, no_fabricated_skills) evaluate AI vs AI reference. 4/8 checks (factual_preservation, word_count, ats_structure, action_verbs) are structurally valid regardless."
+  }
 }

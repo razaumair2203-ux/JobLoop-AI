@@ -5,7 +5,12 @@
   "synthetic": true,
   "jd_style": "graduate_friendly",
   "framing": "Veterinary surgeon transitioning to animal health biotech product development role in Melbourne",
-  "coverage": { "industry": "Veterinary/Animal Health", "seniority": "mid", "pattern": "career_changer", "region": "oceania" },
+  "coverage": {
+    "industry": "Veterinary/Animal Health",
+    "seniority": "mid",
+    "pattern": "career_changer",
+    "region": "oceania"
+  },
   "jd": {
     "title": "Product Development Manager — Companion Animal Diagnostics",
     "company": "IDEXX Laboratories",
@@ -14,14 +19,38 @@
     "style_note": "Graduate-friendly/corporate: explains business context, values clinical expertise, flexible on exact product experience",
     "about": "IDEXX is a global leader in veterinary diagnostics, software, and water testing. Our Melbourne team develops next-generation point-of-care diagnostic tests for companion animals. We're looking for someone who combines clinical veterinary knowledge with product development instincts.",
     "requirements": [
-      { "text": "DVM/BVSc or equivalent veterinary degree with clinical practice experience", "type": "must_have" },
-      { "text": "5+ years of combined experience in veterinary clinical practice and/or veterinary diagnostics industry", "type": "must_have" },
-      { "text": "Strong understanding of companion animal clinical pathology (haematology, biochemistry, urinalysis, cytology)", "type": "must_have" },
-      { "text": "Experience interpreting diagnostic test results and understanding sensitivity/specificity trade-offs", "type": "must_have" },
-      { "text": "Experience with product development lifecycle: from concept through validation to market launch", "type": "nice_to_have" },
-      { "text": "Knowledge of in-vitro diagnostic (IVD) regulatory requirements (TGA, FDA 510(k), or EU IVDR)", "type": "nice_to_have" },
-      { "text": "Experience with lateral flow immunoassay or ELISA development", "type": "nice_to_have" },
-      { "text": "Published research in veterinary clinical pathology or diagnostics", "type": "nice_to_have" }
+      {
+        "text": "DVM/BVSc or equivalent veterinary degree with clinical practice experience",
+        "type": "must_have"
+      },
+      {
+        "text": "5+ years of combined experience in veterinary clinical practice and/or veterinary diagnostics industry",
+        "type": "must_have"
+      },
+      {
+        "text": "Strong understanding of companion animal clinical pathology (haematology, biochemistry, urinalysis, cytology)",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience interpreting diagnostic test results and understanding sensitivity/specificity trade-offs",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience with product development lifecycle: from concept through validation to market launch",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "Knowledge of in-vitro diagnostic (IVD) regulatory requirements (TGA, FDA 510(k), or EU IVDR)",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "Experience with lateral flow immunoassay or ELISA development",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "Published research in veterinary clinical pathology or diagnostics",
+        "type": "nice_to_have"
+      }
     ],
     "responsibilities": [
       "Lead product development for new companion animal point-of-care diagnostic tests (SNAP platform)",
@@ -61,10 +90,34 @@
       }
     ],
     "skills": {
-      "clinical": ["small animal internal medicine", "clinical pathology interpretation", "haematology", "biochemistry", "urinalysis", "cytology", "endocrinology"],
-      "diagnostics": ["IDEXX Catalyst One", "IDEXX ProCyte Dx", "IDEXX SediVue", "IDEXX SNAP tests", "diagnostic imaging (radiography, ultrasound)"],
-      "clinical_research": ["case report publication", "diagnostic workup design", "clinical mentoring", "evidence-based medicine"],
-      "communication": ["client communication", "treatment planning", "new graduate mentoring", "referral case management"]
+      "clinical": [
+        "small animal internal medicine",
+        "clinical pathology interpretation",
+        "haematology",
+        "biochemistry",
+        "urinalysis",
+        "cytology",
+        "endocrinology"
+      ],
+      "diagnostics": [
+        "IDEXX Catalyst One",
+        "IDEXX ProCyte Dx",
+        "IDEXX SediVue",
+        "IDEXX SNAP tests",
+        "diagnostic imaging (radiography, ultrasound)"
+      ],
+      "clinical_research": [
+        "case report publication",
+        "diagnostic workup design",
+        "clinical mentoring",
+        "evidence-based medicine"
+      ],
+      "communication": [
+        "client communication",
+        "treatment planning",
+        "new graduate mentoring",
+        "referral case management"
+      ]
     },
     "certifications": [
       "DVM — Doctor of Veterinary Medicine, University of Melbourne (2013-2017)",
@@ -86,14 +139,25 @@
     "published research veterinary clinical pathology diagnostics"
   ],
   "cloud_skills": [
-    "small animal internal medicine", "clinical pathology",
-    "haematology", "biochemistry", "urinalysis", "cytology",
-    "endocrinology", "IDEXX Catalyst One", "IDEXX ProCyte Dx",
-    "IDEXX SediVue", "IDEXX SNAP tests",
-    "diagnostic imaging", "case report publication",
-    "evidence-based medicine", "MANZCVS",
-    "client communication", "clinical mentoring",
-    "veterinary surgery", "dentistry"
+    "small animal internal medicine",
+    "clinical pathology",
+    "haematology",
+    "biochemistry",
+    "urinalysis",
+    "cytology",
+    "endocrinology",
+    "IDEXX Catalyst One",
+    "IDEXX ProCyte Dx",
+    "IDEXX SediVue",
+    "IDEXX SNAP tests",
+    "diagnostic imaging",
+    "case report publication",
+    "evidence-based medicine",
+    "MANZCVS",
+    "client communication",
+    "clinical mentoring",
+    "veterinary surgery",
+    "dentistry"
   ],
   "deliberate_flaws": [
     "No product development experience — entire career in clinical veterinary practice",
@@ -107,5 +171,14 @@
     "Career changer — clinical practice to product development requires significant mindset shift",
     "Research output is case reports (2), not peer-reviewed diagnostic validation studies",
     "No experience with regulatory submissions or technical documentation"
-  ]
+  ],
+  "provenance": {
+    "data_source": "synthetic",
+    "jd_basis": "modeled_from_real_jd_styles",
+    "jd_styles_doc": "REAL-JD-STYLES.md",
+    "expected_output_author": "claude",
+    "user_snap_checked": null,
+    "circularity_risk": "medium",
+    "notes": "Synthetic persona and JD. JD style modeled from real Greenhouse/Lever postings. Expected output and cloud_skills are AI-generated. 4/8 scorecard checks (jd_coverage, no_fabrication, metrics_preserved, no_fabricated_skills) evaluate AI vs AI reference. 4/8 checks (factual_preservation, word_count, ats_structure, action_verbs) are structurally valid regardless."
+  }
 }

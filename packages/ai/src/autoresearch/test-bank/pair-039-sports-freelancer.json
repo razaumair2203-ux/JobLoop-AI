@@ -5,7 +5,12 @@
   "synthetic": true,
   "jd_style": "vague_culture_first",
   "framing": "Freelance sports data analyst applying to head of analytics at MLS club",
-  "coverage": { "industry": "Sports/Athletics", "seniority": "mid", "pattern": "freelancer", "region": "north_america" },
+  "coverage": {
+    "industry": "Sports/Athletics",
+    "seniority": "mid",
+    "pattern": "freelancer",
+    "region": "north_america"
+  },
   "jd": {
     "title": "Head of Football Analytics",
     "company": "Inter Miami CF",
@@ -13,13 +18,34 @@
     "experience_years": 5,
     "style_note": "Vague/culture-first: passion for the game, light on technical specifics, relationships-focused",
     "requirements": [
-      { "text": "You live and breathe football — you watch matches not just for enjoyment but to understand tactical patterns and player tendencies", "type": "must_have" },
-      { "text": "5+ years working with football/soccer data in a professional capacity (club, agency, media, or data provider)", "type": "must_have" },
-      { "text": "You can build models and visualisations that help coaches and scouts make better decisions", "type": "must_have" },
-      { "text": "You're comfortable presenting insights to football people, not just data people", "type": "must_have" },
-      { "text": "Bonus: experience with tracking data (Second Spectrum, SkillCorner, or Metrica Sports)", "type": "nice_to_have" },
-      { "text": "Bonus: experience working inside a professional football club", "type": "nice_to_have" },
-      { "text": "Bonus: Spanish language skills", "type": "nice_to_have" }
+      {
+        "text": "You live and breathe football — you watch matches not just for enjoyment but to understand tactical patterns and player tendencies",
+        "type": "must_have"
+      },
+      {
+        "text": "5+ years working with football/soccer data in a professional capacity (club, agency, media, or data provider)",
+        "type": "must_have"
+      },
+      {
+        "text": "You can build models and visualisations that help coaches and scouts make better decisions",
+        "type": "must_have"
+      },
+      {
+        "text": "You're comfortable presenting insights to football people, not just data people",
+        "type": "must_have"
+      },
+      {
+        "text": "Bonus: experience with tracking data (Second Spectrum, SkillCorner, or Metrica Sports)",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "Bonus: experience working inside a professional football club",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "Bonus: Spanish language skills",
+        "type": "nice_to_have"
+      }
     ],
     "responsibilities": [
       "Build and lead the analytics department for Inter Miami's first team and academy",
@@ -59,10 +85,34 @@
       }
     ],
     "skills": {
-      "analytics": ["expected goals (xG) modelling", "expected threat (xT)", "player similarity models", "player recruitment analytics", "opposition scouting reports"],
-      "technical": ["Python (pandas, scikit-learn, matplotlib)", "R (ggplot2)", "Tableau", "SQL (PostgreSQL)", "StatsBomb API", "Opta data feeds"],
-      "football": ["tactical analysis", "match coding (Opta)", "MLS analytics", "EFL Championship", "live event coding", "coaching staff presentations"],
-      "business": ["freelance client management", "newsletter publishing", "data visualisation for non-technical audiences"]
+      "analytics": [
+        "expected goals (xG) modelling",
+        "expected threat (xT)",
+        "player similarity models",
+        "player recruitment analytics",
+        "opposition scouting reports"
+      ],
+      "technical": [
+        "Python (pandas, scikit-learn, matplotlib)",
+        "R (ggplot2)",
+        "Tableau",
+        "SQL (PostgreSQL)",
+        "StatsBomb API",
+        "Opta data feeds"
+      ],
+      "football": [
+        "tactical analysis",
+        "match coding (Opta)",
+        "MLS analytics",
+        "EFL Championship",
+        "live event coding",
+        "coaching staff presentations"
+      ],
+      "business": [
+        "freelance client management",
+        "newsletter publishing",
+        "data visualisation for non-technical audiences"
+      ]
     },
     "certifications": [],
     "education": [
@@ -78,15 +128,23 @@
     "Spanish language skills"
   ],
   "cloud_skills": [
-    "expected goals xG", "expected threat xT",
-    "player similarity models", "player recruitment analytics",
-    "opposition scouting", "tactical analysis",
-    "Python pandas scikit-learn", "R ggplot2",
-    "Tableau", "SQL PostgreSQL",
-    "StatsBomb API", "Opta data feeds",
-    "match coding", "MLS analytics",
+    "expected goals xG",
+    "expected threat xT",
+    "player similarity models",
+    "player recruitment analytics",
+    "opposition scouting",
+    "tactical analysis",
+    "Python pandas scikit-learn",
+    "R ggplot2",
+    "Tableau",
+    "SQL PostgreSQL",
+    "StatsBomb API",
+    "Opta data feeds",
+    "match coding",
+    "MLS analytics",
     "coaching staff presentations",
-    "newsletter publishing", "data visualisation"
+    "newsletter publishing",
+    "data visualisation"
   ],
   "deliberate_flaws": [
     "No tracking data experience (Second Spectrum, SkillCorner, Metrica Sports) — only event data (Opta/StatsBomb)",
@@ -99,5 +157,14 @@
     "Freelancer — no experience with club politics, dressing room dynamics, or daily coaching staff interaction",
     "Sports Management degree, not data science or statistics — technical skills are self-taught",
     "MLS and EFL Championship experience — no top-5 European league analytics experience"
-  ]
+  ],
+  "provenance": {
+    "data_source": "synthetic",
+    "jd_basis": "modeled_from_real_jd_styles",
+    "jd_styles_doc": "REAL-JD-STYLES.md",
+    "expected_output_author": "claude",
+    "user_snap_checked": null,
+    "circularity_risk": "medium",
+    "notes": "Synthetic persona and JD. JD style modeled from real Greenhouse/Lever postings. Expected output and cloud_skills are AI-generated. 4/8 scorecard checks (jd_coverage, no_fabrication, metrics_preserved, no_fabricated_skills) evaluate AI vs AI reference. 4/8 checks (factual_preservation, word_count, ats_structure, action_verbs) are structurally valid regardless."
+  }
 }

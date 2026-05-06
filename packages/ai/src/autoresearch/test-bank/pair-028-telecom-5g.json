@@ -5,7 +5,12 @@
   "synthetic": true,
   "jd_style": "startup_technical",
   "framing": "Senior RF engineer at Ericsson applying to 5G startup in Japan",
-  "coverage": { "industry": "Telecom/5G", "seniority": "senior", "pattern": "linear", "region": "asia" },
+  "coverage": {
+    "industry": "Telecom/5G",
+    "seniority": "senior",
+    "pattern": "linear",
+    "region": "asia"
+  },
   "jd": {
     "title": "Principal RF Engineer — 5G mmWave",
     "company": "Rakuten Symphony",
@@ -13,16 +18,46 @@
     "experience_years": 10,
     "style_note": "Startup-technical: Open RAN disruptor, specific technology stack, mission-driven",
     "requirements": [
-      { "text": "10+ years of RF engineering experience in cellular networks (LTE/5G)", "type": "must_have" },
-      { "text": "Deep expertise in 5G NR mmWave (FR2) radio planning, including beamforming and beam management", "type": "must_have" },
-      { "text": "Experience with O-RAN architecture and open fronthaul interfaces (7.2x split)", "type": "must_have" },
-      { "text": "Proficiency in RF planning tools: Atoll, ASSET, or Planet", "type": "must_have" },
-      { "text": "Experience with drive test analysis tools (TEMS Investigation, Nemo Outdoor) and post-processing (Actix Analyzer, XCAL)", "type": "must_have" },
-      { "text": "Knowledge of 3GPP Release 15-17 specifications for NR", "type": "must_have" },
-      { "text": "Experience with massive MIMO antenna systems (64T64R or higher)", "type": "must_have" },
-      { "text": "Experience with network densification strategies for urban mmWave deployment", "type": "nice_to_have" },
-      { "text": "Familiarity with Rakuten Symphony's Symworld platform or equivalent cloud-native RAN", "type": "nice_to_have" },
-      { "text": "Japanese language proficiency (JLPT N2 or higher)", "type": "nice_to_have" }
+      {
+        "text": "10+ years of RF engineering experience in cellular networks (LTE/5G)",
+        "type": "must_have"
+      },
+      {
+        "text": "Deep expertise in 5G NR mmWave (FR2) radio planning, including beamforming and beam management",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience with O-RAN architecture and open fronthaul interfaces (7.2x split)",
+        "type": "must_have"
+      },
+      {
+        "text": "Proficiency in RF planning tools: Atoll, ASSET, or Planet",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience with drive test analysis tools (TEMS Investigation, Nemo Outdoor) and post-processing (Actix Analyzer, XCAL)",
+        "type": "must_have"
+      },
+      {
+        "text": "Knowledge of 3GPP Release 15-17 specifications for NR",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience with massive MIMO antenna systems (64T64R or higher)",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience with network densification strategies for urban mmWave deployment",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "Familiarity with Rakuten Symphony's Symworld platform or equivalent cloud-native RAN",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "Japanese language proficiency (JLPT N2 or higher)",
+        "type": "nice_to_have"
+      }
     ],
     "responsibilities": [
       "Lead RF design and optimization for Rakuten Mobile's 5G mmWave network expansion across Tokyo metropolitan area",
@@ -73,10 +108,33 @@
       }
     ],
     "skills": {
-      "rf_engineering": ["5G NR sub-6GHz", "massive MIMO (64T64R)", "beamforming (SSB, CSI-RS)", "LTE-Advanced optimization", "interference analysis"],
-      "tools": ["Atoll", "TEMS Investigation", "Actix Analyzer", "Nemo Outdoor", "MapInfo"],
-      "standards": ["3GPP Release 15-17 (NR)", "3GPP RAN4 contributor", "TDD-LTE", "FDD-LTE"],
-      "deployment": ["macro site planning", "small cell design", "drive test campaigns", "KPI benchmarking", "site acceptance"]
+      "rf_engineering": [
+        "5G NR sub-6GHz",
+        "massive MIMO (64T64R)",
+        "beamforming (SSB, CSI-RS)",
+        "LTE-Advanced optimization",
+        "interference analysis"
+      ],
+      "tools": [
+        "Atoll",
+        "TEMS Investigation",
+        "Actix Analyzer",
+        "Nemo Outdoor",
+        "MapInfo"
+      ],
+      "standards": [
+        "3GPP Release 15-17 (NR)",
+        "3GPP RAN4 contributor",
+        "TDD-LTE",
+        "FDD-LTE"
+      ],
+      "deployment": [
+        "macro site planning",
+        "small cell design",
+        "drive test campaigns",
+        "KPI benchmarking",
+        "site acceptance"
+      ]
     },
     "certifications": [
       "Ericsson Certified 5G RAN Engineer",
@@ -100,15 +158,29 @@
     "Japanese JLPT N2"
   ],
   "cloud_skills": [
-    "5G NR", "sub-6GHz", "massive MIMO", "64T64R",
-    "beamforming", "SSB", "CSI-RS",
-    "LTE-Advanced", "TDD-LTE", "FDD-LTE",
-    "Atoll", "TEMS Investigation", "Actix Analyzer",
-    "Nemo Outdoor", "MapInfo",
-    "3GPP RAN4", "Release 15-17",
-    "interference analysis", "drive test",
-    "KPI benchmarking", "site acceptance",
-    "macro site planning", "small cell design"
+    "5G NR",
+    "sub-6GHz",
+    "massive MIMO",
+    "64T64R",
+    "beamforming",
+    "SSB",
+    "CSI-RS",
+    "LTE-Advanced",
+    "TDD-LTE",
+    "FDD-LTE",
+    "Atoll",
+    "TEMS Investigation",
+    "Actix Analyzer",
+    "Nemo Outdoor",
+    "MapInfo",
+    "3GPP RAN4",
+    "Release 15-17",
+    "interference analysis",
+    "drive test",
+    "KPI benchmarking",
+    "site acceptance",
+    "macro site planning",
+    "small cell design"
   ],
   "deliberate_flaws": [
     "No mmWave (FR2) hands-on experience — all sub-6GHz and LTE (28GHz was trial only in Korea)",
@@ -118,5 +190,14 @@
     "No cloud-native RAN or RIC experience (vendor-side, not platform-side)",
     "No network densification strategy design (executed plans, didn't design strategies)",
     "Vendor-to-operator transition — different KPI ownership and commercial pressure"
-  ]
+  ],
+  "provenance": {
+    "data_source": "synthetic",
+    "jd_basis": "modeled_from_real_jd_styles",
+    "jd_styles_doc": "REAL-JD-STYLES.md",
+    "expected_output_author": "claude",
+    "user_snap_checked": null,
+    "circularity_risk": "medium",
+    "notes": "Synthetic persona and JD. JD style modeled from real Greenhouse/Lever postings. Expected output and cloud_skills are AI-generated. 4/8 scorecard checks (jd_coverage, no_fabrication, metrics_preserved, no_fabricated_skills) evaluate AI vs AI reference. 4/8 checks (factual_preservation, word_count, ats_structure, action_verbs) are structurally valid regardless."
+  }
 }

@@ -5,7 +5,12 @@
   "synthetic": true,
   "jd_style": "enterprise_saas",
   "framing": "Mining geologist returning after 4-year career break to BHP automation role in Perth",
-  "coverage": { "industry": "Mining/Resources", "seniority": "mid", "pattern": "returner", "region": "oceania" },
+  "coverage": {
+    "industry": "Mining/Resources",
+    "seniority": "mid",
+    "pattern": "returner",
+    "region": "oceania"
+  },
   "jd": {
     "title": "Senior Mine Geologist — Resource Modelling",
     "company": "BHP",
@@ -13,14 +18,38 @@
     "experience_years": 7,
     "style_note": "Enterprise: structured requirements, specific mining software, safety culture emphasis",
     "requirements": [
-      { "text": "7+ years of experience in mine geology, resource estimation, or grade control for open-pit mining operations", "type": "must_have" },
-      { "text": "Proficiency in Leapfrog Geo, Vulcan, or Surpac for geological modelling and resource estimation", "type": "must_have" },
-      { "text": "Experience with JORC Code (2012) reporting and Competent Person sign-off requirements", "type": "must_have" },
-      { "text": "Knowledge of geostatistical methods (variography, kriging, conditional simulation) for resource estimation", "type": "must_have" },
-      { "text": "Valid WA Mining Act authorisation and current mine site induction (or willingness to obtain)", "type": "must_have" },
-      { "text": "Experience with autonomous mining systems (autonomous haul trucks, drill systems) and their interaction with grade control workflows", "type": "nice_to_have" },
-      { "text": "Familiarity with BHP's proprietary data platforms or SAP S/4HANA for mining", "type": "nice_to_have" },
-      { "text": "MAusIMM membership (Member of the Australasian Institute of Mining and Metallurgy)", "type": "nice_to_have" }
+      {
+        "text": "7+ years of experience in mine geology, resource estimation, or grade control for open-pit mining operations",
+        "type": "must_have"
+      },
+      {
+        "text": "Proficiency in Leapfrog Geo, Vulcan, or Surpac for geological modelling and resource estimation",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience with JORC Code (2012) reporting and Competent Person sign-off requirements",
+        "type": "must_have"
+      },
+      {
+        "text": "Knowledge of geostatistical methods (variography, kriging, conditional simulation) for resource estimation",
+        "type": "must_have"
+      },
+      {
+        "text": "Valid WA Mining Act authorisation and current mine site induction (or willingness to obtain)",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience with autonomous mining systems (autonomous haul trucks, drill systems) and their interaction with grade control workflows",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "Familiarity with BHP's proprietary data platforms or SAP S/4HANA for mining",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "MAusIMM membership (Member of the Australasian Institute of Mining and Metallurgy)",
+        "type": "nice_to_have"
+      }
     ],
     "responsibilities": [
       "Deliver JORC-compliant resource models for BHP's Pilbara iron ore operations",
@@ -60,10 +89,33 @@
       }
     ],
     "skills": {
-      "geology": ["grade control modelling", "resource estimation (JORC 2012)", "Competent Person reporting", "iron ore geology", "blast hole sampling", "drill programme management"],
-      "geostatistics": ["variography", "ordinary kriging", "domain modelling (Fe, SiO2, Al2O3, P, LOI)", "geological wireframing"],
-      "software": ["Vulcan (Maptek)", "Leapfrog Geo (Seequent)", "acQuire (geological database)", "Microsoft Excel"],
-      "operations": ["FIFO operations", "mine site safety", "ore/waste classification", "stockpile management", "short-range mine planning support"]
+      "geology": [
+        "grade control modelling",
+        "resource estimation (JORC 2012)",
+        "Competent Person reporting",
+        "iron ore geology",
+        "blast hole sampling",
+        "drill programme management"
+      ],
+      "geostatistics": [
+        "variography",
+        "ordinary kriging",
+        "domain modelling (Fe, SiO2, Al2O3, P, LOI)",
+        "geological wireframing"
+      ],
+      "software": [
+        "Vulcan (Maptek)",
+        "Leapfrog Geo (Seequent)",
+        "acQuire (geological database)",
+        "Microsoft Excel"
+      ],
+      "operations": [
+        "FIFO operations",
+        "mine site safety",
+        "ore/waste classification",
+        "stockpile management",
+        "short-range mine planning support"
+      ]
     },
     "certifications": [
       "MAusIMM — Member, Australasian Institute of Mining and Metallurgy",
@@ -85,16 +137,26 @@
     "MAusIMM membership"
   ],
   "cloud_skills": [
-    "grade control modelling", "resource estimation",
-    "JORC 2012", "Competent Person",
-    "iron ore geology", "blast hole sampling",
+    "grade control modelling",
+    "resource estimation",
+    "JORC 2012",
+    "Competent Person",
+    "iron ore geology",
+    "blast hole sampling",
     "drill programme management",
-    "variography", "ordinary kriging",
-    "domain modelling", "geological wireframing",
-    "Vulcan", "Leapfrog Geo", "acQuire",
-    "FIFO operations", "mine site safety",
-    "ore/waste classification", "stockpile management",
-    "MAusIMM", "Pilbara iron ore"
+    "variography",
+    "ordinary kriging",
+    "domain modelling",
+    "geological wireframing",
+    "Vulcan",
+    "Leapfrog Geo",
+    "acQuire",
+    "FIFO operations",
+    "mine site safety",
+    "ore/waste classification",
+    "stockpile management",
+    "MAusIMM",
+    "Pilbara iron ore"
   ],
   "deliberate_flaws": [
     "4-year career break (2021-2025) — software skills may be outdated, Leapfrog Geo has had major updates",
@@ -108,5 +170,14 @@
     "Rio Tinto to BHP transition — competitor move in Pilbara, potential knowledge transfer sensitivities",
     "Career break means missed industry shift toward real-time grade control and machine learning in resource estimation",
     "No experience with modern cloud-based geological data platforms that have emerged since 2021"
-  ]
+  ],
+  "provenance": {
+    "data_source": "synthetic",
+    "jd_basis": "modeled_from_real_jd_styles",
+    "jd_styles_doc": "REAL-JD-STYLES.md",
+    "expected_output_author": "claude",
+    "user_snap_checked": null,
+    "circularity_risk": "medium",
+    "notes": "Synthetic persona and JD. JD style modeled from real Greenhouse/Lever postings. Expected output and cloud_skills are AI-generated. 4/8 scorecard checks (jd_coverage, no_fabrication, metrics_preserved, no_fabricated_skills) evaluate AI vs AI reference. 4/8 checks (factual_preservation, word_count, ats_structure, action_verbs) are structurally valid regardless."
+  }
 }

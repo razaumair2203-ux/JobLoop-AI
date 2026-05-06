@@ -5,7 +5,12 @@
   "synthetic": true,
   "jd_style": "vague_culture_first",
   "framing": "Freelance full-stack developer applying to vague 'founding engineer' role at PropTech startup",
-  "coverage": { "industry": "Real Estate/PropTech", "seniority": "mid", "pattern": "freelancer", "region": "north_america" },
+  "coverage": {
+    "industry": "Real Estate/PropTech",
+    "seniority": "mid",
+    "pattern": "freelancer",
+    "region": "north_america"
+  },
   "jd": {
     "title": "Founding Engineer",
     "company": "Stealth PropTech Startup (YC W26)",
@@ -13,11 +18,26 @@
     "experience_years": null,
     "style_note": "Vague/culture-first: minimal requirements, founder-speak, no specific tech stack, equity-heavy",
     "requirements": [
-      { "text": "You've shipped products that real users depend on — not just side projects", "type": "must_have" },
-      { "text": "You're comfortable owning the entire stack, from database schema to deployment pipeline", "type": "must_have" },
-      { "text": "You move fast and make pragmatic trade-offs — you know when good enough is good enough", "type": "must_have" },
-      { "text": "You've worked at an early-stage startup before, or you've built something from zero on your own", "type": "must_have" },
-      { "text": "Bonus: you know real estate, property management, or construction tech", "type": "nice_to_have" }
+      {
+        "text": "You've shipped products that real users depend on — not just side projects",
+        "type": "must_have"
+      },
+      {
+        "text": "You're comfortable owning the entire stack, from database schema to deployment pipeline",
+        "type": "must_have"
+      },
+      {
+        "text": "You move fast and make pragmatic trade-offs — you know when good enough is good enough",
+        "type": "must_have"
+      },
+      {
+        "text": "You've worked at an early-stage startup before, or you've built something from zero on your own",
+        "type": "must_have"
+      },
+      {
+        "text": "Bonus: you know real estate, property management, or construction tech",
+        "type": "nice_to_have"
+      }
     ],
     "responsibilities": [
       "Be the first engineering hire — you'll build the v1 product alongside the two co-founders",
@@ -56,10 +76,32 @@
       }
     ],
     "skills": {
-      "frontend": ["Next.js", "React", "TypeScript", "Tailwind CSS"],
-      "backend": ["Node.js", "PostgreSQL", "Supabase", "REST APIs", "Stripe integration"],
-      "infrastructure": ["Vercel", "Railway", "GitHub Actions CI/CD", "Docker (basic)"],
-      "product": ["full-stack ownership", "database schema design", "auth implementation", "SaaS product development", "client scoping"]
+      "frontend": [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Tailwind CSS"
+      ],
+      "backend": [
+        "Node.js",
+        "PostgreSQL",
+        "Supabase",
+        "REST APIs",
+        "Stripe integration"
+      ],
+      "infrastructure": [
+        "Vercel",
+        "Railway",
+        "GitHub Actions CI/CD",
+        "Docker (basic)"
+      ],
+      "product": [
+        "full-stack ownership",
+        "database schema design",
+        "auth implementation",
+        "SaaS product development",
+        "client scoping"
+      ]
     },
     "certifications": [],
     "education": [
@@ -74,14 +116,28 @@
     "real estate property management construction tech"
   ],
   "cloud_skills": [
-    "Next.js", "React", "TypeScript", "Tailwind CSS",
-    "Node.js", "PostgreSQL", "Supabase", "REST APIs",
-    "Stripe", "Vercel", "Railway", "GitHub Actions",
-    "Docker", "full-stack ownership",
-    "database schema design", "auth implementation",
-    "SaaS development", "property management tech",
-    "lease tracking", "client management",
-    "fixed-price contracting", "acqui-hire experience"
+    "Next.js",
+    "React",
+    "TypeScript",
+    "Tailwind CSS",
+    "Node.js",
+    "PostgreSQL",
+    "Supabase",
+    "REST APIs",
+    "Stripe",
+    "Vercel",
+    "Railway",
+    "GitHub Actions",
+    "Docker",
+    "full-stack ownership",
+    "database schema design",
+    "auth implementation",
+    "SaaS development",
+    "property management tech",
+    "lease tracking",
+    "client management",
+    "fixed-price contracting",
+    "acqui-hire experience"
   ],
   "deliberate_flaws": [
     "No CS degree — self-taught (some startups care, most YC companies don't)",
@@ -92,5 +148,14 @@
     "No mobile development experience (property managers often need mobile apps)",
     "Docker experience is basic — production infrastructure knowledge may be shallow beyond Vercel/Railway",
     "Fixed-price freelance model doesn't prepare for startup equity/salary dynamics"
-  ]
+  ],
+  "provenance": {
+    "data_source": "synthetic",
+    "jd_basis": "modeled_from_real_jd_styles",
+    "jd_styles_doc": "REAL-JD-STYLES.md",
+    "expected_output_author": "claude",
+    "user_snap_checked": null,
+    "circularity_risk": "medium",
+    "notes": "Synthetic persona and JD. JD style modeled from real Greenhouse/Lever postings. Expected output and cloud_skills are AI-generated. 4/8 scorecard checks (jd_coverage, no_fabrication, metrics_preserved, no_fabricated_skills) evaluate AI vs AI reference. 4/8 checks (factual_preservation, word_count, ats_structure, action_verbs) are structurally valid regardless."
+  }
 }

@@ -4,23 +4,58 @@
   "persona": "mid_career",
   "synthetic": true,
   "framing": "Government policy analyst moving to private sector consulting",
-  "coverage": { "industry": "Government", "seniority": "mid", "pattern": "career_changer", "region": "asia_pacific" },
+  "coverage": {
+    "industry": "Government",
+    "seniority": "mid",
+    "pattern": "career_changer",
+    "region": "asia_pacific"
+  },
   "jd": {
     "title": "Senior Consultant — Public Sector Advisory",
     "company": "McKinsey & Company",
     "location": "Singapore",
     "experience_years": 7,
     "requirements": [
-      { "text": "7+ years of experience in government, public policy, or public sector consulting", "type": "must_have" },
-      { "text": "Strong quantitative analytical skills with experience in data-driven policy analysis", "type": "must_have" },
-      { "text": "Experience leading or managing teams of 3-5 people on complex projects", "type": "must_have" },
-      { "text": "Excellent written and verbal communication including policy briefs and presentations", "type": "must_have" },
-      { "text": "Experience working with senior government officials or C-suite stakeholders", "type": "must_have" },
-      { "text": "Master's degree in Public Policy, Public Administration, Economics, or related field", "type": "must_have" },
-      { "text": "Experience with Southeast Asian government systems and regulatory frameworks", "type": "nice_to_have" },
-      { "text": "Consulting experience at top-tier firm (MBB, Big 4, or boutique strategy)", "type": "nice_to_have" },
-      { "text": "Experience with digital government transformation or GovTech initiatives", "type": "nice_to_have" },
-      { "text": "Proficiency in data analysis tools (Excel modeling, Tableau, Python/R)", "type": "must_have" }
+      {
+        "text": "7+ years of experience in government, public policy, or public sector consulting",
+        "type": "must_have"
+      },
+      {
+        "text": "Strong quantitative analytical skills with experience in data-driven policy analysis",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience leading or managing teams of 3-5 people on complex projects",
+        "type": "must_have"
+      },
+      {
+        "text": "Excellent written and verbal communication including policy briefs and presentations",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience working with senior government officials or C-suite stakeholders",
+        "type": "must_have"
+      },
+      {
+        "text": "Master's degree in Public Policy, Public Administration, Economics, or related field",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience with Southeast Asian government systems and regulatory frameworks",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "Consulting experience at top-tier firm (MBB, Big 4, or boutique strategy)",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "Experience with digital government transformation or GovTech initiatives",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "Proficiency in data analysis tools (Excel modeling, Tableau, Python/R)",
+        "type": "must_have"
+      }
     ],
     "responsibilities": [
       "Lead workstreams on public sector transformation engagements across ASEAN markets",
@@ -71,10 +106,34 @@
       }
     ],
     "skills": {
-      "policy": ["public policy analysis", "regulatory frameworks", "policy brief writing", "Cabinet-level briefings", "digital government strategy"],
-      "analytical": ["econometric analysis", "KPI frameworks", "data-driven policy", "Excel modeling", "Tableau", "Python (pandas, basic)"],
-      "stakeholder": ["ministerial stakeholder management", "cross-agency coordination", "government client relationships", "senior official presentations"],
-      "domain": ["ASEAN regulatory frameworks", "digital identity", "SME enterprise development", "GovTech", "trade policy"]
+      "policy": [
+        "public policy analysis",
+        "regulatory frameworks",
+        "policy brief writing",
+        "Cabinet-level briefings",
+        "digital government strategy"
+      ],
+      "analytical": [
+        "econometric analysis",
+        "KPI frameworks",
+        "data-driven policy",
+        "Excel modeling",
+        "Tableau",
+        "Python (pandas, basic)"
+      ],
+      "stakeholder": [
+        "ministerial stakeholder management",
+        "cross-agency coordination",
+        "government client relationships",
+        "senior official presentations"
+      ],
+      "domain": [
+        "ASEAN regulatory frameworks",
+        "digital identity",
+        "SME enterprise development",
+        "GovTech",
+        "trade policy"
+      ]
     },
     "certifications": [
       "Tableau Desktop Specialist"
@@ -97,15 +156,27 @@
     "data analysis Excel Tableau Python R"
   ],
   "cloud_skills": [
-    "public policy analysis", "regulatory frameworks", "policy brief writing",
-    "digital government strategy", "econometric analysis",
-    "KPI frameworks", "Excel modeling", "Tableau", "Python pandas",
-    "ministerial stakeholder management", "cross-agency coordination",
-    "ASEAN regulatory frameworks", "digital identity",
-    "SME enterprise development", "GovTech",
-    "trade policy", "Cabinet briefings",
-    "team management", "data-driven policy",
-    "e-government", "governance indicators"
+    "public policy analysis",
+    "regulatory frameworks",
+    "policy brief writing",
+    "digital government strategy",
+    "econometric analysis",
+    "KPI frameworks",
+    "Excel modeling",
+    "Tableau",
+    "Python pandas",
+    "ministerial stakeholder management",
+    "cross-agency coordination",
+    "ASEAN regulatory frameworks",
+    "digital identity",
+    "SME enterprise development",
+    "GovTech",
+    "trade policy",
+    "Cabinet briefings",
+    "team management",
+    "data-driven policy",
+    "e-government",
+    "governance indicators"
   ],
   "deliberate_flaws": [
     "No consulting experience (all government — McKinsey may see as cultural risk)",
@@ -113,5 +184,14 @@
     "Python skills are basic (pandas only, no advanced modeling)",
     "Team of 4 vs requirement for 3-5 (barely meets)",
     "Government pay scales and work style may not translate to consulting pace"
-  ]
+  ],
+  "provenance": {
+    "data_source": "synthetic",
+    "jd_basis": "modeled_from_real_jd_styles",
+    "jd_styles_doc": "REAL-JD-STYLES.md",
+    "expected_output_author": "claude",
+    "user_snap_checked": null,
+    "circularity_risk": "medium",
+    "notes": "Synthetic persona and JD. JD style modeled from real Greenhouse/Lever postings. Expected output and cloud_skills are AI-generated. 4/8 scorecard checks (jd_coverage, no_fabrication, metrics_preserved, no_fabricated_skills) evaluate AI vs AI reference. 4/8 checks (factual_preservation, word_count, ats_structure, action_verbs) are structurally valid regardless."
+  }
 }

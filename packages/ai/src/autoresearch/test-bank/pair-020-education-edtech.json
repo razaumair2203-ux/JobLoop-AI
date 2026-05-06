@@ -5,7 +5,12 @@
   "synthetic": true,
   "jd_style": "startup_technical",
   "framing": "Secondary school teacher transitioning to instructional designer role at EdTech startup",
-  "coverage": { "industry": "Education/EdTech", "seniority": "mid", "pattern": "career_changer", "region": "north_america" },
+  "coverage": {
+    "industry": "Education/EdTech",
+    "seniority": "mid",
+    "pattern": "career_changer",
+    "region": "north_america"
+  },
   "jd": {
     "title": "Senior Instructional Designer — AI Learning Products",
     "company": "Khan Academy",
@@ -13,14 +18,38 @@
     "experience_years": null,
     "style_note": "Startup-technical: mission-driven, cross-domain (pedagogy + tech), flat requirements list",
     "requirements": [
-      { "text": "Deep understanding of learning science, cognitive load theory, and evidence-based pedagogy", "type": "must_have" },
-      { "text": "Experience designing curriculum or instructional content for K-12 or higher education at scale", "type": "must_have" },
-      { "text": "Comfort working with engineers and data scientists to translate pedagogical goals into product requirements", "type": "must_have" },
-      { "text": "Experience with learning management systems (LMS) and content authoring tools", "type": "must_have" },
-      { "text": "Familiarity with AI/ML concepts as applied to adaptive learning or intelligent tutoring systems", "type": "nice_to_have" },
-      { "text": "Experience with A/B testing or learning outcome measurement at scale", "type": "nice_to_have" },
-      { "text": "Master's degree in Education, Learning Sciences, Instructional Design, or related field", "type": "nice_to_have" },
-      { "text": "Passion for free, world-class education for anyone, anywhere", "type": "must_have" }
+      {
+        "text": "Deep understanding of learning science, cognitive load theory, and evidence-based pedagogy",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience designing curriculum or instructional content for K-12 or higher education at scale",
+        "type": "must_have"
+      },
+      {
+        "text": "Comfort working with engineers and data scientists to translate pedagogical goals into product requirements",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience with learning management systems (LMS) and content authoring tools",
+        "type": "must_have"
+      },
+      {
+        "text": "Familiarity with AI/ML concepts as applied to adaptive learning or intelligent tutoring systems",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "Experience with A/B testing or learning outcome measurement at scale",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "Master's degree in Education, Learning Sciences, Instructional Design, or related field",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "Passion for free, world-class education for anyone, anywhere",
+        "type": "must_have"
+      }
     ],
     "responsibilities": [
       "Design instructional frameworks for Khanmigo (AI tutor) interactions across math and science subjects",
@@ -59,10 +88,34 @@
       }
     ],
     "skills": {
-      "pedagogy": ["backward design (UbD)", "cognitive load theory", "spaced repetition", "differentiated instruction", "formative assessment", "AP curriculum design"],
-      "educational_technology": ["Khan Academy (assignment & analytics)", "Khanmigo (pilot user)", "Desmos", "DeltaMath", "Google Classroom", "Canvas LMS"],
-      "content_creation": ["video lesson production", "interactive practice set design", "rubric development", "teacher training materials"],
-      "assessment": ["AP exam preparation", "item analysis", "learning outcome measurement", "qualitative feedback"]
+      "pedagogy": [
+        "backward design (UbD)",
+        "cognitive load theory",
+        "spaced repetition",
+        "differentiated instruction",
+        "formative assessment",
+        "AP curriculum design"
+      ],
+      "educational_technology": [
+        "Khan Academy (assignment & analytics)",
+        "Khanmigo (pilot user)",
+        "Desmos",
+        "DeltaMath",
+        "Google Classroom",
+        "Canvas LMS"
+      ],
+      "content_creation": [
+        "video lesson production",
+        "interactive practice set design",
+        "rubric development",
+        "teacher training materials"
+      ],
+      "assessment": [
+        "AP exam preparation",
+        "item analysis",
+        "learning outcome measurement",
+        "qualitative feedback"
+      ]
     },
     "certifications": [
       "Virginia Teaching License — Mathematics (6-12)",
@@ -85,14 +138,25 @@
     "passion free world-class education"
   ],
   "cloud_skills": [
-    "backward design", "UbD", "cognitive load theory",
-    "spaced repetition", "differentiated instruction",
-    "AP curriculum design", "formative assessment",
-    "Khan Academy", "Khanmigo", "Desmos", "DeltaMath",
-    "Canvas LMS", "Google Classroom",
-    "video lesson production", "interactive practice sets",
-    "rubric development", "teacher training",
-    "item analysis", "learning outcome measurement",
+    "backward design",
+    "UbD",
+    "cognitive load theory",
+    "spaced repetition",
+    "differentiated instruction",
+    "AP curriculum design",
+    "formative assessment",
+    "Khan Academy",
+    "Khanmigo",
+    "Desmos",
+    "DeltaMath",
+    "Canvas LMS",
+    "Google Classroom",
+    "video lesson production",
+    "interactive practice sets",
+    "rubric development",
+    "teacher training",
+    "item analysis",
+    "learning outcome measurement",
     "curriculum committee leadership"
   ],
   "deliberate_flaws": [
@@ -103,5 +167,14 @@
     "No experience with content authoring tools beyond Google ecosystem and Khan Academy's platform",
     "Career changer — no startup or tech company experience, moving from public school culture",
     "Scale is classroom-level (150 students), not platform-level (millions of learners)"
-  ]
+  ],
+  "provenance": {
+    "data_source": "synthetic",
+    "jd_basis": "modeled_from_real_jd_styles",
+    "jd_styles_doc": "REAL-JD-STYLES.md",
+    "expected_output_author": "claude",
+    "user_snap_checked": null,
+    "circularity_risk": "medium",
+    "notes": "Synthetic persona and JD. JD style modeled from real Greenhouse/Lever postings. Expected output and cloud_skills are AI-generated. 4/8 scorecard checks (jd_coverage, no_fabrication, metrics_preserved, no_fabricated_skills) evaluate AI vs AI reference. 4/8 checks (factual_preservation, word_count, ats_structure, action_verbs) are structurally valid regardless."
+  }
 }

@@ -1,0 +1,47 @@
+{
+  "_meta": {
+    "entry_id": "001",
+    "framing": "maintenance",
+    "source_cv": "Resume KSA-ME_JAN25.pdf",
+    "ground_truth_profile": "../ground-truth-profile.json",
+    "difficulty": "medium",
+    "industry": "aviation_mro",
+    "seniority": "senior",
+    "region": "middle_east"
+  },
+
+  "jd": {
+    "title": "Senior Avionics Maintenance Engineer",
+    "company": "Saudia Aerospace Engineering Industries (SAEI)",
+    "location": "Jeddah, Saudi Arabia",
+    "type": "full_time",
+    "text": "Senior Avionics Maintenance Engineer\nSaudia Aerospace Engineering Industries (SAEI)\nJeddah, Saudi Arabia\n\nAbout SAEI:\nSAEI is a leading MRO provider in the Middle East, serving commercial and government aviation clients. We maintain and overhaul aircraft for Saudi Arabian Airlines and external customers.\n\nRole Summary:\nWe are seeking an experienced Senior Avionics Maintenance Engineer to lead avionics maintenance operations in our wide-body hangar facility. The role involves hands-on technical leadership, team supervision, and ensuring compliance with GACA, FAA, and EASA regulations.\n\nKey Responsibilities:\n- Lead avionics maintenance teams (20-30 technicians) across C-check and D-check programs\n- Supervise fault diagnosis, troubleshooting, and rectification of avionics systems (navigation, communication, radar, FMS)\n- Ensure compliance with GACA CAR Part-145, FAA, and manufacturer maintenance manuals\n- Manage Airworthiness Directives (ADs) and Service Bulletin (SB) compliance tracking\n- Review and approve work packages, task cards, and engineering orders\n- Coordinate with OEMs (Boeing, Airbus) for technical support and warranty claims\n- Drive reliability improvement programs using MTBF/MTTR data analysis\n- Manage maintenance planning and scheduling using SAP/AMOS\n- Conduct root cause analysis for repetitive defects\n- Support CAMO activities and audit preparation\n- Mentor junior engineers and manage OJT programs\n\nRequired Qualifications:\n- Bachelor's degree in Avionics, Electrical, or Aerospace Engineering\n- 10+ years of experience in aircraft avionics maintenance\n- GACA or FAA Aircraft Maintenance Engineer (AME) license preferred\n- Experience with wide-body aircraft (B777, B787, A330, A350)\n- Proficiency in maintenance management systems (SAP, AMOS, TRAX)\n- Strong knowledge of ATA chapters 22-34 (avionics systems)\n- Experience with Part-145 approved maintenance organization\n- Excellent leadership and team management skills\n\nPreferred:\n- PMP or project management certification\n- Experience with military aircraft transition to commercial MRO\n- Arabic language skills\n- EASA Part-66 B2 license\n\nBenefits:\n- Competitive salary + housing allowance\n- Annual leave + ticket\n- Medical insurance for family\n- Professional development support"
+  },
+
+  "expected_output_notes": {
+    "key_matches": [
+      "15+ years avionics experience (exceeds 10+ requirement)",
+      "AEW&C maintenance: SAAB 2000 fleet of 80 technicians (exceeds 20-30 team size)",
+      "AMOS experience (directly mentioned in CV)",
+      "MTBF/MTTR analysis (directly mentioned)",
+      "Airworthiness Directives and Service Bulletins (directly mentioned)",
+      "PMP certified (preferred requirement met)",
+      "CAMO/AMO audit experience",
+      "Configuration management and CMDB"
+    ],
+    "gaps_to_bridge": [
+      "Military aircraft, not commercial wide-body (B777, etc.) — bridge: 'avionics principles transfer, platform training readily acquired'",
+      "No GACA/FAA AME license — bridge: 'military equivalent maintenance authority, eligible for conversion'",
+      "No SAP experience (has AMOS) — bridge: 'AMOS proficiency, SAP-learnable'",
+      "No ATA chapter-specific experience listed — bridge: 'military avionics covers equivalent system domains'",
+      "No Arabic language mentioned"
+    ],
+    "position_assessment": "Competitive — strong technical match with maintenance leadership, but military-to-commercial gap requires bridging",
+    "cv_sections_to_emphasize": [
+      "AEW&C maintenance role (Role #3) — most relevant, team of 80, AMOS, AD/SB compliance",
+      "Crotale field role (Role #6) — field operations leadership, readiness management",
+      "PAC Kamra (Role #1) — modification programs, configuration management",
+      "PMP certification in Licenses section"
+    ]
+  }
+}

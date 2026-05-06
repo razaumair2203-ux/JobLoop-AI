@@ -268,6 +268,8 @@ function matchTechnology(
 }
 
 function determineVerdict(node: CloudNode): MatchVerdict {
+  // Strong: multi-role + (impact OR validation)
+  // OR: single-role + depth + impact (Socratic enrichment promotes single-role nodes)
   if (
     node.summary.number_of_roles >= 2 &&
     (node.summary.has_impact || node.summary.has_external_validation)
@@ -275,7 +277,22 @@ function determineVerdict(node: CloudNode): MatchVerdict {
     return "strong_evidence";
   }
 
+  if (
+    node.summary.number_of_roles >= 1 &&
+    node.summary.has_depth &&
+    node.summary.has_impact
+  ) {
+    return "strong_evidence";
+  }
+
   if (node.summary.number_of_roles >= 1) {
+    // Depth alone upgrades from "evidence_exists" — the user invested time answering
+    // but we still call it "evidence_exists" (not "strong") without impact/validation
+    return "evidence_exists";
+  }
+
+  // Depth without any role context (e.g., user said "I also know X" via Socratic)
+  if (node.summary.has_depth) {
     return "evidence_exists";
   }
 

@@ -5,7 +5,12 @@
   "synthetic": true,
   "jd_style": "defense_cleared",
   "framing": "Royal Navy Warfare Officer transitioning to maritime defence systems role at BAE Systems in Glasgow",
-  "coverage": { "industry": "Maritime/Defence", "seniority": "senior", "pattern": "military_transition", "region": "europe" },
+  "coverage": {
+    "industry": "Maritime/Defence",
+    "seniority": "senior",
+    "pattern": "military_transition",
+    "region": "europe"
+  },
   "jd": {
     "title": "Senior Systems Engineer — Naval Combat Systems",
     "company": "BAE Systems — Naval Ships",
@@ -13,14 +18,38 @@
     "experience_years": 10,
     "style_note": "Defence-cleared: UK security clearance mandatory, specific naval platform experience, MOD procurement context",
     "requirements": [
-      { "text": "Active SC or DV security clearance (or eligibility to obtain)", "type": "must_have" },
-      { "text": "10+ years of experience in naval combat management systems, platform systems integration, or naval architecture", "type": "must_have" },
-      { "text": "Knowledge of CMS (Combat Management System) architecture: CMS variants used on Type 26, Type 45, or Queen Elizabeth class", "type": "must_have" },
-      { "text": "Experience with naval sensor and weapon system integration (radar, sonar, missile systems, electronic warfare)", "type": "must_have" },
-      { "text": "Understanding of MOD acquisition framework: CADMID lifecycle, DE&S (Defence Equipment & Support) processes", "type": "must_have" },
-      { "text": "Familiarity with Def Stan 00-56 (Safety Management) and Def Stan 00-55 (Safety Critical Software)", "type": "must_have" },
-      { "text": "Experience with MBSE tools (Sparx Enterprise Architect, IBM Rhapsody, or Cameo Systems Modeler)", "type": "nice_to_have" },
-      { "text": "Chartered Engineer (CEng) status with IMarEST or IET", "type": "nice_to_have" }
+      {
+        "text": "Active SC or DV security clearance (or eligibility to obtain)",
+        "type": "must_have"
+      },
+      {
+        "text": "10+ years of experience in naval combat management systems, platform systems integration, or naval architecture",
+        "type": "must_have"
+      },
+      {
+        "text": "Knowledge of CMS (Combat Management System) architecture: CMS variants used on Type 26, Type 45, or Queen Elizabeth class",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience with naval sensor and weapon system integration (radar, sonar, missile systems, electronic warfare)",
+        "type": "must_have"
+      },
+      {
+        "text": "Understanding of MOD acquisition framework: CADMID lifecycle, DE&S (Defence Equipment & Support) processes",
+        "type": "must_have"
+      },
+      {
+        "text": "Familiarity with Def Stan 00-56 (Safety Management) and Def Stan 00-55 (Safety Critical Software)",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience with MBSE tools (Sparx Enterprise Architect, IBM Rhapsody, or Cameo Systems Modeler)",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "Chartered Engineer (CEng) status with IMarEST or IET",
+        "type": "nice_to_have"
+      }
     ],
     "responsibilities": [
       "Lead combat system integration for Type 26 Global Combat Ship programme",
@@ -71,11 +100,37 @@
       }
     ],
     "skills": {
-      "combat_systems": ["CMS (BAE Systems)", "Sea Viper (Aster 15/30)", "Sea Ceptor", "Phalanx CIWS", "Artisan 3D radar", "Sonar 2087", "EW suite"],
-      "operational": ["Anti-Air Warfare Director (AAWD)", "tactical operations", "NATO interoperability", "operational readiness", "combat system availability management"],
-      "engineering": ["combat system maintenance", "software defect management", "operational testing", "shore support coordination"],
-      "leadership": ["warfare department management (45 personnel)", "engineering team management (21 staff)", "training delivery", "multi-national exercise coordination"],
-      "clearance": ["SC security clearance (active)"]
+      "combat_systems": [
+        "CMS (BAE Systems)",
+        "Sea Viper (Aster 15/30)",
+        "Sea Ceptor",
+        "Phalanx CIWS",
+        "Artisan 3D radar",
+        "Sonar 2087",
+        "EW suite"
+      ],
+      "operational": [
+        "Anti-Air Warfare Director (AAWD)",
+        "tactical operations",
+        "NATO interoperability",
+        "operational readiness",
+        "combat system availability management"
+      ],
+      "engineering": [
+        "combat system maintenance",
+        "software defect management",
+        "operational testing",
+        "shore support coordination"
+      ],
+      "leadership": [
+        "warfare department management (45 personnel)",
+        "engineering team management (21 staff)",
+        "training delivery",
+        "multi-national exercise coordination"
+      ],
+      "clearance": [
+        "SC security clearance (active)"
+      ]
     },
     "certifications": [
       "Principal Warfare Officer — Royal Navy (2018)",
@@ -98,14 +153,24 @@
     "CEng IMarEST IET Chartered Engineer"
   ],
   "cloud_skills": [
-    "CMS BAE Systems", "Sea Viper Aster", "Sea Ceptor",
-    "Phalanx CIWS", "Artisan 3D radar", "Sonar 2087",
-    "electronic warfare", "Anti-Air Warfare Director",
-    "tactical operations", "NATO interoperability",
-    "combat system maintenance", "operational testing",
-    "SC clearance", "Type 45", "Type 23",
+    "CMS BAE Systems",
+    "Sea Viper Aster",
+    "Sea Ceptor",
+    "Phalanx CIWS",
+    "Artisan 3D radar",
+    "Sonar 2087",
+    "electronic warfare",
+    "Anti-Air Warfare Director",
+    "tactical operations",
+    "NATO interoperability",
+    "combat system maintenance",
+    "operational testing",
+    "SC clearance",
+    "Type 45",
+    "Type 23",
     "warfare department management",
-    "multi-national exercises", "Joint Warrior"
+    "multi-national exercises",
+    "Joint Warrior"
   ],
   "deliberate_flaws": [
     "No Type 26 experience — served on Type 45 and Type 23 (Type 26 is the programme being recruited for)",
@@ -119,5 +184,14 @@
     "No experience managing technical interfaces between prime contractors and sub-system suppliers",
     "Warfare Officer background, not engineering branch — deep operational knowledge but limited formal systems engineering methodology",
     "No naval architecture knowledge (JD mentions it as alternative experience path)"
-  ]
+  ],
+  "provenance": {
+    "data_source": "synthetic",
+    "jd_basis": "modeled_from_real_jd_styles",
+    "jd_styles_doc": "REAL-JD-STYLES.md",
+    "expected_output_author": "claude",
+    "user_snap_checked": null,
+    "circularity_risk": "medium",
+    "notes": "Synthetic persona and JD. JD style modeled from real Greenhouse/Lever postings. Expected output and cloud_skills are AI-generated. 4/8 scorecard checks (jd_coverage, no_fabrication, metrics_preserved, no_fabricated_skills) evaluate AI vs AI reference. 4/8 checks (factual_preservation, word_count, ats_structure, action_verbs) are structurally valid regardless."
+  }
 }

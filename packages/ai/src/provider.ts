@@ -17,7 +17,11 @@ import type { ParsedJD, ParsedCV } from "./types";
 
 export type ProviderMode = "dev" | "api";
 
-let currentMode: ProviderMode = "dev";
+// Auto-detect mode from environment: if ANTHROPIC_API_KEY is set, use API mode
+let currentMode: ProviderMode =
+  typeof process !== "undefined" && process.env?.ANTHROPIC_API_KEY
+    ? "api"
+    : "dev";
 let devDataDir: string = "./dev-data";
 
 // Lazy-loaded fs functions — only resolved when dev mode actually runs
@@ -108,7 +112,12 @@ export function getDevResponse<T>(type: string, input: string): T | null {
   const id = `${type}-${hashString(input)}`;
   const filePath = path.join(devDataDir, "responses", `${id}.json`);
   if (fs.existsSync(filePath)) {
-    return JSON.parse(fs.readFileSync(filePath, "utf-8")) as T;
+    try {
+      return JSON.parse(fs.readFileSync(filePath, "utf-8")) as T;
+    } catch (err) {
+      console.warn(`Failed to parse dev response ${id}:`, err instanceof Error ? err.message : err);
+      return null;
+    }
   }
   return null;
 }

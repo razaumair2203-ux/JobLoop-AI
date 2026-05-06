@@ -26,6 +26,7 @@ export type {
 export {
   initLoopState,
   selectTrainingBatch,
+  selectWeightedTrainingBatch,
   scorePromptVariant,
   runIteration,
   shouldStop,
@@ -41,6 +42,16 @@ export type {
   LoopState,
   LoopConfig,
 } from "./loop-runner";
+
+export {
+  computeFeedbackWeights,
+  selectWeightedBatch,
+} from "./feedback-weighter";
+export type {
+  FeedbackRecord,
+  PairWeight,
+  FeedbackWeights,
+} from "./feedback-weighter";
 
 export {
   oneWayANOVA,

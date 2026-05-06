@@ -5,7 +5,12 @@
   "synthetic": true,
   "jd_style": "enterprise_saas",
   "framing": "Clinical operations associate director at Pfizer seeking VP role at mid-size CRO",
-  "coverage": { "industry": "Pharmaceutical/CRO", "seniority": "mid", "pattern": "linear", "region": "north_america" },
+  "coverage": {
+    "industry": "Pharmaceutical/CRO",
+    "seniority": "mid",
+    "pattern": "linear",
+    "region": "north_america"
+  },
   "jd": {
     "title": "Vice President — Clinical Operations",
     "company": "Medpace",
@@ -13,15 +18,42 @@
     "experience_years": 12,
     "style_note": "Enterprise: specific regulatory and clinical trial knowledge, structured requirements, CRO-specific",
     "requirements": [
-      { "text": "12+ years of clinical operations experience in pharma, biotech, or CRO with progressive leadership", "type": "must_have" },
-      { "text": "Experience managing global clinical trials across Phases I-III with 50+ sites and 1,000+ patients", "type": "must_have" },
-      { "text": "Deep knowledge of ICH-GCP (E6(R2)/E6(R3)) guidelines and FDA 21 CFR Part 11 compliance", "type": "must_have" },
-      { "text": "Experience with EDC systems (Medidata Rave, Oracle Clinical/InForm, or Veeva Vault CDMS)", "type": "must_have" },
-      { "text": "Experience with risk-based monitoring (RBM) and centralized statistical monitoring approaches", "type": "must_have" },
-      { "text": "Track record managing clinical operations teams of 30+ including CRAs, CTMs, and data managers", "type": "must_have" },
-      { "text": "Experience with decentralized clinical trials (DCT): ePRO, eConsent, home nursing, wearable integration", "type": "nice_to_have" },
-      { "text": "Therapeutic area expertise in oncology, rare disease, or immunology", "type": "nice_to_have" },
-      { "text": "Experience with CTMS (Clinical Trial Management Systems): Veeva Vault, Oracle Siebel CTMS, or Medidata CTMS", "type": "nice_to_have" }
+      {
+        "text": "12+ years of clinical operations experience in pharma, biotech, or CRO with progressive leadership",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience managing global clinical trials across Phases I-III with 50+ sites and 1,000+ patients",
+        "type": "must_have"
+      },
+      {
+        "text": "Deep knowledge of ICH-GCP (E6(R2)/E6(R3)) guidelines and FDA 21 CFR Part 11 compliance",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience with EDC systems (Medidata Rave, Oracle Clinical/InForm, or Veeva Vault CDMS)",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience with risk-based monitoring (RBM) and centralized statistical monitoring approaches",
+        "type": "must_have"
+      },
+      {
+        "text": "Track record managing clinical operations teams of 30+ including CRAs, CTMs, and data managers",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience with decentralized clinical trials (DCT): ePRO, eConsent, home nursing, wearable integration",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "Therapeutic area expertise in oncology, rare disease, or immunology",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "Experience with CTMS (Clinical Trial Management Systems): Veeva Vault, Oracle Siebel CTMS, or Medidata CTMS",
+        "type": "nice_to_have"
+      }
     ],
     "responsibilities": [
       "Lead clinical operations for Medpace's oncology and rare disease therapeutic units",
@@ -72,11 +104,39 @@
       }
     ],
     "skills": {
-      "clinical_ops": ["Phase II-III trial management", "site activation", "enrollment management", "CRO oversight", "monitoring visit execution", "database lock"],
-      "regulatory": ["ICH-GCP E6(R2)", "FDA 21 CFR Part 11", "FDA inspection readiness", "TMF management", "SAE reconciliation"],
-      "systems": ["Medidata Rave EDC", "Medidata CTMS", "IVRS/IXRS", "eTMF (Veeva Vault)", "SharePoint"],
-      "leadership": ["team management (22 CRAs/CTMs)", "CRO oversight ($45M budget)", "multi-country trial execution (35 countries)", "vendor management"],
-      "therapeutic": ["oncology (anti-PD-L1, ADC)", "immunology (JAK inhibitor)", "cardiovascular"]
+      "clinical_ops": [
+        "Phase II-III trial management",
+        "site activation",
+        "enrollment management",
+        "CRO oversight",
+        "monitoring visit execution",
+        "database lock"
+      ],
+      "regulatory": [
+        "ICH-GCP E6(R2)",
+        "FDA 21 CFR Part 11",
+        "FDA inspection readiness",
+        "TMF management",
+        "SAE reconciliation"
+      ],
+      "systems": [
+        "Medidata Rave EDC",
+        "Medidata CTMS",
+        "IVRS/IXRS",
+        "eTMF (Veeva Vault)",
+        "SharePoint"
+      ],
+      "leadership": [
+        "team management (22 CRAs/CTMs)",
+        "CRO oversight ($45M budget)",
+        "multi-country trial execution (35 countries)",
+        "vendor management"
+      ],
+      "therapeutic": [
+        "oncology (anti-PD-L1, ADC)",
+        "immunology (JAK inhibitor)",
+        "cardiovascular"
+      ]
     },
     "certifications": [
       "ACRP Certified Clinical Research Associate (CCRA) — 2014",
@@ -99,16 +159,26 @@
     "CTMS Veeva Vault Oracle Siebel Medidata CTMS"
   ],
   "cloud_skills": [
-    "Phase II-III trial management", "site activation",
-    "enrollment management", "CRO oversight",
-    "ICH-GCP E6(R2)", "FDA 21 CFR Part 11",
-    "Medidata Rave EDC", "Medidata CTMS",
-    "risk-based monitoring", "centralized monitoring",
-    "team management", "multi-country trials",
-    "oncology anti-PD-L1 ADC", "immunology JAK",
-    "FDA inspection readiness", "TMF management",
-    "SAE reconciliation", "database lock",
-    "ACRP CCRA", "SoCRA CCRP"
+    "Phase II-III trial management",
+    "site activation",
+    "enrollment management",
+    "CRO oversight",
+    "ICH-GCP E6(R2)",
+    "FDA 21 CFR Part 11",
+    "Medidata Rave EDC",
+    "Medidata CTMS",
+    "risk-based monitoring",
+    "centralized monitoring",
+    "team management",
+    "multi-country trials",
+    "oncology anti-PD-L1 ADC",
+    "immunology JAK",
+    "FDA inspection readiness",
+    "TMF management",
+    "SAE reconciliation",
+    "database lock",
+    "ACRP CCRA",
+    "SoCRA CCRP"
   ],
   "deliberate_flaws": [
     "Never exceeded 800 patients — JD requires 1,000+ patient trial experience",
@@ -123,5 +193,14 @@
     "No sponsor-facing experience from CRO perspective — has always been the sponsor",
     "Associate Director to VP is a significant title jump — no VP experience",
     "No Oracle Siebel CTMS experience (used Medidata CTMS)"
-  ]
+  ],
+  "provenance": {
+    "data_source": "synthetic",
+    "jd_basis": "modeled_from_real_jd_styles",
+    "jd_styles_doc": "REAL-JD-STYLES.md",
+    "expected_output_author": "claude",
+    "user_snap_checked": null,
+    "circularity_risk": "medium",
+    "notes": "Synthetic persona and JD. JD style modeled from real Greenhouse/Lever postings. Expected output and cloud_skills are AI-generated. 4/8 scorecard checks (jd_coverage, no_fabrication, metrics_preserved, no_fabricated_skills) evaluate AI vs AI reference. 4/8 checks (factual_preservation, word_count, ats_structure, action_verbs) are structurally valid regardless."
+  }
 }

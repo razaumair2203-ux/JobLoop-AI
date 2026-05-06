@@ -1,0 +1,26 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node -e \":*)",
+      "Bash(node -e \"import\\(''pdf-parse''\\).then\\(m => { console.log\\(''ESM keys:'', Object.keys\\(m\\)\\); console.log\\(''has default:'', ''default'' in m\\); if \\(m.default\\) console.log\\(''default keys:'', Object.keys\\(m.default\\)\\); }\\)\")",
+      "WebFetch(domain:skill-graph.com)",
+      "Bash(npx tsx:*)",
+      "Bash(ls \"e:/AIloop&JobSpec/apps/web/src/app/api/admin/\")",
+      "WebFetch(domain:medium.com)",
+      "WebFetch(domain:www.jobshinobi.com)",
+      "Bash(npx tsc:*)",
+      "Bash(find \"E:/AIloop&JobSpec/packages/ai/src\" -type f -name \"*.ts\")",
+      "Bash(find \"E:/AIloop&JobSpec/packages/shared/src\" -type f -name \"*.ts\")",
+      "Bash(find \"E:/AIloop&JobSpec/apps/web/src\" -type f -name \"*.ts\" -o -name \"*.tsx\")",
+      "Read(//e//**)",
+      "Bash(find \"E:/AIloop&JobSpec/packages/ai/tests\" -type f)",
+      "Bash(find \"E:/AIloop&JobSpec/packages/ai\" -name \"*.ts\" -not -path \"*/src/*\" -not -path \"*/node_modules/*\")",
+      "Bash(wc -l \"E:/AIloop&JobSpec/apps/web/src/app/api/cv/upload/route.ts\" \"E:/AIloop&JobSpec/apps/web/src/app/api/analyze/route.ts\" \"E:/AIloop&JobSpec/apps/web/src/app/api/cv/resolve/route.ts\" \"E:/AIloop&JobSpec/apps/web/src/app/api/cloud/route.ts\" \"E:/AIloop&JobSpec/apps/web/src/app/api/socratic/answer/route.ts\" \"E:/AIloop&JobSpec/apps/web/src/app/api/feedback/route.ts\" \"E:/AIloop&JobSpec/apps/web/src/app/api/cv/conflicts/route.ts\")",
+      "Bash(ls \"E:\\\\AIloop&JobSpec\\\\packages\\\\ai\\\\src\\\\autoresearch\"\")",
+      "Bash(wc -l \"E:/AIloop&JobSpec/packages/ai/src/autoresearch/scorecard.ts\" \"E:/AIloop&JobSpec/packages/ai/src/autoresearch/mutations.ts\" \"E:/AIloop&JobSpec/packages/ai/src/autoresearch/loop-runner.ts\" \"E:/AIloop&JobSpec/packages/ai/src/autoresearch/safeguards.ts\" \"E:/AIloop&JobSpec/packages/ai/src/autoresearch/feedback-weighter.ts\" \"E:/AIloop&JobSpec/packages/ai/src/autoresearch/anova-pretest.ts\" \"E:/AIloop&JobSpec/packages/ai/src/autoresearch/cron-entry.ts\" \"E:/AIloop&JobSpec/packages/ai/src/autoresearch/run-baseline-scoring.ts\" \"E:/AIloop&JobSpec/packages/ai/src/autoresearch/run-loop.ts\" \"E:/AIloop&JobSpec/packages/ai/src/autoresearch/run-pilot.ts\")",
+      "Bash(wc -l \"e:/AIloop&JobSpec/apps/web/src/app/api/cv/upload/route.ts\")",
+      "Bash(ls \"e:/AIloop&JobSpec/dev-data/\")",
+      "Bash(ls \"e:/AIloop&JobSpec/packages/ai/dev-data/\")"
+    ]
+  }
+}

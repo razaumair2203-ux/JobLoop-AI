@@ -5,7 +5,12 @@
   "synthetic": true,
   "jd_style": "enterprise_saas",
   "framing": "Laid-off underwriter at Zurich seeking product role at insurtech startup in Berlin",
-  "coverage": { "industry": "Insurance/Insurtech", "seniority": "mid", "pattern": "laid_off", "region": "europe" },
+  "coverage": {
+    "industry": "Insurance/Insurtech",
+    "seniority": "mid",
+    "pattern": "laid_off",
+    "region": "europe"
+  },
   "jd": {
     "title": "Senior Product Manager — Commercial Lines",
     "company": "wefox",
@@ -13,14 +18,38 @@
     "experience_years": 5,
     "style_note": "Enterprise SaaS: structured requirements, specific insurance domain knowledge, platform-focused",
     "requirements": [
-      { "text": "5+ years of experience in insurance, insurtech, or B2B SaaS product management", "type": "must_have" },
-      { "text": "Deep understanding of commercial insurance underwriting workflows and rating engines", "type": "must_have" },
-      { "text": "Experience with API-first insurance platforms or embedded insurance distribution", "type": "must_have" },
-      { "text": "Proficiency in product analytics tools (Amplitude, Mixpanel, or Pendo)", "type": "must_have" },
-      { "text": "Experience writing PRDs and working with engineering teams using Jira and Confluence", "type": "must_have" },
-      { "text": "Knowledge of Solvency II regulatory requirements and EIOPA guidelines", "type": "nice_to_have" },
-      { "text": "Experience with Guidewire, Duck Creek, or Socotra insurance platforms", "type": "nice_to_have" },
-      { "text": "German language skills (B2+)", "type": "nice_to_have" }
+      {
+        "text": "5+ years of experience in insurance, insurtech, or B2B SaaS product management",
+        "type": "must_have"
+      },
+      {
+        "text": "Deep understanding of commercial insurance underwriting workflows and rating engines",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience with API-first insurance platforms or embedded insurance distribution",
+        "type": "must_have"
+      },
+      {
+        "text": "Proficiency in product analytics tools (Amplitude, Mixpanel, or Pendo)",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience writing PRDs and working with engineering teams using Jira and Confluence",
+        "type": "must_have"
+      },
+      {
+        "text": "Knowledge of Solvency II regulatory requirements and EIOPA guidelines",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "Experience with Guidewire, Duck Creek, or Socotra insurance platforms",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "German language skills (B2+)",
+        "type": "nice_to_have"
+      }
     ],
     "responsibilities": [
       "Own the commercial lines product roadmap for wefox's B2B insurance platform",
@@ -60,10 +89,30 @@
       }
     ],
     "skills": {
-      "insurance": ["commercial property underwriting", "risk assessment", "pricing models", "combined ratio management", "broker distribution", "referral rules"],
-      "platforms": ["Guidewire PolicyCenter (underwriter user, not admin)", "Excel pricing models", "Zurich internal systems"],
-      "analytical": ["loss ratio analysis", "reserve adequacy", "portfolio management", "actuarial collaboration"],
-      "product_adjacent": ["pricing guideline development", "automated quoting workflows", "junior team mentoring"]
+      "insurance": [
+        "commercial property underwriting",
+        "risk assessment",
+        "pricing models",
+        "combined ratio management",
+        "broker distribution",
+        "referral rules"
+      ],
+      "platforms": [
+        "Guidewire PolicyCenter (underwriter user, not admin)",
+        "Excel pricing models",
+        "Zurich internal systems"
+      ],
+      "analytical": [
+        "loss ratio analysis",
+        "reserve adequacy",
+        "portfolio management",
+        "actuarial collaboration"
+      ],
+      "product_adjacent": [
+        "pricing guideline development",
+        "automated quoting workflows",
+        "junior team mentoring"
+      ]
     },
     "certifications": [
       "Dip CII — Chartered Insurance Institute (2021)",
@@ -84,14 +133,22 @@
     "German language B2+"
   ],
   "cloud_skills": [
-    "commercial property underwriting", "risk assessment",
-    "pricing models", "combined ratio management",
-    "broker distribution", "Guidewire PolicyCenter",
-    "loss ratio analysis", "reserve adequacy",
-    "portfolio management", "actuarial collaboration",
-    "pricing guideline development", "automated quoting",
-    "Dip CII", "Excel pricing models",
-    "mid-market commercial", "SME underwriting"
+    "commercial property underwriting",
+    "risk assessment",
+    "pricing models",
+    "combined ratio management",
+    "broker distribution",
+    "Guidewire PolicyCenter",
+    "loss ratio analysis",
+    "reserve adequacy",
+    "portfolio management",
+    "actuarial collaboration",
+    "pricing guideline development",
+    "automated quoting",
+    "Dip CII",
+    "Excel pricing models",
+    "mid-market commercial",
+    "SME underwriting"
   ],
   "deliberate_flaws": [
     "No product management experience — entire career in underwriting (domain expert, not PM)",
@@ -104,5 +161,14 @@
     "Laid-off framing — redundancy may require explanation in interviews",
     "No startup or insurtech experience — only traditional insurance carrier",
     "No Jira or Confluence experience (used internal Zurich project tools)"
-  ]
+  ],
+  "provenance": {
+    "data_source": "synthetic",
+    "jd_basis": "modeled_from_real_jd_styles",
+    "jd_styles_doc": "REAL-JD-STYLES.md",
+    "expected_output_author": "claude",
+    "user_snap_checked": null,
+    "circularity_risk": "medium",
+    "notes": "Synthetic persona and JD. JD style modeled from real Greenhouse/Lever postings. Expected output and cloud_skills are AI-generated. 4/8 scorecard checks (jd_coverage, no_fabrication, metrics_preserved, no_fabricated_skills) evaluate AI vs AI reference. 4/8 checks (factual_preservation, word_count, ats_structure, action_verbs) are structurally valid regardless."
+  }
 }

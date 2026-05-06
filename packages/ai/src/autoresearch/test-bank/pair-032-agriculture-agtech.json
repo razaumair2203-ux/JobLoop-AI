@@ -5,7 +5,12 @@
   "synthetic": true,
   "jd_style": "graduate_friendly",
   "framing": "Agricultural science graduate applying to precision agriculture startup in Nairobi",
-  "coverage": { "industry": "Agriculture/AgTech", "seniority": "entry", "pattern": "early_career", "region": "africa" },
+  "coverage": {
+    "industry": "Agriculture/AgTech",
+    "seniority": "entry",
+    "pattern": "early_career",
+    "region": "africa"
+  },
   "jd": {
     "title": "Associate Data Analyst — Precision Agriculture",
     "company": "Apollo Agriculture",
@@ -14,14 +19,38 @@
     "style_note": "Graduate-friendly: explains mission, values learning, flexible on exact experience",
     "about": "Apollo Agriculture helps small-scale farmers across Kenya access financing, high-quality farm inputs, and data-driven agronomic advice. We use satellite imagery, machine learning, and mobile money to serve farmers who have never had access to formal credit.",
     "requirements": [
-      { "text": "Bachelor's degree in Agricultural Science, Data Science, Statistics, or related field", "type": "must_have" },
-      { "text": "Proficiency in Python or R for data analysis", "type": "must_have" },
-      { "text": "Familiarity with geospatial data formats (GeoJSON, shapefiles) and tools (QGIS, Google Earth Engine)", "type": "must_have" },
-      { "text": "Understanding of agricultural systems in East Africa (crop cycles, soil types, smallholder farming)", "type": "must_have" },
-      { "text": "Experience with SQL and data visualization tools (Looker, Metabase, or Tableau)", "type": "nice_to_have" },
-      { "text": "Familiarity with satellite imagery analysis (Sentinel-2, Landsat) for crop monitoring", "type": "nice_to_have" },
-      { "text": "Experience with M-Pesa or mobile money data systems", "type": "nice_to_have" },
-      { "text": "Swahili fluency", "type": "nice_to_have" }
+      {
+        "text": "Bachelor's degree in Agricultural Science, Data Science, Statistics, or related field",
+        "type": "must_have"
+      },
+      {
+        "text": "Proficiency in Python or R for data analysis",
+        "type": "must_have"
+      },
+      {
+        "text": "Familiarity with geospatial data formats (GeoJSON, shapefiles) and tools (QGIS, Google Earth Engine)",
+        "type": "must_have"
+      },
+      {
+        "text": "Understanding of agricultural systems in East Africa (crop cycles, soil types, smallholder farming)",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience with SQL and data visualization tools (Looker, Metabase, or Tableau)",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "Familiarity with satellite imagery analysis (Sentinel-2, Landsat) for crop monitoring",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "Experience with M-Pesa or mobile money data systems",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "Swahili fluency",
+        "type": "nice_to_have"
+      }
     ],
     "responsibilities": [
       "Analyse satellite imagery and weather data to generate crop yield predictions for smallholder farms",
@@ -60,10 +89,34 @@
       }
     ],
     "skills": {
-      "data_analysis": ["R (tidyverse, ggplot2)", "basic Python (pandas)", "Excel", "descriptive statistics", "linear regression"],
-      "geospatial": ["QGIS", "Google Earth Engine", "Sentinel-2 imagery", "NDVI analysis", "GeoJSON", "shapefiles"],
-      "agricultural": ["crop modelling (basic)", "soil science", "smallholder farming systems", "livestock feed analysis", "East African agriculture"],
-      "tools": ["R Studio", "QGIS", "Google Earth Engine", "Microsoft Office"]
+      "data_analysis": [
+        "R (tidyverse, ggplot2)",
+        "basic Python (pandas)",
+        "Excel",
+        "descriptive statistics",
+        "linear regression"
+      ],
+      "geospatial": [
+        "QGIS",
+        "Google Earth Engine",
+        "Sentinel-2 imagery",
+        "NDVI analysis",
+        "GeoJSON",
+        "shapefiles"
+      ],
+      "agricultural": [
+        "crop modelling (basic)",
+        "soil science",
+        "smallholder farming systems",
+        "livestock feed analysis",
+        "East African agriculture"
+      ],
+      "tools": [
+        "R Studio",
+        "QGIS",
+        "Google Earth Engine",
+        "Microsoft Office"
+      ]
     },
     "certifications": [],
     "education": [
@@ -81,13 +134,24 @@
     "Swahili fluency"
   ],
   "cloud_skills": [
-    "R", "tidyverse", "ggplot2", "basic Python",
-    "QGIS", "Google Earth Engine", "Sentinel-2",
-    "NDVI analysis", "GeoJSON", "shapefiles",
-    "crop modelling", "soil science",
-    "smallholder farming", "East African agriculture",
-    "livestock feed analysis", "field data collection",
-    "linear regression", "descriptive statistics",
+    "R",
+    "tidyverse",
+    "ggplot2",
+    "basic Python",
+    "QGIS",
+    "Google Earth Engine",
+    "Sentinel-2",
+    "NDVI analysis",
+    "GeoJSON",
+    "shapefiles",
+    "crop modelling",
+    "soil science",
+    "smallholder farming",
+    "East African agriculture",
+    "livestock feed analysis",
+    "field data collection",
+    "linear regression",
+    "descriptive statistics",
     "Swahili fluency"
   ],
   "deliberate_flaws": [
@@ -101,5 +165,14 @@
     "No credit scoring or financial data experience (key for Apollo's business model)",
     "No dashboard building experience beyond static R plots",
     "Entry-level — no professional data analyst experience"
-  ]
+  ],
+  "provenance": {
+    "data_source": "synthetic",
+    "jd_basis": "modeled_from_real_jd_styles",
+    "jd_styles_doc": "REAL-JD-STYLES.md",
+    "expected_output_author": "claude",
+    "user_snap_checked": null,
+    "circularity_risk": "medium",
+    "notes": "Synthetic persona and JD. JD style modeled from real Greenhouse/Lever postings. Expected output and cloud_skills are AI-generated. 4/8 scorecard checks (jd_coverage, no_fabrication, metrics_preserved, no_fabricated_skills) evaluate AI vs AI reference. 4/8 checks (factual_preservation, word_count, ats_structure, action_verbs) are structurally valid regardless."
+  }
 }

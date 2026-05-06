@@ -5,7 +5,12 @@
   "synthetic": true,
   "jd_style": "defense_cleared",
   "framing": "Air Force avionics officer transitioning to defense contractor flight systems role",
-  "coverage": { "industry": "Aviation/Aerospace", "seniority": "senior", "pattern": "military_transition", "region": "north_america" },
+  "coverage": {
+    "industry": "Aviation/Aerospace",
+    "seniority": "senior",
+    "pattern": "military_transition",
+    "region": "north_america"
+  },
   "jd": {
     "title": "Senior Flight Systems Engineer",
     "company": "L3Harris Technologies",
@@ -13,14 +18,38 @@
     "experience_years": 10,
     "style_note": "Defense-cleared: security clearance mandatory, ITAR-controlled, specific military platform experience valued",
     "requirements": [
-      { "text": "Active TS/SCI security clearance", "type": "must_have" },
-      { "text": "10+ years of experience in avionics systems engineering, flight test, or aircraft modification programmes", "type": "must_have" },
-      { "text": "Experience with DO-178C (airborne software) and DO-254 (airborne hardware) certification processes", "type": "must_have" },
-      { "text": "Knowledge of MIL-STD-1553 data bus architecture and ARINC 429 communication protocols", "type": "must_have" },
-      { "text": "Experience with flight test instrumentation (FTI) and telemetry systems", "type": "must_have" },
-      { "text": "Familiarity with F-35, F-16, or C-130 avionics systems", "type": "nice_to_have" },
-      { "text": "Experience with Model-Based Systems Engineering (MBSE) using Cameo Systems Modeler or IBM Rhapsody", "type": "nice_to_have" },
-      { "text": "PE license or INCOSE CSEP certification", "type": "nice_to_have" }
+      {
+        "text": "Active TS/SCI security clearance",
+        "type": "must_have"
+      },
+      {
+        "text": "10+ years of experience in avionics systems engineering, flight test, or aircraft modification programmes",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience with DO-178C (airborne software) and DO-254 (airborne hardware) certification processes",
+        "type": "must_have"
+      },
+      {
+        "text": "Knowledge of MIL-STD-1553 data bus architecture and ARINC 429 communication protocols",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience with flight test instrumentation (FTI) and telemetry systems",
+        "type": "must_have"
+      },
+      {
+        "text": "Familiarity with F-35, F-16, or C-130 avionics systems",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "Experience with Model-Based Systems Engineering (MBSE) using Cameo Systems Modeler or IBM Rhapsody",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "PE license or INCOSE CSEP certification",
+        "type": "nice_to_have"
+      }
     ],
     "responsibilities": [
       "Lead avionics integration and flight test activities for military aircraft modification programmes",
@@ -71,11 +100,35 @@
       }
     ],
     "skills": {
-      "avionics": ["MIL-STD-1553 data bus", "ARINC 429", "flight test instrumentation (FTI)", "telemetry systems", "radar systems (AN/APG-83)", "EW systems", "CNS/ATM"],
-      "certification": ["DO-178C coordination", "airworthiness certification", "safety review boards", "deficiency reporting"],
-      "platforms": ["F-16 (Block 70)", "C-130J", "T-38C"],
-      "leadership": ["flight test team management (18 staff)", "maintenance section leadership (45 technicians)", "AFLCMC interface", "test planning and execution"],
-      "clearance": ["TS/SCI (active)"]
+      "avionics": [
+        "MIL-STD-1553 data bus",
+        "ARINC 429",
+        "flight test instrumentation (FTI)",
+        "telemetry systems",
+        "radar systems (AN/APG-83)",
+        "EW systems",
+        "CNS/ATM"
+      ],
+      "certification": [
+        "DO-178C coordination",
+        "airworthiness certification",
+        "safety review boards",
+        "deficiency reporting"
+      ],
+      "platforms": [
+        "F-16 (Block 70)",
+        "C-130J",
+        "T-38C"
+      ],
+      "leadership": [
+        "flight test team management (18 staff)",
+        "maintenance section leadership (45 technicians)",
+        "AFLCMC interface",
+        "test planning and execution"
+      ],
+      "clearance": [
+        "TS/SCI (active)"
+      ]
     },
     "certifications": [
       "USAF Test and Evaluation certification — Air Force Test Center (2022)",
@@ -97,15 +150,25 @@
     "PE license INCOSE CSEP"
   ],
   "cloud_skills": [
-    "MIL-STD-1553", "ARINC 429",
-    "flight test instrumentation", "telemetry systems",
-    "DO-178C coordination", "airworthiness certification",
-    "F-16 Block 70", "C-130J", "T-38C",
-    "AN/APG-83 AESA radar", "EW systems",
-    "CNS/ATM", "ADS-B Out",
-    "flight test planning", "test execution",
-    "AFLCMC interface", "safety review boards",
-    "avionics maintenance", "TS/SCI clearance",
+    "MIL-STD-1553",
+    "ARINC 429",
+    "flight test instrumentation",
+    "telemetry systems",
+    "DO-178C coordination",
+    "airworthiness certification",
+    "F-16 Block 70",
+    "C-130J",
+    "T-38C",
+    "AN/APG-83 AESA radar",
+    "EW systems",
+    "CNS/ATM",
+    "ADS-B Out",
+    "flight test planning",
+    "test execution",
+    "AFLCMC interface",
+    "safety review boards",
+    "avionics maintenance",
+    "TS/SCI clearance",
     "team leadership"
   ],
   "deliberate_flaws": [
@@ -119,5 +182,14 @@
     "No commercial aviation experience (all military platforms)",
     "No systems requirements development using formal tools (DOORS, Jama) — used military formats",
     "Flight test experience is developmental test (DT), not operational test (OT) — different perspective"
-  ]
+  ],
+  "provenance": {
+    "data_source": "synthetic",
+    "jd_basis": "modeled_from_real_jd_styles",
+    "jd_styles_doc": "REAL-JD-STYLES.md",
+    "expected_output_author": "claude",
+    "user_snap_checked": null,
+    "circularity_risk": "medium",
+    "notes": "Synthetic persona and JD. JD style modeled from real Greenhouse/Lever postings. Expected output and cloud_skills are AI-generated. 4/8 scorecard checks (jd_coverage, no_fabrication, metrics_preserved, no_fabricated_skills) evaluate AI vs AI reference. 4/8 checks (factual_preservation, word_count, ats_structure, action_verbs) are structurally valid regardless."
+  }
 }

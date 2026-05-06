@@ -21,16 +21,46 @@
     "location": "Abu Dhabi, UAE (Hybrid)",
     "experience_years": 10,
     "requirements": [
-      { "text": "10+ years in defense program management", "type": "must_have" },
-      { "text": "Experience managing multi-stakeholder defense acquisition programs", "type": "must_have" },
-      { "text": "Track record of managing programs worth $50M+", "type": "nice_to_have" },
-      { "text": "Experience with fighter aircraft or weapons systems programs", "type": "must_have" },
-      { "text": "PMP, PMI-ACP, or PRINCE2 certification", "type": "must_have" },
-      { "text": "Experience coordinating between international OEMs and national air forces", "type": "must_have" },
-      { "text": "Engineering change management and configuration control", "type": "must_have" },
-      { "text": "MS in Engineering or related field", "type": "nice_to_have" },
-      { "text": "Budget management, schedule risk analysis, and milestone tracking", "type": "must_have" },
-      { "text": "Experience with export programs and international customers", "type": "nice_to_have" }
+      {
+        "text": "10+ years in defense program management",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience managing multi-stakeholder defense acquisition programs",
+        "type": "must_have"
+      },
+      {
+        "text": "Track record of managing programs worth $50M+",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "Experience with fighter aircraft or weapons systems programs",
+        "type": "must_have"
+      },
+      {
+        "text": "PMP, PMI-ACP, or PRINCE2 certification",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience coordinating between international OEMs and national air forces",
+        "type": "must_have"
+      },
+      {
+        "text": "Engineering change management and configuration control",
+        "type": "must_have"
+      },
+      {
+        "text": "MS in Engineering or related field",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "Budget management, schedule risk analysis, and milestone tracking",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience with export programs and international customers",
+        "type": "nice_to_have"
+      }
     ],
     "responsibilities": [
       "Lead defense program management for fighter aircraft sustainment and upgrade programs",
@@ -92,10 +122,31 @@
       }
     ],
     "skills": {
-      "program_management": ["defense acquisition", "milestone tracking", "budget management", "schedule risk analysis", "engineering change management", "configuration control"],
-      "stakeholder_management": ["international OEM coordination (CADI, SAAB)", "cross-functional team leadership", "export program coordination", "customer representation"],
-      "technical": ["fighter aircraft programs (JF-17)", "AEW&C programs (SAAB Erieye)", "avionics integration", "weapons systems qualification"],
-      "certifications_tools": ["PMI-ACP", "Agile/Scrum", "project management methodologies"]
+      "program_management": [
+        "defense acquisition",
+        "milestone tracking",
+        "budget management",
+        "schedule risk analysis",
+        "engineering change management",
+        "configuration control"
+      ],
+      "stakeholder_management": [
+        "international OEM coordination (CADI, SAAB)",
+        "cross-functional team leadership",
+        "export program coordination",
+        "customer representation"
+      ],
+      "technical": [
+        "fighter aircraft programs (JF-17)",
+        "AEW&C programs (SAAB Erieye)",
+        "avionics integration",
+        "weapons systems qualification"
+      ],
+      "certifications_tools": [
+        "PMI-ACP",
+        "Agile/Scrum",
+        "project management methodologies"
+      ]
     },
     "certifications": [
       "PMI-ACP — Project Management Institute",
@@ -120,16 +171,53 @@
     "export programs international customers"
   ],
   "cloud_skills": [
-    "avionics design", "systems integration", "V&V testing", "configuration management",
-    "aircraft maintenance engineering", "operational readiness", "fault diagnosis",
-    "maintenance planning", "team leadership", "radar systems", "C4ISR", "SAAB 2000 Erieye",
-    "weapons integration", "flight testing", "mission computer", "EW systems", "JF-17 Thunder",
-    "program management", "defense acquisition", "budget management", "risk management",
-    "milestone tracking", "engineering change management", "production oversight",
-    "export coordination", "stakeholder coordination", "CADI coordination",
-    "field operations", "weapons systems", "SAM systems", "Crotale",
-    "fleet sustainment", "international vendor management", "logistics coordination",
-    "academic quality assurance", "systems engineering instruction",
-    "cross-cultural collaboration", "PMI-ACP", "Agile/Scrum"
-  ]
+    "avionics design",
+    "systems integration",
+    "V&V testing",
+    "configuration management",
+    "aircraft maintenance engineering",
+    "operational readiness",
+    "fault diagnosis",
+    "maintenance planning",
+    "team leadership",
+    "radar systems",
+    "C4ISR",
+    "SAAB 2000 Erieye",
+    "weapons integration",
+    "flight testing",
+    "mission computer",
+    "EW systems",
+    "JF-17 Thunder",
+    "program management",
+    "defense acquisition",
+    "budget management",
+    "risk management",
+    "milestone tracking",
+    "engineering change management",
+    "production oversight",
+    "export coordination",
+    "stakeholder coordination",
+    "CADI coordination",
+    "field operations",
+    "weapons systems",
+    "SAM systems",
+    "Crotale",
+    "fleet sustainment",
+    "international vendor management",
+    "logistics coordination",
+    "academic quality assurance",
+    "systems engineering instruction",
+    "cross-cultural collaboration",
+    "PMI-ACP",
+    "Agile/Scrum"
+  ],
+  "provenance": {
+    "data_source": "real_cv",
+    "ground_truth": "Alpha_CVs/ground-truth-profile.json",
+    "jd_basis": "modeled_from_real_postings",
+    "user_snap_checked": "2026-05-03",
+    "expected_output_author": "claude_with_user_review",
+    "circularity_risk": "low",
+    "notes": "Real user career data. JDs modeled from real defense/aerospace postings. User snap-checked during creation session. Expected outputs derived from verified ground truth profile."
+  }
 }

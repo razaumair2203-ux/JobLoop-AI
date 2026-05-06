@@ -20,17 +20,50 @@
     "location": "Riyadh, Saudi Arabia",
     "experience_years": 12,
     "requirements": [
-      { "text": "12+ years experience in military or commercial avionics maintenance and sustainment", "type": "must_have" },
-      { "text": "Demonstrated experience managing aircraft maintenance operations for multi-aircraft fleets (5+ aircraft)", "type": "must_have" },
-      { "text": "Hands-on experience with AEW&C, ISR, or surveillance aircraft avionics and mission systems", "type": "must_have" },
-      { "text": "Experience supervising and mentoring maintenance engineering teams (10+ personnel)", "type": "must_have" },
-      { "text": "Knowledge of short-range air defense (SHORAD) or ground-based weapons systems maintenance", "type": "nice_to_have" },
-      { "text": "MS or higher in Avionics, Electrical, Aerospace, or Systems Engineering", "type": "must_have" },
-      { "text": "Proficiency in maintenance planning, scheduling, and fleet availability KPI management", "type": "must_have" },
-      { "text": "Experience coordinating with international OEMs for spares, technical data, and field support", "type": "must_have" },
-      { "text": "Knowledge of military airworthiness standards and compliance documentation (MIL-STD, EASA Part-145 or equivalent)", "type": "must_have" },
-      { "text": "Familiarity with IETM/IETP electronic technical manuals or AMOS/SAP maintenance management systems", "type": "nice_to_have" },
-      { "text": "PMP, PMI-ACP, or equivalent project management certification", "type": "nice_to_have" }
+      {
+        "text": "12+ years experience in military or commercial avionics maintenance and sustainment",
+        "type": "must_have"
+      },
+      {
+        "text": "Demonstrated experience managing aircraft maintenance operations for multi-aircraft fleets (5+ aircraft)",
+        "type": "must_have"
+      },
+      {
+        "text": "Hands-on experience with AEW&C, ISR, or surveillance aircraft avionics and mission systems",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience supervising and mentoring maintenance engineering teams (10+ personnel)",
+        "type": "must_have"
+      },
+      {
+        "text": "Knowledge of short-range air defense (SHORAD) or ground-based weapons systems maintenance",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "MS or higher in Avionics, Electrical, Aerospace, or Systems Engineering",
+        "type": "must_have"
+      },
+      {
+        "text": "Proficiency in maintenance planning, scheduling, and fleet availability KPI management",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience coordinating with international OEMs for spares, technical data, and field support",
+        "type": "must_have"
+      },
+      {
+        "text": "Knowledge of military airworthiness standards and compliance documentation (MIL-STD, EASA Part-145 or equivalent)",
+        "type": "must_have"
+      },
+      {
+        "text": "Familiarity with IETM/IETP electronic technical manuals or AMOS/SAP maintenance management systems",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "PMP, PMI-ACP, or equivalent project management certification",
+        "type": "nice_to_have"
+      }
     ],
     "responsibilities": [
       "Lead all avionics maintenance operations for a fleet of surveillance/AEW aircraft ensuring mission readiness targets",
@@ -94,10 +127,30 @@
       }
     ],
     "skills": {
-      "maintenance": ["fleet maintenance management", "maintenance planning & staggering", "fault diagnosis", "airworthiness compliance", "operational readiness"],
-      "systems": ["avionics systems", "radar systems", "C4ISR", "air defense (Crotale SHORAD)", "SAAB 2000 Erieye AEW&C"],
-      "management": ["team leadership (15+ personnel)", "OEM coordination (SAAB, CADI)", "KPI tracking", "resource management"],
-      "tools": ["maintenance documentation systems", "configuration management"]
+      "maintenance": [
+        "fleet maintenance management",
+        "maintenance planning & staggering",
+        "fault diagnosis",
+        "airworthiness compliance",
+        "operational readiness"
+      ],
+      "systems": [
+        "avionics systems",
+        "radar systems",
+        "C4ISR",
+        "air defense (Crotale SHORAD)",
+        "SAAB 2000 Erieye AEW&C"
+      ],
+      "management": [
+        "team leadership (15+ personnel)",
+        "OEM coordination (SAAB, CADI)",
+        "KPI tracking",
+        "resource management"
+      ],
+      "tools": [
+        "maintenance documentation systems",
+        "configuration management"
+      ]
     },
     "certifications": [
       "PMI-ACP — Project Management Institute",
@@ -122,13 +175,43 @@
     "airworthiness compliance"
   ],
   "cloud_skills": [
-    "avionics design", "systems integration", "V&V testing", "configuration management",
-    "aircraft maintenance engineering", "operational readiness", "fault diagnosis",
-    "maintenance planning", "team leadership", "radar systems", "C4ISR", "SAAB 2000 Erieye",
-    "weapons integration", "flight testing", "mission computer", "EW systems", "JF-17 Thunder",
-    "program management", "defense acquisition", "budget management",
-    "field operations", "weapons systems", "SAM systems", "Crotale",
-    "fleet sustainment", "international vendor management", "logistics coordination",
-    "academic quality assurance", "systems engineering instruction"
-  ]
+    "avionics design",
+    "systems integration",
+    "V&V testing",
+    "configuration management",
+    "aircraft maintenance engineering",
+    "operational readiness",
+    "fault diagnosis",
+    "maintenance planning",
+    "team leadership",
+    "radar systems",
+    "C4ISR",
+    "SAAB 2000 Erieye",
+    "weapons integration",
+    "flight testing",
+    "mission computer",
+    "EW systems",
+    "JF-17 Thunder",
+    "program management",
+    "defense acquisition",
+    "budget management",
+    "field operations",
+    "weapons systems",
+    "SAM systems",
+    "Crotale",
+    "fleet sustainment",
+    "international vendor management",
+    "logistics coordination",
+    "academic quality assurance",
+    "systems engineering instruction"
+  ],
+  "provenance": {
+    "data_source": "real_cv",
+    "ground_truth": "Alpha_CVs/ground-truth-profile.json",
+    "jd_basis": "modeled_from_real_postings",
+    "user_snap_checked": "2026-05-03",
+    "expected_output_author": "claude_with_user_review",
+    "circularity_risk": "low",
+    "notes": "Real user career data. JDs modeled from real defense/aerospace postings. User snap-checked during creation session. Expected outputs derived from verified ground truth profile."
+  }
 }

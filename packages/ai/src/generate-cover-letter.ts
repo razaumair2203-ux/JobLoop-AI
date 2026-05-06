@@ -37,6 +37,7 @@ export async function generateCoverLetter(
   role: string,
   tone: CoverLetterTone,
   focusPoints?: string[],
+  modelTier?: "fast" | "quality",
 ): Promise<GeneratedCoverLetter> {
   const cloudContext = buildCoverLetterContext(cloud, matchReport);
   const userPrompt = buildCoverLetterUserPrompt(
@@ -76,7 +77,7 @@ export async function generateCoverLetter(
   // API MODE
   const client = getClient();
   const response = await client.messages.create({
-    model: MODELS.quality,
+    model: modelTier === "fast" ? MODELS.fast : MODELS.quality,
     max_tokens: 4096,
     system: COVER_LETTER_SYSTEM_PROMPT,
     messages: [{ role: "user", content: userPrompt }],

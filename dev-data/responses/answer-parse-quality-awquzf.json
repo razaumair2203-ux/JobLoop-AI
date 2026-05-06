@@ -1,0 +1,85 @@
+{
+  "roles": [
+    {
+      "title": "Assistant Director Development (Avionics)",
+      "organization": "PMO, JF-17 Program",
+      "start_date": "Jan 2020",
+      "end_date": "Jun 2021",
+      "responsibilities": [
+        "Airworthiness",
+        "Weapons integration",
+        "Testing",
+        "Operationalization liaison with Chinese designers, OEMs, operations squadron"
+      ],
+      "programs": ["JF-17"],
+      "team_size": null,
+      "source": "user_confirmed"
+    },
+    {
+      "title": "Senior Engineering Officer",
+      "organization": "Crotale Weapons System, Field Unit",
+      "start_date": "Jun 2021",
+      "end_date": "Sep 2022",
+      "responsibilities": [
+        "Senior maintenance engineer",
+        "Supervising technicians and officers",
+        "Weapons deployment of missile",
+        "Maintenance management",
+        "Resources management"
+      ],
+      "programs": ["Crotale"],
+      "team_size": null,
+      "source": "socratic_discovery"
+    },
+    {
+      "title": "Deputy Director",
+      "organization": "PMO, JF-17 Program",
+      "start_date": "Sep 2022",
+      "end_date": "Dec 2023",
+      "responsibilities": [
+        "Operationalization of fleet",
+        "Management of operational fleet of aircraft",
+        "Forecasting of spares",
+        "Contracting",
+        "Operational readiness of squadrons",
+        "Maintenance facilities in the field"
+      ],
+      "programs": ["JF-17"],
+      "team_size": null,
+      "source": "user_confirmed"
+    },
+    {
+      "title": "QA Officer",
+      "organization": "NUTECH University",
+      "start_date": "Dec 2023",
+      "end_date": "Jul 2025",
+      "responsibilities": [
+        "Academic quality assurance",
+        "Systems engineering instruction"
+      ],
+      "programs": [],
+      "team_size": null,
+      "source": "user_confirmed"
+    },
+    {
+      "title": "Projects Officer / Research & Development / SE Faculty",
+      "organization": "College of Aeronautical Engineering",
+      "start_date": "Jul 2025",
+      "end_date": "Present",
+      "responsibilities": [
+        "Projects oversight",
+        "Research and development",
+        "System engineering courses"
+      ],
+      "programs": [],
+      "team_size": null,
+      "source": "user_confirmed"
+    }
+  ],
+  "date_corrections": [],
+  "title_corrections": [],
+  "flags": [
+    "user_requests_skill_lookup_for_each_role",
+    "user_requests_approval_before_including_skills"
+  ]
+}

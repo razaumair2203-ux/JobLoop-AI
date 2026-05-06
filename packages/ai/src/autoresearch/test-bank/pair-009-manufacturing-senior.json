@@ -4,23 +4,58 @@
   "persona": "senior",
   "synthetic": true,
   "framing": "Manufacturing Operations Director moving to new company",
-  "coverage": { "industry": "Manufacturing", "seniority": "senior", "pattern": "linear", "region": "europe" },
+  "coverage": {
+    "industry": "Manufacturing",
+    "seniority": "senior",
+    "pattern": "linear",
+    "region": "europe"
+  },
   "jd": {
     "title": "Director of Operations — Automotive Manufacturing",
     "company": "BMW Group",
     "location": "Munich, Germany",
     "experience_years": 12,
     "requirements": [
-      { "text": "12+ years in manufacturing operations with at least 5 years in automotive", "type": "must_have" },
-      { "text": "Experience managing production facilities with 500+ employees", "type": "must_have" },
-      { "text": "Deep knowledge of lean manufacturing, Six Sigma, and Toyota Production System (TPS)", "type": "must_have" },
-      { "text": "Experience with EV or electrified powertrain manufacturing is a strong advantage", "type": "nice_to_have" },
-      { "text": "Track record of achieving OEE improvements of 10%+ year-over-year", "type": "must_have" },
-      { "text": "Experience with MES (Manufacturing Execution Systems) and SAP PP", "type": "must_have" },
-      { "text": "MS in Industrial Engineering, Manufacturing Engineering, or MBA", "type": "must_have" },
-      { "text": "Six Sigma Black Belt certification", "type": "must_have" },
-      { "text": "Fluency in English; German language skills preferred", "type": "nice_to_have" },
-      { "text": "Experience managing capital investment projects ($10M+)", "type": "must_have" }
+      {
+        "text": "12+ years in manufacturing operations with at least 5 years in automotive",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience managing production facilities with 500+ employees",
+        "type": "must_have"
+      },
+      {
+        "text": "Deep knowledge of lean manufacturing, Six Sigma, and Toyota Production System (TPS)",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience with EV or electrified powertrain manufacturing is a strong advantage",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "Track record of achieving OEE improvements of 10%+ year-over-year",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience with MES (Manufacturing Execution Systems) and SAP PP",
+        "type": "must_have"
+      },
+      {
+        "text": "MS in Industrial Engineering, Manufacturing Engineering, or MBA",
+        "type": "must_have"
+      },
+      {
+        "text": "Six Sigma Black Belt certification",
+        "type": "must_have"
+      },
+      {
+        "text": "Fluency in English; German language skills preferred",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "Experience managing capital investment projects ($10M+)",
+        "type": "must_have"
+      }
     ],
     "responsibilities": [
       "Oversee daily operations of automotive component manufacturing plant (800 employees)",
@@ -72,10 +107,34 @@
       }
     ],
     "skills": {
-      "operations": ["plant management (650 employees)", "lean manufacturing", "Toyota Production System", "Six Sigma", "TPM", "Kaizen"],
-      "technical": ["MES implementation", "SAP PP", "predictive maintenance", "OEE optimization", "SMT production"],
-      "quality": ["IATF 16949", "ISO 14001", "quality management systems", "scrap reduction", "continuous improvement"],
-      "leadership": ["operating budget management (EUR 95M)", "capital investment (EUR 15M)", "NPI coordination", "global operations reporting"]
+      "operations": [
+        "plant management (650 employees)",
+        "lean manufacturing",
+        "Toyota Production System",
+        "Six Sigma",
+        "TPM",
+        "Kaizen"
+      ],
+      "technical": [
+        "MES implementation",
+        "SAP PP",
+        "predictive maintenance",
+        "OEE optimization",
+        "SMT production"
+      ],
+      "quality": [
+        "IATF 16949",
+        "ISO 14001",
+        "quality management systems",
+        "scrap reduction",
+        "continuous improvement"
+      ],
+      "leadership": [
+        "operating budget management (EUR 95M)",
+        "capital investment (EUR 15M)",
+        "NPI coordination",
+        "global operations reporting"
+      ]
     },
     "certifications": [
       "Six Sigma Black Belt — ASQ",
@@ -99,16 +158,31 @@
     "capital investment projects $10M+"
   ],
   "cloud_skills": [
-    "plant management", "lean manufacturing", "Six Sigma", "TPM", "Kaizen",
-    "Toyota Production System", "OEE optimization",
-    "MES implementation", "SAP PP", "predictive maintenance",
-    "IATF 16949", "ISO 14001", "quality management",
-    "operating budget management", "capital investment",
-    "NPI coordination", "production planning",
-    "scrap reduction", "continuous improvement",
-    "team leadership", "SMT production",
-    "automotive manufacturing", "electronic brake systems",
-    "fuel injection systems", "powertrain components"
+    "plant management",
+    "lean manufacturing",
+    "Six Sigma",
+    "TPM",
+    "Kaizen",
+    "Toyota Production System",
+    "OEE optimization",
+    "MES implementation",
+    "SAP PP",
+    "predictive maintenance",
+    "IATF 16949",
+    "ISO 14001",
+    "quality management",
+    "operating budget management",
+    "capital investment",
+    "NPI coordination",
+    "production planning",
+    "scrap reduction",
+    "continuous improvement",
+    "team leadership",
+    "SMT production",
+    "automotive manufacturing",
+    "electronic brake systems",
+    "fuel injection systems",
+    "powertrain components"
   ],
   "deliberate_flaws": [
     "No direct EV/electrified manufacturing experience (only NPI coordination for electrified components)",
@@ -116,5 +190,14 @@
     "Budget EUR 95M vs required EUR 120M scope",
     "650 employees vs 800+ required",
     "OEE improvement 14pp over 3 years (~4.7pp/yr) does not meet JD's 10%+ YoY requirement"
-  ]
+  ],
+  "provenance": {
+    "data_source": "synthetic",
+    "jd_basis": "modeled_from_real_jd_styles",
+    "jd_styles_doc": "REAL-JD-STYLES.md",
+    "expected_output_author": "claude",
+    "user_snap_checked": null,
+    "circularity_risk": "medium",
+    "notes": "Synthetic persona and JD. JD style modeled from real Greenhouse/Lever postings. Expected output and cloud_skills are AI-generated. 4/8 scorecard checks (jd_coverage, no_fabrication, metrics_preserved, no_fabricated_skills) evaluate AI vs AI reference. 4/8 checks (factual_preservation, word_count, ats_structure, action_verbs) are structurally valid regardless."
+  }
 }

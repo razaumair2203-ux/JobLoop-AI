@@ -23,6 +23,7 @@ export interface RoleEvidence {
   context: string; // what they did with this skill in this role
   start_date: string;
   end_date: string | "present";
+  mention_context?: "title" | "bullet" | "skills_section"; // where in the document this skill was found (Daxtra proximity weighting)
 }
 
 export interface ImpactEvidence {
@@ -173,8 +174,10 @@ export interface ProfileCloud {
     institution: string;
     degree: string;
     field: string;
-    year: string;
+    start_year: number | null;
+    end_year: number | null;
     grade: string | null;
+    research_topic: string | null;
     highlights: string[];
   }>;
   certifications: CertificationEvidence[];
@@ -211,8 +214,11 @@ export function buildCloudFromParsedCV(parsedCV: {
     institution: string;
     degree: string;
     field: string;
-    year: string;
+    start_year?: number | null;
+    end_year?: number | null;
+    year?: string;
     grade?: string;
+    research_topic?: string | null;
     highlights?: string[];
   }>;
   certifications: string[];
@@ -261,6 +267,10 @@ export function buildCloudFromParsedCV(parsedCV: {
       }
 
       const node = nodeMap.get(key)!;
+      // Determine mention context: title > bullet > skills_section (Daxtra proximity weighting)
+      const titleLower = role.title.toLowerCase();
+      const techLower = tech.toLowerCase();
+      const inTitle = titleLower.includes(techLower) || techLower.includes(titleLower.replace(/senior |lead |principal |junior |staff /gi, "").trim());
       node.evidence.push({
         type: "role",
         company: role.company,
@@ -269,6 +279,7 @@ export function buildCloudFromParsedCV(parsedCV: {
         context: `Used in role: ${role.title} at ${role.company}`,
         start_date: role.start_date || "unknown",
         end_date: role.end_date || "unknown",
+        mention_context: inTitle ? "title" : "bullet",
       });
     }
 
@@ -350,14 +361,25 @@ export function buildCloudFromParsedCV(parsedCV: {
     nodes: Array.from(nodeMap.values()),
     achievements,
     trajectory,
-    education: parsedCV.education.map((e) => ({
-      institution: e.institution,
-      degree: e.degree,
-      field: e.field,
-      year: e.year,
-      grade: e.grade || null,
-      highlights: e.highlights || [],
-    })),
+    education: parsedCV.education.map((e) => {
+      // Support both old (year string) and new (start_year/end_year numbers) formats
+      let startYear: number | null = e.start_year ?? null;
+      let endYear: number | null = e.end_year ?? null;
+      if (startYear === null && endYear === null && e.year) {
+        const parsed = parseInt(e.year, 10);
+        if (!isNaN(parsed)) endYear = parsed;
+      }
+      return {
+        institution: e.institution,
+        degree: e.degree,
+        field: e.field,
+        start_year: startYear,
+        end_year: endYear,
+        grade: e.grade || null,
+        research_topic: e.research_topic ?? null,
+        highlights: e.highlights || [],
+      };
+    }),
     certifications: certEvidences,
     languages_spoken: [],
     last_updated: new Date().toISOString(),
@@ -400,10 +422,59 @@ export function getEvidenceFor(cloud: ProfileCloud, skillName: string): Evidence
 }
 
 // ============================================================
+// TRAJECTORY RECONSTRUCTION — for DB-loaded clouds
+// ============================================================
+
+/**
+ * Reconstruct CareerTrajectory from CloudNode role evidence.
+ * Used when loading Cloud from DB where trajectory isn't stored separately.
+ */
+export function reconstructTrajectory(nodes: CloudNode[]): CareerTrajectory {
+  // Extract unique roles from all node evidence
+  const roleMap = new Map<string, {
+    company: string; title: string; start_date: string;
+    end_date: string; duration_months: number; domain: string;
+  }>();
+
+  for (const node of nodes) {
+    for (const ev of node.evidence) {
+      if (ev.type !== "role") continue;
+      const role = ev as RoleEvidence;
+      const key = `${role.company}|${role.title}|${role.start_date}`;
+      if (!roleMap.has(key)) {
+        // Determine domain from the node's parent domain nodes or category
+        const domain = node.type === "domain" ? node.name : "general";
+        roleMap.set(key, {
+          company: role.company,
+          title: role.title,
+          start_date: role.start_date,
+          end_date: role.end_date,
+          duration_months: role.duration_months,
+          domain,
+        });
+      }
+    }
+  }
+
+  // Deduplicate: same company+title = same role
+  const uniqueRoles = new Map<string, typeof roleMap extends Map<string, infer V> ? V : never>();
+  for (const role of roleMap.values()) {
+    const key = `${role.company}|${role.title}`;
+    const existing = uniqueRoles.get(key);
+    if (!existing || role.duration_months > existing.duration_months) {
+      uniqueRoles.set(key, role);
+    }
+  }
+
+  const roles = [...uniqueRoles.values()];
+  return buildTrajectory(roles, Math.round(roles.reduce((s, r) => s + r.duration_months, 0) / 12));
+}
+
+// ============================================================
 // HELPERS
 // ============================================================
 
-function computeSummary(evidence: Evidence[]): EvidenceSummary {
+export function computeSummary(evidence: Evidence[]): EvidenceSummary {
   const roles = evidence.filter((e): e is RoleEvidence => e.type === "role");
   const impacts = evidence.filter((e): e is ImpactEvidence => e.type === "impact");
   const certs = evidence.filter((e): e is CertificationEvidence => e.type === "certification");

@@ -5,7 +5,12 @@
   "synthetic": true,
   "jd_style": "startup_technical",
   "framing": "Senior GNC engineer at Lockheed Martin applying to SpaceX Starlink constellation role",
-  "coverage": { "industry": "Space/Satellite", "seniority": "senior", "pattern": "linear", "region": "north_america" },
+  "coverage": {
+    "industry": "Space/Satellite",
+    "seniority": "senior",
+    "pattern": "linear",
+    "region": "north_america"
+  },
   "jd": {
     "title": "Staff GNC Engineer — Satellite Constellation",
     "company": "SpaceX",
@@ -13,14 +18,38 @@
     "experience_years": 8,
     "style_note": "Startup-technical: fast-paced, specific technical requirements, mission-driven, high ownership",
     "requirements": [
-      { "text": "8+ years of experience in guidance, navigation, and control (GNC) for spacecraft or satellite systems", "type": "must_have" },
-      { "text": "Expert knowledge of orbit mechanics, attitude determination and control systems (ADCS), and orbital manoeuvre planning", "type": "must_have" },
-      { "text": "Strong programming skills in Python and C++ for GNC algorithm development and simulation", "type": "must_have" },
-      { "text": "Experience with high-fidelity orbital simulation tools (STK/Ansys, GMAT, or custom Monte Carlo simulations)", "type": "must_have" },
-      { "text": "Experience with constellation operations: station-keeping, collision avoidance (COLA), and deorbit planning", "type": "nice_to_have" },
-      { "text": "Experience with electric propulsion systems (Hall-effect thrusters, ion engines) for orbit raising and maintenance", "type": "nice_to_have" },
-      { "text": "Familiarity with space situational awareness (SSA) and conjunction assessment (CDM processing)", "type": "nice_to_have" },
-      { "text": "Experience with real-time spacecraft operations and anomaly resolution", "type": "nice_to_have" }
+      {
+        "text": "8+ years of experience in guidance, navigation, and control (GNC) for spacecraft or satellite systems",
+        "type": "must_have"
+      },
+      {
+        "text": "Expert knowledge of orbit mechanics, attitude determination and control systems (ADCS), and orbital manoeuvre planning",
+        "type": "must_have"
+      },
+      {
+        "text": "Strong programming skills in Python and C++ for GNC algorithm development and simulation",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience with high-fidelity orbital simulation tools (STK/Ansys, GMAT, or custom Monte Carlo simulations)",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience with constellation operations: station-keeping, collision avoidance (COLA), and deorbit planning",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "Experience with electric propulsion systems (Hall-effect thrusters, ion engines) for orbit raising and maintenance",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "Familiarity with space situational awareness (SSA) and conjunction assessment (CDM processing)",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "Experience with real-time spacecraft operations and anomaly resolution",
+        "type": "nice_to_have"
+      }
     ],
     "responsibilities": [
       "Design and implement GNC algorithms for Starlink satellite constellation (6,000+ satellites)",
@@ -60,10 +89,34 @@
       }
     ],
     "skills": {
-      "gnc": ["ADCS algorithm development", "attitude determination (star tracker, Earth/Sun sensors)", "reaction wheel control laws", "Kalman filter sensor fusion", "orbit manoeuvre planning"],
-      "simulation": ["MATLAB/Simulink", "STK (Systems Tool Kit)", "Monte Carlo simulation", "Python (orbit propagation scripts)", "high-fidelity attitude simulation"],
-      "orbital_mechanics": ["GPS constellation slot maintenance", "conjunction assessment (CDM processing)", "orbit propagation", "GEO and MEO operations"],
-      "spacecraft": ["GPS III", "SBIRS GEO", "chemical propulsion (bipropellant)", "early orbit operations", "anomaly resolution", "safe mode recovery"]
+      "gnc": [
+        "ADCS algorithm development",
+        "attitude determination (star tracker, Earth/Sun sensors)",
+        "reaction wheel control laws",
+        "Kalman filter sensor fusion",
+        "orbit manoeuvre planning"
+      ],
+      "simulation": [
+        "MATLAB/Simulink",
+        "STK (Systems Tool Kit)",
+        "Monte Carlo simulation",
+        "Python (orbit propagation scripts)",
+        "high-fidelity attitude simulation"
+      ],
+      "orbital_mechanics": [
+        "GPS constellation slot maintenance",
+        "conjunction assessment (CDM processing)",
+        "orbit propagation",
+        "GEO and MEO operations"
+      ],
+      "spacecraft": [
+        "GPS III",
+        "SBIRS GEO",
+        "chemical propulsion (bipropellant)",
+        "early orbit operations",
+        "anomaly resolution",
+        "safe mode recovery"
+      ]
     },
     "certifications": [
       "US Security Clearance — Secret (active, TS eligible)"
@@ -84,16 +137,26 @@
     "real-time spacecraft operations anomaly resolution"
   ],
   "cloud_skills": [
-    "ADCS algorithm development", "attitude determination",
-    "star tracker", "reaction wheel control",
-    "Kalman filter", "sensor fusion",
-    "orbit manoeuvre planning", "MATLAB/Simulink",
-    "STK Systems Tool Kit", "Monte Carlo simulation",
-    "Python orbit propagation", "GPS III",
-    "SBIRS GEO", "conjunction assessment",
-    "CDM processing", "early orbit operations",
-    "anomaly resolution", "safe mode recovery",
-    "chemical propulsion", "bipropellant thrusters"
+    "ADCS algorithm development",
+    "attitude determination",
+    "star tracker",
+    "reaction wheel control",
+    "Kalman filter",
+    "sensor fusion",
+    "orbit manoeuvre planning",
+    "MATLAB/Simulink",
+    "STK Systems Tool Kit",
+    "Monte Carlo simulation",
+    "Python orbit propagation",
+    "GPS III",
+    "SBIRS GEO",
+    "conjunction assessment",
+    "CDM processing",
+    "early orbit operations",
+    "anomaly resolution",
+    "safe mode recovery",
+    "chemical propulsion",
+    "bipropellant thrusters"
   ],
   "deliberate_flaws": [
     "No C++ experience — JD requires 'strong C++ skills', candidate uses MATLAB/Simulink and Python",
@@ -107,5 +170,14 @@
     "Government satellite to commercial constellation — different risk tolerance, iteration speed, and autonomy requirements",
     "Secret clearance, not TS — SpaceX Starlink doesn't require clearance but Lockheed background may have IP restrictions",
     "No autonomous software development (GPS III GNC is ground-commanded, Starlink is autonomous)"
-  ]
+  ],
+  "provenance": {
+    "data_source": "synthetic",
+    "jd_basis": "modeled_from_real_jd_styles",
+    "jd_styles_doc": "REAL-JD-STYLES.md",
+    "expected_output_author": "claude",
+    "user_snap_checked": null,
+    "circularity_risk": "medium",
+    "notes": "Synthetic persona and JD. JD style modeled from real Greenhouse/Lever postings. Expected output and cloud_skills are AI-generated. 4/8 scorecard checks (jd_coverage, no_fabrication, metrics_preserved, no_fabricated_skills) evaluate AI vs AI reference. 4/8 checks (factual_preservation, word_count, ats_structure, action_verbs) are structurally valid regardless."
+  }
 }

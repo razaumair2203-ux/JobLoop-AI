@@ -79,10 +79,10 @@
 <body>
 
 <h1>JobLoop <span>AI</span> — Competitive Comparison</h1>
-<p class="subtitle">Deep analysis of 10 competitors across 35+ dimensions | April 2026 | BRUTAL TRUTH EDITION</p>
+<p class="subtitle">Deep analysis of 10 competitors across 35+ dimensions | May 2026 | BRUTAL TRUTH EDITION</p>
 
 <div class="honesty-banner">
-  <strong>HONESTY NOTICE:</strong> Every JobLoop feature is tagged with its REAL status. We are pre-launch with ~35% of core engine built. This document does NOT inflate what we have. Competitor data is sourced from public sources (Trustpilot, Reddit, Crunchbase, product pages) — estimates and unverified claims are marked.
+  <strong>HONESTY NOTICE:</strong> Every JobLoop feature is tagged with its REAL status. We are pre-launch with ~45% of core engine built. This document does NOT inflate what we have. Competitor data is sourced from public sources (Trustpilot, Reddit, Crunchbase, product pages) — estimates and unverified claims are marked.
 </div>
 
 <div class="legend">
@@ -313,7 +313,7 @@
   </tr>
   <tr>
     <td><strong>Matching method</strong><br><small>How it compares you to the JD</small></td>
-    <td class="highlight">Word-boundary regex + 40+ alias map + evidence depth check <span class="badge badge-built">BUILT</span><br><span class="caveat">In skill-matching.ts + cloud-matcher.ts</span></td>
+    <td class="highlight">Word-boundary regex + 40+ alias map + 355-skill taxonomy (17 domains) + evidence depth check <span class="badge badge-built">BUILT</span><br><span class="caveat">In skill-matching.ts + cloud-matcher.ts</span></td>
     <td>Basic string matching ("Java" matches "JavaScript")</td>
     <td>Keyword frequency (derivative matching unreliable)</td>
     <td>Proprietary ML on 10M+ JDs</td>
@@ -374,7 +374,7 @@
   </tr>
   <tr>
     <td><strong>Hallucination risk</strong><br><small>Does the AI invent skills/metrics you don't have?</small></td>
-    <td class="highlight"><strong>DESIGNED LOW</strong> — Cloud-constrained generation <span class="badge badge-built">BUILT</span><br><span class="caveat">Prompt instructs "only use Cloud evidence" — untested with real users</span></td>
+    <td class="highlight"><strong>DESIGNED LOW</strong> — Cloud-constrained generation <span class="badge badge-built">BUILT</span><br><span class="caveat">6-layer anti-hallucination: source text verification, verifySkills() deterministic filter, extractContactDetails() bypass, verbatim extraction rules, skill blocking, mention_context weighting. Untested with real users.</span></td>
     <td class="worst"><span class="no">MEDIUM</span> — hallucinates skills from JD</td>
     <td><span class="partial">MEDIUM</span> — suggests keywords you may not have</td>
     <td class="worst"><span class="no">HIGH</span> — 7+ Reddit reports of fabricated skills/metrics</td>
@@ -401,7 +401,7 @@
   </tr>
   <tr>
     <td><strong>Templates</strong></td>
-    <td class="highlight">5 ATS-enforced (single-column, standard fonts) <span class="badge badge-specced">SPECCED</span><br><span class="caveat">Zero templates built</span></td>
+    <td class="highlight">6 templates (Professional/Technical/Modern/Executive/Minimal/Creative) <span class="badge badge-built">BUILT</span><br><span class="caveat">6 template components built in UI scaffold</span></td>
     <td>~10 free (some 2-col break ATS)</td>
     <td>Basic ATS</td>
     <td>Not template-focused</td>
@@ -494,7 +494,7 @@
   </tr>
   <tr>
     <td><strong>Board type</strong></td>
-    <td class="highlight">Table + Kanban toggle <span class="badge badge-specced">SPECCED</span><br><span class="caveat">No UI, no database schema</span></td>
+    <td class="highlight">Table + Kanban toggle <span class="badge badge-specced">SPECCED</span><br><span class="caveat">UI scaffold built (table + Kanban); database schema designed</span></td>
     <td>Kanban + table hybrid</td>
     <td>Dashboard</td>
     <td class="best"><strong>Best Kanban</strong> in category</td>
@@ -868,15 +868,15 @@
 <!-- ============================================================ -->
 <div class="reality-box">
   <h3>REALITY CHECK: What's Actually Built vs. Specced</h3>
-  <p><strong>BUILT (in codebase, working):</strong> Living Profile Cloud (9 evidence types), Socratic Questioning (3-gate system), Cloud-based matching (40+ skill aliases, word boundaries), "Because" chain insights, Advocate framing (no scores, no "skip"), Cloud-enriched CV generation, AI client (Haiku + Sonnet), dev mode (file-based AI), safe JSON parsing + Zod validation, unique ID generation.</p>
-  <p style="margin-top:6px"><strong>NOT BUILT (spec only):</strong> ALL UI, ALL database/persistence, ALL auth, ALL billing/payments, cover letters, PDF/DOCX export, templates, job tracker, outcome learning, experimentation engine, insights dashboard, interview prep, voice/tone profiling, browser extension, mobile app, follow-up reminders, contact management, rate limiting, prompt caching.</p>
-  <p style="margin-top:6px"><strong>Bottom line:</strong> We have a working AI engine (~35% of the vision). We have ZERO user-facing product. Every competitor in this document has shipped a product that real people use today.</p>
+  <p><strong>BUILT (in codebase, working):</strong> Living Profile Cloud (9 evidence types), Socratic Questioning (3-gate system), Cloud-based matching (40+ skill aliases, word boundaries), "Because" chain insights, Advocate framing (no scores, no "skip"), Cloud-enriched CV generation, AI client (Haiku + Sonnet), dev mode (file-based AI), safe JSON parsing + Zod validation, unique ID generation, anti-hallucination pipeline (6-layer: source verification + skill validation + contact bypass + verbatim rules + skill blocking + mention_context), 355-skill taxonomy across 17 domains, CV cleaner module (garbage filtering, date validation, source text verification, deterministic skill verification), conflict detection across multiple CVs, persona-aware filtering, maturity-driven model selection (Cloud maturity → Haiku/Sonnet), natural language feedback classifier, JD complexity classifier.</p>
+  <p style="margin-top:6px"><strong>NOT BUILT (spec only):</strong> ALL billing/payments, cover letters, PDF/DOCX export, job tracker persistence, outcome learning, experimentation engine, insights dashboard, interview prep, voice/tone profiling, browser extension, mobile app, follow-up reminders, contact management, rate limiting, prompt caching.</p>
+  <p style="margin-top:6px"><strong>Bottom line:</strong> We have a working AI engine (~45% of the vision). UI scaffold exists with mock data but no production backend. Every competitor in this document has shipped a product that real people use today.</p>
 </div>
 
 <div class="win-box">
   <h3>THE REAL ADVANTAGE</h3>
   <p><strong>Our white space is real but narrow.</strong> No production B2C tool combines evidence-based skill graphs + advocate framing + transparent reasoning + Socratic coaching. That's genuinely unique. But it's only valuable if we ship it. The engine works. The hard part — UI, persistence, auth, billing, polish — is 100% ahead of us.</p>
-  <p style="margin-top:8px"><strong>What's truly differentiated TODAY:</strong> The Cloud data model (9 evidence types vs everyone's flat keywords), the Socratic enrichment (nobody does this), and the philosophical stance (advocate vs gatekeeper, built into every prompt). These three things are built, working, and genuinely novel.</p>
+  <p style="margin-top:8px"><strong>What's truly differentiated TODAY:</strong> The Cloud data model (9 evidence types + anti-hallucination pipeline vs everyone's flat keywords), the Socratic enrichment (nobody does this), and the philosophical stance (advocate vs gatekeeper, built into every prompt). These three things are built, working, and genuinely novel.</p>
 </div>
 
 <div class="threat-box">
@@ -887,7 +887,7 @@
 </div>
 
 <p style="text-align:center; color:#94a3b8; font-size:11px; margin-top:32px;">
-  JobLoop AI Competitive Comparison — BRUTAL TRUTH EDITION | April 2026 | Every JobLoop claim verified against codebase
+  JobLoop AI Competitive Comparison — BRUTAL TRUTH EDITION | May 2026 | Every JobLoop claim verified against codebase
 </p>
 
 </body>

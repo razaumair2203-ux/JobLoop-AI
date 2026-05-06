@@ -1,11 +1,11 @@
 // Cloud — the core data model
-export { buildCloudFromParsedCV, findNode, getValidatedSkills, getWeakClaims, getRepeatedSkills } from "./cloud";
+export { buildCloudFromParsedCV, findNode, computeSummary, getValidatedSkills, getWeakClaims, getRepeatedSkills, reconstructTrajectory } from "./cloud";
 export type { ProfileCloud, CloudNode, Evidence, EvidenceSummary, Achievement, CareerTrajectory } from "./cloud";
 export type { RoleEvidence, ImpactEvidence, CertificationEvidence, AwardEvidence, ProjectEvidence, SocraticEvidence } from "./cloud";
 
 // Socratic questioning
-export { generateInitialQuestions, generateJDQuestions, processAnswer } from "./socratic";
-export type { SocraticQuestion, SocraticAnswer } from "./socratic";
+export { generateInitialQuestions, generateJDQuestions, processAnswer, detectContradictions } from "./socratic";
+export type { SocraticQuestion, SocraticAnswer, ContradictionResult } from "./socratic";
 
 // Cloud matcher (JD vs Cloud evidence)
 export { matchCloudToJD } from "./cloud-matcher";
@@ -13,14 +13,17 @@ export type { CloudMatchReport, CloudRequirementMatch, CloudTechMatch, MatchVerd
 
 // Cloud pipeline (the correct full pipeline)
 export { analyzeWithCloud, analyzeQuick } from "./cloud-pipeline";
-export type { CloudAnalysisResult } from "./cloud-pipeline";
+export type { CloudAnalysisResult, AnalysisOptions } from "./cloud-pipeline";
 
 // Flat matcher (legacy — works without cloud, from parsed CV)
 export { matchCVToJD } from "./matcher";
 export type { MatchReport, RequirementMatch, TechMatch, ExperienceComparison, DomainOverlap, PositionAssessment, MatchStatus } from "./matcher";
 
 // Parsers (AI extraction)
-export { parseJD, parseCV } from "./analyze";
+export { parseJD, parseCV, classifyJDComplexity } from "./analyze";
+
+// Dev-mode parser (regex fallback when no API key)
+export { parseCVLocal } from "./dev-parser";
 
 // Suitability Insights (transparent reasoning, not scores)
 export { generateInsights } from "./insights";
@@ -58,8 +61,16 @@ export { MAX_UNCOMPRESSED_SIZE, MAX_CSV_SIZE, RELEVANT_FILES } from "./linkedin-
 
 // Multi-document conflict detection
 export { detectConflicts } from "./conflict-detector";
-export type { ParsedRole, RoleConflict, TimelineGap, EmployerGroup, ConflictReport } from "./conflict-detector";
+export type { ParsedRole, RoleConflict, TimelineGap, EmployerGroup, ConflictReport, PersonaType } from "./conflict-detector";
 export { companiesMatch, titlesOverlap, parseRoleDate, monthsBetween } from "./conflict-detector";
+
+// Socratic answer parsing (Phase 1)
+export { parseAnswer, detectComplexitySignals, selectModelTier, saveAnswerParseResponse } from "./answer-parser";
+export type { AnswerParseResult, ParsedRoleFromAnswer, ModelTier } from "./answer-parser";
+
+// Resolution merger (parsed CVs + answers → resolved profile)
+export { mergeResolvedProfile, resolvedProfileToParsedCV } from "./resolution-merger";
+export type { ResolvedProfile, ResolvedRole, ResolvedEducation, InputCV, InputRole, DirectAnswers } from "./resolution-merger";
 
 // Certificate PDF extraction
 export { extractCertificate, extractCertificates, isCertificatePDF } from "./certificate-extractor";
@@ -73,16 +84,42 @@ export type { GapFillingQuestion, GapFillingContext } from "./gap-filling";
 export {
   scoreCVGeneration, scoreJDParsing, compareScorecards,
   selectMutation, buildMutationPrompt, getMutationStats,
-  initLoopState, selectTrainingBatch, runIteration, shouldStop, shouldValidate,
+  initLoopState, selectTrainingBatch, selectWeightedTrainingBatch, runIteration, shouldStop, shouldValidate,
   toTSVLine, TSV_HEADER, DEFAULT_CONFIG,
   oneWayANOVA, analyzePretestResults,
+  computeFeedbackWeights, selectWeightedBatch,
 } from "./autoresearch";
 export type {
   CheckResult, ScorecardResult, GateVerdict, CVScorecardInput, JDScorecardInput,
   MutationType, MutationRecord, MutationInstruction,
   TargetPrompt, TestPair, IterationResult, LoopState, LoopConfig,
   PretestResult,
+  FeedbackRecord, PairWeight, FeedbackWeights,
 } from "./autoresearch";
+
+// Skill Taxonomy & Classification
+export { classifySkill, classifyCloud, inferDepthLevel, detectGaps } from "./taxonomy";
+export type {
+  DepthLevel, DepthAssessment, ClassifiedSkill, ClassifiedCloud, ClassifiedRole,
+  TaxonomyDomain, TaxonomyCategory, SkillGap,
+} from "./taxonomy";
+
+// Cloud Maturity — the master signal for model selection
+export { computeCloudMaturity, getMaturityForDomain, selectModel, interpretFeedback, checkJDSimilarity } from "./cloud-maturity";
+export type {
+  CloudMaturity, DomainMaturity, MaturityLevel,
+  TaskType, TaskComplexity,
+  FeedbackSignal, UserFeedback,
+  JDSimilarityResult,
+} from "./cloud-maturity";
+
+// Natural Language Feedback Classification
+export { classifyFeedback, toUserFeedback } from "./feedback-classifier";
+export type { FeedbackIntent, ClassifiedFeedback } from "./feedback-classifier";
+
+// CV Cleaner — pre-Cloud data quality
+export { cleanTitle, filterGarbageBullets, validateDates, verifyAgainstSourceText, verifySkills, extractContactDetails, buildConflictQuestions, cleanParsedCVs } from "./cv-cleaner";
+export type { DateValidationIssue, SourceVerificationResult, CleaningReport, Phase1Question, ExtractedContact } from "./cv-cleaner";
 
 // Config
 export { MODELS } from "./client";

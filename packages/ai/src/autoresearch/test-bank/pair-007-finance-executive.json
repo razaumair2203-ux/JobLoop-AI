@@ -4,23 +4,58 @@
   "persona": "executive",
   "synthetic": true,
   "framing": "CFO / VP Finance targeting C-suite",
-  "coverage": { "industry": "Finance", "seniority": "executive", "pattern": "linear", "region": "europe" },
+  "coverage": {
+    "industry": "Finance",
+    "seniority": "executive",
+    "pattern": "linear",
+    "region": "europe"
+  },
   "jd": {
     "title": "Chief Financial Officer",
     "company": "Revolut",
     "location": "London, UK",
     "experience_years": 15,
     "requirements": [
-      { "text": "15+ years of progressive finance leadership experience", "type": "must_have" },
-      { "text": "Experience as CFO, VP Finance, or Finance Director at a high-growth technology company", "type": "must_have" },
-      { "text": "Deep understanding of fintech regulatory landscape (FCA, PRA, ECB)", "type": "must_have" },
-      { "text": "Experience managing finance teams of 50+ people across multiple geographies", "type": "must_have" },
-      { "text": "Track record of leading IPO preparation or major fundraising rounds ($100M+)", "type": "must_have" },
-      { "text": "CPA, ACA, ACCA, or equivalent professional qualification", "type": "must_have" },
-      { "text": "Experience with treasury management and FX risk in multi-currency environments", "type": "must_have" },
-      { "text": "MBA from a top-tier institution", "type": "nice_to_have" },
-      { "text": "Experience with IFRS and US GAAP dual reporting", "type": "nice_to_have" },
-      { "text": "Board-level presentation and investor relations experience", "type": "must_have" }
+      {
+        "text": "15+ years of progressive finance leadership experience",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience as CFO, VP Finance, or Finance Director at a high-growth technology company",
+        "type": "must_have"
+      },
+      {
+        "text": "Deep understanding of fintech regulatory landscape (FCA, PRA, ECB)",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience managing finance teams of 50+ people across multiple geographies",
+        "type": "must_have"
+      },
+      {
+        "text": "Track record of leading IPO preparation or major fundraising rounds ($100M+)",
+        "type": "must_have"
+      },
+      {
+        "text": "CPA, ACA, ACCA, or equivalent professional qualification",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience with treasury management and FX risk in multi-currency environments",
+        "type": "must_have"
+      },
+      {
+        "text": "MBA from a top-tier institution",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "Experience with IFRS and US GAAP dual reporting",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "Board-level presentation and investor relations experience",
+        "type": "must_have"
+      }
     ],
     "responsibilities": [
       "Lead all finance functions including FP&A, accounting, tax, treasury, and investor relations",
@@ -82,10 +117,33 @@
       }
     ],
     "skills": {
-      "finance_leadership": ["FP&A", "treasury management", "multi-currency FX operations", "capital allocation", "budget management ($400M+ P&L)"],
-      "regulatory": ["FCA compliance", "PRA liquidity reporting", "regulatory capital", "UK Corporate Governance Code compliance", "IFRS reporting"],
-      "strategic": ["IPO preparation", "investor relations", "board presentations", "fundraising ($300M+)", "strategic planning"],
-      "team_leadership": ["global team management (65 people, 4 offices)", "finance function scaling", "audit committee", "external auditor relationships"]
+      "finance_leadership": [
+        "FP&A",
+        "treasury management",
+        "multi-currency FX operations",
+        "capital allocation",
+        "budget management ($400M+ P&L)"
+      ],
+      "regulatory": [
+        "FCA compliance",
+        "PRA liquidity reporting",
+        "regulatory capital",
+        "UK Corporate Governance Code compliance",
+        "IFRS reporting"
+      ],
+      "strategic": [
+        "IPO preparation",
+        "investor relations",
+        "board presentations",
+        "fundraising ($300M+)",
+        "strategic planning"
+      ],
+      "team_leadership": [
+        "global team management (65 people, 4 offices)",
+        "finance function scaling",
+        "audit committee",
+        "external auditor relationships"
+      ]
     },
     "certifications": [
       "ACA — Institute of Chartered Accountants in England and Wales (ICAEW)"
@@ -108,19 +166,44 @@
     "board presentation investor relations"
   ],
   "cloud_skills": [
-    "FP&A", "treasury management", "FX operations", "capital allocation",
-    "FCA compliance", "PRA reporting", "regulatory capital", "UK Corporate Governance Code",
-    "IFRS reporting", "IPO preparation", "investor relations",
-    "board presentations", "fundraising", "strategic planning",
-    "global team management", "finance function scaling",
-    "audit committee", "external audit", "Deloitte",
-    "budget management", "financial controls",
-    "multi-currency operations", "banking regulation",
-    "ACA qualification", "financial services audit"
+    "FP&A",
+    "treasury management",
+    "FX operations",
+    "capital allocation",
+    "FCA compliance",
+    "PRA reporting",
+    "regulatory capital",
+    "UK Corporate Governance Code",
+    "IFRS reporting",
+    "IPO preparation",
+    "investor relations",
+    "board presentations",
+    "fundraising",
+    "strategic planning",
+    "global team management",
+    "finance function scaling",
+    "audit committee",
+    "external audit",
+    "Deloitte",
+    "budget management",
+    "financial controls",
+    "multi-currency operations",
+    "banking regulation",
+    "ACA qualification",
+    "financial services audit"
   ],
   "deliberate_flaws": [
     "No US GAAP experience (only IFRS)",
     "No ECB regulatory experience (UK/FCA focused)",
     "MBA part-time not full-time from top-tier"
-  ]
+  ],
+  "provenance": {
+    "data_source": "synthetic",
+    "jd_basis": "modeled_from_real_jd_styles",
+    "jd_styles_doc": "REAL-JD-STYLES.md",
+    "expected_output_author": "claude",
+    "user_snap_checked": null,
+    "circularity_risk": "medium",
+    "notes": "Synthetic persona and JD. JD style modeled from real Greenhouse/Lever postings. Expected output and cloud_skills are AI-generated. 4/8 scorecard checks (jd_coverage, no_fabrication, metrics_preserved, no_fabricated_skills) evaluate AI vs AI reference. 4/8 checks (factual_preservation, word_count, ats_structure, action_verbs) are structurally valid regardless."
+  }
 }

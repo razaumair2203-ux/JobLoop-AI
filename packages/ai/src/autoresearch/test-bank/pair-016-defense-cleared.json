@@ -5,24 +5,62 @@
   "synthetic": true,
   "jd_style": "defense_cleared",
   "framing": "Military veteran applying to cleared defense manufacturing role (Anduril-style JD)",
-  "coverage": { "industry": "Defense/Aerospace", "seniority": "mid", "pattern": "military_transition", "region": "north_america" },
+  "coverage": {
+    "industry": "Defense/Aerospace",
+    "seniority": "mid",
+    "pattern": "military_transition",
+    "region": "north_america"
+  },
   "jd": {
     "title": "Manufacturing Operations Manager, Autonomous Systems",
     "company": "Defense Technology Company",
     "location": "Ashville, OH (on-site, relocation support provided)",
     "experience_years": 7,
     "requirements": [
-      { "text": "7+ years experience in production-oriented or electro-mechanical technician fields with at least 3+ years in a supervisor or production operations lead/manager role in a high volume mixed product production environment", "type": "must_have" },
-      { "text": "ERP and MES systems experience", "type": "must_have" },
-      { "text": "Complete understanding of product lifecycle from NPI to scaled production, LEAN manufacturing, and change management (ECOs)", "type": "must_have" },
-      { "text": "Ability to interpret technical documentation including mechanical drawings, schematics, and equipment specifications", "type": "must_have" },
-      { "text": "Process and equipment troubleshooting skills with adaptability to changing environments", "type": "must_have" },
-      { "text": "Knowledge of 5S, lean manufacturing, or 6-Sigma principles", "type": "must_have" },
-      { "text": "Currently possess and maintain active U.S. Secret security clearance", "type": "must_have" },
-      { "text": "Associate's or Bachelor's degree in technical field (engineering, business, applied science)", "type": "nice_to_have" },
-      { "text": "Lean Six Sigma green belt certification", "type": "nice_to_have" },
-      { "text": "AS9100 standards and OSHA laws knowledge", "type": "nice_to_have" },
-      { "text": "Small electronic assembly experience", "type": "nice_to_have" }
+      {
+        "text": "7+ years experience in production-oriented or electro-mechanical technician fields with at least 3+ years in a supervisor or production operations lead/manager role in a high volume mixed product production environment",
+        "type": "must_have"
+      },
+      {
+        "text": "ERP and MES systems experience",
+        "type": "must_have"
+      },
+      {
+        "text": "Complete understanding of product lifecycle from NPI to scaled production, LEAN manufacturing, and change management (ECOs)",
+        "type": "must_have"
+      },
+      {
+        "text": "Ability to interpret technical documentation including mechanical drawings, schematics, and equipment specifications",
+        "type": "must_have"
+      },
+      {
+        "text": "Process and equipment troubleshooting skills with adaptability to changing environments",
+        "type": "must_have"
+      },
+      {
+        "text": "Knowledge of 5S, lean manufacturing, or 6-Sigma principles",
+        "type": "must_have"
+      },
+      {
+        "text": "Currently possess and maintain active U.S. Secret security clearance",
+        "type": "must_have"
+      },
+      {
+        "text": "Associate's or Bachelor's degree in technical field (engineering, business, applied science)",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "Lean Six Sigma green belt certification",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "AS9100 standards and OSHA laws knowledge",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "Small electronic assembly experience",
+        "type": "nice_to_have"
+      }
     ],
     "responsibilities": [
       "Manage technician staff in production and hardware delivery through factory acceptance",
@@ -76,10 +114,30 @@
       }
     ],
     "skills": {
-      "production_operations": ["production supervision (30+ technicians)", "work order management", "on-time delivery tracking", "daily operations coordination"],
-      "technical": ["electro-mechanical troubleshooting", "technical documentation interpretation", "schematics and wiring diagrams", "avionics repair and testing"],
-      "lean_quality": ["5S implementation", "lean manufacturing principles", "FOD prevention", "process improvement"],
-      "leadership": ["shift management", "technician training and mentoring", "cross-functional communication", "safety compliance"]
+      "production_operations": [
+        "production supervision (30+ technicians)",
+        "work order management",
+        "on-time delivery tracking",
+        "daily operations coordination"
+      ],
+      "technical": [
+        "electro-mechanical troubleshooting",
+        "technical documentation interpretation",
+        "schematics and wiring diagrams",
+        "avionics repair and testing"
+      ],
+      "lean_quality": [
+        "5S implementation",
+        "lean manufacturing principles",
+        "FOD prevention",
+        "process improvement"
+      ],
+      "leadership": [
+        "shift management",
+        "technician training and mentoring",
+        "cross-functional communication",
+        "safety compliance"
+      ]
     },
     "certifications": [
       "Active U.S. Secret Security Clearance",
@@ -104,14 +162,24 @@
     "small electronic assembly"
   ],
   "cloud_skills": [
-    "production supervision", "work order management",
-    "avionics repair", "electro-mechanical troubleshooting",
-    "technical documentation", "schematics interpretation",
-    "5S implementation", "lean manufacturing", "FOD prevention",
-    "shift management", "technician training",
-    "cross-functional communication", "safety compliance",
-    "ERP systems (ABPDS)", "on-time delivery",
-    "NPI integration", "radar systems", "EW systems",
+    "production supervision",
+    "work order management",
+    "avionics repair",
+    "electro-mechanical troubleshooting",
+    "technical documentation",
+    "schematics interpretation",
+    "5S implementation",
+    "lean manufacturing",
+    "FOD prevention",
+    "shift management",
+    "technician training",
+    "cross-functional communication",
+    "safety compliance",
+    "ERP systems (ABPDS)",
+    "on-time delivery",
+    "NPI integration",
+    "radar systems",
+    "EW systems",
     "Secret clearance"
   ],
   "deliberate_flaws": [
@@ -121,5 +189,14 @@
     "No small electronic assembly (depot repair, not manufacturing)",
     "AS degree from CCAF, not civilian institution — some employers undervalue this",
     "Military jargon needs translation for civilian hiring managers"
-  ]
+  ],
+  "provenance": {
+    "data_source": "synthetic",
+    "jd_basis": "modeled_from_real_jd_styles",
+    "jd_styles_doc": "REAL-JD-STYLES.md",
+    "expected_output_author": "claude",
+    "user_snap_checked": null,
+    "circularity_risk": "medium",
+    "notes": "Synthetic persona and JD. JD style modeled from real Greenhouse/Lever postings. Expected output and cloud_skills are AI-generated. 4/8 scorecard checks (jd_coverage, no_fabrication, metrics_preserved, no_fabricated_skills) evaluate AI vs AI reference. 4/8 checks (factual_preservation, word_count, ats_structure, action_verbs) are structurally valid regardless."
+  }
 }

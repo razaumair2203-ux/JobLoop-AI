@@ -1,0 +1,749 @@
+{
+  "target_prompt": "cv-generation",
+  "current_prompt_version": 0,
+  "best_prompt_version": 0,
+  "total_iterations": 5,
+  "total_kept": 0,
+  "total_discarded": 5,
+  "consecutive_discards": 5,
+  "mutation_history": [
+    {
+      "type": "ADD_CONSTRAINT",
+      "description": "ADD_CONSTRAINT: You are JobLoop's CV Writer. You take a candidate's master CV and a target job description, and prod...",
+      "diff_summary": "DISCARDED",
+      "iteration": 1,
+      "timestamp": "2026-05-03T18:06:55.518Z"
+    },
+    {
+      "type": "ADD_NEGATIVE",
+      "description": "ADD_NEGATIVE: You are JobLoop's CV Writer. You take a candidate's master CV and a target job description, and prod...",
+      "diff_summary": "DISCARDED",
+      "iteration": 2,
+      "timestamp": "2026-05-03T18:06:55.527Z"
+    },
+    {
+      "type": "RESTRUCTURE",
+      "description": "RESTRUCTURE: You are JobLoop's CV Writer. You take a candidate's master CV and a target job description, and prod...",
+      "diff_summary": "DISCARDED",
+      "iteration": 3,
+      "timestamp": "2026-05-03T18:06:55.531Z"
+    },
+    {
+      "type": "TIGHTEN_LANGUAGE",
+      "description": "TIGHTEN_LANGUAGE: You are JobLoop's CV Writer. You take a candidate's master CV and a target job description, and prod...",
+      "diff_summary": "DISCARDED",
+      "iteration": 4,
+      "timestamp": "2026-05-03T18:06:55.535Z"
+    },
+    {
+      "type": "REMOVE_BLOAT",
+      "description": "REMOVE_BLOAT: You are JobLoop's CV Writer. You take a candidate's master CV and a target job description, and prod...",
+      "diff_summary": "DISCARDED",
+      "iteration": 5,
+      "timestamp": "2026-05-03T18:06:55.538Z"
+    }
+  ],
+  "iteration_results": [
+    {
+      "iteration": 1,
+      "timestamp": "2026-05-03T18:06:55.518Z",
+      "target_prompt": "cv-generation",
+      "mutation_type": "ADD_CONSTRAINT",
+      "mutation_description": "ADD_CONSTRAINT: You are JobLoop's CV Writer. You take a candidate's master CV and a target job description, and prod...",
+      "verdict": "discard",
+      "scorecard": {
+        "checks": [
+          {
+            "name": "jd_requirements_coverage",
+            "passed": false,
+            "score": 0.030000000000000006,
+            "detail": "Avg across 10 pairs"
+          },
+          {
+            "name": "no_fabrication",
+            "passed": true,
+            "score": 1,
+            "detail": "Avg across 10 pairs"
+          },
+          {
+            "name": "metrics_preserved",
+            "passed": false,
+            "score": 0,
+            "detail": "Avg across 10 pairs"
+          },
+          {
+            "name": "word_count",
+            "passed": true,
+            "score": 1,
+            "detail": "Avg across 10 pairs"
+          },
+          {
+            "name": "no_fabricated_skills",
+            "passed": true,
+            "score": 1,
+            "detail": "Avg across 10 pairs"
+          },
+          {
+            "name": "action_verbs",
+            "passed": true,
+            "score": 1,
+            "detail": "Avg across 10 pairs"
+          },
+          {
+            "name": "ats_structure",
+            "passed": false,
+            "score": 0.7000000000000001,
+            "detail": "Avg across 10 pairs"
+          },
+          {
+            "name": "factual_preservation",
+            "passed": false,
+            "score": 0,
+            "detail": "Avg across 10 pairs"
+          }
+        ],
+        "gate1_verdict": "fail",
+        "gate1_passed": 40,
+        "gate1_total": 80,
+        "gate1_failures": [
+          "jd_requirements_coverage",
+          "metrics_preserved",
+          "ats_structure",
+          "factual_preservation"
+        ],
+        "bertscore_f1": null,
+        "bertscore_available": false,
+        "legacy_structural_avg": 0.59125,
+        "legacy_composite": 0.59125
+      },
+      "incumbent_scorecard": {
+        "checks": [
+          {
+            "name": "jd_requirements_coverage",
+            "passed": false,
+            "score": 0.030000000000000006,
+            "detail": "Avg across 10 pairs"
+          },
+          {
+            "name": "no_fabrication",
+            "passed": true,
+            "score": 1,
+            "detail": "Avg across 10 pairs"
+          },
+          {
+            "name": "metrics_preserved",
+            "passed": false,
+            "score": 0,
+            "detail": "Avg across 10 pairs"
+          },
+          {
+            "name": "word_count",
+            "passed": true,
+            "score": 1,
+            "detail": "Avg across 10 pairs"
+          },
+          {
+            "name": "no_fabricated_skills",
+            "passed": true,
+            "score": 1,
+            "detail": "Avg across 10 pairs"
+          },
+          {
+            "name": "action_verbs",
+            "passed": true,
+            "score": 1,
+            "detail": "Avg across 10 pairs"
+          },
+          {
+            "name": "ats_structure",
+            "passed": false,
+            "score": 0.7000000000000001,
+            "detail": "Avg across 10 pairs"
+          },
+          {
+            "name": "factual_preservation",
+            "passed": false,
+            "score": 0,
+            "detail": "Avg across 10 pairs"
+          }
+        ],
+        "gate1_verdict": "fail",
+        "gate1_passed": 40,
+        "gate1_total": 80,
+        "gate1_failures": [
+          "jd_requirements_coverage",
+          "metrics_preserved",
+          "ats_structure",
+          "factual_preservation"
+        ],
+        "bertscore_f1": null,
+        "bertscore_available": false,
+        "legacy_structural_avg": 0.59125,
+        "legacy_composite": 0.59125
+      },
+      "pairs_evaluated": 10,
+      "consecutive_discards": 1
+    },
+    {
+      "iteration": 2,
+      "timestamp": "2026-05-03T18:06:55.527Z",
+      "target_prompt": "cv-generation",
+      "mutation_type": "ADD_NEGATIVE",
+      "mutation_description": "ADD_NEGATIVE: You are JobLoop's CV Writer. You take a candidate's master CV and a target job description, and prod...",
+      "verdict": "discard",
+      "scorecard": {
+        "checks": [
+          {
+            "name": "jd_requirements_coverage",
+            "passed": false,
+            "score": 0.02,
+            "detail": "Avg across 10 pairs"
+          },
+          {
+            "name": "no_fabrication",
+            "passed": true,
+            "score": 1,
+            "detail": "Avg across 10 pairs"
+          },
+          {
+            "name": "metrics_preserved",
+            "passed": false,
+            "score": 0,
+            "detail": "Avg across 10 pairs"
+          },
+          {
+            "name": "word_count",
+            "passed": true,
+            "score": 1,
+            "detail": "Avg across 10 pairs"
+          },
+          {
+            "name": "no_fabricated_skills",
+            "passed": true,
+            "score": 1,
+            "detail": "Avg across 10 pairs"
+          },
+          {
+            "name": "action_verbs",
+            "passed": true,
+            "score": 1,
+            "detail": "Avg across 10 pairs"
+          },
+          {
+            "name": "ats_structure",
+            "passed": false,
+            "score": 0.7000000000000001,
+            "detail": "Avg across 10 pairs"
+          },
+          {
+            "name": "factual_preservation",
+            "passed": false,
+            "score": 0,
+            "detail": "Avg across 10 pairs"
+          }
+        ],
+        "gate1_verdict": "fail",
+        "gate1_passed": 40,
+        "gate1_total": 80,
+        "gate1_failures": [
+          "jd_requirements_coverage",
+          "metrics_preserved",
+          "ats_structure",
+          "factual_preservation"
+        ],
+        "bertscore_f1": null,
+        "bertscore_available": false,
+        "legacy_structural_avg": 0.5900000000000001,
+        "legacy_composite": 0.5900000000000001
+      },
+      "incumbent_scorecard": {
+        "checks": [
+          {
+            "name": "jd_requirements_coverage",
+            "passed": false,
+            "score": 0.02,
+            "detail": "Avg across 10 pairs"
+          },
+          {
+            "name": "no_fabrication",
+            "passed": true,
+            "score": 1,
+            "detail": "Avg across 10 pairs"
+          },
+          {
+            "name": "metrics_preserved",
+            "passed": false,
+            "score": 0,
+            "detail": "Avg across 10 pairs"
+          },
+          {
+            "name": "word_count",
+            "passed": true,
+            "score": 1,
+            "detail": "Avg across 10 pairs"
+          },
+          {
+            "name": "no_fabricated_skills",
+            "passed": true,
+            "score": 1,
+            "detail": "Avg across 10 pairs"
+          },
+          {
+            "name": "action_verbs",
+            "passed": true,
+            "score": 1,
+            "detail": "Avg across 10 pairs"
+          },
+          {
+            "name": "ats_structure",
+            "passed": false,
+            "score": 0.7000000000000001,
+            "detail": "Avg across 10 pairs"
+          },
+          {
+            "name": "factual_preservation",
+            "passed": false,
+            "score": 0,
+            "detail": "Avg across 10 pairs"
+          }
+        ],
+        "gate1_verdict": "fail",
+        "gate1_passed": 40,
+        "gate1_total": 80,
+        "gate1_failures": [
+          "jd_requirements_coverage",
+          "metrics_preserved",
+          "ats_structure",
+          "factual_preservation"
+        ],
+        "bertscore_f1": null,
+        "bertscore_available": false,
+        "legacy_structural_avg": 0.5900000000000001,
+        "legacy_composite": 0.5900000000000001
+      },
+      "pairs_evaluated": 10,
+      "consecutive_discards": 2
+    },
+    {
+      "iteration": 3,
+      "timestamp": "2026-05-03T18:06:55.531Z",
+      "target_prompt": "cv-generation",
+      "mutation_type": "RESTRUCTURE",
+      "mutation_description": "RESTRUCTURE: You are JobLoop's CV Writer. You take a candidate's master CV and a target job description, and prod...",
+      "verdict": "discard",
+      "scorecard": {
+        "checks": [
+          {
+            "name": "jd_requirements_coverage",
+            "passed": false,
+            "score": 0.02,
+            "detail": "Avg across 10 pairs"
+          },
+          {
+            "name": "no_fabrication",
+            "passed": true,
+            "score": 1,
+            "detail": "Avg across 10 pairs"
+          },
+          {
+            "name": "metrics_preserved",
+            "passed": false,
+            "score": 0,
+            "detail": "Avg across 10 pairs"
+          },
+          {
+            "name": "word_count",
+            "passed": true,
+            "score": 1,
+            "detail": "Avg across 10 pairs"
+          },
+          {
+            "name": "no_fabricated_skills",
+            "passed": true,
+            "score": 1,
+            "detail": "Avg across 10 pairs"
+          },
+          {
+            "name": "action_verbs",
+            "passed": true,
+            "score": 1,
+            "detail": "Avg across 10 pairs"
+          },
+          {
+            "name": "ats_structure",
+            "passed": false,
+            "score": 0.7000000000000001,
+            "detail": "Avg across 10 pairs"
+          },
+          {
+            "name": "factual_preservation",
+            "passed": false,
+            "score": 0,
+            "detail": "Avg across 10 pairs"
+          }
+        ],
+        "gate1_verdict": "fail",
+        "gate1_passed": 40,
+        "gate1_total": 80,
+        "gate1_failures": [
+          "jd_requirements_coverage",
+          "metrics_preserved",
+          "ats_structure",
+          "factual_preservation"
+        ],
+        "bertscore_f1": null,
+        "bertscore_available": false,
+        "legacy_structural_avg": 0.59,
+        "legacy_composite": 0.59
+      },
+      "incumbent_scorecard": {
+        "checks": [
+          {
+            "name": "jd_requirements_coverage",
+            "passed": false,
+            "score": 0.02,
+            "detail": "Avg across 10 pairs"
+          },
+          {
+            "name": "no_fabrication",
+            "passed": true,
+            "score": 1,
+            "detail": "Avg across 10 pairs"
+          },
+          {
+            "name": "metrics_preserved",
+            "passed": false,
+            "score": 0,
+            "detail": "Avg across 10 pairs"
+          },
+          {
+            "name": "word_count",
+            "passed": true,
+            "score": 1,
+            "detail": "Avg across 10 pairs"
+          },
+          {
+            "name": "no_fabricated_skills",
+            "passed": true,
+            "score": 1,
+            "detail": "Avg across 10 pairs"
+          },
+          {
+            "name": "action_verbs",
+            "passed": true,
+            "score": 1,
+            "detail": "Avg across 10 pairs"
+          },
+          {
+            "name": "ats_structure",
+            "passed": false,
+            "score": 0.7000000000000001,
+            "detail": "Avg across 10 pairs"
+          },
+          {
+            "name": "factual_preservation",
+            "passed": false,
+            "score": 0,
+            "detail": "Avg across 10 pairs"
+          }
+        ],
+        "gate1_verdict": "fail",
+        "gate1_passed": 40,
+        "gate1_total": 80,
+        "gate1_failures": [
+          "jd_requirements_coverage",
+          "metrics_preserved",
+          "ats_structure",
+          "factual_preservation"
+        ],
+        "bertscore_f1": null,
+        "bertscore_available": false,
+        "legacy_structural_avg": 0.59,
+        "legacy_composite": 0.59
+      },
+      "pairs_evaluated": 10,
+      "consecutive_discards": 3
+    },
+    {
+      "iteration": 4,
+      "timestamp": "2026-05-03T18:06:55.535Z",
+      "target_prompt": "cv-generation",
+      "mutation_type": "TIGHTEN_LANGUAGE",
+      "mutation_description": "TIGHTEN_LANGUAGE: You are JobLoop's CV Writer. You take a candidate's master CV and a target job description, and prod...",
+      "verdict": "discard",
+      "scorecard": {
+        "checks": [
+          {
+            "name": "jd_requirements_coverage",
+            "passed": false,
+            "score": 0.030000000000000006,
+            "detail": "Avg across 10 pairs"
+          },
+          {
+            "name": "no_fabrication",
+            "passed": true,
+            "score": 1,
+            "detail": "Avg across 10 pairs"
+          },
+          {
+            "name": "metrics_preserved",
+            "passed": false,
+            "score": 0,
+            "detail": "Avg across 10 pairs"
+          },
+          {
+            "name": "word_count",
+            "passed": true,
+            "score": 1,
+            "detail": "Avg across 10 pairs"
+          },
+          {
+            "name": "no_fabricated_skills",
+            "passed": true,
+            "score": 1,
+            "detail": "Avg across 10 pairs"
+          },
+          {
+            "name": "action_verbs",
+            "passed": true,
+            "score": 1,
+            "detail": "Avg across 10 pairs"
+          },
+          {
+            "name": "ats_structure",
+            "passed": false,
+            "score": 0.7000000000000001,
+            "detail": "Avg across 10 pairs"
+          },
+          {
+            "name": "factual_preservation",
+            "passed": false,
+            "score": 0,
+            "detail": "Avg across 10 pairs"
+          }
+        ],
+        "gate1_verdict": "fail",
+        "gate1_passed": 40,
+        "gate1_total": 80,
+        "gate1_failures": [
+          "jd_requirements_coverage",
+          "metrics_preserved",
+          "ats_structure",
+          "factual_preservation"
+        ],
+        "bertscore_f1": null,
+        "bertscore_available": false,
+        "legacy_structural_avg": 0.5912500000000002,
+        "legacy_composite": 0.5912500000000002
+      },
+      "incumbent_scorecard": {
+        "checks": [
+          {
+            "name": "jd_requirements_coverage",
+            "passed": false,
+            "score": 0.030000000000000006,
+            "detail": "Avg across 10 pairs"
+          },
+          {
+            "name": "no_fabrication",
+            "passed": true,
+            "score": 1,
+            "detail": "Avg across 10 pairs"
+          },
+          {
+            "name": "metrics_preserved",
+            "passed": false,
+            "score": 0,
+            "detail": "Avg across 10 pairs"
+          },
+          {
+            "name": "word_count",
+            "passed": true,
+            "score": 1,
+            "detail": "Avg across 10 pairs"
+          },
+          {
+            "name": "no_fabricated_skills",
+            "passed": true,
+            "score": 1,
+            "detail": "Avg across 10 pairs"
+          },
+          {
+            "name": "action_verbs",
+            "passed": true,
+            "score": 1,
+            "detail": "Avg across 10 pairs"
+          },
+          {
+            "name": "ats_structure",
+            "passed": false,
+            "score": 0.7000000000000001,
+            "detail": "Avg across 10 pairs"
+          },
+          {
+            "name": "factual_preservation",
+            "passed": false,
+            "score": 0,
+            "detail": "Avg across 10 pairs"
+          }
+        ],
+        "gate1_verdict": "fail",
+        "gate1_passed": 40,
+        "gate1_total": 80,
+        "gate1_failures": [
+          "jd_requirements_coverage",
+          "metrics_preserved",
+          "ats_structure",
+          "factual_preservation"
+        ],
+        "bertscore_f1": null,
+        "bertscore_available": false,
+        "legacy_structural_avg": 0.5912500000000002,
+        "legacy_composite": 0.5912500000000002
+      },
+      "pairs_evaluated": 10,
+      "consecutive_discards": 4
+    },
+    {
+      "iteration": 5,
+      "timestamp": "2026-05-03T18:06:55.538Z",
+      "target_prompt": "cv-generation",
+      "mutation_type": "REMOVE_BLOAT",
+      "mutation_description": "REMOVE_BLOAT: You are JobLoop's CV Writer. You take a candidate's master CV and a target job description, and prod...",
+      "verdict": "discard",
+      "scorecard": {
+        "checks": [
+          {
+            "name": "jd_requirements_coverage",
+            "passed": false,
+            "score": 0.01,
+            "detail": "Avg across 10 pairs"
+          },
+          {
+            "name": "no_fabrication",
+            "passed": true,
+            "score": 1,
+            "detail": "Avg across 10 pairs"
+          },
+          {
+            "name": "metrics_preserved",
+            "passed": false,
+            "score": 0,
+            "detail": "Avg across 10 pairs"
+          },
+          {
+            "name": "word_count",
+            "passed": true,
+            "score": 1,
+            "detail": "Avg across 10 pairs"
+          },
+          {
+            "name": "no_fabricated_skills",
+            "passed": true,
+            "score": 1,
+            "detail": "Avg across 10 pairs"
+          },
+          {
+            "name": "action_verbs",
+            "passed": true,
+            "score": 1,
+            "detail": "Avg across 10 pairs"
+          },
+          {
+            "name": "ats_structure",
+            "passed": false,
+            "score": 0.7000000000000001,
+            "detail": "Avg across 10 pairs"
+          },
+          {
+            "name": "factual_preservation",
+            "passed": false,
+            "score": 0,
+            "detail": "Avg across 10 pairs"
+          }
+        ],
+        "gate1_verdict": "fail",
+        "gate1_passed": 40,
+        "gate1_total": 80,
+        "gate1_failures": [
+          "jd_requirements_coverage",
+          "metrics_preserved",
+          "ats_structure",
+          "factual_preservation"
+        ],
+        "bertscore_f1": null,
+        "bertscore_available": false,
+        "legacy_structural_avg": 0.5887500000000001,
+        "legacy_composite": 0.5887500000000001
+      },
+      "incumbent_scorecard": {
+        "checks": [
+          {
+            "name": "jd_requirements_coverage",
+            "passed": false,
+            "score": 0.01,
+            "detail": "Avg across 10 pairs"
+          },
+          {
+            "name": "no_fabrication",
+            "passed": true,
+            "score": 1,
+            "detail": "Avg across 10 pairs"
+          },
+          {
+            "name": "metrics_preserved",
+            "passed": false,
+            "score": 0,
+            "detail": "Avg across 10 pairs"
+          },
+          {
+            "name": "word_count",
+            "passed": true,
+            "score": 1,
+            "detail": "Avg across 10 pairs"
+          },
+          {
+            "name": "no_fabricated_skills",
+            "passed": true,
+            "score": 1,
+            "detail": "Avg across 10 pairs"
+          },
+          {
+            "name": "action_verbs",
+            "passed": true,
+            "score": 1,
+            "detail": "Avg across 10 pairs"
+          },
+          {
+            "name": "ats_structure",
+            "passed": false,
+            "score": 0.7000000000000001,
+            "detail": "Avg across 10 pairs"
+          },
+          {
+            "name": "factual_preservation",
+            "passed": false,
+            "score": 0,
+            "detail": "Avg across 10 pairs"
+          }
+        ],
+        "gate1_verdict": "fail",
+        "gate1_passed": 40,
+        "gate1_total": 80,
+        "gate1_failures": [
+          "jd_requirements_coverage",
+          "metrics_preserved",
+          "ats_structure",
+          "factual_preservation"
+        ],
+        "bertscore_f1": null,
+        "bertscore_available": false,
+        "legacy_structural_avg": 0.5887500000000001,
+        "legacy_composite": 0.5887500000000001
+      },
+      "pairs_evaluated": 10,
+      "consecutive_discards": 5
+    }
+  ],
+  "context_summary": ""
+}

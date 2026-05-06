@@ -4,23 +4,58 @@
   "persona": "senior",
   "synthetic": true,
   "framing": "Senior Electrical Engineer in oil & gas seeking renewables transition",
-  "coverage": { "industry": "Energy", "seniority": "senior", "pattern": "career_changer", "region": "middle_east" },
+  "coverage": {
+    "industry": "Energy",
+    "seniority": "senior",
+    "pattern": "career_changer",
+    "region": "middle_east"
+  },
   "jd": {
     "title": "Lead Electrical Engineer — Solar & Battery Storage",
     "company": "ACWA Power",
     "location": "Riyadh, Saudi Arabia",
     "experience_years": 10,
     "requirements": [
-      { "text": "10+ years of electrical engineering experience in power generation or energy sector", "type": "must_have" },
-      { "text": "Experience with utility-scale solar PV or battery energy storage systems (BESS)", "type": "must_have" },
-      { "text": "Knowledge of power system protection, SCADA, and grid interconnection", "type": "must_have" },
-      { "text": "Experience with ETAP, PSS/E, or equivalent power system simulation software", "type": "must_have" },
-      { "text": "Familiarity with IEC, IEEE, and GCC Interconnection Authority (GCCIA) standards for grid-connected systems", "type": "must_have" },
-      { "text": "Experience managing EPC contractor deliverables and design reviews", "type": "must_have" },
-      { "text": "PE license or Chartered Engineer (CEng) status", "type": "must_have" },
-      { "text": "Experience with Saudi Electricity Company (SEC) grid code", "type": "nice_to_have" },
-      { "text": "MS in Electrical/Power Engineering", "type": "nice_to_have" },
-      { "text": "Experience with NEOM or Vision 2030 energy projects", "type": "nice_to_have" }
+      {
+        "text": "10+ years of electrical engineering experience in power generation or energy sector",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience with utility-scale solar PV or battery energy storage systems (BESS)",
+        "type": "must_have"
+      },
+      {
+        "text": "Knowledge of power system protection, SCADA, and grid interconnection",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience with ETAP, PSS/E, or equivalent power system simulation software",
+        "type": "must_have"
+      },
+      {
+        "text": "Familiarity with IEC, IEEE, and GCC Interconnection Authority (GCCIA) standards for grid-connected systems",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience managing EPC contractor deliverables and design reviews",
+        "type": "must_have"
+      },
+      {
+        "text": "PE license or Chartered Engineer (CEng) status",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience with Saudi Electricity Company (SEC) grid code",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "MS in Electrical/Power Engineering",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "Experience with NEOM or Vision 2030 energy projects",
+        "type": "nice_to_have"
+      }
     ],
     "responsibilities": [
       "Lead electrical engineering for 1.5GW solar PV and 500MWh BESS projects",
@@ -72,10 +107,31 @@
       }
     ],
     "skills": {
-      "power_systems": ["power system protection", "load flow analysis", "short circuit studies", "transient stability", "grid interconnection"],
-      "tools": ["ETAP", "SCADA (ABB, Siemens)", "AutoCAD Electrical", "relay coordination software"],
-      "standards": ["IEC 61850", "IEEE C37", "Saudi Electricity Company grid code", "NFPA 70E"],
-      "leadership": ["team management (8 technicians)", "EPC contractor management", "design reviews", "commissioning oversight"]
+      "power_systems": [
+        "power system protection",
+        "load flow analysis",
+        "short circuit studies",
+        "transient stability",
+        "grid interconnection"
+      ],
+      "tools": [
+        "ETAP",
+        "SCADA (ABB, Siemens)",
+        "AutoCAD Electrical",
+        "relay coordination software"
+      ],
+      "standards": [
+        "IEC 61850",
+        "IEEE C37",
+        "Saudi Electricity Company grid code",
+        "NFPA 70E"
+      ],
+      "leadership": [
+        "team management (8 technicians)",
+        "EPC contractor management",
+        "design reviews",
+        "commissioning oversight"
+      ]
     },
     "certifications": [
       "Professional Engineer (PE) — Saudi Council of Engineers",
@@ -99,16 +155,33 @@
     "NEOM Vision 2030 energy projects"
   ],
   "cloud_skills": [
-    "power system protection", "load flow analysis", "short circuit studies",
-    "transient stability", "grid interconnection",
-    "ETAP", "SCADA", "ABB", "Siemens", "AutoCAD Electrical",
-    "IEC 61850", "IEEE C37", "SEC grid code",
-    "gas turbine power plants", "power generation",
-    "electrical maintenance", "predictive maintenance",
-    "MV/LV distribution", "cable sizing", "single-line diagrams",
-    "team management", "EPC contractor management",
-    "commissioning", "renewable energy", "green hydrogen",
-    "electrolyzer", "wind and solar",
+    "power system protection",
+    "load flow analysis",
+    "short circuit studies",
+    "transient stability",
+    "grid interconnection",
+    "ETAP",
+    "SCADA",
+    "ABB",
+    "Siemens",
+    "AutoCAD Electrical",
+    "IEC 61850",
+    "IEEE C37",
+    "SEC grid code",
+    "gas turbine power plants",
+    "power generation",
+    "electrical maintenance",
+    "predictive maintenance",
+    "MV/LV distribution",
+    "cable sizing",
+    "single-line diagrams",
+    "team management",
+    "EPC contractor management",
+    "commissioning",
+    "renewable energy",
+    "green hydrogen",
+    "electrolyzer",
+    "wind and solar",
     "PE license"
   ],
   "deliberate_flaws": [
@@ -117,5 +190,14 @@
     "SCADA experience is industrial, not utility-scale renewable",
     "No PSS/E experience (only ETAP)",
     "PE is Saudi, may need local equivalence verification"
-  ]
+  ],
+  "provenance": {
+    "data_source": "synthetic",
+    "jd_basis": "modeled_from_real_jd_styles",
+    "jd_styles_doc": "REAL-JD-STYLES.md",
+    "expected_output_author": "claude",
+    "user_snap_checked": null,
+    "circularity_risk": "medium",
+    "notes": "Synthetic persona and JD. JD style modeled from real Greenhouse/Lever postings. Expected output and cloud_skills are AI-generated. 4/8 scorecard checks (jd_coverage, no_fabrication, metrics_preserved, no_fabricated_skills) evaluate AI vs AI reference. 4/8 checks (factual_preservation, word_count, ats_structure, action_verbs) are structurally valid regardless."
+  }
 }

@@ -435,6 +435,11 @@ function detectEmployerGroups(allRoles: ParsedRole[]): EmployerGroup[] {
  *
  * Cost: $0 — pure code logic, no LLM calls.
  */
+/** @deprecated Use UserPersona from @jobloop/shared instead */
+export type PersonaType =
+  | "early_career" | "mid_career" | "senior" | "executive"
+  | "career_changer" | "freelancer" | "returner" | "laid_off" | "military";
+
 export function detectConflicts(
   documents: Array<{
     id: string;
@@ -448,6 +453,7 @@ export function detectConflicts(
       bullets: string[];
     }>;
   }>,
+  persona?: PersonaType,
 ): ConflictReport {
   // Flatten all roles with source attribution
   const allRoles: ParsedRole[] = [];
@@ -464,19 +470,45 @@ export function detectConflicts(
   // 1. Find role groups (same role across different documents)
   const roleGroups = findRoleGroups(allRoles);
 
-  // 2. Detect conflicts within each group
-  const conflicts: RoleConflict[] = [];
+  // 2. Detect conflicts within each group (persona-aware — Finding 5)
+  let conflicts: RoleConflict[] = [];
   for (let i = 0; i < roleGroups.length; i++) {
     conflicts.push(...detectConflictsInGroup(roleGroups[i], i));
+  }
+
+  // Persona-aware filtering (Finding 5 from socratic-model-selection-audit)
+  if (persona === "freelancer") {
+    // Freelancers: overlapping dates are normal (concurrent clients)
+    // Only keep date conflicts within the SAME client company
+    conflicts = conflicts.filter(c => {
+      if (c.type === "duplicate") return false; // overlapping dates aren't conflicts for freelancers
+      if (c.type === "title_mismatch") return true; // title mismatches still valid
+      return true;
+    });
+  }
+  if (persona === "career_changer") {
+    // Career changers: different titles across CVs are intentional (reframing)
+    // Only flag title mismatches within the same era (±2 years)
+    conflicts = conflicts.filter(c => {
+      if (c.type !== "title_mismatch") return true;
+      // Keep only if entries are from the same time period
+      const parsed = c.entries.map(e => parseRoleDate(e.start_date)).filter(d => d !== null);
+      if (parsed.length < 2) return true;
+      const months = parsed.map(d => d.year * 12 + d.month);
+      const spread = Math.max(...months) - Math.min(...months);
+      return spread <= 24; // 2 years = same era, flag it. Otherwise intentional reframe.
+    });
   }
 
   // 3. Detect timeline gaps
   const gaps = detectGaps(roleGroups);
 
   // 4. Detect same-employer groupings
-  // Use deduplicated roles (pick one per group) for employer analysis
   const deduplicatedRoles = roleGroups.map(g => g[0]);
-  const employerGroups = detectEmployerGroups(deduplicatedRoles);
+  // Freelancers: employer pattern detection disabled (different companies = normal)
+  const employerGroups = persona === "freelancer"
+    ? []
+    : detectEmployerGroups(deduplicatedRoles);
 
   return {
     conflicts,

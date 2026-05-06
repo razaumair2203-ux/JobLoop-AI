@@ -1,0 +1,150 @@
+{
+  "total_experience_years": 18,
+  "experience": [
+    {
+      "company": "National University of Sciences and Technology (NUST)",
+      "title": "Assistant Professor",
+      "start_date": "Jan 2025",
+      "end_date": "Present",
+      "duration_months": 5,
+      "technologies_used": [
+        "MBSE"
+      ],
+      "metrics_mentioned": [],
+      "domain": "academia"
+    },
+    {
+      "company": "National University of Technology (NUTECH)",
+      "title": "Assistant Director Quality",
+      "start_date": "Sep 2022",
+      "end_date": "Dec 2025",
+      "duration_months": 39,
+      "technologies_used": [
+        "ISO",
+        "OBE"
+      ],
+      "metrics_mentioned": [
+        "first ever capacity enhancement audit"
+      ],
+      "domain": "academia"
+    },
+    {
+      "company": "Pakistan Air Force",
+      "title": "Deputy Program Manager",
+      "start_date": "Jan 2020",
+      "end_date": "Sep 2022",
+      "duration_months": 33,
+      "technologies_used": [
+        "RAID",
+        "EVM"
+      ],
+      "metrics_mentioned": [
+        "28 avionics and weapons subsystems"
+      ],
+      "domain": "defense"
+    },
+    {
+      "company": "AVIC International Holding Corporation",
+      "title": "Aerospace Systems Integration Lead",
+      "start_date": "Nov 2017",
+      "end_date": "Dec 2019",
+      "duration_months": 25,
+      "technologies_used": [],
+      "metrics_mentioned": [],
+      "domain": "defense"
+    },
+    {
+      "company": "Government of Pakistan",
+      "title": "Maintenance Support Engineer",
+      "start_date": "Jan 2016",
+      "end_date": "Nov 2017",
+      "duration_months": 22,
+      "technologies_used": [
+        "MTBF/MTTR"
+      ],
+      "metrics_mentioned": [
+        "fleet reliability above 90%"
+      ],
+      "domain": "government"
+    },
+    {
+      "company": "Pakistan Aeronautical Complex Kamra",
+      "title": "Integrated Systems & Design Specialist",
+      "start_date": "Oct 2008",
+      "end_date": "Oct 2013",
+      "duration_months": 60,
+      "technologies_used": [],
+      "metrics_mentioned": [
+        "multi-million dollar revenue",
+        "exports"
+      ],
+      "domain": "defense"
+    }
+  ],
+  "skills": {
+    "languages": [],
+    "frameworks": [
+      "Agile",
+      "OBE"
+    ],
+    "infrastructure": [],
+    "databases": [],
+    "tools": [
+      "RAID",
+      "EVM",
+      "MBSE"
+    ],
+    "other": [
+      "Program Management",
+      "Systems Integration",
+      "Quality Assurance",
+      "Academic Standards",
+      "ISO Certification",
+      "Capacity Enhancement",
+      "Avionics",
+      "Weapons Systems",
+      "Risk Management",
+      "Spares Planning",
+      "Vendor Contracts",
+      "MTBF/MTTR",
+      "Fleet Reliability",
+      "Platform Modernization"
+    ]
+  },
+  "all_technologies": [
+    "MBSE",
+    "ISO",
+    "OBE",
+    "RAID",
+    "EVM",
+    "MTBF/MTTR",
+    "Agile"
+  ],
+  "education": [
+    {
+      "institution": "College of Aeronautical Engineering Risalpur",
+      "degree": "BE",
+      "field": "Aerospace, Aeronautical and Astronautical Engineering",
+      "start_year": 2004,
+      "end_year": 2008,
+      "research_topic": null,
+      "highlights": []
+    },
+    {
+      "institution": "Air University",
+      "degree": "MS",
+      "field": "Signals and Image Processing",
+      "start_year": 2013,
+      "end_year": 2015,
+      "research_topic": null,
+      "highlights": []
+    }
+  ],
+  "certifications": [
+    "Project Management Professional (PMP)",
+    "Agile Certified Practitioner (PMI-ACP)",
+    "Google Project Management Certificate",
+    "Engineering Project Management Specialization (Rice University)",
+    "Introduction to Systems Engineering Specialization (University of Colorado Boulder)"
+  ]
+}

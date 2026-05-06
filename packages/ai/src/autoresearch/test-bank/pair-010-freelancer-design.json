@@ -4,23 +4,58 @@
   "persona": "freelancer",
   "synthetic": true,
   "framing": "Freelance UX Designer seeking full-time product design role",
-  "coverage": { "industry": "IT/Software", "seniority": "mid", "pattern": "freelancer", "region": "north_america" },
+  "coverage": {
+    "industry": "IT/Software",
+    "seniority": "mid",
+    "pattern": "freelancer",
+    "region": "north_america"
+  },
   "jd": {
     "title": "Senior Product Designer",
     "company": "Figma",
     "location": "San Francisco, CA (Remote OK)",
     "experience_years": 5,
     "requirements": [
-      { "text": "5+ years of product design experience for web and mobile applications", "type": "must_have" },
-      { "text": "Strong portfolio demonstrating end-to-end design process from research to final UI", "type": "must_have" },
-      { "text": "Expert-level proficiency in Figma", "type": "must_have" },
-      { "text": "Experience conducting user research, usability testing, and synthesizing findings", "type": "must_have" },
-      { "text": "Experience building and maintaining design systems", "type": "must_have" },
-      { "text": "Ability to create interactive prototypes for user testing and stakeholder alignment", "type": "must_have" },
-      { "text": "Experience working in cross-functional agile teams with engineers and PMs", "type": "must_have" },
-      { "text": "Experience with data-informed design decisions (analytics, A/B testing)", "type": "nice_to_have" },
-      { "text": "Bachelor's degree in Design, HCI, or related field", "type": "nice_to_have" },
-      { "text": "Experience designing developer tools or B2B SaaS products", "type": "nice_to_have" }
+      {
+        "text": "5+ years of product design experience for web and mobile applications",
+        "type": "must_have"
+      },
+      {
+        "text": "Strong portfolio demonstrating end-to-end design process from research to final UI",
+        "type": "must_have"
+      },
+      {
+        "text": "Expert-level proficiency in Figma",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience conducting user research, usability testing, and synthesizing findings",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience building and maintaining design systems",
+        "type": "must_have"
+      },
+      {
+        "text": "Ability to create interactive prototypes for user testing and stakeholder alignment",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience working in cross-functional agile teams with engineers and PMs",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience with data-informed design decisions (analytics, A/B testing)",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "Bachelor's degree in Design, HCI, or related field",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "Experience designing developer tools or B2B SaaS products",
+        "type": "nice_to_have"
+      }
     ],
     "responsibilities": [
       "Design new features and improve existing experiences for Figma's core product",
@@ -72,10 +107,36 @@
       }
     ],
     "skills": {
-      "design": ["product design", "UX/UI design", "design systems", "visual design", "responsive design", "interaction design"],
-      "tools": ["Figma (expert)", "Sketch", "Framer", "Adobe Creative Suite", "Miro", "FigJam"],
-      "research": ["user research", "usability testing", "user interviews", "A/B testing", "analytics interpretation"],
-      "process": ["end-to-end design", "prototyping", "developer handoff", "design documentation", "cross-functional collaboration"]
+      "design": [
+        "product design",
+        "UX/UI design",
+        "design systems",
+        "visual design",
+        "responsive design",
+        "interaction design"
+      ],
+      "tools": [
+        "Figma (expert)",
+        "Sketch",
+        "Framer",
+        "Adobe Creative Suite",
+        "Miro",
+        "FigJam"
+      ],
+      "research": [
+        "user research",
+        "usability testing",
+        "user interviews",
+        "A/B testing",
+        "analytics interpretation"
+      ],
+      "process": [
+        "end-to-end design",
+        "prototyping",
+        "developer handoff",
+        "design documentation",
+        "cross-functional collaboration"
+      ]
     },
     "certifications": [
       "Google UX Design Professional Certificate",
@@ -98,20 +159,44 @@
     "developer tools B2B SaaS"
   ],
   "cloud_skills": [
-    "product design", "UX/UI design", "design systems",
-    "Figma", "Sketch", "Framer", "Adobe Creative Suite",
-    "user research", "usability testing", "user interviews",
-    "A/B testing", "prototyping", "developer handoff",
-    "visual design", "responsive design", "interaction design",
-    "wireframing", "design documentation",
-    "cross-functional collaboration", "Agile/Scrum",
-    "B2B SaaS design", "developer tools",
-    "Miro", "FigJam"
+    "product design",
+    "UX/UI design",
+    "design systems",
+    "Figma",
+    "Sketch",
+    "Framer",
+    "Adobe Creative Suite",
+    "user research",
+    "usability testing",
+    "user interviews",
+    "A/B testing",
+    "prototyping",
+    "developer handoff",
+    "visual design",
+    "responsive design",
+    "interaction design",
+    "wireframing",
+    "design documentation",
+    "cross-functional collaboration",
+    "Agile/Scrum",
+    "B2B SaaS design",
+    "developer tools",
+    "Miro",
+    "FigJam"
   ],
   "deliberate_flaws": [
     "Freelance history — no single long-tenure role (hiring concern for full-time)",
     "Notion and Linear were contracts, not full-time (could be misinterpreted)",
     "BFA not HCI degree",
     "No formal analytics/data skills beyond A/B test interpretation"
-  ]
+  ],
+  "provenance": {
+    "data_source": "synthetic",
+    "jd_basis": "modeled_from_real_jd_styles",
+    "jd_styles_doc": "REAL-JD-STYLES.md",
+    "expected_output_author": "claude",
+    "user_snap_checked": null,
+    "circularity_risk": "medium",
+    "notes": "Synthetic persona and JD. JD style modeled from real Greenhouse/Lever postings. Expected output and cloud_skills are AI-generated. 4/8 scorecard checks (jd_coverage, no_fabrication, metrics_preserved, no_fabricated_skills) evaluate AI vs AI reference. 4/8 checks (factual_preservation, word_count, ats_structure, action_verbs) are structurally valid regardless."
+  }
 }

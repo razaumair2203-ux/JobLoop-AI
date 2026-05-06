@@ -1,0 +1,56 @@
+SYSTEM:
+You are parsing a user's free-text answer to a conflict resolution question about their career history.
+
+The user was asked to clarify overlapping roles, date conflicts, or collapsed entries from their uploaded CVs.
+
+Extract ALL structured data from their answer. Be precise with dates and titles.
+
+Return ONLY valid JSON matching this schema:
+{
+  "roles": [
+    {
+      "title": "exact title the user mentioned",
+      "organization": "org name",
+      "start_date": "Mon YYYY format, e.g. Jan 2020",
+      "end_date": "Mon YYYY or Present",
+      "responsibilities": ["key responsibility 1", "..."],
+      "programs": ["named programs/platforms mentioned"],
+      "team_size": null or number if mentioned,
+      "source": "user_confirmed" or "socratic_discovery"
+    }
+  ],
+  "date_corrections": [
+    {
+      "role_description": "which role this corrects",
+      "corrected_start": "Mon YYYY",
+      "corrected_end": "Mon YYYY"
+    }
+  ],
+  "title_corrections": [
+    {
+      "period": "e.g. 2008-2013",
+      "corrected_title": "the correct title"
+    }
+  ],
+  "flags": ["any special instructions the user gave, e.g. anonymize_program_name, sensitive_detail"]
+}
+
+Rules:
+- Extract EVERY role mentioned, even briefly
+- Use the EXACT dates the user provides (don't round to years)
+- If user says "then I was..." treat it as a new role
+- If user mentions a program name they don't want in the CV, add a flag like "anonymize:[program_name]"
+- If user mentions something sensitive ("should not be mentioned in cv"), add flag "sensitive:[topic]"
+- "socratic_discovery" = role that was not in any uploaded CV
+- "user_confirmed" = role that was in CVs but user is confirming/correcting details
+- Preserve the user's exact phrasing for titles — don't upgrade or rewrite
+- If dates are ambiguous, note them as-is and do NOT guess
+
+USER:
+Question that was asked:
+Your 2020-2023 period appears as ONE role on all 4 CVs. During Jan 2020 - Sep 2022, were you in the same PMO assignment the entire time?
+
+User's answer:
+thanks for pointing it out , you look like a good app. i came back from china in dec-2019 . from jan 2020 to June 2021 i was assistant director development in PMO of JF-17 . main task was air worthiness, weapons integration, testing , and at the same time its operationalization was being done so active liason with chinese designer, equipment, OEMS, operations squadron. then was was senior engineering officer of crotale weapons system - an out of system field apointment which is necessary for milestone of armed forced. here was sensior maintenance engineer , supervisong technicians, officers, and weapons deployment of missle, maintenance mangement and resources management. then - here i was june 2021 to sept 2022 .. then i was promoted to deputy director -got back to JF-17 PMO , but now main task was operationalization, and management of operational fleet of aircraft from forecasting of spares , to contracting, making sure operational readiness of squadrons, and maintenance facilities in the filed are top nothch.. here i was from sept-2022 till dec 2023 .. then i was sent to nutech .. where i was QA officer .. academic QA .. you can check what they does .. this is out of main domain appointment but this is liek tht... and then from july 2025 in am in college of aeronautical engineering .. looking after projects , research and development, system engineering courses ... i tought system enginereing in nutech also. .. but things seemed quite jumpy - ididnt mention some things.. this is whole picture .. i want you to seamlessly integrate. and also look up which skills and tools are used in these seetings. include them in cv after my approval
+
+Parse this answer into structured data. Return ONLY JSON.

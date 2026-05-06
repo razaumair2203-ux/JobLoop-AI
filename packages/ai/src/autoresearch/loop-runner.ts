@@ -23,6 +23,8 @@ import { scoreCVGeneration, scoreJDParsing, compareScorecards } from "./scorecar
 import type { ScorecardResult, CVScorecardInput, JDScorecardInput } from "./scorecard";
 import { selectMutation, buildMutationPrompt } from "./mutations";
 import type { MutationRecord, MutationType } from "./mutations";
+import type { FeedbackWeights } from "./feedback-weighter";
+import { selectWeightedBatch } from "./feedback-weighter";
 
 // ============================================================
 // TYPES
@@ -158,8 +160,24 @@ export function scorePromptVariant(
     return aggregateScorecards(results);
   }
 
-  // JD parser scoring would go here
-  throw new Error("JD parser scoring not yet implemented in batch mode");
+  // JD parser scoring — generatedOutputs are cast to JD parsed shape
+  if (target === "jd-parser") {
+    const results = pairs.map((pair, i) => {
+      if (!pair.jd_expected) {
+        // Pair has no JD ground truth — score as empty (will fail, correct behavior)
+        return scoreJDParsing({
+          parsed: { title: "", company: "", location: "", requirements: [], experience_years: null, responsibilities: [] },
+          expected: { title: "", company: "", location: "", requirements: [], experience_years: null, responsibilities: [] },
+        });
+      }
+      // generatedOutputs[i] is the parsed JD output from the LLM
+      const parsed = generatedOutputs[i] as unknown as JDScorecardInput["parsed"];
+      return scoreJDParsing({ parsed, expected: pair.jd_expected });
+    });
+    return aggregateScorecards(results);
+  }
+
+  throw new Error(`Unknown target prompt: ${target}`);
 }
 
 /**
@@ -364,5 +382,20 @@ export const TSV_HEADER = [
   "gate1_score", "gate1_verdict", "bertscore_f1", "legacy_composite",
   "consecutive_discards", "description", "failures",
 ].join("\t");
+
+/**
+ * Select training batch with feedback-based weighting.
+ * Falls back to uniform random if no weights provided.
+ */
+export function selectWeightedTrainingBatch(
+  pairs: TestPair[],
+  batchSize: number,
+  feedbackWeights?: FeedbackWeights,
+): TestPair[] {
+  if (!feedbackWeights || feedbackWeights.negative_signal_count === 0) {
+    return selectTrainingBatch(pairs, batchSize);
+  }
+  return selectWeightedBatch(pairs, feedbackWeights, batchSize);
+}
 
 export { DEFAULT_CONFIG };

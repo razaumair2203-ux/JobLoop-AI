@@ -13,8 +13,8 @@
 
 import * as fs from "fs";
 import * as path from "path";
-import { parseLinkedInExport, isLinkedInExport, RELEVANT_FILES } from "./linkedin-parser";
-import type { LinkedInCSVFiles } from "./linkedin-parser";
+import { parseLinkedInExport, isLinkedInExport, RELEVANT_FILES } from "../src/linkedin-parser";
+import type { LinkedInCSVFiles } from "../src/linkedin-parser";
 
 async function main() {
   const target = process.argv[2];
@@ -83,7 +83,7 @@ async function main() {
 
   console.log("=== EDUCATION ===");
   for (const edu of result.parsedCV.education) {
-    console.log(`  ${edu.degree} ${edu.field} @ ${edu.institution} (${edu.year})`);
+    console.log(`  ${edu.degree} ${edu.field} @ ${edu.institution} (${edu.start_year ?? "?"}–${edu.end_year ?? "?"})`);
     if (edu.highlights && edu.highlights.length > 0)
       console.log(`    Highlights: ${edu.highlights.join(", ")}`);
   }

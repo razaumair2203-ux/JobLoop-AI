@@ -5,7 +5,12 @@
   "synthetic": true,
   "jd_style": "startup_technical",
   "framing": "Architect at Gensler São Paulo applying to BIM technology lead role at construction tech startup in Mexico City",
-  "coverage": { "industry": "Architecture/Design", "seniority": "mid", "pattern": "linear", "region": "latin_america" },
+  "coverage": {
+    "industry": "Architecture/Design",
+    "seniority": "mid",
+    "pattern": "linear",
+    "region": "latin_america"
+  },
   "jd": {
     "title": "BIM Technology Lead",
     "company": "Procore Technologies",
@@ -13,14 +18,38 @@
     "experience_years": 6,
     "style_note": "Startup-technical: specific BIM/AEC technology stack, integration-heavy, platform-focused",
     "requirements": [
-      { "text": "6+ years of experience in architecture, structural engineering, or AEC technology with deep BIM expertise", "type": "must_have" },
-      { "text": "Expert-level proficiency in Autodesk Revit and BIM 360 / Autodesk Construction Cloud (ACC)", "type": "must_have" },
-      { "text": "Experience with BIM standards: ISO 19650, LOD specifications (100-500), and model coordination workflows", "type": "must_have" },
-      { "text": "Knowledge of IFC (Industry Foundation Classes) and openBIM data exchange formats", "type": "must_have" },
-      { "text": "Programming skills for BIM automation: Dynamo (visual scripting), Revit API (C# or Python), or Grasshopper", "type": "must_have" },
-      { "text": "Experience with construction project management platforms (Procore, PlanGrid, or Fieldwire)", "type": "nice_to_have" },
-      { "text": "Familiarity with GIS integration and digital twin platforms (Autodesk Tandem, Bentley iTwin, or Esri ArcGIS)", "type": "nice_to_have" },
-      { "text": "Spanish and Portuguese language skills", "type": "nice_to_have" }
+      {
+        "text": "6+ years of experience in architecture, structural engineering, or AEC technology with deep BIM expertise",
+        "type": "must_have"
+      },
+      {
+        "text": "Expert-level proficiency in Autodesk Revit and BIM 360 / Autodesk Construction Cloud (ACC)",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience with BIM standards: ISO 19650, LOD specifications (100-500), and model coordination workflows",
+        "type": "must_have"
+      },
+      {
+        "text": "Knowledge of IFC (Industry Foundation Classes) and openBIM data exchange formats",
+        "type": "must_have"
+      },
+      {
+        "text": "Programming skills for BIM automation: Dynamo (visual scripting), Revit API (C# or Python), or Grasshopper",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience with construction project management platforms (Procore, PlanGrid, or Fieldwire)",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "Familiarity with GIS integration and digital twin platforms (Autodesk Tandem, Bentley iTwin, or Esri ArcGIS)",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "Spanish and Portuguese language skills",
+        "type": "nice_to_have"
+      }
     ],
     "responsibilities": [
       "Lead BIM integration strategy for Procore's Latin America expansion",
@@ -60,11 +89,38 @@
       }
     ],
     "skills": {
-      "bim": ["Autodesk Revit (expert)", "Navisworks", "BIM 360 / ACC", "Dynamo (visual scripting)", "clash detection", "model coordination"],
-      "standards": ["ISO 19650", "LOD 100-400", "BIM Execution Plans (BEP)", "IFC / openBIM", "BIM Collab"],
-      "architecture": ["commercial architecture", "mixed-use design", "construction documentation", "LEED coordination", "Revit family creation"],
-      "programming": ["Dynamo scripts", "Python (basic — Dynamo Python nodes)", "Revit templates and standards"],
-      "languages": ["Portuguese (native)", "Spanish (fluent)", "English (business)"]
+      "bim": [
+        "Autodesk Revit (expert)",
+        "Navisworks",
+        "BIM 360 / ACC",
+        "Dynamo (visual scripting)",
+        "clash detection",
+        "model coordination"
+      ],
+      "standards": [
+        "ISO 19650",
+        "LOD 100-400",
+        "BIM Execution Plans (BEP)",
+        "IFC / openBIM",
+        "BIM Collab"
+      ],
+      "architecture": [
+        "commercial architecture",
+        "mixed-use design",
+        "construction documentation",
+        "LEED coordination",
+        "Revit family creation"
+      ],
+      "programming": [
+        "Dynamo scripts",
+        "Python (basic — Dynamo Python nodes)",
+        "Revit templates and standards"
+      ],
+      "languages": [
+        "Portuguese (native)",
+        "Spanish (fluent)",
+        "English (business)"
+      ]
     },
     "certifications": [
       "CAU/BR — Registered Architect, Conselho de Arquitetura e Urbanismo do Brasil",
@@ -86,14 +142,28 @@
     "Spanish Portuguese language"
   ],
   "cloud_skills": [
-    "Autodesk Revit", "Navisworks", "BIM 360", "ACC",
-    "Dynamo", "clash detection", "model coordination",
-    "ISO 19650", "LOD 100-400", "BIM Execution Plans",
-    "IFC", "openBIM", "BIM Collab",
-    "commercial architecture", "LEED coordination",
-    "Revit family creation", "construction documentation",
-    "Python basic", "Revit templates",
-    "Portuguese", "Spanish", "English"
+    "Autodesk Revit",
+    "Navisworks",
+    "BIM 360",
+    "ACC",
+    "Dynamo",
+    "clash detection",
+    "model coordination",
+    "ISO 19650",
+    "LOD 100-400",
+    "BIM Execution Plans",
+    "IFC",
+    "openBIM",
+    "BIM Collab",
+    "commercial architecture",
+    "LEED coordination",
+    "Revit family creation",
+    "construction documentation",
+    "Python basic",
+    "Revit templates",
+    "Portuguese",
+    "Spanish",
+    "English"
   ],
   "deliberate_flaws": [
     "No Revit API (C#) programming experience — only Dynamo visual scripting with basic Python nodes",
@@ -107,5 +177,14 @@
     "Architecture practice to tech company transition — different product development cadence",
     "No data migration experience (JD involves helping clients migrate to Procore)",
     "Python skills are basic (Dynamo Python nodes only) — not production-grade scripting"
-  ]
+  ],
+  "provenance": {
+    "data_source": "synthetic",
+    "jd_basis": "modeled_from_real_jd_styles",
+    "jd_styles_doc": "REAL-JD-STYLES.md",
+    "expected_output_author": "claude",
+    "user_snap_checked": null,
+    "circularity_risk": "medium",
+    "notes": "Synthetic persona and JD. JD style modeled from real Greenhouse/Lever postings. Expected output and cloud_skills are AI-generated. 4/8 scorecard checks (jd_coverage, no_fabrication, metrics_preserved, no_fabricated_skills) evaluate AI vs AI reference. 4/8 checks (factual_preservation, word_count, ats_structure, action_verbs) are structurally valid regardless."
+  }
 }

@@ -1,0 +1,52 @@
+{
+  "_meta": {
+    "entry_id": "004",
+    "framing": "strategy_bd",
+    "source_cv": "Resume of BE_Jan26.pdf",
+    "ground_truth_profile": "../ground-truth-profile.json",
+    "difficulty": "hard",
+    "industry": "defense_consulting",
+    "seniority": "senior",
+    "region": "middle_east"
+  },
+
+  "jd": {
+    "title": "Defense Strategy & Capture Manager",
+    "company": "Lockheed Martin International",
+    "location": "Riyadh, Saudi Arabia",
+    "type": "full_time",
+    "text": "Defense Strategy & Capture Manager\nLockheed Martin International\nRiyadh, Saudi Arabia\n\nAbout Lockheed Martin:\nLockheed Martin is a global defense, aerospace, and security company. Our International division supports customers in over 70 countries with advanced systems, integrated solutions, and lifecycle support.\n\nRole Summary:\nWe are seeking a Defense Strategy & Capture Manager to lead business development and capture activities for defense programs in the Kingdom of Saudi Arabia and broader GCC region. You will shape opportunities, build customer relationships, and lead capture teams from opportunity identification through contract award.\n\nKey Responsibilities:\n- Lead capture management for defense programs ($50M-$500M) from opportunity identification through proposal submission\n- Develop and execute customer engagement strategies aligned with Saudi Vision 2030 defense localization goals\n- Build and maintain relationships with Saudi Ministry of Defense, GAMI, and Royal Saudi Air Force stakeholders\n- Conduct competitive analysis, win strategy development, and price-to-win analysis\n- Lead solution shaping activities, translating customer capability gaps into technical and programmatic solutions\n- Coordinate with engineering, contracts, finance, and supply chain for proposal development\n- Support offset/Industrial Participation obligations and localization requirements\n- Manage pipeline, forecasting, and opportunity qualification (gate reviews)\n- Represent Lockheed Martin at defense exhibitions, conferences, and customer events\n- Provide market intelligence and strategic assessments to leadership\n\nRequired Qualifications:\n- Bachelor's degree in Engineering, Business, or related field\n- 12+ years of experience in defense industry with at least 5 years in BD/capture/strategy roles\n- Demonstrated capture management experience with wins > $50M\n- Strong understanding of defense acquisition processes (US FMS, direct commercial sales, government-to-government)\n- Experience with defense platform programs (air, land, or naval)\n- Knowledge of Middle East defense market dynamics\n- Excellent executive presentation and stakeholder management skills\n- Willingness to travel 30-40% within GCC region\n\nPreferred:\n- Master's degree or MBA\n- Experience with fighter aircraft or air defense programs\n- Understanding of Saudi Vision 2030 and GAMI localization requirements\n- Arabic language skills\n- PMP or equivalent program management certification\n- Military background with defense industry transition experience\n\nWe offer:\n- Competitive international package (base + bonus + benefits)\n- Housing and transportation allowance\n- Annual home leave\n- Professional development and career growth in a global company"
+  },
+
+  "expected_output_notes": {
+    "key_matches": [
+      "15+ years defense experience (exceeds 12+)",
+      "Military background with defense industry transition (preferred — directly met)",
+      "Fighter aircraft programs: JF-17 Thunder development/integration/export",
+      "Air defense programs: Crotale SHORAD system (ground-based air defense)",
+      "Government-to-government programs: JF-17 is China-Pakistan G2G",
+      "Defense platform exports to 11 countries (glass cockpit modification)",
+      "Master's degree in engineering (preferred — met)",
+      "PMP certified (preferred — met)",
+      "Stakeholder management across military customers, OEMs, partners",
+      "Middle East market: currently based in Jeddah, Saudi Arabia",
+      "International collaboration: China, Pakistan, export customers"
+    ],
+    "gaps_to_bridge": [
+      "No explicit BD/capture role — career is military PMO/engineering, not commercial BD — bridge: 'supported export programs, government-to-government negotiations, customer acceptance activities — these are capture-adjacent activities in military context'",
+      "No $50M+ capture wins — bridge: 'JF-17 program is multi-billion, export variant coordination to Myanmar/Nigeria involved customer shaping and solution definition'",
+      "No price-to-win or competitive analysis experience — bridge: 'conducted trade studies and solution shaping in systems engineering role'",
+      "No GAMI/Vision 2030 experience — bridge: 'currently based in Saudi Arabia, familiar with localization landscape'",
+      "No pipeline/forecasting experience — bridge: 'managed program schedules and resource planning across multiple work packages'",
+      "No offset/IP obligations experience — bridge: 'indigenization experience: developed indigenous mission computer eliminating import dependency — this IS localization'"
+    ],
+    "position_assessment": "Stretch — strong technical credibility and military background, but lacks direct commercial BD/capture experience. The 5-year BD requirement is the hard gap.",
+    "cv_sections_to_emphasize": [
+      "Glass cockpit export to 11 countries (Role #1) — closest to capture/BD",
+      "International collaboration at CADI China (Role #4) — G2G, customer interface",
+      "Deputy Director PMO (Role #7) — export coordination, program strategy",
+      "Indigenous mission computer development — localization narrative",
+      "PMP + military background in certs/summary"
+    ]
+  }
+}

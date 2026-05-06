@@ -4,23 +4,58 @@
   "persona": "early_career",
   "synthetic": true,
   "framing": "Recent graduate targeting first data analyst role",
-  "coverage": { "industry": "Consulting", "seniority": "entry", "pattern": "linear", "region": "north_america" },
+  "coverage": {
+    "industry": "Consulting",
+    "seniority": "entry",
+    "pattern": "linear",
+    "region": "north_america"
+  },
   "jd": {
     "title": "Junior Data Analyst",
     "company": "Deloitte",
     "location": "Toronto, Canada",
     "experience_years": 0,
     "requirements": [
-      { "text": "Bachelor's degree in Statistics, Mathematics, Computer Science, Economics, or related field", "type": "must_have" },
-      { "text": "Proficiency in SQL for data extraction and manipulation", "type": "must_have" },
-      { "text": "Experience with Python or R for data analysis", "type": "must_have" },
-      { "text": "Experience with data visualization tools (Tableau, Power BI, or Looker)", "type": "must_have" },
-      { "text": "Strong Excel skills including pivot tables, VLOOKUP, and basic macros", "type": "must_have" },
-      { "text": "Internship or co-op experience in analytics or business intelligence", "type": "nice_to_have" },
-      { "text": "Knowledge of statistical methods (regression, hypothesis testing)", "type": "must_have" },
-      { "text": "Experience with cloud data platforms (BigQuery, Snowflake, Redshift)", "type": "nice_to_have" },
-      { "text": "Strong written and verbal communication skills", "type": "must_have" },
-      { "text": "Ability to translate data findings into business recommendations", "type": "must_have" }
+      {
+        "text": "Bachelor's degree in Statistics, Mathematics, Computer Science, Economics, or related field",
+        "type": "must_have"
+      },
+      {
+        "text": "Proficiency in SQL for data extraction and manipulation",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience with Python or R for data analysis",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience with data visualization tools (Tableau, Power BI, or Looker)",
+        "type": "must_have"
+      },
+      {
+        "text": "Strong Excel skills including pivot tables, VLOOKUP, and basic macros",
+        "type": "must_have"
+      },
+      {
+        "text": "Internship or co-op experience in analytics or business intelligence",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "Knowledge of statistical methods (regression, hypothesis testing)",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience with cloud data platforms (BigQuery, Snowflake, Redshift)",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "Strong written and verbal communication skills",
+        "type": "must_have"
+      },
+      {
+        "text": "Ability to translate data findings into business recommendations",
+        "type": "must_have"
+      }
     ],
     "responsibilities": [
       "Extract and analyze data from multiple sources to support client engagements",
@@ -69,10 +104,29 @@
       }
     ],
     "skills": {
-      "programming": ["Python (pandas, scikit-learn, matplotlib)", "SQL (PostgreSQL, Oracle)", "R (coursework)"],
-      "visualization": ["Tableau", "Excel (pivot tables, VLOOKUP, charts)", "matplotlib"],
-      "analytics": ["regression analysis", "hypothesis testing", "cohort analysis", "customer segmentation", "K-means clustering"],
-      "communication": ["dashboard reporting", "stakeholder presentations", "data documentation", "technical writing"]
+      "programming": [
+        "Python (pandas, scikit-learn, matplotlib)",
+        "SQL (PostgreSQL, Oracle)",
+        "R (coursework)"
+      ],
+      "visualization": [
+        "Tableau",
+        "Excel (pivot tables, VLOOKUP, charts)",
+        "matplotlib"
+      ],
+      "analytics": [
+        "regression analysis",
+        "hypothesis testing",
+        "cohort analysis",
+        "customer segmentation",
+        "K-means clustering"
+      ],
+      "communication": [
+        "dashboard reporting",
+        "stakeholder presentations",
+        "data documentation",
+        "technical writing"
+      ]
     },
     "certifications": [
       "Google Data Analytics Professional Certificate"
@@ -94,13 +148,27 @@
     "data findings business recommendations"
   ],
   "cloud_skills": [
-    "Python", "pandas", "scikit-learn", "SQL", "PostgreSQL", "Oracle",
-    "Tableau", "Excel", "matplotlib", "R",
-    "regression analysis", "hypothesis testing", "cohort analysis",
-    "K-means clustering", "customer segmentation",
-    "dashboard reporting", "data visualization",
-    "stakeholder presentations", "data documentation",
-    "data cleaning", "data transformation"
+    "Python",
+    "pandas",
+    "scikit-learn",
+    "SQL",
+    "PostgreSQL",
+    "Oracle",
+    "Tableau",
+    "Excel",
+    "matplotlib",
+    "R",
+    "regression analysis",
+    "hypothesis testing",
+    "cohort analysis",
+    "K-means clustering",
+    "customer segmentation",
+    "dashboard reporting",
+    "data visualization",
+    "stakeholder presentations",
+    "data documentation",
+    "data cleaning",
+    "data transformation"
   ],
   "deliberate_flaws": [
     "No Power BI or Looker experience",
@@ -109,5 +177,14 @@
     "R only from coursework, not practical",
     "Only 1 internship (4 months)",
     "Very thin work history — relies on academic projects"
-  ]
+  ],
+  "provenance": {
+    "data_source": "synthetic",
+    "jd_basis": "modeled_from_real_jd_styles",
+    "jd_styles_doc": "REAL-JD-STYLES.md",
+    "expected_output_author": "claude",
+    "user_snap_checked": null,
+    "circularity_risk": "medium",
+    "notes": "Synthetic persona and JD. JD style modeled from real Greenhouse/Lever postings. Expected output and cloud_skills are AI-generated. 4/8 scorecard checks (jd_coverage, no_fabrication, metrics_preserved, no_fabricated_skills) evaluate AI vs AI reference. 4/8 checks (factual_preservation, word_count, ats_structure, action_verbs) are structurally valid regardless."
+  }
 }

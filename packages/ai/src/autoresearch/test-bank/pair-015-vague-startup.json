@@ -5,17 +5,34 @@
   "synthetic": true,
   "jd_style": "vague_culture_first",
   "framing": "Backend engineer applying to a vague startup JD with minimal requirements",
-  "coverage": { "industry": "IT/Software", "seniority": "mid", "pattern": "linear", "region": "north_america" },
+  "coverage": {
+    "industry": "IT/Software",
+    "seniority": "mid",
+    "pattern": "linear",
+    "region": "north_america"
+  },
   "jd": {
     "title": "Software Engineer",
     "company": "Series B Developer Tools Startup",
     "location": "Remote (US)",
     "experience_years": null,
     "requirements": [
-      { "text": "You write clean, well-tested code and care deeply about software craft", "type": "must_have" },
-      { "text": "You've shipped production software used by real users", "type": "must_have" },
-      { "text": "You're comfortable working across the stack when needed", "type": "must_have" },
-      { "text": "You communicate clearly in writing — we're a remote-first team", "type": "must_have" }
+      {
+        "text": "You write clean, well-tested code and care deeply about software craft",
+        "type": "must_have"
+      },
+      {
+        "text": "You've shipped production software used by real users",
+        "type": "must_have"
+      },
+      {
+        "text": "You're comfortable working across the stack when needed",
+        "type": "must_have"
+      },
+      {
+        "text": "You communicate clearly in writing — we're a remote-first team",
+        "type": "must_have"
+      }
     ],
     "responsibilities": [
       "Build and own core platform features end to end",
@@ -60,9 +77,24 @@
       }
     ],
     "skills": {
-      "languages": ["TypeScript", "Go", "Python"],
-      "tools": ["PostgreSQL", "Redis", "Docker", "GitHub Actions", "Vercel"],
-      "practices": ["test-driven development", "async communication", "RFC-driven design", "end-to-end ownership"]
+      "languages": [
+        "TypeScript",
+        "Go",
+        "Python"
+      ],
+      "tools": [
+        "PostgreSQL",
+        "Redis",
+        "Docker",
+        "GitHub Actions",
+        "Vercel"
+      ],
+      "practices": [
+        "test-driven development",
+        "async communication",
+        "RFC-driven design",
+        "end-to-end ownership"
+      ]
     },
     "certifications": [],
     "education": [
@@ -76,13 +108,26 @@
     "clear written communication remote"
   ],
   "cloud_skills": [
-    "TypeScript", "Go", "Python", "PostgreSQL", "Redis", "Docker",
-    "React", "Node.js", "Next.js",
-    "CLI tooling", "SDK development", "API design",
-    "test-driven development", "async communication",
-    "RFC-driven design", "end-to-end ownership",
-    "open-source contribution", "technical writing",
-    "serverless infrastructure", "developer experience",
+    "TypeScript",
+    "Go",
+    "Python",
+    "PostgreSQL",
+    "Redis",
+    "Docker",
+    "React",
+    "Node.js",
+    "Next.js",
+    "CLI tooling",
+    "SDK development",
+    "API design",
+    "test-driven development",
+    "async communication",
+    "RFC-driven design",
+    "end-to-end ownership",
+    "open-source contribution",
+    "technical writing",
+    "serverless infrastructure",
+    "developer experience",
     "remote-first teamwork"
   ],
   "deliberate_flaws": [
@@ -90,5 +135,14 @@
     "Vague JD makes it hard to prove specific requirement coverage",
     "Short freelance stint with minimal detail",
     "No leadership/mentoring experience"
-  ]
+  ],
+  "provenance": {
+    "data_source": "synthetic",
+    "jd_basis": "modeled_from_real_jd_styles",
+    "jd_styles_doc": "REAL-JD-STYLES.md",
+    "expected_output_author": "claude",
+    "user_snap_checked": null,
+    "circularity_risk": "medium",
+    "notes": "Synthetic persona and JD. JD style modeled from real Greenhouse/Lever postings. Expected output and cloud_skills are AI-generated. 4/8 scorecard checks (jd_coverage, no_fabrication, metrics_preserved, no_fabricated_skills) evaluate AI vs AI reference. 4/8 checks (factual_preservation, word_count, ats_structure, action_verbs) are structurally valid regardless."
+  }
 }

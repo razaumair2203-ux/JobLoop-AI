@@ -1,0 +1,154 @@
+{
+  "total_experience_years": 18,
+  "experience": [
+    {
+      "company": "College of Aeronautical Engineering, Risalpur & NUTECH University",
+      "title": "Program Lead, Professional Education",
+      "start_date": "Jan 2023",
+      "end_date": "Present",
+      "duration_months": 29,
+      "technologies_used": [
+        "Power BI",
+        "MS Project",
+        "JIRA",
+        "AI/ML"
+      ],
+      "metrics_mentioned": [],
+      "domain": "academia"
+    },
+    {
+      "company": "Air Force PMO",
+      "title": "Deputy Director Avionics, PMO",
+      "start_date": "Jan 2020",
+      "end_date": "Dec 2023",
+      "duration_months": 36,
+      "technologies_used": [
+        "EVM",
+        "RAID",
+        "CNS/ATM"
+      ],
+      "metrics_mentioned": [],
+      "domain": "defense"
+    },
+    {
+      "company": "Chengdu Aircraft Design Institute (CADI), China",
+      "title": "Aerospace Systems Integration Lead",
+      "start_date": "Jan 2018",
+      "end_date": "Dec 2020",
+      "duration_months": 36,
+      "technologies_used": [
+        "Agile",
+        "Hybrid Delivery"
+      ],
+      "metrics_mentioned": [],
+      "domain": "defense"
+    },
+    {
+      "company": "Airborne Early Warning & Control Systems, Air Force",
+      "title": "Engineering Operations Manager",
+      "start_date": "Jan 2016",
+      "end_date": "Dec 2018",
+      "duration_months": 36,
+      "technologies_used": [
+        "AMOS",
+        "MTBF/MTTR"
+      ],
+      "metrics_mentioned": [],
+      "domain": "aviation"
+    },
+    {
+      "company": "Pakistan Aeronautical Complex Kamra",
+      "title": "Systems Engineering & Integration Engineer",
+      "start_date": "Jan 2008",
+      "end_date": "Dec 2013",
+      "duration_months": 60,
+      "technologies_used": [
+        "Agile"
+      ],
+      "metrics_mentioned": [
+        "multi-million dollar revenue",
+        "exports"
+      ],
+      "domain": "defense"
+    }
+  ],
+  "skills": {
+    "languages": [],
+    "frameworks": [
+      "Agile",
+      "Hybrid Delivery",
+      "Iterative Planning"
+    ],
+    "infrastructure": [
+      "AMOS"
+    ],
+    "databases": [],
+    "tools": [
+      "Power BI",
+      "MS Project",
+      "JIRA",
+      "EVM",
+      "RAID"
+    ],
+    "other": [
+      "Program Management",
+      "Stakeholder Management",
+      "Risk Management",
+      "Systems Integration",
+      "CNS/ATM",
+      "Spares Planning",
+      "Depot Coordination",
+      "Supplier Management",
+      "MTBF/MTTR",
+      "Cost Control",
+      "Avionics",
+      "Flight Test",
+      "Platform Modernization"
+    ]
+  },
+  "all_technologies": [
+    "Power BI",
+    "MS Project",
+    "JIRA",
+    "AI/ML",
+    "EVM",
+    "RAID",
+    "CNS/ATM",
+    "Agile",
+    "Hybrid Delivery",
+    "AMOS",
+    "MTBF/MTTR"
+  ],
+  "education": [
+    {
+      "institution": "College of Aeronautical Engineering, Risalpur",
+      "degree": "BE",
+      "field": "Aeronautical Engineering",
+      "start_year": 2004,
+      "end_year": 2008,
+      "research_topic": null,
+      "highlights": []
+    },
+    {
+      "institution": "Air University, Islamabad",
+      "degree": "MS",
+      "field": "Signal & Image Processing",
+      "start_year": 2013,
+      "end_year": 2015,
+      "research_topic": null,
+      "highlights": []
+    }
+  ],
+  "certifications": [
+    "Project Management Professional (PMP)",
+    "Agile Certified Practitioner (PMI-ACP)",
+    "Professional Engineer (PE)",
+    "System Engineering Specialization (University of Colorado Boulder)",
+    "Engineering Management Specialization (Rice University)",
+    "Project Management Specialization (Google)",
+    "Fighter Aircraft Type Rating Course",
+    "AWACS Aircraft Type Rating Course",
+    "Basic Staff Course",
+    "Senior Command & Staff Course"
+  ]
+}

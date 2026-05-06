@@ -5,7 +5,12 @@
   "synthetic": true,
   "jd_style": "vague_culture_first",
   "framing": "Freelance music producer and audio engineer applying to Head of Audio at podcast startup in Berlin",
-  "coverage": { "industry": "Music/Entertainment", "seniority": "mid", "pattern": "freelancer", "region": "europe" },
+  "coverage": {
+    "industry": "Music/Entertainment",
+    "seniority": "mid",
+    "pattern": "freelancer",
+    "region": "europe"
+  },
   "jd": {
     "title": "Head of Audio",
     "company": "Podimo",
@@ -13,13 +18,34 @@
     "experience_years": 5,
     "style_note": "Vague/culture-first: creative company, emphasis on taste and storytelling, flexible on exact background",
     "requirements": [
-      { "text": "You have exceptional ears — you know what great audio sounds like and you can make it happen", "type": "must_have" },
-      { "text": "5+ years of professional audio production experience (music, podcasts, radio, film, or advertising)", "type": "must_have" },
-      { "text": "You can manage a team of audio producers and editors while maintaining creative quality standards", "type": "must_have" },
-      { "text": "You understand podcast-specific production: narrative structure, interview editing, sound design, and mixing for spoken word", "type": "must_have" },
-      { "text": "Bonus: experience building or managing a podcast studio (technical setup, acoustics, workflow design)", "type": "nice_to_have" },
-      { "text": "Bonus: experience with audio-first content strategy and audience development", "type": "nice_to_have" },
-      { "text": "Bonus: German language skills", "type": "nice_to_have" }
+      {
+        "text": "You have exceptional ears — you know what great audio sounds like and you can make it happen",
+        "type": "must_have"
+      },
+      {
+        "text": "5+ years of professional audio production experience (music, podcasts, radio, film, or advertising)",
+        "type": "must_have"
+      },
+      {
+        "text": "You can manage a team of audio producers and editors while maintaining creative quality standards",
+        "type": "must_have"
+      },
+      {
+        "text": "You understand podcast-specific production: narrative structure, interview editing, sound design, and mixing for spoken word",
+        "type": "must_have"
+      },
+      {
+        "text": "Bonus: experience building or managing a podcast studio (technical setup, acoustics, workflow design)",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "Bonus: experience with audio-first content strategy and audience development",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "Bonus: German language skills",
+        "type": "nice_to_have"
+      }
     ],
     "responsibilities": [
       "Lead Podimo's audio production team (8 producers and editors) across original podcast programming",
@@ -59,11 +85,40 @@
       }
     ],
     "skills": {
-      "audio_production": ["music production", "podcast recording", "mixing (music and spoken word)", "mastering", "sound design", "audio branding"],
-      "tools": ["Pro Tools (expert)", "Logic Pro", "Ableton Live", "iZotope RX (audio restoration)", "Pyramix DAW", "Lawo mixing console"],
-      "studio": ["studio design and acoustics", "microphone selection and technique", "signal chain design", "equipment maintenance"],
-      "podcast": ["podcast episode production", "narrative editing", "interview editing", "intro/outro production", "true crime production", "German-language podcasts"],
-      "languages": ["English (native)", "German (C1)"]
+      "audio_production": [
+        "music production",
+        "podcast recording",
+        "mixing (music and spoken word)",
+        "mastering",
+        "sound design",
+        "audio branding"
+      ],
+      "tools": [
+        "Pro Tools (expert)",
+        "Logic Pro",
+        "Ableton Live",
+        "iZotope RX (audio restoration)",
+        "Pyramix DAW",
+        "Lawo mixing console"
+      ],
+      "studio": [
+        "studio design and acoustics",
+        "microphone selection and technique",
+        "signal chain design",
+        "equipment maintenance"
+      ],
+      "podcast": [
+        "podcast episode production",
+        "narrative editing",
+        "interview editing",
+        "intro/outro production",
+        "true crime production",
+        "German-language podcasts"
+      ],
+      "languages": [
+        "English (native)",
+        "German (C1)"
+      ]
     },
     "certifications": [],
     "education": [
@@ -80,15 +135,28 @@
     "German language"
   ],
   "cloud_skills": [
-    "music production", "podcast recording",
-    "mixing", "mastering", "sound design",
-    "audio branding", "Pro Tools", "Logic Pro",
-    "Ableton Live", "iZotope RX", "Pyramix",
-    "studio design", "acoustics", "microphone technique",
-    "narrative editing", "interview editing",
-    "true crime production", "German-language podcasts",
-    "radio broadcast", "Deutschlandfunk",
-    "client management", "German C1"
+    "music production",
+    "podcast recording",
+    "mixing",
+    "mastering",
+    "sound design",
+    "audio branding",
+    "Pro Tools",
+    "Logic Pro",
+    "Ableton Live",
+    "iZotope RX",
+    "Pyramix",
+    "studio design",
+    "acoustics",
+    "microphone technique",
+    "narrative editing",
+    "interview editing",
+    "true crime production",
+    "German-language podcasts",
+    "radio broadcast",
+    "Deutschlandfunk",
+    "client management",
+    "German C1"
   ],
   "deliberate_flaws": [
     "No experience managing a permanent audio team (managed 2-3 freelancers per project, not 8+ staff)",
@@ -102,5 +170,14 @@
     "German is C1, not native — Podimo creates German-language originals",
     "No experience managing production scheduling across multiple concurrent shows",
     "BA Music Technology is practical, not leadership-oriented — no management training or qualification"
-  ]
+  ],
+  "provenance": {
+    "data_source": "synthetic",
+    "jd_basis": "modeled_from_real_jd_styles",
+    "jd_styles_doc": "REAL-JD-STYLES.md",
+    "expected_output_author": "claude",
+    "user_snap_checked": null,
+    "circularity_risk": "medium",
+    "notes": "Synthetic persona and JD. JD style modeled from real Greenhouse/Lever postings. Expected output and cloud_skills are AI-generated. 4/8 scorecard checks (jd_coverage, no_fabrication, metrics_preserved, no_fabricated_skills) evaluate AI vs AI reference. 4/8 checks (factual_preservation, word_count, ats_structure, action_verbs) are structurally valid regardless."
+  }
 }

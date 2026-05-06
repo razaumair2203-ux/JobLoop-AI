@@ -1,14 +1,63 @@
 import { NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
+import { ensureUserExists } from "@/lib/ensure-user";
+import { getAuthUser } from "@/lib/auth";
+import {
+  parseCV as parseCVWithAI,
+  buildCloudFromParsedCV,
+  computeCloudMaturity,
+  selectModel,
+  generateInitialQuestions,
+  skillsMatch,
+  computeSummary,
+  detectConflicts,
+  mergeResolvedProfile,
+  resolvedProfileToParsedCV,
+  cleanParsedCVs,
+  buildConflictQuestions,
+  extractContactDetails,
+} from "@jobloop/ai";
+import type { ProfileCloud, Evidence, ConflictReport, PersonaType } from "@jobloop/ai";
 
 export async function POST(request: Request) {
   const supabase = await createClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
+  const { user } = await getAuthUser(supabase);
 
   if (!user) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
+
+  await ensureUserExists(supabase, user);
+
+  // Determine CV parse model from existing Cloud maturity
+  // Empty/thin Cloud (first-time user) → Sonnet catches garbled PDF structure
+  // Rich Cloud (returning user) → Haiku is fine for incremental uploads
+  const { data: existingNodes } = await supabase
+    .from("cloud_nodes")
+    .select("id, name, type, category, evidence, summary")
+    .eq("user_id", user.id);
+
+  let cvModelTier: "fast" | "quality" = "quality"; // default to Sonnet for new users
+  if (existingNodes && existingNodes.length > 0) {
+    const existingCloud: ProfileCloud = {
+      user_id: user.id,
+      nodes: existingNodes.map((n) => ({
+        id: n.id,
+        name: n.name,
+        type: n.type as "skill" | "capability" | "domain",
+        category: n.category,
+        evidence: Array.isArray(n.evidence) ? n.evidence : [],
+        summary: n.summary ?? { total_months_used: 0, number_of_roles: 0, has_impact: false, has_external_validation: false, has_depth: false, has_project: false, last_used: null },
+      })),
+      achievements: [],
+      trajectory: { roles: [], progression_pattern: "", domain_consistency: "", avg_tenure_months: 0, total_experience_years: 0 },
+      education: [],
+      certifications: [],
+      languages_spoken: [],
+      last_updated: new Date().toISOString(),
+    };
+    const maturity = computeCloudMaturity(existingCloud);
+    cvModelTier = selectModel(maturity, "cv_parse");
   }
 
   const formData = await request.formData();
@@ -71,24 +120,29 @@ export async function POST(request: Request) {
     let extractedText: string;
     try {
       if (ext === "pdf") {
-        const pdfParse = (await import("pdf-parse")).default;
-        const pdfData = await pdfParse(buffer);
-        extractedText = pdfData.text;
+        // pdf-parse v2.x: PDFParse class, Uint8Array input, getText() returns {text, pages, total}
+        // eslint-disable-next-line @typescript-eslint/no-require-imports, @typescript-eslint/no-explicit-any
+        const { PDFParse } = require("pdf-parse") as any;
+        const parser = new PDFParse(new Uint8Array(buffer));
+        const pdfData = await parser.getText();
+        extractedText = pdfData.text ?? pdfData.pages.map((p: { text: string }) => p.text).join("\n");
       } else {
         const mammoth = await import("mammoth");
         const result = await mammoth.extractRawText({ buffer });
         extractedText = result.value;
       }
     } catch (err) {
+      const errMsg = err instanceof Error ? err.message : String(err);
+      console.error("Text extraction error for", file.name, ":", errMsg);
       await supabase
         .from("cv_uploads")
         .update({
           status: "error",
-          error_message: `Text extraction failed: ${err instanceof Error ? err.message : "unknown"}`,
+          error_message: `Text extraction failed: ${errMsg}`,
         })
         .eq("id", upload.id);
 
-      results.push({ filename: file.name, error: "Text extraction failed" });
+      results.push({ filename: file.name, error: `Text extraction failed: ${errMsg}` });
       continue;
     }
 
@@ -106,6 +160,9 @@ export async function POST(request: Request) {
       continue;
     }
 
+    // Extract contact details deterministically (zero LLM, near-100% accuracy)
+    const contactDetails = extractContactDetails(extractedText);
+
     // Save extracted text, mark as ready for parsing
     await supabase
       .from("cv_uploads")
@@ -115,21 +172,43 @@ export async function POST(request: Request) {
       })
       .eq("id", upload.id);
 
-    // Parse CV with AI (or dev mode placeholder)
-    let parsedCV;
+    // Parse CV: model selected by Cloud maturity
+    // Three-tier: fixture cache → real API (Haiku/Sonnet) → explicit error
+    // NO regex fallback — production-quality output or nothing
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    let parsedCV: any;
     try {
-      parsedCV = await parseCV(extractedText);
+      parsedCV = await parseCVWithAI(extractedText, cvModelTier);
     } catch (err) {
+      const errMsg = err instanceof Error ? err.message : "unknown";
       await supabase
         .from("cv_uploads")
         .update({
           status: "error",
-          error_message: `AI parsing failed: ${err instanceof Error ? err.message : "unknown"}`,
+          error_message: `CV parsing failed: ${errMsg}`,
         })
         .eq("id", upload.id);
 
-      results.push({ filename: file.name, error: "AI parsing failed" });
+      results.push({ filename: file.name, error: `CV parsing failed: ${errMsg}` });
       continue;
+    }
+
+    // Override LLM-extracted contact fields with deterministic regex extraction
+    // (ResumeFlow factual bypass — personal details bypass LLM entirely)
+    if (contactDetails.emails.length > 0) {
+      parsedCV.email = contactDetails.emails[0];
+    }
+    if (contactDetails.phones.length > 0) {
+      parsedCV.phone = contactDetails.phones[0];
+    }
+    if (contactDetails.linkedin) {
+      parsedCV.linkedin = contactDetails.linkedin;
+    }
+    if (contactDetails.github) {
+      parsedCV.github = contactDetails.github;
+    }
+    if (contactDetails.portfolio) {
+      parsedCV.portfolio = contactDetails.portfolio;
     }
 
     // Save parsed result
@@ -146,145 +225,210 @@ export async function POST(request: Request) {
       filename: file.name,
       status: "parsed",
       skills_found: countSkills(parsedCV),
-      experience_count: parsedCV.experience?.length ?? 0,
+      experience_count: countExperience(parsedCV),
     });
   }
 
-  // After all files parsed, rebuild the user's Cloud
+  // After all files parsed: CLEAN → DETECT CONFLICTS → RESOLVE → BUILD CLOUD
+  // The Cloud is the source of truth. Nothing goes in unclean.
   const { data: allParsed } = await supabase
     .from("cv_uploads")
-    .select("parsed_cv")
+    .select("id, filename, parsed_cv, extracted_text")
     .eq("user_id", user.id)
     .eq("status", "parsed")
     .not("parsed_cv", "is", null);
 
+  let socraticQuestions: Array<{ id: string; question: string; skill_name: string; why_asking: string }> = [];
+  let conflictReport: ConflictReport | null = null;
+
   if (allParsed && allParsed.length > 0) {
-    const mergedCloud = mergeIntoCloud(
-      user.id,
-      allParsed.map((r) => r.parsed_cv),
+    // ================================================================
+    // STEP 1: Clean each parsed CV (garbage filtering, normalization,
+    //         date validation, source text verification)
+    // ================================================================
+    const { cleanedCVs, reports: cleaningReports } = cleanParsedCVs(
+      allParsed.map((row) => ({
+        id: row.id,
+        filename: row.filename,
+        parsed_cv: row.parsed_cv as Record<string, unknown>,
+        source_text: (row.extracted_text as string) ?? undefined,
+      })),
     );
 
-    // Upsert cloud nodes
-    for (const node of mergedCloud.nodes) {
-      await supabase.from("cloud_nodes").upsert(
-        {
-          user_id: user.id,
-          name: node.name,
-          type: node.type,
-          category: node.category,
-          evidence: node.evidence,
-          summary: node.summary,
+    // Log cleaning reports for diagnostics (date issues, source mismatches)
+    for (const report of cleaningReports) {
+      if (report.date_issues.length > 0 || report.source_mismatches.length > 0 || report.skills_rejected > 0) {
+        console.warn(`[cv-cleaner] CV ${report.cv_id}: ${report.roles_removed} roles removed, ${report.bullets_removed} bullets removed, ${report.skills_rejected} skills rejected, ${report.date_issues.length} date issues, ${report.source_mismatches.length} source mismatches`);
+      }
+    }
+
+    // ================================================================
+    // STEP 2: Detect conflicts across all documents ($0 — pure logic)
+    // ================================================================
+    const { data: userRow } = await supabase
+      .from("users")
+      .select("persona")
+      .eq("id", user.id)
+      .single();
+
+    const persona = (userRow?.persona as PersonaType) ?? undefined;
+
+    const documents = cleanedCVs.map((cv) => ({
+      id: cv.id,
+      name: cv.name,
+      roles: cv.roles.map((r: { title: string; company: string; start_date: string; end_date: string; bullets: string[] }) => ({
+        title: r.title,
+        company: r.company,
+        start_date: r.start_date,
+        end_date: r.end_date,
+        bullets: r.bullets,
+      })),
+    }));
+
+    conflictReport = detectConflicts(documents, persona);
+
+    // ================================================================
+    // STEP 3: GATE — If conflicts exist, return them as Phase 1 questions
+    // Cloud does NOT get built until conflicts are resolved.
+    // ================================================================
+    const hasBlockingConflicts =
+      conflictReport.conflicts.length > 0 ||
+      conflictReport.gaps.length > 0;
+
+    if (hasBlockingConflicts) {
+      // Store conflict report for the resolution endpoint to pick up
+      await supabase
+        .from("cv_uploads")
+        .update({ status: "conflicts_detected" })
+        .eq("user_id", user.id)
+        .eq("status", "parsed");
+
+      // Build Phase 1 Socratic questions from conflicts
+      const phase1Questions = buildConflictQuestions(conflictReport);
+
+      return NextResponse.json({
+        results,
+        status: "conflicts_detected",
+        conflict_report: {
+          conflicts: conflictReport.conflicts,
+          gaps: conflictReport.gaps,
+          employer_groups: conflictReport.employer_groups,
+          stats: conflictReport.stats,
         },
-        { onConflict: "user_id,name" },
-      );
+        phase1_questions: phase1Questions,
+        message: `Found ${conflictReport.conflicts.length} conflict(s) and ${conflictReport.gaps.length} gap(s) across your CVs. Please resolve these before we build your Profile Cloud.`,
+      });
+    }
+
+    // ================================================================
+    // STEP 4: No conflicts — merge cleanly via resolution merger
+    // ================================================================
+    const resolvedProfile = mergeResolvedProfile(
+      cleanedCVs,
+      [], // no answer results yet (no conflicts to resolve)
+      { employer_confirmed: null, is_single_employer: false },
+      persona ?? "mid_career",
+    );
+
+    // Convert resolved profile to ParsedCV shape for Cloud builder
+    const cleanParsedCV = resolvedProfileToParsedCV(resolvedProfile);
+    const cloud = buildCloudFromParsedCV(cleanParsedCV);
+
+    // ================================================================
+    // STEP 5: Preserve Socratic evidence from previous Cloud
+    // ================================================================
+    const { data: oldNodes } = await supabase
+      .from("cloud_nodes")
+      .select("name, evidence")
+      .eq("user_id", user.id);
+
+    const socraticBySkill = new Map<string, Evidence[]>();
+    if (oldNodes) {
+      for (const row of oldNodes) {
+        const socEvidence = (Array.isArray(row.evidence) ? row.evidence : [])
+          .filter((e: Evidence) => e.type === "socratic");
+        if (socEvidence.length > 0) {
+          socraticBySkill.set(row.name.toLowerCase(), socEvidence);
+        }
+      }
+    }
+
+    if (socraticBySkill.size > 0) {
+      for (const node of cloud.nodes) {
+        const exactMatch = socraticBySkill.get(node.name.toLowerCase());
+        if (exactMatch) {
+          node.evidence.push(...exactMatch);
+          node.summary = computeSummary(node.evidence);
+          socraticBySkill.delete(node.name.toLowerCase());
+          continue;
+        }
+        for (const [oldName, evidence] of socraticBySkill) {
+          if (skillsMatch(node.name, oldName)) {
+            node.evidence.push(...evidence);
+            node.summary = computeSummary(node.evidence);
+            socraticBySkill.delete(oldName);
+            break;
+          }
+        }
+      }
+      for (const [skillName, evidence] of socraticBySkill) {
+        cloud.nodes.push({
+          id: `orphan_${Date.now()}_${Math.random().toString(36).slice(2, 6)}`,
+          type: "skill",
+          name: skillName,
+          category: "other",
+          evidence,
+          summary: computeSummary(evidence),
+        });
+      }
+    }
+
+    // ================================================================
+    // STEP 6: Persist the clean Cloud
+    // ================================================================
+    await supabase.from("cloud_nodes").delete().eq("user_id", user.id);
+
+    const nodeRows = cloud.nodes.map((node) => ({
+      user_id: user.id,
+      name: node.name,
+      type: node.type,
+      category: node.category,
+      evidence: node.evidence,
+      summary: node.summary,
+    }));
+
+    if (nodeRows.length > 0) {
+      await supabase.from("cloud_nodes").insert(nodeRows);
+    }
+
+    // ================================================================
+    // STEP 7: Phase 2 — Enrichment questions (Cloud is now truthful)
+    // ================================================================
+    try {
+      const questions = await generateInitialQuestions(cloud);
+      socraticQuestions = questions.map((q) => ({
+        id: q.id,
+        question: q.question,
+        skill_name: q.skill_name,
+        why_asking: q.why_asking,
+      }));
+    } catch {
+      // Non-critical — upload still succeeds without questions
     }
   }
 
-  return NextResponse.json({ results });
+  return NextResponse.json({
+    results,
+    status: "cloud_built",
+    socratic_questions: socraticQuestions,
+    conflict_report: conflictReport ? { stats: conflictReport.stats } : null,
+  });
 }
 
 // ============================================================
-// CV PARSING — dev mode returns structured placeholder
+// UTILITY FUNCTIONS
+// Dev-mode parser is now in packages/ai/src/dev-parser.ts
 // ============================================================
-
-async function parseCV(text: string) {
-  // Dev mode: extract what we can without AI
-  // In production, this calls Claude with CV_PARSER_SYSTEM_PROMPT
-  const lines = text.split("\n").filter((l) => l.trim());
-
-  const skills = extractSkillsFromText(text);
-  const experience = extractExperienceFromText(text);
-
-  return {
-    name: lines[0]?.trim() ?? "Unknown",
-    email: text.match(/[\w.-]+@[\w.-]+\.\w+/)?.[0] ?? null,
-    phone: text.match(/[\+]?[\d\s\-().]{7,15}/)?.[0]?.trim() ?? null,
-    location: { city: null, country: null },
-    links: { linkedin: null, github: null, portfolio: null, other: [] },
-    summary: null,
-    total_experience_years: experience.length * 2, // rough estimate
-    experience,
-    education: [],
-    skills: {
-      languages: skills.filter((s) =>
-        ["javascript", "typescript", "python", "java", "c#", "c++", "go", "rust", "ruby", "php", "swift", "kotlin"].includes(s.toLowerCase()),
-      ),
-      frameworks: skills.filter((s) =>
-        ["react", "angular", "vue", "next.js", "express", "django", "flask", "spring", "rails", "laravel", "svelte", "nuxt"].includes(s.toLowerCase()),
-      ),
-      infrastructure: skills.filter((s) =>
-        ["aws", "gcp", "azure", "docker", "kubernetes", "terraform", "jenkins", "ci/cd", "linux", "nginx"].includes(s.toLowerCase()),
-      ),
-      databases: skills.filter((s) =>
-        ["postgresql", "mysql", "mongodb", "redis", "elasticsearch", "dynamodb", "sqlite", "cassandra"].includes(s.toLowerCase()),
-      ),
-      tools: skills.filter((s) =>
-        ["git", "jira", "figma", "slack", "vscode", "postman", "webpack", "babel"].includes(s.toLowerCase()),
-      ),
-      other: [],
-    },
-    certifications: [],
-    all_technologies: skills,
-  };
-}
-
-function extractSkillsFromText(text: string): string[] {
-  const knownSkills = [
-    "JavaScript", "TypeScript", "Python", "Java", "C#", "C++", "Go", "Rust", "Ruby", "PHP",
-    "React", "Angular", "Vue", "Next.js", "Express", "Django", "Flask", "Spring", "Node.js",
-    "AWS", "GCP", "Azure", "Docker", "Kubernetes", "Terraform", "Jenkins",
-    "PostgreSQL", "MySQL", "MongoDB", "Redis", "Elasticsearch", "DynamoDB",
-    "Git", "Jira", "Figma", "GraphQL", "REST", "gRPC", "Kafka", "RabbitMQ",
-    "HTML", "CSS", "Sass", "Tailwind", "Bootstrap",
-    "TensorFlow", "PyTorch", "Machine Learning", "Data Science",
-    "Agile", "Scrum", "CI/CD", "Linux", "Nginx",
-    "Swift", "Kotlin", "React Native", "Flutter",
-    "SQL", "NoSQL", "Microservices", "Serverless",
-    "Project Management", "Team Leadership", "Communication",
-  ];
-
-  const found: string[] = [];
-  const lower = text.toLowerCase();
-  for (const skill of knownSkills) {
-    if (lower.includes(skill.toLowerCase())) {
-      found.push(skill);
-    }
-  }
-  return found;
-}
-
-function extractExperienceFromText(text: string): Array<{
-  company: string;
-  title: string;
-  start_date: string;
-  end_date: string;
-  duration_months: number;
-  technologies_used: string[];
-  metrics_mentioned: string[];
-  domain: string;
-}> {
-  // Very basic extraction — looks for date patterns near company-like lines
-  const datePattern = /(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\.?\s+\d{4}/gi;
-  const dates = text.match(datePattern) || [];
-
-  // In dev mode, return minimal placeholder
-  if (dates.length >= 2) {
-    return [
-      {
-        company: "Extracted from CV",
-        title: "Role detected",
-        start_date: dates[dates.length - 1] || "unknown",
-        end_date: dates[0] || "present",
-        duration_months: 24,
-        technologies_used: extractSkillsFromText(text).slice(0, 5),
-        metrics_mentioned: [],
-        domain: "technology",
-      },
-    ];
-  }
-
-  return [];
-}
 
 function countSkills(parsedCV: Record<string, unknown>): number {
   const skills = parsedCV.skills as Record<string, string[]> | undefined;
@@ -292,179 +436,7 @@ function countSkills(parsedCV: Record<string, unknown>): number {
   return Object.values(skills).reduce((sum, arr) => sum + (Array.isArray(arr) ? arr.length : 0), 0);
 }
 
-// ============================================================
-// CLOUD MERGE — combine multiple parsed CVs into one Cloud
-// ============================================================
-
-interface CloudNode {
-  name: string;
-  type: string;
-  category: string;
-  evidence: Array<Record<string, unknown>>;
-  summary: Record<string, unknown>;
-}
-
-function mergeIntoCloud(
-  userId: string,
-  parsedCVs: Array<Record<string, unknown>>,
-): { nodes: CloudNode[] } {
-  const nodeMap = new Map<string, CloudNode>();
-
-  for (const cv of parsedCVs) {
-    const skills = cv.skills as Record<string, string[]> | undefined;
-    const experience = cv.experience as Array<Record<string, unknown>> | undefined;
-    const allTech = cv.all_technologies as string[] | undefined;
-
-    // Add skills as nodes
-    if (skills) {
-      const categories: Array<[string, string[]]> = [
-        ["language", skills.languages || []],
-        ["framework", skills.frameworks || []],
-        ["infrastructure", skills.infrastructure || []],
-        ["database", skills.databases || []],
-        ["tool", skills.tools || []],
-        ["other", skills.other || []],
-      ];
-
-      for (const [category, items] of categories) {
-        for (const skillName of items) {
-          const key = skillName.toLowerCase();
-          if (!nodeMap.has(key)) {
-            nodeMap.set(key, {
-              name: skillName,
-              type: "skill",
-              category,
-              evidence: [],
-              summary: {},
-            });
-          }
-        }
-      }
-    }
-
-    // Add tech from all_technologies that might not be in skills
-    if (allTech) {
-      for (const tech of allTech) {
-        const key = tech.toLowerCase();
-        if (!nodeMap.has(key)) {
-          nodeMap.set(key, {
-            name: tech,
-            type: "skill",
-            category: "unknown",
-            evidence: [],
-            summary: {},
-          });
-        }
-      }
-    }
-
-    // Add role evidence from experience
-    if (experience) {
-      for (const role of experience) {
-        const techUsed = (role.technologies_used as string[]) || [];
-        const metrics = (role.metrics_mentioned as string[]) || [];
-        const company = (role.company as string) || "Unknown";
-        const title = (role.title as string) || "Unknown";
-        const duration = (role.duration_months as number) || 0;
-
-        for (const tech of techUsed) {
-          const key = tech.toLowerCase();
-          if (!nodeMap.has(key)) {
-            nodeMap.set(key, {
-              name: tech,
-              type: "skill",
-              category: "unknown",
-              evidence: [],
-              summary: {},
-            });
-          }
-
-          const node = nodeMap.get(key)!;
-          // Deduplicate: don't add same company+title twice
-          const alreadyHas = node.evidence.some(
-            (e) =>
-              e.type === "role" && e.company === company && e.title === title,
-          );
-          if (!alreadyHas) {
-            node.evidence.push({
-              type: "role",
-              company,
-              title,
-              duration_months: duration,
-              context: `Used in role: ${title} at ${company}`,
-              start_date: (role.start_date as string) || "unknown",
-              end_date: (role.end_date as string) || "unknown",
-            });
-          }
-        }
-
-        // Add metrics as impact evidence
-        for (const metric of metrics) {
-          for (const tech of techUsed) {
-            const node = nodeMap.get(tech.toLowerCase());
-            if (node) {
-              node.evidence.push({
-                type: "impact",
-                description: metric,
-                source_role: company,
-                metric,
-              });
-            }
-          }
-        }
-
-        // Domain node
-        const domain = role.domain as string;
-        if (domain) {
-          const domainKey = domain.toLowerCase();
-          if (!nodeMap.has(domainKey)) {
-            nodeMap.set(domainKey, {
-              name: domain,
-              type: "domain",
-              category: "domain",
-              evidence: [],
-              summary: {},
-            });
-          }
-          const dNode = nodeMap.get(domainKey)!;
-          const alreadyHas = dNode.evidence.some(
-            (e) => e.type === "role" && e.company === company,
-          );
-          if (!alreadyHas) {
-            dNode.evidence.push({
-              type: "role",
-              company,
-              title,
-              duration_months: duration,
-              context: `Worked in ${domain} domain`,
-              start_date: (role.start_date as string) || "unknown",
-              end_date: (role.end_date as string) || "unknown",
-            });
-          }
-        }
-      }
-    }
-  }
-
-  // Compute summaries
-  for (const node of nodeMap.values()) {
-    const roles = node.evidence.filter((e) => e.type === "role");
-    const impacts = node.evidence.filter((e) => e.type === "impact");
-    const totalMonths = roles.reduce(
-      (sum, r) => sum + ((r.duration_months as number) || 0),
-      0,
-    );
-
-    node.summary = {
-      total_months_used: totalMonths,
-      number_of_roles: roles.length,
-      has_impact: impacts.length > 0,
-      has_external_validation: false,
-      has_depth: false,
-      has_project: false,
-      last_used: null,
-    };
-  }
-
-  return { nodes: Array.from(nodeMap.values()) };
+function countExperience(parsedCV: Record<string, unknown>): number {
+  const experience = parsedCV.experience as Array<unknown> | undefined;
+  return Array.isArray(experience) ? experience.length : 0;
 }

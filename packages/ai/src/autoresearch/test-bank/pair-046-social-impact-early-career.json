@@ -5,7 +5,12 @@
   "synthetic": true,
   "jd_style": "graduate_friendly",
   "framing": "Social sciences graduate applying to impact measurement analyst role at B Corp in Bogotá",
-  "coverage": { "industry": "Social Impact/B-Corp", "seniority": "entry", "pattern": "early_career", "region": "latin_america" },
+  "coverage": {
+    "industry": "Social Impact/B-Corp",
+    "seniority": "entry",
+    "pattern": "early_career",
+    "region": "latin_america"
+  },
   "jd": {
     "title": "Analista de Medición de Impacto (Impact Measurement Analyst)",
     "company": "Sistema B (B Lab Latin America)",
@@ -14,14 +19,38 @@
     "style_note": "Graduate-friendly: mission-driven, bilingual, values passion over experience, explains B Corp context",
     "about": "Sistema B is the B Lab affiliate for Latin America, supporting the B Corp movement across 20+ countries. We help companies measure, manage, and improve their social and environmental impact using the B Impact Assessment (BIA). We're looking for a data-driven analyst to support our certification and impact measurement programmes.",
     "requirements": [
-      { "text": "Bachelor's degree in Economics, Sociology, Environmental Science, Business Administration, or related field", "type": "must_have" },
-      { "text": "1+ years of experience in data analysis, impact measurement, research, or sustainability consulting (internships count)", "type": "must_have" },
-      { "text": "Proficiency in Excel/Google Sheets and at least one data analysis tool (R, Python, Stata, or SPSS)", "type": "must_have" },
-      { "text": "Understanding of impact measurement frameworks (B Impact Assessment, SDGs, Theory of Change, or IRIS+ metrics)", "type": "must_have" },
-      { "text": "Native Spanish proficiency and professional English", "type": "must_have" },
-      { "text": "Experience with survey design and qualitative research methods", "type": "nice_to_have" },
-      { "text": "Knowledge of ESG reporting frameworks (GRI, SASB) and their application in Latin American context", "type": "nice_to_have" },
-      { "text": "Portuguese language skills", "type": "nice_to_have" }
+      {
+        "text": "Bachelor's degree in Economics, Sociology, Environmental Science, Business Administration, or related field",
+        "type": "must_have"
+      },
+      {
+        "text": "1+ years of experience in data analysis, impact measurement, research, or sustainability consulting (internships count)",
+        "type": "must_have"
+      },
+      {
+        "text": "Proficiency in Excel/Google Sheets and at least one data analysis tool (R, Python, Stata, or SPSS)",
+        "type": "must_have"
+      },
+      {
+        "text": "Understanding of impact measurement frameworks (B Impact Assessment, SDGs, Theory of Change, or IRIS+ metrics)",
+        "type": "must_have"
+      },
+      {
+        "text": "Native Spanish proficiency and professional English",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience with survey design and qualitative research methods",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "Knowledge of ESG reporting frameworks (GRI, SASB) and their application in Latin American context",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "Portuguese language skills",
+        "type": "nice_to_have"
+      }
     ],
     "responsibilities": [
       "Support B Corp certification process: review B Impact Assessment submissions from Latin American companies",
@@ -60,10 +89,30 @@
       }
     ],
     "skills": {
-      "data_analysis": ["Stata (intermediate)", "Excel/Google Sheets (advanced)", "Google Data Studio", "descriptive statistics", "regression analysis"],
-      "impact": ["B Impact Assessment (research user)", "SDG indicators", "Voluntary National Review", "impact measurement", "Theory of Change (coursework)"],
-      "research": ["survey design", "quantitative analysis", "stakeholder consultation", "report writing"],
-      "languages": ["Spanish (native)", "English (professional — IELTS 7.5)"]
+      "data_analysis": [
+        "Stata (intermediate)",
+        "Excel/Google Sheets (advanced)",
+        "Google Data Studio",
+        "descriptive statistics",
+        "regression analysis"
+      ],
+      "impact": [
+        "B Impact Assessment (research user)",
+        "SDG indicators",
+        "Voluntary National Review",
+        "impact measurement",
+        "Theory of Change (coursework)"
+      ],
+      "research": [
+        "survey design",
+        "quantitative analysis",
+        "stakeholder consultation",
+        "report writing"
+      ],
+      "languages": [
+        "Spanish (native)",
+        "English (professional — IELTS 7.5)"
+      ]
     },
     "certifications": [
       "B Leaders Programme — Sistema B Colombia (2024)",
@@ -84,14 +133,23 @@
     "Portuguese language"
   ],
   "cloud_skills": [
-    "Stata", "Excel", "Google Sheets",
-    "Google Data Studio", "regression analysis",
-    "B Impact Assessment", "SDG indicators",
-    "Voluntary National Review", "impact measurement",
-    "Theory of Change", "survey design",
-    "quantitative analysis", "stakeholder consultation",
-    "report writing", "Spanish native",
-    "English professional", "B Leaders programme"
+    "Stata",
+    "Excel",
+    "Google Sheets",
+    "Google Data Studio",
+    "regression analysis",
+    "B Impact Assessment",
+    "SDG indicators",
+    "Voluntary National Review",
+    "impact measurement",
+    "Theory of Change",
+    "survey design",
+    "quantitative analysis",
+    "stakeholder consultation",
+    "report writing",
+    "Spanish native",
+    "English professional",
+    "B Leaders programme"
   ],
   "deliberate_flaws": [
     "No R or Python experience — only Stata (JD lists R, Python, Stata, or SPSS)",
@@ -105,5 +163,14 @@
     "Internship and research only — no professional full-time experience",
     "No qualitative research methods beyond basic survey design (JD mentions qualitative methods)",
     "University of los Andes is elite — may not represent typical B Corp applicant pipeline from diverse backgrounds"
-  ]
+  ],
+  "provenance": {
+    "data_source": "synthetic",
+    "jd_basis": "modeled_from_real_jd_styles",
+    "jd_styles_doc": "REAL-JD-STYLES.md",
+    "expected_output_author": "claude",
+    "user_snap_checked": null,
+    "circularity_risk": "medium",
+    "notes": "Synthetic persona and JD. JD style modeled from real Greenhouse/Lever postings. Expected output and cloud_skills are AI-generated. 4/8 scorecard checks (jd_coverage, no_fabrication, metrics_preserved, no_fabricated_skills) evaluate AI vs AI reference. 4/8 checks (factual_preservation, word_count, ats_structure, action_verbs) are structurally valid regardless."
+  }
 }

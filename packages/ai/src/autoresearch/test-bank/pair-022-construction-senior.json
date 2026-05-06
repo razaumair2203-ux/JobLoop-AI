@@ -5,24 +5,62 @@
   "synthetic": true,
   "jd_style": "enterprise_saas",
   "framing": "Senior construction project manager applying to infrastructure megaproject role in UAE",
-  "coverage": { "industry": "Construction/Infrastructure", "seniority": "senior", "pattern": "linear", "region": "middle_east" },
+  "coverage": {
+    "industry": "Construction/Infrastructure",
+    "seniority": "senior",
+    "pattern": "linear",
+    "region": "middle_east"
+  },
   "jd": {
     "title": "Senior Project Manager — Infrastructure",
     "company": "AECOM",
     "location": "Abu Dhabi, UAE",
     "experience_years": 15,
     "requirements": [
-      { "text": "15+ years of project management experience in large-scale infrastructure or civil engineering projects", "type": "must_have" },
-      { "text": "Experience managing projects valued at USD 500M+ from concept through handover", "type": "must_have" },
-      { "text": "Chartered Engineer (CEng) or Professional Engineer (PE) status", "type": "must_have" },
-      { "text": "PMP certification from Project Management Institute", "type": "must_have" },
-      { "text": "Experience with NEC or FIDIC contract forms", "type": "must_have" },
-      { "text": "Knowledge of UAE building codes, Abu Dhabi Municipality (ADM) regulations, and Estidama sustainability requirements", "type": "must_have" },
-      { "text": "Experience managing multi-disciplinary project teams of 20+", "type": "must_have" },
-      { "text": "Proficiency in Primavera P6 and cost management tools", "type": "must_have" },
-      { "text": "Experience with BIM (Building Information Modelling) Level 2+ implementation", "type": "nice_to_have" },
-      { "text": "Arabic language skills", "type": "nice_to_have" },
-      { "text": "BSc or MSc in Civil Engineering", "type": "must_have" }
+      {
+        "text": "15+ years of project management experience in large-scale infrastructure or civil engineering projects",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience managing projects valued at USD 500M+ from concept through handover",
+        "type": "must_have"
+      },
+      {
+        "text": "Chartered Engineer (CEng) or Professional Engineer (PE) status",
+        "type": "must_have"
+      },
+      {
+        "text": "PMP certification from Project Management Institute",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience with NEC or FIDIC contract forms",
+        "type": "must_have"
+      },
+      {
+        "text": "Knowledge of UAE building codes, Abu Dhabi Municipality (ADM) regulations, and Estidama sustainability requirements",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience managing multi-disciplinary project teams of 20+",
+        "type": "must_have"
+      },
+      {
+        "text": "Proficiency in Primavera P6 and cost management tools",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience with BIM (Building Information Modelling) Level 2+ implementation",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "Arabic language skills",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "BSc or MSc in Civil Engineering",
+        "type": "must_have"
+      }
     ],
     "responsibilities": [
       "Lead project delivery for USD 1.2B urban transit infrastructure programme",
@@ -75,10 +113,32 @@
       }
     ],
     "skills": {
-      "project_management": ["programme delivery (USD 800M+)", "NEC3/NEC4 contracts", "FIDIC Red Book", "Primavera P6", "risk management (QSRA)", "stakeholder management"],
-      "technical": ["highway design review", "interchange engineering", "construction supervision", "BIM coordination (exposure)"],
-      "regulatory": ["Abu Dhabi Municipality (ADM)", "Estidama Pearl Rating", "Saudi MoMRAH regulations", "UK Highways England standards"],
-      "leadership": ["multi-disciplinary team (35 engineers)", "contractor management (4 main contractors)", "claims resolution (USD 28M)", "client liaison (government DOTs)"]
+      "project_management": [
+        "programme delivery (USD 800M+)",
+        "NEC3/NEC4 contracts",
+        "FIDIC Red Book",
+        "Primavera P6",
+        "risk management (QSRA)",
+        "stakeholder management"
+      ],
+      "technical": [
+        "highway design review",
+        "interchange engineering",
+        "construction supervision",
+        "BIM coordination (exposure)"
+      ],
+      "regulatory": [
+        "Abu Dhabi Municipality (ADM)",
+        "Estidama Pearl Rating",
+        "Saudi MoMRAH regulations",
+        "UK Highways England standards"
+      ],
+      "leadership": [
+        "multi-disciplinary team (35 engineers)",
+        "contractor management (4 main contractors)",
+        "claims resolution (USD 28M)",
+        "client liaison (government DOTs)"
+      ]
     },
     "certifications": [
       "Chartered Civil Engineer (CEng MICE) — Institution of Civil Engineers",
@@ -104,16 +164,30 @@
     "BSc MSc Civil Engineering"
   ],
   "cloud_skills": [
-    "programme delivery", "NEC3", "NEC4", "FIDIC Red Book",
-    "Primavera P6", "risk management", "QSRA",
-    "highway design", "interchange engineering",
-    "construction supervision", "BIM",
-    "Abu Dhabi Municipality", "Estidama Pearl Rating",
-    "MoMRAH", "Highways England",
-    "team management", "contractor management",
-    "claims resolution", "DAB referrals",
-    "stakeholder management", "government liaison",
-    "PMP", "CEng MICE", "NEBOSH"
+    "programme delivery",
+    "NEC3",
+    "NEC4",
+    "FIDIC Red Book",
+    "Primavera P6",
+    "risk management",
+    "QSRA",
+    "highway design",
+    "interchange engineering",
+    "construction supervision",
+    "BIM",
+    "Abu Dhabi Municipality",
+    "Estidama Pearl Rating",
+    "MoMRAH",
+    "Highways England",
+    "team management",
+    "contractor management",
+    "claims resolution",
+    "DAB referrals",
+    "stakeholder management",
+    "government liaison",
+    "PMP",
+    "CEng MICE",
+    "NEBOSH"
   ],
   "deliberate_flaws": [
     "No transit/metro experience — JD is for urban transit programme, candidate's experience is highways and interchanges",
@@ -123,5 +197,14 @@
     "USD 800M project vs USD 1.2B scope — scaling gap",
     "NEC4 experience limited (administered NEC3, JD implies NEC4 framework)",
     "No cost management tool proficiency beyond Primavera P6 (no mention of Ecosys, CATO, or equivalent)"
-  ]
+  ],
+  "provenance": {
+    "data_source": "synthetic",
+    "jd_basis": "modeled_from_real_jd_styles",
+    "jd_styles_doc": "REAL-JD-STYLES.md",
+    "expected_output_author": "claude",
+    "user_snap_checked": null,
+    "circularity_risk": "medium",
+    "notes": "Synthetic persona and JD. JD style modeled from real Greenhouse/Lever postings. Expected output and cloud_skills are AI-generated. 4/8 scorecard checks (jd_coverage, no_fabrication, metrics_preserved, no_fabricated_skills) evaluate AI vs AI reference. 4/8 checks (factual_preservation, word_count, ats_structure, action_verbs) are structurally valid regardless."
+  }
 }

@@ -1,0 +1,604 @@
+{
+  "_meta": {
+    "version": "1.0",
+    "created": "2026-05-03",
+    "purpose": "Canonical ground truth profile for AutoResearch test bank entry #1. Built from 5 source documents (1 LinkedIn profile + 4 role-targeted CVs) plus Socratic Q&A corrections. This is the 'answer key' — the complete, corrected career profile.",
+    "source_documents": [
+      "Profile_Linkedin.pdf",
+      "Resume KSA-ME_JAN25.pdf (Maintenance framing)",
+      "Resume PM_Jan26.pdf (Program Management framing)",
+      "Resume SE_Jan26.pdf (Systems Engineering framing)",
+      "Resume of BE_Jan26.pdf (Strategy/BD framing)"
+    ],
+    "corrections_applied": [
+      "Dates corrected across all roles (CVs had inconsistent/collapsed dates)",
+      "10 roles expanded from 4-5 collapsed entries across CVs",
+      "Role #6 (Crotale) was hidden from all CVs — added from Q&A",
+      "Roles #8-#10 were collapsed into single 'Present' entry across CVs",
+      "All roles confirmed as Pakistan Air Force (different postings/secondments)",
+      "China role confirmed as deputation, not separate employer",
+      "Coursera certificates extracted from 7 PDF files",
+      "PMI-ACP added (missing from some CVs)"
+    ]
+  },
+
+  "contact": {
+    "name": "M. Umair Raza",
+    "email": "razaumair2203@gmail.com",
+    "phone": "+966-53-7179386",
+    "location": "Jeddah, Saudi Arabia",
+    "linkedin": "www.linkedin.com/in/mumairaza",
+    "coursera": "https://www.coursera.org/learner/umair-raza-4894"
+  },
+
+  "education": [
+    {
+      "degree": "BE, Aeronautical/Avionics Engineering",
+      "institution": "College of Aeronautical Engineering, Risalpur",
+      "dates": { "start": "2004", "end": "2008" },
+      "notes": "PAF engineering college"
+    },
+    {
+      "degree": "MS, Signal & Image Processing",
+      "institution": "Air University, Islamabad",
+      "dates": { "start": "Sep 2013", "end": "Sep 2015" },
+      "notes": "Research: Novel ECCM algorithm for ground-based radars, deployed on MPDR systems"
+    }
+  ],
+
+  "certifications": {
+    "professional": [
+      {
+        "name": "Project Management Professional (PMP)",
+        "issuer": "Project Management Institute (PMI), USA",
+        "type": "professional"
+      },
+      {
+        "name": "Agile Certified Practitioner (PMI-ACP)",
+        "issuer": "Project Management Institute (PMI), USA",
+        "type": "professional"
+      },
+      {
+        "name": "Professional Engineer (PE)",
+        "issuer": "Pakistan Engineering Council",
+        "type": "professional"
+      }
+    ],
+    "coursera_specializations": [
+      {
+        "name": "Google Project Management Professional Certificate",
+        "issuer": "Google via Coursera",
+        "date": "Feb 2024",
+        "courses": 6,
+        "credential_id": "C643RR8UN3R8",
+        "type": "specialization"
+      },
+      {
+        "name": "Engineering Project Management Specialization",
+        "issuer": "Rice University via Coursera",
+        "date": "Apr 2024",
+        "courses": 3,
+        "pdus": 38,
+        "credential_id": "FGCS5F27SSTE",
+        "type": "specialization"
+      },
+      {
+        "name": "Introduction to Systems Engineering Specialization",
+        "issuer": "University of Colorado Boulder / Lockheed Martin via Coursera",
+        "date": "Mar 2024",
+        "courses": 3,
+        "credential_id": "D3LV5JU4GSUC",
+        "type": "specialization"
+      }
+    ],
+    "coursera_courses": [
+      {
+        "name": "Six Sigma Tools for Analyze",
+        "issuer": "Kennesaw State University via Coursera",
+        "date": "Mar 2024",
+        "credential_id": "78GX7NQB8KH8",
+        "type": "course"
+      },
+      {
+        "name": "Leading Teams: Building Effective Team Cultures",
+        "issuer": "University of Illinois Urbana-Champaign via Coursera",
+        "date": "Mar 2024",
+        "credential_id": "RSCXKKP7VC2M",
+        "type": "course"
+      },
+      {
+        "name": "Foundations: Data, Data, Everywhere",
+        "issuer": "Google via Coursera",
+        "date": "Mar 2024",
+        "credential_id": "KRFC4Y6FWN7Q",
+        "type": "course"
+      },
+      {
+        "name": "Programming for Everybody (Getting Started with Python)",
+        "issuer": "University of Michigan via Coursera",
+        "date": "Mar 2024",
+        "credential_id": "8QV33YQYC5L4",
+        "type": "course"
+      }
+    ]
+  },
+
+  "military_training": [
+    "Transfer of Source Code (Aircraft) — CADI, China (2018-2020)",
+    "Fighter Aircraft Type Rating Course",
+    "AWACS Aircraft Type Rating Course",
+    "Basic Staff Course",
+    "Senior Command & Staff Course"
+  ],
+
+  "awards": [
+    {
+      "title": "Chief of the Air Staff Commendation",
+      "reason": "Exceptional services during the avionics integration and retrofit program",
+      "significance": "Highest operational-level commendation in PAF"
+    },
+    {
+      "title": "Appreciation Letter from Chairman, Pakistan Aeronautical Complex",
+      "reason": "Contributions at PAC Kamra"
+    },
+    {
+      "title": "CADI China Commendation",
+      "reason": "Development & integration activities on JF-17 Lead Fighter Aircraft Program"
+    },
+    {
+      "title": "HEC National Capacity Building Program Selection",
+      "reason": "Selected for national program in Systems Engineering and allied disciplines"
+    }
+  ],
+
+  "employer": "Pakistan Air Force",
+  "employer_note": "All 10 roles are PAF postings/secondments/deputations. China was a deputation. NUTECH and College of Aero Eng are secondments. This is a single continuous military career with rotational assignments — the classic military transition pattern.",
+
+  "roles": [
+    {
+      "id": 1,
+      "title_canonical": "Integrated Systems & Design Specialist",
+      "organization": "Pakistan Aeronautical Complex (PAC), Kamra",
+      "employer": "Pakistan Air Force",
+      "posting_type": "primary",
+      "dates": { "start": "Oct 2008", "end": "Oct 2013" },
+      "duration_months": 60,
+      "platform": "JF-17 Thunder / Trainer Aircraft",
+      "description": [
+        "Designed, developed, and qualified mission-critical aircraft subsystems; successfully integrated into operational fleet",
+        "Led indigenous development of Backup Mission Computer for JF-17 — 135+ systems produced and deployed, eliminating import dependency, saving USD 1.27M for PAF",
+        "Led design, planning, and upgrade of Pakistan's first legacy trainer aircraft with glass cockpit (Dynon + Garmin avionics), enhancing pilot training to align with advanced fighter platforms",
+        "Managed glass cockpit modification program: commercial negotiations, production handover, certification, and export logistics to 11 countries (Saudi Arabia, Turkey, Qatar, etc.), generating $11.6M revenue",
+        "Supported aircraft system integration, modification, and retrofit activities, ensuring configuration baselines",
+        "Implemented Configuration Management Database (CMDB) to track aircraft configuration changes, improving traceability and audit readiness",
+        "Led Agile program delivery of aircraft systems using iterative planning, incremental delivery, and stakeholder engagement"
+      ],
+      "skills_demonstrated": [
+        "embedded systems design", "mission computer development", "avionics integration",
+        "glass cockpit modernization", "configuration management", "CMDB",
+        "production management", "export certification", "supplier management",
+        "system qualification", "V&V", "Agile delivery"
+      ],
+      "cv_appearances": {
+        "KSA-ME": "Maintenance & Systems Engineer (2008-13)",
+        "PM": "Systems Engineering & Integration Engineer (2008-13)",
+        "SE": "Integrated Systems & Design Specialist (2008-13)",
+        "BE": "Systems Engineering & Integration Engineer (2008-13)"
+      }
+    },
+    {
+      "id": 2,
+      "title_canonical": "MS Research — Signal & Image Processing",
+      "organization": "Air University, Islamabad",
+      "employer": "Pakistan Air Force (study leave)",
+      "posting_type": "education",
+      "dates": { "start": "Sep 2013", "end": "Sep 2015" },
+      "duration_months": 24,
+      "platform": "Ground-based MPDR Radar Systems",
+      "description": [
+        "Developed novel ECCM (Electronic Counter-Countermeasures) algorithm for ground-based legacy radars",
+        "Enhanced clutter rejection and resistance to noise jamming",
+        "Successfully deployed algorithm on in-service MPDR radar systems",
+        "Governed requirements management, verification planning, and deployment schedules"
+      ],
+      "skills_demonstrated": [
+        "radar signal processing", "ECCM algorithms", "DSP",
+        "requirements management", "research methodology", "MATLAB"
+      ]
+    },
+    {
+      "id": 3,
+      "title_canonical": "Maintenance Support Engineer, AEW&C",
+      "organization": "Pakistan Air Force — AEW&C Squadron",
+      "employer": "Pakistan Air Force",
+      "posting_type": "field_posting",
+      "dates": { "start": "Dec 2015", "end": "Nov 2017" },
+      "duration_months": 23,
+      "platform": "SAAB 2000 Erieye AEW&C (9 aircraft fleet)",
+      "description": [
+        "Delivered flight-line maintenance and sustainment support for SAAB 2000 Erieye AEW&C fleet — fault isolation, real-time troubleshooting, and corrective action planning",
+        "Led maintenance planning and execution, spares planning, and depot coordination",
+        "Performed reliability analysis (MTBF/MTTR) and trend analysis to optimize staggered and preventive maintenance plans, improving mission availability and aircraft uptime",
+        "Managed incorporation of Airworthiness Directives and Service Bulletins",
+        "Supervised multidisciplinary team of 80 engineers and technicians using AMOS maintenance planning system",
+        "Operational readiness management, maintenance scheduling/staggering for fleet availability",
+        "Supported sustainment and mission readiness of C2-enabled AEW&C platforms"
+      ],
+      "skills_demonstrated": [
+        "aircraft maintenance engineering", "AEW&C systems", "SAAB Erieye",
+        "AMOS MPS", "fleet sustainment", "MTBF/MTTR analysis",
+        "fault diagnosis", "maintenance planning", "team leadership (80 personnel)",
+        "airworthiness directives", "service bulletins", "operational readiness",
+        "spares management", "depot coordination", "reliability engineering"
+      ],
+      "cv_appearances": {
+        "KSA-ME": "Maintenance Supervisor, AEW&C Aircraft (2016-18)",
+        "PM": "Engineering Operations Manager (2016-18)",
+        "SE": "Maintenance Support Engineer (AEW&C) (2016-17)",
+        "BE": "Engineering Operations Manager (2016-18)"
+      },
+      "date_conflicts": {
+        "actual": "Dec 2015 - Nov 2017",
+        "KSA-ME_showed": "2016-18",
+        "PM_showed": "2016-18",
+        "SE_showed": "2016-17",
+        "BE_showed": "2016-18"
+      }
+    },
+    {
+      "id": 4,
+      "title_canonical": "Aerospace Systems Integration Lead",
+      "organization": "Chengdu Aircraft Design Institute (CADI), China",
+      "employer": "Pakistan Air Force (deputation)",
+      "posting_type": "deputation_international",
+      "dates": { "start": "Nov 2017", "end": "Dec 2019" },
+      "duration_months": 25,
+      "platform": "JF-17 Thunder (Block III development)",
+      "description": [
+        "Systems Engineering Lead within the JF-17 international joint development program (Pakistan-China), applying Agile and hybrid delivery with structured change and configuration management governance",
+        "Executed testing and integration of avionics subsystems on the advanced aircraft design/integration rig at CADI",
+        "Led requirements and stakeholder analysis to translate PAF operational needs into technical specifications — developed and managed Acceptance Test Requirements (ATRs) and verification/test specifications",
+        "Worked within multi-national defense environment, supporting integration, validation, and acceptance of critical aircraft systems",
+        "Supported early solution shaping and requirements definition, aligning system architectures and delivery timelines",
+        "Acted as technical and program interface between PAF customer representatives and CADI program leadership",
+        "Transfer of Source Code training — received access to aircraft source code for indigenous capability development"
+      ],
+      "skills_demonstrated": [
+        "systems integration", "avionics testing", "JF-17 Thunder",
+        "requirements engineering", "ATR development", "V&V",
+        "international collaboration", "cross-cultural leadership",
+        "configuration management", "Agile/hybrid delivery",
+        "stakeholder management", "source code transfer", "design rig testing"
+      ],
+      "cv_appearances": {
+        "KSA-ME": "Avionics Systems Integration Lead (2018-19)",
+        "PM": "Aerospace Systems Integration Lead (2018-20)",
+        "SE": "Lead Systems Integration Expert (2018-20)",
+        "BE": "Aerospace Systems Integration Lead (2018-20)"
+      },
+      "date_conflicts": {
+        "actual": "Nov 2017 - Dec 2019",
+        "cvs_showed": "2018-19 or 2018-20"
+      }
+    },
+    {
+      "id": 5,
+      "title_canonical": "Assistant Director, Program Management Office — JF-17",
+      "organization": "Pakistan Air Force — PMO, JF-17 Program",
+      "employer": "Pakistan Air Force",
+      "posting_type": "headquarters",
+      "dates": { "start": "Jan 2020", "end": "Apr 2021" },
+      "duration_months": 15,
+      "platform": "JF-17 Thunder",
+      "description": [
+        "Program coordination for JF-17 Thunder Block III development and production at PAC Kamra",
+        "Tracked milestones across avionics integration, weapons systems qualification, and airframe production",
+        "Coordinated between CADI (OEM designer), PAF manufacturing facilities, and field squadrons for weapons testing and operations feedback",
+        "Managed configuration control for indigenous systems (mission computer, EW suite, AESA radar integration)",
+        "Budget tracking, contractor deliverables, schedule risk management",
+        "Led risk mitigation plans, RAID logs, and EVM reporting"
+      ],
+      "skills_demonstrated": [
+        "program management", "PMO governance", "JF-17 program",
+        "milestone tracking", "EVM", "RAID management",
+        "configuration control", "stakeholder coordination",
+        "defense acquisition", "cross-cultural liaison (China)",
+        "budget management", "schedule risk management"
+      ],
+      "cv_appearances": "Collapsed into 'Deputy Director Avionics, PMO (2020-23)' across all CVs",
+      "hidden_from_cvs": false,
+      "collapsed_with": [6, 7]
+    },
+    {
+      "id": 6,
+      "title_canonical": "Senior Engineering Officer, Crotale Weapons System",
+      "organization": "Pakistan Air Force — Field Unit",
+      "employer": "Pakistan Air Force",
+      "posting_type": "field_posting",
+      "dates": { "start": "Apr 2021", "end": "Sep 2022" },
+      "duration_months": 17,
+      "platform": "Crotale SHORAD (Short-Range Air Defense) — French SAM system for airfield defense",
+      "description": [
+        "Senior Engineering Officer responsible for operational readiness of Crotale short-range air defense weapons system",
+        "Managed field deployments, maintenance operations, and weapons system availability for airfield defense",
+        "Led maintenance staggering and preventive maintenance planning for weapons system fleet",
+        "Resource management: personnel, equipment, spares, and ammunition logistics",
+        "Supervised multi-disciplinary maintenance teams in field conditions",
+        "Ensured operational readiness and mission availability of air defense assets",
+        "Real-time fault diagnosis and corrective action in operational/field environment"
+      ],
+      "skills_demonstrated": [
+        "field operations leadership", "weapons systems maintenance",
+        "air defense systems (SHORAD)", "Crotale SAM",
+        "operational readiness", "maintenance staggering",
+        "resource management", "personnel management",
+        "field deployments", "fault diagnosis (field)",
+        "logistics management", "mission availability"
+      ],
+      "cv_appearances": "HIDDEN — not present in any CV",
+      "hidden_from_cvs": true,
+      "hidden_reason": "User didn't know where to place a field weapons posting among anchor career points. Classic military transition problem — rotational postings that don't fit neat civilian career narratives."
+    },
+    {
+      "id": 7,
+      "title_canonical": "Deputy Director, Program Management Office — JF-17",
+      "organization": "Pakistan Air Force — PMO, JF-17 Program",
+      "employer": "Pakistan Air Force",
+      "posting_type": "headquarters",
+      "dates": { "start": "Sep 2022", "end": "Dec 2023" },
+      "duration_months": 15,
+      "platform": "JF-17 Thunder",
+      "description": [
+        "Senior program management role — elevated from Assistant Director after field rotation",
+        "Led configuration management and integration of aerosystems across fixed-wing and UAV platforms",
+        "Conducted FMECA, LORA, and RCM analyses that improved fleet serviceability to >90%",
+        "Oversight of JF-17 production lots, modification programs, and export variant coordination (Myanmar, Nigeria, etc.)",
+        "Led program reviews, managed engineering change proposals, resource allocation across multiple work packages",
+        "Coordinated flight test campaigns, weapons integration trials, certification activities",
+        "Managed program-level integration of aero subsystems, delivering integration and I&T to flight-test phases",
+        "Supported international collaboration and export projects, airworthiness certification, and acceptance test activities"
+      ],
+      "skills_demonstrated": [
+        "senior program leadership", "deputy director level",
+        "FMECA", "LORA", "RCM", "fleet serviceability",
+        "engineering change management", "production oversight",
+        "export program coordination", "defense procurement",
+        "technical risk assessment", "flight test coordination",
+        "weapons integration", "I&T management", "UAV platforms"
+      ],
+      "cv_appearances": "Collapsed into 'Deputy Director Avionics, PMO (2020-23)' across all CVs",
+      "collapsed_with": [5, 6]
+    },
+    {
+      "id": 8,
+      "title_canonical": "PMO Officer, AEW&C Program",
+      "organization": "Pakistan Air Force — PMO, AEW&C Program",
+      "employer": "Pakistan Air Force",
+      "posting_type": "headquarters",
+      "dates": { "start": "Dec 2023", "end": "Jul 2024" },
+      "duration_months": 7,
+      "platform": "SAAB 2000 Erieye AEW&C (9 aircraft fleet)",
+      "description": [
+        "Program management for SAAB 2000 Erieye AEW&C fleet sustainment",
+        "Managed maintenance contracts, spare parts logistics, and system upgrade programs",
+        "Coordinated with SAAB (Sweden) for technical support, modifications, and obsolescence management",
+        "Fleet availability tracking, mission readiness reporting",
+        "Managed performance of contracted AMOs and Heavy MROs"
+      ],
+      "skills_demonstrated": [
+        "fleet sustainment", "international vendor management (SAAB Sweden)",
+        "logistics coordination", "availability management",
+        "radar/C4ISR systems", "AEW&C program management",
+        "contract management", "obsolescence management"
+      ],
+      "cv_appearances": "Collapsed into 'Program Lead, Professional Education (2023-Present)' across all CVs",
+      "collapsed_with": [9, 10]
+    },
+    {
+      "id": 9,
+      "title_canonical": "Assistant Director, Quality Academics",
+      "organization": "NUTECH University",
+      "employer": "Pakistan Air Force (secondment)",
+      "posting_type": "secondment",
+      "dates": { "start": "Jul 2024", "end": "Jul 2025" },
+      "duration_months": 12,
+      "platform": null,
+      "description": [
+        "Headed university Quality Assurance department",
+        "Accreditation management — PEC (Pakistan Engineering Council) and HEC (Higher Education Commission) compliance, self-assessment reports, program reviews",
+        "OBE (Outcome-Based Education) implementation — CLOs/PLOs mapping, assessment rubric design, continuous quality improvement (CQI) cycles",
+        "Faculty development — teaching evaluations, training needs identification, pedagogical standards",
+        "Institutional performance metrics — KPIs, annual quality reports, stakeholder feedback systems",
+        "Exam/assessment oversight — moderation, grade distribution analysis, academic integrity",
+        "Taught Systems Engineering as faculty alongside QA duties"
+      ],
+      "skills_demonstrated": [
+        "academic quality assurance", "accreditation (PEC/HEC)",
+        "OBE frameworks (CLO/PLO)", "institutional assessment",
+        "curriculum design", "systems engineering instruction",
+        "faculty development", "KPI management",
+        "continuous quality improvement", "stakeholder management"
+      ],
+      "cv_appearances": "Collapsed into 'Program Lead, Professional Education (2023-Present)' across all CVs"
+    },
+    {
+      "id": 10,
+      "title_canonical": "Projects Officer, Research Coordinator & Faculty — Systems Engineering",
+      "organization": "College of Aeronautical Engineering, Risalpur",
+      "employer": "Pakistan Air Force (secondment)",
+      "posting_type": "secondment",
+      "dates": { "start": "Jul 2025", "end": "present" },
+      "duration_months": null,
+      "platform": null,
+      "description": [
+        "Research coordination — managing faculty and student research projects, funding proposals, publications tracking",
+        "Projects Officer — capstone/FYP supervision, industry-academia linkages, lab development",
+        "Teaching Systems Engineering (continuing from NUTECH)",
+        "PAF's own College of Aeronautical Engineering — feeds into GD Pilot/Engineering branches"
+      ],
+      "skills_demonstrated": [
+        "research coordination", "academic project management",
+        "FYP/capstone supervision", "industry-academia linkages",
+        "systems engineering instruction", "lab development",
+        "funding proposals", "publications management"
+      ],
+      "cv_appearances": "Collapsed into 'Program Lead, Professional Education (2023-Present)' across all CVs"
+    }
+  ],
+
+  "notable_projects": [
+    {
+      "name": "Indigenous Backup Mission Computer — JF-17 Thunder",
+      "role_ids": [1],
+      "description": "Designed and developed mission-critical backup mission computer. 135+ systems produced and deployed on in-service fighter aircraft, eliminating import dependency and saving USD 1.27M for PAF.",
+      "quantified_impact": "135+ systems deployed, $1.27M cost savings"
+    },
+    {
+      "name": "Glass Cockpit Modernization — Trainer Aircraft",
+      "role_ids": [1],
+      "description": "Led glass cockpit modernization program, integrating Dynon and Garmin avionics suites on trainer aircraft. Managed commercial negotiations, production handover, certification, and export logistics to 11 countries.",
+      "quantified_impact": "Exported to 11 countries (Saudi Arabia, Turkey, Qatar, etc.), $11.6M revenue"
+    },
+    {
+      "name": "Novel ECCM Algorithm for Ground Radars",
+      "role_ids": [2],
+      "description": "Developed novel ECCM algorithm for ground-based legacy radars during MS research, enhancing clutter rejection and resistance to noise jamming. Successfully deployed on in-service MPDR radar systems.",
+      "quantified_impact": "Deployed on operational MPDR radar systems"
+    },
+    {
+      "name": "Enterprise Configuration Management Database (CMDB)",
+      "role_ids": [1, 7],
+      "description": "Architected and deployed enterprise CMDB for advanced aircraft undergoing simultaneous development and deployment. Enabled disciplined change control, improved maintenance turnaround times.",
+      "quantified_impact": "Fleet serviceability sustained above 90%"
+    }
+  ],
+
+  "skills_master": {
+    "systems_engineering": [
+      "MBSE (Cameo Systems Modeler)", "requirements engineering (IBM DOORS)",
+      "system architecture", "interface control", "configuration management",
+      "V&V (verification & validation)", "system qualification",
+      "acceptance testing", "airworthiness certification",
+      "FMECA", "LORA", "RCM", "systems integration",
+      "system lifecycle management", "DO-178C", "DO-254", "MIL-STD"
+    ],
+    "program_management": [
+      "PMO governance", "EVM (Earned Value Management)", "RAID logs",
+      "risk management", "schedule management", "budget management",
+      "stakeholder management", "cross-functional team leadership",
+      "engineering change management", "milestone tracking",
+      "defense acquisition", "contract management", "SLA management",
+      "Agile delivery", "hybrid delivery", "Waterfall/traditional",
+      "scope management", "procurement management"
+    ],
+    "aviation_maintenance": [
+      "aircraft maintenance engineering", "flight-line maintenance",
+      "fault diagnosis & isolation", "MTBF/MTTR analysis",
+      "reliability engineering", "preventive maintenance planning",
+      "maintenance staggering", "spares planning", "depot coordination",
+      "airworthiness directives", "service bulletins",
+      "AMOS (maintenance planning system)", "Part-145 compliance",
+      "CAMO/AMO operations", "continuing airworthiness",
+      "C-check management", "work package design",
+      "OJT supervision", "log book management"
+    ],
+    "avionics_weapons": [
+      "avionics systems integration", "mission computer development",
+      "glass cockpit (Dynon, Garmin)", "embedded systems",
+      "weapons systems integration", "ECCM algorithms",
+      "radar signal processing", "EW (electronic warfare) suite",
+      "AESA radar integration", "air defense systems (Crotale SHORAD)",
+      "C2/C4ISR systems", "AEW&C systems (SAAB Erieye)",
+      "CNS/ATM systems"
+    ],
+    "leadership_strategy": [
+      "team leadership (up to 80 personnel)", "cross-cultural leadership",
+      "international defense collaboration", "export program management",
+      "government-to-government programs", "OEM relationship management",
+      "defense industry strategy", "capability-based planning",
+      "opportunity shaping", "capture management",
+      "technology roadmapping", "localization initiatives"
+    ],
+    "academic_qa": [
+      "academic quality assurance", "PEC/HEC accreditation",
+      "OBE frameworks (CLO/PLO mapping)", "curriculum design",
+      "faculty development", "institutional assessment",
+      "continuous quality improvement (CQI)", "research coordination",
+      "FYP/capstone supervision", "systems engineering instruction"
+    ],
+    "tools": [
+      "MS Project", "JIRA", "IBM Rational DOORS", "Cameo Systems Modeler",
+      "AMOS MPS", "Power BI", "MATLAB", "Python (basic)",
+      "CMDB systems", "EVM tools"
+    ],
+    "standards_compliance": [
+      "MIL-STD", "DO-178C (airborne software)", "DO-254 (airborne hardware)",
+      "GACA", "FAA", "ICAO", "Part-145",
+      "Six Sigma (Analyze phase)"
+    ]
+  },
+
+  "languages": [
+    { "language": "Urdu", "level": "native" },
+    { "language": "English", "level": "fluent" }
+  ],
+
+  "cv_framings": {
+    "_note": "The same career reframed 4 ways — this is the hardest parser/Cloud-building case. Each CV emphasizes different skills from the SAME roles.",
+    "maintenance": {
+      "file": "Resume KSA-ME_JAN25.pdf",
+      "target_role": "Senior Avionics & Maintenance Supervisor",
+      "emphasis": ["GACA/FAA/ICAO/Part-145", "CAMO/AMO", "AMOS", "fault diagnosis", "fleet sustainment", "C-check management", "airworthiness directives"],
+      "title_reframes": {
+        "role_1": "Maintenance & Systems Engineer",
+        "role_3": "Maintenance Supervisor, AEW&C Aircraft",
+        "role_4": "Avionics Systems Integration Lead",
+        "role_5_6_7": "Deputy Director, Fighter Fleet Management"
+      }
+    },
+    "program_management": {
+      "file": "Resume PM_Jan26.pdf",
+      "target_role": "Program & Project Management Lead",
+      "emphasis": ["PMO governance", "EVM", "RAID", "stakeholder management", "Agile/hybrid delivery", "export programs", "budget management"],
+      "title_reframes": {
+        "role_1": "Systems Engineering & Integration Engineer",
+        "role_3": "Engineering Operations Manager",
+        "role_4": "Aerospace Systems Integration Lead",
+        "role_5_6_7": "Deputy Director Avionics, PMO"
+      }
+    },
+    "systems_engineering": {
+      "file": "Resume SE_Jan26.pdf",
+      "target_role": "Aerosystems / Avionics Systems Engineer",
+      "emphasis": ["MBSE (Cameo)", "V&V", "DOORS", "FMECA/LORA/RCM", "system architecture", "DO-178C/DO-254", "design rig testing"],
+      "title_reframes": {
+        "role_1": "Integrated Systems & Design Specialist",
+        "role_3": "Maintenance Support Engineer (AEW&C)",
+        "role_4": "Lead Systems Integration Expert",
+        "role_5_6_7": "Dy Director, Program Management Office"
+      }
+    },
+    "strategy_bd": {
+      "file": "Resume of BE_Jan26.pdf",
+      "target_role": "Strategy & Defense Programs Manager",
+      "emphasis": ["capture management", "opportunity shaping", "international collaboration", "export platforms", "localization", "C2/mission systems", "executive decision support"],
+      "title_reframes": {
+        "role_1": "Systems Engineering & Integration Engineer",
+        "role_3": "Engineering Operations Manager",
+        "role_4": "Aerospace Systems Integration Lead",
+        "role_5_6_7": "Deputy Director Avionics, PMO"
+      }
+    }
+  },
+
+  "onboarding_lessons": {
+    "_note": "What this profile teaches us about onboarding edge cases that production users will hit",
+    "multi_cv_conflicts": "4 CVs had different dates and titles for same roles — conflict detection + user picker needed",
+    "role_collapsing": "10 actual roles collapsed to 4-5 across CVs — role consolidation logic needed",
+    "hidden_roles": "Crotale posting hidden from all CVs — timeline gap detection needed",
+    "military_rotations": "Same employer (PAF), 10 different postings — 'same employer, different posting' grouping needed",
+    "title_reframing": "Same role gets 4 different titles across CVs — fuzzy title matching needed",
+    "certificate_sources": "Certs came as separate PDF files — certificate PDF extractor needed",
+    "description_gaps": "Some roles had no bullets in some CVs — Socratic gap-filling needed"
+  }
+}

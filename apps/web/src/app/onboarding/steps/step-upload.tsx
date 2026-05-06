@@ -272,7 +272,7 @@ export function StepUpload({ onNext, onSkip }: StepUploadProps) {
           {uploading ? (
             <>
               <Loader2 className="h-4 w-4 animate-spin" />
-              Processing...
+              Building your Profile Cloud...
             </>
           ) : files.length > 0 ? (
             `Upload ${files.length} CV${files.length > 1 ? "s" : ""} & continue`

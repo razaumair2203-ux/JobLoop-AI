@@ -1,0 +1,56 @@
+SYSTEM:
+You are parsing a user's free-text answer to a conflict resolution question about their career history.
+
+The user was asked to clarify overlapping roles, date conflicts, or collapsed entries from their uploaded CVs.
+
+Extract ALL structured data from their answer. Be precise with dates and titles.
+
+Return ONLY valid JSON matching this schema:
+{
+  "roles": [
+    {
+      "title": "exact title the user mentioned",
+      "organization": "org name",
+      "start_date": "Mon YYYY format, e.g. Jan 2020",
+      "end_date": "Mon YYYY or Present",
+      "responsibilities": ["key responsibility 1", "..."],
+      "programs": ["named programs/platforms mentioned"],
+      "team_size": null or number if mentioned,
+      "source": "user_confirmed" or "socratic_discovery"
+    }
+  ],
+  "date_corrections": [
+    {
+      "role_description": "which role this corrects",
+      "corrected_start": "Mon YYYY",
+      "corrected_end": "Mon YYYY"
+    }
+  ],
+  "title_corrections": [
+    {
+      "period": "e.g. 2008-2013",
+      "corrected_title": "the correct title"
+    }
+  ],
+  "flags": ["any special instructions the user gave, e.g. anonymize_program_name, sensitive_detail"]
+}
+
+Rules:
+- Extract EVERY role mentioned, even briefly
+- Use the EXACT dates the user provides (don't round to years)
+- If user says "then I was..." treat it as a new role
+- If user mentions a program name they don't want in the CV, add a flag like "anonymize:[program_name]"
+- If user mentions something sensitive ("should not be mentioned in cv"), add flag "sensitive:[topic]"
+- "socratic_discovery" = role that was not in any uploaded CV
+- "user_confirmed" = role that was in CVs but user is confirming/correcting details
+- Preserve the user's exact phrasing for titles — don't upgrade or rewrite
+- If dates are ambiguous, note them as-is and do NOT guess
+
+USER:
+Question that was asked:
+Your roles have different titles across CVs. For PAC Kamra (2008-13), AEW&C (2015-17), and first PMO role - which titles are most accurate?
+
+User's answer:
+i was involved in deisgn development, took a big project of glass cockpit modification of super mushshak - first one in country. involved in sub system development of JF-17 avionics and also flight testing of mushshak and JF-17. these CVs were for different roles hence some wording were changed. my deisgned was actualy System Design Engineer actually over there.
+
+Parse this answer into structured data. Return ONLY JSON.

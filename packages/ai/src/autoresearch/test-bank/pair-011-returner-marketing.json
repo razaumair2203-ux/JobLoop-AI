@@ -4,23 +4,58 @@
   "persona": "returner",
   "synthetic": true,
   "framing": "Marketing manager returning after 3-year career break (childcare)",
-  "coverage": { "industry": "IT/Software", "seniority": "mid", "pattern": "returner", "region": "north_america" },
+  "coverage": {
+    "industry": "IT/Software",
+    "seniority": "mid",
+    "pattern": "returner",
+    "region": "north_america"
+  },
   "jd": {
     "title": "Marketing Manager — Growth",
     "company": "HubSpot",
     "location": "Boston, MA (Hybrid)",
     "experience_years": 5,
     "requirements": [
-      { "text": "5+ years of B2B marketing experience with focus on growth or demand generation", "type": "must_have" },
-      { "text": "Experience managing paid acquisition channels (Google Ads, LinkedIn Ads, Meta)", "type": "must_have" },
-      { "text": "Experience with marketing automation platforms (HubSpot, Marketo, or Pardot)", "type": "must_have" },
-      { "text": "Data-driven approach with experience in marketing analytics and attribution modeling", "type": "must_have" },
-      { "text": "Experience managing marketing budgets of $500K+", "type": "must_have" },
-      { "text": "Content marketing strategy experience (blog, webinars, whitepapers)", "type": "must_have" },
-      { "text": "Experience with SEO and organic growth strategies", "type": "nice_to_have" },
-      { "text": "MBA or degree in Marketing, Business, or related field", "type": "nice_to_have" },
-      { "text": "Experience in SaaS or technology industry", "type": "must_have" },
-      { "text": "Team management experience (3+ direct reports)", "type": "nice_to_have" }
+      {
+        "text": "5+ years of B2B marketing experience with focus on growth or demand generation",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience managing paid acquisition channels (Google Ads, LinkedIn Ads, Meta)",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience with marketing automation platforms (HubSpot, Marketo, or Pardot)",
+        "type": "must_have"
+      },
+      {
+        "text": "Data-driven approach with experience in marketing analytics and attribution modeling",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience managing marketing budgets of $500K+",
+        "type": "must_have"
+      },
+      {
+        "text": "Content marketing strategy experience (blog, webinars, whitepapers)",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience with SEO and organic growth strategies",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "MBA or degree in Marketing, Business, or related field",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "Experience in SaaS or technology industry",
+        "type": "must_have"
+      },
+      {
+        "text": "Team management experience (3+ direct reports)",
+        "type": "nice_to_have"
+      }
     ],
     "responsibilities": [
       "Develop and execute multi-channel growth marketing strategy to drive qualified leads",
@@ -72,10 +107,33 @@
       }
     ],
     "skills": {
-      "growth_marketing": ["demand generation", "paid acquisition (Google Ads, LinkedIn Ads, Meta)", "lead nurturing", "marketing automation (HubSpot)", "conversion optimization"],
-      "analytics": ["attribution modeling", "marketing analytics", "Google Analytics 4", "campaign performance analysis", "lead scoring"],
-      "content": ["content marketing strategy", "webinar programs", "landing page optimization", "email marketing", "SEO (basic)"],
-      "leadership": ["team management (4 reports)", "budget management ($800K)", "cross-functional collaboration with sales", "pipeline reporting"]
+      "growth_marketing": [
+        "demand generation",
+        "paid acquisition (Google Ads, LinkedIn Ads, Meta)",
+        "lead nurturing",
+        "marketing automation (HubSpot)",
+        "conversion optimization"
+      ],
+      "analytics": [
+        "attribution modeling",
+        "marketing analytics",
+        "Google Analytics 4",
+        "campaign performance analysis",
+        "lead scoring"
+      ],
+      "content": [
+        "content marketing strategy",
+        "webinar programs",
+        "landing page optimization",
+        "email marketing",
+        "SEO (basic)"
+      ],
+      "leadership": [
+        "team management (4 reports)",
+        "budget management ($800K)",
+        "cross-functional collaboration with sales",
+        "pipeline reporting"
+      ]
     },
     "certifications": [
       "HubSpot Marketing Software Certification (renewed 2024)",
@@ -99,14 +157,28 @@
     "team management 3+ direct reports"
   ],
   "cloud_skills": [
-    "demand generation", "paid acquisition", "Google Ads", "LinkedIn Ads", "Meta Ads",
-    "lead nurturing", "HubSpot", "marketing automation",
-    "attribution modeling", "marketing analytics", "Google Analytics 4",
-    "lead scoring", "conversion optimization",
-    "content marketing", "webinar programs", "email marketing",
-    "landing page optimization", "SEO",
-    "team management", "budget management",
-    "pipeline reporting", "sales collaboration"
+    "demand generation",
+    "paid acquisition",
+    "Google Ads",
+    "LinkedIn Ads",
+    "Meta Ads",
+    "lead nurturing",
+    "HubSpot",
+    "marketing automation",
+    "attribution modeling",
+    "marketing analytics",
+    "Google Analytics 4",
+    "lead scoring",
+    "conversion optimization",
+    "content marketing",
+    "webinar programs",
+    "email marketing",
+    "landing page optimization",
+    "SEO",
+    "team management",
+    "budget management",
+    "pipeline reporting",
+    "sales collaboration"
   ],
   "deliberate_flaws": [
     "3-year career break (2021-2024) — gap in employment",
@@ -115,5 +187,14 @@
     "Budget $800K vs required $500K+ (meets threshold but JD manages $1.2M)",
     "SEO skills are basic, not strategic",
     "Marketing landscape changed significantly during break (GA4, cookie deprecation, AI content)"
-  ]
+  ],
+  "provenance": {
+    "data_source": "synthetic",
+    "jd_basis": "modeled_from_real_jd_styles",
+    "jd_styles_doc": "REAL-JD-STYLES.md",
+    "expected_output_author": "claude",
+    "user_snap_checked": null,
+    "circularity_risk": "medium",
+    "notes": "Synthetic persona and JD. JD style modeled from real Greenhouse/Lever postings. Expected output and cloud_skills are AI-generated. 4/8 scorecard checks (jd_coverage, no_fabrication, metrics_preserved, no_fabricated_skills) evaluate AI vs AI reference. 4/8 checks (factual_preservation, word_count, ats_structure, action_verbs) are structurally valid regardless."
+  }
 }

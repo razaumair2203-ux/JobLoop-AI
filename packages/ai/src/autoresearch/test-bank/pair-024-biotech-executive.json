@@ -5,22 +5,54 @@
   "synthetic": true,
   "jd_style": "enterprise_saas",
   "framing": "VP Clinical Development at BMS seeking Chief Medical Officer role at Series B immuno-oncology biotech",
-  "coverage": { "industry": "Biotech/Pharma", "seniority": "executive", "pattern": "linear", "region": "north_america" },
+  "coverage": {
+    "industry": "Biotech/Pharma",
+    "seniority": "executive",
+    "pattern": "linear",
+    "region": "north_america"
+  },
   "jd": {
     "title": "Chief Medical Officer",
     "company": "Series B Immuno-Oncology Biotech (Cambridge, mRNA/cell therapy pipeline)",
     "location": "Cambridge, MA",
     "experience_years": 15,
     "requirements": [
-      { "text": "MD with board certification in oncology, hematology, or related subspecialty", "type": "must_have" },
-      { "text": "15+ years of clinical and drug development experience, with 5+ in biopharma leadership", "type": "must_have" },
-      { "text": "Experience as medical monitor or clinical development lead for Phase I-III oncology trials", "type": "must_have" },
-      { "text": "Track record of successful IND filings and interactions with FDA and EMA", "type": "must_have" },
-      { "text": "Experience with mRNA therapeutics, cell therapy, or immuno-oncology modalities", "type": "nice_to_have" },
-      { "text": "Publications in peer-reviewed oncology journals (first or senior author)", "type": "must_have" },
-      { "text": "Experience building and leading clinical development teams of 20+", "type": "must_have" },
-      { "text": "Board or SAB experience at biotech companies", "type": "nice_to_have" },
-      { "text": "Demonstrated ability to present clinical data to investors, partners, and regulatory agencies", "type": "must_have" }
+      {
+        "text": "MD with board certification in oncology, hematology, or related subspecialty",
+        "type": "must_have"
+      },
+      {
+        "text": "15+ years of clinical and drug development experience, with 5+ in biopharma leadership",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience as medical monitor or clinical development lead for Phase I-III oncology trials",
+        "type": "must_have"
+      },
+      {
+        "text": "Track record of successful IND filings and interactions with FDA and EMA",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience with mRNA therapeutics, cell therapy, or immuno-oncology modalities",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "Publications in peer-reviewed oncology journals (first or senior author)",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience building and leading clinical development teams of 20+",
+        "type": "must_have"
+      },
+      {
+        "text": "Board or SAB experience at biotech companies",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "Demonstrated ability to present clinical data to investors, partners, and regulatory agencies",
+        "type": "must_have"
+      }
     ],
     "responsibilities": [
       "Lead clinical development strategy for oncology pipeline (2 programs, Phase I-II)",
@@ -72,10 +104,34 @@
       }
     ],
     "skills": {
-      "clinical_development": ["Phase I-III trial design", "IND/BLA/sBLA filings", "medical monitoring", "regulatory strategy", "FDA interactions"],
-      "therapeutic": ["immuno-oncology", "checkpoint inhibitors", "CAR-T cell therapy", "NSCLC", "melanoma", "solid tumor oncology"],
-      "leadership": ["team management (22 reports)", "conference presentations (ASCO, AACR)", "investor communications", "IRB membership", "fellow mentorship"],
-      "scientific": ["peer-reviewed publications (35+)", "investigator-initiated trials", "translational research", "tumor immunology"]
+      "clinical_development": [
+        "Phase I-III trial design",
+        "IND/BLA/sBLA filings",
+        "medical monitoring",
+        "regulatory strategy",
+        "FDA interactions"
+      ],
+      "therapeutic": [
+        "immuno-oncology",
+        "checkpoint inhibitors",
+        "CAR-T cell therapy",
+        "NSCLC",
+        "melanoma",
+        "solid tumor oncology"
+      ],
+      "leadership": [
+        "team management (22 reports)",
+        "conference presentations (ASCO, AACR)",
+        "investor communications",
+        "IRB membership",
+        "fellow mentorship"
+      ],
+      "scientific": [
+        "peer-reviewed publications (35+)",
+        "investigator-initiated trials",
+        "translational research",
+        "tumor immunology"
+      ]
     },
     "certifications": [
       "Board Certified — Medical Oncology (ABIM)",
@@ -101,14 +157,27 @@
     "clinical data investors partners regulatory agencies"
   ],
   "cloud_skills": [
-    "Phase I-III trial design", "IND filings", "BLA submissions",
-    "medical monitoring", "regulatory strategy", "FDA interactions",
-    "immuno-oncology", "checkpoint inhibitors", "CAR-T",
-    "NSCLC", "melanoma", "solid tumor oncology",
-    "ASCO presentations", "AACR", "peer-reviewed publications",
-    "clinical development team leadership", "investor communications",
-    "IRB membership", "investigator-initiated trials",
-    "translational research", "tumor immunology",
+    "Phase I-III trial design",
+    "IND filings",
+    "BLA submissions",
+    "medical monitoring",
+    "regulatory strategy",
+    "FDA interactions",
+    "immuno-oncology",
+    "checkpoint inhibitors",
+    "CAR-T",
+    "NSCLC",
+    "melanoma",
+    "solid tumor oncology",
+    "ASCO presentations",
+    "AACR",
+    "peer-reviewed publications",
+    "clinical development team leadership",
+    "investor communications",
+    "IRB membership",
+    "investigator-initiated trials",
+    "translational research",
+    "tumor immunology",
     "Medical Oncology board certification"
   ],
   "deliberate_flaws": [
@@ -119,5 +188,14 @@
     "BMS is large pharma — culture fit risk for Series B startup (no startup experience, used to large teams and infrastructure)",
     "No experience with early-stage company fundraising or investor pitch dynamics",
     "Academic track ended in 2018 — publication pace may have slowed in industry role"
-  ]
+  ],
+  "provenance": {
+    "data_source": "synthetic",
+    "jd_basis": "modeled_from_real_jd_styles",
+    "jd_styles_doc": "REAL-JD-STYLES.md",
+    "expected_output_author": "claude",
+    "user_snap_checked": null,
+    "circularity_risk": "medium",
+    "notes": "Synthetic persona and JD. JD style modeled from real Greenhouse/Lever postings. Expected output and cloud_skills are AI-generated. 4/8 scorecard checks (jd_coverage, no_fabrication, metrics_preserved, no_fabricated_skills) evaluate AI vs AI reference. 4/8 checks (factual_preservation, word_count, ats_structure, action_verbs) are structurally valid regardless."
+  }
 }

@@ -4,23 +4,58 @@
   "persona": "career_changer",
   "synthetic": true,
   "framing": "Nurse transitioning to Health IT / Clinical Informatics",
-  "coverage": { "industry": "Healthcare", "seniority": "mid", "pattern": "career_changer", "region": "north_america" },
+  "coverage": {
+    "industry": "Healthcare",
+    "seniority": "mid",
+    "pattern": "career_changer",
+    "region": "north_america"
+  },
   "jd": {
     "title": "Clinical Informatics Analyst",
     "company": "Kaiser Permanente",
     "location": "Oakland, CA (Hybrid)",
     "experience_years": 3,
     "requirements": [
-      { "text": "3+ years of clinical experience in a healthcare setting", "type": "must_have" },
-      { "text": "Experience with electronic health record (EHR) systems, preferably Epic", "type": "must_have" },
-      { "text": "Understanding of clinical workflows and care coordination processes", "type": "must_have" },
-      { "text": "Ability to analyze clinical data and generate reports using Excel or EHR reporting tools", "type": "must_have" },
-      { "text": "Knowledge of healthcare data standards (HL7, FHIR, ICD-10)", "type": "nice_to_have" },
-      { "text": "BS in Nursing, Health Informatics, or related field", "type": "must_have" },
-      { "text": "Informatics certification (CPHIMS, Epic certification) preferred", "type": "nice_to_have" },
-      { "text": "Experience leading clinical process improvement initiatives", "type": "nice_to_have" },
-      { "text": "Strong communication skills to bridge clinical and technical teams", "type": "must_have" },
-      { "text": "Experience with quality metrics and regulatory reporting (CMS, Joint Commission)", "type": "nice_to_have" }
+      {
+        "text": "3+ years of clinical experience in a healthcare setting",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience with electronic health record (EHR) systems, preferably Epic",
+        "type": "must_have"
+      },
+      {
+        "text": "Understanding of clinical workflows and care coordination processes",
+        "type": "must_have"
+      },
+      {
+        "text": "Ability to analyze clinical data and generate reports using Excel or EHR reporting tools",
+        "type": "must_have"
+      },
+      {
+        "text": "Knowledge of healthcare data standards (HL7, FHIR, ICD-10)",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "BS in Nursing, Health Informatics, or related field",
+        "type": "must_have"
+      },
+      {
+        "text": "Informatics certification (CPHIMS, Epic certification) preferred",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "Experience leading clinical process improvement initiatives",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "Strong communication skills to bridge clinical and technical teams",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience with quality metrics and regulatory reporting (CMS, Joint Commission)",
+        "type": "nice_to_have"
+      }
     ],
     "responsibilities": [
       "Analyze clinical workflows and identify opportunities for EHR optimization",
@@ -60,10 +95,32 @@
       }
     ],
     "skills": {
-      "clinical": ["patient care", "care coordination", "clinical assessment", "medication administration", "quality improvement"],
-      "informatics": ["Epic EHR (super-user)", "Cerner EHR", "clinical workflow analysis", "EHR optimization", "end-user training"],
-      "technical": ["Excel (pivot tables, VLOOKUP)", "data analysis", "EHR report building", "clinical dashboards"],
-      "communication": ["clinical-IT liaison", "staff training", "process documentation", "stakeholder communication"]
+      "clinical": [
+        "patient care",
+        "care coordination",
+        "clinical assessment",
+        "medication administration",
+        "quality improvement"
+      ],
+      "informatics": [
+        "Epic EHR (super-user)",
+        "Cerner EHR",
+        "clinical workflow analysis",
+        "EHR optimization",
+        "end-user training"
+      ],
+      "technical": [
+        "Excel (pivot tables, VLOOKUP)",
+        "data analysis",
+        "EHR report building",
+        "clinical dashboards"
+      ],
+      "communication": [
+        "clinical-IT liaison",
+        "staff training",
+        "process documentation",
+        "stakeholder communication"
+      ]
     },
     "certifications": [
       "Registered Nurse (RN) — California Board of Registered Nursing",
@@ -88,13 +145,22 @@
     "quality metrics regulatory reporting CMS"
   ],
   "cloud_skills": [
-    "patient care", "care coordination", "clinical assessment",
-    "Epic EHR", "Cerner EHR", "clinical workflow analysis",
-    "quality improvement", "medication administration",
-    "staff training", "process improvement",
-    "Excel data analysis", "report building",
-    "clinical-IT liaison", "process documentation",
-    "EHR optimization", "super-user support",
+    "patient care",
+    "care coordination",
+    "clinical assessment",
+    "Epic EHR",
+    "Cerner EHR",
+    "clinical workflow analysis",
+    "quality improvement",
+    "medication administration",
+    "staff training",
+    "process improvement",
+    "Excel data analysis",
+    "report building",
+    "clinical-IT liaison",
+    "process documentation",
+    "EHR optimization",
+    "super-user support",
     "clinical dashboards"
   ],
   "deliberate_flaws": [
@@ -102,5 +168,14 @@
     "No CPHIMS certification",
     "Health Informatics certificate still in progress",
     "Career changer — informatics is target field, not current field"
-  ]
+  ],
+  "provenance": {
+    "data_source": "synthetic",
+    "jd_basis": "modeled_from_real_jd_styles",
+    "jd_styles_doc": "REAL-JD-STYLES.md",
+    "expected_output_author": "claude",
+    "user_snap_checked": null,
+    "circularity_risk": "medium",
+    "notes": "Synthetic persona and JD. JD style modeled from real Greenhouse/Lever postings. Expected output and cloud_skills are AI-generated. 4/8 scorecard checks (jd_coverage, no_fabrication, metrics_preserved, no_fabricated_skills) evaluate AI vs AI reference. 4/8 checks (factual_preservation, word_count, ats_structure, action_verbs) are structurally valid regardless."
+  }
 }

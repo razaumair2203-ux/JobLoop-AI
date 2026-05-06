@@ -5,7 +5,12 @@
   "synthetic": true,
   "jd_style": "enterprise_saas",
   "framing": "Operations manager at Maersk Dubai applying to DP World logistics technology role",
-  "coverage": { "industry": "Logistics/Shipping", "seniority": "mid", "pattern": "linear", "region": "middle_east" },
+  "coverage": {
+    "industry": "Logistics/Shipping",
+    "seniority": "mid",
+    "pattern": "linear",
+    "region": "middle_east"
+  },
   "jd": {
     "title": "Manager — Digital Solutions & Trade Automation",
     "company": "DP World",
@@ -13,14 +18,38 @@
     "experience_years": 7,
     "style_note": "Enterprise SaaS: structured, specific platform knowledge, trade/logistics domain requirements",
     "requirements": [
-      { "text": "7+ years of experience in logistics, supply chain management, or trade facilitation", "type": "must_have" },
-      { "text": "Experience with TOS (Terminal Operating Systems): Navis N4, TBA OPUS, or Kalmar TLS", "type": "must_have" },
-      { "text": "Knowledge of trade documentation systems (bill of lading, letters of credit, customs declarations)", "type": "must_have" },
-      { "text": "Experience with container tracking platforms and EDI/API integrations (INTTRA, CargoSmart, or TradeLens successor platforms)", "type": "must_have" },
-      { "text": "Familiarity with UAE customs systems (Dubai Trade Portal, Mirsal 2) and Free Zone regulations", "type": "must_have" },
-      { "text": "Project management skills with PMP or PRINCE2 certification", "type": "nice_to_have" },
-      { "text": "Experience with blockchain-based trade finance or smart B/L platforms (e.g., CargoX, Bolero)", "type": "nice_to_have" },
-      { "text": "Arabic language skills", "type": "nice_to_have" }
+      {
+        "text": "7+ years of experience in logistics, supply chain management, or trade facilitation",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience with TOS (Terminal Operating Systems): Navis N4, TBA OPUS, or Kalmar TLS",
+        "type": "must_have"
+      },
+      {
+        "text": "Knowledge of trade documentation systems (bill of lading, letters of credit, customs declarations)",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience with container tracking platforms and EDI/API integrations (INTTRA, CargoSmart, or TradeLens successor platforms)",
+        "type": "must_have"
+      },
+      {
+        "text": "Familiarity with UAE customs systems (Dubai Trade Portal, Mirsal 2) and Free Zone regulations",
+        "type": "must_have"
+      },
+      {
+        "text": "Project management skills with PMP or PRINCE2 certification",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "Experience with blockchain-based trade finance or smart B/L platforms (e.g., CargoX, Bolero)",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "Arabic language skills",
+        "type": "nice_to_have"
+      }
     ],
     "responsibilities": [
       "Lead implementation of DP World's digital trade platform across 5 Middle East terminals",
@@ -60,10 +89,35 @@
       }
     ],
     "skills": {
-      "terminal_ops": ["container terminal operations", "vessel planning", "yard management", "gate operations", "equipment management", "TEU throughput optimisation"],
-      "systems": ["Navis N4 TOS (advanced user)", "EDI integrations", "Mirsal 2 (Dubai Customs)", "Dubai Trade Portal", "INTTRA (basic)"],
-      "trade": ["bill of lading processing", "customs declarations", "delivery orders", "Free Zone regulations", "import/export documentation"],
-      "management": ["operations team management (25 staff)", "shift management", "process improvement", "truck turnaround optimisation", "gate automation"]
+      "terminal_ops": [
+        "container terminal operations",
+        "vessel planning",
+        "yard management",
+        "gate operations",
+        "equipment management",
+        "TEU throughput optimisation"
+      ],
+      "systems": [
+        "Navis N4 TOS (advanced user)",
+        "EDI integrations",
+        "Mirsal 2 (Dubai Customs)",
+        "Dubai Trade Portal",
+        "INTTRA (basic)"
+      ],
+      "trade": [
+        "bill of lading processing",
+        "customs declarations",
+        "delivery orders",
+        "Free Zone regulations",
+        "import/export documentation"
+      ],
+      "management": [
+        "operations team management (25 staff)",
+        "shift management",
+        "process improvement",
+        "truck turnaround optimisation",
+        "gate automation"
+      ]
     },
     "certifications": [
       "APICS CSCP — Certified Supply Chain Professional (2023)",
@@ -84,16 +138,25 @@
     "Arabic language"
   ],
   "cloud_skills": [
-    "container terminal operations", "vessel planning",
-    "yard management", "gate operations",
-    "Navis N4 TOS", "EDI integrations",
-    "Mirsal 2", "Dubai Trade Portal",
-    "INTTRA", "bill of lading",
-    "customs declarations", "Free Zone regulations",
+    "container terminal operations",
+    "vessel planning",
+    "yard management",
+    "gate operations",
+    "Navis N4 TOS",
+    "EDI integrations",
+    "Mirsal 2",
+    "Dubai Trade Portal",
+    "INTTRA",
+    "bill of lading",
+    "customs declarations",
+    "Free Zone regulations",
     "import/export documentation",
-    "truck turnaround optimisation", "gate automation",
-    "TEU throughput", "process improvement",
-    "APICS CSCP", "team management"
+    "truck turnaround optimisation",
+    "gate automation",
+    "TEU throughput",
+    "process improvement",
+    "APICS CSCP",
+    "team management"
   ],
   "deliberate_flaws": [
     "No TBA OPUS or Kalmar TLS experience — only Navis N4",
@@ -106,5 +169,14 @@
     "No Arabic language skills (Emirati university but international background)",
     "Operations background — transition to 'Digital Solutions' requires technology management skills",
     "TradeLens shut down in 2022 — JD references 'successor platforms' which are evolving"
-  ]
+  ],
+  "provenance": {
+    "data_source": "synthetic",
+    "jd_basis": "modeled_from_real_jd_styles",
+    "jd_styles_doc": "REAL-JD-STYLES.md",
+    "expected_output_author": "claude",
+    "user_snap_checked": null,
+    "circularity_risk": "medium",
+    "notes": "Synthetic persona and JD. JD style modeled from real Greenhouse/Lever postings. Expected output and cloud_skills are AI-generated. 4/8 scorecard checks (jd_coverage, no_fabrication, metrics_preserved, no_fabricated_skills) evaluate AI vs AI reference. 4/8 checks (factual_preservation, word_count, ats_structure, action_verbs) are structurally valid regardless."
+  }
 }

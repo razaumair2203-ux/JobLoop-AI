@@ -46,7 +46,7 @@ for each iteration:
 Initial design proposed separate loops for CV generation, JD parsing, and Socratic prompts. Research showed this was wrong:
 - **DSPy** (Stanford): single optimization loop per task, shared infrastructure
 - **TextGrad** (Stanford): one optimizer, different loss functions per task
-- **CAPO** (arXiv:2504.16005): single competitive framework
+- **CAPO** (arXiv:2504.16005): single cost-aware optimization framework
 
 **Decision**: One loop engine (`loop-runner.ts`), parameterized by target prompt. Two targets: `cv-generation` and `jd-parser`.
 
@@ -69,7 +69,7 @@ The naive approach (structural checks 60% + BERTScore 40%) has no research backi
 - Based on: Karpathy/Saraev binary pass/fail; ExtractBench per-field checks
 
 **Gate 2 (RANK)**: BERTScore F1 breaks ties among passing variants
-- Based on: BERTScore (Zhang et al., ICLR 2020; ACL 2025 evaluation): 59% human alignment vs BLEU 47%, ROUGE-L 50%
+- Based on: BERTScore (Zhang et al., ICLR 2020); 59% human alignment figure from ACL 2025 LongLaMP study (not the original paper). BLEU 47%, ROUGE-L 50% from same source.
 - Used only as tiebreaker, not primary decision
 
 **Dual Logging**: Both gated verdict AND legacy 60/40 composite are recorded in every iteration. After 50+ runs, we can empirically determine which method selects better prompts. This avoids committing to an unverified scoring method.
@@ -148,7 +148,7 @@ Six safeguards prevent the loop from optimizing garbage. Each addresses a specif
 
 ### 6.1 Semantic Drift Detector
 **Risk**: Accumulated mutations transform the prompt beyond recognition
-**Source**: ZEDD (arXiv:2601.12359, NeurIPS 2025 workshop) — cosine similarity for drift detection
+**Source**: ZEDD (arXiv:2601.12359) — adapted cosine similarity concept for drift detection (original paper is about prompt injection, not optimization)
 **Method**: N-gram Jaccard similarity against v0 prompt
 **Thresholds**:
 - >= 0.60: OK (normal mutation accumulation)
@@ -184,7 +184,7 @@ Six safeguards prevent the loop from optimizing garbage. Each addresses a specif
 
 ### 6.5 Overfitting Detector
 **Risk**: Prompt memorizes training pairs
-**Source**: p1 (arXiv:2604.08801, April 2026) — GEPA memorizes training set at K=1. HackerNoon analysis: 5-20% train-test gap is normal.
+**Source**: p1 (arXiv:2604.08801, April 2026) — at K=1, p1 itself overfits (not GEPA). HackerNoon analysis: 5-20% train-test gap is normal.
 **Method**: Compare train pass rate vs held-out pass rate.
 **Thresholds**:
 - < 15% gap: normal
@@ -204,9 +204,9 @@ See Section 5.2 above. Applied to held-out pass rate for uncertainty quantificat
 
 | Source | Finding |
 |---|---|
-| DSPy (Stanford, 2024) | "20 examples useful, 200 goes a long way" |
+| DSPy (Stanford, 2024) | Docs recommend 30 examples minimum, 300 for robust optimization |
 | EssenceBench (2025) | 50 items preserves 95% of full-benchmark ranking |
-| TextGrad (Stanford, 2024) | 50 train examples per BBH task |
+| TextGrad (Stanford, 2024) | ~36 train examples per BBH task |
 | Bowyer et al. (ICML 2025) | Small-N evaluations need Bayesian methods, not CLT |
 
 **Decision**: 50 pairs with 20/15/15 train/validation/held-out split.
@@ -273,25 +273,25 @@ No published CV generation benchmark exists (verified April 2026):
 
 ### Evaluation Methods
 3. Zhang, T. et al. (2020). "BERTScore: Evaluating Text Generation with BERT." ICLR 2020. (59% human alignment)
-4. ExtractBench (2025). Per-field typed evaluation for structured extraction tasks.
+4. ExtractBench (February 2026, not 2025). Per-field typed evaluation for structured extraction tasks.
 
 ### Statistical Methods
 5. "Prompt Optimization Is a Coin Flip" (arXiv:2604.14585, April 2026). 72 runs on Claude Haiku, 49% improved = random.
 6. Bowyer, Aitchison & Ivanova (arXiv:2503.01747, ICML 2025 Spotlight). "Don't Use CLT in LLM Evals With Fewer Than a Few Hundred Datapoints."
 
 ### Safeguards
-7. ZEDD (arXiv:2601.12359, NeurIPS 2025 workshop). GMM-fitted thresholds on cosine similarity for semantic drift.
+7. ZEDD (arXiv:2601.12359). Paper concerns prompt injection detection, not prompt optimization. We adapted cosine similarity concept for drift detection. Venue listed as "NeurIPS 2025 workshop" was unverifiable — citing arXiv only.
 8. "When Better Prompts Hurt" (arXiv:2601.22025, January 2026). MVES framework: -10pp pass rate, -13.3pp compliance from "improved" prompts.
-9. p1 (arXiv:2604.08801, April 2026). GEPA memorizes training set. Prompt optimizer overfitting evidence.
-10. CAPO (arXiv:2504.16005). Competitive prompt optimization; acknowledges test set contamination.
+9. p1 (arXiv:2604.08801, April 2026). At K=1, p1 itself overfits (not GEPA as originally stated). Prompt optimizer overfitting evidence.
+10. CAPO (arXiv:2504.16005). Cost-Aware Prompt Optimization (not "Competitive" as originally stated); acknowledges test set contamination.
 
 ### Mutation Design
 11. Fernando, C. et al. (2023). "PromptBreeder: Self-Referential Self-Improvement Via Prompt Evolution." DeepMind.
 
 ### Test Bank Sizing
-12. DSPy (Khattab et al., Stanford 2024). "20 examples useful, 200 goes a long way."
+12. DSPy (Khattab et al., Stanford 2024). Actual documentation recommends 30/300 (not "20/200" as originally paraphrased).
 13. EssenceBench (2025). 50 items preserves 95% of full-benchmark ranking.
-14. TextGrad (Yuksekgonul et al., Stanford 2024). 50 train examples per BBH task.
+14. TextGrad (Yuksekgonul et al., Stanford 2024). ~36 examples per BBH task (not 50 as originally stated).
 
 ### Prompt Optimization Landscape
 15. Evidently AI. 40/40/20 split for training/validation/test in prompt optimization.

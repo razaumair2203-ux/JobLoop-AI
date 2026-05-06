@@ -1,105 +1,93 @@
 import { createClient } from "@/lib/supabase/server";
+import { ensureUserExists } from "@/lib/ensure-user";
+import { getAuthUser } from "@/lib/auth";
+import { loadCloudFromDB } from "@/lib/cloud-from-db";
+import { analyzeWithCloud, generateJDQuestions, checkJDSimilarity } from "@jobloop/ai";
+import type { CloudAnalysisResult } from "@jobloop/ai";
 
-// Dev-mode mock analysis for a Senior Frontend Engineer role
-function getMockAnalysis(company: string, role: string) {
+/**
+ * Map CloudAnalysisResult to the frontend response shape.
+ * Keeps the same structure the UI already consumes.
+ */
+function mapToResponse(
+  result: CloudAnalysisResult,
+  company: string,
+  role: string,
+) {
+  const { match_report, insights } = result;
+
+  // Map requirement matches to frontend shape
+  const requirements = match_report.requirements.map((req, i) => {
+    const strength =
+      req.verdict === "strong_evidence" || req.verdict === "evidence_exists"
+        ? ("strong" as const)
+        : req.verdict === "claimed_only" || req.verdict === "adjacent"
+          ? ("related" as const)
+          : ("gap" as const);
+
+    return {
+      id: `r${i + 1}`,
+      name: req.requirement_text,
+      strength,
+      evidence: req.evidence_summary || null,
+      citations: [] as number[], // populated when we have source indexing
+      bridge: req.repositioning_hint,
+    };
+  });
+
+  // Count evidence sources
+  const roleCount = match_report.requirements.reduce(
+    (sum, r) => sum + r.evidence_detail.filter((e) => e.type === "role").length,
+    0,
+  );
+  const certCount = match_report.requirements.reduce(
+    (sum, r) =>
+      sum + r.evidence_detail.filter((e) => e.type === "certification").length,
+    0,
+  );
+
+  const sources = [
+    { name: "Work Experience", icon: "briefcase", count: roleCount },
+    {
+      name: "Skills",
+      icon: "code",
+      count: match_report.technologies.length,
+    },
+    { name: "Certifications", icon: "award", count: certCount },
+  ].filter((s) => s.count > 0);
+
+  // Generate Socratic question for the biggest gap
+  const gapReq = requirements.find((r) => r.strength === "gap");
+  const socratic = gapReq
+    ? {
+        question: `Can you tell me about any experience you have related to "${gapReq.name}"? Even indirect exposure, side projects, or coursework counts.`,
+        skill_targeted: gapReq.name,
+      }
+    : null;
+
   return {
-    company: company || "TechCorp",
-    role: role || "Senior Frontend Engineer",
-    position: {
-      label: "Competitive" as const,
-      basis: "5/8 requirements have strong evidence, 2 related, 1 gap",
-    },
-    sources: [
-      { name: "Work Experience", icon: "briefcase", count: 12 },
-      { name: "Skills", icon: "code", count: 8 },
-      { name: "Projects", icon: "folder", count: 4 },
-      { name: "Education", icon: "graduation-cap", count: 2 },
-    ],
-    requirements: [
-      {
-        id: "r1",
-        name: "React & Next.js expertise",
-        strength: "strong" as const,
-        evidence: "4 years building production React apps at Scale Corp, migrated legacy Angular app to Next.js 14 serving 2M users/month.",
-        citations: [1, 2],
-        bridge: null,
-      },
-      {
-        id: "r2",
-        name: "TypeScript proficiency",
-        strength: "strong" as const,
-        evidence: "All production projects since 2021 in strict TypeScript. Contributed to DefinitelyTyped. Set up monorepo-wide tsconfig.",
-        citations: [1, 3],
-        bridge: null,
-      },
-      {
-        id: "r3",
-        name: "Performance optimization",
-        strength: "strong" as const,
-        evidence: "Reduced LCP by 40% through code splitting and lazy loading. Implemented virtual scrolling for 100K+ row tables.",
-        citations: [2],
-        bridge: null,
-      },
-      {
-        id: "r4",
-        name: "Design system experience",
-        strength: "strong" as const,
-        evidence: "Built component library with 60+ components used by 3 product teams. Storybook documentation, accessibility audits.",
-        citations: [1, 4],
-        bridge: null,
-      },
-      {
-        id: "r5",
-        name: "CI/CD & testing",
-        strength: "strong" as const,
-        evidence: "Set up GitHub Actions pipelines, 85% test coverage with Vitest + Playwright. Reduced deploy time from 20min to 4min.",
-        citations: [2, 3],
-        bridge: null,
-      },
-      {
-        id: "r6",
-        name: "GraphQL API experience",
-        strength: "related" as const,
-        evidence: "Extensive REST API experience and some Apollo Client usage. Built a GraphQL gateway prototype during hackathon.",
-        citations: [3],
-        bridge: null,
-      },
-      {
-        id: "r7",
-        name: "Team leadership (5+ engineers)",
-        strength: "related" as const,
-        evidence: "Led 3-person frontend pod for 18 months. Mentored 2 junior developers. No direct experience leading 5+.",
-        citations: [1],
-        bridge: null,
-      },
-      {
-        id: "r8",
-        name: "Kubernetes & container orchestration",
-        strength: "gap" as const,
-        evidence: null,
-        citations: [],
-        bridge: "Your Docker experience and CI/CD work show infrastructure awareness. Consider framing your containerization skills and mention willingness to expand into K8s orchestration.",
-      },
-    ],
-    strategy:
-      "Lead with your React/Next.js depth and performance wins — these directly match their core needs. For the K8s gap, position your Docker + CI/CD experience as a strong foundation. The team leadership gap is minor — your pod lead experience and mentoring demonstrate leadership readiness at scale.",
-    socratic: {
-      question:
-        "You mentioned building a component library used by 3 teams. Can you describe a specific time you had to resolve conflicting requirements between those teams?",
-      skill_targeted: "Cross-team Collaboration",
-    },
+    company: company || "Unknown Company",
+    role: role || "Unknown Role",
+    position: match_report.position,
+    sources,
+    requirements,
+    strategy: insights.advisor_take,
+    lead_with: insights.lead_with,
+    biggest_risk: insights.biggest_risk,
+    insights: insights.insights,
+    socratic,
   };
 }
 
 export async function POST(request: Request) {
   const supabase = await createClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
+  const { user } = await getAuthUser(supabase);
 
   if (!user) {
     return Response.json({ error: "Unauthorized" }, { status: 401 });
   }
+
+  await ensureUserExists(supabase, user);
 
   const body = await request.json();
   const { text, url, company, role } = body;
@@ -107,7 +95,7 @@ export async function POST(request: Request) {
   if (!text || text.length < 50) {
     return Response.json(
       { error: "Job description must be at least 50 characters" },
-      { status: 400 }
+      { status: 400 },
     );
   }
 
@@ -130,18 +118,122 @@ export async function POST(request: Request) {
     console.error("Failed to create application:", appError);
     return Response.json(
       { error: "Failed to save application" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 
-  // Dev mode: return mock analysis
-  const analysis = getMockAnalysis(company, role);
+  // Load user's Cloud from DB (with trajectory reconstruction for domain maturity)
+  const cloud = await loadCloudFromDB(supabase, user.id);
 
-  // Update application with analysis
+  if (!cloud) {
+    await supabase
+      .from("applications")
+      .update({ stage: "error" })
+      .eq("id", app.id);
+    return Response.json(
+      {
+        error:
+          "No profile cloud found. Upload a CV first to build your profile.",
+      },
+      { status: 400 },
+    );
+  }
+
+  // JD similarity check — log for cost awareness (still run analysis to honor user intent)
+  const { data: previousApps } = await supabase
+    .from("applications")
+    .select("id, jd_parsed")
+    .eq("user_id", user.id)
+    .not("jd_parsed", "is", null)
+    .neq("id", app.id)
+    .order("created_at", { ascending: false })
+    .limit(20);
+
+  if (previousApps && previousApps.length > 0) {
+    const newJDWords = text
+      .toLowerCase()
+      .split(/[\s,;.()]+/)
+      .filter((w: string) => w.length > 3);
+
+    const prevJDs = previousApps
+      .filter((a) => a.jd_parsed?.requirements)
+      .map((a) => ({
+        id: a.id as string,
+        keywords: [
+          ...(a.jd_parsed.requirements?.hard ?? []).flatMap(
+            (r: { keywords: string[] }) => r.keywords,
+          ),
+          ...(a.jd_parsed.requirements?.preferred ?? []).flatMap(
+            (r: { keywords: string[] }) => r.keywords,
+          ),
+        ] as string[],
+      }));
+
+    if (prevJDs.length > 0) {
+      const similarity = checkJDSimilarity(newJDWords, prevJDs);
+      if (similarity.is_similar) {
+        console.log(
+          `JD similarity: ${Math.round(similarity.overlap_ratio * 100)}% overlap with app ${similarity.similar_application_id}`,
+        );
+      }
+    }
+  }
+
+  // Snapshot Cloud state before analysis (for Outcome Intelligence correlation)
+  const { data: snapshot } = await supabase
+    .from("cloud_snapshots")
+    .insert({
+      user_id: user.id,
+      snapshot: { nodes: cloud.nodes, trajectory: cloud.trajectory },
+    })
+    .select("id")
+    .single();
+
+  // Run the cloud pipeline — model auto-selected from Cloud maturity + JD complexity
+  let result: CloudAnalysisResult;
+  try {
+    result = await analyzeWithCloud(cloud, text);
+  } catch (err) {
+    console.error("Analysis pipeline failed:", err);
+    await supabase
+      .from("applications")
+      .update({ stage: "error" })
+      .eq("id", app.id);
+    return Response.json(
+      {
+        error: `Analysis failed: ${err instanceof Error ? err.message : "unknown error"}`,
+      },
+      { status: 500 },
+    );
+  }
+
+  const analysis = mapToResponse(result, company, role);
+
+  // Generate Socratic questions for JD gaps
+  const gapSkills = analysis.requirements
+    .filter((r) => r.strength === "gap" || r.strength === "related")
+    .map((r) => r.name);
+
+  let socraticQuestions: Array<{
+    question: string;
+    skill_targeted: string;
+  }> = [];
+  if (gapSkills.length > 0) {
+    try {
+      const jdQuestions = await generateJDQuestions(cloud, result.parsed_jd);
+      socraticQuestions = jdQuestions.map(q => ({ question: q.question, skill_targeted: q.skill_name }));
+    } catch {
+      // Non-critical — analysis still useful without questions
+    }
+  }
+
+  // Update application with analysis + Cloud snapshot + parsed JD (for similarity checks)
   await supabase
     .from("applications")
     .update({
       stage: "ready_to_apply",
+      jd_parsed: result.parsed_jd,
+      cloud_snapshot_id: snapshot?.id ?? null,
       position: analysis.position,
       match_analysis: {
         gaps: analysis.requirements
@@ -154,9 +246,9 @@ export async function POST(request: Request) {
           .filter((r) => r.bridge)
           .map((r) => r.bridge),
         recommendation_level:
-          (analysis.position.label as string) === "Strong position"
+          analysis.position.label === "Strong position"
             ? "strong"
-            : (analysis.position.label as string) === "Competitive"
+            : analysis.position.label === "Competitive"
               ? "competitive"
               : "stretch",
       },
@@ -166,5 +258,6 @@ export async function POST(request: Request) {
   return Response.json({
     application_id: app.id,
     ...analysis,
+    socratic_questions: socraticQuestions,
   });
 }

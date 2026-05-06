@@ -20,16 +20,46 @@
     "location": "Abu Dhabi, UAE",
     "experience_years": 15,
     "requirements": [
-      { "text": "15+ years in defense or aerospace industry with progressive leadership", "type": "must_have" },
-      { "text": "Experience with international defense cooperation programs", "type": "must_have" },
-      { "text": "Track record in defense export strategy and market development", "type": "must_have" },
-      { "text": "Knowledge of fighter aircraft or advanced weapons programs", "type": "must_have" },
-      { "text": "Experience building partnerships between defense OEMs and national air forces", "type": "must_have" },
-      { "text": "Understanding of defense procurement cycles and offset programs", "type": "nice_to_have" },
-      { "text": "MS or higher in Engineering, MBA, or related field", "type": "nice_to_have" },
-      { "text": "PMI-ACP, PMP, or equivalent certification", "type": "nice_to_have" },
-      { "text": "Experience with technology transfer and indigenous capability development", "type": "must_have" },
-      { "text": "Executive-level stakeholder management across government and industry", "type": "must_have" }
+      {
+        "text": "15+ years in defense or aerospace industry with progressive leadership",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience with international defense cooperation programs",
+        "type": "must_have"
+      },
+      {
+        "text": "Track record in defense export strategy and market development",
+        "type": "must_have"
+      },
+      {
+        "text": "Knowledge of fighter aircraft or advanced weapons programs",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience building partnerships between defense OEMs and national air forces",
+        "type": "must_have"
+      },
+      {
+        "text": "Understanding of defense procurement cycles and offset programs",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "MS or higher in Engineering, MBA, or related field",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "PMI-ACP, PMP, or equivalent certification",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "Experience with technology transfer and indigenous capability development",
+        "type": "must_have"
+      },
+      {
+        "text": "Executive-level stakeholder management across government and industry",
+        "type": "must_have"
+      }
     ],
     "responsibilities": [
       "Develop defense program strategy for fighter aircraft and advanced systems portfolio",
@@ -99,10 +129,31 @@
       }
     ],
     "skills": {
-      "strategy": ["defense program strategy", "export market development", "technology transfer", "indigenous capability building", "make-vs-buy analysis"],
-      "partnerships": ["international OEM partnerships (CADI, SAAB)", "government-to-government coordination", "cross-cultural collaboration (China, Sweden)", "executive stakeholder management"],
-      "programs": ["fighter aircraft programs (JF-17 Thunder)", "AEW&C programs (SAAB Erieye)", "defense acquisition lifecycle", "engineering change management"],
-      "leadership": ["senior PMO leadership", "cross-functional team direction", "program reviews", "strategic planning"]
+      "strategy": [
+        "defense program strategy",
+        "export market development",
+        "technology transfer",
+        "indigenous capability building",
+        "make-vs-buy analysis"
+      ],
+      "partnerships": [
+        "international OEM partnerships (CADI, SAAB)",
+        "government-to-government coordination",
+        "cross-cultural collaboration (China, Sweden)",
+        "executive stakeholder management"
+      ],
+      "programs": [
+        "fighter aircraft programs (JF-17 Thunder)",
+        "AEW&C programs (SAAB Erieye)",
+        "defense acquisition lifecycle",
+        "engineering change management"
+      ],
+      "leadership": [
+        "senior PMO leadership",
+        "cross-functional team direction",
+        "program reviews",
+        "strategic planning"
+      ]
     },
     "certifications": [
       "PMI-ACP — Project Management Institute",
@@ -127,17 +178,56 @@
     "executive stakeholder management government industry"
   ],
   "cloud_skills": [
-    "avionics design", "systems integration", "V&V testing", "configuration management",
-    "aircraft maintenance engineering", "operational readiness", "fault diagnosis",
-    "maintenance planning", "team leadership", "radar systems", "C4ISR", "SAAB 2000 Erieye",
-    "weapons integration", "flight testing", "mission computer", "EW systems", "JF-17 Thunder",
-    "program management", "defense acquisition", "budget management", "risk management",
-    "milestone tracking", "engineering change management", "production oversight",
-    "export coordination", "stakeholder coordination", "CADI coordination",
-    "field operations", "weapons systems", "SAM systems", "Crotale",
-    "fleet sustainment", "international vendor management", "logistics coordination",
-    "academic quality assurance", "systems engineering instruction",
-    "cross-cultural collaboration", "PMI-ACP", "Agile/Scrum",
-    "glass cockpit", "aircraft modification", "technical documentation"
-  ]
+    "avionics design",
+    "systems integration",
+    "V&V testing",
+    "configuration management",
+    "aircraft maintenance engineering",
+    "operational readiness",
+    "fault diagnosis",
+    "maintenance planning",
+    "team leadership",
+    "radar systems",
+    "C4ISR",
+    "SAAB 2000 Erieye",
+    "weapons integration",
+    "flight testing",
+    "mission computer",
+    "EW systems",
+    "JF-17 Thunder",
+    "program management",
+    "defense acquisition",
+    "budget management",
+    "risk management",
+    "milestone tracking",
+    "engineering change management",
+    "production oversight",
+    "export coordination",
+    "stakeholder coordination",
+    "CADI coordination",
+    "field operations",
+    "weapons systems",
+    "SAM systems",
+    "Crotale",
+    "fleet sustainment",
+    "international vendor management",
+    "logistics coordination",
+    "academic quality assurance",
+    "systems engineering instruction",
+    "cross-cultural collaboration",
+    "PMI-ACP",
+    "Agile/Scrum",
+    "glass cockpit",
+    "aircraft modification",
+    "technical documentation"
+  ],
+  "provenance": {
+    "data_source": "real_cv",
+    "ground_truth": "Alpha_CVs/ground-truth-profile.json",
+    "jd_basis": "modeled_from_real_postings",
+    "user_snap_checked": "2026-05-03",
+    "expected_output_author": "claude_with_user_review",
+    "circularity_risk": "low",
+    "notes": "Real user career data. JDs modeled from real defense/aerospace postings. User snap-checked during creation session. Expected outputs derived from verified ground truth profile."
+  }
 }

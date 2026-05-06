@@ -1,0 +1,17 @@
+{
+  "roles": [],
+  "date_corrections": [
+    {
+      "role_description": "AEW&C maintenance engineer role",
+      "corrected_start": "Dec 2015",
+      "corrected_end": "Nov 2017"
+    },
+    {
+      "role_description": "China/CADI role",
+      "corrected_start": "Nov 2017",
+      "corrected_end": "Dec 2019"
+    }
+  ],
+  "title_corrections": [],
+  "flags": []
+}

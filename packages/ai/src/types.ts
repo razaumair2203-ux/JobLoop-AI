@@ -60,8 +60,10 @@ export interface ParsedCV {
     institution: string;
     degree: string;
     field: string;
-    year: string;
+    start_year: number | null;
+    end_year: number | null;
     grade?: string;
+    research_topic?: string | null;
     highlights?: string[];
   }>;
   certifications: string[];
