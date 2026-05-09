@@ -1,0 +1,54 @@
+{
+  "id": "pair-R046",
+  "split": "train",
+  "persona": "early_career",
+  "source_resume": {
+    "id": "ra-07553",
+    "dataset": "resume_atlas",
+    "industry": "construction",
+    "seniority": "entry"
+  },
+  "jd": {
+    "title": "Construction Superintendent - Civil Solar Farm construction",
+    "company": "Samuel Knight Energy",
+    "location": "",
+    "experience_years": null,
+    "requirements": [
+      {
+        "text": "experience in heavy civil construction",
+        "type": "must_have"
+      },
+      {
+        "text": "Proficiency in construction drawings and topcon GPS systems",
+        "type": "must_have"
+      }
+    ],
+    "responsibilities": [],
+    "full_description": "Samuel Knight Energy is the recruiting partner of choice for EPC companies across the United States, specialising in partnerships with construction companies building utility-scale solar farms. \nSite Superintendent: Travelling role between New York, Maine, Vermont and Pennsylvania. \nCompany Description: Samuel Knight Energy are currently seeking a Site Superintendent on behalf of our client, a fast-growing heavy civil construction company specializing in the construction of solar farms. \nThey handle all civil aspects of solar farm projects, including clearing trees, grading, de-stumping, enabling works and more. Everything until the metal and electrical construction & installation phases. Our clients projects are primarily based in New York and Maine, with additional work in Vermont and potentially Pennsylvania.\nOur client values strong processes and procedures, but recognises that there may be some hiccups as they continue to grow. The role offers a company truck, per-diem, an expense card, and competitive salary and benefits.\nJob Description: \nWe are seeking an experienced Site Superintendent to join our client's team. In this role, you will be responsible for overseeing one to two projects within a specific state, potentially moving between jobs as necessary. You will play a critical role in ensuring the successful delivery of projects by managing site operations and leading a team of workers.\nKey Responsibilities:Manage on-site operations, including coordinating staff and subcontractors, to ensure projects are completed on time and within budget.Oversee quality control and ensure compliance with safety regulations and company policies.Review and interpret construction drawings and plans to ensure work is executed according to specifications.Utilize topcon GPS systems and GPS bulldozers in large grading operations (5-8+ 50,000 cubic yards).Communicate regularly with the Director of Construction and provide updates on project progress.Prepare quality control reports and other documentation as required.Maintain effective communication with project stakeholders and resolve any issues that arise.Travel to project sites as required, primarily within New York, Maine, and Vermont.\nQualifications:SWPPP certification, OSHA 10, and OSHA 30 certifications are preferred.Strong experience in heavy civil construction, especially in grading operations.Proficiency in construction drawings and topcon GPS systems.Strong leadership and communication skills.Ability to travel as required.Strong problem-solving and decision-making abilities.\nCompensation and Benefits:Competitive salary, not to exceed $120,000 per year.Per diem of $140 per day for jobs located more than 2 hours away from your primary location. Lower rate for jobs more than 1hr 15 from home. Expense card for gas and tools, to be used instead of purchase orders for easy work.401k match up to 3%.Health insurance provided through an ICHRA (Individual Coverage Health Reimbursement Arrangement) with banded contribution.\nApplication Process: \nWe are looking to begin the interview process 10 days from now. Please submit your resume and a cover letter detailing your experience and qualifications. We will contact you if you are selected for an interview. Thank you for your interest in joining our client's team!"
+  },
+  "expected_output": {
+    "_status": "NEEDS_HUMAN_REVIEW",
+    "_raw_text_preview": "jessica claire resumesampleexamplecom 555 4321000 100 montgomery st 10th floor professional summary 25 years working experience dichotomous assortment jobs driven across country twice traveled far east asia extremely independent person accrued many long lasting close friendships published volume literary work performed egg theater albany sold many pieces artwork also charismatic independent filmmaker dedicated work ethic punctual pride many learned skill sets abilities character traits pursuit e",
+    "summary": "",
+    "experience": [],
+    "skills": {},
+    "certifications": [],
+    "education": []
+  },
+  "jd_requirements": [
+    "experience in heavy civil construction",
+    "Proficiency in construction drawings and topcon GPS systems"
+  ],
+  "cloud_skills": [],
+  "provenance": {
+    "data_source": "real_dataset_raw_text",
+    "jd_source": "kaggle_linkedin",
+    "resume_dataset": "resume_atlas",
+    "jd_id": "linkedin-3899542531",
+    "resume_id": "ra-07553",
+    "generated_at": "2026-05-08T08:47:53.870Z",
+    "expected_output_author": "NEEDS_HUMAN_REVIEW",
+    "circularity_risk": "low",
+    "notes": "Resume from real dataset (raw text). JD from real job posting. Expected output EMPTY — needs LLM parsing + human review."
+  }
+}

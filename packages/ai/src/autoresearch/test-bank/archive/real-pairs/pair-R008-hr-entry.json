@@ -1,0 +1,42 @@
+{
+  "id": "pair-R008",
+  "split": "train",
+  "persona": "early_career",
+  "source_resume": {
+    "id": "ra-10493",
+    "dataset": "resume_atlas",
+    "industry": "hr",
+    "seniority": "entry"
+  },
+  "jd": {
+    "title": "Human Resources Coordinator",
+    "company": "Choice Logistics",
+    "location": "",
+    "experience_years": null,
+    "requirements": [],
+    "responsibilities": [],
+    "full_description": "POSITION OVERVIEW: The HR Coordinator works with the Human Resources team to provide support with recruiting, employee programs, global engagement, and administrative duties. \nJOB RESPONSIBILITIESDevelop and maintain an effective process of screening and interviewing entry level candidates.Schedule interviews for prospective candidatesAssist HR team with administrative onboarding procedures. Including offer documentation, scheduling meetings, and other paperwork needed.Lead and organize company events including office meetings, team building events and other departmental get togethers.Assist with drafting and updating employee policies and employee handbook to include processing updates and distribution of changes as needed.Provide support for various employee recognition programs.Assist HR team with special projects and various employee programs.Manage expense reports for the management team.Manage general office facilities to ensure the space is conducive to effective work for everyday employees and visitors when meetings occur. Act as liaison with building management as necessary.Perform administrative support in the office such as handling mail, packages, scanning, and filing.Assist with travel arrangements for the CEO including booking flights, hotels, and transportation.Provide administrative support for the CEO, including managing calendars, coordinating meetings, and handling confidential information.Provide ad hoc administrative support.\nSKILLS/QUALIFICATIONSBachelor’s degree in human resources, Business Administration, or related field3+ years related HR experience.1-2 years of high-volume recruitment experience Highly organized with the ability to prioritize multiple functions and tasks. Prioritize multiple functions and tasks and manage work time efficiently.Learn quickly in a fast paced, ever-changing environment.Team player who can work across multiple functions and disciplines. Ability to work independently and as part of a team.Excellent verbal and written communication skills.Ability to be in office Monday-Thursday"
+  },
+  "expected_output": {
+    "_status": "NEEDS_HUMAN_REVIEW",
+    "_raw_text_preview": "jessica claire 100 montgomery st 10th floor 555 4321000 resumesampleexamplecom summary employeefocused senior human resources sergeant detailed knowledge organizational human resources policies services practices essential facilitator key operational details relevant company onboarding exit procedures assisting employees smooth transitions either end diplomatic mitigator conflicts employees organizational leadership utilizing deescalation drawing ample resources achieve solutions meticulous data",
+    "summary": "",
+    "experience": [],
+    "skills": {},
+    "certifications": [],
+    "education": []
+  },
+  "jd_requirements": [],
+  "cloud_skills": [],
+  "provenance": {
+    "data_source": "real_dataset_raw_text",
+    "jd_source": "kaggle_linkedin",
+    "resume_dataset": "resume_atlas",
+    "jd_id": "linkedin-3904975275",
+    "resume_id": "ra-10493",
+    "generated_at": "2026-05-08T08:47:53.846Z",
+    "expected_output_author": "NEEDS_HUMAN_REVIEW",
+    "circularity_risk": "low",
+    "notes": "Resume from real dataset (raw text). JD from real job posting. Expected output EMPTY — needs LLM parsing + human review."
+  }
+}

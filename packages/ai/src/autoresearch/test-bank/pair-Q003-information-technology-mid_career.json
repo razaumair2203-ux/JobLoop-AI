@@ -1,0 +1,195 @@
+{
+  "id": "pair-Q003",
+  "split": "validation",
+  "persona": "mid_career",
+  "source_resume": {
+    "id": "snb-18067556",
+    "dataset": "snehaanbhawal_livecareer",
+    "industry": "information_technology",
+    "seniority": "mid"
+  },
+  "jd": {
+    "title": "Information Technology Officer",
+    "company": "Memphis-Shelby County Schools",
+    "location": "",
+    "experience_years": null,
+    "requirements": [
+      {
+        "text": "Prepared to navigate and thrive in a complex and ambiguous environment",
+        "type": "must_have"
+      },
+      {
+        "text": "Present innovative ideas to address systemwide issues",
+        "type": "must_have"
+      },
+      {
+        "text": "Execute sustainable plans toward transformation",
+        "type": "must_have"
+      },
+      {
+        "text": "Demonstrate the capacity to synthesize information and adjust short and long-term goals",
+        "type": "must_have"
+      },
+      {
+        "text": "Consistently find a window when doors close to deliver measurable results for kids and families",
+        "type": "must_have"
+      },
+      {
+        "text": "Capacity to mobilize and empower an outstanding team",
+        "type": "must_have"
+      },
+      {
+        "text": "Make people-centered data-informed decisions",
+        "type": "must_have"
+      },
+      {
+        "text": "Operate with a relentless hyper-focus on removing stubborn barriers that destroy the hopes and dreams of too many of our students",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience in a comparable position where you identified a problem and implemented a solution through completion to enhance the efficiency of a large organization",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience managing the District’s technology and related platforms to ensure secure transactions and effective digital experiences for students and staff",
+        "type": "must_have"
+      },
+      {
+        "text": "Ability to record video responses to prompts",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "Ability to submit an updated resume and current writing sample",
+        "type": "nice_to_have"
+      }
+    ],
+    "responsibilities": [
+      "Provide leadership and support for all digital and technology systems",
+      "Support student services, teaching and learning, business operations, voice and data communications, and local and wide area networking within Memphis-Shelby County Schools",
+      "Navigate and thrive in a complex and ambiguous environment",
+      "Present innovative ideas to address systemwide issues",
+      "Execute sustainable plans toward transformation",
+      "Deliver measurable results for kids and families",
+      "Mobilize and empower an outstanding team",
+      "Make people-centered data-informed decisions"
+    ],
+    "full_description": "OVERVIEW\nMemphis-Shelby County Schools is seeking dynamic educational champions ready to position our district as a national exemplar of education transformation. We need leaders with a fierce commitment to actualizing a bold vision that yields ambitious outcomes for more than 110,000 students and families across the Memphis-Shelby County area. The reality is that we can do better for kids, and we will with the right leaders in place. The most successful candidates believe that more is possible for Memphis and are:\nCourageous Thinkers & Doers: Prepared to navigate and thrive in a complex and ambiguous environment on day one, present innovative ideas to address systemwide issues, and execute sustainable plans toward transformation.\nSolutions-Oriented: See the possibilities, demonstrate the capacity to synthesize information and adjust short and long-term goals, and consistently find a window when doors close to deliver measurable results for kids and families.\nHigh-Performing Gamechangers: Leader of leaders with the capacity to mobilize and empower an outstanding team, make people-centered data-informed decisions, and operate with a relentless hyper-focus on removing stubborn barriers that destroy the hopes and dreams of too many of our students.\nSUMMARY DESCRIPTION Under the direction of the Assistant Superintendent of Business Operations, the Information Technology Officer provides leadership and support for all digital and technology systems in student services, teaching and learning, business operations, voice and data communications, and local and wide area networking within Memphis-Shelby County Schools.\nINFORMATION FOR CANDIDATESThank you for your interest in serving as Talent Management Officer to contribute to enhancing the LEGACY of Memphis-Shelby County Schools. Please review the information provided to ensure full consideration.\nDeadline for Submission - All materials are due on or by 5pm Friday, April 26, 2024.Interviews - Interviews will begin immediately and occur until the position is filled.\nApplication RequirementsSubmit an updated resume, current writing sample, and video responses to legacyleader@scsk12.org with the title of the position in the subject.\nRecord -In a quiet setting, candidates should record a response to the prompts below within the specified timeframe.\nPrompt (60 seconds)- Please share your experience in a comparable position where you identified a problem and implemented a solution through completion to enhance the efficiency of a large organization.\nPrompt (90 seconds)- What experience do you have that demonstrates your capacity to effectively manage the District’s technology and related platforms to ensure secure transactions and effective digital experiences for students and staff? Please be succinct and specific.\nSave all files using the naming convention: [Last Name. First Name. Title of Position Seeking. Resume (or WritingSample)].\nSubmissions exceeding the time listed or without the correct naming convention will not be reviewed."
+  },
+  "expected_output": {
+    "summary": "Highly experienced IT professional with expertise in master data management, supply chain management, and information technology governance. Proven track record of improving data quality, reducing IT spend, and increasing efficiency through automation and process improvement. Skilled in leadership, strategy, and team management.",
+    "experience": [
+      {
+        "company": "Company Name",
+        "title": "Master Data Manager",
+        "start_date": "01/2019",
+        "end_date": "Current",
+        "bullets": [
+          "Aligning 100+ supply chain-related master data attributes to ensure data stewardship, quality, and integrity",
+          "Establishing a Data Sync SOP for GS1 standardization",
+          "Automating data quality reporting for executive staff to ensure 99.8% compliance",
+          "Overseeing executive strategy in institutional master data to commit to trusted, accurate, structured and meaningful master data"
+        ]
+      },
+      {
+        "company": "Company Name",
+        "title": "Director of Information Technology",
+        "start_date": "01/2017",
+        "end_date": "01/2019",
+        "bullets": [
+          "Overseeing all implementations of WMS, ERP, QMS, CMMS, and infrastructure as corporate Project Manager",
+          "Developing a range of documents and performing project selection tasks such as workflow process maps and system integration documents",
+          "Deploying and managing BI products to leverage company-wide data for decision-makers",
+          "Launching a high-performance data warehouse and virtual machines to store, integrate, analyze, and report on enterprise data"
+        ]
+      },
+      {
+        "company": "NatJan Solutions",
+        "title": "Information Technology and Analytics Manager",
+        "start_date": "01/2014",
+        "end_date": "01/2017",
+        "bullets": [
+          "Implementing a process within an external ERP portal to monetize 1000's of vendors and generate lean revenue",
+          "Creating ad-hoc and scheduled BI reports to visualize critical client metrics and reports",
+          "Spearheading national RFP bids of multi-million-dollar procurement deals with several Fortune 500 retail, medical, and education companies",
+          "Designing ad-hoc SQL views, stored procedures, and reports to address company-wide data analysis and modeling"
+        ]
+      }
+    ],
+    "skills": {
+      "Technical": [
+        "SSRS",
+        "PowerBI",
+        "SQL",
+        "VBA programming",
+        "ERP",
+        "WMS",
+        "QMS",
+        "CMMS"
+      ],
+      "Management": [
+        "Project Management",
+        "Team Management",
+        "Budget Control",
+        "Vendor Coordination"
+      ],
+      "Domain": [
+        "Supply Chain Management",
+        "Data Governance",
+        "Information Technology Governance"
+      ],
+      "Soft Skills": [
+        "Leadership",
+        "Strategy",
+        "Communication",
+        "Problem-solving"
+      ]
+    },
+    "certifications": [],
+    "education": []
+  },
+  "jd_requirements": [
+    "Prepared to navigate and thrive in a complex and ambiguous environment",
+    "Present innovative ideas to address systemwide issues",
+    "Execute sustainable plans toward transformation",
+    "Demonstrate the capacity to synthesize information and adjust short and long-term goals",
+    "Consistently find a window when doors close to deliver measurable results for kids and families",
+    "Capacity to mobilize and empower an outstanding team",
+    "Make people-centered data-informed decisions",
+    "Operate with a relentless hyper-focus on removing stubborn barriers that destroy the hopes and dreams of too many of our students",
+    "Experience in a comparable position where you identified a problem and implemented a solution through completion to enhance the efficiency of a large organization",
+    "Experience managing the District’s technology and related platforms to ensure secure transactions and effective digital experiences for students and staff"
+  ],
+  "cloud_skills": [
+    "SSRS",
+    "PowerBI",
+    "SQL",
+    "VBA programming",
+    "ERP",
+    "WMS",
+    "QMS",
+    "CMMS",
+    "Project Management",
+    "Team Management",
+    "Budget Control",
+    "Vendor Coordination",
+    "Supply Chain Management",
+    "Data Governance",
+    "Information Technology Governance",
+    "Leadership",
+    "Strategy",
+    "Communication",
+    "Problem-solving"
+  ],
+  "provenance": {
+    "cv_source": "snehaanbhawal/resume-dataset (LiveCareer, CC0)",
+    "jd_source": "R-series (Kaggle LinkedIn, real postings)",
+    "cv_dataset_id": 18067556,
+    "jd_pair_id": "pair-R001",
+    "expected_output_author": "NIM/meta/llama-3.3-70b-instruct",
+    "generated_at": "2026-05-08T15:22:38.218Z",
+    "circularity_risk": "medium-low",
+    "circularity_notes": "Real CV text + real JD text. Expected output is LLM-parsed extraction from real text (not invention). 4/8 scorecard checks structurally sound regardless.",
+    "needs_human_review": true
+  },
+  "raw_cv_text": "         MASTER DATA MANAGER           Experience      Master Data Manager  ,     01/2019   to   Current     Company Name   –   City  ,   State      Aligning 100+ supply chain-related master data attributes to ensure the following guidelines are met:.  Data Stewardship - Appropriate business units and ownership established to validate appropriate values, definitions and\n impact documentation for all master data fields.  Data Quality - Applicable controls are set in conjecture with IT to ensure that a proactive approach is taken to new\n master data.  Additionally, RPA process planned for Phase 2 to automate structured data entry and maintenance.  Data Integrity/Data Warehousing - Structure business logic to ensure BOMs and other data relationships are both\n accessible and built as an asset for the business.  Additionally, a Data Sync SOP was established for GS1 standardization.  Reporting - Automate data quality reporting for executive staff to ensure 99.8% compliance is adhered to throughout\n the organization.  Additionally, provide ad-hoc tools for the business to leverage clean data cubes.  Data Governance Committee - Oversee executive strategy in institutional master data to commit to trusted, accurate, structured\n and meaningful master data.  Engaging applicable stakeholders to promote data governance, data architect, data stewardship and\n data security the data governance committee oversees the framework for complex supply chain manufacturing operations.         Director of Information Technology  ,     01/2017   to   01/2019     Company Name   –   City  ,   State      Supply Chain Management - Warehouse, 3PL, Food Services, Served as the corporate Project Manager, overseeing all implementations (WMS, ERP, QMS, CMMS, infrastructure).  Responsibilities included progress reporting, budget control, task delegation, plan creation, vendor coordination, etc.  Developed a range of documents and performed project selection tasks such as workflow process maps, system integration\n documents, infrastructure topology, organizational policies, GDPR, UAT, gap analysis, best fit models and user training manuals.  Deployed and managed BI products to leverage company-wide data for decisionmakers, proactive analysis, and real-time resource\n planning.  Utilizing SSRS/PowerBI to analyze sets of data across multiple databases, automate value-add reporting to 3PL clients,\n visualize KPIs thru the organization, create workflows for document automation and create alerts for various business units.  Launched a high-performance data warehouses and virtual machines to store, integrate, analyze, and report on enterprise data.  An\n array of SSAS cubes were deployed to allow for end-user ad-hoc tabular reports.  Additionally, a complex network of interfaces\n between 6+ enterprise systems, 4 SQL databases, 1 Oracle database, and other enterprise systems (file server, exchange, EDI, etc)\n was implemented to support the ETL process.  Executing infrastructure refresh for a 200,000 sqft industrial/production facility.  The deployment includes an array of 15 switches,\n 1,000 cable runs, racking, 100 AP, 300 cameras, NVRs, controllers, and creating floor plans and topology documents.  Controlled a $2MM IT budget, short-term and long-term strategies, and CapEx justification across the business.  Including selecting\n and negotiating with vendors, promoting operational process improvement, instituting best practices, and developing IT roadmaps\n and strategic plans.  On track to reduce IT spend by $250K by renegotiating vendor contracts, consolidating cloud services,\n implementing automation tools and upgrading legacy systems.  Responsible for a team of IT professionals and vendors assigned to all corporate and local office systems, including ERP, WMS,\n logistics systems, data centers, servers and storage, PCs, mobile devices, BDR, telecom, and help desk.  Reduced IT service desk's\n response time and resolution time while increasing knowledge base and reducing reoccurring tickets by over 50%.  Information Technology Governance & Steering Committee (ITGSC) - Reporting directly to the board of directors, the\n ITGSC provided strategic direction in aligning IT projects to shareholder interest and long-term targets.  While overseeing the\n committee the cross-functional team guided 12 business units across operations, sales, and manufacturing.  Additionally, the ITGSC\n aided in risk management, business continuity, and organizational SOPs.  NatJan Solutions (Facility Management - Retail, Medical, Grocery Sectors.         Information Technology and Analytics Manager  ,     01/2014   to   01/2017      Implemented process within external ERP portal to monetize 1000's of vendors to generate lean revenue based on financial and\n operational data analysis.  This program is estimated to bring in $325,000 in its first year, an 8% increase in margin.  Created ad-hoc and scheduled BI (PowerBI/SSRS) reports to visualize critical client metrics and reports, internal performance\n KPIs, operational resource planning, asset and revenue forecasting, P/L summaries, expense budgets, etc.  Spearheaded national RFP bids of multi-million-dollar procurement deals with several Fortune 500 retail, medical, and education\n companies.  Tasks included sales analysis, margin analysis, multivariable pricing structures, vendor acquisition, developing process\n flow and establishing KPI reporting for clientele and internal use.  Designed ad-hoc SQL views, stored proceduresand reports to address company-wide data analysis and modeling.  Utilized advanced VBA programming and automation software to manage two billing systems, saving an estimated $75,000 in Salary\n Expenses in 2015, translating to a 40% reduction in departmental spending.  Reported on a wide array of KPIs on operations, sales, accounting, and vendors via dashboard-style (BI/SSRS) reports for COO,\n CFO, Vice President of Sales and Account Manager use.  Overhauled all company technology from on-premise systems to an array of cloud solutions, including replacing hardware and\n migrating servers and databases, this renovation saves ~$108,000 per year and provides long-term scalability.         01/2015   to   01/2017     Company Name   –   City  ,   State      Co-Founded indoor, hydroponic farming company in South Jersey.  Bringing a hyper-local product to the Camden and Philadelphia\n region HGF generated $100K in its first year via a strategic relationship with the premier food management service in Philadelphia,\n local restaurants, farmer's markets, and Whole Foods retail chain.  Sales & Operations Planning (S&OP) - The S&OP team managed bi-directional interactions between sales, marketing,\n production, and finance.  S&OP committee oversaw finished goods inventory controls, marketing vs financial targets, raw material\n and supplier management, logistics and human capital planning.  Additionally, benchmarks for product mix, SKU management, and\n forecast vs demand vs actual alignment.  Operations - Oversaw the general operations of the farm, including assigning day-to-day jobs, tracking yield results, establishing\n daily work schedules, and tracking transplanting/harvesting schedules.  Automation Systems - Implemented an array of sensors to control environmental and nutrient levels.  Utilizing this data and\n automation systems we drove automated pH balancing, nutrient leveling, temperature control, ventilation systems, and established\n a strong exception-based manufacturing operation.  Finance - Oversaw all aspects of the financial responsibilities including establishing a point of sales systems, P/L reports, budgeting\n for OpEx and CapEx schedules, coordinating with lenders, insurance institutions and annual tax reports.  SOPs - Instituted standard operating procedures to ensure quality standards are maintained and product consistency is maintained.         Work History      Master Data Manager  ,   01/2019   to   Current     Company Name   –   City  ,   State      Aligning 100+ supply chain-related master data attributes to ensure the following guidelines are met:.  Data Stewardship - Appropriate business units and ownership established to validate appropriate values, definitions and\n impact documentation for all master data fields.  Data Quality - Applicable controls are set in conjecture with IT to ensure that a proactive approach is taken to new\n master data.  Additionally, RPA process planned for Phase 2 to automate structured data entry and maintenance.  Data Integrity/Data Warehousing - Structure business logic to ensure BOMs and other data relationships are both\n accessible and built as an asset for the business.  Additionally, a Data Sync SOP was established for GS1 standardization.  Reporting - Automate data quality reporting for executive staff to ensure 99.8% compliance is adhered to throughout\n the organization.  Additionally, provide ad-hoc tools for the business to leverage clean data cubes.  Data Governance Committee - Oversee executive strategy in institutional master data to commit to trusted, accurate, structured\n and meaningful master data.  Engaging applicable stakeholders to promote data governance, data architect, data stewardship and\n data security the data governance committee oversees the framework for complex supply chain manufacturing operations.         Director of Information Technology  ,   01/2017   to   01/2019     Company Name   –   City  ,   State      Supply Chain Management - Warehouse, 3PL, Food Services, Served as the corporate Project Manager, overseeing all implementations (WMS, ERP, QMS, CMMS, infrastructure).  Responsibilities included progress reporting, budget control, task delegation, plan creation, vendor coordination, etc.  Developed a range of documents and performed project selection tasks such as workflow process maps, system integration\n documents, infrastructure topology, organizational policies, GDPR, UAT, gap analysis, best fit models and user training manuals.  Deployed and managed BI products to leverage company-wide data for decisionmakers, proactive analysis, and real-time resource\n planning.  Utilizing SSRS/PowerBI to analyze sets of data across multiple databases, automate value-add reporting to 3PL clients,\n visualize KPIs thru the organization, create workflows for document automation and create alerts for various business units.  Launched a high-performance data warehouses and virtual machines to store, integrate, analyze, and report on enterprise data.  An\n array of SSAS cubes were deployed to allow for end-user ad-hoc tabular reports.  Additionally, a complex network of interfaces\n between 6+ enterprise systems, 4 SQL databases, 1 Oracle database, and other enterprise systems (file server, exchange, EDI, etc)\n was implemented to support the ETL process.  Executing infrastructure refresh for a 200,000 sqft industrial/production facility.  The deployment includes an array of 15 switches,\n 1,000 cable runs, racking, 100 AP, 300 cameras, NVRs, controllers, and creating floor plans and topology documents.  Controlled a $2MM IT budget, short-term and long-term strategies, and CapEx justification across the business.  Including selecting\n and negotiating with vendors, promoting operational process improvement, instituting best practices, and developing IT roadmaps\n and strategic plans.  On track to reduce IT spend by $250K by renegotiating vendor contracts, consolidating cloud services,\n implementing automation tools and upgrading legacy systems.  Responsible for a team of IT professionals and vendors assigned to all corporate and local office systems, including ERP, WMS,\n logistics systems, data centers, servers and storage, PCs, mobile devices, BDR, telecom, and help desk.  Reduced IT service desk's\n response time and resolution time while increasing knowledge base and reducing reoccurring tickets by over 50%.  Information Technology Governance & Steering Committee (ITGSC) - Reporting directly to the board of directors, the\n ITGSC provided strategic direction in aligning IT projects to shareholder interest and long-term targets.  While overseeing the\n committee the cross-functional team guided 12 business units across operations, sales, and manufacturing.  Additionally, the ITGSC\n aided in risk management, business continuity, and organizational SOPs.  NatJan Solutions (Facility Management - Retail, Medical, Grocery Sectors.         Information Technology and Analytics Manager  ,   01/2014   to   01/2017      Implemented process within external ERP portal to monetize 1000's of vendors to generate lean revenue based on financial and\n operational data analysis.  This program is estimated to bring in $325,000 in its first year, an 8% increase in margin.  Created ad-hoc and scheduled BI (PowerBI/SSRS) reports to visualize critical client metrics and reports, internal performance\n KPIs, operational resource planning, asset and revenue forecasting, P/L summaries, expense budgets, etc.  Spearheaded national RFP bids of multi-million-dollar procurement deals with several Fortune 500 retail, medical, and education\n companies.  Tasks included sales analysis, margin analysis, multivariable pricing structures, vendor acquisition, developing process\n flow and establishing KPI reporting for clientele and internal use.  Designed ad-hoc SQL views, stored procedures and reports to address company-wide data analysis and modeling.  Utilized advanced VBA programming and automation software to manage two billing systems, saving an estimated $75,000 in Salary\n Expenses in 2015, translating to a 40% reduction in departmental spending.  Reported on a wide array of KPIs on operations, sales, accounting, and vendors via dashboard-style (BI/SSRS) reports for COO,\n CFO, Vice President of Sales and Account Manager use.  Overhauled all company technology from on-premise systems to an array of cloud solutions, including replacing hardware and\n migrating servers and databases, this renovation saves ~$108,000 per year and provides long-term scalability.           01/2015   to   01/2017     Company Name   –   City  ,   State      Co-Founded indoor, hydroponic farming company in South Jersey.  Bringing a hyper-local product to the Camden and Philadelphia\n region HGF generated $100K in its first year via a strategic relationship with the premier food management service in Philadelphia,\n local restaurants, farmer's markets, and Whole Foods retail chain.  Sales & Operations Planning (S&OP) - The S&OP team managed bi-directional interactions between sales, marketing,\n production, and finance.  S&OP committee oversaw finished goods inventory controls, marketing vs financial targets, raw material\n and supplier management, logistics and human capital planning.  Additionally, benchmarks for product mix, SKU management, and\n forecast vs demand vs actual alignment.  Operations - Oversaw the general operations of the farm, including assigning day-to-day jobs, tracking yield results, establishing\n daily work schedules, and tracking transplanting/harvesting schedules.  Automation Systems - Implemented an array of sensors to control environmental and nutrient levels.  Utilizing this data and\n automation systems we drove automated pH balancing, nutrient leveling, temperature control, ventilation systems, and established\n a strong exception-based manufacturing operation.  Finance - Oversawall aspects of the financial responsibilities including establishing a point of sales systems, P/L reports, budgeting\n for OpEx and CapEx schedules, coordinating with lenders, insurance institutions and annual tax reports.  SOPs - Instituted standard operating procedures to ensure quality standards are maintained and product consistency is maintained.         Education      Bachelor of Science  :   Management of Information Systems  ,   2017           Associates of Science  :   Accounting  ,   2015     Rowan College               Pursuing Project Management Professional (PMP) certification        Rowan University               Summary    Zeel Patel is an Information Technology Manager with a focus on IT transformation and process improvement currently looking for\nopportunities in the greater Miami, FL metropolitan area. Zeel has experience working with corporate data in the areas of data presentation,\nstructured and unsecured datasets, data mining, statistical analysis, UI creation, data warehouse management, and assessing data quality.\nAdditionally, Zeel's diverse background has allowed him to succeed in a project management and IT management role. In this role, Zeel has\nengaged in holistic business analysis, process improvement, strategic planning, budgeting, contract negotiations, vendor relations, resource\nmanagement, instituting best practices, and overseeing/implementing multiple enterprise systems (ERP, WMS, CRM, WOM, QMS, SCP).      Highlights          Microsoft Office Suite with deep Office 365, Dynamics 365, Project, PowerApps, PowerBI, Flow,  Sharepoint, Excel, Access, Intune, Visio, EMS, and Azure proficiency  Programming/Databases: SQL (SSRS, SSIS, SSAS), VBA, DAX, HTML, CSS, VBA, VB.NET, R, Powershell, Python, Oracle  Business Intelligence Packages: PowerBI, Qlik (QlikView/QlikSense), SiSense, Tableau, Datorama, Yellowfin, Crystal, SSRS  Strong knowledge of AWS, Azure, Cisco Switch Management, VMWare, Hyper-V, RDP, Automation Anywhere, Active Directory,  And hardware and software administration for iOS, Android, Windows, Red Hat Linux, RF devices  VB.NET, EDI, Procurement, Ventilation  Accounting, ERP, Programming, Visio  Active Directory, ETL, Progress, VBA  Premier, Facility Management, Project Management, Workflow  Ad, Finance, Python  AP, Financial, Quality  Approach, Floor plans, Real-time  Architect, Forecasting, Red Hat Linux  Automate, Functional, Renovation  Automation, Help desk, Reporting      Automation tools, HTML, Retail  Billing systems, Information Technology, RFP  Budgeting, Insurance, Risk management  Budgets, Inventory, Sales  Budget, Logic, Sales analysis  BI, Logistics, Servers  Business Intelligence, Marketing, SOP  Cable, Access, SQL  Cisco, Excel, Strategy  Hardware, Exchange, Strategic  Contracts, Microsoft Office Suite, Strategic plans  Crystal, Office, Structured  CSS, Sharepoint, Supplier management  Clientele, Windows, Supply chain  Client, Negotiating, Supply Chain Management  Clients, Enterprise, Switches  Data analysis, Network, Switch  Data entry, Oracle, System integration  Data analysis and modeling, Oracle database, Tableau  Data warehouses, Organizational, Tax  Databases, Cameras, User training  Data Warehousing, Policies, Telecom  Direction, Pricing, Translating  Documentation, Process improvement, Upgrading            Skills     Microsoft Office Suite with deep Office 365, Dynamics 365, Project, PowerApps, PowerBI, Flow,  SSharepoint, Excel, Access, Intune, Visio, EMS, and Azure proficiency  PProgramming/Databases: SQL (SSRS, SSIS, SSAS), VBA, DAX, HTML, CSS, VBA, VB.NET, R, Powershell, Python, Oracle  BBusiness Intelligence Packages: PowerBI, Qlik (QlikView/QlikSense), SiSense, Tableau, Datorama, Yellowfin, Crystal, SSRS  SStrong knowledge of AWS, Azure, Cisco Switch Management, VMWare, Hyper-V, RDP, Automation Anywhere, Active Directory,  Aand hardware and software administration for iOS, Android, Windows, Red Hat Linux, RF devices,  VB.NET, accounting, Active Directory, premier, ad, AP, approach, architect, Automate, Automation, automation tools, billing systems, budgeting, budgets, budget, BI, Business Intelligence, cable, Cisco, hardware, contracts, Crystal, CSS, clientele, client, clients, data analysis, data entry, data analysis and modeling, data warehouses, Databases, Data Warehousing, direction, documentation, EDI, ERP, ETL, Facility Management, Finance, financial, floor plans, forecasting, functional, help desk, HTML, Information Technology, insurance, inventory, logic, logistics, marketing, Access, Excel, exchange, Microsoft Office Suite, Office, Sharepoint, Windows, negotiating, enterprise, network, Oracle, Oracle database, organizational, cameras, policies, pricing, process improvement, procurement, Programming, progress, Project Management, Python, Quality, real-time, Red Hat Linux, renovation, reporting, Retail, RFP, risk management, Sales, sales analysis, servers, SOP, SQL, strategy, strategic, strategic plans, structured, supplier management, supply chain, Supply Chain Management, switches, Switch, system integration, Tableau, tax, user training, telecom, translating, upgrading, ventilation, Visio, VBA, workflow    "
+}

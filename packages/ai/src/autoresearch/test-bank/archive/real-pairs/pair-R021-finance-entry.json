@@ -1,0 +1,61 @@
+{
+  "id": "pair-R021",
+  "split": "train",
+  "persona": "early_career",
+  "source_resume": {
+    "id": "ra-05795",
+    "dataset": "resume_atlas",
+    "industry": "finance",
+    "seniority": "entry"
+  },
+  "jd": {
+    "title": "Cost Accountant",
+    "company": "Brilliant®",
+    "location": "",
+    "experience_years": null,
+    "requirements": [
+      {
+        "text": "Bachelor's degree in Accounting",
+        "type": "must_have"
+      },
+      {
+        "text": "proficiency in SQL",
+        "type": "must_have"
+      },
+      {
+        "text": "Proficiency in ERP systems and Microsoft ExcelAnalytical mindset with attention to detailExcellent communication and teamwork skillsAbility to thrive in a fast-paced environment and meet deadlines",
+        "type": "must_have"
+      }
+    ],
+    "responsibilities": [],
+    "full_description": "Cost Accountant | $75k - $95k + Excellent Benefits \nThe ideal candidate will possess strong analytical skills and a keen eye for financial accuracy. Responsibilities include analyzing cost trends, conducting variance analysis, and implementing cost-saving strategies. The candidate should have a solid understanding of accounting principles, excellent communication skills, and the ability to work collaboratively in a fast-paced environment.\nBenefits:Competitive salary and benefits packageOpportunities for career advancement and professional development401k matchCollaborative and supportive work environmentMortgage Credit\nResponsibilities:Collaborate with Business Development on pricingAnalyze warranty costs and set up monitoringReview material and labor costs for cost-effectivenessDocument findings and recommend changesDesign and approve form/report modificationsRun cost analysis utilitiesProvide weekly progress reportsAnalyze parts with less than 10% gross marginEnsure accurate classification of warranty work ordersUpdate standard costs and perform R&I calculationsMonitor warranty reserves and obsolete inventoryEvaluate work for compliance with standardsAddress customer complaints and inquiriesGather and analyze information for problem-solvingReport metrics and financial data for management reviewPossess proficiency in SQL, Microsoft ExcelPerform other assigned duties\nQualifications:Bachelor's degree in Accounting, Finance, or related fieldProven experience as a Cost Accountant or similar roleStrong understanding of cost accounting principlesProficiency in ERP systems and Microsoft ExcelAnalytical mindset with attention to detailExcellent communication and teamwork skillsAbility to thrive in a fast-paced environment and meet deadlines"
+  },
+  "expected_output": {
+    "_status": "NEEDS_HUMAN_REVIEW",
+    "_raw_text_preview": "summary skills interests education training jessica claire montgomery street san francisco ca 94105 555 4321000 resumesampleexamplecom highly motivated sales associate extensive customer service sales experience outgoing sales professional track record driving increased sales improving buying experience elevating company profile target market timely fastlearner proficient microsoft office highly analytical thrives pressure patient valued team player organized buffalo creek golf club rockwall tx ",
+    "summary": "",
+    "experience": [],
+    "skills": {},
+    "certifications": [],
+    "education": []
+  },
+  "jd_requirements": [
+    "Bachelor's degree in Accounting",
+    "proficiency in SQL",
+    "Proficiency in ERP systems and Microsoft ExcelAnalytical mindset with attention to detailExcellent c"
+  ],
+  "cloud_skills": [
+    "excel"
+  ],
+  "provenance": {
+    "data_source": "real_dataset_raw_text",
+    "jd_source": "kaggle_linkedin",
+    "resume_dataset": "resume_atlas",
+    "jd_id": "linkedin-3902829909",
+    "resume_id": "ra-05795",
+    "generated_at": "2026-05-08T08:47:53.855Z",
+    "expected_output_author": "NEEDS_HUMAN_REVIEW",
+    "circularity_risk": "low",
+    "notes": "Resume from real dataset (raw text). JD from real job posting. Expected output EMPTY — needs LLM parsing + human review."
+  }
+}

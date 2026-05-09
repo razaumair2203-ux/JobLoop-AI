@@ -26,6 +26,14 @@ JobLoop AI is an AI-assisted job search system that:
 - Inflate suitability scores (there is no real "ATS score" — Greenhouse, Lever, Workday don't output scores)
 - Generate generic AI language (the #1 complaint across ALL competitor tools; employers actively detect it)
 
+**Regulatory Posture (NIST AI RMF, EU AI Act, ICO, EEOC):**
+JobLoop AI is a **candidate-side coaching tool**. We never rank, filter, or score candidates for employers. All analysis and suggestions are advisory — the user controls every submission. We do not make or influence hiring decisions. This positions us outside the EU AI Act's "high-risk" classification for recruitment AI (which applies to employer-side screening/ranking systems). Key commitments:
+- **Transparency**: Every recommendation shows its evidence basis. No opaque scores, no hidden weighting.
+- **User control**: Users approve merged profiles, resolve conflicts, and approve every generated CV before submission. No automated decisions without meaningful human involvement.
+- **No discrimination risk**: We advocate for every user equally. No filtering, no rejection, no ranking against other candidates. "Closed" not "Rejected" — advocate framing throughout.
+- **Data minimization**: CV data stored only for the user's benefit. No cross-user model training. No selling candidate data to employers.
+- **If we ever expand to employer-side features** (ranking, screening, filtering): full compliance posture required — bias audits, impact assessments, notice/appeals processes, EEOC disparate impact review. This is a Phase 3+ decision requiring dedicated legal review.
+
 ---
 
 ## 2. Authentication & User Management

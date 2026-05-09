@@ -1,0 +1,82 @@
+{
+  "id": "pair-R025",
+  "split": "train",
+  "persona": "mid_career",
+  "source_resume": {
+    "id": "ra-12531",
+    "dataset": "resume_atlas",
+    "industry": "sales",
+    "seniority": "unknown"
+  },
+  "jd": {
+    "title": "Outside Sales Representative",
+    "company": "Medco Tool",
+    "location": "",
+    "experience_years": 2,
+    "requirements": [
+      {
+        "text": "Proven track record of success in outside sales, with a minimum of 2 years of experience.",
+        "type": "must_have"
+      },
+      {
+        "text": "Strong interpersonal and communication skills, with the ability to effectively negotiate and close deals.",
+        "type": "must_have"
+      },
+      {
+        "text": "Self-motivated and results-driven, with a demonstrated ability to work independently and manage time efficiently.",
+        "type": "must_have"
+      },
+      {
+        "text": "Proficiency in CRM software and Microsoft Office Suite.",
+        "type": "must_have"
+      },
+      {
+        "text": "Valid driver's license and reliable transportation.",
+        "type": "must_have"
+      },
+      {
+        "text": "Bachelor's degree in Business Administration, Marketing, or related field preferred but not required.",
+        "type": "must_have"
+      }
+    ],
+    "responsibilities": [
+      "Prospect and cold call potential clients to generate new business opportunities.",
+      "Build and maintain strong, long-lasting customer relationships.",
+      "Conduct product demonstrations and presentations to showcase the features and benefits of our offerings.",
+      "Collaborate with the internal sales team to ensure smooth customer onboarding and support.",
+      "Achieve and exceed sales targets and objectives within assigned territory.",
+      "Keep abreast of industry trends, market developments, and competitor activities.",
+      "Prepare regular sales reports and forecasts for management review."
+    ],
+    "full_description": "About Us: Medco is a dynamic and growing Tool & PBE supply company dedicated to providing top-notch products & services to our clients. With a focus on innovation and customer satisfaction, we're expanding our team and looking for talented individuals who are passionate about sales and eager to make an impact. \r\n  Base salary: $70k - $80k + commission *Depending on experience* \r\n  Job Description: As an Outside Sales Representative, you will be responsible for driving sales and revenue growth by prospecting and acquiring new clients while maintaining relationships with existing customers. This role will require you to be highly motivated, proactive, and customer-focused, with the ability to effectively communicate the value of our products/services. \r\n  Responsibilities: \r\n  \r\n  Prospect and cold call potential clients to generate new business opportunities. \r\n  Build and maintain strong, long-lasting customer relationships. \r\n  Conduct product demonstrations and presentations to showcase the features and benefits of our offerings. \r\n  Collaborate with the internal sales team to ensure smooth customer onboarding and support. \r\n  Achieve and exceed sales targets and objectives within assigned territory. \r\n  Keep abreast of industry trends, market developments, and competitor activities. \r\n  Prepare regular sales reports and forecasts for management review. \r\n  \r\n Requirements: \r\n  \r\n  Proven track record of success in outside sales, with a minimum of 2 years of experience. \r\n  Strong interpersonal and communication skills, with the ability to effectively negotiate and close deals. \r\n  Self-motivated and results-driven, with a demonstrated ability to work independently and manage time efficiently. \r\n  Proficiency in CRM software and Microsoft Office Suite. \r\n  Valid driver's license and reliable transportation. \r\n  Bachelor's degree in Business Administration, Marketing, or related field preferred but not required. \r\n  \r\n Benefits: \r\n  \r\n  Competitive base salary with an uncapped commission structure. \r\n  Comprehensive benefits package, including health insurance, retirement plans, and paid time off. \r\n  Opportunities for career growth and advancement within the company. \r\n  Ongoing training and development programs to enhance your skills and knowledge. \r\n  Dynamic and supportive work environment with a collaborative team culture. \r\n  \r\n How to Apply: If you're ready to take your sales career to the next level and join a winning team, please submit your resume and cover letter outlining your qualifications and why you're the ideal candidate for this position. We look forward to hearing from you! \r\n  Notice to all applicants: ORS MEDCO is a drug-free workplace. Alcohol and drug misuse poses a threat to the health and safety of ORS MEDCO employees and to the security of the company's equipment and facilities. For these reasons, ORS MEDCO is committed to the elimination of drug and alcohol use and misuse in the workplace. Employees may be subject to drug screening if safety concerns arise or if reasonable suspicion is warranted \r\n  Notice to third-party agencies: ORS Medco does not accept unsolicited resumes from recruiters or employment agencies. In the absence of a signed Recruiting Agreement, ORS Medco will not consider or agree to payment for any referral compensation or recruiter fees. In the event a recruiter or agency submits a resume or candidate without a previously signed agreement, ORS Medco explicitly reserves the right to pursue and hire those candidate(s) without any financial obligation to the recruiter or agency. Any unsolicited resumes, including those submitted to hiring managers, are deemed to be the property of ORS Medco. \r\n  #LI-Remote \r\n  #LI-Medco   Equal Opportunity Employer/Protected Veterans/Individuals with Disabilities  The contractor will not discharge or in any other manner discriminate against employees or applicants because they have inquired about, discussed, or disclosed their own pay or the pay of another employee or applicant. However, employees who have access to the compensation information of other employees or applicants as a part of their essential job functions cannot disclose the pay of other employees or applicants to individuals who do not otherwise have access to compensation information, unless the disclosure is (a) in response to a formal complaint or charge, (b) in furtherance of an investigation, proceeding, hearing, or action, including an investigation conducted by the employer, or (c) consistent with the contractor’s legal duty to furnish information. 41 CFR 60-1.35(c)"
+  },
+  "expected_output": {
+    "_status": "NEEDS_HUMAN_REVIEW",
+    "_raw_text_preview": "jessica claire montgomery street san francisco ca 94105 555 4321000 resumesampleexamplecom professional summary motivated sales professional offering 40 years progressive medical sales experience highly resultsoriented energetic unsurpassed interpersonal communication strengths productive hardworking known consistent stellar performance target sales goals customer service expectations dedicated sales associate offering 40 years success fostering quality shopping experiences expert needs assessme",
+    "summary": "",
+    "experience": [],
+    "skills": {},
+    "certifications": [],
+    "education": []
+  },
+  "jd_requirements": [
+    "Proven track record of success in outside sales, with a minimum of 2 years of experience.",
+    "Strong interpersonal and communication skills, with the ability to effectively negotiate and close d",
+    "Self-motivated and results-driven, with a demonstrated ability to work independently and manage time",
+    "Proficiency in CRM software and Microsoft Office Suite.",
+    "Valid driver's license and reliable transportation.",
+    "Bachelor's degree in Business Administration, Marketing, or related field preferred but not required"
+  ],
+  "cloud_skills": [],
+  "provenance": {
+    "data_source": "real_dataset_raw_text",
+    "jd_source": "github_indeed",
+    "resume_dataset": "resume_atlas",
+    "jd_id": "indeed-4031236910f27dae",
+    "resume_id": "ra-12531",
+    "generated_at": "2026-05-08T08:47:53.857Z",
+    "expected_output_author": "NEEDS_HUMAN_REVIEW",
+    "circularity_risk": "low",
+    "notes": "Resume from real dataset (raw text). JD from real job posting. Expected output EMPTY — needs LLM parsing + human review."
+  }
+}

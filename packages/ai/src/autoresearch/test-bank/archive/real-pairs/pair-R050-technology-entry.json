@@ -1,0 +1,61 @@
+{
+  "id": "pair-R050",
+  "split": "validation",
+  "persona": "early_career",
+  "source_resume": {
+    "id": "ra-08616",
+    "dataset": "resume_atlas",
+    "industry": "technology",
+    "seniority": "entry"
+  },
+  "jd": {
+    "title": "Data Engineer- AWS (Python/ Airflow/ RDS)",
+    "company": "Fidelity Investments",
+    "location": "",
+    "experience_years": null,
+    "requirements": [
+      {
+        "text": "Experience with relational SQL and NoSQL databases",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience with data pipeline and workflow management technologies such as: Air Flow",
+        "type": "must_have"
+      },
+      {
+        "text": "Proficiency in Python for at least one yearProficiency with CI/CD tools (Jenkins preferred)Ability to work with a variety of individuals and groups",
+        "type": "must_have"
+      }
+    ],
+    "responsibilities": [],
+    "full_description": "2087611\n\nJob Description\n\nWe are currently sourcing for a Data Engineer to work in Fidelity’s Workplace Investing in Durham, NC.\n\nThe Team\n\nOur Data Engineering team is dedicated to developing an infrastructure that will change the way reporting is done across various products and reports. We focus on building an Analytics Repository, a centralized platform designed to support personalized core and common reporting experiences.\n\nWe are looking for a passionate, self-motivated Data Engineer with strong programming fundamentals, to help transform the analytics landscape!\n\nThe Expertise You Have\n\nBachelor’s degree or higher in a technology related field (e.g., Engineering, Computer Science, etc.)Experience with relational SQL and NoSQL databases, including DynamoDB, RDS Postgres and Oracle.Experience with data pipeline and workflow management technologies such as: Air Flow, ControlM etc.Cloud abilities specifically in AWS EC2, S3 and IAM.Proficiency in Python for at least one yearProficiency with CI/CD tools (Jenkins preferred)Ability to work with a variety of individuals and groups, in a constructive and collaborative manner and build and maintain effective relationships.Full-stack development experience across distributed applications and servicesExperience implementing the Software Development Lifecycle in an agile environment.\n\n\nCertifications\n\nCompany Overview\n\nFidelity Investments is a privately held company with a mission to strengthen the financial well-being of our clients. We help people invest and plan for their future. We assist companies and non-profit organizations in delivering benefits to their employees. And we provide institutions and independent advisors with investment and technology solutions to help invest their own clients’ money.\n\nJoin Us\n\nAt Fidelity, you’ll find endless opportunities to build a meaningful career that positively impacts peoples’ lives, including yours. You can take advantage of flexible benefits that support you through every stage of your career, empowering you to thrive at work and at home. Honored with a Glassdoor Employees’ Choice Award, we have been recognized by our employees as a top 10 Best Place to Work in 2024. And you don’t need a finance background to succeed at Fidelity—we offer a range of opportunities for learning so you can build the career you’ve always imagined.\n\nFidelity's working model blends the best of working offsite with maximizing time together in person to meet associate and business needs. Currently, most hybrid roles require associates to work onsite all business days of one assigned week per four-week period (beginning in September 2024, the requirement will be two full assigned weeks).\n\nAt Fidelity, we value honesty, integrity, and the safety of our associates and customers within a heavily regulated industry. Certain roles may require candidates to go through a preliminary credit check during the screening process. Candidates who are presented with a Fidelity offer will need to go through a background investigation, detailed in this document, and may be asked to provide additional documentation as requested. This investigation includes but is not limited to a criminal, civil litigations and regulatory review, employment, education, and credit review (role dependent). These investigations will account for 7 years or more of history, depending on the role. Where permitted by federal or state law, Fidelity will also conduct a pre-employment drug screen, which will review for the following substances: Amphetamines, THC (marijuana), cocaine, opiates, phencyclidine.\n\nWe invite you to Find Your Fidelity at fidelitycareers.com.\n\nFidelity Investments is an equal opportunity employer. We believe that the most effective way to attract, develop and retain a diverse workforce is to build an enduring culture of inclusion and belonging.\n\nFidelity will reasonably accommodate applicants with disabilities who need adjustments to participate in the application or interview process. To initiate a request for an accommodation, contact the HR Accommodation Team by sending an email to accommodations@fmr.com, or by calling 800-835-5099, prompt 2, option 3."
+  },
+  "expected_output": {
+    "_status": "NEEDS_HUMAN_REVIEW",
+    "_raw_text_preview": "jessica claire montgomery street san francisco ca 94105 555 4321000 resumesampleexamplecom professional summary seeking professional career opportunity experience contribute exciting rewarding work environment utilize administrative skills academic background management information system operation management interest job areas expertise microsoft office 2007 2010 microsoft project access visio 2007 2010 basic knowledge microsoft visual studio sql server 2010 web design citrix system lawson secu",
+    "summary": "",
+    "experience": [],
+    "skills": {},
+    "certifications": [],
+    "education": []
+  },
+  "jd_requirements": [
+    "Experience with relational SQL and NoSQL databases",
+    "Experience with data pipeline and workflow management technologies such as: Air Flow",
+    "Proficiency in Python for at least one yearProficiency with CI/CD tools (Jenkins preferred)Ability t"
+  ],
+  "cloud_skills": [
+    "sql"
+  ],
+  "provenance": {
+    "data_source": "real_dataset_raw_text",
+    "jd_source": "kaggle_linkedin",
+    "resume_dataset": "resume_atlas",
+    "jd_id": "linkedin-3903875936",
+    "resume_id": "ra-08616",
+    "generated_at": "2026-05-08T08:47:53.873Z",
+    "expected_output_author": "NEEDS_HUMAN_REVIEW",
+    "circularity_risk": "low",
+    "notes": "Resume from real dataset (raw text). JD from real job posting. Expected output EMPTY — needs LLM parsing + human review."
+  }
+}

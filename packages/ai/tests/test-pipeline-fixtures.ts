@@ -25,7 +25,7 @@ import type { ParsedCV as ParsedCVType } from "../src/types";
 import * as path from "path";
 import * as fs from "fs";
 
-const ALPHA_CVS_DIR = path.resolve(__dirname, "../../../Alpha_CVs");
+const ALPHA_CVS_DIR = path.resolve(__dirname, "../../../Alpha_CVs/1");
 const DEV_DATA_DIR = path.resolve(__dirname, "../../../dev-data");
 
 // Force dev mode → hits fixture cache
@@ -167,7 +167,7 @@ async function main() {
   );
 
   const cleanParsedCV = resolvedProfileToParsedCV(resolvedProfile);
-  const cloud = buildCloudFromParsedCV(cleanParsedCV);
+  const { cloud } = buildCloudFromParsedCV(cleanParsedCV);
 
   console.log(`  Resolved roles: ${resolvedProfile.roles.length}`);
   console.log(`  Cloud nodes: ${cloud.nodes.length}`);

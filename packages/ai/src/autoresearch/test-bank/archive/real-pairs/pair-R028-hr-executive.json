@@ -1,0 +1,112 @@
+{
+  "id": "pair-R028",
+  "split": "train",
+  "persona": "executive",
+  "source_resume": {
+    "id": "ra-10576",
+    "dataset": "resume_atlas",
+    "industry": "hr",
+    "seniority": "executive"
+  },
+  "jd": {
+    "title": "Executive Director of Human Resources, Spaulding Rehabilitation Hospital",
+    "company": "Mass General Brigham",
+    "location": "",
+    "experience_years": null,
+    "requirements": [
+      {
+        "text": "Primary Location",
+        "type": "must_have"
+      },
+      {
+        "text": "MA-Charlestown-MGB Spaulding Charlestown",
+        "type": "must_have"
+      },
+      {
+        "text": "Work Locations",
+        "type": "must_have"
+      },
+      {
+        "text": "MGB Spaulding Charlestown",
+        "type": "must_have"
+      },
+      {
+        "text": "Human Resources - Management",
+        "type": "must_have"
+      },
+      {
+        "text": "Organization",
+        "type": "must_have"
+      },
+      {
+        "text": "Mass General Brigham",
+        "type": "must_have"
+      },
+      {
+        "text": "Standard Hours",
+        "type": "must_have"
+      },
+      {
+        "text": "Employee Status",
+        "type": "must_have"
+      },
+      {
+        "text": "Recruiting Department",
+        "type": "must_have"
+      },
+      {
+        "text": "MGB Human Resources",
+        "type": "must_have"
+      },
+      {
+        "text": "Job Posting",
+        "type": "must_have"
+      },
+      {
+        "text": "Apr 17, 2024",
+        "type": "must_have"
+      }
+    ],
+    "responsibilities": [],
+    "full_description": "Reporting to the Regional Vice President for Human Resources, Specialty Hospitals, the Executive Director, Human Resources will partner with the RVP of HR to deliver the highest quality leadership and drive talent strategy for the Spaulding Rehabilitation Hospital (Spaulding), including Spaulding Boston, Spaulding Cambridge, Spaulding Brighton, Spaulding Cape Cod and all ambulatory sites.The Executive Director, HR consults with executive leadership to deliver strategic workforce plans to enhance the objectives of Spaulding and support its growth.This role requires collaboration between their HRBP team and the Center of Excellence (COE) leaders to provide innovative, creative solutions that are delivered on time and on budget.This position requires a results-focused, forward-thinking Human Resources professional with strong change management skills, able to play an important role in leading core HR functions and strategic initiatives that support the mission and vision of these organizations.\n\nResponsibilities include the development and implementation of plans and/or initiatives to optimize HR support and facilitate achievement of organizational goals through leaders and employees.\n\n In collaboration with the Spaulding Executive Leadership team and the RVP, develops and implements a talent strategy to support the mission and vision of Spaulding, consistent with the MGB system transformation, and service line development across the MGB system.Develops and implements Human Capital plans to support efficient and effective operations and partners with operational leaders on change management.  Identifies & understands key strategic goals of the organization to ensure alignment of required HR Business Partner (HRBP) resources and support for success. Develops and implements action plans and metrics in collaboration with the HRBPs.  Assesses current structure of HRBP model and makes recommendations for how to improve effectiveness of Spaulding strategic HRBP model/structure, considering MGB system and Spaulding operational transformation. Considers change management impact on local operations and operation leaders, partnering with People & Organizational Development team for change management support.Develops plan for restructuring, including fundamental HR process & management education, and with the RVP, implements changes to HRBP structure.  Ensures effective communication of critical information related to the organizational transformation and system-wide priorities to the HRBP team to suppprt employees through organizational restructuring and service line development.  Provides management oversight to designated HR Business Partners team to implement and evaluate programs, plans, and initiatives that result in increased organizational effectiveness and leadership engagement.  Leverages dashboard to measure on-going progress in key HR-related area, including key metrics identified for leaders to use workforce analytics effectively.Analyzes metrics on recruitment, employee turnover and data impacting ability to staff, and presents findings operational leaders in addition to proposing solutions to address any operational concerns.  Develops and implements Human Capital plans to support the Spaulding’s operations and growth.Advises executive leaders and HRBPs on the Human Capital Strategy including how to identify trends and areas of concern across the system, as well as developing and implementing solutions.  Leads HRBP team to conduct organizational and team climate assessments and develop interventions to address conflicts and gaps.  Engages leadership in working with HRBPs as strategic business partners, and supports continued development of strategic capabilities for HRBPs.  Leads HRBP team with implementing system-wide changes including MGB policy alignment, benefits changes, compensation assessments, and strategic workforce planning, and with organizational changes resulting from Spaulding Organizational Redesign.  Collaborate with the Employee Relations team to oversee the day to day employee relations cases, working to resolve conflict and coach supervisory & managerial staff to effectively manage performance of their teams.  Ensures appropriate level of support is provided to HRBPs and business leaders by the HR shared services and Centers of Expertise (HR COEs).Responsible for collaborating with MGB HR departments and leaders, including Total Rewards, Talent Acquisition, Employee Relations, Diversity and Inclusion, HR Operations and Compliance, to ensure support of continuous alignment and coordination of HR and workforce priorities and initiatives.Works with MGB HR OD team to address leadership and team development needs.  Evaluates performance of HR service delivery against needs of individual business segments. Routinely surveys managers for feedback.  Works across Human Resources to ensure the most effective & efficient HR-related processes, systems and interactions that add value to leadership and address day-to-day operational issues and challenges. \n\nQualifications\n\n A Bachelor’s degree in Business, HR, Organizational Development, or related field is required. An advanced degree is desirable.  10+ years of increasingly responsible HR experience.  PHR, SPHR or PHR certification is desirable.  Broad experience as human resources professional includingER/LR, talent management, recruitment and retention, compensation, benefits, HRIS and leadership development.  Experience transitioning to a strategic HRBP model and implementing significant operational changes preferred. \n\nPrimary Location\n\nMA-Charlestown-MGB Spaulding Charlestown\n\nWork Locations\n\nMGB Spaulding Charlestown\n\nJob\n\nHuman Resources - Management\n\nOrganization\n\nMass General Brigham\n\nSchedule\n\nFull-time\n\nStandard Hours\n\n40\n\nShift\n\nDay Job\n\nEmployee Status\n\nRegular\n\nRecruiting Department\n\nMGB Human Resources\n\nJob Posting\n\nApr 17, 2024"
+  },
+  "expected_output": {
+    "_status": "NEEDS_HUMAN_REVIEW",
+    "_raw_text_preview": "jessica claire montgomery street san francisco ca 94105 555 4321000 resumesampleexamplecom summary manager candidate seeking opportunities within realm human resources management directorship organization looking make change overall common operating picture skills recruitment screening 19verification management human resources security management conflict resolution mentoring coaching counseling policy implementation microsoft word microsoft excel powerpoint organizational design action review p",
+    "summary": "",
+    "experience": [],
+    "skills": {},
+    "certifications": [],
+    "education": []
+  },
+  "jd_requirements": [
+    "Primary Location",
+    "MA-Charlestown-MGB Spaulding Charlestown",
+    "Work Locations",
+    "MGB Spaulding Charlestown",
+    "Human Resources - Management",
+    "Organization",
+    "Mass General Brigham",
+    "Standard Hours",
+    "Employee Status",
+    "Recruiting Department",
+    "MGB Human Resources",
+    "Job Posting",
+    "Apr 17, 2024"
+  ],
+  "cloud_skills": [
+    "excel",
+    "data analysis"
+  ],
+  "provenance": {
+    "data_source": "real_dataset_raw_text",
+    "jd_source": "kaggle_linkedin",
+    "resume_dataset": "resume_atlas",
+    "jd_id": "linkedin-3902752787",
+    "resume_id": "ra-10576",
+    "generated_at": "2026-05-08T08:47:53.859Z",
+    "expected_output_author": "NEEDS_HUMAN_REVIEW",
+    "circularity_risk": "low",
+    "notes": "Resume from real dataset (raw text). JD from real job posting. Expected output EMPTY — needs LLM parsing + human review."
+  }
+}

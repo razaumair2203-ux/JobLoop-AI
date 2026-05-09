@@ -1,0 +1,177 @@
+{
+  "name": "Master's Resume Sample",
+  "email": "bmail1@binghamton.edu",
+  "phone": "(607) 555-7777",
+  "location": {
+    "city": "Binghamton",
+    "country": "United States"
+  },
+  "links": {
+    "linkedin": "www.linkedin.com/in/yourname",
+    "github": null,
+    "portfolio": null,
+    "other": []
+  },
+  "summary": null,
+  "total_experience_years": 1,
+  "experience": [
+    {
+      "company": "Binghamton University",
+      "employer": "Binghamton University",
+      "title": "Global Health Impact Research Assistant",
+      "start_date": "2025-08",
+      "end_date": null,
+      "duration_months": 9,
+      "location": "Binghamton, NY",
+      "bullets": [
+        "Complete citation editing for 10 pending publications, conduct extensive literature reviews, and oversee all journal paper formatting for several published works",
+        "Assist in building coursework, revamping curriculum and subject material for eight PhD and masters-level courses"
+      ],
+      "technologies_used": [],
+      "metrics_mentioned": ["10 pending publications", "eight PhD and masters-level courses"],
+      "programs": [],
+      "team_size": null,
+      "seniority_signals": [],
+      "domain": "academia_research"
+    },
+    {
+      "company": "Computer Maintenance Corporation",
+      "employer": "Computer Maintenance Corporation",
+      "title": "Corporate Research Intern",
+      "start_date": "2024-06",
+      "end_date": "2024-07",
+      "duration_months": 2,
+      "location": "Manipal, India",
+      "bullets": [
+        "Completed a four-week summer internship with the research team to gain experience with GPS display units",
+        "Executed the \"GPS Accuracy Status Display\" of a GPS module by using Keil uVision4 and 8051 Microprocessor",
+        "Utilized the code to improve the container management for the company"
+      ],
+      "technologies_used": ["Keil uVision4", "8051 Microprocessor"],
+      "metrics_mentioned": [],
+      "programs": [],
+      "team_size": null,
+      "seniority_signals": [],
+      "domain": "technology"
+    }
+  ],
+  "education": [
+    {
+      "institution": "Binghamton University, State University of New York, Thomas J. Watson College of Engineering and Applied Science",
+      "degree": "Master of Science",
+      "field": "Industrial and Systems Engineering",
+      "start_year": null,
+      "end_year": 2026,
+      "grade": "3.82/4.00",
+      "research_topic": null,
+      "highlights": [
+        "Clark Fellowship",
+        "Relevant Coursework: Applied Probability and Statistics, Collective Dynamics of Complex Systems, Operations Research, Integrated Manufacturing, Industrial and Systems Engineering in Healthcare, Computational Tools, Modeling and Simulation"
+      ]
+    },
+    {
+      "institution": "Manipal Institute of Technology",
+      "degree": "Bachelor of Science",
+      "field": "Electrical and Electronics Engineering",
+      "start_year": null,
+      "end_year": 2024,
+      "grade": "3.56/4.00",
+      "research_topic": null,
+      "highlights": [
+        "Relevant Coursework: Integrated Lighting Design, Data Structures and Algorithms, Energy Auditing and Management, Computer Networks, Electrical Machines"
+      ]
+    }
+  ],
+  "skills": [
+    { "name": "LabVIEW", "original_text": "LabVIEW", "domain": "engineering", "category": "instrumentation", "source": "skills_section" },
+    { "name": "MATLAB", "original_text": "MATLAB", "domain": "engineering", "category": "simulation_modeling", "source": "skills_section" },
+    { "name": "AutoCAD", "original_text": "AutoCAD", "domain": "engineering", "category": "design_drafting", "source": "skills_section" },
+    { "name": "Simio", "original_text": "Simio", "domain": "engineering", "category": "simulation_modeling", "source": "skills_section" },
+    { "name": "Python", "original_text": "Python", "domain": "technology", "category": "programming_languages", "source": "skills_section" },
+    { "name": "Arena", "original_text": "Arena", "domain": "engineering", "category": "simulation_modeling", "source": "skills_section" },
+    { "name": "Minitab", "original_text": "Minitab", "domain": "engineering", "category": "statistical_analysis", "source": "skills_section" },
+    { "name": "Microsoft Visio", "original_text": "Microsoft Visio", "domain": "technology", "category": "productivity", "source": "skills_section" },
+    { "name": "Microsoft Project", "original_text": "Microsoft Project", "domain": "management", "category": "project_management", "source": "skills_section" },
+    { "name": "SOLIDWORKS", "original_text": "SOLIDWORKS", "domain": "engineering", "category": "cad_modeling", "source": "skills_section" },
+    { "name": "Google Workspace", "original_text": "Google Workspace", "domain": "technology", "category": "productivity", "source": "skills_section" },
+    { "name": "Microsoft Office Suite", "original_text": "Microsoft Office Suite", "domain": "technology", "category": "productivity", "source": "skills_section" },
+    { "name": "Mutual Information", "original_text": "Mutual Information technique", "domain": "technology", "category": "data_science", "source": "experience" },
+    { "name": "Collaborative Filtering", "original_text": "Collaborative Item-Based Filtering", "domain": "technology", "category": "data_science", "source": "experience" },
+    { "name": "Mathematica", "original_text": "Mathematica", "domain": "engineering", "category": "simulation_modeling", "source": "experience" }
+  ],
+  "competencies": [],
+  "certifications": [
+    {
+      "name": "Lean Six Sigma Green Belt",
+      "issuer": null,
+      "year": null,
+      "active": true,
+      "tier": "specialization"
+    },
+    {
+      "name": "Lean Six Sigma Black Belt",
+      "issuer": null,
+      "year": null,
+      "active": true,
+      "tier": "gold"
+    }
+  ],
+  "awards": [
+    {
+      "title": "Winner of the annual Inter Manipal University parliamentary debate 2025",
+      "issuer": "Manipal University",
+      "context": "Parliamentary debate with participant size of 1,000",
+      "significance": "1,000 participants"
+    },
+    {
+      "title": "Speaker of the Year and Mumbai Representative at Horlicks Wiz Kids 2024",
+      "issuer": "Horlicks Wiz Kids",
+      "context": "National talent festival",
+      "significance": "National level"
+    },
+    {
+      "title": "Winner and speaker at the Manipal Conclave 2023",
+      "issuer": "Manipal Conclave",
+      "context": "In the presence of award-winning laureates as guest speakers",
+      "significance": null
+    }
+  ],
+  "projects": [
+    {
+      "name": "Item-Based Collaborative Filtering Using Mutual Information",
+      "description": "Developed a recommender system utilizing extensive data from hundreds of users and their preferences, resulting in accurate and personalized movie recommendations. Implemented Collaborative Item-Based Filtering technique. Executed a Python program utilizing the Mutual Information technique.",
+      "outcome": "Validated the techniques through a 50% reduction in processing time and decreased complexity",
+      "technologies": ["Python"],
+      "is_professional": false
+    },
+    {
+      "name": "Comparative Analysis of Patient Readmission Models",
+      "description": "Conducted an algorithmic comparison to optimize factors influencing patient readmission rates. Identified significant factors impacting patient readmission using multiple regression and Boruta importance. Analyzed various algorithms (Artificial Neural Networks, Support Vector Machine, Random Forest).",
+      "outcome": "Achieved 100% accuracy, surpassing the performance of existing literature in the field",
+      "technologies": [],
+      "is_professional": false
+    },
+    {
+      "name": "Baccalaureate Thesis: Reliability and Lifetime Estimation of LEDs",
+      "description": "Devised and executed an analytical methodology to accurately estimate the lifespan of solid-state luminaires. Executed time series modeling using extensive laboratory data in Mathematica. Leveraged Minitab for conducting reliability analysis.",
+      "outcome": "Presented the thesis paper at the annual IEEE conference (RTEICT 2023) in Bangalore, India, and earned subsequent publication in the journal IEEE Xplore",
+      "technologies": ["Mathematica", "Minitab"],
+      "is_professional": false
+    }
+  ],
+  "publications": [
+    {
+      "title": "Effect of single and multiple doses of low-level laser therapy on viability and proliferation of stem cells from human exfoliated deciduous teeth (SHED)",
+      "venue": "Lasers in Medical Science",
+      "year": 2023,
+      "peer_reviewed": true
+    }
+  ],
+  "volunteer": [],
+  "leadership": [],
+  "professional_affiliations": [],
+  "training": [],
+  "languages_spoken": [],
+  "all_technologies": ["LabVIEW", "MATLAB", "AutoCAD", "Simio", "Python", "Arena", "Minitab", "Microsoft Visio", "Microsoft Project", "SOLIDWORKS", "Google Workspace", "Microsoft Office Suite", "Keil uVision4", "8051 Microprocessor", "Mathematica"],
+  "conflicts": []
+}

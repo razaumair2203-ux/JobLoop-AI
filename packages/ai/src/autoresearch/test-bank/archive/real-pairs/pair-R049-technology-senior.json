@@ -1,0 +1,73 @@
+{
+  "id": "pair-R049",
+  "split": "validation",
+  "persona": "senior",
+  "source_resume": {
+    "id": "ra-00989",
+    "dataset": "resume_atlas",
+    "industry": "technology",
+    "seniority": "senior"
+  },
+  "jd": {
+    "title": "Lead Developer",
+    "company": "Claims Management Resources Inc",
+    "location": "",
+    "experience_years": 5,
+    "requirements": [
+      {
+        "text": "5+ years of experience in software development and project management   Experience leading a development team    The Perks:    Career growth and learningopportunities   Tiered bonus system based on team accomplishments   Full menu of benefits including a matched 401k   Paid time off as well as paid holidays   CMR is a 2023The Oklahoman Top Workplaces winner!    Pre-employment drug screenings and criminal background checks are mandatory  CMR is an Equal Opportunity Employer",
+        "type": "must_have"
+      },
+      {
+        "text": "Bachelors degree in computer science",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience with full life cycle of application development   Discovery",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience with Dev Ops and Azure   Strong back-end development experience   Ability to follow/apply OOP design principles and patterns   Microsoft SQL server experience proficient with proper database design and normalization   Ability to communicate objectives and manage to completion of objectives   Collaborate with stakeholders to ensure that the team meets deadlines and requirements   Provide technical oversight and ensure software quality standards are met   Develop and manage project plans and timelines   Ability to educate junior developers on best practices   Monitor project progress and provide regular updates   Ability to document processes",
+        "type": "must_have"
+      },
+      {
+        "text": "experience in software development and project management   Experience leading a development team    The Perks:    Career growth and learningopportunities   Tiered bonus system based on team accomplishments   Full menu of benefits including a matched 401k   Paid time off as well as paid holidays   CMR is a 2023The Oklahoman Top Workplaces winner!    Pre-employment drug screenings and criminal background checks are mandatory  CMR is an Equal Opportunity Employer",
+        "type": "must_have"
+      }
+    ],
+    "responsibilities": [],
+    "full_description": "Who We Are:  We are in the business of subrogation companies trust us to recover payments on damage claims so that the party responsible is the one paying for the damage that was caused. We strive to provide excellent customer service to both our customers and the other parties involved in a claim. In short, we help our customers focus on theirs.   Our business is driven by our Core Four principles: Process, Results, Culture, and Experience. Our dedication to practicing these has enabled our current and future success.  Were passionate about throwing company events that bring us together and celebrate each others achievements. Were also big on taking time out to give back to the community and host several volunteer events throughout the year. We believe in a healthy work-life balance.  Join our team and thrive in an environment that values efficiency and effective processes and a casual, comfortable atmosphere.   Who Were Looking For:  We are looking for someone who will beresponsible for managing the development team and overseeing the development of software applications and systems. You will be expected to collaborate with stakeholders to ensure that the development team is meeting deadlines and requirements and will be responsible for designing and implementing new software solutions.   The Day-to-Day:    Experience with full life cycle of application development   Discovery, Design, Development, Testing, Implementation, Maintenance, Enhancement   Ability to write testable and scalable code for programs   ASP.NET MVC, C#, Javascript/JQuery/AngularJS   Experience with Dev Ops and Azure   Strong back-end development experience   Ability to follow/apply OOP design principles and patterns   Microsoft SQL server experience proficient with proper database design and normalization   Ability to communicate objectives and manage to completion of objectives   Collaborate with stakeholders to ensure that the team meets deadlines and requirements   Provide technical oversight and ensure software quality standards are met   Develop and manage project plans and timelines   Ability to educate junior developers on best practices   Monitor project progress and provide regular updates   Ability to document processes, design patterns and procedures for the PQ team   Preferred Skills:    PHP   Entity Framework experience    Education and Experience:    Bachelors degree in computer science, engineering, or related field   5+ years of experience in software development and project management   Experience leading a development team    The Perks:    Career growth and learningopportunities   Tiered bonus system based on team accomplishments   Full menu of benefits including a matched 401k   Paid time off as well as paid holidays   CMR is a 2023The Oklahoman Top Workplaces winner!    Pre-employment drug screenings and criminal background checks are mandatory  CMR is an Equal Opportunity Employer"
+  },
+  "expected_output": {
+    "_status": "NEEDS_HUMAN_REVIEW",
+    "_raw_text_preview": "velma pollich 915 breana spur new york ny phone 1 555 365 1724 experience huelsortiz philadelphia pa database management lead 092018 present public key infrastructure pki x509 certificates ssltls experience implementing document management processes document management software applications using industrygovernment best practices knowledge create implement maintain data file structures clear understanding dod 5000 acquisition process experience linuxunix systems administrator systems operations ",
+    "summary": "",
+    "experience": [],
+    "skills": {},
+    "certifications": [],
+    "education": []
+  },
+  "jd_requirements": [
+    "5+ years of experience in software development and project management   Experience leading a develop",
+    "Bachelors degree in computer science",
+    "Experience with full life cycle of application development   Discovery",
+    "Experience with Dev Ops and Azure   Strong back-end development experience   Ability to follow/apply",
+    "experience in software development and project management   Experience leading a development team   "
+  ],
+  "cloud_skills": [
+    "agile",
+    "scrum",
+    "devops"
+  ],
+  "provenance": {
+    "data_source": "real_dataset_raw_text",
+    "jd_source": "github_indeed",
+    "resume_dataset": "resume_atlas",
+    "jd_id": "indeed-33281063387d4770",
+    "resume_id": "ra-00989",
+    "generated_at": "2026-05-08T08:47:53.872Z",
+    "expected_output_author": "NEEDS_HUMAN_REVIEW",
+    "circularity_risk": "low",
+    "notes": "Resume from real dataset (raw text). JD from real job posting. Expected output EMPTY — needs LLM parsing + human review."
+  }
+}

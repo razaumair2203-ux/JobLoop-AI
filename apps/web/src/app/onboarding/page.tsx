@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { createClient } from "@/lib/supabase/client";
 import { StepPersona } from "./steps/step-persona";
-import { StepUpload } from "./steps/step-upload";
+import { StepUpload, type SocraticQuestion } from "./steps/step-upload";
 import { StepCloud } from "./steps/step-cloud";
 import { StepSocratic } from "./steps/step-socratic";
 import { StepReady } from "./steps/step-ready";
@@ -25,6 +25,7 @@ export default function OnboardingPage() {
   const [step, setStep] = useState(1);
   const [persona, setPersona] = useState<string | null>(null);
   const [uploadResults, setUploadResults] = useState<UploadResult[]>([]);
+  const [socraticQuestions, setSocraticQuestions] = useState<SocraticQuestion[]>([]);
   const supabase = createClient();
 
   async function updateStep(nextStep: number) {
@@ -119,8 +120,9 @@ export default function OnboardingPage() {
         )}
         {step === 2 && (
           <StepUpload
-            onNext={(results) => {
+            onNext={(results, questions) => {
               setUploadResults(results);
+              setSocraticQuestions(questions);
               updateStep(3);
             }}
             onSkip={() => updateStep(3)}
@@ -134,6 +136,7 @@ export default function OnboardingPage() {
         )}
         {step === 4 && (
           <StepSocratic
+            questions={socraticQuestions}
             onNext={() => updateStep(5)}
             onSkip={() => updateStep(5)}
           />

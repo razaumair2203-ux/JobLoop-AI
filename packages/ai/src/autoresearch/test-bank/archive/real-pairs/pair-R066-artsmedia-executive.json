@@ -1,0 +1,62 @@
+{
+  "id": "pair-R066",
+  "split": "held_out",
+  "persona": "executive",
+  "source_resume": {
+    "id": "ra-09160",
+    "dataset": "resume_atlas",
+    "industry": "arts_media",
+    "seniority": "executive"
+  },
+  "jd": {
+    "title": "Executive Assistant",
+    "company": "Star Entertainment GmbH",
+    "location": "",
+    "experience_years": null,
+    "requirements": [
+      {
+        "text": "experience in creating business plans• Past experience in team supervision• Perfect written and spoken English• Social media skills",
+        "type": "must_have"
+      },
+      {
+        "text": "Proficient in Microsoft Office suite and tools such as Monday",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience in managing multiple priorities",
+        "type": "must_have"
+      }
+    ],
+    "responsibilities": [],
+    "full_description": "The ideal candidate will provide top-level assistance related to projects by entities such as:Cinema for PeaceThe CourtThe World ForumFor your consideration FilmsStar EntertainmentThe Wall MuseumNEO institute\nResponsibilities• Calendar and task management• Aid executive in management• Responding to emails and document requests• Draft slides, meeting notes and documents• Managing tasks\nQualifications• Bachelor's degree or equivalent experience• High intelligence, quick reaction and execution of any given task• Past management experience• Intrinsic motivation in film, culture, democracy and justice• Past experience in creating business plans• Past experience in team supervision• Perfect written and spoken English• Social media skills, analytics and online reporting• Proficient in Microsoft Office suite and tools such as Monday.com• Experience in managing multiple priorities, administrative coordination, and logistics• Well-organised, detail-oriented, ability to multi-task with great follow-up skills\nYou will coordinate with the other assistants to coordinate tasks and events on evenings and weekends. You must be able to work in a fast-paced environment.\nYou should be well-organised and comfortable scheduling meetings and responding to emails on the executive's behalf, in different time zones. Lastly, you should be able to draft documents and help the executive with any necessary meeting preparations.\nAbout\nJaka Bizilj is an international producer, operating since 1995 in the fields of film, live entertainment, culture and philanthropy. In the area of film, he started with minor investments in “Shaft” and “Mission Impossible II” and has produced films with the likes of Richard Curtis and Oscar-wining talent. Václav Havel honored “Letter to Anna” about the murdered Russian journalist Anna Politkovskaja. Among the most reknown cultural projects were contributions to Bob Geldof’s “Live 8”, the creation of “The Wall Museum” in Berlin and installations with Ai Weiwei. Concerts ranged from operas and musicals to film orchestra performances on themes such as Harry Potter, The Lord of The Rings and Hans Zimmer. He has hosted the likes of Sting, Liza Minelli, Bryan Adams, Anna Netrebko, Lang Lang, Bono, Roger Waters and Arcade Fire. In the field of philanthropy he has produced the annual Cinema for Peace Gala since 2002, created “Sports for Peace” with Muhammad Ali and Nelson Mandela as well as “Help Haiti Home” for Sean Penn, enabling charitable organizations to raise in total more than 50 Mio USD.\nWith Cinema for Peace Bizilj has worked with the world’s leading film personalities, heads of states and honored recently Pope Francis.\nPlease send us your CV through Linkedin and let us know your earliest possible starting date.We are looking forward to your compelling application!"
+  },
+  "expected_output": {
+    "_status": "NEEDS_HUMAN_REVIEW",
+    "_raw_text_preview": "links professional summary jessica claire montgomery street san francisco ca 94105 mediapulsecreativecom 555 4321000 resumesampleexamplecom theres one thing ive learned years leading large creative groups championing cross department synergy great work comes great collaboration multitalented group creative director digital traditional global advertising campaigns proven success creative strategic leadership operational excellence organizational development driving company growth keen understandi",
+    "summary": "",
+    "experience": [],
+    "skills": {},
+    "certifications": [],
+    "education": []
+  },
+  "jd_requirements": [
+    "experience in creating business plans• Past experience in team supervision• Perfect written and spok",
+    "Proficient in Microsoft Office suite and tools such as Monday",
+    "Experience in managing multiple priorities"
+  ],
+  "cloud_skills": [
+    "agile",
+    "project management"
+  ],
+  "provenance": {
+    "data_source": "real_dataset_raw_text",
+    "jd_source": "kaggle_linkedin",
+    "resume_dataset": "resume_atlas",
+    "jd_id": "linkedin-3898170923",
+    "resume_id": "ra-09160",
+    "generated_at": "2026-05-08T08:47:53.885Z",
+    "expected_output_author": "NEEDS_HUMAN_REVIEW",
+    "circularity_risk": "low",
+    "notes": "Resume from real dataset (raw text). JD from real job posting. Expected output EMPTY — needs LLM parsing + human review."
+  }
+}

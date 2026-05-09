@@ -16,17 +16,32 @@
  * Usage:
  *   npx tsx packages/ai/src/autoresearch/run-loop.ts [--target cv-generation|jd-parser] [--iterations 20] [--pretest]
  *
- * Dev mode: uses file-based AI responses (no API calls)
- * Prod mode: calls Anthropic API via Vercel AI SDK
+ * Dev mode: uses mock AI responses (no API calls)
+ * Prod mode: calls NVIDIA NIM API (DeepSeek/Llama)
  */
 
 import * as fs from "fs";
 import * as path from "path";
+
+// Load .env from project root (CLI script — no dotenv dependency needed)
+const envPath = path.resolve(__dirname, "../../../../.env");
+if (fs.existsSync(envPath)) {
+  for (const line of fs.readFileSync(envPath, "utf-8").split("\n")) {
+    const trimmed = line.trim();
+    if (!trimmed || trimmed.startsWith("#")) continue;
+    const eq = trimmed.indexOf("=");
+    if (eq < 0) continue;
+    const key = trimmed.slice(0, eq).trim();
+    const val = trimmed.slice(eq + 1).trim();
+    if (!process.env[key]) process.env[key] = val;
+  }
+}
+
 import { safeParseJSON } from "../utils";
+import { buildCVGenerationUserPrompt } from "../prompts/cv-generation";
 import {
   initLoopState,
   selectTrainingBatch,
-  selectWeightedTrainingBatch,
   runIteration,
   shouldStop,
   shouldValidate,
@@ -67,6 +82,7 @@ interface RawTestPair {
     experience_years: number;
     requirements: Array<{ text: string; type: string }>;
     responsibilities: string[];
+    full_description?: string;
   };
   expected_output: {
     summary: string;
@@ -83,6 +99,8 @@ interface RawTestPair {
   };
   jd_requirements: string[];
   cloud_skills: string[];
+  /** Raw resume text for zero-circular scoring */
+  raw_cv_text?: string;
 }
 
 function loadTestPairs(): TestPair[] {
@@ -99,6 +117,8 @@ function loadTestPairs(): TestPair[] {
       jd_requirements: raw.jd_requirements,
       cloud_skills: raw.cloud_skills,
       expected_output: raw.expected_output,
+      raw_cv_text: raw.raw_cv_text || "",
+      raw_jd_text: raw.jd.full_description || raw.jd_requirements.join("\n"),
     });
   }
 
@@ -168,7 +188,7 @@ function deployPromptToSource(target: TargetPrompt, prompt: string): void {
 }
 
 // ============================================================
-// LLM INTERFACE (dev mode = mock, prod mode = Anthropic API)
+// LLM INTERFACE (NVIDIA NIM or mock for dev)
 // ============================================================
 
 interface LLMResponse {
@@ -176,38 +196,176 @@ interface LLMResponse {
   usage: { input_tokens: number; output_tokens: number };
 }
 
-async function callLLM(systemPrompt: string, userPrompt: string): Promise<LLMResponse> {
-  // Check for ANTHROPIC_API_KEY — if absent, use dev mode
-  const apiKey = process.env.ANTHROPIC_API_KEY;
+// ============================================================
+// GENERIC OpenAI-COMPATIBLE LLM CLIENT
+// All providers (Cerebras, SambaNova, Groq, NIM) use the same API shape.
+// ============================================================
 
-  if (!apiKey) {
-    console.log("  [DEV MODE] No ANTHROPIC_API_KEY — using mock LLM response");
-    return mockLLMResponse(systemPrompt, userPrompt);
+interface LLMProvider {
+  name: string;
+  baseUrl: string;
+  apiKey: string;
+  model: string;
+  rateGapMs: number; // Min ms between calls
+  disabled?: boolean; // Set true when daily limit hit
+}
+
+let lastCallMs = 0;
+
+/** Cached provider list — created once, disabled flags persist across calls */
+let _providers: LLMProvider[] | null = null;
+
+function resolveProviders(): LLMProvider[] {
+  if (_providers) return _providers;
+  const providers: LLMProvider[] = [];
+
+  // Priority order: Gemini (generous free) → Cerebras → SambaNova → Groq → NIM
+  if (process.env.GEMINI_API_KEY) {
+    providers.push({
+      name: "Gemini",
+      baseUrl: "https://generativelanguage.googleapis.com/v1beta/openai/chat/completions",
+      apiKey: process.env.GEMINI_API_KEY,
+      model: process.env.GEMINI_MODEL || "gemini-2.5-flash",
+      rateGapMs: 6000, // 10 RPM for 2.5-flash free tier
+    });
+  }
+  if (process.env.CEREBRAS_API_KEY) {
+    providers.push({
+      name: "Cerebras",
+      baseUrl: "https://api.cerebras.ai/v1/chat/completions",
+      apiKey: process.env.CEREBRAS_API_KEY,
+      model: process.env.CEREBRAS_MODEL || "llama-3.3-70b",
+      rateGapMs: 2000, // 30 RPM
+    });
+  }
+  if (process.env.SAMBANOVA_API_KEY) {
+    providers.push({
+      name: "SambaNova",
+      baseUrl: "https://api.sambanova.ai/v1/chat/completions",
+      apiKey: process.env.SAMBANOVA_API_KEY,
+      model: process.env.SAMBANOVA_MODEL || "Meta-Llama-3.3-70B-Instruct",
+      rateGapMs: 2000,
+    });
+  }
+  if (process.env.GROQ_API_KEY) {
+    providers.push({
+      name: "Groq",
+      baseUrl: "https://api.groq.com/openai/v1/chat/completions",
+      apiKey: process.env.GROQ_API_KEY,
+      model: process.env.GROQ_MODEL || "llama-3.3-70b-versatile",
+      rateGapMs: 2000,
+    });
+  }
+  if (process.env.NVIDIA_NIM_API_KEY) {
+    providers.push({
+      name: "NIM",
+      baseUrl: "https://integrate.api.nvidia.com/v1/chat/completions",
+      apiKey: process.env.NVIDIA_NIM_API_KEY,
+      model: process.env.NVIDIA_NIM_MODEL || "meta/llama-3.3-70b-instruct",
+      rateGapMs: 1500, // 40 RPM
+    });
   }
 
-  // Production: use Anthropic API directly
-  const { default: Anthropic } = await import("@anthropic-ai/sdk");
-  const client = new Anthropic({ apiKey });
+  _providers = providers;
+  return providers;
+}
 
-  const response = await client.messages.create({
-    model: "claude-haiku-4-5-20251001",
-    max_tokens: 4096,
-    system: systemPrompt,
-    messages: [{ role: "user", content: userPrompt }],
-  });
+async function callLLM(systemPrompt: string, userPrompt: string, opts?: { json_mode?: boolean }): Promise<LLMResponse> {
+  const providers = resolveProviders();
 
-  const text = response.content
-    .filter(c => c.type === "text")
-    .map(c => (c as { type: "text"; text: string }).text)
-    .join("");
+  for (const provider of providers) {
+    if (provider.disabled) continue;
+    try {
+      return await callLLMViaProvider(provider, systemPrompt, userPrompt, 3, opts);
+    } catch (err) {
+      // Daily token/quota limit → disable and try next provider
+      if (err instanceof Error && (err.message.includes("tokens per day") || err.message.includes("quota"))) {
+        provider.disabled = true;
+        console.log(`  [FALLBACK] ${provider.name} daily limit hit → trying next provider`);
+        continue;
+      }
+      throw err;
+    }
+  }
 
-  return {
-    text,
-    usage: {
-      input_tokens: response.usage.input_tokens,
-      output_tokens: response.usage.output_tokens,
-    },
-  };
+  // No providers available → mock
+  console.log("  [DEV MODE] No API key — using mock LLM response");
+  return mockLLMResponse(systemPrompt, userPrompt);
+}
+
+async function callLLMViaProvider(provider: LLMProvider, systemPrompt: string, userPrompt: string, retries = 3, opts?: { json_mode?: boolean }): Promise<LLMResponse> {
+  for (let attempt = 1; attempt <= retries; attempt++) {
+    const now = Date.now();
+    const gap = now - lastCallMs;
+    if (gap < provider.rateGapMs) {
+      await new Promise(r => setTimeout(r, provider.rateGapMs - gap));
+    }
+    lastCallMs = Date.now();
+
+    const body: Record<string, unknown> = {
+      model: provider.model,
+      messages: [
+        { role: "system", content: systemPrompt },
+        { role: "user", content: userPrompt },
+      ],
+      max_tokens: 8192,
+      temperature: 0.7,
+      stream: false,
+    };
+
+    // OpenAI-compatible JSON mode (works on Gemini, Groq, NIM, etc.)
+    if (opts?.json_mode) {
+      body.response_format = { type: "json_object" };
+    }
+
+    let res: Response;
+    try {
+      res = await fetch(provider.baseUrl, {
+        method: "POST",
+        headers: {
+          "Authorization": `Bearer ${provider.apiKey}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(body),
+      });
+    } catch (networkErr) {
+      if (attempt < retries) {
+        const backoff = attempt * 10000;
+        console.log(`  [RETRY] ${provider.name} network error — waiting ${backoff / 1000}s (attempt ${attempt}/${retries})`);
+        await new Promise(r => setTimeout(r, backoff));
+        continue;
+      }
+      throw networkErr;
+    }
+
+    if (!res.ok) {
+      const errText = await res.text();
+      const retryable = [429, 502, 503, 504].includes(res.status);
+      if (retryable && attempt < retries) {
+        const backoff = res.status === 429 ? attempt * 10000 : attempt * 5000;
+        console.log(`  [RETRY] ${provider.name} ${res.status} — waiting ${backoff / 1000}s (attempt ${attempt}/${retries})`);
+        await new Promise(r => setTimeout(r, backoff));
+        continue;
+      }
+      throw new Error(`${provider.name} API ${res.status}: ${errText.slice(0, 300)}`);
+    }
+
+    const data = await res.json() as {
+      choices: Array<{ message: { content: string } }>;
+      usage?: { prompt_tokens?: number; completion_tokens?: number };
+    };
+
+    const text = data.choices?.[0]?.message?.content ?? "";
+    return {
+      text,
+      usage: {
+        input_tokens: data.usage?.prompt_tokens ?? 0,
+        output_tokens: data.usage?.completion_tokens ?? 0,
+      },
+    };
+  }
+
+  throw new Error(`${provider.name} API: all retries exhausted`);
 }
 
 function mockLLMResponse(_system: string, userPrompt: string): LLMResponse {
@@ -242,18 +400,14 @@ async function generateCV(
   prompt: string,
   pair: TestPair,
 ): Promise<CVScorecardInput["generated"]> {
-  const userPrompt = `## Cloud Profile Skills
-${pair.cloud_skills.join(", ")}
+  // Use the SAME user prompt builder as production — aligned input shape.
+  // Truncate to stay within free-tier token limits while keeping enough content.
+  const cvText = (pair.raw_cv_text || "").slice(0, 4000);
+  const jdText = (pair.raw_jd_text || pair.jd_requirements.join("\n")).slice(0, 3000);
 
-## JD Requirements
-${pair.jd_requirements.join("\n")}
+  const userPrompt = buildCVGenerationUserPrompt(cvText, jdText);
 
-## Expected Output Shape
-Generate a tailored CV as JSON with: summary, experience (array of {company, title, start_date, end_date, bullets}), skills (categorized), certifications.
-
-Return ONLY valid JSON.`;
-
-  const response = await callLLM(prompt, userPrompt);
+  const response = await callLLM(prompt, userPrompt, { json_mode: true });
 
   try {
     const parsed = safeParseJSON<CVScorecardInput["generated"]>(response.text, "cv-generation-loop");
@@ -290,6 +444,14 @@ async function main() {
   console.log(`Max iterations: ${maxIterations}`);
   console.log(`Pretest mode: ${runPretest}`);
   console.log(`Auto-deploy: ${autoDeploy}`);
+
+  // Show which LLM providers are available
+  const providers = resolveProviders();
+  if (providers.length > 0) {
+    console.log(`LLM: ${providers.map(p => `${p.name} (${p.model})`).join(" → ")}`);
+  } else {
+    console.log(`LLM: Mock (dev mode — set CEREBRAS_API_KEY, SAMBANOVA_API_KEY, GROQ_API_KEY, or NVIDIA_NIM_API_KEY)`);
+  }
   console.log();
 
   // Setup
@@ -351,6 +513,8 @@ async function main() {
       expected: pair.expected_output,
       jd_requirements: pair.jd_requirements,
       cloud_skills: pair.cloud_skills,
+      raw_cv_text: pair.raw_cv_text,
+      raw_jd_text: pair.raw_jd_text,
     })
   );
   const baselinePassRate = baselineScores.filter(s => s.gate1_verdict === "pass").length / baselineScores.length;
@@ -359,6 +523,15 @@ async function main() {
 
   // Main loop
   console.log("Starting optimization loop...\n");
+
+  // FIXED evaluation batch — deterministic selection, same across restarts.
+  // Sort by ID so the batch is reproducible regardless of filesystem order or RNG.
+  const trainByIdSorted = pairs.filter(p => p.split === "train").sort((a, b) => a.id.localeCompare(b.id));
+  const fixedEvalBatch = trainByIdSorted.slice(0, config.training_batch_size);
+  console.log(`Fixed eval batch: ${fixedEvalBatch.map(p => p.id).join(", ")}\n`);
+
+  // Cache incumbent CV outputs per pair ID — invalidated on KEEP (prompt changes)
+  const incumbentCache = new Map<string, CVScorecardInput["generated"]>();
 
   for (let i = 0; i < maxIterations; i++) {
     const stopCheck = shouldStop(state, config);
@@ -386,24 +559,29 @@ async function main() {
 
     // 3. Call LLM to mutate
     const mutationResponse = await callLLM(
-      "You are a prompt engineer optimizing prompts for CV generation quality. Apply the requested mutation precisely.",
+      "You are a prompt engineer optimizing prompts for CV generation quality. Apply the requested mutation precisely. Return ONLY the modified prompt text — no markdown fences, no preamble, no explanation.",
       mutationPrompt,
     );
-    const mutatedPrompt = mutationResponse.text;
+    // Strip markdown wrappers that LLMs often add despite instructions
+    let mutatedPrompt = mutationResponse.text;
+    mutatedPrompt = mutatedPrompt.replace(/^```[\w]*\n?/, "").replace(/\n?```\s*$/, "").trim();
 
-    // 4. Generate CVs with mutated prompt (feedback-weighted batch selection)
-    const batch = selectWeightedTrainingBatch(pairs, config.training_batch_size, feedbackWeights);
+    // 4. Generate CVs with mutated prompt (FIXED batch — no variance between iterations)
+    const batch = fixedEvalBatch;
     const challengerOutputs: CVScorecardInput["generated"][] = [];
     for (const pair of batch) {
       const output = await generateCV(mutatedPrompt, pair);
       challengerOutputs.push(output);
     }
 
-    // 5. Also run incumbent on same batch (fair comparison)
+    // 5. Reuse cached incumbent outputs (same prompt = same output, saves 10 LLM calls/iteration)
     const incumbentBatchOutputs: CVScorecardInput["generated"][] = [];
     for (const pair of batch) {
-      const output = await generateCV(currentPrompt, pair);
-      incumbentBatchOutputs.push(output);
+      if (!incumbentCache.has(pair.id)) {
+        const output = await generateCV(currentPrompt, pair);
+        incumbentCache.set(pair.id, output);
+      }
+      incumbentBatchOutputs.push(incumbentCache.get(pair.id)!);
     }
 
     // 6. Score and compare
@@ -412,7 +590,7 @@ async function main() {
       config,
       batch,
       mutation.type,
-      `${mutation.type}: ${mutationResponse.text.slice(0, 100)}...`,
+      `${mutation.type}: ${mutation.directive.slice(0, 150)}`,
       incumbentBatchOutputs,
       challengerOutputs,
     );
@@ -422,6 +600,7 @@ async function main() {
 
     if (result.verdict === "keep") {
       currentPrompt = mutatedPrompt;
+      incumbentCache.clear(); // Prompt changed — cached outputs are stale
       savePromptVersion(target, state.current_prompt_version, currentPrompt);
       console.log(`  -> KEPT (v${state.current_prompt_version}) | Gate1: ${result.scorecard.gate1_passed}/${result.scorecard.gate1_total}`);
     } else {
@@ -442,6 +621,8 @@ async function main() {
           expected: pair.expected_output,
           jd_requirements: pair.jd_requirements,
           cloud_skills: pair.cloud_skills,
+          raw_cv_text: pair.raw_cv_text,
+          raw_jd_text: pair.raw_jd_text,
         })
       );
       const valPassRate = valScores.filter(s => s.gate1_verdict === "pass").length / valScores.length;
@@ -475,12 +656,16 @@ async function main() {
         expected: pair.expected_output,
         jd_requirements: pair.jd_requirements,
         cloud_skills: pair.cloud_skills,
+        raw_cv_text: pair.raw_cv_text,
+        raw_jd_text: pair.raw_jd_text,
       });
       const optScore = scoreCVGeneration({
         generated: optOutput,
         expected: pair.expected_output,
         jd_requirements: pair.jd_requirements,
         cloud_skills: pair.cloud_skills,
+        raw_cv_text: pair.raw_cv_text,
+        raw_jd_text: pair.raw_jd_text,
       });
 
       origScores.push(origScore.legacy_structural_avg);
@@ -521,6 +706,8 @@ async function main() {
       expected: pair.expected_output,
       jd_requirements: pair.jd_requirements,
       cloud_skills: pair.cloud_skills,
+      raw_cv_text: pair.raw_cv_text,
+      raw_jd_text: pair.raw_jd_text,
     })
   );
   optTrainPassRate = trainScores.filter(s => s.gate1_verdict === "pass").length / trainScores.length;
@@ -534,10 +721,12 @@ async function main() {
       const origScore = scoreCVGeneration({
         generated: origOutput, expected: pair.expected_output,
         jd_requirements: pair.jd_requirements, cloud_skills: pair.cloud_skills,
+        raw_cv_text: pair.raw_cv_text, raw_jd_text: pair.raw_jd_text,
       });
       const optScore = scoreCVGeneration({
         generated: optOutput, expected: pair.expected_output,
         jd_requirements: pair.jd_requirements, cloud_skills: pair.cloud_skills,
+        raw_cv_text: pair.raw_cv_text, raw_jd_text: pair.raw_jd_text,
       });
       if (origScore.gate1_verdict === "pass") origPasses++;
       if (optScore.gate1_verdict === "pass") optPasses++;

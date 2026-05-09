@@ -1,0 +1,58 @@
+{
+  "id": "pair-R041",
+  "split": "train",
+  "persona": "executive",
+  "source_resume": {
+    "id": "ra-02367",
+    "dataset": "resume_atlas",
+    "industry": "sales",
+    "seniority": "executive"
+  },
+  "jd": {
+    "title": "Director of Strategic Sales - NE/KS/MO",
+    "company": "FLEETCOR",
+    "location": "",
+    "experience_years": null,
+    "requirements": [
+      {
+        "text": "experience with a track record of hitting or exceeding sales goals  Experience selling to or managing relationships with corporate clients preferred  Strong business development and prospecting skills; ability to quickly and effectively acquire new clients  Excellent verbal",
+        "type": "must_have"
+      },
+      {
+        "text": "Knowledge of commercial payments and services preferred  Must have strong work ethic and self-discipline  Ability to travel extensively",
+        "type": "must_have"
+      }
+    ],
+    "responsibilities": [],
+    "full_description": "What We Need\n\nCorpay is currently looking to hire a Director of Strategic Sales based in NE/KS/MO within our payables line of business, which provides a comprehensive suite of online B2B payment solutions from AP automation to commercial expense cards and bill payment. In this role, you will be responsible for finding new opportunities and increasing revenue production within your assigned sales territory. You will report directly to Vice President of Sales and regularly collaborate with the Corpay field sales organization.\n\nHow We Work\n\nAs a Director of Strategic Sales, you will be expected to work in a virtual environment. Corpay will set you up for success by providing:\n\n Company-issued equipment + remote access  Monthly home internet stipend \n\nRole Responsibilities\n\n Growing new business by selling solutions to large market commercial accounts based within the United States  Researching and understanding the prospective client’s business goals, objectives and challenges  Communicating recommendations effectively to the appropriate level of leadership within a prospective company  Being actively involved throughout the implementation phase with each new customer to ensure a quick and complete realization of revenue  Building a professional network in order to build a pipeline of business prospects  Communicating accurate and timely forecasts to multiple levels of management  Effectively communicating and collaborating with internal and external resources to deliver results  Actively participating in the preparation and execution of sales plans, events and campaigns  Being responsible and accountable for meeting required sales/revenue targets \n\nQualifications & Skills\n\n Bachelor's degree required  5+ years of direct selling experience with a track record of hitting or exceeding sales goals  Experience selling to or managing relationships with corporate clients preferred  Strong business development and prospecting skills; ability to quickly and effectively acquire new clients  Excellent verbal, written, interpersonal, relationship building and presentation skills  Must possess strong organizational, interpersonal and time management skills  Must have the ability to represent Corpay in a polished and professional manner to existing and potential clients  Knowledge of commercial payments and services preferred  Must have strong work ethic and self-discipline  Ability to travel extensively, up to 50% \n\nBenefits & Perks\n\n Medical, Dental & Vision benefits available the 1st month after hire  Automatic enrollment into our 401k plan (subject to eligibility requirements)  Virtual fitness classes offered company-wide  Robust PTO offerings including: major holidays, vacation, sick, personal, &volunteer time  Employee discounts with major providers  Philanthropic support with both local and national organizations  Fun culture with company-wide contests and prizes \n\n Equal Opportunity/Affirmative Action Employer \n\nCorpay is an Equal Opportunity Employer. Corpay provides equal employment opportunities to all employees and applicants without regard to race, color, gender (including pregnancy), religion, national origin, ancestry, disability, age, sexual orientation, gender identity or expression, marital status, language, ancestry, genetic information, veteran and/or military status or any other group status protected by federal or local law. If you require reasonable accommodation for the application and/or interview process, please notify a representative of the Human Resources Department. For more information about our commitment to equal employment opportunity and pay transparency, please click the following links:  EEO  and  Pay Transparency .\n\nThis salary range is provided for locations which require such disclosure. Where a position or applicant may fall in a particular wage range varies depending on a number of factors, including but not limited to skill sets, experience, training, licensure and certifications (if applicable), and other business and organization needs. The disclosed range has not been adjusted for the applicable geographic markets. At Corpay, it is not typical for an individual to be hired at or near the top of the range for their role, and compensation decisions are dependent on the facts and circumstances of each case. An estimate of the minimum and maximum salary range is $64,000 - $120,000 plus additional variable compensation according to the sales incentive plan for this position.\n\nApply Now"
+  },
+  "expected_output": {
+    "_status": "NEEDS_HUMAN_REVIEW",
+    "_raw_text_preview": "robert echevarria thousand palms ca betostgcom ininbetoechevarria executive profile chief executive officer innovative revenue growth organizational leadership sales leadership leader positioning companies dynamic change profitable expansion distinguished 30year career marked largescale contributions bottom top line revenue sparked developing process improvements business sales sides noted throughout career implementing innovative revenue streams directing corporate strategy levels organization ",
+    "summary": "",
+    "experience": [],
+    "skills": {},
+    "certifications": [],
+    "education": []
+  },
+  "jd_requirements": [
+    "experience with a track record of hitting or exceeding sales goals  Experience selling to or managin",
+    "Knowledge of commercial payments and services preferred  Must have strong work ethic and self-discip"
+  ],
+  "cloud_skills": [
+    "power bi",
+    "excel",
+    "agile"
+  ],
+  "provenance": {
+    "data_source": "real_dataset_raw_text",
+    "jd_source": "kaggle_linkedin",
+    "resume_dataset": "resume_atlas",
+    "jd_id": "linkedin-3904983821",
+    "resume_id": "ra-02367",
+    "generated_at": "2026-05-08T08:47:53.867Z",
+    "expected_output_author": "NEEDS_HUMAN_REVIEW",
+    "circularity_risk": "low",
+    "notes": "Resume from real dataset (raw text). JD from real job posting. Expected output EMPTY — needs LLM parsing + human review."
+  }
+}

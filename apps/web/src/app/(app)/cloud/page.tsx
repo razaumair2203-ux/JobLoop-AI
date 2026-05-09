@@ -1,61 +1,124 @@
 "use client";
 
-import { useState } from "react";
-import { Cloud, Filter } from "lucide-react";
+import { useState, useEffect } from "react";
+import { Cloud, Filter, Upload, ChevronDown, ChevronRight } from "lucide-react";
+import Link from "next/link";
 
-// --- Mock Data ---
-interface CloudNode {
-  id: string;
-  name: string;
-  category: string;
-  type: "skill" | "capability" | "domain";
-  evidence_count: number;
-  strength: "strong" | "related" | "gap";
-  summary: string;
-  niches: string[];
+// Types matching ClassifiedCloud from packages/ai/src/taxonomy.ts
+interface DepthAssessment {
+  level: "mentioned" | "applied" | "proficient" | "expert";
+  totalMonths: number;
+  roleCount: number;
+  hasImpact: boolean;
+  hasCertification: boolean;
+  hasProject: boolean;
+  hasAward: boolean;
+  score: number;
 }
 
-const mockNodes: CloudNode[] = [
-  { id: "1", name: "TypeScript", category: "Languages", type: "skill", evidence_count: 5, strength: "strong", summary: "Used in all production projects since 2021. Strict mode, monorepo configs, DefinitelyTyped contributor.", niches: ["fintech", "devtools"] },
-  { id: "2", name: "Python", category: "Languages", type: "skill", evidence_count: 3, strength: "related", summary: "Used for data scripts and automation. Django REST experience.", niches: [] },
-  { id: "3", name: "Go", category: "Languages", type: "skill", evidence_count: 1, strength: "gap", summary: "Hackathon project only. Basic HTTP server and CLI tool.", niches: [] },
-  { id: "4", name: "React", category: "Frameworks", type: "skill", evidence_count: 6, strength: "strong", summary: "4+ years production. Hooks, context, server components, concurrent features.", niches: ["saas", "fintech", "e-commerce"] },
-  { id: "5", name: "Next.js", category: "Frameworks", type: "skill", evidence_count: 4, strength: "strong", summary: "Led Angular-to-Next.js 14 migration serving 2M users. App router, ISR, middleware.", niches: ["saas", "devtools"] },
-  { id: "6", name: "Node.js", category: "Frameworks", type: "skill", evidence_count: 3, strength: "related", summary: "Express/Fastify APIs, background workers, WebSocket servers.", niches: [] },
-  { id: "7", name: "AWS", category: "Infrastructure", type: "skill", evidence_count: 2, strength: "related", summary: "S3, CloudFront, Lambda. AWS Cloud Practitioner certified.", niches: [] },
-  { id: "8", name: "Docker", category: "Infrastructure", type: "skill", evidence_count: 3, strength: "strong", summary: "Multi-stage builds, compose for local dev, optimized image sizes by 60%.", niches: ["devtools"] },
-  { id: "9", name: "Kubernetes", category: "Infrastructure", type: "skill", evidence_count: 0, strength: "gap", summary: "No direct experience. Docker and CI/CD provide foundation.", niches: [] },
-  { id: "10", name: "Technical Leadership", category: "Soft Skills", type: "capability", evidence_count: 4, strength: "strong", summary: "Led 3-person frontend pod. Mentored 2 juniors. Architecture decision records.", niches: ["saas"] },
-  { id: "11", name: "Cross-team Collaboration", category: "Soft Skills", type: "capability", evidence_count: 3, strength: "strong", summary: "Design system adopted by 3 teams. Facilitated cross-team API contracts.", niches: [] },
-  { id: "12", name: "E-commerce", category: "Domain", type: "domain", evidence_count: 2, strength: "related", summary: "Built checkout flows and product catalogs for DataFlow's retail clients.", niches: ["e-commerce"] },
-];
+interface Evidence {
+  type: string;
+  source_role?: string;
+  description?: string;
+  metric?: string;
+  question?: string;
+  answer?: string;
+}
 
-const categories = [
-  "All",
-  "Languages",
-  "Frameworks",
-  "Infrastructure",
-  "Soft Skills",
-  "Domain",
-];
+interface ClassifiedSkill {
+  name: string;
+  domain: string;
+  category: string;
+  depth: DepthAssessment;
+  evidence: Evidence[];
+}
 
-const strengthColors = {
-  strong: { bar: "bg-emerald-500", badge: "bg-emerald-50 text-emerald-700" },
-  related: { bar: "bg-sky-500", badge: "bg-sky-50 text-sky-700" },
-  gap: { bar: "bg-amber-500", badge: "bg-amber-50 text-amber-700" },
+interface ClassifiedRole {
+  title: string;
+  company: string;
+  startYear: number;
+  endYear: number;
+  domain: string;
+  durationMonths: number;
+}
+
+interface SkillGap {
+  skillName: string;
+  reason: string;
+  priority: "p0" | "p1" | "p2";
+  type: "missing" | "shallow" | "stale";
+}
+
+interface TaxonomyCategory {
+  name: string;
+  displayName: string;
+  skills: ClassifiedSkill[];
+}
+
+interface TaxonomyDomain {
+  name: string;
+  displayName: string;
+  categories: TaxonomyCategory[];
+}
+
+interface ClassifiedCloud {
+  domains: TaxonomyDomain[];
+  topSkills: ClassifiedSkill[];
+  roles: ClassifiedRole[];
+  careerSpan: { startYear: number; endYear: number; years: number };
+  totalRoles: number;
+  totalEvidencePoints: number;
+  gaps: SkillGap[];
+}
+
+// Depth level → display
+const depthConfig = {
+  expert: { label: "Expert", color: "bg-emerald-500", badge: "bg-emerald-50 text-emerald-700" },
+  proficient: { label: "Proficient", color: "bg-sky-500", badge: "bg-sky-50 text-sky-700" },
+  applied: { label: "Applied", color: "bg-violet-500", badge: "bg-violet-50 text-violet-700" },
+  mentioned: { label: "Mentioned", color: "bg-amber-500", badge: "bg-amber-50 text-amber-700" },
 };
 
 export default function CloudPage() {
-  const [activeCategory, setActiveCategory] = useState("All");
+  const [cloud, setCloud] = useState<ClassifiedCloud | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+  const [activeFilter, setActiveFilter] = useState("All");
+  const [expandedSkill, setExpandedSkill] = useState<string | null>(null);
+
+  useEffect(() => {
+    fetch("/api/cloud")
+      .then((r) => r.json())
+      .then((data) => {
+        setCloud(data.classified ?? null);
+        setLoading(false);
+      })
+      .catch((err) => {
+        setError(err.message);
+        setLoading(false);
+      });
+  }, []);
+
+  if (loading) return <LoadingSkeleton />;
+  if (error) return <ErrorState message={error} />;
+  if (!cloud) return <EmptyState />;
+
+  // Flatten all skills for grid view
+  const allSkills: ClassifiedSkill[] = cloud.domains.flatMap((d) =>
+    d.categories.flatMap((c) => c.skills)
+  );
+
+  // Get unique domains for filter
+  const domains = ["All", ...cloud.domains.map((d) => d.displayName)];
 
   const filtered =
-    activeCategory === "All"
-      ? mockNodes
-      : mockNodes.filter((n) => n.category === activeCategory);
+    activeFilter === "All"
+      ? allSkills
+      : allSkills.filter((s) => s.domain === activeFilter || cloud.domains.find(d => d.displayName === activeFilter)?.name === s.domain);
 
-  const totalSkills = mockNodes.length;
-  const strongCount = mockNodes.filter((n) => n.strength === "strong").length;
-  const categoryCount = new Set(mockNodes.map((n) => n.category)).size;
+  // Stats
+  const expertCount = allSkills.filter((s) => s.depth.level === "expert").length;
+  const proficientCount = allSkills.filter((s) => s.depth.level === "proficient").length;
 
   return (
     <div>
@@ -63,122 +126,259 @@ export default function CloudPage() {
         <div>
           <h1 className="text-2xl font-bold text-zinc-900">Profile Cloud</h1>
           <p className="mt-1 text-sm text-zinc-500">
-            Your skills, backed by evidence
+            Your skills, backed by evidence — {cloud.careerSpan.years} years across {cloud.totalRoles} roles
           </p>
         </div>
       </div>
 
       {/* Stats */}
       <div className="mt-6 flex gap-4">
-        <div className="rounded-xl border border-zinc-200 bg-white px-5 py-3">
-          <p className="text-2xl font-semibold text-zinc-900">{totalSkills}</p>
-          <p className="text-xs text-zinc-500">Total skills</p>
-        </div>
-        <div className="rounded-xl border border-zinc-200 bg-white px-5 py-3">
-          <p className="text-2xl font-semibold text-emerald-600">
-            {strongCount}
-          </p>
-          <p className="text-xs text-zinc-500">Strong evidence</p>
-        </div>
-        <div className="rounded-xl border border-zinc-200 bg-white px-5 py-3">
-          <p className="text-2xl font-semibold text-zinc-900">
-            {categoryCount}
-          </p>
-          <p className="text-xs text-zinc-500">Categories</p>
-        </div>
+        <StatCard value={allSkills.length} label="Total skills" />
+        <StatCard value={expertCount} label="Expert depth" color="text-emerald-600" />
+        <StatCard value={proficientCount} label="Proficient" color="text-sky-600" />
+        <StatCard value={cloud.totalEvidencePoints} label="Evidence points" />
+        <StatCard value={cloud.gaps.length} label="Gaps detected" color={cloud.gaps.length > 0 ? "text-amber-600" : "text-zinc-900"} />
       </div>
 
-      {/* Filter bar */}
+      {/* Domain filter */}
       <div className="mt-6 flex items-center gap-2">
         <Filter className="h-4 w-4 text-zinc-400" />
-        {categories.map((cat) => (
+        {domains.map((domain) => (
           <button
-            key={cat}
-            onClick={() => setActiveCategory(cat)}
+            key={domain}
+            onClick={() => setActiveFilter(domain)}
             className={`rounded-full px-3 py-1.5 text-xs font-medium transition-colors ${
-              activeCategory === cat
+              activeFilter === domain
                 ? "bg-brand-50 text-brand-700"
                 : "bg-zinc-100 text-zinc-600 hover:bg-zinc-200"
             }`}
           >
-            {cat}
+            {domain}
           </button>
         ))}
       </div>
 
       {/* Skill Grid */}
       <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-        {filtered.map((node) => (
-          <SkillCard key={node.id} node={node} />
+        {filtered.map((skill) => (
+          <SkillCard
+            key={`${skill.domain}-${skill.name}`}
+            skill={skill}
+            expanded={expandedSkill === `${skill.domain}-${skill.name}`}
+            onToggle={() =>
+              setExpandedSkill(
+                expandedSkill === `${skill.domain}-${skill.name}`
+                  ? null
+                  : `${skill.domain}-${skill.name}`
+              )
+            }
+          />
         ))}
       </div>
 
       {filtered.length === 0 && (
         <div className="mt-16 flex flex-col items-center text-center">
           <Cloud className="h-12 w-12 text-zinc-300" />
-          <p className="mt-3 text-sm font-medium text-zinc-500">
-            No skills in this category
+          <p className="mt-3 text-sm font-medium text-zinc-500">No skills in this domain</p>
+        </div>
+      )}
+
+      {/* Gaps section */}
+      {cloud.gaps.length > 0 && (
+        <div className="mt-10">
+          <h2 className="text-lg font-semibold text-zinc-900">Detected Gaps</h2>
+          <p className="mt-1 text-sm text-zinc-500">
+            Skills your career suggests but your Cloud lacks depth on
           </p>
+          <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {cloud.gaps.map((gap) => (
+              <div
+                key={gap.skillName}
+                className="rounded-xl border border-amber-200 bg-amber-50/50 p-4"
+              >
+                <div className="flex items-center justify-between">
+                  <h3 className="text-sm font-semibold text-zinc-900">{gap.skillName}</h3>
+                  <span className="rounded-full bg-amber-100 px-2 py-0.5 text-[10px] font-medium text-amber-700">
+                    {gap.type}
+                  </span>
+                </div>
+                <p className="mt-1 text-xs text-zinc-600">{gap.reason}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* Career Timeline */}
+      {cloud.roles.length > 0 && (
+        <div className="mt-10">
+          <h2 className="text-lg font-semibold text-zinc-900">Career Timeline</h2>
+          <div className="mt-4 space-y-2">
+            {cloud.roles.map((role, i) => (
+              <div key={i} className="flex items-center gap-3 rounded-lg border border-zinc-200 bg-white p-3">
+                <div className="flex-shrink-0 rounded-full bg-zinc-100 px-2 py-1 text-[10px] font-medium text-zinc-500">
+                  {role.startYear}–{role.endYear}
+                </div>
+                <div className="min-w-0 flex-1">
+                  <p className="truncate text-sm font-medium text-zinc-900">{role.title}</p>
+                  <p className="text-xs text-zinc-500">{role.company} · {role.domain} · {role.durationMonths}mo</p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       )}
     </div>
   );
 }
 
-function SkillCard({ node }: { node: CloudNode }) {
-  const colors = strengthColors[node.strength];
-  const maxEvidence = 6;
-  const barWidth = Math.min((node.evidence_count / maxEvidence) * 100, 100);
+// ============================================================
+// Sub-components
+// ============================================================
+
+function SkillCard({
+  skill,
+  expanded,
+  onToggle,
+}: {
+  skill: ClassifiedSkill;
+  expanded: boolean;
+  onToggle: () => void;
+}) {
+  const config = depthConfig[skill.depth.level];
+  const maxMonths = 120; // 10 years
+  const barWidth = Math.min((skill.depth.totalMonths / maxMonths) * 100, 100);
 
   return (
-    <div className="rounded-xl border border-zinc-200 bg-white p-4 transition-shadow hover:shadow-md hover:border-brand-200">
+    <div
+      className="cursor-pointer rounded-xl border border-zinc-200 bg-white p-4 transition-shadow hover:shadow-md hover:border-brand-200"
+      onClick={onToggle}
+    >
       <div className="flex items-start justify-between">
         <div>
-          <h3 className="text-sm font-semibold text-zinc-900">{node.name}</h3>
+          <h3 className="text-sm font-semibold text-zinc-900">{skill.name}</h3>
           <p className="text-[10px] font-medium uppercase tracking-wide text-zinc-400">
-            {node.category}
+            {skill.category}
           </p>
         </div>
-        <span className={`rounded-full px-2 py-0.5 text-[10px] font-medium ${colors.badge}`}>
-          {node.strength === "strong"
-            ? "Strong"
-            : node.strength === "related"
-              ? "Related"
-              : "Gap"}
+        <span className={`rounded-full px-2 py-0.5 text-[10px] font-medium ${config.badge}`}>
+          {config.label}
         </span>
       </div>
 
-      {/* Evidence bar */}
+      {/* Duration bar */}
       <div className="mt-3">
         <div className="flex items-center justify-between text-[10px] text-zinc-400">
-          <span>{node.evidence_count} evidence points</span>
+          <span>{skill.depth.roleCount} role{skill.depth.roleCount !== 1 ? "s" : ""} · {skill.depth.totalMonths}mo</span>
+          <span>{skill.evidence.length} evidence</span>
         </div>
         <div className="mt-1 h-1.5 overflow-hidden rounded-full bg-zinc-100">
           <div
-            className={`h-full rounded-full ${colors.bar} transition-all`}
+            className={`h-full rounded-full ${config.color} transition-all`}
             style={{ width: `${barWidth}%` }}
           />
         </div>
       </div>
 
-      {/* Summary */}
-      <p className="mt-3 line-clamp-2 text-xs leading-relaxed text-zinc-600">
-        {node.summary}
-      </p>
+      {/* Depth indicators */}
+      <div className="mt-2 flex flex-wrap gap-1">
+        {skill.depth.hasImpact && <DepthPill label="Impact" />}
+        {skill.depth.hasCertification && <DepthPill label="Certified" />}
+        {skill.depth.hasProject && <DepthPill label="Project" />}
+        {skill.depth.hasAward && <DepthPill label="Award" />}
+      </div>
 
-      {/* Niche pills */}
-      {node.niches.length > 0 && (
-        <div className="mt-2 flex flex-wrap gap-1">
-          {node.niches.map((n) => (
-            <span
-              key={n}
-              className="rounded-full bg-zinc-100 px-2 py-0.5 text-[10px] text-zinc-500"
-            >
-              {n}
-            </span>
-          ))}
+      {/* Expanded evidence */}
+      {expanded && skill.evidence.length > 0 && (
+        <div className="mt-3 border-t border-zinc-100 pt-3">
+          <p className="mb-2 text-[10px] font-medium uppercase tracking-wide text-zinc-400">
+            Evidence chain
+          </p>
+          <div className="space-y-2">
+            {skill.evidence.map((ev, i) => (
+              <div key={i} className="text-xs text-zinc-600">
+                <span className="font-medium text-zinc-700">{ev.type}</span>
+                {ev.source_role && <span className="text-zinc-400"> · {ev.source_role}</span>}
+                {ev.description && <p className="mt-0.5 text-zinc-500">{ev.description}</p>}
+                {ev.metric && <p className="mt-0.5 font-medium text-emerald-700">{ev.metric}</p>}
+              </div>
+            ))}
+          </div>
         </div>
       )}
+
+      {/* Expand hint */}
+      <div className="mt-2 flex justify-center">
+        {expanded ? (
+          <ChevronDown className="h-3 w-3 text-zinc-300" />
+        ) : (
+          <ChevronRight className="h-3 w-3 text-zinc-300" />
+        )}
+      </div>
+    </div>
+  );
+}
+
+function DepthPill({ label }: { label: string }) {
+  return (
+    <span className="rounded-full bg-zinc-100 px-2 py-0.5 text-[10px] text-zinc-500">
+      {label}
+    </span>
+  );
+}
+
+function StatCard({ value, label, color }: { value: number; label: string; color?: string }) {
+  return (
+    <div className="rounded-xl border border-zinc-200 bg-white px-5 py-3">
+      <p className={`text-2xl font-semibold ${color || "text-zinc-900"}`}>{value}</p>
+      <p className="text-xs text-zinc-500">{label}</p>
+    </div>
+  );
+}
+
+function LoadingSkeleton() {
+  return (
+    <div className="animate-pulse">
+      <div className="h-8 w-48 rounded bg-zinc-200" />
+      <div className="mt-2 h-4 w-72 rounded bg-zinc-100" />
+      <div className="mt-6 flex gap-4">
+        {[1, 2, 3, 4].map((i) => (
+          <div key={i} className="h-16 w-28 rounded-xl bg-zinc-100" />
+        ))}
+      </div>
+      <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        {[1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
+          <div key={i} className="h-36 rounded-xl bg-zinc-100" />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function ErrorState({ message }: { message: string }) {
+  return (
+    <div className="mt-16 flex flex-col items-center text-center">
+      <Cloud className="h-12 w-12 text-red-300" />
+      <p className="mt-3 text-sm font-medium text-red-600">Failed to load Cloud</p>
+      <p className="mt-1 text-xs text-zinc-500">{message}</p>
+    </div>
+  );
+}
+
+function EmptyState() {
+  return (
+    <div className="mt-16 flex flex-col items-center text-center">
+      <Upload className="h-12 w-12 text-zinc-300" />
+      <p className="mt-3 text-sm font-medium text-zinc-700">No Profile Cloud yet</p>
+      <p className="mt-1 text-sm text-zinc-500">
+        Upload your CV to build your evidence-backed skill profile
+      </p>
+      <Link
+        href="/onboarding"
+        className="mt-4 rounded-lg bg-brand-600 px-4 py-2 text-sm font-medium text-white hover:bg-brand-700"
+      >
+        Get started
+      </Link>
     </div>
   );
 }

@@ -1,0 +1,49 @@
+{
+  "id": "pair-R062",
+  "split": "validation",
+  "persona": "mid_career",
+  "source_resume": {
+    "id": "ra-03115",
+    "dataset": "resume_atlas",
+    "industry": "arts_media",
+    "seniority": "unknown"
+  },
+  "jd": {
+    "title": "Freelance Home and Lifestyle Writer",
+    "company": "Static Media",
+    "location": "",
+    "experience_years": null,
+    "requirements": [
+      {
+        "text": "Experience with building content in a CMS Familiarity with the Associated Press StylebookHow To Apply: To apply for this job",
+        "type": "must_have"
+      }
+    ],
+    "responsibilities": [],
+    "full_description": "Steady freelance work that pays on time! Home design and lifestyle site House Digest is looking for enthusiastic, hard-working freelance writers to join our team. Ideal candidates have at least three years of experience writing content for print or the web with a focus on architecture, interior design, gardening, housekeeping, and HGTV and similar networks. We are looking for creative individuals who are self-sufficient and versatile. These positions are work-from-home with flexible, stable hours. Location does not matter; U.S. and international candidates are encouraged to apply.About House DigestAt House Digest, we work hard to make sure you can live well. We cover home renovation trends, home design trends, and more. Our team of writers and editors have years of experience working in the home and garden media space. Do you need to know the best color to paint your walls, how to find the right plants for you, or need some serious celeb home inspo? House Digest gives you everything you need to make your house into a home.News Writer Responsibilities: Claim news and evergreen article topics from a selection of assignments Pitch relevant and timely news stories related to the site's areas of coverage Research and write 300- to 900-word articles in a custom CMS Write content on a quick turnaround as applicable Follow the guidelines of our style guide, editorial strategy, and publishing standards to uphold quality of contentWhat We Offer: Compensation: $21 per hour Reliable payment: we pay on time, twice a month Flexible scheduling: you choose the days and hours you work Fully remote: you can work from anywhere in the world Excellent exposure: Static Media’s sites receive more than 170 million monthly visitors and our content is syndicated via SmartNews, Apple News+, MSN, and YahooExperience Required: Minimum three years editorial experience writing and/or editing Experience with building content in a CMS Familiarity with the Associated Press StylebookHow To Apply: To apply for this job, please submit the following materials: Your resume A cover letter Three professional writing samples relevant to the content we share onApplications missing any of these elements will not be considered.All content on Static Media's sites is written entirely by humans. While we understand AI-written content is becoming prevalent, any articles submitted using AI during the hiring process will not be considered.We believe representation matters at Static Media and strongly encourage people of color, members of the LGBTQ+ community, veterans, those with disabilities, and individuals from other underrepresented groups to apply.Job Type: ContractPay: $21.00 per hourBenefits: Flexible scheduleExperience: professional writing or editing: 3 years (Required)Work Location: Remote"
+  },
+  "expected_output": {
+    "_status": "NEEDS_HUMAN_REVIEW",
+    "_raw_text_preview": "lisa elizabeth shea year born location lisa shea artists resume email phone artrelated education digital photography 1 studio art 1160 northeastern university digital photography 2 studio art 1161 northeastern university related work experience 1985 assistant exhibit docent wadsworth athenaeum hartford ct 1987assistant membership department worcester art museum worcester affiliations blackstone valley art association corresponding secretary 2014present artsworcester seven hills camera club selec",
+    "summary": "",
+    "experience": [],
+    "skills": {},
+    "certifications": [],
+    "education": []
+  },
+  "jd_requirements": [
+    "Experience with building content in a CMS Familiarity with the Associated Press StylebookHow To Appl"
+  ],
+  "cloud_skills": [],
+  "provenance": {
+    "data_source": "real_dataset_raw_text",
+    "jd_source": "github_indeed",
+    "resume_dataset": "resume_atlas",
+    "jd_id": "indeed-26ccea58b05a98b4",
+    "resume_id": "ra-03115",
+    "generated_at": "2026-05-08T08:47:53.882Z",
+    "expected_output_author": "NEEDS_HUMAN_REVIEW",
+    "circularity_risk": "low",
+    "notes": "Resume from real dataset (raw text). JD from real job posting. Expected output EMPTY — needs LLM parsing + human review."
+  }
+}

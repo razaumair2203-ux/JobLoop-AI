@@ -1,0 +1,45 @@
+{
+  "id": "pair-R053",
+  "split": "validation",
+  "persona": "senior",
+  "source_resume": {
+    "id": "ra-00588",
+    "dataset": "resume_atlas",
+    "industry": "operations",
+    "seniority": "senior"
+  },
+  "jd": {
+    "title": "Callidus SPM Operations Manager(SAP)",
+    "company": "PDSSOFT INC.",
+    "location": "",
+    "experience_years": null,
+    "requirements": [],
+    "responsibilities": [],
+    "full_description": "Callidus SPM Operations Manager(SAP)\nLocation: Charlotte,NC(On-site)\nDuration: 12 Months\nJob Description:Need Callidus SPM Operations Manager(SAP) · Prefer previous Telecom/Cable experience would be a plus"
+  },
+  "expected_output": {
+    "_status": "NEEDS_HUMAN_REVIEW",
+    "_raw_text_preview": "bradly koss 2642 pacocha burg new york ny p 1 555 219 7684 experience hayes group san francisco ca bpo manager 042018 present demonstrated ability analyze problems probe facts identify question assumptions find creative effective solutions meet business goals without comprising customer satisfaction work fast paced environment tight deadliness develop update global process landscape standard operating procedures act significant source guidance o2c understanding experience finance system implemen",
+    "summary": "",
+    "experience": [],
+    "skills": {},
+    "certifications": [],
+    "education": []
+  },
+  "jd_requirements": [],
+  "cloud_skills": [
+    "sap",
+    "project management"
+  ],
+  "provenance": {
+    "data_source": "real_dataset_raw_text",
+    "jd_source": "kaggle_linkedin",
+    "resume_dataset": "resume_atlas",
+    "jd_id": "linkedin-3884912652",
+    "resume_id": "ra-00588",
+    "generated_at": "2026-05-08T08:47:53.875Z",
+    "expected_output_author": "NEEDS_HUMAN_REVIEW",
+    "circularity_risk": "low",
+    "notes": "Resume from real dataset (raw text). JD from real job posting. Expected output EMPTY — needs LLM parsing + human review."
+  }
+}

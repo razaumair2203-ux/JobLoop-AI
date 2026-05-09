@@ -1,0 +1,53 @@
+{
+  "id": "pair-R061",
+  "split": "validation",
+  "persona": "mid_career",
+  "source_resume": {
+    "id": "ra-09551",
+    "dataset": "resume_atlas",
+    "industry": "education",
+    "seniority": "unknown"
+  },
+  "jd": {
+    "title": "Elementary Autism Special Education Teacher",
+    "company": "Uncommon Schools",
+    "location": "",
+    "experience_years": null,
+    "requirements": [
+      {
+        "text": "Additional Information",
+        "type": "must_have"
+      }
+    ],
+    "responsibilities": [
+      "The Autism Special Education Classroom Teacher will:"
+    ],
+    "full_description": "Company Description\n\nUncommon Schools is a nonprofit network of high-performing, public charter schools providing an outstanding K-12 education in historically under-resourced communities. We have proudly built schools that reflect our student population, with more than 60% of our teachers and staff across our network identifying as a person of color. Uncommon currently manages 53 schools serving more than 20,000 students in five cities: Boston, Camden, New York City, Newark, and Rochester. We are proud that Uncommon graduates persist in and graduate from college at five times the rate of their peers nationally. We achieve this by offering strong academic, co-curricular, and social-emotional learning that prepares students for success in college and beyond.\n\nNorth Star Academy currently manages fourteen schools in Newark, NJ serving students in grades K through 12. We believe in strong authentic relationships between teachers and students, supported by effective school systems and an engaging instructional model that enables students to flourish academically and personally. North Star Academy is NJ's #1 highest performing public charter school and has served Newark families for over 20 years.\n\nJob Description\n\nThe Autism Special Education Classroom Teacher is passionate about assisting in the development of individual and small group instruction to meet the unique needs of Autistic students. The Special Education Autism Classroom Teacher holds primary responsibility for providing academic services and collaborating with related service providers for students who require a specialized self-contained program to thrive academically, behaviorally, and socially.\n\nEssential Duties & Responsibilities\n\nThe Autism Special Education Classroom Teacher will:\n\nDemonstrate a relentless drive to improve the minds, characters & lives of students, both in and out of schoolShow unwavering commitment to urban youth with disabilities achieving greatnessCreate a positive, structured learning environment to ensure that students are continuously progressing towards their IEP goalsDesign and implement curricula and activities that meet the needs of the students in the special education program and to meet individualized academic standardsDesign and implement assessments that measure progress towards academic standardsUse assessment data to refine curriculum and inform instructional practicesProvide individualized and consistent rewards and/or consequences for student behavior to ensure that students observe the individual behavior plans and goals for each studentBe accountable for students' mastery of goals as outlined in their Individualized Education ProgramsShare responsibility for school-wide activitiesExhibit resilience to persevere and turn challenges into opportunitiesFocus constantly on student learning, thinking critically and strategically to respond to students’ academic, emotional, and behavioral needsCommunicate effectively with students, families, and colleaguesEngage families in their children's education through frequent contactCommit to continual professional growth, participating actively in department meetings, faculty meetings, and other meetingsParticipate in an annual three-week staff orientation and trainingMentor and engage the classroom paraprofessional(s) in instructional practice and professional developmentInclude the classroom paraprofessional(s) in daily classroom activities to help students meet academic standardsImplement and enhance the school’s systems and cultureBuild professional relationships and collaborate with the Child Study Team Supervisor, members of the Child Study Team, Principal, Dean of Students, Program Director, Case Manager, and other school staff to maximize the ability of Uncommon Schools to support students’ developmentPerform other related duties as required and assigned\n\nQualifications\n\nDrive to improve the minds and lives of students in and out of the classroomEvidence of self-motivation and willingness to be a team playerKnowledge of laws and regulations governing special educationExperience working with students on the Autism SpectrumEffective problem-solving, human relations, and communication skillsStrong organizational skills; extremely careful attention to detail and follow-throughBelief in and alignment with Uncommon’s core beliefs and educational philosophy is non-negotiableExperience working with and in urban schools is highly preferredMaster’s degree preferredValid Teacher of Students with Disabilities certification required\n\nAdditional Information\n\nOur people are what makes us Uncommon.  We believe our compensation philosophy and benefits should reflect our values—equity, transparency, and clarity—to enhance our ability to attract and retain talent and reward their expertise. Our staff receive best-in-class training, coaching, and support to develop and operate mission-driven schools that provide a high-quality education to our students and families.\n\nCompensation for this position: The starting compensation for this role is between $59,000 to $74,000. The starting pay will depend on various factors including but not limited to relevant professional experience, education, certifications, and tenure with Uncommon Schools. Because we value staff tenure in a role, we do not currently cap salary ranges for current staff members.\n\nOther Benefits\n\nGenerous paid time off inclusive of sick time and school breaks (spring, winter, and summer) + additional sustainability half days throughout the school yearExtensive, best-in-class training and development Choice of 3 comprehensive health insurance plansPre-tax flexible spending and health saving accountsFinancial planning & wellnessNew Jersey Pension program529 college savings programPublic Service Loan Forgiveness application assistanceFinancial planning tools and assistanceDependent Care FSA, back up childcare and daycare discountsPaid leave of absenceFully paid parental leaveFully paid medical leaveAdditional paid Short Term and Long Term Disability insurance Mental health and counseling support + wellness benefits\nUncommon believes in the importance of being a diverse, equitable, and inclusive organization that enables our students and staff to thrive. We are committed to building an exceptional team that reflects the diverse backgrounds and experiences of our students. We also strive to ensure an inclusive community by creating a space for meaningful dialogue about issues of race and identity for our staff and students. As an equal opportunity employer, Uncommon provides equal employment opportunities to all employees and applicants for employment and prohibits discrimination and harassment of any type without regard to race, color, religion, age, sex, national origin, disability status, genetics, protected veteran status, sexual orientation, gender identity or expression, or any other characteristic protected by federal, state or local laws. We also ensure that individuals with disabilities receive all privileges and benefits associated with employment and are provided reasonable accommodations for the interview process and to perform core job functions. If you would like to request an accommodation, please email recruitment@uncommonschools.org."
+  },
+  "expected_output": {
+    "_status": "NEEDS_HUMAN_REVIEW",
+    "_raw_text_preview": "professional summary jessica claire 100 montgomery st 10th floor 555 4321000 resumesampleexamplecom versatile reliable dedicated team member focus providing quality work related field education compassionate effective aligning curriculum statedistrict requirements standards across multidisciplinary learning skills writing editing creativity originality adaptation modification analytical critical thinking multitasking abilities microsoft office data analysis work history special education teacher",
+    "summary": "",
+    "experience": [],
+    "skills": {},
+    "certifications": [],
+    "education": []
+  },
+  "jd_requirements": [
+    "Additional Information"
+  ],
+  "cloud_skills": [
+    "data analysis"
+  ],
+  "provenance": {
+    "data_source": "real_dataset_raw_text",
+    "jd_source": "kaggle_linkedin",
+    "resume_dataset": "resume_atlas",
+    "jd_id": "linkedin-3904419786",
+    "resume_id": "ra-09551",
+    "generated_at": "2026-05-08T08:47:53.881Z",
+    "expected_output_author": "NEEDS_HUMAN_REVIEW",
+    "circularity_risk": "low",
+    "notes": "Resume from real dataset (raw text). JD from real job posting. Expected output EMPTY — needs LLM parsing + human review."
+  }
+}

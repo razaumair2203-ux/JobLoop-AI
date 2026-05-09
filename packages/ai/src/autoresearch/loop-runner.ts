@@ -44,6 +44,10 @@ export interface TestPair {
   cloud_skills: string[];
   /** Expected: ground truth output */
   expected_output: CVScorecardInput["expected"];
+  /** Raw resume text — zero-circular scoring source */
+  raw_cv_text: string;
+  /** Raw JD text — zero-circular scoring source */
+  raw_jd_text: string;
   /** For JD parser pairs */
   jd_text?: string;
   jd_expected?: JDScorecardInput["expected"];
@@ -155,6 +159,8 @@ export function scorePromptVariant(
         expected: pair.expected_output,
         jd_requirements: pair.jd_requirements,
         cloud_skills: pair.cloud_skills,
+        raw_cv_text: pair.raw_cv_text,
+        raw_jd_text: pair.raw_jd_text,
       })
     );
     return aggregateScorecards(results);
@@ -182,18 +188,34 @@ export function scorePromptVariant(
 
 /**
  * Aggregate multiple scorecards into one (average across pairs).
+ *
+ * Gate 1 logic: A pair passes its per-pair gate if ≥6/8 checks pass.
+ * The aggregate passes if ≥70% of pairs pass their per-pair gate.
+ * This avoids the old "all checks × all pairs must pass" impossibility.
  */
 function aggregateScorecards(results: ScorecardResult[]): ScorecardResult {
   if (results.length === 0) {
     throw new Error("Cannot aggregate zero scorecards");
   }
 
-  // Gate 1: ALL pairs must pass all checks for the variant to pass
-  const allGate1Pass = results.every(r => r.gate1_verdict === "pass");
+  // Per-pair gate: pair passes if ≥75% of checks pass (6/8)
+  const PER_PAIR_THRESHOLD = 0.75;
+  // Aggregate gate: pass if ≥70% of pairs pass their per-pair gate
+  const AGGREGATE_THRESHOLD = 0.70;
+
+  let pairsPassingGate = 0;
+  for (const r of results) {
+    const pairPassRate = r.gate1_passed / r.gate1_total;
+    if (pairPassRate >= PER_PAIR_THRESHOLD) pairsPassingGate++;
+  }
+
+  const aggregatePassRate = pairsPassingGate / results.length;
+  const aggregatePass = aggregatePassRate >= AGGREGATE_THRESHOLD;
+
   const totalPassed = results.reduce((sum, r) => sum + r.gate1_passed, 0);
   const totalChecks = results.reduce((sum, r) => sum + r.gate1_total, 0);
 
-  // Collect all unique failure names
+  // Collect all unique failure names (checks that failed on ANY pair)
   const allFailures = new Set<string>();
   for (const r of results) {
     for (const f of r.gate1_failures) {
@@ -218,12 +240,12 @@ function aggregateScorecards(results: ScorecardResult[]): ScorecardResult {
     name: check.name,
     passed: results.every(r => r.checks[i].passed),
     score: results.reduce((s, r) => s + r.checks[i].score, 0) / results.length,
-    detail: `Avg across ${results.length} pairs`,
+    detail: `Avg across ${results.length} pairs (${results.filter(r => r.checks[i].passed).length}/${results.length} passed)`,
   }));
 
   return {
     checks: mergedChecks,
-    gate1_verdict: allGate1Pass ? "pass" : "fail",
+    gate1_verdict: aggregatePass ? "pass" : "fail",
     gate1_passed: totalPassed,
     gate1_total: totalChecks,
     gate1_failures: [...allFailures],

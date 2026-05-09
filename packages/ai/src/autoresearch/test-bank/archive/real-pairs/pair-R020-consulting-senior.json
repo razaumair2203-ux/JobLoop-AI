@@ -1,0 +1,44 @@
+{
+  "id": "pair-R020",
+  "split": "train",
+  "persona": "senior",
+  "source_resume": {
+    "id": "ra-00852",
+    "dataset": "resume_atlas",
+    "industry": "consulting",
+    "seniority": "senior"
+  },
+  "jd": {
+    "title": "PKI solutions Consultant",
+    "company": "Prudent Technologies and Consulting, Inc.",
+    "location": "",
+    "experience_years": null,
+    "requirements": [],
+    "responsibilities": [],
+    "full_description": "Required Experience \nPublic Key Infrastructure Experience on PKI solutions and PKI lifecycle managementCreating and implementing strategies for managing certificates.Understand Security Requirements for Certification AuthoritiesDefine Certification Authority Trust StrategiesDesign disaster recovery strategies for CA’sCapture use-cases for certificate revocation, enrolment & renewal processes"
+  },
+  "expected_output": {
+    "_status": "NEEDS_HUMAN_REVIEW",
+    "_raw_text_preview": "john doe johndoegmailcom mobile 5555550000 linkedin url project consultant highly effective project manager executive 30 years experience offering array critical skills commercial legal governance risk financial health safety project management proven ability foster change development innovative plans frameworks track record success serving project tender change management several milliondollar projects summary qualifications project management sales marketing expertise customer service satisfac",
+    "summary": "",
+    "experience": [],
+    "skills": {},
+    "certifications": [],
+    "education": []
+  },
+  "jd_requirements": [],
+  "cloud_skills": [
+    "project management"
+  ],
+  "provenance": {
+    "data_source": "real_dataset_raw_text",
+    "jd_source": "kaggle_linkedin",
+    "resume_dataset": "resume_atlas",
+    "jd_id": "linkedin-3887101384",
+    "resume_id": "ra-00852",
+    "generated_at": "2026-05-08T08:47:53.854Z",
+    "expected_output_author": "NEEDS_HUMAN_REVIEW",
+    "circularity_risk": "low",
+    "notes": "Resume from real dataset (raw text). JD from real job posting. Expected output EMPTY — needs LLM parsing + human review."
+  }
+}

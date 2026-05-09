@@ -112,7 +112,7 @@ export async function POST(request: Request) {
 
   // Convert to ParsedCV shape and build Cloud
   const parsedCV = resolvedProfileToParsedCV(resolved);
-  const cloud = buildCloudFromParsedCV(parsedCV);
+  const { cloud } = buildCloudFromParsedCV(parsedCV);
 
   // Delete existing cloud nodes for this user (full rebuild)
   await supabase.from("cloud_nodes").delete().eq("user_id", user.id);

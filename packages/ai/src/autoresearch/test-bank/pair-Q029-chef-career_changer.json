@@ -1,0 +1,188 @@
+{
+  "id": "pair-Q029",
+  "split": "held_out",
+  "persona": "career_changer",
+  "source_resume": {
+    "id": "snb-19285236",
+    "dataset": "snehaanbhawal_livecareer",
+    "industry": "chef",
+    "seniority": "mid"
+  },
+  "jd": {
+    "title": "Freelance Food Writer - Food Republic",
+    "company": "Static Media",
+    "location": "",
+    "experience_years": 3,
+    "requirements": [
+      {
+        "text": "At least three years of experience writing content for print or the web with a focus on food, beverages, and cooking tips and tricks",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience with building content in a CMS",
+        "type": "must_have"
+      },
+      {
+        "text": "Familiarity with the Associated Press Stylebook",
+        "type": "must_have"
+      },
+      {
+        "text": "Self-sufficient and versatile",
+        "type": "must_have"
+      },
+      {
+        "text": "Creative individual",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "Experience with research and writing of 300- to 900-word articles",
+        "type": "must_have"
+      },
+      {
+        "text": "Ability to follow style guide, editorial strategy, and publishing standards",
+        "type": "must_have"
+      },
+      {
+        "text": "Ability to work on a quick turnaround as applicable",
+        "type": "must_have"
+      },
+      {
+        "text": "Ability to pitch relevant and timely news stories",
+        "type": "must_have"
+      },
+      {
+        "text": "Professional writing and/or editing experience",
+        "type": "must_have"
+      },
+      {
+        "text": "Ability to claim news and evergreen article topics from a selection of assignments",
+        "type": "must_have"
+      },
+      {
+        "text": "Ability to write content in a custom CMS",
+        "type": "must_have"
+      }
+    ],
+    "responsibilities": [
+      "Claim news and evergreen article topics from a selection of assignments",
+      "Pitch relevant and timely news stories related to the site's areas of coverage",
+      "Research and write 300- to 900-word articles in a custom CMS",
+      "Write content on a quick turnaround as applicable",
+      "Follow our style guide, editorial strategy, and publishing standards to uphold quality of content"
+    ],
+    "full_description": "Steady freelance work that pays on time! Food and cooking site FoodRepublic.com is looking for enthusiastic, hard-working freelance writers to join our team. Ideal candidates have at least three years of experience writing content for print or the web with a focus on food, beverages, and cooking tips and tricks. We are looking for creative individuals who are self-sufficient and versatile. These positions are work-from-home with flexible, stable hours. Location does not matter; U.S. and international candidates are encouraged to apply.About Food RepublicFood Republic is the ultimate destination for anyone who loves food and drinks. We’re your number one source for recipes, cooking tips, dining advice, drink recommendations, and the latest news from the food industry. Whether you’re looking for mind-blowing facts about the food you love, new ways to cook your favorite dishes, or the biggest scoops on the restaurant scene, Food Republic has what you need.News Writer Responsibilities: Claim news and evergreen article topics from a selection of assignments Pitch relevant and timely news stories related to the site's areas of coverage Research and write 300- to 900-word articles in a custom CMS Write content on a quick turnaround as applicable Follow our style guide, editorial strategy, and publishing standards to uphold quality of contentWhat We Offer: Compensation: $21 per hour Reliable payment: we pay on time, twice a month Flexible scheduling: you choose the days and hours you work Fully remote: you can work from anywhere in the world Excellent exposure: Static Media’s sites receive more than 170 million monthly visitors and our content is syndicated via SmartNews, Apple News+, MSN, and YahooExperience Required: Minimum three years editorial experience writing and/or editing Experience with building content in a CMS Familiarity with the Associated Press StylebookHow to apply:To apply for this job, please submit the following materials: Your resume A letter of intent Three professional, relevant writing samples similar to the content we share on Food RepublicApplications missing any of these elements will not be considered.All content on Static Media's sites is written entirely by humans. While we understand AI-written content is becoming prevalent, any articles submitted using AI during the hiring process will not be considered.We believe representation matters at Static Media and strongly encourage people of color, members of the LGBTQ+ community, veterans, those with disabilities, and individuals from other underrepresented groups to apply.Job Types: Full-time, Part-time, ContractPay: $21.00 per hourBenefits: Flexible scheduleExperience: professional writing and/or editing: 3 years (Required)Work Location: Remote"
+  },
+  "expected_output": {
+    "summary": "Accomplished Chef with seasoned culinary and management experience in fine dining, high volume catering, and executive campus-wide restaurant oversight. Demonstrated expertise in various areas, including purchasing, inventory management, and quality assurance control. Sincere passion and high quality in all results of work produced.",
+    "experience": [
+      {
+        "company": "Company Name",
+        "title": "Executive Chef",
+        "start_date": "February 2014",
+        "end_date": "Present",
+        "bullets": [
+          "Coordinated and oversaw all kitchen and Café activities at different locations on campus to ensure successful service to over 180 residents a day",
+          "Developed menus and kitchen planning, while hiring and training a staff averaging at employees during slower and peak seasons",
+          "Catered multiple large events simultaneously while keeping regular dinner shifts organized and efficient",
+          "Improved standard operating procedures for the kitchens of all food service operations and implemented new safety, sanitary, and organizational standards in all storage areas that increased inspection scores",
+          "Successfully implemented Hydration program for all residents"
+        ]
+      },
+      {
+        "company": "Riderwood Village",
+        "title": "Chef De Cuisine",
+        "start_date": "November 2005",
+        "end_date": "April 2013",
+        "bullets": [
+          "Managed budgets, preparing schedules for back of the house and culinary staff, and creating new and exciting menus while complying with recipe procedures",
+          "Developed and enriched exceptional employees by teaching classes to improve their current position and prepare for promotion",
+          "Purchased food and beverage, tableware, small ware and kitchen equipment",
+          "Successfully attained a growing profit after direct development and oversight of opening a new coffee shop and hot carry out"
+        ]
+      },
+      {
+        "company": "Company Name",
+        "title": "Head Chef",
+        "start_date": "August 2001",
+        "end_date": "November 2005",
+        "bullets": [
+          "Responsible for all culinary operations, including preparing schedules and purchasing of food and beverage",
+          "Maintained a high standard for the quality of food and created menus in participation with management",
+          "Increased efficiency of serving already high volume customer presence and was able to increase customer presence even more through better restaurant recognition in food quality"
+        ]
+      },
+      {
+        "company": "Company Name",
+        "title": "Head Chef",
+        "start_date": "February 1985",
+        "end_date": "July 2001",
+        "bullets": [
+          "Directed the daily operation of the restaurant by insuring high quality of every product",
+          "Prepared daily specials and high volume lunches and weekend dinners",
+          "Catered special events for local offices and participated in local food competitions"
+        ]
+      }
+    ],
+    "skills": {
+      "Technical": [
+        "fiduciary",
+        "event/floor planning",
+        "Leadership",
+        "sales",
+        "teaching"
+      ],
+      "Soft Skills": [
+        "Communication",
+        "Critical thinking",
+        "Organizational",
+        "Coaching",
+        "Interpersonal"
+      ]
+    },
+    "certifications": [
+      "ServSafe Certified",
+      "ServSafe Instructor & Proctor"
+    ],
+    "education": [
+      "Frontline Culinary Certificate, AACC, 2012",
+      "Frontline Leadership Certificate, 2012-2013"
+    ]
+  },
+  "jd_requirements": [
+    "At least three years of experience writing content for print or the web with a focus on food, beverages, and cooking tips and tricks",
+    "Experience with building content in a CMS",
+    "Familiarity with the Associated Press Stylebook",
+    "Self-sufficient and versatile",
+    "Experience with research and writing of 300- to 900-word articles",
+    "Ability to follow style guide, editorial strategy, and publishing standards",
+    "Ability to work on a quick turnaround as applicable",
+    "Ability to pitch relevant and timely news stories",
+    "Professional writing and/or editing experience",
+    "Ability to claim news and evergreen article topics from a selection of assignments",
+    "Ability to write content in a custom CMS"
+  ],
+  "cloud_skills": [
+    "fiduciary",
+    "event/floor planning",
+    "Leadership",
+    "sales",
+    "teaching",
+    "Communication",
+    "Critical thinking",
+    "Organizational",
+    "Coaching",
+    "Interpersonal"
+  ],
+  "provenance": {
+    "cv_source": "snehaanbhawal/resume-dataset (LiveCareer, CC0)",
+    "jd_source": "R-series (Kaggle LinkedIn, real postings)",
+    "cv_dataset_id": 19285236,
+    "jd_pair_id": "pair-R043",
+    "expected_output_author": "NIM/meta/llama-3.3-70b-instruct",
+    "generated_at": "2026-05-08T15:40:58.537Z",
+    "circularity_risk": "medium-low",
+    "circularity_notes": "Real CV text + real JD text. Expected output is LLM-parsed extraction from real text (not invention). 4/8 scorecard checks structurally sound regardless.",
+    "needs_human_review": true
+  },
+  "raw_cv_text": "         EXECUTIVE CHEF           Summary     \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAccomplished Chef with seasoned culinary and management experience in fine dining, high volume catering, and executive campus-wide restaurant oversight. Background in providing exceptional territorial leadership while directing restaurants, cafes, and catering operations simultaneously. Significant architect role in profit growth through comprehensive improvements in quality, productivity, efficiency, and customer service by not only upgraded training and inspiring a management team, but by also making the personal initiative to bring the same management inspiration to every member of kitchen and serving staff. Sincere passion and high quality in all results of work produced. Demonstrated expertise in:    Purchasing & Inventory Management  Food/Beverage & Labor Cost Controls  Innovative Menu Development & Planning  Budget Administration and Direct Proper Fiduciary Responsibility    Quality Assurance Control  Special Events Management  Customer Service & Guest Relations  New Facilities Start-Up Development/Planning/Execution         Accomplishments     Created new Café menu and managed it's launch menu with new Café operations by a retrained staff resulting in an increase in sales by 60% that consistently grows more than 8 months later to present time.    Restructured training processes for new hires and updated training of current employees for a more effective, energetic, and pleasant customer service team that improved customer attendance by 18%.        Experience      Executive Chef    February 2014       Company Name         Coordinated and oversaw all kitchen and Café activities at different locations on campus to ensure successful service to over 180 residents a day. Direct access and responsibility for entire dining services $() budget. Developed menus and kitchen planning, while hiring and training a staff averaging at () employees during slower and peak seasons. Catered multiple large events simultaneously while keeping regular dinner shifts organized and efficient. Specifically took initiative to increase safety and sanitary procedures. Held monthly meetings with residents to present updates and demonstrations on dining services procedures and event/menu planning while communicating ideas/suggestions from residents.  Offered specific training programs to help employees maintain and improve job skills.  Monitored training costs and created budget reports for management.                     Delivered Results:            Developed a cohesive team between front and back of house and reduced amount of turnover.       Lowered food & produce costs by (%) while increasing quality through while implementing a new line of products through extensive experience and prior relationships with specific choice vendors.     Improved standard operating procedures for the kitchens of all food service operations and implemented new safety, sanitary, and organizational standards in all storage areas that increased inspection scores.    Successfully implemented Hydration program for all residents.         Chef De Cuisine / Riderwood Village    November 2005   to   April 2013       City  ,   State      Responsible for managing budgets, preparing schedules for back of the house and culinary staff, and creating new and exciting menus while complying with recipe procedures. Managed inventory, and part stock orders. Steadily led team to maintain storing organization and sanitation standards. Developed and enriched exceptional employees by teaching classes to improve their current position and prepare for promotion. Purchased food and beverage, tableware, small ware and kitchen equipment. Successfully attained a growing profit after direct development and oversight of opening a new coffee shop and hot carry out. Participated on the designing stage of floor plans, and full ownership of menu planning. Chosen to cook for and represent company at annual Maryland Crabfest at Sandy Point Park on the Chesapeake in 2014()       Delivered Results:      Brought company plaque prizes for 1st place in Vegetable Crab Soup, and 2nd place for Cream of Crab Soup two years in a row.    Increased overall restaurant revenue through openings of hot carry out and coffee shop enough to update equipment and employee uniforms while still yielding a significant end profit after improvements.     Received notice as healthiest restaurant on campus out of three other large restaurants.   ​              Head Chef    August 2001   to   November 2005     Company Name   －   City  ,   State      Responsible for all culinary operations Preparing schedules Purchasing of food & beverage & small wares Responsible for managing food budgets Maintain a high standard for the quality of food Created menus in participation with management Follow and maintain sanitation standards Maintaining high motivation in the staff members in collaboration with management.       Direct Results:    Increased efficiency of serving already high volume customer presence and was able to increase customer presence even more through better restaurant recognition in food quality.          Head Chef    February 1985   to   July 2001     Company Name   －   City        Directed the daily operation of the restaurant by insuring high quality of every product Preparing daily specials Preparing high volume lunches and weekend dinners Catering special events for local offices.  Weekly and monthly inventory Participated in local food competitions Created menus and recipe's Responsible for hiring culinary staff.          Education          2012     Frontline Culinary Certificate    AACC   ​  2 semesters    2012-2013         Frontline Leadership Certificate -   :     2010            ServSafe Instructor & Proctor \nServSafe Certified                Skills     fiduciary, event/floor planning, Leadership, sales, teaching       Skills  __________  Communication  Critical thinking  Organizational  Coaching  Interpersonal  Listening and Understanding  Logistical  Detail Oriented  Computer  Public Speaking      "
+}

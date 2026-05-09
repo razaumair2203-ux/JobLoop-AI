@@ -1,0 +1,275 @@
+{
+  "name": "Healthcare UG Resume Sample",
+  "email": null,
+  "phone": null,
+  "location": {
+    "city": "Binghamton",
+    "state": "NY",
+    "country": "USA"
+  },
+  "links": {
+    "linkedin": null,
+    "github": null,
+    "portfolio": null,
+    "other": []
+  },
+  "summary": null,
+  "total_experience_years": 0,
+  "experience": [
+    {
+      "company": "Tisch Hospital, NYU Langone Health",
+      "employer": "NYU Langone Health",
+      "title": "Health Career Opportunity Program Intern",
+      "start_date": "May 20XX",
+      "end_date": "Present",
+      "duration_months": null,
+      "location": "New York, NY",
+      "bullets": [
+        "Engaged in daily observations of a variety of healthcare professionals in within the Intensive Care Unit, gaining insights into their roles and responsibilities",
+        "Acquired knowledge in medical terminology and demonstrated understanding of healthcare ethics, emphasizing the importance of maintaining patient confidentiality and promoting a patient-centered approach to care",
+        "Collaborated with a diverse group of peers and healthcare professionals to research and present on current issues in healthcare, fostering an understanding of the interdisciplinary nature of healthcare"
+      ],
+      "technologies_used": [],
+      "metrics_mentioned": [],
+      "programs": [
+        "Health Career Opportunity Program"
+      ],
+      "team_size": null,
+      "seniority_signals": [],
+      "domain": "healthcare"
+    },
+    {
+      "company": "Wilson Hospital, United Health Services",
+      "employer": "United Health Services",
+      "title": "Nursing Assistant, Psychiatric Unit",
+      "start_date": "October 20XX",
+      "end_date": "April 20XX",
+      "duration_months": null,
+      "location": "Johnson City, NY",
+      "bullets": [
+        "Provided compassionate care to patients on a psychiatric unit and collaborated with the interdisciplinary healthcare team to adapt individualized patient care plans",
+        "Conducted patient rounds, documented all findings in patient charts, and communicated effectively with nurses, psychiatrists, other healthcare professionals, patients, and families as appropriate",
+        "Employed de-escalation techniques and crisis intervention strategies to address and manage challenging behaviors, maintaining a focus on patient safety"
+      ],
+      "technologies_used": [],
+      "metrics_mentioned": [],
+      "programs": [],
+      "team_size": null,
+      "seniority_signals": [],
+      "domain": "healthcare"
+    },
+    {
+      "company": "Binghamton University, Philosophy Department",
+      "employer": "Binghamton University",
+      "title": "Research Assistant",
+      "start_date": "August 20XX",
+      "end_date": "December 20XX",
+      "duration_months": null,
+      "location": "Binghamton, NY",
+      "bullets": [
+        "Contributed to the Global Health Impact Project by conducting systematic reviews of existing body of literature focused on essential medicines for diseases such as malaria, tuberculosis, and HIV/AIDS",
+        "Drafted grant proposals and prepared academic papers for submission, demonstrating attention to detail to ensure accuracy and compliance with submission guidelines",
+        "Participated in weekly two-hour meetings and provided updates on progress and findings to a team of 13 faculty and student researchers"
+      ],
+      "technologies_used": [],
+      "metrics_mentioned": [
+        "team of 13 faculty and student researchers",
+        "weekly two-hour meetings"
+      ],
+      "programs": [
+        "Global Health Impact Project"
+      ],
+      "team_size": 13,
+      "seniority_signals": [],
+      "domain": "research"
+    },
+    {
+      "company": "Binghamton University, Global Medical Brigades",
+      "employer": "Binghamton University",
+      "title": "Treasurer",
+      "start_date": "August 20XX",
+      "end_date": "Present",
+      "duration_months": null,
+      "location": "Binghamton, NY",
+      "bullets": [
+        "Oversee all financial aspects of the club, manage a budget of $10,150, deposit revenue from fundraisers, fill out reimbursements, and handle the payment of vendors",
+        "Collaborate with 10 members of the student executive board to strategically plan for upcoming brigades including recruiting members, booking flights, and creating fundraisers",
+        "Lead and coordinate trips, general body meetings and general interest meetings with fellow board members"
+      ],
+      "technologies_used": [],
+      "metrics_mentioned": [
+        "budget of $10,150",
+        "10 members of the student executive board"
+      ],
+      "programs": [
+        "Global Medical Brigades"
+      ],
+      "team_size": 10,
+      "seniority_signals": [
+        "Treasurer"
+      ],
+      "domain": "nonprofit"
+    },
+    {
+      "company": "Johnson City Mentor Program",
+      "employer": "Johnson City Mentor Program",
+      "title": "Mentor",
+      "start_date": "January 20XX",
+      "end_date": "Present",
+      "duration_months": null,
+      "location": "Johnson City, NY",
+      "bullets": [
+        "Fostered a supportive and personalized mentorship experience for an eighth-grade student at Johnson City Middle School, aiding in a smooth transition to high school by providing individualized guidance and emotional support",
+        "Guided mentee in establishing clear academic and personal objectives on a weekly basis, cultivating a sense of accountability and drive for achievement in their high school endeavors",
+        "Actively participated in ongoing mentorship training programs and workshops, continuously refining and enhancing mentoring skills to better serve mentees and promote their growth and development"
+      ],
+      "technologies_used": [],
+      "metrics_mentioned": [],
+      "programs": [
+        "Johnson City Mentor Program"
+      ],
+      "team_size": null,
+      "seniority_signals": [],
+      "domain": "education"
+    }
+  ],
+  "education": [
+    {
+      "institution": "Binghamton University, State University of New York",
+      "degree": "Bachelor of Science",
+      "field": "Biological Sciences",
+      "start_date": null,
+      "end_date": "Expected May 20XX",
+      "gpa": "3.64/4.00",
+      "honors": [
+        "Dean's List Fall 20XX, Spring 20XX, Fall 20XX"
+      ],
+      "location": "Binghamton, NY"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Google Suite",
+      "original_text": "Google Suite",
+      "domain": "general",
+      "category": "technology",
+      "source": "skills_section"
+    },
+    {
+      "name": "Microsoft Word",
+      "original_text": "Microsoft Word",
+      "domain": "general",
+      "category": "technology",
+      "source": "skills_section"
+    },
+    {
+      "name": "Microsoft PowerPoint",
+      "original_text": "PowerPoint",
+      "domain": "general",
+      "category": "technology",
+      "source": "skills_section"
+    },
+    {
+      "name": "Medical Terminology",
+      "original_text": "medical terminology",
+      "domain": "healthcare",
+      "category": "knowledge",
+      "source": "experience"
+    },
+    {
+      "name": "Healthcare Ethics",
+      "original_text": "healthcare ethics",
+      "domain": "healthcare",
+      "category": "knowledge",
+      "source": "experience"
+    },
+    {
+      "name": "Patient Charting",
+      "original_text": "documented all findings in patient charts",
+      "domain": "healthcare",
+      "category": "clinical",
+      "source": "experience"
+    },
+    {
+      "name": "De-escalation Techniques",
+      "original_text": "de-escalation techniques and crisis intervention strategies",
+      "domain": "healthcare",
+      "category": "clinical",
+      "source": "experience"
+    },
+    {
+      "name": "Crisis Intervention",
+      "original_text": "crisis intervention strategies",
+      "domain": "healthcare",
+      "category": "clinical",
+      "source": "experience"
+    },
+    {
+      "name": "Systematic Literature Review",
+      "original_text": "conducting systematic reviews of existing body of literature",
+      "domain": "research",
+      "category": "research_methods",
+      "source": "experience"
+    },
+    {
+      "name": "Grant Proposal Writing",
+      "original_text": "Drafted grant proposals",
+      "domain": "research",
+      "category": "writing",
+      "source": "experience"
+    },
+    {
+      "name": "Budget Management",
+      "original_text": "manage a budget of $10,150",
+      "domain": "general",
+      "category": "financial",
+      "source": "experience"
+    }
+  ],
+  "competencies": [
+    "Psychiatric patient care and de-escalation",
+    "Interdisciplinary healthcare team collaboration",
+    "Health research and systematic literature review",
+    "Grant writing and academic paper preparation",
+    "Financial management and fundraising",
+    "Mentoring and individualized guidance"
+  ],
+  "certifications": [
+    {
+      "name": "BLS First Aid/CPR/AED",
+      "issuer": null,
+      "year": null,
+      "active": true,
+      "tier": "gold"
+    },
+    {
+      "name": "Trained Facilitator, Open Airways for Schools",
+      "issuer": null,
+      "year": null,
+      "active": true,
+      "tier": "course"
+    }
+  ],
+  "awards": [],
+  "projects": [],
+  "publications": [],
+  "volunteer": [
+    {
+      "organization": "Johnson City Mentor Program",
+      "role": "Mentor",
+      "dates": "January 20XX-Present",
+      "location": "Johnson City, NY"
+    }
+  ],
+  "leadership": [
+    {
+      "role": "Treasurer",
+      "organization": "Binghamton University, Global Medical Brigades",
+      "dates": "August 20XX-Present"
+    }
+  ],
+  "professional_affiliations": [],
+  "training": [],
+  "languages_spoken": [],
+  "conflicts": []
+}

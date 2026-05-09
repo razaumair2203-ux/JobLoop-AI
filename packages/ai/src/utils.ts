@@ -43,6 +43,16 @@ export function safeParseJSON<T>(raw: string, context: string): T {
 }
 
 /**
+ * Collapse character-spaced PDF text: "S e n i o r" → "Senior"
+ * Preserved from dev-parser.ts — useful for raw PDF text normalization.
+ */
+export function normalizeSpacedText(text: string): string {
+  return text.replace(/\b([A-Za-z]) ([A-Za-z])( [A-Za-z]){2,}\b/g, (match) =>
+    match.replace(/ /g, ""),
+  );
+}
+
+/**
  * Generate a unique ID safe for serverless environments.
  */
 export function generateId(prefix: string = "node"): string {

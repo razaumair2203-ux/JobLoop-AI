@@ -1,0 +1,360 @@
+{
+  "name": "CoE Resume Sample",
+  "email": "bmail@binghamton.edu",
+  "phone": "(607) 555-7777",
+  "location": {
+    "city": null,
+    "country": "United States"
+  },
+  "links": {
+    "linkedin": "www.linkedin.com/in/yourname",
+    "github": null,
+    "portfolio": null,
+    "other": []
+  },
+  "summary": null,
+  "total_experience_years": 1,
+  "experience": [
+    {
+      "company": "General Electric Gas Power",
+      "employer": "General Electric Gas Power",
+      "title": "Test Engineering Intern",
+      "start_date": "2025-05",
+      "end_date": "2025-08",
+      "duration_months": 4,
+      "location": "New York, NY",
+      "bullets": [
+        "Managed data certification for a fintech app, identifying and resolving defects resulting in over 20,000 hours saved",
+        "Targeted an 80% reduction in defects by the end of 2025 Q4, resulting in a 40% decrease in nonproductive time",
+        "Engaged upstream IT and functional application ownership to implement process and system changes",
+        "Constructed SQL queries to identify and evaluate magnitudes of 16 known data defect types",
+        "Developed a Tableau dashboard to drive transparency through continual monitoring and reporting back to senior leadership"
+      ],
+      "technologies_used": [
+        "SQL",
+        "Tableau"
+      ],
+      "metrics_mentioned": [
+        "over 20,000 hours saved",
+        "80% reduction in defects",
+        "40% decrease in nonproductive time",
+        "16 known data defect types"
+      ],
+      "programs": [],
+      "team_size": null,
+      "seniority_signals": [
+        "intern"
+      ],
+      "domain": "technology"
+    }
+  ],
+  "education": [
+    {
+      "institution": "Binghamton University, State University of New York, Thomas J. Watson College of Engineering and Applied Science",
+      "degree": "Bachelor of Science",
+      "field": "Computer Engineering",
+      "start_year": null,
+      "end_year": 2026,
+      "grade": "3.67/4.00",
+      "research_topic": null,
+      "highlights": [
+        "Dean's List: Spring 2022 – Spring 2025",
+        "Eta Kappa Nu Electrical and Computer Engineering Honor Society",
+        "Relevant Coursework: Network Computer Security, Computer Network Architecture, Introduction to Python"
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "name": "C",
+      "original_text": "C",
+      "domain": "technology",
+      "category": "programming_languages",
+      "source": "skills_section"
+    },
+    {
+      "name": "MATLAB",
+      "original_text": "MATLAB",
+      "domain": "technology",
+      "category": "programming_languages",
+      "source": "skills_section"
+    },
+    {
+      "name": "Python",
+      "original_text": "Python",
+      "domain": "technology",
+      "category": "programming_languages",
+      "source": "skills_section"
+    },
+    {
+      "name": "JavaScript",
+      "original_text": "JavaScript",
+      "domain": "technology",
+      "category": "programming_languages",
+      "source": "skills_section"
+    },
+    {
+      "name": "VHDL",
+      "original_text": "VHDL",
+      "domain": "technology",
+      "category": "hardware_description_languages",
+      "source": "skills_section"
+    },
+    {
+      "name": "HTML",
+      "original_text": "HTML",
+      "domain": "technology",
+      "category": "web_technologies",
+      "source": "skills_section"
+    },
+    {
+      "name": "Xilinx ISE",
+      "original_text": "Xilinx ISE",
+      "domain": "engineering",
+      "category": "fpga_tools",
+      "source": "skills_section"
+    },
+    {
+      "name": "Arena",
+      "original_text": "Arena",
+      "domain": "engineering",
+      "category": "simulation_software",
+      "source": "skills_section"
+    },
+    {
+      "name": "Solid Edge",
+      "original_text": "Solid Edge",
+      "domain": "engineering",
+      "category": "cad_software",
+      "source": "skills_section"
+    },
+    {
+      "name": "Fusion 360",
+      "original_text": "Fusion 360",
+      "domain": "engineering",
+      "category": "cad_software",
+      "source": "skills_section"
+    },
+    {
+      "name": "Microsoft Excel",
+      "original_text": "Microsoft Excel",
+      "domain": "technology",
+      "category": "productivity_software",
+      "source": "skills_section"
+    },
+    {
+      "name": "Microsoft Visio",
+      "original_text": "Microsoft Visio",
+      "domain": "technology",
+      "category": "productivity_software",
+      "source": "skills_section"
+    },
+    {
+      "name": "Microsoft Project",
+      "original_text": "Microsoft Project",
+      "domain": "technology",
+      "category": "project_management_software",
+      "source": "skills_section"
+    },
+    {
+      "name": "SMT Soldering",
+      "original_text": "SMT Soldering",
+      "domain": "engineering",
+      "category": "hardware_skills",
+      "source": "skills_section"
+    },
+    {
+      "name": "SQL",
+      "original_text": "SQL",
+      "domain": "technology",
+      "category": "database",
+      "source": "experience"
+    },
+    {
+      "name": "Tableau",
+      "original_text": "Tableau",
+      "domain": "technology",
+      "category": "data_visualization",
+      "source": "experience"
+    },
+    {
+      "name": "AVR Microcontroller",
+      "original_text": "AVR microcontroller",
+      "domain": "engineering",
+      "category": "embedded_systems",
+      "source": "experience"
+    },
+    {
+      "name": "Arduino",
+      "original_text": "Arduino Nano",
+      "domain": "engineering",
+      "category": "embedded_systems",
+      "source": "experience"
+    },
+    {
+      "name": "Bluetooth",
+      "original_text": "Bluetooth iOS app",
+      "domain": "technology",
+      "category": "wireless_communication",
+      "source": "experience"
+    }
+  ],
+  "competencies": [
+    "Data Certification",
+    "Defect Analysis",
+    "Team Leadership",
+    "Digital Circuit Design",
+    "Microcontroller Programming",
+    "Dashboard Development"
+  ],
+  "certifications": [
+    {
+      "name": "Advanced Algorithms",
+      "issuer": null,
+      "year": null,
+      "active": true,
+      "tier": "course"
+    },
+    {
+      "name": "Introduction to Python",
+      "issuer": null,
+      "year": null,
+      "active": true,
+      "tier": "course"
+    },
+    {
+      "name": "AWS Certified Developer",
+      "issuer": "Amazon Web Services",
+      "year": null,
+      "active": true,
+      "tier": "specialization"
+    },
+    {
+      "name": "CompTIA Security+",
+      "issuer": "CompTIA",
+      "year": null,
+      "active": true,
+      "tier": "specialization"
+    }
+  ],
+  "awards": [
+    {
+      "title": "First Place, Fall 2022 Tournament",
+      "issuer": "Watson Combat Robotics League (WCRL)",
+      "context": "Competed in bi-weekly matches and semesterly tournaments",
+      "significance": null
+    }
+  ],
+  "projects": [
+    {
+      "name": "Robot Maze Project",
+      "description": "Led a team of four to create a robot that solved a line maze using an AVR microcontroller programmed in C",
+      "outcome": "Validated functionality by completing the maze in less than three minutes from an arbitrary starting point",
+      "technologies": [
+        "AVR microcontroller",
+        "C"
+      ],
+      "is_professional": false
+    },
+    {
+      "name": "Robot Control Project",
+      "description": "Created a system to control a robot's position on a flat, level surface using an attached Papilio DUO with a general-purpose processor created using schematic capture in Xilinx ISE Project Navigator",
+      "outcome": "Designed an instruction set with opcode field for movement, branch, and jump instructions",
+      "technologies": [
+        "Papilio DUO",
+        "Xilinx ISE Project Navigator"
+      ],
+      "is_professional": false
+    },
+    {
+      "name": "4-Bit Three-Function Calculator",
+      "description": "Designed a circuit in Xilinx ISE Project Navigator that could add, subtract, and multiply any two 4-bit numbers, with results displayed on a seven-segment display of a Papilio DUO",
+      "outcome": "Constructed detailed documentation for each piece of the design including rationale, operating premise, and usage description",
+      "technologies": [
+        "Xilinx ISE Project Navigator",
+        "Papilio DUO"
+      ],
+      "is_professional": false
+    },
+    {
+      "name": "Image & Acoustic Signals Analysis",
+      "description": "Researched Leap Motion, Microsoft Kinect, and Microsoft HoloLens applications to lessen occlusion when analyzing dynamic sign language gestures",
+      "outcome": "Collaborated in a team of four to document findings for future development by other research teams",
+      "technologies": [
+        "Leap Motion",
+        "Microsoft Kinect",
+        "Microsoft HoloLens"
+      ],
+      "is_professional": false
+    },
+    {
+      "name": "Engineering Conceptual Design Project: UV Dosimeter",
+      "description": "Partnered with a team of nine to research and design a proof-of-concept low-cost UV dosimeter using Solid Edge",
+      "outcome": "Verified requirements formally upon completion of the project to ensure customer satisfaction",
+      "technologies": [
+        "Solid Edge"
+      ],
+      "is_professional": false
+    }
+  ],
+  "publications": [],
+  "volunteer": [],
+  "leadership": [
+    {
+      "organization": "Watson Combat Robotics League (WCRL)",
+      "role": "Competitor",
+      "start_date": "2024-09",
+      "end_date": "present",
+      "description": "Design a competitive combat robot in Fusion 360 compliant with WCRL rules; program an Arduino Nano via Bluetooth iOS app for drive and weapon actions; compete in bi-weekly matches and semesterly tournaments",
+      "scope": null
+    },
+    {
+      "organization": "Binghamton Residential Life",
+      "role": "Resident Assistant",
+      "start_date": "2023-08",
+      "end_date": "present",
+      "description": "Foster a safe and inclusive community among 24 diverse residents; collaborate with 12 peers to execute creative programs and foster student development",
+      "scope": "24 residents, 12 peer RAs"
+    },
+    {
+      "organization": "Institute of Electrical and Electronics Engineers (IEEE)",
+      "role": "Internal Vice President",
+      "start_date": "2022-09",
+      "end_date": "2024-05",
+      "description": "Developed a security app at Hack AE as an IEEE representative; facilitate professional, technical, and social events for the 50+ member general body",
+      "scope": "50+ members"
+    }
+  ],
+  "professional_affiliations": [
+    "Eta Kappa Nu Electrical and Computer Engineering Honor Society",
+    "Institute of Electrical and Electronics Engineers (IEEE)"
+  ],
+  "training": [],
+  "languages_spoken": [],
+  "all_technologies": [
+    "C",
+    "MATLAB",
+    "Python",
+    "JavaScript",
+    "VHDL",
+    "HTML",
+    "Xilinx ISE",
+    "Arena",
+    "Solid Edge",
+    "Fusion 360",
+    "Microsoft Excel",
+    "Microsoft Visio",
+    "Microsoft Project",
+    "SMT Soldering",
+    "SQL",
+    "Tableau",
+    "AVR microcontroller",
+    "Arduino Nano",
+    "Bluetooth",
+    "Papilio DUO",
+    "Leap Motion",
+    "Microsoft Kinect",
+    "Microsoft HoloLens"
+  ],
+  "conflicts": []
+}

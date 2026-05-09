@@ -8,7 +8,7 @@
  *   1. Cloud maturity (per-domain niche) — how rich is the user's evidence?
  *   2. Task complexity — how hard is this specific operation?
  *
- * Together they determine: Haiku or Sonnet.
+ * Together they determine: fast tier or quality tier.
  */
 
 import type { ProfileCloud, CloudNode, Evidence } from "./cloud";
@@ -150,11 +150,11 @@ export type TaskComplexity = "simple" | "complex";
  * Unified model selector. ALL AI calls route through this.
  *
  * Decision matrix:
- *   Cloud thin + any task → Sonnet (can't afford mistakes early on)
- *   Cloud medium + complex task → Sonnet
- *   Cloud medium + simple task → Haiku
- *   Cloud rich + any task → Haiku (unless task is genuinely complex)
- *   Cloud rich + complex task → Sonnet (respect task demands)
+ *   Cloud thin + any task → quality tier (can't afford mistakes early on)
+ *   Cloud medium + complex task → quality tier
+ *   Cloud medium + simple task → fast tier
+ *   Cloud rich + any task → fast tier (unless task is genuinely complex)
+ *   Cloud rich + complex task → quality tier (respect task demands)
  *
  * User escalation override always wins.
  */
@@ -181,18 +181,18 @@ export function selectModel(
   switch (nicheMaturity) {
     case "empty":
     case "thin":
-      // Early stage — Sonnet for everything (can't afford mistakes)
+      // Early stage — quality tier for everything (can't afford mistakes)
       return "quality";
 
     case "medium":
-      // Middle ground — complex tasks get Sonnet, simple get Haiku
+      // Middle ground — complex tasks get quality tier, simple get fast tier
       if (taskComplexity === "complex") return "quality";
       // CV gen, cover letter, and insights are high-stakes even when task seems simple
       if (taskType === "cv_generation" || taskType === "cover_letter" || taskType === "insights") return "quality";
       return "fast";
 
     case "rich":
-      // Mature — Haiku unless task genuinely demands quality
+      // Mature — fast tier unless task genuinely demands quality
       if (taskComplexity === "complex") return "quality";
       return "fast";
   }
@@ -225,10 +225,10 @@ export interface UserFeedback {
  * Interpret user feedback into model selection adjustment.
  *
  * Returns:
- *   - "escalate" → use Sonnet for next operation of this type
+ *   - "escalate" → use quality tier for next operation of this type
  *   - "cloud_gap" → trigger Socratic question for the relevant domain
  *   - "maintain" → keep current tier
- *   - "de_escalate" → safe to use Haiku
+ *   - "de_escalate" → safe to use fast tier
  */
 export function interpretFeedback(
   feedback: UserFeedback,
@@ -249,7 +249,7 @@ export function interpretFeedback(
       return "cloud_gap";
 
     case "thumbs_up":
-      // Happy → can de-escalate if we were using Sonnet
+      // Happy → can de-escalate if we were using quality tier
       return "de_escalate";
 
     case "skipped":

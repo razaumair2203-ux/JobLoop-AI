@@ -1,0 +1,474 @@
+{
+  "name": "First Last",
+  "email": "email@binghamton.edu",
+  "phone": "607-555-5555",
+  "location": {
+    "city": "Binghamton",
+    "state": "NY",
+    "country": "USA"
+  },
+  "links": {
+    "linkedin": null,
+    "github": null,
+    "portfolio": null,
+    "other": []
+  },
+  "summary": null,
+  "total_experience_years": 5,
+  "experience": [
+    {
+      "company": "Lourdes Hospital - Riverside Internal Medicine",
+      "employer": "Lourdes Hospital",
+      "title": "FNP Student - Adult Primary Care",
+      "start_date": "January 20xx",
+      "end_date": "December 20xx",
+      "duration_months": null,
+      "location": "Binghamton, NY",
+      "bullets": [
+        "Managed acute illness and chronic, complex disease process of general adults in Binghamton area.",
+        "Collaborated with physician, dietitian, and social worker.",
+        "Provided counseling on nutrition, exercise, and medication."
+      ],
+      "technologies_used": [],
+      "metrics_mentioned": [
+        "349 hours"
+      ],
+      "programs": [],
+      "team_size": null,
+      "seniority_signals": [],
+      "domain": "healthcare"
+    },
+    {
+      "company": "UHS - Pediatrics / Roosevelt Elementary School",
+      "employer": "UHS",
+      "title": "FNP Student - Pediatric Primary Care",
+      "start_date": "March 20xx",
+      "end_date": "May 20xx",
+      "duration_months": null,
+      "location": "Binghamton, NY",
+      "bullets": [
+        "Provided well-child care including immunizations, anticipatory guidance, and health promotion education.",
+        "Managed acute illness and chronic disease for infants, children, and adolescents."
+      ],
+      "technologies_used": [],
+      "metrics_mentioned": [
+        "81 hours"
+      ],
+      "programs": [],
+      "team_size": null,
+      "seniority_signals": [],
+      "domain": "healthcare"
+    },
+    {
+      "company": "Lourdes Primary Care - Family Medicine Vestal / NEPA Health Community Center",
+      "employer": "Lourdes / NEPA Health",
+      "title": "FNP Student - Family Primary Care",
+      "start_date": "December 20xx",
+      "end_date": "Present",
+      "duration_months": null,
+      "location": "Vestal, NY",
+      "bullets": [
+        "Managed acute and chronic, complex disease for pediatric to geriatric populations.",
+        "Educated clients regarding health risk factors, diet habit, and physical activity."
+      ],
+      "technologies_used": [],
+      "metrics_mentioned": [
+        "8 hours"
+      ],
+      "programs": [],
+      "team_size": null,
+      "seniority_signals": [],
+      "domain": "healthcare"
+    },
+    {
+      "company": "Decker School of Nursing - Binghamton University",
+      "employer": "Binghamton University",
+      "title": "Nurse Educator Student - Educational Philosophy and Curriculum Development",
+      "start_date": "January 20xx",
+      "end_date": "December 20xx",
+      "duration_months": null,
+      "location": "Binghamton, NY",
+      "bullets": [
+        "Researched theorist Jean Watson and developed school curriculum related to caring theory.",
+        "Collaborated with preceptor to develop online BSN course."
+      ],
+      "technologies_used": [],
+      "metrics_mentioned": [],
+      "programs": [],
+      "team_size": null,
+      "seniority_signals": [],
+      "domain": "education"
+    },
+    {
+      "company": "Decker School of Nursing - Binghamton University",
+      "employer": "Binghamton University",
+      "title": "Nurse Educator Student - Teaching Methods and Strategies",
+      "start_date": "January 20xx",
+      "end_date": "December 20xx",
+      "duration_months": null,
+      "location": "Binghamton, NY",
+      "bullets": [
+        "Developed syllabus related to holistic nursing.",
+        "Graded sophomore students' patient data base and self-concept paper."
+      ],
+      "technologies_used": [],
+      "metrics_mentioned": [],
+      "programs": [],
+      "team_size": null,
+      "seniority_signals": [],
+      "domain": "education"
+    },
+    {
+      "company": "Our Lady of Lourdes Hospital",
+      "employer": "Our Lady of Lourdes Hospital",
+      "title": "Staff Nurse",
+      "start_date": "June 20xx",
+      "end_date": "Present",
+      "duration_months": null,
+      "location": "Binghamton, NY",
+      "bullets": [
+        "Conduct pre- and post-operative general surgery, internal medicine, family practice, and behavioral health.",
+        "Develop and implement nursing care plans, and supervise patients' admissions and discharges.",
+        "Coordinate services, treatments, and consultations using Cerner computer system."
+      ],
+      "technologies_used": [
+        "Cerner"
+      ],
+      "metrics_mentioned": [],
+      "programs": [],
+      "team_size": null,
+      "seniority_signals": [
+        "Staff Nurse"
+      ],
+      "domain": "healthcare"
+    },
+    {
+      "company": "Decker School of Nursing - Binghamton University",
+      "employer": "Binghamton University",
+      "title": "Graduate Student Clinical Instructor",
+      "start_date": "August 20xx",
+      "end_date": "December 20xx",
+      "duration_months": null,
+      "location": "Binghamton, NY",
+      "bullets": [
+        "Led weekly seminar and served as clinical instructor for 10 undergraduate nursing students.",
+        "Taught health assessments, medication information, critical thinking, IV access, passing medication and how to manage critical situations in telemetry and orthopedic units.",
+        "Introduced students to APA format and guided students to develop scientific writing skills in self-concept paper."
+      ],
+      "technologies_used": [],
+      "metrics_mentioned": [
+        "10 undergraduate nursing students"
+      ],
+      "programs": [
+        "Practice of Nursing III"
+      ],
+      "team_size": 10,
+      "seniority_signals": [
+        "Clinical Instructor"
+      ],
+      "domain": "education"
+    },
+    {
+      "company": "Asan Medical Center",
+      "employer": "Asan Medical Center",
+      "title": "Registered Nurse, Liver Transplant & Trauma & Surgical Intensive Care Unit",
+      "start_date": "February 20xx",
+      "end_date": "July 20xx",
+      "duration_months": null,
+      "location": "Seoul, South Korea",
+      "bullets": [
+        "Provided direct bedside care for liver transplant and critical ill trauma/surgical patients.",
+        "Assisted medical procedures by C-line insertion, Intubation, ECMO insertion, Tracheostomy.",
+        "Documented assessment and care using computer charting.",
+        "Attended acute critical patients as well as trauma patients during emergencies."
+      ],
+      "technologies_used": [
+        "ECMO",
+        "Computer charting"
+      ],
+      "metrics_mentioned": [],
+      "programs": [],
+      "team_size": null,
+      "seniority_signals": [
+        "Registered Nurse"
+      ],
+      "domain": "healthcare"
+    },
+    {
+      "company": "Asan Medical Center",
+      "employer": "Asan Medical Center",
+      "title": "Research Experience",
+      "start_date": "August 20xx",
+      "end_date": "May 20xx",
+      "duration_months": null,
+      "location": "Seoul, South Korea",
+      "bullets": [
+        "Protocol for Prevention of Delirium-CAM-ICU (QA team)",
+        "Effect of Rehabilitation in ICU (SPI team)",
+        "Development of education program for foreign nurses (SPI team)"
+      ],
+      "technologies_used": [
+        "CAM-ICU"
+      ],
+      "metrics_mentioned": [],
+      "programs": [
+        "Prevention of Delirium-CAM-ICU",
+        "Effect of Rehabilitation in ICU",
+        "Education program for foreign nurses"
+      ],
+      "team_size": null,
+      "seniority_signals": [],
+      "domain": "healthcare"
+    }
+  ],
+  "education": [
+    {
+      "institution": "Binghamton University, State University of New York",
+      "degree": "MSN",
+      "field": "Family Nurse Practitioner (FNP)",
+      "start_date": null,
+      "end_date": "May 20xx",
+      "gpa": null,
+      "honors": [],
+      "location": "Binghamton, NY"
+    },
+    {
+      "institution": "Chung-Ang University",
+      "degree": "BSN",
+      "field": "Nursing",
+      "start_date": null,
+      "end_date": "February 20xx",
+      "gpa": null,
+      "honors": [],
+      "location": "Seoul, South Korea"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Patient Care",
+      "original_text": "nursing care plans",
+      "domain": "healthcare",
+      "category": "clinical",
+      "source": "experience"
+    },
+    {
+      "name": "Cerner",
+      "original_text": "Cerner computer system",
+      "domain": "healthcare",
+      "category": "technology",
+      "source": "experience"
+    },
+    {
+      "name": "ECMO",
+      "original_text": "ECMO insertion",
+      "domain": "healthcare",
+      "category": "clinical_procedure",
+      "source": "experience"
+    },
+    {
+      "name": "C-line Insertion",
+      "original_text": "C-line insertion",
+      "domain": "healthcare",
+      "category": "clinical_procedure",
+      "source": "experience"
+    },
+    {
+      "name": "Intubation",
+      "original_text": "Intubation",
+      "domain": "healthcare",
+      "category": "clinical_procedure",
+      "source": "experience"
+    },
+    {
+      "name": "Tracheostomy",
+      "original_text": "Tracheostomy",
+      "domain": "healthcare",
+      "category": "clinical_procedure",
+      "source": "experience"
+    },
+    {
+      "name": "IV Access",
+      "original_text": "IV access",
+      "domain": "healthcare",
+      "category": "clinical_procedure",
+      "source": "experience"
+    },
+    {
+      "name": "Health Assessment",
+      "original_text": "health assessments",
+      "domain": "healthcare",
+      "category": "clinical",
+      "source": "experience"
+    },
+    {
+      "name": "Telemetry",
+      "original_text": "telemetry and orthopedic units",
+      "domain": "healthcare",
+      "category": "clinical",
+      "source": "experience"
+    },
+    {
+      "name": "Computer Charting",
+      "original_text": "computer charting",
+      "domain": "healthcare",
+      "category": "technology",
+      "source": "experience"
+    },
+    {
+      "name": "Curriculum Development",
+      "original_text": "developed school curriculum",
+      "domain": "education",
+      "category": "instructional_design",
+      "source": "experience"
+    },
+    {
+      "name": "Clinical Instruction",
+      "original_text": "served as clinical instructor",
+      "domain": "education",
+      "category": "teaching",
+      "source": "experience"
+    },
+    {
+      "name": "Korean",
+      "original_text": "Bilingual in Korean and English",
+      "domain": "language",
+      "category": "language",
+      "source": "skills_section"
+    },
+    {
+      "name": "English",
+      "original_text": "Bilingual in Korean and English",
+      "domain": "language",
+      "category": "language",
+      "source": "skills_section"
+    }
+  ],
+  "competencies": [
+    "Acute and chronic disease management",
+    "Pre- and post-operative care",
+    "Pediatric to geriatric patient populations",
+    "Liver transplant and trauma ICU care",
+    "Health promotion education and counseling",
+    "Nursing curriculum development",
+    "Clinical teaching and student supervision"
+  ],
+  "certifications": [
+    {
+      "name": "New York State Registered Nurse License",
+      "issuer": "New York State",
+      "year": null,
+      "active": true,
+      "tier": "gold"
+    },
+    {
+      "name": "Community Health Educator Level 3 Certification",
+      "issuer": "South Korea",
+      "year": null,
+      "active": true,
+      "tier": "specialization"
+    },
+    {
+      "name": "South Korea Registered Nurse License",
+      "issuer": "South Korea",
+      "year": null,
+      "active": true,
+      "tier": "gold"
+    },
+    {
+      "name": "Mamma Care Clinical Breast Examiner Certification",
+      "issuer": "Mamma Care",
+      "year": null,
+      "active": true,
+      "tier": "specialization"
+    },
+    {
+      "name": "Advanced Cardiovascular Life Support Provider",
+      "issuer": "American Heart Association",
+      "year": null,
+      "active": true,
+      "tier": "specialization"
+    },
+    {
+      "name": "Basic Life Support Healthcare Provider",
+      "issuer": "American Heart Association",
+      "year": null,
+      "active": true,
+      "tier": "course"
+    },
+    {
+      "name": "AMC-Advanced Liver-transplantation Expert Nurse Certification Level 2",
+      "issuer": "Asan Medical Center",
+      "year": null,
+      "active": true,
+      "tier": "specialization"
+    },
+    {
+      "name": "AMC-Advanced Liver-transplantation Expert Nurse Certification Level 1",
+      "issuer": "Asan Medical Center",
+      "year": null,
+      "active": true,
+      "tier": "specialization"
+    }
+  ],
+  "awards": [
+    {
+      "name": "Sigma Theta Tau International, the Honor Society of Nursing",
+      "issuer": "Sigma Theta Tau International",
+      "year": null
+    },
+    {
+      "name": "CN 2 (Promotion)",
+      "issuer": "Asan Medical Center, Seoul",
+      "year": null
+    }
+  ],
+  "projects": [],
+  "publications": [],
+  "volunteer": [
+    {
+      "organization": "Sarang Church",
+      "role": "Medical service in Cambodia, Volunteer",
+      "dates": "July 20xx"
+    },
+    {
+      "organization": "Jumong Rehability Center",
+      "role": "Volunteer",
+      "dates": "August 20xx - June 20xx",
+      "location": "Gangdong-gu, Seoul, South Korea"
+    },
+    {
+      "organization": "Janghanpyeong welfare center",
+      "role": "Volunteer",
+      "dates": "January 20xx - March 20xx",
+      "location": "Seoul, South Korea"
+    },
+    {
+      "organization": "Campus Crusade for Christ Medical team",
+      "role": "Volunteer",
+      "dates": "August 20xx - February 20xx",
+      "location": "Seoul, South Korea"
+    }
+  ],
+  "leadership": [],
+  "professional_affiliations": [
+    {
+      "name": "Korean Nurses Association",
+      "dates": "February 20xx - Present"
+    },
+    {
+      "name": "Korea Hospital Nurses Association",
+      "dates": "March 20xx - July 20xx"
+    },
+    {
+      "name": "ILTS (International Liver Transplantation Society)",
+      "dates": "May 20xx",
+      "note": "Attended conference"
+    }
+  ],
+  "training": [],
+  "languages_spoken": [
+    "Korean",
+    "English"
+  ],
+  "conflicts": []
+}

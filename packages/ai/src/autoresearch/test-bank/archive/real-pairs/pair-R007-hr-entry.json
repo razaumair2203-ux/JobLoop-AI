@@ -1,0 +1,54 @@
+{
+  "id": "pair-R007",
+  "split": "train",
+  "persona": "early_career",
+  "source_resume": {
+    "id": "ra-10442",
+    "dataset": "resume_atlas",
+    "industry": "hr",
+    "seniority": "entry"
+  },
+  "jd": {
+    "title": "Human Resources Intern",
+    "company": "Levitate",
+    "location": "",
+    "experience_years": null,
+    "requirements": [
+      {
+        "text": "knowledge of HR policies",
+        "type": "must_have"
+      },
+      {
+        "text": "Knowledge of industry trends and best practices in HR operations and employee relations\nOur commitment to our staff is showcased not only through our strong company culture",
+        "type": "must_have"
+      }
+    ],
+    "responsibilities": [],
+    "full_description": "Levitate’s employees share a very important mission and goal: helping small businesses grow and thrive. We all contribute to this goal in unique ways, and that’s why we prioritize helping our staff identify their strengths and find genuine fulfillment in their roles.Across every team and department at Levitate, you’ll find friendship, enthusiasm, intelligence, and drive. In our pursuit to make the world a more creative and entrepreneurial place, we keep our company’s five core values at the center of everything we do:Creating magicShowing customer empathyMaking data-driven decisionsFocusing on solutions, not problemsMaking small improvements every day\nWe are seeking an experienced and dynamic Human Resources Intern to join our organization. In this role, you will be responsible for supporting all aspects of human resources operations.. This role will play a crucial role in ensuring a collaborative HR team environment and executing our processes and programs throughout the organization.\nResponsibilitiesAssist with day-to-day operations of the HR functions and dutiesHelp HR department with administrative tasks such as updating policies and proceduresMaintain employee files and records in electronic and paper form.Support employee onboarding processes, ensuring a smooth and positive experience for new hires.Maintain accurate employee records and HRIS data related to HR operations.Stay updated on HR best practices and industry trends, making recommendations for continuous improvement and innovation.Help create HR Connect, as well as the SOPs, and support new hire orientation and onboarding activities with HRIS system updates for new and existing employees.Collaborate on occasional specific projects within the recruiting and operations functions to support the team as needed.\nRequirementsAttending a four-year college degree or university, majoring in Human Resources or Business AdministrationStrong knowledge of HR policies, benefits, payroll, compensation, training & development, employment laws, and regulations.Understanding of HR operationsExcellent interpersonal and communication skills with the ability to build relationships and collaborate effectively with employees at all levels.Strong analytical and problem-solving skills with the ability to research, analyze data, and provide recommendations for resolution.Ability to handle confidential and sensitive information with professionalism and discretion.Desire to work collaboratively as a team in a results-driven environment.Proactive mindset with the ability to identify opportunities for improvement and implement HR process enhancements.Knowledge of industry trends and best practices in HR operations and employee relations\nOur commitment to our staff is showcased not only through our strong company culture, but also through our employee-centric benefits and programs including:Daily catered lunches from locally-owned restaurants and diverse snack offerings Employee-led groups (run club, disc golf club, and book club, just to name a few) that bring employees with similar hobbies and interests together to inspire and build relationshipsPlentiful opportunities to volunteer with and contribute to local organizations that align with the passions of our staffCulture Crew and Emerging Leader programs to foster employee leadership development, inclusivity, and connection through year-round trainings and events"
+  },
+  "expected_output": {
+    "_status": "NEEDS_HUMAN_REVIEW",
+    "_raw_text_preview": "jessica claire 100 montgomery st 10th floor 555 4321000 resumesampleexamplecom summary employeefocused senior human resources sergeant detailed knowledge organizational human resources policies services practices essential facilitator key operational details relevant company onboarding exit procedures assisting employees smooth transitions either end diplomatic mitigator conflicts employees organizational leadership utilizing deescalation drawing ample resources achieve solutions meticulous data",
+    "summary": "",
+    "experience": [],
+    "skills": {},
+    "certifications": [],
+    "education": []
+  },
+  "jd_requirements": [
+    "knowledge of HR policies",
+    "Knowledge of industry trends and best practices in HR operations and employee relations\nOur commitme"
+  ],
+  "cloud_skills": [],
+  "provenance": {
+    "data_source": "real_dataset_raw_text",
+    "jd_source": "kaggle_linkedin",
+    "resume_dataset": "resume_atlas",
+    "jd_id": "linkedin-3894283989",
+    "resume_id": "ra-10442",
+    "generated_at": "2026-05-08T08:47:53.846Z",
+    "expected_output_author": "NEEDS_HUMAN_REVIEW",
+    "circularity_risk": "low",
+    "notes": "Resume from real dataset (raw text). JD from real job posting. Expected output EMPTY — needs LLM parsing + human review."
+  }
+}

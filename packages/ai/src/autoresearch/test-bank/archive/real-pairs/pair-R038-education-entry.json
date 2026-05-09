@@ -1,0 +1,79 @@
+{
+  "id": "pair-R038",
+  "split": "train",
+  "persona": "early_career",
+  "source_resume": {
+    "id": "ra-09525",
+    "dataset": "resume_atlas",
+    "industry": "education",
+    "seniority": "entry"
+  },
+  "jd": {
+    "title": "Special Education Compliance Coordinator",
+    "company": "Stride, Inc.",
+    "location": "",
+    "experience_years": null,
+    "requirements": [
+      {
+        "text": "Bachelor's degree ANDTwo (2) years of relevant experience OREquivalent combination of education and experience.",
+        "type": "must_have"
+      },
+      {
+        "text": "Certificates and Licenses: West Virginia Special Education Teacher Certification",
+        "type": "must_have"
+      },
+      {
+        "text": "Great organizational and time management skillsProficiency in Microsoft Excel, Word, and Outlook; Experience using databases; Web proficiencyAbility to clear required background check",
+        "type": "must_have"
+      },
+      {
+        "text": "Diagnostician Certification preferredExperience teaching in both online and in a brick-and-mortar environments",
+        "type": "must_have"
+      },
+      {
+        "text": "Work Environment: The work environment characteristics described here are representative of those an employee encounters while performing the essential functions of this job. Reasonable accommodations may be made to enable individuals with disabilities to perform the essential functions.",
+        "type": "must_have"
+      },
+      {
+        "text": "This position is virtual",
+        "type": "must_have"
+      },
+      {
+        "text": "Equal Opportunity Employer/Protected Veterans/Individuals With Disabilities",
+        "type": "must_have"
+      }
+    ],
+    "responsibilities": [],
+    "full_description": "Job Description\n\nK12, a Stride Company, believes in Education for ANY ONE. We provide families an online option for a high-quality, personalized education experience. Students can thrive, find their passion, and learn in an environment that encourages discovery at their own pace. In support of this, we are committed to creating and maintaining a culture of inclusion and diversity where our employees are passionate about serving students and families, treat one another and customers with respect, challenge each other to innovate and always strive to do better.\n\nPassionate Educators are needed at the Stride K12 partner school, West Virginia Virtual Academy (WVVA). We want you to be a part of our talented team!\n\nThe mission of West Virginia Virtual Academy (WVVA) is to provide an exemplary individualized and engaging educational experience for students by incorporating school and community/family partnerships coupled with a rigorous curriculum along with a data-driven and student-centered instructional model. Student success will be measured by valid and reliable assessment data, parent and student satisfaction, and continued institutional growth within the academic community. Join us!\n\nThe Special Education Compliance Coordinator is a critical participant in the implementation of all policies and procedures related to Special Education programs. The incumbent will be responsible for maintaining relationships with state/regional/district level special education leaders, and keeping the schools compliant with deadlines related to special education programs. This position will ensure all special education reporting and compliance requirements are met at all partner school districts.\n\nThis is a full-time position. Ability to work independently, typically 40+ hours per week is required. Ability to maintain a professional home office without distraction during workday, typically 9-5 (or 8-4) or as defined by the school. \n\nEssential Functions:  Reasonable accommodations may be made to enable individuals with disabilities to perform the essential duties.\n\nInstructional\n\nAssist with the implementation of all policies and procedures related to Special Education programs;Create and maintain relationships with state/regional/district-level special education leaders;Develop contacts with special education related service providers;Request special education records from student’s resident school district and check for compliance and currency;Assist with all special education reporting, e.g. school, local, state, and federal;Work with Special Education Director, teachers and Executive Director on compliance-related issues;Track and Inform teachers of compliancy dates for Individual Educational Plans (IEP);Works directly with parents and students (both regular and special education) where necessary;Contact students and families for entry ARD/IEP meetings, schedules meetings, distribute IEPs and evaluations to teachers;Manage class loads and teacher assignments;Coordinate and organize student special education records for partner school districts.\n\nSupervisory Responsibilities: This position has no formal supervisory responsibilities.\n\nMinimum Required Qualifications\n\nBachelor's degree ANDTwo (2) years of relevant experience OREquivalent combination of education and experience.\n\nCertificates and Licenses: West Virginia Special Education Teacher Certification\n\nResidency Requirement: Must be an West Virginia Resident\n\nOther Required Qualifications\n\nGreat organizational and time management skillsProficiency in Microsoft Excel, Word, and Outlook; Experience using databases; Web proficiencyAbility to clear required background check\n\nDESIRED Qualifications\n\nDiagnostician Certification preferredExperience teaching in both online and in a brick-and-mortar environments\n\nWork Environment: The work environment characteristics described here are representative of those an employee encounters while performing the essential functions of this job. Reasonable accommodations may be made to enable individuals with disabilities to perform the essential functions.\n\nThis position is virtual\n\nThe above job is not intended to be an all-inclusive list of duties and standards of the position. Incumbents will follow any other instructions, and perform any other related duties, as assigned by their supervisor. All employment is “at-will” as governed by the law of the state where the employee works. It is further understood that the “at-will” nature of employment is one aspect of employment that cannot be changed except in writing and signed by an authorized officer. \n\nStride, Inc. is a Federal Contractor, an Equal Opportunity/Affirmative Action Employer and a Drug-Free Workplace. All qualified applicants will receive consideration for employment without regard to race, color, religion, sex, sexual orientation, gender identity, national origin, age, disability, protected Veteran status age, or genetics, or any other characteristic protected by law.\n\nJob Type\n\nRegular\n\nThe above job is not intended to be an all-inclusive list of duties and standards of the position. Incumbents will follow any other instructions, and perform any other related duties, as assigned by their supervisor. All employment is “at-will” as governed by the law of the state where the employee works. It is further understood that the “at-will” nature of employment is one aspect of employment that cannot be changed except in writing and signed by an authorized officer.\n\nStride, Inc. is a Federal Contractor, an Equal Opportunity/Affirmative Action Employer and a Drug-Free Workplace. All qualified applicants will receive consideration for employment without regard to race, color, religion, sex, sexual orientation, gender identity, national origin, age, disability, protected Veteran status age, or genetics, or any other characteristic protected by law.\n\nEqual Opportunity Employer/Protected Veterans/Individuals With Disabilities\n\nThe contractor will not discharge or in any other manner discriminate against employees or applicants because they have inquired about, discussed, or disclosed their own pay or the pay of another employee or applicant. However, employees who have access to the compensation information of other employees or applicants as a part of their essential job functions cannot disclose the pay of other employees or applicants to individuals who do not otherwise have access to compensation information, unless the disclosure is (a) in response to a formal complaint or charge, (b) in furtherance of an investigation, proceeding, hearing, or action, including an investigation conducted by the employer, or (c) consistent with the contractor’s legal duty to furnish information. 41 CFR 60-1.35(c)"
+  },
+  "expected_output": {
+    "_status": "NEEDS_HUMAN_REVIEW",
+    "_raw_text_preview": "jessica claire montgomery street san francisco ca 94105 555 4321000 resumesampleexamplecom professional summary knowledgeable dedicated customer service professional extensive experience public health industry solid team player outgoing positive demeanor proven skills establishing rapport clients motivated maintain customer satisfaction contribute company success specialize quality speed process optimization articulate energetic resultsoriented exemplary passion developing relationships cultivat",
+    "summary": "",
+    "experience": [],
+    "skills": {},
+    "certifications": [],
+    "education": []
+  },
+  "jd_requirements": [
+    "Bachelor's degree ANDTwo (2) years of relevant experience OREquivalent combination of education and ",
+    "Certificates and Licenses: West Virginia Special Education Teacher Certification",
+    "Great organizational and time management skillsProficiency in Microsoft Excel, Word, and Outlook; Ex",
+    "Diagnostician Certification preferredExperience teaching in both online and in a brick-and-mortar en",
+    "Work Environment: The work environment characteristics described here are representative of those an",
+    "This position is virtual",
+    "Equal Opportunity Employer/Protected Veterans/Individuals With Disabilities"
+  ],
+  "cloud_skills": [],
+  "provenance": {
+    "data_source": "real_dataset_raw_text",
+    "jd_source": "kaggle_linkedin",
+    "resume_dataset": "resume_atlas",
+    "jd_id": "linkedin-3904006098",
+    "resume_id": "ra-09525",
+    "generated_at": "2026-05-08T08:47:53.866Z",
+    "expected_output_author": "NEEDS_HUMAN_REVIEW",
+    "circularity_risk": "low",
+    "notes": "Resume from real dataset (raw text). JD from real job posting. Expected output EMPTY — needs LLM parsing + human review."
+  }
+}

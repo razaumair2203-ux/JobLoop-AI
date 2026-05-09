@@ -1,0 +1,17 @@
+{
+  "fixture_id": "dr__sibgha_saliha_resume_pak",
+  "source_file": "Dr__Sibgha_Saliha_Resume_Pak.txt",
+  "model_used": "claude-opus-4-6",
+  "prompt_version": "cv-parser-v3",
+  "reviewed_by": "pending",
+  "approved": false,
+  "created_at": "2026-05-07",
+  "stats": {
+    "roles": 4,
+    "years": 10,
+    "skills": 12,
+    "technologies": 12,
+    "education": 1,
+    "certifications": 4
+  }
+}

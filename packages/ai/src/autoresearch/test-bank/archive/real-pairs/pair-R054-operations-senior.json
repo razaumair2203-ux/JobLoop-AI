@@ -1,0 +1,59 @@
+{
+  "id": "pair-R054",
+  "split": "validation",
+  "persona": "senior",
+  "source_resume": {
+    "id": "ra-07507",
+    "dataset": "resume_atlas",
+    "industry": "operations",
+    "seniority": "senior"
+  },
+  "jd": {
+    "title": "Lead Global Category Manager - Remote",
+    "company": "Harley-Davidson",
+    "location": "",
+    "experience_years": null,
+    "requirements": [
+      {
+        "text": "experience in category management",
+        "type": "must_have"
+      },
+      {
+        "text": "knowledge of best practices in Developmental Purchasing",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience in a manufacturing environment             Preferred     \r\n              3 - 5 years’ professional negotiating experience in a global business environment      3 - 5 years’ professional experience improving supplier performance across multiple manufacturing facilities      APQP experience      Demonstrated CI experience      Motorcycle riding experience and knowledge in Harley-Davidson motorcycles and accessories",
+        "type": "must_have"
+      }
+    ],
+    "responsibilities": [],
+    "full_description": "Auto req ID: 23583 Title: Lead Global Category Manager - Remote Job Function: Materials and Procurement Location: Remote Company: Harley-Davidson Motor Company Full or Part-Time: Full Time  At Harley-Davidson, we are building more than machines. It’s our passion and commitment to continue the evolution of this storied brand, and heighten the desirability of the Harley-Davidson experience. To keep building our legend and leading our industry through innovation, evolution, and emotion we need the best and brightest talent. We stand for the timeless pursuit of adventure. Freedom for the soul. Are you ready to join us?   We maximize employee flexibility and well-being through a virtual mindset that supports our highly distributed, global workforce. We take an outcome-focused, people-centered approach to winning, including welcoming the best talent - wherever they may be.   This remote role is not tightly linked to a physical location and provides flexibility in where, when and how you accomplish your work. Remote employees are expected to have a dedicated, quiet and distraction-free work space and an internet connection that’s sufficient for completing their job remotely.           Job Summary           This position is responsible developing and implementing category strategies that support Harley-Davidson business objectives. This position is responsible for negotiation, contract management and change management while measuring quality, cost, and delivery performance of all suppliers.               Job Responsibilities                Works independently, requiring guidance on only the most complex situations.      Leads others to solve complex problems in Supply Management using analytical thought, exercising judgment, and identifying innovative solutions.      Coaches, mentors, and trains less tenured and / or less experienced colleagues.      Communicates difficult concepts in Supply Management and negotiates with others to effectively influence as appropriate.      Support development of and deployment of strategic initiatives to facilitate cross-business synergies across a rationalized set of global and regional preferred supplier partners.      Negotiate and manage key strategic supplier contracts and relationships including the management and execution of master supply agreements.      Review, approve, monitor, and report compliance to category agreements and strategies based upon Harley-Davidson SM policies      Present new planning tools, methods, technical analysis, standards, and procurement opportunities with senior management that are aligned with SM/Harley-Davidson strategic plans and cost reduction initiatives. Plan, prepare and execute annual value proposition for the owned spend, and support execution with the business cross functional teams.      Lead Supplier Business Reviews with assigned suppliers.      Identify potential financial / operational threats to the business and develop / deploy proactive supplier risk mitigation strategies to ensure supply continuity.      Works collaboratively across different functions including Developmental Purchasing, Indirect Procurement, Supply Chain Operations, Logistics, Engineering, Manufacturing, Marketing, etc.…      Communicates difficult or sensitive information and builds relationships with Suppliers, Product Development and Manufacturing.                   Education Requirements                High School Diploma or Equivalent Required\r\n                   Experience Requirements           Required     \r\n              Typically requires a minimum of 8 years of related experience in category management, procurement, supply chain, and/or operations      Ability to apply knowledge of best practices in Developmental Purchasing, Indirect Procurement, Supply Base, or Supply Chain and how their own area integrates with others to drive results.      Demonstrated ability to work effectively within and / or lead a group or team providing guidance to members.      Experience in a manufacturing environment             Preferred     \r\n              3 - 5 years’ professional negotiating experience in a global business environment      3 - 5 years’ professional experience improving supplier performance across multiple manufacturing facilities      APQP experience      Demonstrated CI experience      Motorcycle riding experience and knowledge in Harley-Davidson motorcycles and accessories.            Harley-Davidson is an equal opportunity employer that continues to build a culture of inclusion, belonging and equity through our commitment to attracting and retaining diverse talent from all backgrounds, without regard to race, color, religion, sex, sexual orientation, national origin, gender identity, age, disability, veteran status or any other characteristic protected by law. We believe in fairness and providing a level playing field for all. We foster a culture that thrives on diverse perspectives and contributions to ignite the creativity and innovation to fuel our business and enhance the employee and customer experience.   The pay range shown represents the national average pay range for this role. Your pay may be more or less than the stated range and is dependent on your geographic location and level of experience.   We offer an inclusive compensation package for all full-time salaried employees including, but not limited to, annual bonus programs, health insurance benefits, a 401k program, onsite fitness centers and employee stores, employee discounts on products and accessories, and more. Learn more about Harley-Davidson here.   Applicants must be currently authorized to work in the United States.    Direct Reports: No Travel Required: 10 - 25% Pay Range: $92,000 - $142,000 Visa Sponsorship: This position is not eligible for visa sponsorship Relocation: This position is not eligible for relocation assistance  #LI-REMOTE"
+  },
+  "expected_output": {
+    "_status": "NEEDS_HUMAN_REVIEW",
+    "_raw_text_preview": "jessica claire montgomery street san francisco ca 94105 555 4321000 resumesampleexamplecom summary organized detailedoriented manager able prioritize delegate tasks effectively ensure timely project completion within team environment highlights safety management training staffing lean manufacturing design process improvement strategies contract management strategic planning experience bpo manager 082008 cortech internationalstafflogix city state personable team building cost reduction containmen",
+    "summary": "",
+    "experience": [],
+    "skills": {},
+    "certifications": [],
+    "education": []
+  },
+  "jd_requirements": [
+    "experience in category management",
+    "knowledge of best practices in Developmental Purchasing",
+    "Experience in a manufacturing environment             Preferred     \r\n              3 - 5 years’ pro"
+  ],
+  "cloud_skills": [],
+  "provenance": {
+    "data_source": "real_dataset_raw_text",
+    "jd_source": "github_indeed",
+    "resume_dataset": "resume_atlas",
+    "jd_id": "indeed-89c1da67a676dc7c",
+    "resume_id": "ra-07507",
+    "generated_at": "2026-05-08T08:47:53.876Z",
+    "expected_output_author": "NEEDS_HUMAN_REVIEW",
+    "circularity_risk": "low",
+    "notes": "Resume from real dataset (raw text). JD from real job posting. Expected output EMPTY — needs LLM parsing + human review."
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "id": "pair-R067",
+  "split": "held_out",
+  "persona": "early_career",
+  "source_resume": {
+    "id": "ra-10026",
+    "dataset": "resume_atlas",
+    "industry": "finance",
+    "seniority": "entry"
+  },
+  "jd": {
+    "title": "Accountant III",
+    "company": "Aditi Consulting",
+    "location": "",
+    "experience_years": null,
+    "requirements": [
+      {
+        "text": "Experience with complex reconciliations• Experience in working for large company & dealing with large volume of transactions• Experience in General Ledger accounting• Process oriented with a mindset on how to achieve efficiencies within a function• Detail",
+        "type": "must_have"
+      }
+    ],
+    "responsibilities": [
+      "Role: Accountant III -\"With CPA\"Location: Austin, TX - HybridContract - 8 Months on W2.",
+      "Requirements• CPA or Equivalent (Highly Preferred)• BS/BA in Accountancy or Finance (Required)• Advanced Microsoft Excel skills (Required)• Candidate must have a solid understanding of U.S. GAAP• Good communication and interpersonal skills• Must be organized and able to manage time effectively",
+      "Regards,Pavithra Senior Technical Recruiter.pavithrav@aditiconsulting.com"
+    ],
+    "full_description": "Hi, \nWe are hiring for below role for our direct client.Kindly share your interest!\nRole: Accountant III -\"With CPA\"Location: Austin, TX - HybridContract - 8 Months on W2.\nDescription:• Present detailed presentations to high level stakeholders: board members, VP, and directors•Perform statutory, regulatory, and compliance reporting• Supervise and guide multiple accountants in outsourced accounting function• Assist in the monthly close process• Review and preparation of balance sheet reconciliations across multiple legal entities• Review and preparation of monthly general ledger account fluctuations• Ad hoc analysis of Balance Sheet accounts as requested by Business partners• Review and preparation of journal entries and ad hoc reporting• Partner with various business partners and locations to improve and streamline processes• Drive process improvements through evaluation of processes in Accounting day to day activities and implementation of changes for improved efficiencies• Participate in automation projects to develop automation on routine/repetitive activities• Fulfill responsibilities in a manner that is consistent with the Company values and behaviors and maintain high ethical values• Aware of internal control concepts, evaluates controls to ensure they are operating effectively and makes recommendations to improve controls• Interpret financial results• Draft insightful accounting analysis• Research financial anomalies and makes corrections as necessary• Work on special projects as assigned\nExperience and Skills• Excellent presentation skills• Excellent verbal, written and interpersonal communication skills• Big 4 Audit Experience• Financial Reporting experience• Unclaimed Property experience• Experience with complex reconciliations• Experience in working for large company & dealing with large volume of transactions• Experience in General Ledger accounting• Process oriented with a mindset on how to achieve efficiencies within a function• Detail, deadline and goal-oriented• Strong analytical, problem-solving and organization skills• Be a self-starter with fast learning skills and able to work with minimal supervision• Able to manage multiple priorities with accuracy and efficiency• Desire to improve processes, implement new ideas and actively get involved• SAP / ERP experience a plus but not required\nRequirements• CPA or Equivalent (Highly Preferred)• BS/BA in Accountancy or Finance (Required)• Advanced Microsoft Excel skills (Required)• Candidate must have a solid understanding of U.S. GAAP• Good communication and interpersonal skills• Must be organized and able to manage time effectively\nRegards,Pavithra Senior Technical Recruiter.pavithrav@aditiconsulting.com"
+  },
+  "expected_output": {
+    "_status": "NEEDS_HUMAN_REVIEW",
+    "_raw_text_preview": "jessica claire 100 montgomery st 10th floor 555 4321000 resumesampleexamplecom summary finance clerk 30 years experience financial industry highly proficient financial edge kidtrak strong collaboration skills coordinate crossfunctional projects skills audit tracking yearly reporting data entry deadline awareness proficient financial edge bookkeeping experience interpersonal verbal communication invoicing billing accounts payable gaap principles account reconciliation 18201 current finance clerkb",
+    "summary": "",
+    "experience": [],
+    "skills": {},
+    "certifications": [],
+    "education": []
+  },
+  "jd_requirements": [
+    "Experience with complex reconciliations• Experience in working for large company & dealing with larg"
+  ],
+  "cloud_skills": [],
+  "provenance": {
+    "data_source": "real_dataset_raw_text",
+    "jd_source": "kaggle_linkedin",
+    "resume_dataset": "resume_atlas",
+    "jd_id": "linkedin-3901377575",
+    "resume_id": "ra-10026",
+    "generated_at": "2026-05-08T08:47:53.885Z",
+    "expected_output_author": "NEEDS_HUMAN_REVIEW",
+    "circularity_risk": "low",
+    "notes": "Resume from real dataset (raw text). JD from real job posting. Expected output EMPTY — needs LLM parsing + human review."
+  }
+}

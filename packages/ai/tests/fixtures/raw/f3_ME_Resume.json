@@ -1,0 +1,352 @@
+{
+  "name": "ME Resume",
+  "email": "bmail@binghamton.edu",
+  "phone": "(607) 711-9999",
+  "location": {
+    "city": "Binghamton",
+    "country": "United States"
+  },
+  "links": {
+    "linkedin": "www.linkedin.com/in/yourname",
+    "github": null,
+    "portfolio": null,
+    "other": []
+  },
+  "summary": null,
+  "total_experience_years": 2,
+  "experience": [
+    {
+      "company": "BAE Systems, Inc.",
+      "employer": "BAE Systems, Inc.",
+      "title": "Mechanical Engineering Intern",
+      "start_date": "2025-06",
+      "end_date": "2025-08",
+      "duration_months": 3,
+      "location": "Nashua, NH",
+      "bullets": [
+        "Supported the production and development of a variety of efforts in engineering development, integration, and test and transition on complex electronic and mechanical systems",
+        "Managed the design of basic hardware components by utilizing engineering principles and theories",
+        "Improved tooling processes on the manufacturing floor by redesigning tools through modeling, drafting, and 3D printing through the use of Solid Edge V20"
+      ],
+      "technologies_used": [
+        "Solid Edge V20",
+        "3D printing"
+      ],
+      "metrics_mentioned": [],
+      "programs": [],
+      "team_size": null,
+      "seniority_signals": [
+        "intern"
+      ],
+      "domain": "defense_aerospace"
+    },
+    {
+      "company": "Hasbro",
+      "employer": "Hasbro",
+      "title": "Mechanical Engineer/Product Lifetime Engineer Intern",
+      "start_date": "2024-05",
+      "end_date": "2024-07",
+      "duration_months": 3,
+      "location": "Pawnee, IN",
+      "bullets": [
+        "Facilitated the production and development of over 30 products across multiple brands by acting as a communication liaison between the Pawnee and Hong Kong offices",
+        "Streamlined project timelines and budgets by orchestrating meetings with cross-functional members of the product line team, conducting reviews of pre-production samples, and updating cost sheets within cutting-edge PLM software",
+        "Designed an innovative product by building a proof of concept model and presenting it to the engineering team, which received high praise and consideration for future development"
+      ],
+      "technologies_used": [
+        "Agile PLM"
+      ],
+      "metrics_mentioned": [
+        "over 30 products"
+      ],
+      "programs": [],
+      "team_size": null,
+      "seniority_signals": [
+        "intern",
+        "liaison"
+      ],
+      "domain": "consumer_products"
+    },
+    {
+      "company": "Target",
+      "employer": "Target",
+      "title": "Sales Associate & Lead Cashier",
+      "start_date": "2022-03",
+      "end_date": "present",
+      "duration_months": 39,
+      "location": "Vestal, NY",
+      "bullets": [],
+      "technologies_used": [],
+      "metrics_mentioned": [],
+      "programs": [],
+      "team_size": null,
+      "seniority_signals": [
+        "lead"
+      ],
+      "domain": "retail"
+    },
+    {
+      "company": "YMCA",
+      "employer": "YMCA",
+      "title": "Seasonal Lifeguard",
+      "start_date": "2023-05",
+      "end_date": "2024-08",
+      "duration_months": 16,
+      "location": "Johnson City, NY",
+      "bullets": [],
+      "technologies_used": [],
+      "metrics_mentioned": [],
+      "programs": [],
+      "team_size": null,
+      "seniority_signals": [],
+      "domain": "recreation"
+    }
+  ],
+  "education": [
+    {
+      "institution": "Binghamton University, State University of New York, Thomas J. Watson College of Engineering and Applied Science",
+      "degree": "Bachelor of Science",
+      "field": "Mechanical Engineering, Minor in Sustainable Engineering",
+      "start_year": null,
+      "end_year": 2026,
+      "grade": "3.56/4.00",
+      "research_topic": null,
+      "highlights": [
+        "Dean's List: Fall 2024 – Spring 2025",
+        "Relevant Coursework: Thermodynamics, Fluid Mechanics, Mechanical Vibrations, Robotics, Heat Transfer, HVAC"
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "name": "AutoCAD",
+      "original_text": "AutoCAD",
+      "domain": "engineering",
+      "category": "cad_software",
+      "source": "skills_section"
+    },
+    {
+      "name": "PTC Creo 3.0",
+      "original_text": "PTC Creo 3.0 (Pro/Engineer)",
+      "domain": "engineering",
+      "category": "cad_software",
+      "source": "skills_section"
+    },
+    {
+      "name": "ANSYS Workbench",
+      "original_text": "ANSYS Workbench",
+      "domain": "engineering",
+      "category": "simulation_software",
+      "source": "skills_section"
+    },
+    {
+      "name": "Agile PLM",
+      "original_text": "Agile PLM",
+      "domain": "engineering",
+      "category": "product_lifecycle_management",
+      "source": "skills_section"
+    },
+    {
+      "name": "SOLIDWORKS",
+      "original_text": "SOLIDWORKS",
+      "domain": "engineering",
+      "category": "cad_software",
+      "source": "skills_section"
+    },
+    {
+      "name": "Microsoft Excel",
+      "original_text": "MS Excel",
+      "domain": "technology",
+      "category": "productivity_software",
+      "source": "skills_section"
+    },
+    {
+      "name": "Solid Edge",
+      "original_text": "Solid Edge",
+      "domain": "engineering",
+      "category": "cad_software",
+      "source": "skills_section"
+    },
+    {
+      "name": "MATLAB",
+      "original_text": "MATLAB",
+      "domain": "technology",
+      "category": "programming_languages",
+      "source": "skills_section"
+    },
+    {
+      "name": "C",
+      "original_text": "C",
+      "domain": "technology",
+      "category": "programming_languages",
+      "source": "skills_section"
+    },
+    {
+      "name": "C++",
+      "original_text": "C++",
+      "domain": "technology",
+      "category": "programming_languages",
+      "source": "skills_section"
+    },
+    {
+      "name": "Python",
+      "original_text": "Python",
+      "domain": "technology",
+      "category": "programming_languages",
+      "source": "skills_section"
+    },
+    {
+      "name": "Java",
+      "original_text": "Java",
+      "domain": "technology",
+      "category": "programming_languages",
+      "source": "skills_section"
+    },
+    {
+      "name": "VBA",
+      "original_text": "VBA",
+      "domain": "technology",
+      "category": "programming_languages",
+      "source": "skills_section"
+    },
+    {
+      "name": "3D Printing",
+      "original_text": "3D printing",
+      "domain": "engineering",
+      "category": "manufacturing",
+      "source": "experience"
+    },
+    {
+      "name": "Finite Element Analysis",
+      "original_text": "finite element analysis",
+      "domain": "engineering",
+      "category": "simulation",
+      "source": "experience"
+    },
+    {
+      "name": "Static Analysis",
+      "original_text": "static analysis",
+      "domain": "engineering",
+      "category": "simulation",
+      "source": "experience"
+    },
+    {
+      "name": "Arduino",
+      "original_text": "Arduino",
+      "domain": "engineering",
+      "category": "embedded_systems",
+      "source": "experience"
+    },
+    {
+      "name": "Soldering",
+      "original_text": "Soldered",
+      "domain": "engineering",
+      "category": "hardware_skills",
+      "source": "experience"
+    }
+  ],
+  "competencies": [
+    "Mechanical Design",
+    "Product Development",
+    "Cross-Functional Collaboration",
+    "Manufacturing Process Improvement",
+    "3D Modeling",
+    "Finite Element Analysis",
+    "Technical Presentation"
+  ],
+  "certifications": [
+    {
+      "name": "Project Management Professional (PMP)",
+      "issuer": "Project Management Institute",
+      "year": null,
+      "active": true,
+      "tier": "gold"
+    },
+    {
+      "name": "Fundamentals of Engineering Exam",
+      "issuer": "NCEES",
+      "year": 2024,
+      "active": true,
+      "tier": "gold"
+    }
+  ],
+  "awards": [
+    {
+      "title": "Best Presentation, Watson Arduino Exposition",
+      "issuer": "Watson College of Engineering",
+      "context": "Product Design Project — Arduino Biker Jacket for cyclist safety",
+      "significance": null
+    }
+  ],
+  "projects": [
+    {
+      "name": "Landing Gear Capstone Design Project",
+      "description": "Modeled a fully functional R2D2 landing gear in adherence to requirements using PTC Creo Parametric; conducted static analysis and finite element analysis through ANSYS Workbench to analyze maximum deformation, stress, and safety factors",
+      "outcome": "Summarized findings including detail drawings, mathematical analysis, and cost analysis in a 50-page written report",
+      "technologies": [
+        "PTC Creo Parametric",
+        "ANSYS Workbench"
+      ],
+      "is_professional": false
+    },
+    {
+      "name": "Product Design Project: Arduino Biker Jacket",
+      "description": "Managed a multi-national team of four to design and construct an Arduino Biker Jacket aimed at enhancing safety for cyclists by implementing lighting; soldered resistors, LED lights, and connector wires onto a board",
+      "outcome": "Presented project to industry professionals/peers and won award for best presentation at the Watson Arduino Exposition",
+      "technologies": [
+        "Arduino",
+        "LED lights",
+        "soldering"
+      ],
+      "is_professional": false
+    }
+  ],
+  "publications": [],
+  "volunteer": [],
+  "leadership": [
+    {
+      "organization": "American Society of Mechanical Engineers (ASME)",
+      "role": "Treasurer",
+      "start_date": "2023-03",
+      "end_date": "present",
+      "description": "Assist in planning, organizing, and executing program activities including events, projects, and seminars; manage reimbursement process for conference travel by adhering to Student Association guidelines and policies",
+      "scope": null
+    },
+    {
+      "organization": "Mechanical Contractors Association (MCA)",
+      "role": "Vice President",
+      "start_date": "2022-10",
+      "end_date": "present",
+      "description": "Organize a Binghamton University MCA Golf Tournament Fundraiser by contacting local MCA members, installing hole sponsorship signs, attending and maintaining the event, and ordering gifts and prizes; tour local companies in heating, air conditioning, refrigeration, plumbing, piping, and other industries",
+      "scope": null
+    }
+  ],
+  "professional_affiliations": [
+    "American Society of Mechanical Engineers (ASME)",
+    "Mechanical Contractors Association (MCA)"
+  ],
+  "training": [],
+  "languages_spoken": [],
+  "all_technologies": [
+    "AutoCAD",
+    "PTC Creo 3.0",
+    "PTC Creo Parametric",
+    "ANSYS Workbench",
+    "Agile PLM",
+    "SOLIDWORKS",
+    "MS Excel",
+    "Solid Edge",
+    "Solid Edge V20",
+    "MATLAB",
+    "C",
+    "C++",
+    "Python",
+    "Java",
+    "VBA",
+    "3D printing",
+    "Arduino",
+    "LED lights",
+    "soldering"
+  ],
+  "conflicts": []
+}

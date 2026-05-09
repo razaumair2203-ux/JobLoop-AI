@@ -1,49 +1,101 @@
 {
+  "name": "M. Umair Raza",
+  "email": "razaumair2203@gmail.com",
+  "phone": "+966-53-7179386",
+  "location": {
+    "city": "Jeddah",
+    "country": "Saudi Arabia"
+  },
+  "links": {
+    "linkedin": "https://www.linkedin.com/in/mumairaza",
+    "github": null,
+    "portfolio": null,
+    "other": []
+  },
+  "summary": "Aviation systems and program management leader with 15+ years of experience supporting aircraft maintenance, fleet sustainment, across complex aviation environments. Hands-on and supervisory experience supporting aircraft maintenance, GACA, FAA, ICAO, Part-145 compliance. PMP and PMI-ACP certified.",
   "total_experience_years": 18,
   "experience": [
     {
       "company": "Aerospace & Defence / Systems Development",
+      "employer": "Pakistan Air Force / NUTECH University",
       "title": "Program Lead, Avionics Systems Design",
       "start_date": "Jan 2023",
       "end_date": "Present",
       "duration_months": 29,
+      "location": "Risalpur, Pakistan",
+      "bullets": [
+        "Leadership in transformative programs (Capacity Building initiative by the Higher Education Commission, Pakistan)",
+        "Head, Systems Engineering Program & Industry Partnerships",
+        "Strong product management in Data, AI, AI/ML lifecycle, analytics, Power BI"
+      ],
       "technologies_used": [
         "Power BI",
-        "AI/ML"
+        "AI/ML",
+        "MS Project",
+        "JIRA"
       ],
       "metrics_mentioned": [],
-      "domain": "defense"
+      "programs": [
+        "Capacity Building Initiative (HEC)"
+      ],
+      "team_size": null,
+      "seniority_signals": [
+        "Program Lead",
+        "Head"
+      ],
+      "domain": "defense_aerospace"
     },
     {
       "company": "Air Force",
+      "employer": "Pakistan Air Force",
       "title": "Deputy Director, Fighter Fleet Management",
       "start_date": "Jan 2020",
       "end_date": "Dec 2023",
       "duration_months": 36,
+      "location": "Islamabad, Pakistan",
+      "bullets": [
+        "Managed program-level integration of Aero subsystems, trend monitoring for predictive maintenance",
+        "Provided PMO leadership, coordinating cross-functional teams across fleet operations",
+        "Led Risk mitigation plans, RAID logs, and EVM reporting",
+        "Managed performance of contracted AMOs and Heavy MROs for C-checks (scope, SLAs, 3rd-party KPIs)",
+        "Supervised maintenance, inspections, and fault rectification on JF-17 fighter aircraft during development",
+        "Prepared and supported CAMO/AMO audit activities",
+        "Designed work packages prior to aircraft release to operations",
+        "Negotiated C-check contracts with Heavy MROs"
+      ],
       "technologies_used": [
         "EVM",
         "RAID",
         "AMOS"
       ],
-      "metrics_mentioned": [],
-      "domain": "defense"
+      "metrics_mentioned": [
+        "team of 80 engineers and technicians"
+      ],
+      "programs": [
+        "JF-17 Fighter Program",
+        "AEW&C Fleet"
+      ],
+      "team_size": 80,
+      "seniority_signals": [
+        "Deputy Director",
+        "Supervised"
+      ],
+      "domain": "defense_aerospace"
     },
     {
       "company": "Chengdu Aircraft Design Institute (CADI), China",
+      "employer": "AVIC International",
       "title": "Avionics Systems Integration Lead",
       "start_date": "Jan 2018",
       "end_date": "Dec 2019",
       "duration_months": 24,
-      "technologies_used": [],
-      "metrics_mentioned": [],
-      "domain": "defense"
-    },
-    {
-      "company": "Airborne Early Warning & Control Systems, Air Force",
-      "title": "Maintenance Supervisor, AEW&C Aircraft",
-      "start_date": "Jan 2016",
-      "end_date": "Dec 2018",
-      "duration_months": 36,
+      "location": "Chengdu, China",
+      "bullets": [
+        "Led maintenance planning & execution, spares planning and depot coordination",
+        "MTBF/MTTR analysis, data-driven corrective actions",
+        "Managed incorporation of Airworthiness Directives and Service Bulletins",
+        "Supervised a multidisciplinary team of 80 engineers and technicians using AMOS"
+      ],
       "technologies_used": [
         "AMOS",
         "MTBF/MTTR"
@@ -52,62 +104,236 @@
         "team of 80 engineers and technicians",
         "Airworthiness Directives"
       ],
-      "domain": "aviation"
+      "programs": [
+        "Lead Fighter Aircraft Program"
+      ],
+      "team_size": 80,
+      "seniority_signals": [
+        "Lead",
+        "Supervised"
+      ],
+      "domain": "defense_aerospace"
+    },
+    {
+      "company": "Airborne Early Warning & Control Systems, Air Force",
+      "employer": "Pakistan Air Force",
+      "title": "Maintenance Supervisor, AEW&C Aircraft",
+      "start_date": "Jan 2016",
+      "end_date": "Dec 2018",
+      "duration_months": 36,
+      "location": "Karachi, Pakistan",
+      "bullets": [
+        "Airborne Early Warning & Control Systems Maintenance Lead"
+      ],
+      "technologies_used": [
+        "AMOS",
+        "MTBF/MTTR"
+      ],
+      "metrics_mentioned": [],
+      "programs": [
+        "AEW&C Platform"
+      ],
+      "team_size": null,
+      "seniority_signals": [
+        "Supervisor",
+        "Lead"
+      ],
+      "domain": "defense_aerospace"
     },
     {
       "company": "Pakistan Aeronautical Complex Kamra",
+      "employer": "Pakistan Air Force",
       "title": "Maintenance & Systems Engineer",
       "start_date": "Jan 2008",
       "end_date": "Dec 2013",
       "duration_months": 60,
+      "location": "Kamra, Pakistan",
+      "bullets": [
+        "Supported Aircraft System integration, modification, and retrofit activities, ensuring configuration baselines",
+        "Implemented Configuration Management to track aircraft configuration changes, improving traceability & audit readiness",
+        "Verified technical documentation, led aircraft modification programs for retrofit and upgrade"
+      ],
       "technologies_used": [
         "Configuration Management"
       ],
       "metrics_mentioned": [],
-      "domain": "defense"
+      "programs": [
+        "Aircraft Modification Programs"
+      ],
+      "team_size": null,
+      "seniority_signals": [],
+      "domain": "defense_aerospace"
     }
   ],
-  "skills": {
-    "languages": [],
-    "frameworks": [
-      "Agile"
-    ],
-    "infrastructure": [
-      "AMOS"
-    ],
-    "databases": [],
-    "tools": [
-      "Power BI",
-      "EVM",
-      "RAID"
-    ],
-    "other": [
-      "Avionics Systems",
-      "Systems Integration",
-      "Configuration Management",
-      "Predictive Maintenance",
-      "MTBF/MTTR",
-      "C-check Management",
-      "Airworthiness Directives",
-      "Service Bulletins",
-      "CAMO/AMO",
-      "Work Package Design",
-      "Contract Negotiation",
-      "Maintenance Planning",
-      "Fleet Management",
-      "Program Management",
-      "Stakeholder Management"
-    ]
-  },
+  "skills": [
+    {
+      "name": "Aircraft Maintenance Supervision",
+      "original_text": "Aircraft Avionics Maintenance & Supervision",
+      "domain": "maintenance_engineering",
+      "category": "mro_systems",
+      "source": "experience"
+    },
+    {
+      "name": "Fault Diagnosis",
+      "original_text": "Fault Diagnosis & System Testing",
+      "domain": "maintenance_engineering",
+      "category": "reliability",
+      "source": "experience"
+    },
+    {
+      "name": "Configuration Management",
+      "original_text": "Configuration Management & CMDB",
+      "domain": "management",
+      "category": "configuration_management",
+      "source": "experience"
+    },
+    {
+      "name": "Continuing Airworthiness",
+      "original_text": "Continuing Airworthiness Principles (Part-145 aligned)",
+      "domain": "defense_aerospace",
+      "category": "airworthiness",
+      "source": "experience"
+    },
+    {
+      "name": "CAMO/AMO Operations",
+      "original_text": "CAMO/AMO audit activities",
+      "domain": "defense_aerospace",
+      "category": "airworthiness",
+      "source": "experience"
+    },
+    {
+      "name": "Maintenance Planning",
+      "original_text": "Maintenance Planning & Delivery Targets",
+      "domain": "maintenance_engineering",
+      "category": "fleet_operations",
+      "source": "experience"
+    },
+    {
+      "name": "Safety Management",
+      "original_text": "Safety Management & Human Factors",
+      "domain": "defense_aerospace",
+      "category": "safety",
+      "source": "experience"
+    },
+    {
+      "name": "C-Check Management",
+      "original_text": "C-checks (scope, SLAs, 3rd-party KPIs)",
+      "domain": "maintenance_engineering",
+      "category": "mro_systems",
+      "source": "experience"
+    },
+    {
+      "name": "Predictive Maintenance",
+      "original_text": "trend monitoring for predictive maintenance",
+      "domain": "maintenance_engineering",
+      "category": "reliability",
+      "source": "experience"
+    },
+    {
+      "name": "MTBF/MTTR Analysis",
+      "original_text": "MTBF/MTTR analysis",
+      "domain": "maintenance_engineering",
+      "category": "reliability",
+      "source": "experience"
+    },
+    {
+      "name": "AMOS",
+      "original_text": "AMOS",
+      "domain": "maintenance_engineering",
+      "category": "mro_systems",
+      "source": "experience"
+    },
+    {
+      "name": "Fleet Management",
+      "original_text": "Fighter Fleet Management",
+      "domain": "maintenance_engineering",
+      "category": "fleet_operations",
+      "source": "experience"
+    },
+    {
+      "name": "Work Package Design",
+      "original_text": "Designed work packages",
+      "domain": "maintenance_engineering",
+      "category": "mro_systems",
+      "source": "experience"
+    },
+    {
+      "name": "Airworthiness Directives",
+      "original_text": "Airworthiness Directives and Service Bulletins",
+      "domain": "defense_aerospace",
+      "category": "airworthiness",
+      "source": "experience"
+    },
+    {
+      "name": "Contract Negotiation",
+      "original_text": "Negotiated C-check contracts",
+      "domain": "management",
+      "category": "procurement",
+      "source": "experience"
+    },
+    {
+      "name": "Avionics Systems",
+      "original_text": "Avionics Systems Integration Lead",
+      "domain": "defense_aerospace",
+      "category": "avionics",
+      "source": "experience"
+    },
+    {
+      "name": "Systems Integration",
+      "original_text": "Systems Integration",
+      "domain": "defense_aerospace",
+      "category": "systems_engineering",
+      "source": "experience"
+    },
+    {
+      "name": "Stakeholder Management",
+      "original_text": "Stakeholder & OEM Coordination",
+      "domain": "management",
+      "category": "stakeholder_management",
+      "source": "experience"
+    },
+    {
+      "name": "Program Management",
+      "original_text": "Program Management",
+      "domain": "management",
+      "category": "program_management",
+      "source": "experience"
+    },
+    {
+      "name": "Power BI",
+      "original_text": "Power BI",
+      "domain": "technology",
+      "category": "tool",
+      "source": "experience"
+    }
+  ],
   "all_technologies": [
+    "Aircraft Maintenance Supervision",
+    "Fault Diagnosis",
+    "Configuration Management",
+    "Continuing Airworthiness",
+    "CAMO/AMO Operations",
+    "Maintenance Planning",
+    "Safety Management",
+    "C-Check Management",
+    "Predictive Maintenance",
+    "MTBF/MTTR Analysis",
+    "AMOS",
+    "Fleet Management",
+    "Work Package Design",
+    "Airworthiness Directives",
+    "Contract Negotiation",
+    "Avionics Systems",
+    "Systems Integration",
+    "Stakeholder Management",
+    "Program Management",
     "Power BI",
     "AI/ML",
+    "MS Project",
+    "JIRA",
     "EVM",
     "RAID",
-    "AMOS",
-    "MTBF/MTTR",
-    "Configuration Management",
-    "Agile"
+    "MTBF/MTTR"
   ],
   "education": [
     {
@@ -116,7 +342,6 @@
       "field": "Avionics Engineering",
       "start_year": 2004,
       "end_year": 2008,
-      "research_topic": null,
       "highlights": []
     },
     {
@@ -125,7 +350,6 @@
       "field": "Signal & Image Processing",
       "start_year": 2014,
       "end_year": 2015,
-      "research_topic": null,
       "highlights": []
     }
   ],
@@ -133,12 +357,177 @@
     "Project Management Professional (PMP)",
     "Agile Certified Practitioner (PMI-ACP)",
     "Professional Engineer (PE)",
-    "System Engineering Specialization (University of Colorado Boulder)",
-    "Engineering Management Specialization (Rice University)",
-    "Project Management Specialization (Google)",
+    "System Engineering Specialization",
+    "Engineering Management Specialization",
+    "Project Management Specialization",
     "Fighter Aircraft Type Rating Course",
     "AWACS Aircraft Type Rating Course",
     "Basic Staff Course",
     "Senior Command & Staff Course"
-  ]
+  ],
+  "certifications_detailed": [
+    {
+      "name": "Project Management Professional (PMP)",
+      "issuer": "Project Management Institute, USA",
+      "year": null,
+      "active": true,
+      "tier": "gold"
+    },
+    {
+      "name": "Agile Certified Practitioner (PMI-ACP)",
+      "issuer": "Project Management Institute, USA",
+      "year": null,
+      "active": true,
+      "tier": "gold"
+    },
+    {
+      "name": "Professional Engineer (PE)",
+      "issuer": "Pakistan Engineering Council",
+      "year": null,
+      "active": true,
+      "tier": "gold"
+    },
+    {
+      "name": "System Engineering Specialization",
+      "issuer": "University of Colorado Boulder, USA",
+      "year": null,
+      "active": true,
+      "tier": "specialization"
+    },
+    {
+      "name": "Engineering Management Specialization",
+      "issuer": "Rice University, USA",
+      "year": null,
+      "active": true,
+      "tier": "specialization"
+    },
+    {
+      "name": "Project Management Specialization",
+      "issuer": "Google",
+      "year": null,
+      "active": true,
+      "tier": "specialization"
+    },
+    {
+      "name": "Fighter Aircraft Type Rating Course",
+      "issuer": "Pakistan Air Force",
+      "year": null,
+      "active": true,
+      "tier": "military"
+    },
+    {
+      "name": "AWACS Aircraft Type Rating Course",
+      "issuer": "Pakistan Air Force",
+      "year": null,
+      "active": true,
+      "tier": "military"
+    },
+    {
+      "name": "Basic Staff Course",
+      "issuer": "Pakistan Air Force",
+      "year": null,
+      "active": true,
+      "tier": "military"
+    },
+    {
+      "name": "Senior Command & Staff Course",
+      "issuer": "Pakistan Air Force",
+      "year": null,
+      "active": true,
+      "tier": "military"
+    }
+  ],
+  "competencies": [
+    "Aircraft Avionics Maintenance & Supervision",
+    "Fault Diagnosis & System Testing",
+    "Continuing Airworthiness Principles (Part-145 aligned)",
+    "Safety Management & Human Factors",
+    "Team Leadership & Task Authorisation",
+    "Stakeholder & OEM Coordination",
+    "Fighter & AEW&C Aircraft Operations"
+  ],
+  "awards": [
+    {
+      "title": "Chief of the Airstaff Commendation",
+      "issuer": "Pakistan Air Force",
+      "context": "Exceptional services during the avionics integration and retrofit Program",
+      "significance": null
+    },
+    {
+      "title": "Chairman's Appreciation Letter",
+      "issuer": "Pakistan Aeronautical Complex",
+      "context": "Contributions to defense manufacturing",
+      "significance": null
+    },
+    {
+      "title": "CADI Commendation",
+      "issuer": "Chengdu Aircraft Design Institute, China",
+      "context": "Development & Integration activities of Lead Fighter Aircraft Program",
+      "significance": null
+    },
+    {
+      "title": "HEC National Capacity Building Selection",
+      "issuer": "Higher Education Commission, Pakistan",
+      "context": "National Capacity Building Program in System Engineering",
+      "significance": null
+    }
+  ],
+  "projects": [
+    {
+      "name": "Novel ECCM Algorithm for Radars",
+      "description": "Developed and fielded ECCM algorithms and signal-processing solutions",
+      "outcome": "Foundation for link budget analysis, payload performance evaluation, and communications reliability",
+      "technologies": [
+        "Signal Processing",
+        "ECCM",
+        "Radar"
+      ],
+      "is_professional": true
+    },
+    {
+      "name": "Configuration Management System",
+      "description": "Led configuration management for advanced aircraft",
+      "outcome": "Ensured controlled evolution and mission support",
+      "technologies": [
+        "CMDB"
+      ],
+      "is_professional": true
+    },
+    {
+      "name": "Indigenous Mission Computer",
+      "description": "Indigenous development of mission computer for lead aircraft",
+      "outcome": "Over 135 systems produced, millions-dollar cost savings",
+      "technologies": [
+        "Embedded Systems"
+      ],
+      "is_professional": true
+    },
+    {
+      "name": "Glass Cockpit Modification",
+      "description": "Upgrade of trainer aircraft with Dynon and Garmin suite",
+      "outcome": "Managed OEM and supplier interfaces, export to 11 countries",
+      "technologies": [
+        "Dynon",
+        "Garmin"
+      ],
+      "is_professional": true
+    }
+  ],
+  "publications": [],
+  "volunteer": [],
+  "leadership": [],
+  "professional_affiliations": [],
+  "training": [
+    {
+      "name": "Transfer of Source Code (Aircraft) Training",
+      "provider": "Chengdu Aircraft Design Institute, China",
+      "year": 2018,
+      "hours": null
+    }
+  ],
+  "languages_spoken": [
+    "English",
+    "Urdu"
+  ],
+  "conflicts": []
 }

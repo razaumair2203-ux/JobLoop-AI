@@ -7,8 +7,8 @@
  * Model selection per design (socratic-engine-FINAL-v2.md):
  *   - Option picked → no LLM, direct mapping ($0)
  *   - Structured fields → no LLM, direct mapping ($0)
- *   - Free text, no complexity signals → Haiku ($0.002)
- *   - Free text, has complexity signals → Sonnet ($0.02)
+ *   - Free text, no complexity signals → fast tier
+ *   - Free text, has complexity signals → quality tier
  *
  * In dev mode: saves prompt to file, reads response from file.
  */
@@ -55,7 +55,7 @@ export type ModelTier = "fast" | "quality";
 
 /**
  * Detect structural complexity signals in free-text answer.
- * If ANY signal found → use Sonnet. Otherwise → Haiku.
+ * If ANY signal found → use quality tier. Otherwise → fast tier.
  *
  * Returns the signals found (for logging/debugging).
  */
@@ -174,7 +174,7 @@ Rules:
  * Parse a free-text answer using the appropriate model tier.
  *
  * In dev mode: saves the prompt and returns null (you process it manually).
- * In API mode: calls Haiku or Sonnet based on complexity.
+ * In API mode: calls fast tier or quality tier based on complexity.
  */
 export async function parseAnswer(
   questionContext: string,

@@ -1,0 +1,195 @@
+{
+  "id": "pair-Q001",
+  "split": "train",
+  "persona": "mid_career",
+  "source_resume": {
+    "id": "snb-20806155",
+    "dataset": "snehaanbhawal_livecareer",
+    "industry": "hr",
+    "seniority": "mid"
+  },
+  "jd": {
+    "title": "Senior Human Resources Generalist",
+    "company": "AimHire",
+    "location": "",
+    "experience_years": 5,
+    "requirements": [
+      {
+        "text": "5-10 years of HR experience",
+        "type": "must_have"
+      },
+      {
+        "text": "Deep knowledge of key human resources functions",
+        "type": "must_have"
+      },
+      {
+        "text": "International HR Operations experience",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "Knowledge of Canadian employment law and compliance",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "Excellent interpersonal, communication, listening, and moderating skills",
+        "type": "must_have"
+      },
+      {
+        "text": "Demonstrated success owning projects from inception to completion",
+        "type": "must_have"
+      },
+      {
+        "text": "High sense of urgency, driven with ability to understand and prioritize initiatives",
+        "type": "must_have"
+      },
+      {
+        "text": "Excellent written and verbal communications skills",
+        "type": "must_have"
+      },
+      {
+        "text": "Bachelor's degree preferred with a specialization in Human Resources or related field",
+        "type": "must_have"
+      },
+      {
+        "text": "Current certification as PHR/SPHR, SHRM-CP/SHRM-SCP",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "Experience within a high growth technology environment",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "Experience with Entrepreneurial Operating System (EOS)",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "Advanced HR degree",
+        "type": "nice_to_have"
+      }
+    ],
+    "responsibilities": [
+      "Manages and directs all HR tasks",
+      "Maintain a high level of expertise in best practice and compliance with local, state, federal human resources policies",
+      "Collaborates with leadership to understand long-term goals",
+      "Draft and implement staffing plans, recruitment practices and an exceptional onboarding experience",
+      "Manage recruiting efforts, including full lifecycle recruitment and employer brand initiatives",
+      "Develop career pathing and learning & development programs",
+      "Communicate changes in the company’s personnel policies and procedures",
+      "Manage and resolve complex people relations issues"
+    ],
+    "full_description": "Role: Senior Human Resources GeneralistLocation: Denver, CO near RiNo – Hybrid with 3-4 days in office/ week\nWe are looking for a driven and experienced Senior Human Resources Generalist to join a very reputable and rapidly growing SaaS company with a presence in Colorado, Florida, and Canada. If you enjoy working closely with a small internal operations team and in strong partnership with other leaders in the business, we’d love to talk to you!\nThis is a hybrid direct hire role in Denver, CO near RiNo paying $80-95k with quarterly bonuses.\nResponsibilities:Manages and directs all HR tasks, including building, refining and managing various people-programs, processes and policiesMaintain a high level of expertise in best practice and compliance with local, state, federal human resources policies, programs, laws, and employment issuesCollaborates with leadership to understand long-term goals, and identifies ways to support these goals through an outstanding culture and talent managementDraft and implement staffing plans, recruitment practices and an exceptional onboarding experienceManage recruiting efforts, including full lifecycle recruitment and employer brand initiativesDevelop career pathing and learning & development programsCommunicate changes in the company’s personnel policies and procedures and ensure that proper compliance is followedManage and resolve complex people relations issuesMaintain competitive compensation, benefit and employee incentive programsPartner with functional managers to meet their operating and team goalsAll other duties as assigned\nRequirements:5-10 years of HR experience that includes leadership, recruiting, talent development, HR compliance and administration, program management and retentionDeep knowledge of key human resources functions (e.g. compensation, compliance, operations, employee relations) and the ability to act as a strategic partner to the businessInternational HR Operations experience is strongly preferred, especially Canadian employment law and complianceKnowledge of--and sensitivity to--the diverse backgrounds represented across the workforceExcellent interpersonal, communication, listening, and moderating skills--you are able to support staff and manage conflicts in a manner that respects both the employee(s) and the companyDemonstrated success owning projects from inception to completion, providing appropriate levels of communication throughoutHigh sense of urgency, driven with ability to understand and prioritize initiativesExcellent written and verbal communications skills with ability to interact effectively at various levels in the organization.Bachelor's degree preferred (or equivalent experience) with a specialization in Human Resources, Personnel, Business Management, Communications, or a related field preferredCurrent certification as PHR/SPHR, SHRM-CP/SHRM-SCP\nCandidates with the below are experience are prioritized:Experience within a high growth technology environmentExperience with Entrepreneurial Operating System (EOS)Current certification as PHR/SPHR, SHRM-CPAn advanced HR degree\nBenefits:Flexible unlimited PTO and paid parental leave401k matchWellness stipendQuarterly bonuses12 paid holidays per yearOpportunity to work for an entrepreneurial company in an exciting phase of growth\nWhy Work with AimHire:We work with many different clients in many different industries and may be able to consider you for multiple roles at one time!No fee to you!Voted one of the best staffing agencies in Denver!Please apply online at www.aimhiredenver.com for immediate consideration\nPlease apply directly on our website at www.aimhiredenver.com for immediate consideration.\nAimHire is an Equal Opportunity/Affirmative Action Employer.\nKeywords: HR, human resources, employee relations, generalist, management"
+  },
+  "expected_output": {
+    "summary": "Highly experienced HR Specialist with expertise in information systems, personnel management, and automation. Proven track record of designing and implementing automated personnel policy, providing advisory services, and resolving HR automation user issues. Skilled in managing and maintaining organizational infrastructure, including SharePoint and web-based management tools.",
+    "experience": [
+      {
+        "company": "Company Name",
+        "title": "HR Specialist (Information Systems)",
+        "start_date": "02/2013",
+        "end_date": "12/2014",
+        "bullets": [
+          "Served as Fort Bragg Installation Civilian Personnel Information Systems Manager with full responsibility for establishing and implementing automated personnel policy",
+          "Designed, constructed, tested, deployed, and maintained organizational SharePoint infrastructure",
+          "Designed customized web-based management tools to improve organizational efficiency, communication, and archiving capabilities",
+          "Managed storage capabilities and built a detailed archival system to maintain organization's historic documents",
+          "Analyzed organizational automation training needs and constructed detailed training plans",
+          "Delivered short-term and extended training sessions on HR automation program functionality, troubleshooting, capabilities"
+        ]
+      },
+      {
+        "company": "Company Name",
+        "title": "HR Specialist",
+        "start_date": "08/2012",
+        "end_date": "02/2013",
+        "bullets": [
+          "Served as a senior HR Specialist leading a four-person team in the accomplishment of recruitment and placement work",
+          "Responsible for analyzing workforce capabilities and equitably distributing workload to best utilize organizational resources",
+          "Set and tracked suspenses and deadlines on assigned work",
+          "Provided advisory services to CPAC staff and external managers on automation issues, proper system usage and guidelines, and general account maintenance",
+          "Served as the HR Automation Program Administrator and provided technical assistance and advisory services within the CPAC and to all post-wide users for personnel automation systems"
+        ]
+      }
+    ],
+    "skills": {
+      "Technical": [
+        "SharePoint",
+        "Web-based management tools",
+        "HR automation systems",
+        "FASCLASS",
+        "AutoNoa",
+        "USA Staffing",
+        "Business Objects Applications (SAP Software)",
+        "CPOL",
+        "DCPDS",
+        "CSU",
+        "eOPF",
+        "ASARS"
+      ],
+      "Management": [
+        "Personnel management",
+        "Team leadership",
+        "Workforce analysis",
+        "Recruitment and placement"
+      ],
+      "Domain": [
+        "Human resources",
+        "Personnel policy",
+        "Automation"
+      ],
+      "Soft Skills": [
+        "Communication",
+        "Training",
+        "Advisory services",
+        "Troubleshooting"
+      ]
+    },
+    "certifications": [],
+    "education": []
+  },
+  "jd_requirements": [
+    "5-10 years of HR experience",
+    "Deep knowledge of key human resources functions",
+    "Excellent interpersonal, communication, listening, and moderating skills",
+    "Demonstrated success owning projects from inception to completion",
+    "High sense of urgency, driven with ability to understand and prioritize initiatives",
+    "Excellent written and verbal communications skills",
+    "Bachelor's degree preferred with a specialization in Human Resources or related field"
+  ],
+  "cloud_skills": [
+    "SharePoint",
+    "Web-based management tools",
+    "HR automation systems",
+    "FASCLASS",
+    "AutoNoa",
+    "USA Staffing",
+    "Business Objects Applications (SAP Software)",
+    "CPOL",
+    "DCPDS",
+    "CSU",
+    "eOPF",
+    "ASARS",
+    "Personnel management",
+    "Team leadership",
+    "Workforce analysis",
+    "Recruitment and placement",
+    "Human resources",
+    "Personnel policy",
+    "Automation",
+    "Communication",
+    "Training",
+    "Advisory services",
+    "Troubleshooting"
+  ],
+  "provenance": {
+    "cv_source": "snehaanbhawal/resume-dataset (LiveCareer, CC0)",
+    "jd_source": "R-series (Kaggle LinkedIn, real postings)",
+    "cv_dataset_id": 20806155,
+    "jd_pair_id": "pair-R003",
+    "expected_output_author": "NIM/meta/llama-3.3-70b-instruct",
+    "generated_at": "2026-05-08T15:20:20.790Z",
+    "circularity_risk": "medium-low",
+    "circularity_notes": "Real CV text + real JD text. Expected output is LLM-parsed extraction from real text (not invention). 4/8 scorecard checks structurally sound regardless.",
+    "needs_human_review": true
+  },
+  "raw_cv_text": "         HR SPECIALIST (INFORMATION SYSTEMS)           Experience     02/2013   -   12/2014     Company Name   －   City  ,   State    HR Specialist (Information Systems)        Permanent/FT Supervisor: Iris Murray (910-432-2392)  Served as Fort Bragg Installation Civilian Personnel Information Systems Manager with full responsibility for establishing and implementing automated personnel policy, providing advisory services, and resolving HR automation user issues. This included system access control, HR automation training administration and instruction, HR automation system software functionality and interface issues, hardware troubleshooting, installation and maintenance, and regulatory and procedural guidance, etc. Systems included: FASCLASS, AutoNoa, USA Staffing, Business Objects Applications (SAP Software), CPOL, DCPDS, CSU, eOPF, ASARS, etc.  Designed, constructed, tested, deployed, and maintained organizational SharePoint infrastructure. Designed customized web-based management tools to improve organizational efficiency, communication, and archiving capabilities.  Served as the Webmaster for the Fort Bragg Civilian Personnel Advisory Center (CPAC) internet and intranet products with responsibility for ensuring release compliance, proper website structure and architecture, ease of use, and esthetic appeal.  Wrote detailed technical plans to maintain organizational functionality in the occurrence of service interruptions due to software incompatibility issues resulting from Network Enterprise Center compliance demands and newly implemented network configurations. Managed storage capabilities and built a detailed archival system to maintain organization's historic documents.  Analyzed organizational automation training needs and constructed detailed training plans. Coordinated training registrations for internal and external customer base. Constructed customized slides and literature to meet training needs. Delivered short-term and extended training sessions on HR automation program functionality, troubleshooting, capabilities.  Performed onsite and phone-based troubleshooting of HR automation programs. Assisted users with identifying likely causes of functionality problems and employed non-standard and standardized troubleshooting to solve user issues.  Managed all user account requests for all Fort Bragg users to include initial request, modifications, and deletions. Provided advisory services to CPAC staff and external managers on automation issues, proper system usage and guidelines, and general account maintenance.         08/2012   -   02/2013     Company Name   －   City  ,   State    HR Specialist        Permanent/FT Supervisor: Kimberly Malone (870-540-3077)  Served as a senior HR Specialist leading a four-person team in the accomplishment of recruitment and placement work. Responsible for analyzing workforce capabilities and equitably distributing workload to best utilize organizational resources. Set and tracked suspenses and deadlines on assigned work. Set workload milestones and regularly monitored whether my team was meeting the goals as projected and adjusted my approach accordingly to meet production requirements.  Assigned and tracked all pre-work to ensure analytical accuracy in the strategic recruitment discussion and job analysis phases. Reviewed all RPA coding and remarks prior to submission for processing. Continually analyzed work practices and processes to gather data for streamlining or process change proposals.  Managed all user account requests for all Pine Bluff Arsenal users to include initial request, modifications, and deletions. Provided advisory services to CPAC staff and external managers on automation issues, proper system usage and guidelines, and general account maintenance.  Served as the HR Automation Program Administrator. Provided technical assistance and advisory services within the CPAC and to all post-wide users for personnel automation systems. Served as the installation Information Management Officer for HR automation.  Performed workforce needs assessments to determine the overall intellectual resources, skill level and training needs of junior HR Specialists and HR Assistants. Advised the HR Officer on learning progression, areas of needed improvement, and recommendations for training of the junior HR workforce. Constructed training materials and performed workforce development training for my organization.  Conducted reviews and quality control of all assessments and vacancy announcements of my team prior to publishing and use the resulting observations in the construct of developmental training.  Designed and conducted on-site training on HR processes and automation to a workforce of over 1,200 employees. Assessed existing HR training programs and determined the need for adjustment, replacement, or maintenance based on employee feedback and productivity measures. Constructed new training materials and delivered organizationally standardized training.  Performed strategic recruitment discussions to determine proper position classification, area of consideration, and overall recruitment plan. Conducted detailed job analysis in concert with hiring managers and subject matter experts.  Built and edited vacancies, assessments, and vacancy announcements (Delegated Examining Unit and Merit Promotion) using USA Staffing. Coded personnel actions. Performed post-selection processes.  Advised the post Command group and directorate level managers on difficult HR issues, i.e. attrition management, regulatory determinations, etc. Conducted regulatory, organizational, and procedural research, analysis, and synthesis of human resources related laws, policies, and regulatory guidance in order to write proposals to address complex staffing solutions, production focus, and HR process improvement.  Analyzed organizational composition and provide position management and classification support to assigned organizations under the General Schedule (GS) and Wage Grade (WG) pay schedules. Advised managers on the position classification process and the use of various classification references and automated tools.  Performed routine and non-routine position classification of supervisory, non-supervisory, leader, professional, administrative, clerical, technical, other, and blue collar position. Performed FLSA determinations. Researched and analyzed classification regulations, handbooks, references, and regulatory guidance. Analyzed position description data and write position evaluations.  Served as the Priority Placement Plan (PPP) and Reemployment Priority List Program Administrator with responsibility for program operations and performance, data audits, eligibility determinations, conduct of registrant counseling, registrations, and file maintenance. Conducted PPP file and match audits. Continually monitored program to maintain operational and procedural consistency, determine need for process improvements, and ensure registrants are receiving proper service and assistance.         08/2011   -   08/2012     Company Name   －   City  ,   State    HR Specialist        Permanent/FT Supervisor: Kimberly Malone (870-540-3077)  Served as the HR Automation Program Administrator. Provided technical assistance and advisory services within the CPAC and to all post-wide users for personnel automation systems. Served as the installation Information Management Officer for HR automation  Managed organization-wide HR automation account establishment and end-dating. Advised managers and employees on system functionality and limitations. Specialized in the use of Business Objects Applications program to provide Defense Civilian Personnel Data System (DCPDS)-based reports and statistical analysis for the post command group and servicing CPAC.  Supervised roll out of new automation processes, e.g. CAC enabling, PPP Pre-requisitioning (ASARS), USA Staffing conversion, etc. Constructed guidance and instructions to assist in resolution of personnel system user issues and informs users of upcoming automation changes or outages. Gathered and analyzed user experience data to determine the need for system adjustment, replacement, or maintenance based on employee feedback and productivity measures.  Served as the Pine Bluff Arsenal USA Staffing Super User responsible for implementing Regional changes, keeping the workforce informed of functionality issues, attending bi-weekly Regional meetings to stay abreast of automation developments, maintaining user and customer accounts, building custom notification letters, troubleshooting, and answering questions related to system functions, usage, and regulatory guidance.  Created and manipulated automated databases using Microsoft Excel and Microsoft Access. Used varying databases, universes, and data elements to construct complex Business Objects Applications reports. Utilized these reports to retrieve employee statistical and profile information for analysis and interrogatory requests.  Provided guidance on merit system principles, prohibited personnel practices, HR regulations, and the development and use of valid selection criteria and processes. Advised management on recruitment strategies, sources, appointment authorities, and special programs.  Performed routine and non-routine position classification of supervisory, non-supervisory, leader, professional, administrative, clerical, technical, other, and blue collar position.  Analyzed and applied classification standards, SOP's, laws, and regulatory guidance to conduct classification and FLSA determinations on a variety of position including Wage Schedule and General Schedule non-supervisory, supervisory, wage grade, wage leader, and wage supervisor positions. Analyzed position description data and wrote position evaluations.  Researched and analyzed relevant federal regulations and guidance to determine legality and options. Crafted suggestions and recruitment strategies for presentation to the post command. Presented monthly HR-related training to a diverse workforce consisting of over 1,200 employees.  Served as a peer-to-peer trainer and reviewer on HR functions, e.g. recruitment/placement procedures, vacancy announcement construction, job analysis, suspense tracking, and use of HR automation programs. Coded personnel actions IAW the Guide to Processing Personnel actions and other applicable regulatory guidance.  Reviewed and analyzed all personnel actions prior to submission to reconcile any errors or discrepancies. Analyzed quality control RPA data and Open Goodness of Data reports to double check for incorrect event coding. Wrote vacancy announcements, determined qualifications, set pay, and produced merit promotion and DEU referral lists.  Analyzed, interpreted and applied recruitment and placement regulatory guidance, laws, and policies. Assisted customers with federal employee benefits programs concerning entitlements, insurance, beneficiaries, Post-56 buy back, retirement preparation, leave, TSP, compensation, etc. Provided advisory services to staff and managers to resolve staffing, classification, pay, action processing, and related personnel issues.  Served as the Priority Placement Plan (PPP) and Reemployment Priority List Program Administrator with responsibility for program operations and performance, data audits, eligibility determinations, conduct of registrant counseling, registrations, and file maintenance          Education          Miller-Motte College   －   City  ,   State  ,   US    Associate  :   Microcomputer Applications    Associate Degree 04/2015 Miller-Motte College, Wilmington, NC United States GPA 3.61 of a maximum 4.0 Credits Earned: 68 Credit Hours Major: Microcomputer Applications Relevant Coursework: Web Development, PC Operating Systems, Project Management, Desktop Publishing, Presentation Graphics, PC Hardware & Software A+, Advanced Database Management, Advanced Spreadsheets, Advanced Word Processing, E-Commerce            Capella University Minneapolis   －   City  ,   State  ,   US    Master's  :   Human Services    Master's Degree 03/2010 Capella University Minneapolis, MN United States GPA: 3.67 of a maximum 4.0 Credits Earned: 48 Semester hours Major: Human Services Honors: Cum Laude          Accomplishments    Major: Human Services Honors: Cum Laude      Military Experience     08/2012   -   02/2013     Company Name        Specialist    Department of the Army, Civilian HR Agency Hours per week: 40 Fort Bragg, NC Permanent/FT Supervisor: Iris Murray (910-432-2392) Served as Fort Bragg Installation Civilian Personnel Information Systems Manager with full responsibility for establishing and implementing automated personnel policy, providing advisory services, and resolving HR automation user issues. This included system access control, HR automation training administration and instruction, HR automation system software functionality and interface issues, hardware troubleshooting, installation and maintenance, and regulatory and procedural guidance, etc. Systems included: FASCLASS, AutoNoa, USA Staffing, Business Objects Applications (SAP Software), CPOL, DCPDS, CSU, eOPF, ASARS, etc. Designed, constructed, tested, deployed, and maintained organizational SharePoint infrastructure. Designed customized web-based management tools to improve organizational efficiency, communication, and archiving capabilities. Served as the Webmaster for the Fort Bragg Civilian Personnel Advisory Center (CPAC) internet and intranet products with responsibility for ensuring release compliance, proper website structure and architecture, ease of use, and esthetic appeal. Wrote detailed technical plans to maintain organizational functionality in the occurrence of service interruptions due to software incompatibility issues resulting from Network Enterprise Center compliance demands and newly implemented network configurations. Managed storage capabilities and built a detailed archival system to maintain organization's historic documents. Analyzed organizational automation training needs and constructed detailed training plans. Coordinated training registrations for internal and external customer base. Constructed customized slides and literature to meet training needs. Delivered short-term and extended training sessions on HR automation program functionality, troubleshooting, capabilities. Performed onsite and phone-based troubleshooting of HR automation programs. Assisted users with identifying likely causes of functionality problems and employed non-standard and standardized troubleshooting to solve user issues. Managed all user account requests for all Fort Bragg users to include initial request, modifications, and deletions. Provided advisory services to CPAC staff and external managers on automation issues, proper system usage and guidelines, and general account maintenance. HR Specialist (Recruitment & Placement/Info Systems) GS-0201-12\t08/2012 - 02/2013 Department of the Army, Civilian HR Agency Hours per week: 40 Pine Bluff, AR Permanent/FT Supervisor: Kimberly Malone (870-540-3077) Served as a senior HR Specialist leading a four-person team in the accomplishment of recruitment and placement work. Responsible for analyzing workforce capabilities and equitably distributing workload to best utilize organizational resources. Set and tracked suspenses and deadlines on assigned work. Set workload milestones and regularly monitored whether my team was meeting the goals as projected and adjusted my approach accordingly to meet production requirements. Assigned and tracked all pre-work to ensure analytical accuracy in the strategic recruitment discussion and job analysis phases. Reviewed all RPA coding and remarks prior to submission for processing. Continually analyzed work practices and processes to gather data for streamlining or process change proposals. Managed all user account requests for all Pine Bluff Arsenal users to include initial request, modifications, and deletions. Provided advisory services to CPAC staff and external managers on automation issues, proper system usage and guidelines, and general account maintenance. Served as the HR Automation Program Administrator. Provided technical assistance and advisory services within the CPAC and to all post-wide users for personnel automation systems. Served as the installation Information Management Officer for HR automation. Performed workforce needs assessments to determine the overall intellectual resources, skill level and training needs of junior HR Specialists and HR Assistants. Advised the HR Officer on learning progression, areas of needed improvement, and recommendations for training of the junior HR workforce. Constructed training materials and performed workforce development training for my organization. Conducted reviews and quality control of all assessments and vacancy announcements of my team prior to publishing and use the resulting observations in the construct of developmental training. Designed and conducted on-site training on HR processes and automation to a workforce of over 1,200 employees. Assessed existing HR training programs and determined the need for adjustment, replacement, or maintenance based on employee feedback and productivity measures. Constructed new training materials and delivered organizationally standardized training. Performed strategic recruitment discussions to determine proper position classification, area of consideration, and overall recruitment plan. Conducted detailed job analysis in concert with hiring managers and subject matter experts. Built and edited vacancies, assessments, and vacancy announcements (Delegated Examining Unit and Merit Promotion) using USA Staffing. Coded personnel actions. Performed post-selection processes. Advised the post Command group and directorate level managers on difficult HR issues, i.e. attrition management, regulatory determinations, etc. Conducted regulatory, organizational, and procedural research, analysis, and synthesis of human resources related laws, policies, and regulatory guidance in order to write proposals to address complex staffing solutions, production focus, and HR process improvement. Analyzed organizational composition and provide position management and classification support to assigned organizations under the General Schedule (GS) and Wage Grade (WG) pay schedules. Advised managers on the position classification process and the use of various classification references and automated tools. Performed routine and non-routine position classification of supervisory, non-supervisory, leader, professional, administrative, clerical, technical, other, and blue collar position. Performed FLSA determinations. Researched and analyzed classification regulations, handbooks, references, and regulatory guidance. Analyzed position description data and write position evaluations. Served as the Priority Placement Plan (PPP) and Reemployment Priority List Program Administrator with responsibility for program operations and performance, data audits, eligibility determinations, conduct of registrant counseling, registrations, and file maintenance. Conducted PPP file and match audits. Continually monitored program to maintain operational and procedural consistency, determine need for process improvements, and ensure registrants are receiving proper service and assistance. HR Specialist (Classification/Recruitment & Placement) GS-0201-11\t08/2011 - 08/2012 Department of the Army, Civilian HR Agency Hours per week: 40 Pine Bluff, AR Permanent/FT Supervisor: Kimberly Malone (870-540-3077) Served as the HR Automation Program Administrator. Provided technical assistance and advisory services within the CPAC and to all post-wide users for personnel automation systems. Served as the installation Information Management Officer for HR automation Managed organization-wide HR automation account establishment and end-dating. Advised managers and employees on system functionality and limitations. Specialized in the use of Business Objects Applications program to provide Defense Civilian Personnel Data System (DCPDS)-based reports and statistical analysis for the post command group and servicing CPAC. Supervised roll out of new automation processes, e.g. CAC enabling, PPP Pre-requisitioning (ASARS), USA Staffing conversion, etc. Constructed guidance and instructions to assist in resolution of personnel system user issues and informs users of upcoming automation changes or outages. Gathered and analyzed user experience data to determine the need for system adjustment, replacement, or maintenance based on employee feedback and productivity measures. Served as the Pine Bluff Arsenal USA Staffing Super User responsible for implementing Regional changes, keeping the workforce informed of functionality issues, attending bi-weekly Regional meetings to stay abreast of automation developments, maintaining user and customer accounts, building custom notification letters, troubleshooting, and answering questions related to system functions, usage, and regulatory guidance. Created and manipulated automated databases using Microsoft Excel and Microsoft Access. Used varying databases, universes, and data elements to construct complex Business Objects Applications reports. Utilized these reports to retrieve employee statistical and profile information for analysis and interrogatory requests. Provided guidance on merit system principles, prohibited personnel practices, HR regulations, and the development and use of valid selection criteria and processes. Advised management on recruitment strategies, sources, appointment authorities, and special programs. Performed routine and non-routine position classification of supervisory, non-supervisory, leader, professional, administrative, clerical, technical, other, and blue collar position. Analyzed and applied classification standards, SOP's, laws, and regulatory guidance to conduct classification and FLSA determinations on a variety of position including Wage Schedule and General Schedule non-supervisory, supervisory, wage grade, wage leader, and wage supervisor positions. Analyzed position description data and wrote position evaluations. Researched and analyzed relevant federal regulations and guidance to determine legality and options. Crafted suggestions and recruitment strategies for presentation to the post command. Presented monthly HR-related training to a diverse workforce consisting of over 1,200 employees. Served as a peer-to-peer trainer and reviewer on HR functions, e.g. recruitment/placement procedures, vacancy announcement construction, job analysis, suspense tracking, and use of HR automation programs. Coded personnel actions IAW the Guide to Processing Personnel actions and other applicable regulatory guidance. Reviewed and analyzed all personnel actions prior to submission to reconcile any errors or discrepancies. Analyzed quality control RPA data and Open Goodness of Data reports to double check for incorrect event coding. Wrote vacancy announcements, determined qualifications, set pay, and produced merit promotion and DEU referral lists. Analyzed, interpreted and applied recruitment and placement regulatory guidance, laws, and policies. Assisted customers with federal employee benefits programs concerning entitlements, insurance, beneficiaries, Post-56 buy back, retirement preparation, leave, TSP, compensation, etc. Provided advisory services to staff and managers to resolve staffing, classification, pay, action processing, and related personnel issues. Served as the Priority Placement Plan (PPP) and Reemployment Priority List Program Administrator with responsibility for program operations and performance, data audits, eligibility determinations, conduct of registrant counseling, registrations, and file maintenance         Certifications    RPA CAC DoD      Skills    Hr, Maintenance, Registrations, Staffing, Training, Access, Account Maintenance, General Account, Access Control, Architecture, Archiving, Csu, Hardware Troubleshooting, Intranet, Microsoft Sharepoint, Sap, Sharepoint, Web Based, Web-based, Audits, Clerical, Coding, File, Flsa, Job Analysis, Operations, Ppp, Quality Control, Recruitment, Technical Assistance, Answering, Benefits, Bi, Business Intelligence, Cac, Compensation, Customer Accounts, Databases, Employee Benefits, Excel, Federal Regulations, Microsoft Access, Microsoft Excel, Ms Access, Statistical Analysis, User Experience, Publishing, Hr Issues, Hr Process Improvement, Human Resources, Process Improvement, Process Improvements, Proposals, Solutions, Training Programs, Ar, Dod, Gsa, Information Assurance, Online Learning, Online Training, Security, Associate, Credit, Database, Database Management, Desktop Publishing, Project Management, Word   "
+}

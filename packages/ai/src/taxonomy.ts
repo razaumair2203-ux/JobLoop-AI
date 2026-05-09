@@ -1054,3 +1054,204 @@ export function detectGaps(
 
   return gaps.slice(0, 5);
 }
+
+// ============================================================
+// TAXONOMY NORMALIZATION — Map LLM output to approved terms
+//
+// Cross-reference guidance (from Deep Research Report, May 2026):
+// - O*NET (46 skill areas, 325 intermediate work activities): use as quality check
+//   for domain/category completeness. Transformer-based skill/job matching on O*NET
+//   outperforms keyword baselines (see deep-research-report).
+// - ESCO (13,890 skills, 4 sub-classifications): use for European market coverage
+//   and multilingual skill name normalization when expanding internationally.
+// - Neither should be imported wholesale — our LLM classifier handles every profession.
+//   These are reference standards for auditing coverage gaps in DOMAIN_EXPECTED_SKILLS.
+// ============================================================
+
+/** All approved domain strings (keys of DOMAIN_DISPLAY) */
+export const APPROVED_DOMAINS = new Set(Object.keys(DOMAIN_DISPLAY));
+
+/** Aliases: LLM variants → approved domain names */
+const DOMAIN_ALIASES: Record<string, string> = {
+  // Common LLM variations
+  "aerospace": "defense_aerospace",
+  "defense": "defense_aerospace",
+  "defence": "defense_aerospace",
+  "aviation": "defense_aerospace",
+  "military": "defense_aerospace",
+  "aviation_electronics": "defense_aerospace",
+  "avionics": "defense_aerospace",
+  "embedded_avionics": "defense_aerospace",
+  "aircraft_electronics": "defense_aerospace",
+  "aerospace_electronics": "defense_aerospace",
+  "project_management": "management",
+  "program_management": "management",
+  "management_consulting": "management",
+  "maintenance": "maintenance_ops",
+  "maintenance_engineering": "maintenance_ops",
+  "fleet_operations": "maintenance_ops",
+  "software": "technology",
+  "it": "technology",
+  "information_technology": "technology",
+  "tech": "technology",
+  "engineering": "technology",
+  "software_engineering": "technology",
+  "web_development": "technology",
+  "data_science": "technology",
+  "cybersecurity": "technology",
+  "cloud_computing": "technology",
+  "devops": "technology",
+  "soft_skills": "leadership",
+  "people_management": "leadership",
+  "team_management": "leadership",
+  "quality": "quality_compliance",
+  "compliance": "quality_compliance",
+  "standards": "quality_compliance",
+  "regulatory": "quality_compliance",
+  "medical": "healthcare",
+  "health": "healthcare",
+  "clinical": "healthcare",
+  "pharma": "healthcare",
+  "pharmaceutical": "healthcare",
+  "life_sciences": "healthcare",
+  "medicine": "healthcare",
+  "accounting": "finance",
+  "banking": "finance",
+  "financial_services": "finance",
+  "sales": "marketing",
+  "advertising": "marketing",
+  "digital_marketing": "marketing",
+  "civil_engineering": "construction",
+  "structural_engineering": "construction",
+  "building": "construction",
+  "real_estate": "construction",
+  "human_resources": "hr",
+  "people_operations": "hr",
+  "talent": "hr",
+  "ux": "design",
+  "ui": "design",
+  "product_design": "design",
+  "graphic_design": "design",
+  "creative": "design",
+  "supply_chain": "operations",
+  "logistics": "operations",
+  "manufacturing": "operations",
+  "procurement": "operations",
+  "oil_gas": "energy",
+  "renewables": "energy",
+  "environmental": "energy",
+  "power": "energy",
+  "academia": "education",
+  "teaching": "education",
+  "training": "education",
+  "law": "legal",
+  "enterprise_software": "tools",
+  "platforms": "tools",
+};
+
+/**
+ * Normalize an LLM-generated domain string to an approved domain.
+ * Returns the approved domain, or "general" if not recognized (and logs the gap).
+ */
+export function normalizeDomain(rawDomain: string): string {
+  const lower = rawDomain.toLowerCase().trim().replace(/\s+/g, "_");
+
+  // Direct match
+  if (APPROVED_DOMAINS.has(lower)) return lower;
+
+  // Alias match
+  const alias = DOMAIN_ALIASES[lower];
+  if (alias) return alias;
+
+  // Partial match: check if any approved domain is contained in the raw string
+  for (const approved of APPROVED_DOMAINS) {
+    if (lower.includes(approved) || approved.includes(lower)) return approved;
+  }
+
+  // Not found — log gap and return "general"
+  logTaxonomyGap("domain", rawDomain, lower);
+  return "general";
+}
+
+/**
+ * Normalize an LLM-generated category string.
+ * Returns the normalized category, or the raw string if not in approved list (logged).
+ */
+const CATEGORY_ALIASES: Record<string, string> = {
+  "programming": "languages",
+  "programming_languages": "languages",
+  "databases": "data",
+  "database": "data",
+  "cloud": "cloud_infra",
+  "infrastructure": "cloud_infra",
+  "ci_cd": "devops",
+  "machine_learning": "ai_data",
+  "analytics": "ai_data",
+  "communication": "interpersonal",
+  "agile": "methodology",
+  "scrum": "methodology",
+  "testing": "quality",
+  "qa": "quality",
+  "risk_management": "risk_governance",
+  "stakeholder_management": "leadership",
+  "configuration_management": "configuration",
+  "strategic_planning": "strategy",
+  "quality_assurance": "quality",
+};
+
+export function normalizeCategory(rawCategory: string, domain: string): string {
+  const lower = rawCategory.toLowerCase().trim().replace(/\s+/g, "_");
+
+  // Direct match in CATEGORY_DISPLAY
+  if (CATEGORY_DISPLAY[lower]) return lower;
+
+  // Alias match
+  if (CATEGORY_ALIASES[lower]) return CATEGORY_ALIASES[lower];
+
+  // Not found — log and return as-is (categories are more fluid than domains)
+  if (lower !== "general" && lower !== "other") {
+    logTaxonomyGap("category", rawCategory, `${domain}/${lower}`);
+  }
+  return lower;
+}
+
+export interface TaxonomyGapEntry {
+  timestamp: string;
+  type: "domain" | "category";
+  raw: string;
+  normalized: string;
+  resolvedTo: string;
+}
+
+/** In-memory gap log (flushed to file periodically or on process exit) */
+const taxonomyGapLog: TaxonomyGapEntry[] = [];
+
+function logTaxonomyGap(type: "domain" | "category", raw: string, normalized: string): void {
+  taxonomyGapLog.push({
+    timestamp: new Date().toISOString(),
+    type,
+    raw,
+    normalized,
+    resolvedTo: type === "domain" ? "general" : normalized,
+  });
+}
+
+/** Get accumulated taxonomy gaps (for reporting/testing) */
+export function getTaxonomyGaps(): TaxonomyGapEntry[] {
+  return [...taxonomyGapLog];
+}
+
+/** Clear taxonomy gaps (for testing) */
+export function clearTaxonomyGaps(): void {
+  taxonomyGapLog.length = 0;
+}
+
+/**
+ * Normalize both domain and category from LLM output.
+ * Call this on every skill after LLM parsing, before Cloud building.
+ */
+export function normalizeTaxonomy(rawDomain: string, rawCategory: string): { domain: string; category: string } {
+  const domain = normalizeDomain(rawDomain);
+  const category = normalizeCategory(rawCategory, domain);
+  return { domain, category };
+}

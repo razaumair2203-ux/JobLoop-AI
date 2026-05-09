@@ -7,46 +7,59 @@
  * 2. MATCH (code)            — Compare facts: what's met, what's not
  * 3. NARRATE (AI or dev)     — Human-readable advice based on facts
  *
- * In DEV mode: parsing reads from local JSON files (you generate via Claude Code).
- * In API mode: parsing calls Anthropic API.
+ * In DEV mode: parsing reads from local JSON files (fixture cache).
+ * In API mode: parsing calls NVIDIA NIM API.
  * Steps 2 is always code — no AI involved, same in both modes.
  */
 
 import { getClient, MODELS } from "./client";
 import { JD_PARSER_SYSTEM_PROMPT, buildJDParserPrompt } from "./prompts/jd-parser";
 import { CV_PARSER_SYSTEM_PROMPT, buildCVParserPrompt, type ParsedCVOutput } from "./prompts/cv-parser";
-import { matchCVToJD, type MatchReport } from "./matcher";
 import type { ParsedJD, ParsedCV } from "./types";
+import { validateParsedCVOutput, repairLLMOutput } from "./schema-validator";
+import { SchemaValidationError, NoProviderError } from "./errors";
 
 /**
  * Convert API parser output (ParsedCVOutput) → pipeline contract (ParsedCV).
- * This is the single bridge between Claude API output and all downstream stages.
+ * This is the single bridge between LLM API output and all downstream stages.
  */
 function apiOutputToParsedCV(raw: ParsedCVOutput): ParsedCV {
   const allTech = new Set<string>([
-    ...raw.skills.languages,
-    ...raw.skills.frameworks,
-    ...raw.skills.infrastructure,
-    ...raw.skills.databases,
-    ...raw.skills.tools,
-    ...raw.skills.other,
+    ...raw.skills.map(s => s.name),
     ...raw.experience.flatMap(e => e.technologies_used),
   ]);
 
   return {
+    // Contact — preserved for cross-CV conflict detection
+    name: raw.name,
+    email: raw.email,
+    phone: raw.phone,
+    location: raw.location,
+    links: raw.links,
+    summary: raw.summary,
+
     total_experience_years: raw.total_experience_years,
+
     experience: raw.experience.map(e => ({
       company: e.company,
+      employer: e.employer,
       title: e.title,
       start_date: e.start_date,
       end_date: e.end_date,
       duration_months: e.duration_months,
+      location: e.location,
+      bullets: e.bullets,
       technologies_used: e.technologies_used,
       metrics_mentioned: e.metrics_mentioned,
+      programs: e.programs,
+      team_size: e.team_size,
+      seniority_signals: e.seniority_signals,
       domain: e.domain,
     })),
+
     skills: raw.skills,
     all_technologies: Array.from(allTech),
+
     education: raw.education.map(e => ({
       institution: e.institution,
       degree: e.degree,
@@ -57,9 +70,25 @@ function apiOutputToParsedCV(raw: ParsedCVOutput): ParsedCV {
       research_topic: e.research_topic ?? undefined,
       highlights: e.highlights,
     })),
+
+    // Names for backward compat, detailed for Cloud enrichment
     certifications: raw.certifications.map(c =>
       typeof c === "string" ? c : c.name
     ),
+    certifications_detailed: raw.certifications.filter(
+      (c): c is Exclude<typeof c, string> => typeof c !== "string"
+    ),
+
+    competencies: raw.competencies,
+    awards: raw.awards,
+    projects: raw.projects,
+    publications: raw.publications,
+    volunteer: raw.volunteer,
+    leadership: raw.leadership,
+    professional_affiliations: raw.professional_affiliations,
+    training: raw.training,
+    languages_spoken: raw.languages_spoken,
+    conflicts: raw.conflicts,
   };
 }
 import {
@@ -88,7 +117,7 @@ export async function parseJD(jd: string, modelTier?: "fast" | "quality"): Promi
   // TIER 2: Real API call (same behavior dev and api mode)
   const tier = modelTier ?? (classifyJDComplexity(jd) === "complex" ? "quality" : "fast");
   const model = (getProviderMode() === "dev")
-    ? MODELS.fast  // Always Haiku in dev — cheap auto-caching
+    ? MODELS.fast  // Always fast tier in dev — cheap auto-caching
     : (tier === "quality" ? MODELS.quality : MODELS.fast);
 
   let client: ReturnType<typeof getClient>;
@@ -99,8 +128,8 @@ export async function parseJD(jd: string, modelTier?: "fast" | "quality"): Promi
     const promptText = `SYSTEM:\n${JD_PARSER_SYSTEM_PROMPT}\n\nUSER:\n${buildJDParserPrompt(jd)}`;
     saveDevPrompt("jd-parse", jd, promptText);
     throw new Error(
-      `[JD PARSE] No ANTHROPIC_API_KEY and no cached fixture found. ` +
-      `Set ANTHROPIC_API_KEY in .env.local to enable auto-caching, or run: ` +
+      `[JD PARSE] No NVIDIA_NIM_API_KEY and no cached fixture found. ` +
+      `Set NVIDIA_NIM_API_KEY in .env.local to enable auto-caching, or run: ` +
       `npx tsx packages/ai/tests/generate-fixtures.ts`
     );
   }
@@ -131,11 +160,9 @@ export async function parseCV(cv: string, modelTier?: "fast" | "quality"): Promi
     if (cached) return cached;
   }
 
-  // TIER 2: Real API call (same in dev and api mode)
-  // Dev mode: uses Haiku (cheap, ~$0.01/call) and auto-caches result
-  // API mode: uses model selected by caller based on Cloud maturity
-  const model = (getProviderMode() === "dev")
-    ? MODELS.fast  // Always Haiku in dev — cheap auto-caching
+  // TIER 2: Real API call with validation + retry/fallback
+  const initialModel = (getProviderMode() === "dev")
+    ? MODELS.fast
     : (modelTier === "quality" ? MODELS.quality : MODELS.fast);
 
   let client: ReturnType<typeof getClient>;
@@ -145,30 +172,86 @@ export async function parseCV(cv: string, modelTier?: "fast" | "quality"): Promi
     // TIER 3: No API key, no fixture — explicit error, NO regex fallback
     const promptText = `SYSTEM:\n${CV_PARSER_SYSTEM_PROMPT}\n\nUSER:\n${buildCVParserPrompt(cv)}`;
     saveDevPrompt("cv-parse", cv, promptText);
-    throw new Error(
-      `[CV PARSE] No ANTHROPIC_API_KEY and no cached fixture found. ` +
-      `Set ANTHROPIC_API_KEY in .env.local to enable auto-caching, or run: ` +
-      `npx tsx packages/ai/tests/generate-fixtures.ts`
+    throw new NoProviderError(
+      `[CV PARSE] No NVIDIA_NIM_API_KEY and no cached fixture found. ` +
+      `Set NVIDIA_NIM_API_KEY in .env.local or run: npx tsx packages/ai/tests/generate-fixtures.ts`
     );
   }
+
+  // Attempt 1: initial model
+  const raw1 = await callCVParser(client, initialModel, cv);
+  const validation1 = validateAfterRepair(raw1);
+  if (validation1.valid) {
+    return cacheAndReturn(cv, validation1.data!, initialModel);
+  }
+
+  // Attempt 2: retry same model with repair hint
+  console.warn(`[CV PARSE] Attempt 1 failed validation: ${validation1.errorSummary}. Retrying with repair hint...`);
+  const raw2 = await callCVParser(client, initialModel, cv, "Your previous response had schema errors. Return ONLY valid JSON matching the exact schema. No markdown, no commentary.");
+  const validation2 = validateAfterRepair(raw2);
+  if (validation2.valid) {
+    return cacheAndReturn(cv, validation2.data!, initialModel);
+  }
+
+  // Attempt 3: escalate to quality tier (if not already using it)
+  if (initialModel !== MODELS.quality) {
+    console.warn(`[CV PARSE] Attempt 2 failed. Escalating to quality tier...`);
+    const raw3 = await callCVParser(client, MODELS.quality, cv);
+    const validation3 = validateAfterRepair(raw3);
+    if (validation3.valid) {
+      return cacheAndReturn(cv, validation3.data!, MODELS.quality);
+    }
+    throw new SchemaValidationError(
+      `[CV PARSE] All 3 attempts failed schema validation`,
+      { attempt1: validation1.errorSummary, attempt2: validation2.errorSummary, attempt3: validation3.errorSummary }
+    );
+  }
+
+  throw new SchemaValidationError(
+    `[CV PARSE] Both attempts failed schema validation`,
+    { attempt1: validation1.errorSummary, attempt2: validation2.errorSummary }
+  );
+}
+
+/** Call the CV parser API and return raw parsed JSON */
+async function callCVParser(
+  client: ReturnType<typeof getClient>,
+  model: string,
+  cv: string,
+  extraInstruction?: string,
+): Promise<Record<string, unknown>> {
+  const userContent = extraInstruction
+    ? `${extraInstruction}\n\n${buildCVParserPrompt(cv)}`
+    : buildCVParserPrompt(cv);
 
   const response = await client.messages.create({
     model,
     max_tokens: 4096,
     system: CV_PARSER_SYSTEM_PROMPT,
-    messages: [{ role: "user", content: buildCVParserPrompt(cv) }],
+    messages: [{ role: "user", content: userContent }],
   });
 
   const text = response.content[0].type === "text" ? response.content[0].text : "";
-  const raw = safeParseJSON<ParsedCVOutput>(text, "CV parsing");
-  const result = apiOutputToParsedCV(raw);
+  return safeParseJSON<Record<string, unknown>>(text, "CV parsing");
+}
 
-  // Auto-cache in dev mode — next run hits Tier 1 instantly
+/** Repair common LLM issues, then validate */
+function validateAfterRepair(raw: Record<string, unknown>): { valid: boolean; data?: ParsedCVOutput; errorSummary?: string } {
+  const repaired = repairLLMOutput(raw);
+  const result = validateParsedCVOutput(repaired);
+  if (result.valid) {
+    return { valid: true, data: result.data as unknown as ParsedCVOutput };
+  }
+  return { valid: false, errorSummary: result.errorSummary };
+}
+
+/** Convert validated output to ParsedCV and cache in dev mode */
+function cacheAndReturn(cv: string, raw: ParsedCVOutput, model: string): ParsedCV {
+  const result = apiOutputToParsedCV(raw);
   if (getProviderMode() === "dev") {
     saveDevParsedCV(cv, result);
     console.log(`[DEV] CV parse cached (${model}) — next call will be instant`);
   }
-
   return result;
 }
 
@@ -188,7 +271,7 @@ type JDComplexity = "simple" | "complex";
 /**
  * Classify JD complexity from the text itself — no counters, no user state.
  *
- * Signals that push toward Sonnet (complex):
+ * Signals that push toward quality tier (complex):
  * - High requirement density (many bullet points)
  * - Domain jargon the model needs to understand contextually
  * - Ambiguous/overlapping requirements (long sentences, nested clauses)
@@ -287,130 +370,7 @@ function extractJDBasic(jd: string): ParsedJD {
 }
 
 // ============================================================
-// STEP 3: NARRATE
+// LEGACY analyzeSuitability REMOVED (May 6, 2026)
+// Use analyzeWithCloud() from cloud-pipeline.ts instead.
+// Old code archived at: archive/dead-code/matcher.ts
 // ============================================================
-
-const NARRATOR_SYSTEM_PROMPT = `You are a career advisor. You receive a factual match report showing exactly which job requirements a candidate meets and which they don't.
-
-Your job: give 2-3 actionable suggestions for how to position the CV to address gaps. Be specific — reference the actual gaps and suggest concrete rewording or emphasis changes.
-
-Also give a 1-sentence "recruiter lens" — what would a recruiter think seeing this CV land on their desk for this role?
-
-Rules:
-- Do NOT re-score or re-evaluate. The facts are the facts.
-- Do NOT be encouraging or discouraging. Be useful.
-- Focus on what the candidate can DO about the gaps (reword, emphasize, upskill).
-- If there are no gaps, say so — don't manufacture advice.
-
-Return JSON:
-{
-  "positioning_advice": ["<specific, actionable suggestion referencing actual gaps>"],
-  "recruiter_lens": "<1 sentence — what recruiter thinks>",
-  "strongest_selling_point": "<the #1 thing to lead with for this role>"
-}`;
-
-export interface NarratedAdvice {
-  positioning_advice: string[];
-  recruiter_lens: string;
-  strongest_selling_point: string;
-}
-
-async function narrateMatchReport(
-  report: MatchReport,
-  jdTitle: string,
-  jdCompany: string
-): Promise<NarratedAdvice> {
-  const unmetReqs = report.requirements
-    .filter((r) => r.status === "not_met" && r.importance === "required")
-    .map((r) => r.requirement);
-
-  const metReqs = report.requirements
-    .filter((r) => r.status === "met" && r.importance === "required")
-    .map((r) => r.requirement);
-
-  const missingTech = report.tech_matches
-    .filter((t) => !t.found_in_cv && t.context_in_jd === "required")
-    .map((t) => t.technology);
-
-  const narrateInput = `Role: "${jdTitle}" at ${jdCompany}
-
-Position: ${report.position.label} (${report.position.basis})
-Experience: ${report.experience.actual_years} years (need ${report.experience.required_years ?? "unspecified"}), verdict: ${report.experience.verdict}
-
-Requirements MET (${report.summary_stats.hard_reqs_met}/${report.summary_stats.hard_reqs_total}):
-${metReqs.map((r) => `  ✓ ${r}`).join("\n") || "  (none)"}
-
-Requirements NOT MET:
-${unmetReqs.map((r) => `  ✗ ${r}`).join("\n") || "  (none — all met!)"}
-
-Missing required tech: ${missingTech.join(", ") || "none"}
-Bonus signals: ${report.bonus_signals.join("; ") || "none"}
-Red flags: ${report.red_flags.join("; ") || "none"}`;
-
-  // DEV MODE: try cached, or save prompt for manual processing
-  if (getProviderMode() === "dev") {
-    const cached = getDevResponse<NarratedAdvice>("narrate", narrateInput);
-    if (cached) return cached;
-
-    // Save prompt for manual processing
-    const promptText = `SYSTEM:\n${NARRATOR_SYSTEM_PROMPT}\n\nUSER:\n${narrateInput}\n\nGive positioning advice. Return ONLY JSON.`;
-    const id = saveDevPrompt("narrate", narrateInput, promptText);
-
-    // In dev mode, return a placeholder instead of throwing
-    // (narration is nice-to-have, matching is the core)
-    return {
-      positioning_advice: [
-        `[DEV MODE] Narration not cached. Process prompt: dev-data/prompts/${id}.txt`,
-      ],
-      recruiter_lens: "[DEV MODE] Process the saved prompt to get recruiter lens.",
-      strongest_selling_point: "[DEV MODE] Process the saved prompt to get selling point.",
-    };
-  }
-
-  // API MODE
-  const client = getClient();
-  const response = await client.messages.create({
-    model: MODELS.fast,
-    max_tokens: 1024,
-    system: NARRATOR_SYSTEM_PROMPT,
-    messages: [{ role: "user", content: `${narrateInput}\n\nGive positioning advice. Return ONLY JSON.` }],
-  });
-
-  const text = response.content[0].type === "text" ? response.content[0].text : "";
-  return safeParseJSON<NarratedAdvice>(text, "narration");
-}
-
-// ============================================================
-// FULL PIPELINE — Parse → Match → Narrate
-// ============================================================
-
-export interface FullAnalysisResult {
-  parsed_jd: ParsedJD;
-  parsed_cv: ParsedCV;
-  match_report: MatchReport;
-  advice: NarratedAdvice;
-}
-
-/** @deprecated Use analyzeWithCloud() from cloud-pipeline.ts instead */
-export async function analyzeSuitability(
-  cvText: string,
-  jdText: string
-): Promise<FullAnalysisResult> {
-  // Step 1: Parse (AI in production, file-based in dev)
-  const [parsed_jd, parsed_cv] = await Promise.all([
-    parseJD(jdText),
-    parseCV(cvText),
-  ]);
-
-  // Step 2: Match — always code, never AI
-  const match_report = matchCVToJD(parsed_cv, parsed_jd);
-
-  // Step 3: Narrate (AI in production, placeholder in dev)
-  const advice = await narrateMatchReport(
-    match_report,
-    parsed_jd.role_title,
-    parsed_jd.company
-  );
-
-  return { parsed_jd, parsed_cv, match_report, advice };
-}

@@ -1,0 +1,54 @@
+{
+  "id": "pair-R017",
+  "split": "train",
+  "persona": "mid_career",
+  "source_resume": {
+    "id": "ra-05820",
+    "dataset": "resume_atlas",
+    "industry": "finance",
+    "seniority": "unknown"
+  },
+  "jd": {
+    "title": "Accounts Receivable Accountant",
+    "company": "GN Group",
+    "location": "",
+    "experience_years": 5,
+    "requirements": [],
+    "responsibilities": [
+      "Bachelor’s degree - Business   5+ years of experience      Pay Transparency Notice:",
+      "Equal Opportunity Employer",
+      "The EEO is the Law poster",
+      "Pay Transparency Nondiscrimination Provision",
+      "GN Audio / Jabra participates in E-Verify. View the E-Verify poster",
+      ". View the Right to Work poster",
+      "Disability Accommodation",
+      "If you have a disability and you believe you need a reasonable accommodation in order to search for a job opening or to submit an online application, please e-mail"
+    ],
+    "full_description": "The Accounts Receivable Accountant will play a vital role supporting the GN Audio USA Inc. General Accounting functions as we look to build a strong, knowledgeable and service-oriented accounting team.\r\n      Reporting to the Business Controller, NA, the AR Accountant will work closely with other team members in a collaborative nature in order to foster teamwork, good communication and process improvement.\r\n      Key Responsibilities:\r\n     Manage an assigned Accounts Receivable portfolio to resolve claim issues, disputed invoices, and deductions   Collaborate with customers to ensure timely payment of outstanding invoices and reconciliation of outstanding claims   Review, analyze, and evaluate the status of assigned customer accounts working with internal business partners to resolve open issues   Complete daily payment reconciliation and settlement for assigned accounts   Perform credit limit review and make recommendations to management   Complete month end process as assigned   Active participation in the Annual Financial Audit   Support special project as assigned, activities aimed at continuous improvement and backup of AR functions     Required Qualifications:\r\n     Bachelor’s degree - Business   5+ years of experience      Pay Transparency Notice:\r\n     Depending on your work location, the target annual salary for this position can range from $50,000.00 to $60,000.00. In addition, you may be eligible for a discretionary bonus if you are an active employee as of fiscal year-end. Compensation for roles at GN depend on a wide array of factors including but not limited to location, role, skill set, and level of experience. To remain competitive, GN offers a competitive benefits package, including annual bonuses, health insurance, a 401(k) plan, and paid vacation and holidays.\r\n      Equal Opportunity Employer\r\n     GN Audio/Jabra makes life sound better by developing intelligent sound solutions that transform lives through the power of sound, enabling you to hear more, do more & be more than you ever thought possible. Our integrated headset and communications solutions assist professionals in all types of businesses in being more productive. Our wireless headsets and earbuds are designed to fit any lifestyle - from sports enthusiasts to commuters and office workers. Jabra is part of the GN group, which operates in more than 90 countries across the world. Founded in 1869, GN group today has more than 6,000 employees. GN Audio an EEO Employer and does not discriminate in employment on the basis of race, color, religion, gender, national origin or ancestry, age, disability, veteran status, military service, sexual orientation, genetic information, or gender identity.\r\n      View \r\n     The EEO is the Law poster\r\n   and its \r\n     supplement\r\n  .\r\n   \r\n   View the \r\n     Pay Transparency Nondiscrimination Provision\r\n     \r\n   E-Verify\r\n     GN Audio / Jabra participates in E-Verify. View the E-Verify poster \r\n     here\r\n  . View the Right to Work poster \r\n     here\r\n  .\r\n      Disability Accommodation\r\n     If you have a disability and you believe you need a reasonable accommodation in order to search for a job opening or to submit an online application, please e-mail \r\n     careers.us@jabra.com\r\n   or call 978-606-2210. This email and phone number is created exclusively to assist disabled job seekers whose disability prevents them from being able to apply online. Only messages left for this purpose will be returned. Messages left for other purposes, such as following up on an application or technical issues not related to a disability, will not receive a response.\r\n      E-Verify\r\n     GN Audio / Jabra participates in E-Verify. View the E-Verify poster \r\n     here\r\n  . View the Right to Work poster \r\n     here\r\n  .\r\n      Disability Accommodation\r\n     If you have a disability and you believe you need a reasonable accommodation in order to search for a job opening or to submit an online application, please e-mail \r\n     careers.us@jabra.com\r\n   or call 978-606-2210. This email and phone number is created exclusively to assist disabled job seekers whose disability prevents them from being able to apply online. Only messages left for this purpose will be returned. Messages left for other purposes, such as following up on an application or technical issues not related to a disability, will not receive a response.\r\n      #LI-Jabra\r\n     #LI-Remote"
+  },
+  "expected_output": {
+    "_status": "NEEDS_HUMAN_REVIEW",
+    "_raw_text_preview": "jessica claire montgomery street san francisco ca 94105 555 4321000 resumesampleexamplecom summary capable accountant successful managing multiple projects consistently meeting deadlines pressure extensive knowledge accounting software processes 35 years experience accountant industries including public accounting petrochemicalresearch technology oil gas services equestrian farms manufacturing health care highlights accounting monthend financial analysis variance explanations budgeting fixed ass",
+    "summary": "",
+    "experience": [],
+    "skills": {},
+    "certifications": [],
+    "education": []
+  },
+  "jd_requirements": [],
+  "cloud_skills": [
+    "sap",
+    "excel"
+  ],
+  "provenance": {
+    "data_source": "real_dataset_raw_text",
+    "jd_source": "github_indeed",
+    "resume_dataset": "resume_atlas",
+    "jd_id": "indeed-ddf49f2f51885b2d",
+    "resume_id": "ra-05820",
+    "generated_at": "2026-05-08T08:47:53.852Z",
+    "expected_output_author": "NEEDS_HUMAN_REVIEW",
+    "circularity_risk": "low",
+    "notes": "Resume from real dataset (raw text). JD from real job posting. Expected output EMPTY — needs LLM parsing + human review."
+  }
+}

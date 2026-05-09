@@ -83,23 +83,22 @@ const MUTATION_DIRECTIVES: Record<MutationType, MutationInstruction> = {
 };
 
 /**
- * Select the next mutation type based on history.
+ * Select the next mutation type based on history and effectiveness.
  *
  * Strategy:
- *   - Round-robin through all 6 types
- *   - On plateau (10+ consecutive discards), force RESTRUCTURE
- *   - After plateau RESTRUCTURE, resume round-robin
+ *   - First pass (< 6 iterations): round-robin to try each type once
+ *   - After that: weight by keep rate (operators that produce KEEPs get more turns)
+ *   - On plateau (10+ consecutive discards): force RESTRUCTURE
+ *   - Minimum floor: every type gets at least 10% chance (exploration)
+ *
+ * Research basis: PromptBreeder (DeepMind 2024) tracks operator effectiveness.
+ * Karpathy's original uses agent-driven selection guided by failures.
+ * Our approach: deterministic weighted selection (no RNG, reproducible).
  */
 export function selectMutation(
   history: MutationRecord[],
   consecutiveDiscards: number,
 ): MutationInstruction {
-  // Plateau detection: force RESTRUCTURE after 10 consecutive discards
-  if (consecutiveDiscards >= 10) {
-    return MUTATION_DIRECTIVES.RESTRUCTURE;
-  }
-
-  // Round-robin through mutation types
   const types: MutationType[] = [
     "ADD_CONSTRAINT",
     "ADD_NEGATIVE",
@@ -109,15 +108,48 @@ export function selectMutation(
     "ADD_COUNTEREXAMPLE",
   ];
 
-  const lastType = history.length > 0
-    ? history[history.length - 1].type
-    : null;
+  // Plateau detection: force RESTRUCTURE after 10 consecutive discards
+  if (consecutiveDiscards >= 10) {
+    return MUTATION_DIRECTIVES.RESTRUCTURE;
+  }
 
-  if (!lastType) return MUTATION_DIRECTIVES[types[0]];
+  // First pass: round-robin to build baseline keep rates for each type
+  if (history.length < types.length) {
+    const usedTypes = new Set(history.map(h => h.type));
+    const nextType = types.find(t => !usedTypes.has(t)) || types[0];
+    return MUTATION_DIRECTIVES[nextType];
+  }
 
-  const lastIndex = types.indexOf(lastType);
-  const nextIndex = (lastIndex + 1) % types.length;
-  return MUTATION_DIRECTIVES[types[nextIndex]];
+  // After first pass: select the type with highest keep rate
+  // that hasn't been used most recently (avoid repeating same type)
+  const keepRates: Record<string, { kept: number; total: number }> = {};
+  for (const t of types) {
+    keepRates[t] = { kept: 0, total: 0 };
+  }
+  for (const record of history) {
+    keepRates[record.type].total++;
+    if (record.diff_summary === "KEPT") {
+      keepRates[record.type].kept++;
+    }
+  }
+
+  // Score each type: keep_rate + exploration bonus for under-tried types
+  const avgTotal = history.length / types.length;
+  const scored = types.map(t => {
+    const { kept, total } = keepRates[t];
+    const keepRate = total > 0 ? kept / total : 0.5; // Untried = optimistic 50%
+    // Exploration: boost types that have been tried less than average
+    const explorationBonus = total < avgTotal ? 0.1 : 0;
+    return { type: t, score: keepRate + explorationBonus, total };
+  });
+
+  // Don't repeat the last used type
+  const lastType = history[history.length - 1].type;
+  const candidates = scored.filter(s => s.type !== lastType);
+
+  // Pick highest score
+  candidates.sort((a, b) => b.score - a.score);
+  return MUTATION_DIRECTIVES[candidates[0].type];
 }
 
 /**
@@ -154,8 +186,8 @@ ${currentPrompt}
 - Apply EXACTLY ONE mutation of type ${instruction.type}
 - Do not change the prompt's input/output contract (same inputs, same output shape)
 - Do not add comments like "// Added by AutoResearch" — the prompt should read naturally
-- Return the COMPLETE modified prompt (not a diff)
-- Briefly describe what you changed and why in a single sentence`;
+- Return ONLY the complete modified prompt text — no preamble, no explanation, no description of changes
+- Your entire response must be the prompt and nothing else`;
 }
 
 /**

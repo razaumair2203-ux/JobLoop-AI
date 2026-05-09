@@ -1,0 +1,42 @@
+{
+  "id": "pair-R037",
+  "split": "train",
+  "persona": "early_career",
+  "source_resume": {
+    "id": "ra-00115",
+    "dataset": "resume_atlas",
+    "industry": "legal",
+    "seniority": "entry"
+  },
+  "jd": {
+    "title": "Customer Service Advocate I",
+    "company": "Centene",
+    "location": "",
+    "experience_years": null,
+    "requirements": [],
+    "responsibilities": [],
+    "full_description": "You could be the one who changes everything for our 28 million members as a Customer Care professional at Centene. As a diversified, national organization, you’ll have access to competitive benefits including a fresh perspective on workplace flexibility.  Position Purpose: Serves as the first-line advocate that focuses on resolving inquiries, issues, or concerns for members and/or providers. Leverages a variety of communication channels to provide members and/or providers with timely, accurate, and personalized support on routine complaints.  Remote but must reside in North Carolina.  Bilingual in Spanish highly preferred.    Receives and responds to routine member and/or provider inquiries, requests and/or concerns in an accurate and timely manner   Mitigates and prevents complaints from being escalated to resolve in initial contact   Serves as the front-line resolution advocate on various member and/or provider inquiries, requests, or concerns   Resolves basic problems by communicating the requested information regarding the assessment of the member or provider needs, understanding the cause, and determining if problems need to be routed to other departments for further resolution   Maintains performance and quality standards based on established contact center metrics   Provides customer service in a high pace contact center environment over the phone, via live chats and emails   Documents all member or provider information and communications for quality and performance tracking through the Customer Relationship Management (CRM) applications   Remains up-to-date and adheres to quality standards, regulation, and all other policies to ensure quality, consistency, and compliance   Performs other duties as assigned   Complies with all policies and standards   Education/Experience: Requires a High School diploma or GED. Entry-level position typically requiring little or no previous experience.  Experience interacting and multitasking using multiple systems and programs simultaneously preferred. Pay Range: $15.68 - $22.54 per hour\r\n  Centene offers a comprehensive benefits package including: competitive pay, health insurance, 401K and stock purchase plans, tuition reimbursement, paid time off plus holidays, and a flexible approach to work with remote, hybrid, field or office work schedules. Actual pay will be adjusted based on an individual's skills, experience, education, and other job-related factors permitted by law. Total compensation may also include additional forms of incentives.  Centene is an equal opportunity employer that is committed to diversity, and values the ways in which we are different. All qualified applicants will receive consideration for employment without regard to race, color, religion, sex, sexual orientation, gender identity, national origin, disability, veteran status, or other characteristic protected by applicable law."
+  },
+  "expected_output": {
+    "_status": "NEEDS_HUMAN_REVIEW",
+    "_raw_text_preview": "robert smith volunteer client advocate contact details 1737 marshville road alabama 1234567899 infoqwikresumecom wwwqwikresumecom personal statement highly qualified individual offering 20 years social service experience results focused effectual leader proven ability develop maintain programs talent proactively identifying resolving problems eliciting program support referrals volunteers donations ability collaborate agencies ability work diverse groups walks integrity work experience volunteer",
+    "summary": "",
+    "experience": [],
+    "skills": {},
+    "certifications": [],
+    "education": []
+  },
+  "jd_requirements": [],
+  "cloud_skills": [],
+  "provenance": {
+    "data_source": "real_dataset_raw_text",
+    "jd_source": "github_indeed",
+    "resume_dataset": "resume_atlas",
+    "jd_id": "indeed-6a1d4a0de73bc221",
+    "resume_id": "ra-00115",
+    "generated_at": "2026-05-08T08:47:53.865Z",
+    "expected_output_author": "NEEDS_HUMAN_REVIEW",
+    "circularity_risk": "low",
+    "notes": "Resume from real dataset (raw text). JD from real job posting. Expected output EMPTY — needs LLM parsing + human review."
+  }
+}

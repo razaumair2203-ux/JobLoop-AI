@@ -25,12 +25,35 @@ function mapToResponse(
           ? ("related" as const)
           : ("gap" as const);
 
+    // Build evidence source tags from evidence_detail
+    const evidence_sources = req.evidence_detail.map((ev) => {
+      if (ev.type === "role") {
+        return { type: "role" as const, label: `${ev.title} at ${ev.company}`, detail: ev.context };
+      }
+      if (ev.type === "certification") {
+        return { type: "certification" as const, label: ev.name, detail: ev.issuer || null };
+      }
+      if (ev.type === "impact") {
+        return { type: "impact" as const, label: ev.metric || ev.description, detail: ev.source_role };
+      }
+      if (ev.type === "award") {
+        return { type: "award" as const, label: ev.name, detail: ev.context || null };
+      }
+      if (ev.type === "project") {
+        return { type: "project" as const, label: ev.name, detail: ev.description || null };
+      }
+      if (ev.type === "socratic") {
+        return { type: "socratic" as const, label: "Your answer", detail: ev.answer.slice(0, 80) };
+      }
+      return { type: ev.type as string, label: "Evidence", detail: null };
+    });
+
     return {
       id: `r${i + 1}`,
       name: req.requirement_text,
       strength,
       evidence: req.evidence_summary || null,
-      citations: [] as number[], // populated when we have source indexing
+      evidence_sources,
       bridge: req.repositioning_hint,
     };
   });

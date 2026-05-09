@@ -1,0 +1,208 @@
+{
+  "id": "pair-Q042",
+  "split": "train",
+  "persona": "senior",
+  "source_resume": {
+    "id": "snb-20324037",
+    "dataset": "snehaanbhawal_livecareer",
+    "industry": "advocate",
+    "seniority": "senior"
+  },
+  "jd": {
+    "title": "Customer Service Advocate I",
+    "company": "Centene",
+    "location": "",
+    "experience_years": null,
+    "requirements": [
+      {
+        "text": "High School diploma or GED",
+        "type": "must_have"
+      },
+      {
+        "text": "Bilingual in Spanish",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "Residence in North Carolina",
+        "type": "must_have"
+      },
+      {
+        "text": "Ability to interact and multitask using multiple systems and programs simultaneously",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "Ability to provide timely, accurate, and personalized support",
+        "type": "must_have"
+      },
+      {
+        "text": "Ability to mitigate and prevent complaints",
+        "type": "must_have"
+      },
+      {
+        "text": "Ability to resolve basic problems",
+        "type": "must_have"
+      },
+      {
+        "text": "Ability to maintain performance and quality standards",
+        "type": "must_have"
+      },
+      {
+        "text": "Ability to document member or provider information and communications",
+        "type": "must_have"
+      },
+      {
+        "text": "Ability to adhere to quality standards, regulation, and policies",
+        "type": "must_have"
+      }
+    ],
+    "responsibilities": [
+      "Resolving inquiries, issues, or concerns for members and/or providers",
+      "Providing timely, accurate, and personalized support",
+      "Mitigating and preventing complaints",
+      "Resolving basic problems",
+      "Maintaining performance and quality standards",
+      "Documenting member or provider information and communications",
+      "Adhering to quality standards, regulation, and policies",
+      "Performing other duties as assigned"
+    ],
+    "full_description": "You could be the one who changes everything for our 28 million members as a Customer Care professional at Centene. As a diversified, national organization, you’ll have access to competitive benefits including a fresh perspective on workplace flexibility.  Position Purpose: Serves as the first-line advocate that focuses on resolving inquiries, issues, or concerns for members and/or providers. Leverages a variety of communication channels to provide members and/or providers with timely, accurate, and personalized support on routine complaints.  Remote but must reside in North Carolina.  Bilingual in Spanish highly preferred.    Receives and responds to routine member and/or provider inquiries, requests and/or concerns in an accurate and timely manner   Mitigates and prevents complaints from being escalated to resolve in initial contact   Serves as the front-line resolution advocate on various member and/or provider inquiries, requests, or concerns   Resolves basic problems by communicating the requested information regarding the assessment of the member or provider needs, understanding the cause, and determining if problems need to be routed to other departments for further resolution   Maintains performance and quality standards based on established contact center metrics   Provides customer service in a high pace contact center environment over the phone, via live chats and emails   Documents all member or provider information and communications for quality and performance tracking through the Customer Relationship Management (CRM) applications   Remains up-to-date and adheres to quality standards, regulation, and all other policies to ensure quality, consistency, and compliance   Performs other duties as assigned   Complies with all policies and standards   Education/Experience: Requires a High School diploma or GED. Entry-level position typically requiring little or no previous experience.  Experience interacting and multitasking using multiple systems and programs simultaneously preferred. Pay Range: $15.68 - $22.54 per hour\r\n  Centene offers a comprehensive benefits package including: competitive pay, health insurance, 401K and stock purchase plans, tuition reimbursement, paid time off plus holidays, and a flexible approach to work with remote, hybrid, field or office work schedules. Actual pay will be adjusted based on an individual's skills, experience, education, and other job-related factors permitted by law. Total compensation may also include additional forms of incentives.  Centene is an equal opportunity employer that is committed to diversity, and values the ways in which we are different. All qualified applicants will receive consideration for employment without regard to race, color, religion, sex, sexual orientation, gender identity, national origin, disability, veteran status, or other characteristic protected by applicable law."
+  },
+  "expected_output": {
+    "summary": "Results-driven professional with 8 years of experience in manufacturing and IT companies, skilled in materials, finance, sales, and supply chain processes, with strong analytical capabilities and excellent communication skills. Seeking to bring expertise to an international company with a customer focus. Proficient in Microsoft Office, ERP systems, and Eclipse pricing program.",
+    "experience": [
+      {
+        "company": "Company Name",
+        "title": "Fulfillment Advocate",
+        "start_date": "04/2014",
+        "end_date": "Current",
+        "bullets": [
+          "Coordinate with Order management for billing and ensure billing accuracy",
+          "Manage business partner relationships",
+          "Analyze supply chain and coordinate with logistics",
+          "Manage customer relationships and backlog"
+        ]
+      },
+      {
+        "company": "Company Name",
+        "title": "Business Operation Analyst",
+        "start_date": "06/2012",
+        "end_date": "04/2014",
+        "bullets": [
+          "Analyze customer customization services and provide options",
+          "Coordinate second touch operations, including forecasting and production planning",
+          "Improve process efficiency and manage people (80 people, 2 shifts)",
+          "Manage supplier relationships"
+        ]
+      },
+      {
+        "company": "Company Name",
+        "title": "CSSM Customer Sales Support Manager",
+        "start_date": "01/2011",
+        "end_date": "06/2012",
+        "bullets": [
+          "Update pricing and create new orderable items",
+          "Communicate product and pricing updates to customers",
+          "Utilize configuration tools to develop valid configurations",
+          "Manage lifecycle maintenance and propose alternatives for EOL products"
+        ]
+      },
+      {
+        "company": "Company Name",
+        "title": "INVENTORY CONTROL TEAM LEAD",
+        "start_date": "04/2010",
+        "end_date": "01/2011",
+        "bullets": [
+          "Supervise and train inventory control team",
+          "Implement new projects and manage customer service",
+          "Purchase and sales management, including people management",
+          "Coordinate physical inventory at different warehouses"
+        ]
+      },
+      {
+        "company": "Company Name",
+        "title": "Cost Accountant",
+        "start_date": "04/2008",
+        "end_date": "04/2010",
+        "bullets": [
+          "Prepare financial and fiscal statements, including general ledger and inventory control",
+          "Analyze costs and expenses, including P&L and balance sheet reconciliation",
+          "Manage intercompany financial customer service and VMI financial flows",
+          "Monitor PPV and handle expenses analysis"
+        ]
+      },
+      {
+        "company": "Company Name",
+        "title": "Inventory Controller (Hub Specialist)",
+        "start_date": "05/2007",
+        "end_date": "04/2008",
+        "bullets": [
+          "Manage purchase orders, sales orders, and inventory control",
+          "Analyze logistics criteria, including EXW, DDP, and DDU",
+          "Manage Flextronics supply chain responsibility and PPV management",
+          "Forecast and cycle count analysis to maintain inventory accuracy"
+        ]
+      },
+      {
+        "company": "Company Name",
+        "title": "Replenishment Coordinator",
+        "start_date": "05/2006",
+        "end_date": "05/2007",
+        "bullets": [
+          "Manage VMI and supply chain management",
+          "Analyze sales and inventory opportunities with buying staff and store operations",
+          "Negotiate with vendor contacts for favorable deliveries and pricing",
+          "Manage waterfall forecast analysis and inventory planning"
+        ]
+      }
+    ],
+    "skills": {
+      "Technical": [
+        "Microsoft Office",
+        "ERP (SAP, BAAN, ORACLE, 4TH SHIFT)",
+        "Eclipse (Pricing program)"
+      ],
+      "Soft Skills": [
+        "Customer Service",
+        "Self Starter",
+        "Team player",
+        "Analytics"
+      ]
+    },
+    "certifications": [],
+    "education": [
+      "Diplomado: Cost Accounting, University of Guadalajara, 2008",
+      "Bachelors Degree: International Business, University of Guadalajara, 2004"
+    ]
+  },
+  "jd_requirements": [
+    "High School diploma or GED",
+    "Residence in North Carolina",
+    "Ability to provide timely, accurate, and personalized support",
+    "Ability to mitigate and prevent complaints",
+    "Ability to resolve basic problems",
+    "Ability to maintain performance and quality standards",
+    "Ability to document member or provider information and communications",
+    "Ability to adhere to quality standards, regulation, and policies"
+  ],
+  "cloud_skills": [
+    "Microsoft Office",
+    "ERP (SAP, BAAN, ORACLE, 4TH SHIFT)",
+    "Eclipse (Pricing program)",
+    "Customer Service",
+    "Self Starter",
+    "Team player",
+    "Analytics"
+  ],
+  "provenance": {
+    "cv_source": "snehaanbhawal/resume-dataset (LiveCareer, CC0)",
+    "jd_source": "R-series (Kaggle LinkedIn, real postings)",
+    "cv_dataset_id": 20324037,
+    "jd_pair_id": "pair-R037",
+    "expected_output_author": "NIM/meta/llama-3.3-70b-instruct",
+    "generated_at": "2026-05-08T15:50:32.703Z",
+    "circularity_risk": "medium-low",
+    "circularity_notes": "Real CV text + real JD text. Expected output is LLM-parsed extraction from real text (not invention). 4/8 scorecard checks structurally sound regardless.",
+    "needs_human_review": true
+  },
+  "raw_cv_text": "         FULFILLMENT ADVOCATE       Summary    Guadalajara, Jalisco, Mexico \nWith a 8 year experience on the manufacturing and IT companies and knowing materials, finance,sales and supply chain processes where my concern is being in constantly growing. Today I would like to bring my expertise together with my strong analytical capabilities and excellent communication skills to international company with customer focus. I have no fear for changes and that is why I would like to learn new processes and being involved in new areas in order to be a multi skill person that faces every situation with the right knowledge. I believe that my substantial skills on materials and finance areas could be seen as valuable assets and would be very helpful in achieving of many business objectives.      Highlights          People Management  Finance  Manufacturing process  Order entry  Backlog Management  Customer relationship       Microsoft Office  ERP (SAP,BAAN,ORACLE, 4TH SHIFT)  Eclipse(Pricing program)            Accomplishments      Created critical backlog  tracking and improve on-time delivery, customer issues and safety statistics.   Kept inventory by 99%   System architecture migration from ORACLE to BAAN V, BAAN IV to BAAN V  Increased services penetration rate from 20 to 25%   Inventory reduced project from desktops linux converstion into WINDOWS          Experience     04/2014   to   Current     Fulfillment Advocate    Company Name   －   City  ,   State      Liaison between sales, factory, planning , customer and logistics Coordinate with Order management for billing Billing Accuracy Business partner management.   Backlog Management   Customer relationship   Supply analysis   Orde entry          06/2012   to   04/2014     Business Operation Analyst    Company Name   －   City  ,   State       Liaison between sales and customer for analyze the best option for customer customization services.  Coordination and execution for customer services from second touch(rework) area/manufacturing site Coordinate second touch operations such as forecasting, production plan, process improvements.  Analysis of backlog management.  Responsible for 2nd touch area, p  People management (80 people 2 shifts)  Suppliers relationship         01/2011   to   06/2012     CSSM  Customer Sales Support Manager    Company Name   －   City  ,   State      Pricing  update, New orderable items creation,   customer relationship  Anticipates and communicates product & pricing updates   Ensures set-up and maintenance of Contracts (PS)   Utilizes configuration tools to develop valid configurations meeting sales / customer reqs   Create, submit, manage Lifecycle Maintenance of PN   Proactively manages EOL & NPI in offering and catalog   Propose alternatives for EOL products Drive catalog set-up & maintenance in line with Sales and customer requirements          04/2010   to   01/2011     INVENTORY CONTROL TEAM LEAD    Company Name   －   City  ,   State      Inventory Control supervision  Customer Service   New Projects Implementation  Purchase and sales management  People management   Supervise, train and provide support to the Hub's Specialist 1 in charge.  Drive the month-end closing process at end of period,   Ensuring that all Hub's Specialist complete all their month end close task's and to detect any issue regarding receipts and sales.  Develop and organize the agenda and work plan for physical inventory at different warehouses in US such as coordinate the process of claim to recover part of the discrepancies reported by the warehouse contact.  Coordinate and follow up for all new set up's within the VMI (Vendor Management Inventory) schema Projects involved:           04/2008   to   04/2010     Cost Accountant    Company Name   －   City  ,   State      General Ledger  Inventory control, Cost Analysis, Customer service,P&L, Expenses analysis, Revenue recognition) Financial and Fiscal statement preparation, presentation and accounting reviews.  Costs control for distribution companies in US, EUROPE and MEX Intercompany Financial Customer service.  US GAAP knowledge SOX Audit VMI financial flows set up.  PPV monitoring and handling Expenses analysis P&L and Balance sheet reconciliation Overall Inventory control for Finance and Logistics process          05/2007   to   04/2008     Inventory Controller (Hub Specalist)    Company Name   －   City  ,   State      Purchase management  Inventory control  Customer service  Sales order management  Overall Inventory control Distribution Centers.  Logistics criteria management (EXW, DDP & DDU) Flextronics Supply Chain responsibility.  Purchase, Sales & Return orders (RMA & RTV) PPV management Forecast and cycle count analysis Keep the inventory accuracy Sales order management Purchase order management.         05/2006   to   05/2007     Replenishment Coordinator    Company Name   －   City  ,   State      VMI Management  Supply chain management   Inventory control  Work with Buying staff and Store Operations to identify sales/inventory opportunities   Confer with vendor contacts to obtain favorable and timely deliveries as well as the best possible pricing Waterfall forecast analysis Inventory Planning & Supply negotiation VMI(SMI) program JIT scenario negotiation trough 3PL's and In Plant Store Hardware and packing Suppliers setup trough IPS and Tents outside of production buldings for direct point of use delivery.  Supply Chain Management.          Education     2008     Diplomado  :   Cost Accounting    University of Guadalajara   －   City  ,   State  ,   Mexico           2004     Bachelors Degree  :   International Business    University of Guadalajara   －   City  ,   State  ,   Mexico            Personal Information          Languages     English  90%   Portugues 60%       Skills     Customer Service   Self Starter   Team player   Analytics        Additional Information         "
+}

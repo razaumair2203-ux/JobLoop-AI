@@ -1,0 +1,395 @@
+{
+  "name": "First Last",
+  "email": "astudent2@binghamton.edu",
+  "phone": "607-375-9087",
+  "location": {
+    "city": "Upstate",
+    "country": "US"
+  },
+  "links": {
+    "linkedin": null,
+    "github": null,
+    "portfolio": null,
+    "other": []
+  },
+  "summary": null,
+  "total_experience_years": 5,
+  "experience": [
+    {
+      "company": "Union-Endicott Central School District",
+      "employer": "Union-Endicott Central School District",
+      "title": "Substitute Teacher",
+      "start_date": "Jan 2017",
+      "end_date": "Present",
+      "duration_months": 112,
+      "location": "Endicott, NY",
+      "bullets": [
+        "Adhere to teacher provided lesson plans in all content areas",
+        "Record student behavior and work upon arrival of the classroom teacher through detailed notes",
+        "Maintain effective positive classroom management strategies from the start of the school day"
+      ],
+      "technologies_used": [],
+      "metrics_mentioned": [],
+      "programs": [],
+      "team_size": null,
+      "seniority_signals": [],
+      "domain": "education"
+    },
+    {
+      "company": "Jennie F. Snapp Middle School",
+      "employer": "Union-Endicott Central School District",
+      "title": "Literacy Practicum",
+      "start_date": "Jan 2017",
+      "end_date": "Present",
+      "duration_months": 112,
+      "location": "Endicott, NY",
+      "bullets": [
+        "Co-teach Tier 2 NYS ELA prep to multiple seventh and eighth grade sections",
+        "Observe 1:1 Leveled Literacy Intervention (LLI) Tier 3 instruction"
+      ],
+      "technologies_used": [],
+      "metrics_mentioned": [],
+      "programs": [
+        "Leveled Literacy Intervention (LLI)"
+      ],
+      "team_size": null,
+      "seniority_signals": [],
+      "domain": "education"
+    },
+    {
+      "company": "Clayton Avenue Elementary",
+      "employer": "Clayton Avenue Elementary",
+      "title": "Literacy Practicum",
+      "start_date": "Sep 20xx",
+      "end_date": "Dec 20xx",
+      "duration_months": null,
+      "location": "Vestal, NY",
+      "bullets": [
+        "Implemented diverse approaches to ensure both language and academic success",
+        "Facilitated a pullout second-grade small reading group intervention twice a week using Jan Richardson's model",
+        "Provided differentiated instruction to striving readers, for 3 third grade reading groups, through active questioning",
+        "Administered the DIBELS Next benchmarking assessment to 30 kindergarteners",
+        "Analyzed and administered Fountas & Pinnell Running Records to small reading groups",
+        "Participated in 3 RTI meetings by providing feedback and observations on the students serviced",
+        "Collaborated with the building Principal, Reading Teacher, and Binghamton University to facilitate a Toddler Night Out event at Clayton Avenue resulting in positive community and school relations"
+      ],
+      "technologies_used": [
+        "DIBELS Next",
+        "Fountas & Pinnell Running Records"
+      ],
+      "metrics_mentioned": [
+        "3 third grade reading groups",
+        "30 kindergarteners",
+        "3 RTI meetings"
+      ],
+      "programs": [
+        "Jan Richardson's model",
+        "RTI",
+        "DIBELS Next"
+      ],
+      "team_size": null,
+      "seniority_signals": [],
+      "domain": "education"
+    },
+    {
+      "company": "Cicero Elementary",
+      "employer": "Cicero Elementary",
+      "title": "Second Grade Student Teacher",
+      "start_date": "Nov 20xx",
+      "end_date": "Dec 20xx",
+      "duration_months": null,
+      "location": "Cicero, NY",
+      "bullets": [
+        "Provided individualized reading instruction during morning centers through explicit phonics activities",
+        "Created and instructed lesson plans with Common Core aligned learning outcomes",
+        "Developed individualized lessons to assist students with IEPs",
+        "Collaborated with 1:1 aide and the Special Education teacher to pull small groups for math re-teaching"
+      ],
+      "technologies_used": [],
+      "metrics_mentioned": [],
+      "programs": [
+        "Common Core"
+      ],
+      "team_size": null,
+      "seniority_signals": [],
+      "domain": "education"
+    },
+    {
+      "company": "Granby Elementary",
+      "employer": "Granby Elementary",
+      "title": "Sixth Grade Science & Social Studies Student Teacher",
+      "start_date": "Sep 20xx",
+      "end_date": "Oct 20xx",
+      "duration_months": null,
+      "location": "Fulton, NY",
+      "bullets": [
+        "Utilized technology such as Google Earth, various web quests, YouTube, and Power Points to support instruction",
+        "Encouraged journaling and classroom discussion based off the daily viewing of CNN Student News",
+        "Constructed and taught a seven-lesson unit on rocketry through the understanding of Newton's Three Laws",
+        "Challenged students to create their own country following discussions on cartography and region specific attributes",
+        "Oversaw and implemented positive classroom management skills through co-constructed procedures and re-teaching",
+        "Collaborated and instructed the class with the special education teacher to provide classroom modifications",
+        "Reinforced previously taught lessons with students before and after school through small group and 1:1 re-teaching"
+      ],
+      "technologies_used": [
+        "Google Earth",
+        "YouTube",
+        "PowerPoint"
+      ],
+      "metrics_mentioned": [
+        "seven-lesson unit"
+      ],
+      "programs": [],
+      "team_size": null,
+      "seniority_signals": [],
+      "domain": "education"
+    },
+    {
+      "company": "Binghamton University",
+      "employer": "Binghamton University",
+      "title": "Graduate Assistant Career Consultant",
+      "start_date": "Aug 20xx",
+      "end_date": "Present",
+      "duration_months": null,
+      "location": "Vestal, NY",
+      "bullets": [
+        "Co-teach a self-contained weekly seminar for the center's peer internship program",
+        "Mentor students regarding career documents and decisions, including resumes/cover letters, jobs, and internships",
+        "Facilitate walk-in consulting hours in a residential community to reach students earlier in their academic careers",
+        "Conduct and evaluates mock interviews for two hours each week to assist students in preparing for upcoming interviews by providing feedback and modeling best interview practice",
+        "Display knowledge of campus resources for student referrals"
+      ],
+      "technologies_used": [],
+      "metrics_mentioned": [
+        "two hours each week"
+      ],
+      "programs": [],
+      "team_size": null,
+      "seniority_signals": [],
+      "domain": "education"
+    },
+    {
+      "company": "Binghamton University",
+      "employer": "Binghamton University",
+      "title": "Assistant Residential Coordinator",
+      "start_date": "Aug 20xx",
+      "end_date": "Aug 20xx",
+      "duration_months": null,
+      "location": "Vestal, NY",
+      "bullets": [
+        "Part of an on-call rotation that is responsible for the well-being of 1,500 students",
+        "Promoted diversity through role modeling and emphasizing respect among residents",
+        "Assisted in the supervision of 15 RAs through weekly supervision meetings",
+        "Acted as the conflict mediator for assigned residence hall",
+        "Conducted 1:1 meetings with RAs and hall government leaders to support them in their role",
+        "Operated as an administrator for the campus conduct process by hearing student cases",
+        "Took leadership roles in implementing area housing programs assigned by the Assistant Director",
+        "Assisted in the execution of the RA Day of Service on MLK Day for 200 RAs by discovering local service sites",
+        "Aided a committee of 7 in developing diversity driven conference sessions during RA training",
+        "Hosted housing socials for transfer and international students"
+      ],
+      "technologies_used": [],
+      "metrics_mentioned": [
+        "1,500 students",
+        "15 RAs",
+        "200 RAs",
+        "committee of 7"
+      ],
+      "programs": [],
+      "team_size": 15,
+      "seniority_signals": [
+        "Assistant Coordinator",
+        "supervision of 15 RAs"
+      ],
+      "domain": "education"
+    },
+    {
+      "company": "SUNY Oswego",
+      "employer": "SUNY Oswego",
+      "title": "Resident Mentor at Johnson Hall",
+      "start_date": "Aug 20xx",
+      "end_date": "May 20xx",
+      "duration_months": null,
+      "location": "Oswego, NY",
+      "bullets": [
+        "Presented with the Johnson Hall 2013 Staff Member of the Year Award",
+        "Received a building wide educational programming award",
+        "Taught an experiential first year seminar (GST 100) for 16 freshmen residents as a teaching assistant",
+        "Designed and executed educational programming and community outreach programs",
+        "Documented residents' community service hours as part of the GST 100 course",
+        "Established an effective interpersonal relationship with residents through community building",
+        "Mediated a range of resident conflicts within the residence hall by showcasing active listening",
+        "Presented and conveyed information to residents via email, social media, public speaking, meetings, and individually",
+        "Active member of solicitation and fundraising team for annual event that raised $4,500 for scholarships"
+      ],
+      "technologies_used": [],
+      "metrics_mentioned": [
+        "16 freshmen residents",
+        "$4,500 for scholarships"
+      ],
+      "programs": [
+        "GST 100"
+      ],
+      "team_size": null,
+      "seniority_signals": [],
+      "domain": "education"
+    },
+    {
+      "company": "SUNY Oswego",
+      "employer": "SUNY Oswego",
+      "title": "Summer Resident Assistant and Desk Attendant",
+      "start_date": "May 20xx",
+      "end_date": "Aug 20xx",
+      "duration_months": null,
+      "location": "Oswego, NY",
+      "bullets": [
+        "Created community-fostering activities for summer school and international students from China and Brazil"
+      ],
+      "technologies_used": [],
+      "metrics_mentioned": [],
+      "programs": [],
+      "team_size": null,
+      "seniority_signals": [],
+      "domain": "education"
+    }
+  ],
+  "education": [
+    {
+      "institution": "Binghamton University, State University of New York",
+      "degree": "Master of Science in Literacy Education (Birth - Grade 12)",
+      "start_date": null,
+      "end_date": "Expected May 20xx",
+      "gpa": "4.00/4.00",
+      "coursework": []
+    },
+    {
+      "institution": "State University of New York at Oswego",
+      "degree": "Bachelor of Science in Childhood Education (Grades 1-6)",
+      "start_date": null,
+      "end_date": "Dec 20xx",
+      "gpa": "3.xx/4.00",
+      "coursework": []
+    }
+  ],
+  "skills": [],
+  "competencies": [
+    "Classroom Management",
+    "Differentiated Instruction",
+    "Literacy Intervention",
+    "Lesson Planning",
+    "Student Assessment",
+    "IEP Accommodation",
+    "Conflict Mediation",
+    "Mentoring"
+  ],
+  "certifications": [
+    {
+      "name": "NYS Childhood Education (Grades 1-6), Initial Certificate",
+      "issuer": "New York State",
+      "year": "20xx",
+      "active": true,
+      "tier": "gold"
+    },
+    {
+      "name": "NYS Literacy (Birth - Grade 12)",
+      "issuer": "New York State",
+      "year": "20xx",
+      "active": false,
+      "tier": "gold"
+    }
+  ],
+  "awards": [
+    {
+      "name": "President's List: Fall and Spring 2013",
+      "issuer": "SUNY Oswego",
+      "year": "2013"
+    },
+    {
+      "name": "Dean's List: Fall and Spring 2011, Fall 2012",
+      "issuer": "SUNY Oswego",
+      "year": "2011"
+    },
+    {
+      "name": "Graduated Cum Laude",
+      "issuer": "SUNY Oswego",
+      "year": null
+    },
+    {
+      "name": "NRHH Award for Residential Life Staff Member of the Month",
+      "issuer": "NRHH",
+      "year": "2016"
+    },
+    {
+      "name": "Johnson Hall 2013 Staff Member of the Year Award",
+      "issuer": "SUNY Oswego",
+      "year": "2013"
+    },
+    {
+      "name": "Chaired the Summer 2016 Resident Assistant Training Committee",
+      "issuer": "Binghamton University",
+      "year": "2016"
+    }
+  ],
+  "projects": [],
+  "publications": [],
+  "volunteer": [],
+  "leadership": [],
+  "professional_affiliations": [
+    {
+      "name": "International Literacy Association (ILA)"
+    }
+  ],
+  "training": [
+    {
+      "name": "DIBELS Next",
+      "date": "Fall 20xx"
+    },
+    {
+      "name": "Crisis Prevention Institute (CPI) Training",
+      "date": "Fall 20xx"
+    },
+    {
+      "name": "Dignity for All Students Act (DASA) Training",
+      "date": "Fall 20xx"
+    },
+    {
+      "name": "Safe School Healthy Students",
+      "date": "Winter 20xx"
+    },
+    {
+      "name": "Child Abuse Recognition & Reporting",
+      "date": null
+    },
+    {
+      "name": "School Violence Prevention & Intervention",
+      "date": null
+    },
+    {
+      "name": "Highway & Traffic Safety",
+      "date": null
+    },
+    {
+      "name": "School Safety Patrols",
+      "date": null
+    },
+    {
+      "name": "Prevention of Child Abduction",
+      "date": null
+    },
+    {
+      "name": "Alcohol, Tobacco & Drug Abuse",
+      "date": null
+    },
+    {
+      "name": "Fire & Arson",
+      "date": null
+    }
+  ],
+  "languages_spoken": [],
+  "conflicts": [
+    {
+      "type": "ambiguous_dates",
+      "description": "Most dates use placeholder format '20xx' making it impossible to determine actual timeline, duration, or chronological order of experiences."
+    }
+  ]
+}

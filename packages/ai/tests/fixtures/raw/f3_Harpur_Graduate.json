@@ -1,0 +1,216 @@
+{
+  "name": "Jane Smith",
+  "email": "jstudent@binghamton.edu",
+  "phone": "(607) 777-7777",
+  "location": { "city": "Binghamton", "country": "US" },
+  "links": {
+    "linkedin": null,
+    "github": null,
+    "portfolio": null,
+    "other": []
+  },
+  "summary": null,
+  "total_experience_years": 5,
+  "experience": [
+    {
+      "company": "Research & Writing Program, Binghamton University",
+      "employer": "Binghamton University",
+      "title": "Composition Instructor",
+      "start_date": "Aug 20XX",
+      "end_date": "Present",
+      "duration_months": null,
+      "location": "Binghamton, NY",
+      "bullets": [
+        "Facilitate seven sections of English composition for first-year, undergraduate students",
+        "Plan and teach a writing-intensive course with topics based on current events",
+        "Use instructional technology to enhance pedagogical technique",
+        "Teach in part with an innovative, interdisciplinary team-teaching program design"
+      ],
+      "technologies_used": [],
+      "metrics_mentioned": ["seven sections"],
+      "programs": [],
+      "team_size": null,
+      "seniority_signals": ["Instructor"],
+      "domain": "academia"
+    },
+    {
+      "company": "English Department, Binghamton University",
+      "employer": "Binghamton University",
+      "title": "Literature Instructor",
+      "start_date": "Aug 20XX",
+      "end_date": "May 20XX",
+      "duration_months": null,
+      "location": "Binghamton, NY",
+      "bullets": [
+        "Instructed two sections of literature, including Irish Authors of the Twentieth Century and Introduction to American Poetry",
+        "Integrated multimedia and humanities approaches to teaching literature using film and instructions technology"
+      ],
+      "technologies_used": [],
+      "metrics_mentioned": ["two sections"],
+      "programs": [],
+      "team_size": null,
+      "seniority_signals": ["Instructor"],
+      "domain": "academia"
+    },
+    {
+      "company": "Department of English, University of Scranton",
+      "employer": "University of Scranton",
+      "title": "Teaching Assistant",
+      "start_date": "Aug 20XX",
+      "end_date": "Dec 20XX",
+      "duration_months": null,
+      "location": "Scranton, PA",
+      "bullets": [
+        "Collaborated with a faculty member on the creation of the course syllabus",
+        "Taught a section on 1960s film criticism, including film history and societal context",
+        "Planned lessons and assignments, led discussion sections, and graded papers",
+        "Organized and led group discussions on social and academic issues"
+      ],
+      "technologies_used": [],
+      "metrics_mentioned": [],
+      "programs": [],
+      "team_size": null,
+      "seniority_signals": [],
+      "domain": "academia"
+    },
+    {
+      "company": "English Department, Binghamton University",
+      "employer": "Binghamton University",
+      "title": "Doctoral Research Assistant",
+      "start_date": "Aug 20XX",
+      "end_date": "Present",
+      "duration_months": null,
+      "location": "Binghamton, NY",
+      "bullets": [
+        "Conducted primary source research at numerous archives, examining publication history through multiple sources",
+        "Examined the writings of Arthur Millers, Eugene O'Neill, and Edward Albee, exploring their publication records, construction of literary identity, and personal narratives"
+      ],
+      "technologies_used": [],
+      "metrics_mentioned": [],
+      "programs": [],
+      "team_size": null,
+      "seniority_signals": ["Doctoral"],
+      "domain": "academia"
+    },
+    {
+      "company": "English Department, Binghamton University",
+      "employer": "Binghamton University",
+      "title": "Research Assistant",
+      "start_date": "Jan 20XX",
+      "end_date": "May 20XX",
+      "duration_months": null,
+      "location": "Binghamton, NY",
+      "bullets": [
+        "Assisted Dr. Andrea Stone with resource, primarily conducting primary and secondary source research",
+        "Organized information and scheduled sessions for the 20XX Annual Literary Scholars Research Symposium"
+      ],
+      "technologies_used": [],
+      "metrics_mentioned": [],
+      "programs": [],
+      "team_size": null,
+      "seniority_signals": [],
+      "domain": "academia"
+    },
+    {
+      "company": "New England Journal of Literature",
+      "employer": "New England Journal of Literature",
+      "title": "Managing Editor",
+      "start_date": "May 20XX",
+      "end_date": "Jul 20XX",
+      "duration_months": null,
+      "location": "Newport, RI",
+      "bullets": [
+        "Processed approximately 20 manuscripts submitted for publication each quarter",
+        "Oversaw productions and publication process for quarterly publication",
+        "Maintained editorial correspondence with prospective contributors",
+        "Conducted business transactions including publicity, subscription services, and journal advertising"
+      ],
+      "technologies_used": [],
+      "metrics_mentioned": ["20 manuscripts per quarter", "quarterly publication"],
+      "programs": [],
+      "team_size": null,
+      "seniority_signals": ["Managing Editor"],
+      "domain": "publishing"
+    }
+  ],
+  "education": [
+    {
+      "institution": "Binghamton University, State University of New York",
+      "degree": "PhD in English",
+      "start_date": null,
+      "end_date": "Expected May 20XX",
+      "gpa": null,
+      "coursework": [],
+      "dissertation": "Southern Writers and the American Revolution",
+      "committee": "Dr. Andrea Stone, Dr. Martin Jackson, Dr. Cynithia Holt, Dr. Jay Jones (Chair)"
+    },
+    {
+      "institution": "Binghamton University, State University of New York",
+      "degree": "MA in English",
+      "start_date": null,
+      "end_date": "May 20XX",
+      "gpa": null,
+      "coursework": []
+    },
+    {
+      "institution": "University of Scranton",
+      "degree": "BA in Mass Communications and Theatre",
+      "start_date": null,
+      "end_date": "May 20XX",
+      "gpa": null,
+      "coursework": []
+    }
+  ],
+  "skills": [],
+  "competencies": [
+    "Composition Instruction",
+    "Literature Instruction",
+    "Primary Source Research",
+    "Archival Research",
+    "Manuscript Review",
+    "Editorial Correspondence",
+    "Curriculum Design",
+    "Pedagogical Technology"
+  ],
+  "certifications": [],
+  "awards": [
+    { "name": "Dissertation Award", "issuer": "American Literature Association", "year": "20XX" },
+    { "name": "Harpur College Dissertation Award", "issuer": "Binghamton University", "year": "20XX" },
+    { "name": "Summer Research Grant", "issuer": "American Writers Conference", "year": "20XX" },
+    { "name": "Outstanding Senior Scholar", "issuer": "University of Scranton", "year": "20XX" }
+  ],
+  "projects": [],
+  "publications": [
+    {
+      "citation": "Smith, J., Scott, K., & Moore, T. \"Title\". Journal, Vol. 6, pp 12-28."
+    },
+    {
+      "citation": "Robinson, L., Smith, J., Arnold, L. K., & Wilson, M. \"New Insights into American Poetry of the late 1980s\". Campus Press, 20XX."
+    }
+  ],
+  "volunteer": [],
+  "leadership": [
+    {
+      "organization": "Graduate Student Organization, Binghamton University",
+      "role": "President",
+      "start_date": "May 20XX",
+      "end_date": "May 20XX",
+      "location": "Binghamton, NY",
+      "bullets": [
+        "Serve as president of student senate comprised of graduate student organizations across academic departments and schools"
+      ]
+    }
+  ],
+  "professional_affiliations": [
+    { "name": "Modern Language Association (MLA)" },
+    { "name": "American Literature Association (ALA)" }
+  ],
+  "training": [],
+  "languages_spoken": [],
+  "conflicts": [
+    {
+      "type": "ambiguous_dates",
+      "description": "All dates use placeholder format '20XX' making it impossible to determine actual timeline or calculate experience duration."
+    }
+  ]
+}

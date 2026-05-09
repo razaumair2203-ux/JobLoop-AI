@@ -1,0 +1,56 @@
+{
+  "id": "pair-R057",
+  "split": "validation",
+  "persona": "senior",
+  "source_resume": {
+    "id": "ra-05892",
+    "dataset": "resume_atlas",
+    "industry": "finance",
+    "seniority": "senior"
+  },
+  "jd": {
+    "title": "2025 Commercial & Investment Bank Investment Banking Full-Time Analyst Program",
+    "company": "JPMorgan Chase & Co",
+    "location": "",
+    "experience_years": null,
+    "requirements": [
+      {
+        "text": "experience with extensive training",
+        "type": "must_have"
+      },
+      {
+        "text": "Expertise in finance or economics a plus \r\n  Excellent leadership and collaborative skills \r\n  Knowing your way around Excel",
+        "type": "must_have"
+      }
+    ],
+    "responsibilities": [],
+    "full_description": "JOB DESCRIPTION  Work alongside the top professionals in the business to come up with solutions that shape the global economy. Our bankers are focused on long-term relationships and developing strategies that help our government, institutional and corporate clients grow and innovate. We do this by providing sound advice, helping them access funds and making connections, all while helping clients manage the many risks in today’s complex environment.  Our industry and product teams work together to develop and execute strategies that help our clients grow and achieve their objectives in today’s global markets. Working here means joining a collaborative, supportive team – we want your diverse perspective to help us innovate the next wave of products and solutions for our clients and we’ll give you what you need to succeed from training to mentoring from senior leaders to projects that engage all your skills.  As a Full-Time Analyst in the 2025 Commercial & Investment Bank Investment Banking Full-Time Analyst Program, you will be offered hands-on experience with extensive training. You will spend weeks with our leaders and top consultants learning about our products, services and business practices through interactive learning tools, case studies and modeling sessions. We provide extensive pre-training coursework to build your financial and economic expertise as well as dedicated Series 79 and 63 preparation.   Job Responsibilities:  \r\n  Performing valuation analyses   Working on mergers and acquisitions \r\n  Building detailed financial models and executing transactions from pitch to close \r\n  Analyzing market data, building detailed financial models and preparing client presentations   Coming up with innovative and creative ways to solve complex, real-world business challenges \r\n  Learning how we help clients and communities grow, no matter their needs,   Sharpening your technical skills   Building your professional network with mentors, senior executives and others    Required Qualifications, Capabilities and Skills:  \r\n  Fluency in English \r\n       To be eligible in this program, you must be enrolled in a degree conferring program at a U.S. university. JPMorgan Chase will provide assistance with F-1 STEM optional practical training (OPT) and curricular practical training (CPT). \r\n     Attend college/university in the U.S. (for U.S. groups) \r\n  Expected graduation date of December 2024 – June 2025 \r\n       If you are pursuing a Master’s Degree, it must be completed within 2 years of your Bachelor’s Degree \r\n     Authorization to work in the U.S. (Candidates must be authorized to work in the U.S) \r\n  Minimum cumulative GPA of 3.2 on a 4.0 scale    Preferred Qualifications, Capabilities and Skills:  \r\n  Excellent analytical, quantitative and communication skills \r\n  Expertise in finance or economics a plus \r\n  Excellent leadership and collaborative skills \r\n  Knowing your way around Excel, PowerPoint and Word    Locations you may join:  \r\n  New York City (minus Latin America Advisory; please apply separately) \r\n  Boston \r\n  Chicago \r\n  Houston \r\n  Los Angeles \r\n  San Francisco     Join us  At JPMorgan Chase, we’re creating positive change for the diverse communities we serve. We do this by championing your innovative ideas through a supportive culture that helps you every step of the way as you build your career. If you’re passionate, curious and ready to make an impact, we’re looking for you.   What’s next?  Help us learn about you by submitting a complete and thoughtful application, which includes your resume. Your application and resume is a way for us to initially get to know you, so it’s important to complete all relevant application questions so we have as much information about you as possible.  After you confirm your application, we will review it to determine whether you meet certain required qualifications.   JPMorgan Chase is committed to creating an inclusive work environment that respects all people for their unique skills, backgrounds and professional experiences. We strive to hire qualified, diverse candidates, and we will provide reasonable accommodations for known disabilities.   Visit jpmorganchase.com/careers for upcoming events, career advice, our locations and more.  © 2023 JPMorgan Chase & Co. All rights reserved. JPMorgan Chase is an Equal Opportunity Employer, including Disability/Veterans. ABOUT US  \r\n    JPMorgan Chase & Co., one of the oldest financial institutions, offers innovative financial solutions to millions of consumers, small businesses and many of the world’s most prominent corporate, institutional and government clients under the J.P. Morgan and Chase brands. Our history spans over 200 years and today we are a leader in investment banking, consumer and small business banking, commercial banking, financial transaction processing and asset management.\r\n   \r\n    We offer a competitive total rewards package including base salary determined based on the role, experience, skill set, and location. For those in eligible roles, we offer discretionary incentive compensation which may be awarded in recognition of firm performance and individual achievements and contributions. We also offer a range of benefits and programs to meet employee needs, based on eligibility. These benefits include comprehensive health care coverage, on-site health and wellness centers, a retirement savings plan, backup childcare, tuition reimbursement, mental health support, financial coaching and more. Additional details about total compensation and benefits will be provided during the hiring process. \r\n     We recognize that our people are our strength and the diverse talents they bring to our global workforce are directly linked to our success. We are an equal opportunity employer and place a high value on diversity and inclusion at our company. We do not discriminate on the basis of any protected attribute, including race, religion, color, national origin, gender, sexual orientation, gender identity, gender expression, age, marital or veteran status, pregnancy or disability, or any other basis protected under applicable law. We also make reasonable accommodations for applicants’ and employees’ religious practices and beliefs, as well as mental health or physical disability needs. Visit our FAQs for more information about requesting an accommodation. \r\n   JPMorgan Chase is an Equal Opportunity Employer, including Disability/Veterans    \r\n     \r\n  \r\n ABOUT THE TEAM  \r\n    The Corporate & Investment Bank is a global leader across investment banking, wholesale payments, markets and securities services. The world’s most important corporations, governments and institutions entrust us with their business in more than 100 countries. We provide strategic advice, raise capital, manage risk and extend liquidity in markets around the world.\r\n     \r\n   \r\n    Investment banking is about more than offering industry-leading advice and financial expertise. Teams serve clients by building long-term, trusted partnerships that put their needs first. The world’s largest corporations, institutions and governments rely on the in-depth industry knowledge and market insights provided, knowing their goals are our top priority."
+  },
+  "expected_output": {
+    "_status": "NEEDS_HUMAN_REVIEW",
+    "_raw_text_preview": "jessica claire resumesampleexamplecom 555 4321000 100 montgomery st 10th floor professional summary adept managing budgets payroll invoicing general accounting functions instrumental keeping business operations fully compliant working within budgetary guidelines fastidious tracking expenses reconciling accounts emerging accounting professional ready develop career foundation expanding operation dedicated keeping records accurate controls tight meet business needs systematic wellorganized strong ",
+    "summary": "",
+    "experience": [],
+    "skills": {},
+    "certifications": [],
+    "education": []
+  },
+  "jd_requirements": [
+    "experience with extensive training",
+    "Expertise in finance or economics a plus \r\n  Excellent leadership and collaborative skills \r\n  Knowi"
+  ],
+  "cloud_skills": [
+    "sap"
+  ],
+  "provenance": {
+    "data_source": "real_dataset_raw_text",
+    "jd_source": "github_indeed",
+    "resume_dataset": "resume_atlas",
+    "jd_id": "indeed-a127921d689ded88",
+    "resume_id": "ra-05892",
+    "generated_at": "2026-05-08T08:47:53.878Z",
+    "expected_output_author": "NEEDS_HUMAN_REVIEW",
+    "circularity_risk": "low",
+    "notes": "Resume from real dataset (raw text). JD from real job posting. Expected output EMPTY — needs LLM parsing + human review."
+  }
+}

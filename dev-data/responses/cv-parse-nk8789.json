@@ -1,12 +1,35 @@
 {
+  "name": "M. Umair Raza",
+  "email": "razaumair2203@gmail.com",
+  "phone": "+966-53-7179386",
+  "location": {
+    "city": "Jeddah",
+    "country": "Saudi Arabia"
+  },
+  "links": {
+    "linkedin": "https://www.linkedin.com/in/mumairaza",
+    "github": null,
+    "portfolio": null,
+    "other": [
+      "https://www.coursera.org/learner/umair-raza-4894"
+    ]
+  },
+  "summary": "Systems Engineering professional with 15+ years of experience across aerospace and defense programs, spanning avionics & mission system design, integration, qualification, certification, airworthiness, production, and lifecycle sustainment. Extensive background in MBSE-driven techniques and systems integration. PMP and PMI-ACP certified.",
   "total_experience_years": 18,
   "experience": [
     {
       "company": "College of Aeronautical Engineering & NUTECH University",
+      "employer": "Pakistan Air Force / Higher Education Commission",
       "title": "Program Lead, Professional Education",
       "start_date": "Jan 2023",
       "end_date": "Present",
       "duration_months": 29,
+      "location": "Risalpur, Pakistan",
+      "bullets": [
+        "Leadership in transformative programs (Capacity Building initiative by the Higher Education Commission, Pakistan)",
+        "Led the integration of 60+ Aerospace and defense projects across multi-disciplinary engineering teams",
+        "Strong product management in Data, AI, AI/ML lifecycle, analytics, Power BI (KPIs, ROIs)"
+      ],
       "technologies_used": [
         "Power BI",
         "AI/ML",
@@ -15,14 +38,33 @@
       "metrics_mentioned": [
         "60+ Aerospace and defense projects"
       ],
+      "programs": [
+        "Capacity Building Initiative (HEC)"
+      ],
+      "team_size": null,
+      "seniority_signals": [
+        "Program Lead",
+        "Leadership"
+      ],
       "domain": "academia"
     },
     {
       "company": "Air Force PMO",
+      "employer": "Pakistan Air Force",
       "title": "Deputy Director, Program Management Office",
       "start_date": "Jan 2020",
       "end_date": "Dec 2023",
       "duration_months": 36,
+      "location": "Islamabad, Pakistan",
+      "bullets": [
+        "Led configuration management and integration of Aero Systems across fixed-wing and UAV platforms",
+        "Conducted FMECA, LORA, and RCM analyses that improved fleet serviceability to >90%",
+        "Delivered hands-on field leadership across airworthiness compliance, lifecycle supportability, system integration, and testing through flight-test phases",
+        "Wrote Risk mitigation plans, RAID logs, and EVM reporting",
+        "Led requirements & stakeholder analysis to translate Air Force operational needs",
+        "Developed and managed Acceptance Test Requirements (ATRs) and verification/test specifications",
+        "Executed integration and validation testing of avionics subsystems on an advanced aircraft design/integration rig"
+      ],
       "technologies_used": [
         "SAP",
         "AMOS",
@@ -32,93 +74,321 @@
       "metrics_mentioned": [
         "Fleet serviceability >90%"
       ],
-      "domain": "defense"
+      "programs": [
+        "Fixed-wing Fleet Programs",
+        "UAV Platform Programs"
+      ],
+      "team_size": null,
+      "seniority_signals": [
+        "Deputy Director",
+        "Led"
+      ],
+      "domain": "defense_aerospace"
     },
     {
       "company": "Chengdu Aircraft Design Institute (CADI), China",
+      "employer": "AVIC International",
       "title": "Lead Systems Integration Expert",
       "start_date": "Jan 2018",
       "end_date": "Dec 2020",
       "duration_months": 36,
-      "technologies_used": [],
+      "location": "Chengdu, China",
+      "bullets": [
+        "Delivered flight-line maintenance and sustainment support - fault isolation, real-time troubleshooting, and corrective action planning",
+        "Performed reliability (MMTR, MTTF) and trend analysis, optimized staggered and preventive maintenance plans",
+        "Improved mission availability and aircraft uptime"
+      ],
+      "technologies_used": [
+        "MBSE",
+        "Cameo",
+        "MATLAB"
+      ],
       "metrics_mentioned": [],
-      "domain": "defense"
+      "programs": [
+        "Lead Fighter Aircraft Program"
+      ],
+      "team_size": null,
+      "seniority_signals": [
+        "Lead Systems Integration Expert"
+      ],
+      "domain": "defense_aerospace"
     },
     {
       "company": "Airborne Warning & Control Systems, Air Force",
+      "employer": "Pakistan Air Force",
       "title": "Maintenance Support Engineer (AEW&C)",
       "start_date": "Jan 2016",
       "end_date": "Dec 2017",
       "duration_months": 24,
+      "location": "Karachi, Pakistan",
+      "bullets": [
+        "Airborne Warning & Control Systems Engineer for the Air Force"
+      ],
       "technologies_used": [
         "AMOS",
         "MTBF/MTTR Analysis"
       ],
       "metrics_mentioned": [],
-      "domain": "aviation"
+      "programs": [
+        "AEW&C Platform"
+      ],
+      "team_size": null,
+      "seniority_signals": [],
+      "domain": "defense_aerospace"
     },
     {
       "company": "Pakistan Aeronautical Complex Kamra",
+      "employer": "Pakistan Air Force",
       "title": "Integrated Systems & Design Specialist",
       "start_date": "Jan 2008",
       "end_date": "Dec 2013",
       "duration_months": 60,
-      "technologies_used": [],
-      "metrics_mentioned": [],
-      "domain": "defense"
+      "location": "Kamra, Pakistan",
+      "bullets": [
+        "Designed, developed, and qualified a mission-critical aircraft sub-system; successfully integrated into operational fleet",
+        "Led the design, planning, and upgrade of the country's first legacy trainer aircraft with a glass cockpit, enhancing pilot training capabilities"
+      ],
+      "technologies_used": [
+        "IBM Rational DOORS",
+        "Configuration Management"
+      ],
+      "metrics_mentioned": [
+        "Over 135 systems produced",
+        "1.27 million-dollar cost savings",
+        "exported to 11 countries",
+        "11.6 million dollars in revenue"
+      ],
+      "programs": [
+        "Backup Mission Computer Development",
+        "Glass Cockpit Modification",
+        "Trainer Aircraft Export"
+      ],
+      "team_size": null,
+      "seniority_signals": [
+        "Specialist",
+        "Led"
+      ],
+      "domain": "defense_aerospace"
     }
   ],
-  "skills": {
-    "languages": [],
-    "frameworks": [
-      "Agile",
-      "Hybrid Delivery",
-      "V-Model"
-    ],
-    "infrastructure": [
-      "AMOS",
-      "SAP"
-    ],
-    "databases": [],
-    "tools": [
-      "Power BI",
-      "MS Project",
-      "JIRA",
-      "EVM"
-    ],
-    "other": [
-      "Systems Integration",
-      "Configuration Management",
-      "FMECA",
-      "LORA",
-      "RCM",
-      "Airworthiness Compliance",
-      "Root Cause Analysis",
-      "MTBF/MTTR",
-      "Risk Management",
-      "Stakeholder Management",
-      "Flight Test",
-      "Avionics",
-      "Requirements Analysis",
-      "Program Management"
-    ]
-  },
+  "skills": [
+    {
+      "name": "Systems Integration",
+      "original_text": "Systems Integration",
+      "domain": "defense_aerospace",
+      "category": "systems_engineering",
+      "source": "experience"
+    },
+    {
+      "name": "Avionics Systems Engineering",
+      "original_text": "Avionics Systems Engineer",
+      "domain": "defense_aerospace",
+      "category": "avionics",
+      "source": "experience"
+    },
+    {
+      "name": "MBSE",
+      "original_text": "MBSE (Cameo)",
+      "domain": "defense_aerospace",
+      "category": "systems_engineering",
+      "source": "experience"
+    },
+    {
+      "name": "Verification & Validation",
+      "original_text": "V&V",
+      "domain": "defense_aerospace",
+      "category": "test_evaluation",
+      "source": "experience"
+    },
+    {
+      "name": "Requirements Engineering",
+      "original_text": "Requirements & Configuration Management",
+      "domain": "defense_aerospace",
+      "category": "systems_engineering",
+      "source": "experience"
+    },
+    {
+      "name": "Configuration Management",
+      "original_text": "Configuration Management",
+      "domain": "management",
+      "category": "configuration_management",
+      "source": "experience"
+    },
+    {
+      "name": "Fleet Sustainment Engineering",
+      "original_text": "Lifecycle & Fleet Sustainment Engineering",
+      "domain": "maintenance_engineering",
+      "category": "fleet_operations",
+      "source": "experience"
+    },
+    {
+      "name": "Program Management",
+      "original_text": "Program Execution",
+      "domain": "management",
+      "category": "program_management",
+      "source": "experience"
+    },
+    {
+      "name": "FMECA",
+      "original_text": "FMECA",
+      "domain": "maintenance_engineering",
+      "category": "reliability",
+      "source": "experience"
+    },
+    {
+      "name": "LORA",
+      "original_text": "LORA",
+      "domain": "maintenance_engineering",
+      "category": "logistics",
+      "source": "experience"
+    },
+    {
+      "name": "Reliability Centered Maintenance",
+      "original_text": "RCM",
+      "domain": "maintenance_engineering",
+      "category": "reliability",
+      "source": "experience"
+    },
+    {
+      "name": "Airworthiness Compliance",
+      "original_text": "airworthiness compliance",
+      "domain": "defense_aerospace",
+      "category": "airworthiness",
+      "source": "experience"
+    },
+    {
+      "name": "Earned Value Management",
+      "original_text": "EVM reporting",
+      "domain": "management",
+      "category": "project_management",
+      "source": "experience"
+    },
+    {
+      "name": "Risk Management",
+      "original_text": "Risk mitigation plans, RAID logs",
+      "domain": "management",
+      "category": "risk_management",
+      "source": "experience"
+    },
+    {
+      "name": "Stakeholder Management",
+      "original_text": "stakeholder analysis",
+      "domain": "management",
+      "category": "stakeholder_management",
+      "source": "experience"
+    },
+    {
+      "name": "Flight Test",
+      "original_text": "flight-test phases",
+      "domain": "defense_aerospace",
+      "category": "test_evaluation",
+      "source": "experience"
+    },
+    {
+      "name": "MTBF/MTTR Analysis",
+      "original_text": "MMTR, MTTF",
+      "domain": "maintenance_engineering",
+      "category": "reliability",
+      "source": "experience"
+    },
+    {
+      "name": "IBM Rational DOORS",
+      "original_text": "IBM Rational DOORS",
+      "domain": "technology",
+      "category": "tool",
+      "source": "experience"
+    },
+    {
+      "name": "Power BI",
+      "original_text": "Power BI",
+      "domain": "technology",
+      "category": "tool",
+      "source": "experience"
+    },
+    {
+      "name": "JIRA",
+      "original_text": "Jira",
+      "domain": "technology",
+      "category": "tool",
+      "source": "experience"
+    },
+    {
+      "name": "MATLAB",
+      "original_text": "MATLAB",
+      "domain": "technology",
+      "category": "tool",
+      "source": "experience"
+    },
+    {
+      "name": "DO-178C Compliance",
+      "original_text": "DO-178C",
+      "domain": "defense_aerospace",
+      "category": "airworthiness",
+      "source": "experience"
+    },
+    {
+      "name": "DO-254 Compliance",
+      "original_text": "DO-254",
+      "domain": "defense_aerospace",
+      "category": "airworthiness",
+      "source": "experience"
+    },
+    {
+      "name": "MIL-STD Compliance",
+      "original_text": "MIL-STD",
+      "domain": "defense_aerospace",
+      "category": "standards",
+      "source": "experience"
+    },
+    {
+      "name": "Cross-Functional Leadership",
+      "original_text": "Cross-Functional Leadership & Global Collaboration",
+      "domain": "management",
+      "category": "leadership",
+      "source": "experience"
+    },
+    {
+      "name": "Agile",
+      "original_text": "Agile",
+      "domain": "management",
+      "category": "methodology",
+      "source": "certification"
+    }
+  ],
   "all_technologies": [
+    "Systems Integration",
+    "Avionics Systems Engineering",
+    "MBSE",
+    "Verification & Validation",
+    "Requirements Engineering",
+    "Configuration Management",
+    "Fleet Sustainment Engineering",
+    "Program Management",
+    "FMECA",
+    "LORA",
+    "Reliability Centered Maintenance",
+    "Airworthiness Compliance",
+    "Earned Value Management",
+    "Risk Management",
+    "Stakeholder Management",
+    "Flight Test",
+    "MTBF/MTTR Analysis",
+    "IBM Rational DOORS",
     "Power BI",
+    "JIRA",
+    "MATLAB",
+    "DO-178C Compliance",
+    "DO-254 Compliance",
+    "MIL-STD Compliance",
+    "Cross-Functional Leadership",
+    "Agile",
     "AI/ML",
     "Data Analytics",
     "SAP",
     "AMOS",
     "EVM",
     "RAID",
-    "MS Project",
-    "JIRA",
-    "FMECA",
-    "LORA",
-    "RCM",
-    "MTBF/MTTR",
-    "Agile",
-    "V-Model"
+    "Cameo"
   ],
   "education": [
     {
@@ -127,7 +397,6 @@
       "field": "Avionics Engineering",
       "start_year": 2004,
       "end_year": 2008,
-      "research_topic": null,
       "highlights": []
     },
     {
@@ -137,19 +406,196 @@
       "start_year": 2013,
       "end_year": 2015,
       "research_topic": "Novel ECCM algorithm for ground-based radars",
-      "highlights": []
+      "highlights": [
+        "ECCM algorithm deployed on in-service MPDR Radar systems"
+      ]
     }
   ],
   "certifications": [
     "Project Management Professional (PMP)",
     "Agile Certified Practitioner (PMI-ACP)",
     "Professional Engineer (PE)",
-    "System Engineering Specialization (University of Colorado Boulder)",
-    "Engineering Management Specialization (Rice University)",
-    "Project Management Specialization (Google)",
+    "Certified Systems Engineering Professional (CSEP)",
+    "System Engineering Specialization",
+    "Engineering Management Specialization",
+    "Project Management Specialization",
     "Fighter Aircraft Type Rating Course",
     "AWACS Aircraft Type Rating Course",
     "Basic Staff Course",
     "Senior Command & Staff Course"
-  ]
+  ],
+  "certifications_detailed": [
+    {
+      "name": "Project Management Professional (PMP)",
+      "issuer": "Project Management Institute, USA",
+      "year": null,
+      "active": true,
+      "tier": "gold"
+    },
+    {
+      "name": "Agile Certified Practitioner (PMI-ACP)",
+      "issuer": "Project Management Institute, USA",
+      "year": null,
+      "active": true,
+      "tier": "gold"
+    },
+    {
+      "name": "Professional Engineer (PE)",
+      "issuer": "Pakistan Engineering Council",
+      "year": null,
+      "active": true,
+      "tier": "gold"
+    },
+    {
+      "name": "Certified Systems Engineering Professional (CSEP)",
+      "issuer": "INCOSE",
+      "year": null,
+      "active": true,
+      "tier": "gold"
+    },
+    {
+      "name": "System Engineering Specialization",
+      "issuer": "University of Colorado Boulder, USA",
+      "year": null,
+      "active": true,
+      "tier": "specialization"
+    },
+    {
+      "name": "Engineering Management Specialization",
+      "issuer": "Rice University, USA",
+      "year": null,
+      "active": true,
+      "tier": "specialization"
+    },
+    {
+      "name": "Project Management Specialization",
+      "issuer": "Google",
+      "year": null,
+      "active": true,
+      "tier": "specialization"
+    },
+    {
+      "name": "Fighter Aircraft Type Rating Course",
+      "issuer": "Pakistan Air Force",
+      "year": null,
+      "active": true,
+      "tier": "military"
+    },
+    {
+      "name": "AWACS Aircraft Type Rating Course",
+      "issuer": "Pakistan Air Force",
+      "year": null,
+      "active": true,
+      "tier": "military"
+    },
+    {
+      "name": "Basic Staff Course",
+      "issuer": "Pakistan Air Force",
+      "year": null,
+      "active": true,
+      "tier": "military"
+    },
+    {
+      "name": "Senior Command & Staff Course",
+      "issuer": "Pakistan Air Force",
+      "year": null,
+      "active": true,
+      "tier": "military"
+    }
+  ],
+  "competencies": [
+    "Systems Integration across avionics and weapons subsystems using MBSE",
+    "Verification & Validation including ground and flight testing, acceptance, and airworthiness compliance",
+    "Requirements & Configuration Management using IBM Rational DOORS",
+    "Lifecycle & Fleet Sustainment Engineering through data-driven reliability analysis",
+    "Program Execution & Quality Assurance with structured V&V gates",
+    "Cross-Functional Leadership & Global Collaboration across China and Pakistan"
+  ],
+  "awards": [
+    {
+      "title": "Chief of the Airstaff Commendation",
+      "issuer": "Pakistan Air Force",
+      "context": "Exceptional services during the avionics integration and retrofit Program",
+      "significance": "National military commendation"
+    },
+    {
+      "title": "Chairman's Appreciation Letter",
+      "issuer": "Pakistan Aeronautical Complex",
+      "context": "Contributions to defense manufacturing",
+      "significance": "Organizational recognition"
+    },
+    {
+      "title": "CADI Commendation",
+      "issuer": "Chengdu Aircraft Design Institute, China",
+      "context": "Development & Integration activities of Lead Fighter Aircraft Program",
+      "significance": "International recognition"
+    },
+    {
+      "title": "HEC National Capacity Building Selection",
+      "issuer": "Higher Education Commission, Pakistan",
+      "context": "Selected for the National Capacity Building Program in System Engineering",
+      "significance": "National academic recognition"
+    }
+  ],
+  "projects": [
+    {
+      "name": "Novel ECCM Algorithm for Radars",
+      "description": "Developed novel ECCM algorithm for ground-based legacy radars, enhancing clutter rejection and resistance to noise jamming",
+      "outcome": "Successfully deployed on in-service MPDR Radar systems",
+      "technologies": [
+        "Signal Processing",
+        "ECCM",
+        "Radar"
+      ],
+      "is_professional": true
+    },
+    {
+      "name": "Configuration Management System",
+      "description": "Led configuration management for advanced aircraft undergoing simultaneous development and deployment",
+      "outcome": "Ensured controlled evolution and mission support",
+      "technologies": [
+        "CMDB",
+        "Configuration Management"
+      ],
+      "is_professional": true
+    },
+    {
+      "name": "Indigenous Backup Mission Computer",
+      "description": "Sub-system development for lead fighter program",
+      "outcome": "Over 135 systems produced and deployed, eliminating import reliance, generating $1.27M cost savings",
+      "technologies": [
+        "Embedded Systems",
+        "Avionics"
+      ],
+      "is_professional": true
+    },
+    {
+      "name": "Glass Cockpit Modification - Trainer Aircraft",
+      "description": "Upgrade of trainer aircraft with Dynon and Garmin suite",
+      "outcome": "Modified aircraft exported to 11 countries including Saudi Arabia, Turkey, Qatar; $11.6M revenue",
+      "technologies": [
+        "Dynon",
+        "Garmin",
+        "Glass Cockpit"
+      ],
+      "is_professional": true
+    }
+  ],
+  "publications": [],
+  "volunteer": [],
+  "leadership": [],
+  "professional_affiliations": [],
+  "training": [
+    {
+      "name": "Transfer of Source Code (Aircraft) Training",
+      "provider": "Chengdu Aircraft Design Institute, China",
+      "year": 2018,
+      "hours": null
+    }
+  ],
+  "languages_spoken": [
+    "English",
+    "Urdu"
+  ],
+  "conflicts": []
 }

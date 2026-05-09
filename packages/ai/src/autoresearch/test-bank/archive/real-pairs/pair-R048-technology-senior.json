@@ -1,0 +1,67 @@
+{
+  "id": "pair-R048",
+  "split": "train",
+  "persona": "senior",
+  "source_resume": {
+    "id": "ra-13005",
+    "dataset": "resume_atlas",
+    "industry": "technology",
+    "seniority": "senior"
+  },
+  "jd": {
+    "title": "Senior Applications Developer",
+    "company": "Buildertrend",
+    "location": "",
+    "experience_years": 10,
+    "requirements": [
+      {
+        "text": "10 years experience in software development   Extensive experience with at least one programming language (",
+        "type": "must_have"
+      },
+      {
+        "text": "experience in software development",
+        "type": "must_have"
+      },
+      {
+        "text": "experience in software development   Extensive experience with at least one programming language (",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience with modern software development methodologies (Agile",
+        "type": "must_have"
+      }
+    ],
+    "responsibilities": [],
+    "full_description": "Job Title: Senior Applications Developer  Compensation: $115,000 - $165,000   Who We Are:  Buildertrend is cutting-edge, cloud-based project management software. With nearly 1 million users across the globe, we empower the construction industry with a better way to build. Our software helps construction professionals build more projects while reducing delays, eliminating communication errors, and increasing customer satisfaction. From Estimating, Scheduling, and Change Order features to Client Communication and Document Management tools, our feature set is here to streamline every aspect of the construction process. As a partner in our customers success, our team provides unmatched support, every step of the way. At Buildertrend, we believe in providing an all-in-one solution to solve real problems, deliver real results, and change the way the world builds.  Founded in Omaha in 2006, Buildertrend is quickly becoming the industry standard. Buildertrend is changing the way the world builds. Using technology to bring all parties together, Buildertrend has quickly become the product of the future. The innovative solutions and team atmosphere are what makes Buildertrend one of the hottest employers in the country.  If you want to learn more about us, check out: http://buildertrend.com/about.aspx   The Job:  In this role, you will be responsible for designing, developing, and maintaining high-quality software applications to meet the needs of our clients. The successful candidate will have extensive experience in software development, a strong understanding of industry trends and best practices, and a passion for innovation.  What You Will Do:    Design, develop, and maintain high-quality software applications   Collaborate with cross-functional teams to identify, define, and prioritize software requirements   Develop software solutions that meet business needs and align with industry best practices   Perform code reviews, testing, and debugging to ensure high-quality software delivery   Continuously research and evaluate emerging technologies and industry trends to identify new opportunities for innovation   Mentor and guide junior developers, providing technical leadership and expertise   Participate in agile development processes, including sprint planning, stand-ups, and retrospectives   Who You Are and What You Need:    Bachelors degree Required in Computer Science, Software Engineering, or a related field   10 years experience in software development   Extensive experience with at least one programming language (.NET, Java, etc.)   Experience with modern software development methodologies (Agile, Scrum, etc.)   Strong understanding of software design patterns and best practices   Excellent communication and collaboration skills   Proven ability to mentor and guide junior developers   We Are Giving You:    Competitive compensation   Exceptional health packages   401(k) retirement plan with Buildertrend matching contribution   Life insurance and short- and long-term disability benefits   Parental leave   Generous paid time off, 11 paid holidays, & 6 personal days   Paid sabbaticals   Volunteer time off   Wellness program   Onsite fitness center   Working at Buildertrend:  At Buildertrend we want work to be a place where you can be who you are, where you can make an impact for our customers, communities, and each other; where we all move in the same direction; where you can celebrate success and build a career. In short: We want you to be who you are, love what you do, and build your best life.  Questions? Contact us at talent@buildertrend.com  #LI-Remote  #LI-TH1Job Type: Full-timePay: $115,000.00 - $165,000.00 per year"
+  },
+  "expected_output": {
+    "_status": "NEEDS_HUMAN_REVIEW",
+    "_raw_text_preview": "jessica claire 100 montgomery st 10th floor 555 4321000 resumesampleexamplecom summary gaining knowledge customer strategies dedicated effective worker thrives crossfunctional roles known selfstarter successful team motivator enjoy many challenges daily work pose aggressive deadlines changing needs expectations find wellmanaged multitasking clearly defined vision help ensure succeed together looking engaging challenging inspiring position utilize technical aptitude supporting guiding team varyin",
+    "summary": "",
+    "experience": [],
+    "skills": {},
+    "certifications": [],
+    "education": []
+  },
+  "jd_requirements": [
+    "10 years experience in software development   Extensive experience with at least one programming lan",
+    "experience in software development",
+    "experience in software development   Extensive experience with at least one programming language (",
+    "Experience with modern software development methodologies (Agile"
+  ],
+  "cloud_skills": [
+    "sap",
+    "sql"
+  ],
+  "provenance": {
+    "data_source": "real_dataset_raw_text",
+    "jd_source": "github_indeed",
+    "resume_dataset": "resume_atlas",
+    "jd_id": "indeed-c269f320bff31786",
+    "resume_id": "ra-13005",
+    "generated_at": "2026-05-08T08:47:53.871Z",
+    "expected_output_author": "NEEDS_HUMAN_REVIEW",
+    "circularity_risk": "low",
+    "notes": "Resume from real dataset (raw text). JD from real job posting. Expected output EMPTY — needs LLM parsing + human review."
+  }
+}

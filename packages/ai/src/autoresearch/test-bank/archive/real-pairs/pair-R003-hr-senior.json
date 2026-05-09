@@ -1,0 +1,106 @@
+{
+  "id": "pair-R003",
+  "split": "train",
+  "persona": "senior",
+  "source_resume": {
+    "id": "ra-01675",
+    "dataset": "resume_atlas",
+    "industry": "hr",
+    "seniority": "senior"
+  },
+  "jd": {
+    "title": "Senior Human Resources Generalist",
+    "company": "AimHire",
+    "location": "",
+    "experience_years": null,
+    "requirements": [
+      {
+        "text": "expertise in best practice and compliance with local",
+        "type": "must_have"
+      },
+      {
+        "text": "knowledge of key human resources functions (e",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience with Entrepreneurial Operating System (EOS)Current certification as PHR/SPHR",
+        "type": "must_have"
+      }
+    ],
+    "responsibilities": [],
+    "full_description": "Role: Senior Human Resources GeneralistLocation: Denver, CO near RiNo – Hybrid with 3-4 days in office/ week\nWe are looking for a driven and experienced Senior Human Resources Generalist to join a very reputable and rapidly growing SaaS company with a presence in Colorado, Florida, and Canada. If you enjoy working closely with a small internal operations team and in strong partnership with other leaders in the business, we’d love to talk to you!\nThis is a hybrid direct hire role in Denver, CO near RiNo paying $80-95k with quarterly bonuses.\nResponsibilities:Manages and directs all HR tasks, including building, refining and managing various people-programs, processes and policiesMaintain a high level of expertise in best practice and compliance with local, state, federal human resources policies, programs, laws, and employment issuesCollaborates with leadership to understand long-term goals, and identifies ways to support these goals through an outstanding culture and talent managementDraft and implement staffing plans, recruitment practices and an exceptional onboarding experienceManage recruiting efforts, including full lifecycle recruitment and employer brand initiativesDevelop career pathing and learning & development programsCommunicate changes in the company’s personnel policies and procedures and ensure that proper compliance is followedManage and resolve complex people relations issuesMaintain competitive compensation, benefit and employee incentive programsPartner with functional managers to meet their operating and team goalsAll other duties as assigned\nRequirements:5-10 years of HR experience that includes leadership, recruiting, talent development, HR compliance and administration, program management and retentionDeep knowledge of key human resources functions (e.g. compensation, compliance, operations, employee relations) and the ability to act as a strategic partner to the businessInternational HR Operations experience is strongly preferred, especially Canadian employment law and complianceKnowledge of--and sensitivity to--the diverse backgrounds represented across the workforceExcellent interpersonal, communication, listening, and moderating skills--you are able to support staff and manage conflicts in a manner that respects both the employee(s) and the companyDemonstrated success owning projects from inception to completion, providing appropriate levels of communication throughoutHigh sense of urgency, driven with ability to understand and prioritize initiativesExcellent written and verbal communications skills with ability to interact effectively at various levels in the organization.Bachelor's degree preferred (or equivalent experience) with a specialization in Human Resources, Personnel, Business Management, Communications, or a related field preferredCurrent certification as PHR/SPHR, SHRM-CP/SHRM-SCP\nCandidates with the below are experience are prioritized:Experience within a high growth technology environmentExperience with Entrepreneurial Operating System (EOS)Current certification as PHR/SPHR, SHRM-CPAn advanced HR degree\nBenefits:Flexible unlimited PTO and paid parental leave401k matchWellness stipendQuarterly bonuses12 paid holidays per yearOpportunity to work for an entrepreneurial company in an exciting phase of growth\nWhy Work with AimHire:We work with many different clients in many different industries and may be able to consider you for multiple roles at one time!No fee to you!Voted one of the best staffing agencies in Denver!Please apply online at www.aimhiredenver.com for immediate consideration\nPlease apply directly on our website at www.aimhiredenver.com for immediate consideration.\nAimHire is an Equal Opportunity/Affirmative Action Employer.\nKeywords: HR, human resources, employee relations, generalist, management"
+  },
+  "expected_output": {
+    "summary": "Human Resources Manager with practical understanding of business needs, highly effective in incorporating creative leadership skills to achieve business objectives.",
+    "experience": [
+      {
+        "company": "Not specified",
+        "title": "Human Resources Manager",
+        "start_date": "Not specified",
+        "end_date": "Not specified",
+        "bullets": [
+          "Directs projects to improve efficiency",
+          "Meet deadlines and budget requirements",
+          "Hiring",
+          "Retention",
+          "Training",
+          "Development",
+          "Compensation/Payroll",
+          "Employee relations",
+          "Labor agreements",
+          "Compensation administration",
+          "Regulatory compliance",
+          "Personnel records maintenance"
+        ]
+      }
+    ],
+    "skills": {
+      "Leadership": [
+        "creative leadership"
+      ],
+      "Human Resources": [
+        "hiring",
+        "retention",
+        "training",
+        "development",
+        "compensation",
+        "payroll",
+        "employee relations",
+        "labor agreements",
+        "regulatory compliance"
+      ]
+    },
+    "certifications": [],
+    "education": []
+  },
+  "jd_requirements": [
+    "expertise in best practice and compliance with local",
+    "knowledge of key human resources functions (e",
+    "Experience with Entrepreneurial Operating System (EOS)Current certification as PHR/SPHR"
+  ],
+  "cloud_skills": [
+    "creative leadership",
+    "hiring",
+    "retention",
+    "training",
+    "development",
+    "compensation",
+    "payroll",
+    "employee relations",
+    "labor agreements",
+    "regulatory compliance"
+  ],
+  "provenance": {
+    "data_source": "real_dataset_raw_text",
+    "jd_source": "kaggle_linkedin",
+    "resume_dataset": "resume_atlas",
+    "jd_id": "linkedin-3891014745",
+    "resume_id": "ra-01675",
+    "generated_at": "2026-05-08T08:47:53.843Z",
+    "expected_output_author": "NIM/meta/llama-3.3-70b-instruct",
+    "circularity_risk": "medium",
+    "notes": "Resume from real dataset (raw text). JD from real job posting. Expected output EMPTY — needs LLM parsing + human review.",
+    "enriched_at": "2026-05-08T13:01:30.505Z",
+    "needs_human_review": true
+  }
+}

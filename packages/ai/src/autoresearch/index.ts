@@ -2,6 +2,8 @@ export {
   scoreCVGeneration,
   scoreJDParsing,
   compareScorecards,
+  parsedJDToScorecardInput,
+  cvContentToScorecardInput,
 } from "./scorecard";
 export type {
   CheckResult,
@@ -9,6 +11,7 @@ export type {
   GateVerdict,
   CVScorecardInput,
   JDScorecardInput,
+  CircularityRisk,
 } from "./scorecard";
 
 export {

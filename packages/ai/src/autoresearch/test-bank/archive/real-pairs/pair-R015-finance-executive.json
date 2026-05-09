@@ -1,0 +1,54 @@
+{
+  "id": "pair-R015",
+  "split": "train",
+  "persona": "executive",
+  "source_resume": {
+    "id": "ra-05764",
+    "dataset": "resume_atlas",
+    "industry": "finance",
+    "seniority": "executive"
+  },
+  "jd": {
+    "title": "Revenue Accountant",
+    "company": "GetInsured",
+    "location": "",
+    "experience_years": null,
+    "requirements": [
+      {
+        "text": "Bachelor's Degree in Accounting",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience with enterprise accounting systems",
+        "type": "must_have"
+      }
+    ],
+    "responsibilities": [],
+    "full_description": "About GetInsured:What started as the “Expedia” of health insurance, has grown to a market leading company that is transforming government IT infrastructures with our proven SaaS and AI technology. Our innovative approach to health insurance shopping and enrollment has expanded beyond exchanges, and we’re now reinventing the way states administer safety net programs such as Medicaid, SNAP (food stamps), child care, and unemployment insurance. With our cutting-edge technology, we’re helping agencies help more people, faster, and transforming health care service delivery as we know it.We are looking for a Revenue Accountant to join our GetInsured team. GetInsured is the leading provider for state-based marketplace technology with more experience than any technology provider transitioning states off healthcare.gov and implementing exchanges. We are dedicated to helping as many Americans as possible easily find and enroll in affordable health insurance.\n\nAs a Revenue Accountant, you will:· Own the company revenue accounting and related policy to ensure it is effective, adhered to, and up to date with U.S. GAAP· Reconcile and maintain revenue-related accounts by transacting, verifying and reconciling, revenue-related transactions and balances.· Prepare invoicing schedules and account reconciliations to support balances and activity· Collaborate with other departments to ensure that business transactions are appropriately accounted for.· Maintain Company compliance and support annual registration process with 50 states.· Work closely with our auditors to draw conclusions on complex accounting issues.· Assist with the timely execution and review of month-end close activities, including, but not limited to deal review, account reconciliation, analysis, and reporting.· Assess new accounting pronouncements to determine their impact on the company and drive the implementation.\nRequirements:· Minimum Education: Bachelor's Degree in Accounting, or equivalent.· Minimum Experience: 3+ years of public accounting and/or relevant industry experience.· Strong technical accounting skills in ASC 606 (multiple element arrangements).· Ability to effectively communicate with a variety of departments, follow-through on commitments, and manage progress of projects effectively is critical to be effective in this role.· Strong analytical skills, project management, teambuilding, process management skills.· Ability to work productively in a dynamic environment and be a solutions-oriented team player· Certified Public Accountant or working towards such designation (Preferred).· Experience with enterprise accounting systems, such as Netsuite is a plus.\nBenefits:We offer a comprehensive benefits package, including but not limited to:· Health, Dental, Life, Disability, and Vision insurance· Healthcare spending or reimbursement accounts (HSA/FSA)· Retirement benefits (401k)· Paid time off· Education assistance or tuition reimbursement-· Employee discounts for Gym memberships & commuting/travel assistance\nValues:· We believe that working hard, when it is imbued with purpose, can and should be fun.· You’ll find we are a “can do” place where people work together and roll up their sleeves to get the job done.· Everyone has a voice; everyone’s ideas count, and everyone is respected.· We have built a company, as well as a community of friends and colleagues, with respect for each other.\nLearn more about GetInsured at GetInsured.com"
+  },
+  "expected_output": {
+    "_status": "NEEDS_HUMAN_REVIEW",
+    "_raw_text_preview": "jessica claire resumesampleexamplecom 555 4321000 100 montgomery st 10th floor professional summary organized accountant 105 years managing accurate accounting information tax return support bookkeeping corporate operations astute financial professional keen eye detail high level integrity works well large teams corporate environments skills intuit quickbooks specialist account reconciliation specialist tax accounting specialization invoice coding familiarity account reconciliation processes adv",
+    "summary": "",
+    "experience": [],
+    "skills": {},
+    "certifications": [],
+    "education": []
+  },
+  "jd_requirements": [
+    "Bachelor's Degree in Accounting",
+    "Experience with enterprise accounting systems"
+  ],
+  "cloud_skills": [],
+  "provenance": {
+    "data_source": "real_dataset_raw_text",
+    "jd_source": "kaggle_linkedin",
+    "resume_dataset": "resume_atlas",
+    "jd_id": "linkedin-3902762003",
+    "resume_id": "ra-05764",
+    "generated_at": "2026-05-08T08:47:53.851Z",
+    "expected_output_author": "NEEDS_HUMAN_REVIEW",
+    "circularity_risk": "low",
+    "notes": "Resume from real dataset (raw text). JD from real job posting. Expected output EMPTY — needs LLM parsing + human review."
+  }
+}

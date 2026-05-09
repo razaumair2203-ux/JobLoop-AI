@@ -18,28 +18,36 @@ import {
   FileText,
   Bookmark,
   Sparkles,
+  CheckCircle2,
+  AlertTriangle,
+  Award,
   Shield,
+  Lightbulb,
+  Target,
 } from "lucide-react";
 import * as Collapsible from "@radix-ui/react-collapsible";
 import * as Tooltip from "@radix-ui/react-tooltip";
 
 // --- Types ---
+interface EvidenceSource {
+  type: string;
+  label: string;
+  detail: string | null;
+}
+
 interface Requirement {
   id: string;
   name: string;
   strength: "strong" | "related" | "gap";
   evidence: string | null;
-  citations: number[];
+  evidence_sources: EvidenceSource[];
   bridge: string | null;
 }
 
-// Citation source labels for hover tooltips
-const citationSources: Record<number, { source: string; snippet: string }> = {
-  1: { source: "Work Experience — Scale Corp", snippet: "Senior Frontend Engineer, 2022–Present. Led Next.js migration, built design system." },
-  2: { source: "Work Experience — DataFlow Inc", snippet: "Frontend Engineer, 2019–2021. Real-time dashboards, testing infrastructure." },
-  3: { source: "Skills — Cloud Evidence", snippet: "TypeScript (strict), Docker, GitHub Actions, Vitest, Playwright." },
-  4: { source: "Education — UC Berkeley", snippet: "B.S. Computer Science, 2019. HackBerkeley Winner." },
-};
+interface SocraticQuestion {
+  question: string;
+  skill_targeted: string;
+}
 
 interface AnalysisResult {
   application_id: string;
@@ -49,7 +57,11 @@ interface AnalysisResult {
   sources: Array<{ name: string; icon: string; count: number }>;
   requirements: Requirement[];
   strategy: string;
-  socratic: { question: string; skill_targeted: string };
+  lead_with: string[];
+  biggest_risk: string;
+  insights: string[];
+  socratic: SocraticQuestion | null;
+  socratic_questions: SocraticQuestion[];
 }
 
 // --- Helpers ---
@@ -90,7 +102,17 @@ const sourceIcons: Record<string, React.ComponentType<{ className?: string }>> =
     code: Code,
     folder: FolderOpen,
     "graduation-cap": GraduationCap,
+    award: Award,
   };
+
+const evidenceTypeIcons: Record<string, { icon: string; color: string }> = {
+  role: { icon: "briefcase", color: "text-blue-600 bg-blue-50 border-blue-200" },
+  certification: { icon: "shield", color: "text-indigo-600 bg-indigo-50 border-indigo-200" },
+  impact: { icon: "target", color: "text-emerald-600 bg-emerald-50 border-emerald-200" },
+  award: { icon: "award", color: "text-amber-600 bg-amber-50 border-amber-200" },
+  project: { icon: "folder", color: "text-violet-600 bg-violet-50 border-violet-200" },
+  socratic: { icon: "message", color: "text-brand-600 bg-brand-50 border-brand-200" },
+};
 
 export default function AnalyzePage() {
   const [phase, setPhase] = useState<"input" | "loading" | "results">("input");
@@ -100,7 +122,6 @@ export default function AnalyzePage() {
   const [role, setRole] = useState("");
   const [analysis, setAnalysis] = useState<AnalysisResult | null>(null);
   const [error, setError] = useState<string | null>(null);
-  const [socraticAnswer, setSocraticAnswer] = useState("");
 
   async function handleAnalyze() {
     if (jdText.length < 50) {
@@ -164,7 +185,7 @@ export default function AnalyzePage() {
   }
 
   if (phase === "results" && analysis) {
-    return <AnalysisResults analysis={analysis} onBack={() => setPhase("input")} socraticAnswer={socraticAnswer} onSocraticChange={setSocraticAnswer} />;
+    return <AnalysisResults analysis={analysis} onBack={() => setPhase("input")} />;
   }
 
   // --- Input Phase ---
@@ -256,18 +277,50 @@ export default function AnalyzePage() {
 function AnalysisResults({
   analysis,
   onBack,
-  socraticAnswer,
-  onSocraticChange,
 }: {
   analysis: AnalysisResult;
   onBack: () => void;
-  socraticAnswer: string;
-  onSocraticChange: (v: string) => void;
 }) {
+  const [socraticAnswers, setSocraticAnswers] = useState<Record<string, string>>({});
+  const [socraticSubmitting, setSocraticSubmitting] = useState<string | null>(null);
+  const [socraticResults, setSocraticResults] = useState<Record<string, { node_updated: string; is_new_skill: boolean; evidence_count: number }>>({});
+  const [saved, setSaved] = useState(false);
+
   const pos = positionConfig[analysis.position.label] || positionConfig["Competitive"];
   const strongCount = analysis.requirements.filter((r) => r.strength === "strong").length;
   const relatedCount = analysis.requirements.filter((r) => r.strength === "related").length;
   const gapCount = analysis.requirements.filter((r) => r.strength === "gap").length;
+
+  // Merge socratic sources: API-generated array + fallback single question
+  const allQuestions: SocraticQuestion[] = [
+    ...(analysis.socratic_questions ?? []),
+    ...(analysis.socratic && !analysis.socratic_questions?.some(q => q.skill_targeted === analysis.socratic!.skill_targeted) ? [analysis.socratic] : []),
+  ];
+
+  async function submitSocraticAnswer(q: SocraticQuestion) {
+    const answer = (socraticAnswers[q.skill_targeted] ?? "").trim();
+    if (answer.length < 5) return;
+
+    setSocraticSubmitting(q.skill_targeted);
+    try {
+      const res = await fetch("/api/socratic/answer", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          question_id: `jd-${analysis.application_id}-${q.skill_targeted}`,
+          skill_name: q.skill_targeted,
+          answer,
+          question_text: q.question,
+          application_id: analysis.application_id,
+        }),
+      });
+      if (res.ok) {
+        const data = await res.json();
+        setSocraticResults(prev => ({ ...prev, [q.skill_targeted]: data }));
+      }
+    } catch { /* non-critical */ }
+    setSocraticSubmitting(null);
+  }
 
   return (
     <div className="mx-auto max-w-4xl">
@@ -331,6 +384,34 @@ function AnalysisResults({
         })}
       </div>
 
+      {/* Lead With + Biggest Risk */}
+      {(analysis.lead_with?.length > 0 || analysis.biggest_risk) && (
+        <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2">
+          {analysis.lead_with?.length > 0 && (
+            <div className="rounded-xl border border-emerald-200 bg-emerald-50 p-4">
+              <div className="flex items-center gap-2">
+                <Target className="h-4 w-4 text-emerald-600" />
+                <h3 className="text-sm font-semibold text-emerald-800">Lead with</h3>
+              </div>
+              <ul className="mt-2 space-y-1">
+                {analysis.lead_with.map((item, i) => (
+                  <li key={i} className="text-sm text-emerald-700">{item}</li>
+                ))}
+              </ul>
+            </div>
+          )}
+          {analysis.biggest_risk && (
+            <div className="rounded-xl border border-amber-200 bg-amber-50 p-4">
+              <div className="flex items-center gap-2">
+                <AlertTriangle className="h-4 w-4 text-amber-600" />
+                <h3 className="text-sm font-semibold text-amber-800">Biggest risk</h3>
+              </div>
+              <p className="mt-2 text-sm text-amber-700">{analysis.biggest_risk}</p>
+            </div>
+          )}
+        </div>
+      )}
+
       {/* Requirement Breakdown */}
       <div className="mt-8">
         <h2 className="text-lg font-semibold text-zinc-900">
@@ -340,100 +421,6 @@ function AnalysisResults({
           {analysis.requirements.map((req) => (
             <RequirementRow key={req.id} requirement={req} />
           ))}
-        </div>
-      </div>
-
-      {/* Keyword Frequency Matching */}
-      <div className="mt-8 rounded-xl border border-zinc-200 bg-white p-6">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <Search className="h-5 w-5 text-zinc-400" />
-            <h2 className="text-lg font-semibold text-zinc-900">Keyword Frequency</h2>
-          </div>
-          <span className="text-xs text-zinc-400">JD mentions vs. your CV</span>
-        </div>
-        <p className="mt-1 text-xs text-zinc-500">
-          Keywords mentioned multiple times in the JD signal high importance. Ensure your CV mentions them at least once.
-        </p>
-        <div className="mt-4 space-y-2">
-          {[
-            { keyword: "React", jdCount: 5, cvCount: 3, status: "good" as const },
-            { keyword: "TypeScript", jdCount: 4, cvCount: 2, status: "good" as const },
-            { keyword: "Next.js", jdCount: 3, cvCount: 2, status: "good" as const },
-            { keyword: "CI/CD", jdCount: 3, cvCount: 1, status: "low" as const },
-            { keyword: "Kubernetes", jdCount: 2, cvCount: 0, status: "missing" as const },
-            { keyword: "Design System", jdCount: 2, cvCount: 2, status: "good" as const },
-            { keyword: "GraphQL", jdCount: 2, cvCount: 0, status: "missing" as const },
-            { keyword: "Performance", jdCount: 3, cvCount: 2, status: "good" as const },
-          ].map((kw) => (
-            <div key={kw.keyword} className="flex items-center gap-3">
-              <span className="w-28 shrink-0 text-sm font-medium text-zinc-700">{kw.keyword}</span>
-              <div className="flex flex-1 items-center gap-2">
-                <div className="flex-1">
-                  <div className="flex gap-0.5">
-                    {Array.from({ length: Math.max(kw.jdCount, kw.cvCount) }).map((_, i) => (
-                      <div
-                        key={i}
-                        className={`h-4 w-4 rounded-sm ${
-                          i < kw.cvCount
-                            ? kw.status === "good"
-                              ? "bg-emerald-400"
-                              : "bg-amber-400"
-                            : i < kw.jdCount
-                              ? "border border-dashed border-zinc-300 bg-zinc-50"
-                              : "bg-zinc-100"
-                        }`}
-                      />
-                    ))}
-                  </div>
-                </div>
-                <span className="w-16 shrink-0 text-right text-xs text-zinc-500">
-                  {kw.cvCount}/{kw.jdCount}
-                </span>
-                <span
-                  className={`w-16 shrink-0 text-right text-xs font-medium ${
-                    kw.status === "good"
-                      ? "text-emerald-600"
-                      : kw.status === "low"
-                        ? "text-amber-600"
-                        : "text-zinc-400"
-                  }`}
-                >
-                  {kw.status === "good" ? "Covered" : kw.status === "low" ? "Low" : "Missing"}
-                </span>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* ATS Detection */}
-      <div className="mt-8 rounded-xl border border-zinc-200 bg-white p-6">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <Shield className="h-5 w-5 text-zinc-400" />
-            <h2 className="text-lg font-semibold text-zinc-900">ATS Detection</h2>
-          </div>
-          <span className="rounded-full bg-sky-50 px-2.5 py-0.5 text-xs font-medium text-sky-600">
-            Greenhouse
-          </span>
-        </div>
-        <p className="mt-2 text-xs text-zinc-500">
-          We detected this company likely uses <strong>Greenhouse</strong> for hiring. Here&apos;s what that means for your application:
-        </p>
-        <div className="mt-3 grid grid-cols-2 gap-3">
-          <div className="rounded-lg border border-zinc-100 bg-zinc-50 p-3">
-            <p className="text-[10px] font-semibold uppercase tracking-wide text-zinc-400">Format tip</p>
-            <p className="mt-1 text-xs text-zinc-600">
-              Greenhouse parses single-column PDFs well. Avoid tables, columns, or graphics.
-            </p>
-          </div>
-          <div className="rounded-lg border border-zinc-100 bg-zinc-50 p-3">
-            <p className="text-[10px] font-semibold uppercase tracking-wide text-zinc-400">Application portal</p>
-            <p className="mt-1 text-xs text-zinc-600">
-              Expect structured fields for work history. Your CV will be parsed into sections automatically.
-            </p>
-          </div>
         </div>
       </div>
 
@@ -448,43 +435,100 @@ function AnalysisResults({
         <p className="mt-3 text-sm leading-relaxed text-zinc-600">
           {analysis.strategy}
         </p>
+        {analysis.insights?.length > 0 && (
+          <div className="mt-4 space-y-2">
+            {analysis.insights.map((insight, i) => (
+              <div key={i} className="flex items-start gap-2">
+                <Lightbulb className="mt-0.5 h-3.5 w-3.5 shrink-0 text-amber-500" />
+                <p className="text-sm text-zinc-600">{insight}</p>
+              </div>
+            ))}
+          </div>
+        )}
       </div>
 
-      {/* Socratic Card */}
-      <div className="mt-6 rounded-xl border border-brand-200 bg-brand-50 p-6">
-        <div className="flex items-center gap-2">
-          <MessageCircle className="h-5 w-5 text-brand-500" />
-          <h3 className="font-semibold text-zinc-900">Tell me more</h3>
-          <span className="rounded-full bg-brand-100 px-2 py-0.5 text-xs text-brand-600">
-            {analysis.socratic.skill_targeted}
-          </span>
+      {/* Socratic Cards */}
+      {allQuestions.length > 0 && (
+        <div className="mt-6 space-y-3">
+          <h3 className="flex items-center gap-2 text-sm font-semibold text-zinc-700">
+            <MessageCircle className="h-4 w-4 text-brand-500" />
+            Strengthen your position
+          </h3>
+          {allQuestions.map((q) => {
+            const submitted = !!socraticResults[q.skill_targeted];
+            const submitting = socraticSubmitting === q.skill_targeted;
+            return (
+              <div key={q.skill_targeted} className="rounded-xl border border-brand-200 bg-brand-50 p-5">
+                <div className="flex items-center gap-2">
+                  <span className="rounded-full bg-brand-100 px-2.5 py-0.5 text-xs font-semibold text-brand-700">
+                    {q.skill_targeted}
+                  </span>
+                </div>
+                <p className="mt-2 text-sm text-zinc-700">{q.question}</p>
+                {submitted ? (
+                  <div className="mt-3 flex items-center gap-2 rounded-lg border border-green-200 bg-green-50 px-3 py-2">
+                    <CheckCircle2 className="h-4 w-4 text-green-600" />
+                    <span className="text-sm text-green-700">
+                      {socraticResults[q.skill_targeted].is_new_skill
+                        ? `Added "${socraticResults[q.skill_targeted].node_updated}" to your Cloud`
+                        : `Strengthened "${socraticResults[q.skill_targeted].node_updated}" (${socraticResults[q.skill_targeted].evidence_count} evidence points)`}
+                    </span>
+                  </div>
+                ) : (
+                  <>
+                    <textarea
+                      value={socraticAnswers[q.skill_targeted] ?? ""}
+                      onChange={(e) => setSocraticAnswers(prev => ({ ...prev, [q.skill_targeted]: e.target.value }))}
+                      rows={2}
+                      placeholder="Share specific examples — even indirect exposure counts..."
+                      disabled={submitting}
+                      className="mt-3 w-full rounded-lg border border-brand-200 bg-white px-3 py-2 text-sm text-zinc-900 placeholder:text-zinc-400 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500 disabled:bg-zinc-50"
+                    />
+                    <button
+                      onClick={() => submitSocraticAnswer(q)}
+                      disabled={submitting || (socraticAnswers[q.skill_targeted] ?? "").trim().length < 5}
+                      className="mt-2 flex items-center gap-1.5 rounded-lg bg-brand-600 px-4 py-2 text-sm font-medium text-white hover:bg-brand-700 disabled:opacity-40 disabled:cursor-not-allowed"
+                    >
+                      {submitting ? (
+                        <><Loader2 className="h-3.5 w-3.5 animate-spin" /> Updating Cloud...</>
+                      ) : (
+                        <>Submit <ChevronRight className="h-3.5 w-3.5" /></>
+                      )}
+                    </button>
+                  </>
+                )}
+              </div>
+            );
+          })}
         </div>
-        <p className="mt-3 text-sm text-zinc-700">
-          {analysis.socratic.question}
-        </p>
-        <textarea
-          value={socraticAnswer}
-          onChange={(e) => onSocraticChange(e.target.value)}
-          rows={3}
-          placeholder="Your answer helps us build stronger evidence..."
-          className="mt-3 w-full rounded-lg border border-brand-200 bg-white px-4 py-2.5 text-sm text-zinc-900 placeholder:text-zinc-400 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
-        />
-      </div>
+      )}
 
       {/* Action Buttons */}
       <div className="mt-8 flex gap-3">
         <Link
-          href="/cv"
+          href={`/cv?app=${analysis.application_id}`}
           className="flex flex-1 items-center justify-center gap-2 rounded-xl bg-brand-600 px-6 py-3 font-medium text-white transition-colors hover:bg-brand-700"
         >
           <FileText className="h-5 w-5" />
           Generate tailored CV
         </Link>
-        <button className="flex items-center justify-center gap-2 rounded-xl border border-zinc-200 px-6 py-3 font-medium text-zinc-700 transition-colors hover:bg-zinc-50">
-          <Bookmark className="h-5 w-5" />
-          Save to tracker
+        <button
+          onClick={() => setSaved(true)}
+          disabled={saved}
+          className="flex items-center justify-center gap-2 rounded-xl border border-zinc-200 px-6 py-3 font-medium text-zinc-700 transition-colors hover:bg-zinc-50 disabled:opacity-60"
+        >
+          {saved ? (
+            <><CheckCircle2 className="h-5 w-5 text-emerald-500" /> Saved</>
+          ) : (
+            <><Bookmark className="h-5 w-5" /> Save to tracker</>
+          )}
         </button>
       </div>
+      {saved && (
+        <p className="mt-2 text-center text-xs text-zinc-400">
+          Added to your <Link href="/tracker" className="text-brand-600 hover:underline">Application Tracker</Link>
+        </p>
+      )}
     </div>
   );
 }
@@ -513,27 +557,39 @@ function RequirementRow({ requirement }: { requirement: Requirement }) {
       <Collapsible.Content className="overflow-hidden data-[state=closed]:animate-slideUp data-[state=open]:animate-slideDown">
         <div className="px-5 pb-4 pt-2">
           {requirement.evidence && (
+            <p className="text-sm leading-relaxed text-zinc-600">
+              {requirement.evidence}
+            </p>
+          )}
+
+          {/* Evidence source tags */}
+          {requirement.evidence_sources?.length > 0 && (
             <Tooltip.Provider delayDuration={200}>
-              <p className="text-sm leading-relaxed text-zinc-600">
-                {requirement.evidence}
-                {requirement.citations.map((c) => {
-                  const src = citationSources[c];
+              <div className="mt-2 flex flex-wrap gap-1.5">
+                {requirement.evidence_sources.map((src, i) => {
+                  const typeConfig = evidenceTypeIcons[src.type] || { color: "text-zinc-600 bg-zinc-50 border-zinc-200" };
                   return (
-                    <Tooltip.Root key={c}>
+                    <Tooltip.Root key={i}>
                       <Tooltip.Trigger asChild>
-                        <span className="ml-1 inline-flex h-5 w-5 cursor-help items-center justify-center rounded bg-brand-100 text-xs font-medium text-brand-600 hover:bg-brand-200 transition-colors">
-                          {c}
+                        <span className={`inline-flex items-center gap-1 rounded-full border px-2 py-0.5 text-[10px] font-medium cursor-help ${typeConfig.color}`}>
+                          {src.type === "role" && <Briefcase className="h-2.5 w-2.5" />}
+                          {src.type === "certification" && <Shield className="h-2.5 w-2.5" />}
+                          {src.type === "impact" && <Target className="h-2.5 w-2.5" />}
+                          {src.type === "award" && <Award className="h-2.5 w-2.5" />}
+                          {src.type === "project" && <FolderOpen className="h-2.5 w-2.5" />}
+                          {src.type === "socratic" && <MessageCircle className="h-2.5 w-2.5" />}
+                          {src.label.length > 30 ? src.label.slice(0, 30) + "..." : src.label}
                         </span>
                       </Tooltip.Trigger>
-                      {src && (
+                      {src.detail && (
                         <Tooltip.Portal>
                           <Tooltip.Content
                             side="top"
                             sideOffset={4}
                             className="z-50 max-w-xs rounded-lg border border-zinc-200 bg-white px-3 py-2 shadow-lg"
                           >
-                            <p className="text-xs font-semibold text-zinc-800">{src.source}</p>
-                            <p className="mt-0.5 text-xs text-zinc-500">{src.snippet}</p>
+                            <p className="text-xs font-semibold text-zinc-800">{src.label}</p>
+                            <p className="mt-0.5 text-xs text-zinc-500">{src.detail}</p>
                             <Tooltip.Arrow className="fill-white" />
                           </Tooltip.Content>
                         </Tooltip.Portal>
@@ -541,9 +597,10 @@ function RequirementRow({ requirement }: { requirement: Requirement }) {
                     </Tooltip.Root>
                   );
                 })}
-              </p>
+              </div>
             </Tooltip.Provider>
           )}
+
           {requirement.bridge && (
             <div className="mt-3 rounded-lg border border-amber-200 bg-amber-50 px-4 py-3">
               <p className="text-xs font-medium text-amber-700">

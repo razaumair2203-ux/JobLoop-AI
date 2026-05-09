@@ -1,0 +1,159 @@
+{
+  "name": "Master's (4+1 Program) Resume Sample",
+  "email": "bmail@binghamton.edu",
+  "phone": "(607) 555-7777",
+  "location": {
+    "city": "Binghamton",
+    "country": "United States"
+  },
+  "links": {
+    "linkedin": "www.linkedin.com/in/yourname",
+    "github": null,
+    "portfolio": null,
+    "other": []
+  },
+  "summary": null,
+  "total_experience_years": 1,
+  "experience": [
+    {
+      "company": "BAE Systems Inc.",
+      "employer": "BAE Systems Inc.",
+      "title": "Electronic Systems Operations Intern",
+      "start_date": "2025-06",
+      "end_date": "2025-08",
+      "duration_months": 3,
+      "location": "Endicott, NY",
+      "bullets": [
+        "Engineered shop-aid models in Creo and 3D printed using Prusa Slicing software to help with operator inspection efficiency",
+        "Reduced defects with shop-aids for room-temperature vulcanizing silicone inspection on 500 circuit boards worth $600,000",
+        "Improved manufacturing instructions in 200 Factory Logix plans with descriptive titles and modified reroute settings",
+        "Conducted electrostatic discharge testing in circuit board packaging and transporting materials for dispersion sufficiency",
+        "Led a meeting regarding RTV defect reduction and presented internship achievements in front of managers and peers"
+      ],
+      "technologies_used": ["Creo", "Prusa Slicing software", "Factory Logix"],
+      "metrics_mentioned": ["500 circuit boards", "$600,000", "200 Factory Logix plans"],
+      "programs": [],
+      "team_size": null,
+      "seniority_signals": ["Led a meeting"],
+      "domain": "defense_aerospace"
+    },
+    {
+      "company": "Goldman Copeland Associates, PC.",
+      "employer": "Goldman Copeland Associates, PC.",
+      "title": "Mechanical Engineer Intern",
+      "start_date": "2024-05",
+      "end_date": "2024-08",
+      "duration_months": 4,
+      "location": "New York, New York",
+      "bullets": [
+        "Assisted in the design and analysis of HVAC systems for office, commercial, and residential spaces, working towards customer satisfaction, minimal energy consumption, and compliance with building codes",
+        "Collaborated with senior engineers to create detailed system schematics, ductwork layouts, and demolition plans in AutoCAD",
+        "Gained proficiency in working with and identifying mechanical HVAC equipment specifications for use in designs",
+        "Performed on-site surveys of existing HVAC installations and demolished spaces, recording specifications, drawing schematics, and taking measurements of existing mechanical equipment and ductwork"
+      ],
+      "technologies_used": ["AutoCAD"],
+      "metrics_mentioned": [],
+      "programs": [],
+      "team_size": null,
+      "seniority_signals": ["Collaborated with senior engineers"],
+      "domain": "mechanical_engineering"
+    }
+  ],
+  "education": [
+    {
+      "institution": "Binghamton University, State University of New York, Thomas J. Watson College of Engineering and Applied Science",
+      "degree": "Master of Science",
+      "field": "Mechanical Engineering",
+      "start_year": null,
+      "end_year": 2026,
+      "grade": "3.82/4.00",
+      "research_topic": null,
+      "highlights": [
+        "Dean's List: Spring 2023 - Spring 2025",
+        "Relevant Coursework: HVAC, Energy Engineering, Computational Fluid Dynamics, Finite-Element Analysis, Aerodynamics"
+      ]
+    },
+    {
+      "institution": "Binghamton University, State University of New York, Thomas J. Watson College of Engineering and Applied Science",
+      "degree": "Bachelor of Science",
+      "field": "Mechanical Engineering",
+      "start_year": null,
+      "end_year": 2025,
+      "grade": "3.82/4.00",
+      "research_topic": null,
+      "highlights": [
+        "Dean's List: Spring 2023 - Spring 2025"
+      ]
+    }
+  ],
+  "skills": [
+    { "name": "MATLAB", "original_text": "MATLAB", "domain": "engineering", "category": "simulation_modeling", "source": "skills_section" },
+    { "name": "AutoCAD", "original_text": "AutoCAD", "domain": "engineering", "category": "design_drafting", "source": "skills_section" },
+    { "name": "Simio", "original_text": "Simio", "domain": "engineering", "category": "simulation_modeling", "source": "skills_section" },
+    { "name": "Python", "original_text": "Python", "domain": "technology", "category": "programming_languages", "source": "skills_section" },
+    { "name": "Arduino", "original_text": "Arduino", "domain": "engineering", "category": "embedded_systems", "source": "skills_section" },
+    { "name": "Creo", "original_text": "Creo", "domain": "engineering", "category": "cad_modeling", "source": "skills_section" },
+    { "name": "ANSYS Workbench", "original_text": "ANSYS Workbench", "domain": "engineering", "category": "simulation_modeling", "source": "skills_section" },
+    { "name": "SOLIDWORKS", "original_text": "SOLIDWORKS", "domain": "engineering", "category": "cad_modeling", "source": "skills_section" },
+    { "name": "Fusion 360", "original_text": "Fusion 360", "domain": "engineering", "category": "cad_modeling", "source": "skills_section" },
+    { "name": "Factory Logix", "original_text": "Factory Logix", "domain": "engineering", "category": "manufacturing", "source": "skills_section" },
+    { "name": "Microsoft Office Suite", "original_text": "Microsoft Office Suite", "domain": "technology", "category": "productivity", "source": "skills_section" },
+    { "name": "Google Workspace", "original_text": "Google Workspace", "domain": "technology", "category": "productivity", "source": "skills_section" },
+    { "name": "HVAC Design", "original_text": "HVAC systems", "domain": "mechanical_engineering", "category": "hvac", "source": "experience" },
+    { "name": "Finite Element Analysis", "original_text": "finite element analysis", "domain": "engineering", "category": "simulation_modeling", "source": "experience" },
+    { "name": "Computational Fluid Dynamics", "original_text": "Computational Fluid Dynamics", "domain": "engineering", "category": "simulation_modeling", "source": "education" },
+    { "name": "Ansys Fluent", "original_text": "Ansys Fluent", "domain": "engineering", "category": "simulation_modeling", "source": "experience" }
+  ],
+  "competencies": [],
+  "certifications": [
+    {
+      "name": "Computer-Aided Design with Fusion 360",
+      "issuer": null,
+      "year": null,
+      "active": true,
+      "tier": "course"
+    }
+  ],
+  "awards": [],
+  "projects": [
+    {
+      "name": "Senior Design Project: Formula Electric Vehicle Accumulator",
+      "description": "Led a team of four in the mechanical design and cooling analysis for a Li-ion battery pack for use in a Formula Electric Vehicle. Secured sponsorship from Tesla and Analog Devices. Designed battery pack container in SOLIDWORKS using tab-and-slot alignment system.",
+      "outcome": "Secured sponsorship resulting in savings of over $6,000. Analyzed battery pack air cooling system for SAE temperature compliance using Ansys Fluent.",
+      "technologies": ["SOLIDWORKS", "Ansys Fluent"],
+      "is_professional": false
+    },
+    {
+      "name": "Landing Gear Design Project",
+      "description": "Modeled a fully functional R2D2 landing gear in adherence to requirements using PTC Creo Parametric. Conducted static analysis using PTC Creo. Performed finite element analysis through ANSYS Workbench.",
+      "outcome": "Summarized findings, including detailed drawings, mathematical analysis, and cost analysis in a 50-page written report",
+      "technologies": ["PTC Creo Parametric", "ANSYS Workbench"],
+      "is_professional": false
+    }
+  ],
+  "publications": [],
+  "volunteer": [],
+  "leadership": [
+    {
+      "organization": "Watson Career and Alumni Connections",
+      "role": "Student Assistant",
+      "start_date": "2024-08",
+      "end_date": null,
+      "description": "Advise undergraduate and graduate students on preparing quality job/internship application materials. Coordinate networking events and career exploration sessions each month. Organize the career services website using OmniUpdate.",
+      "scope": "Undergraduate and graduate students at Watson College"
+    },
+    {
+      "organization": "Mechanical Contractors Association (MCA)",
+      "role": "Vice President",
+      "start_date": "2023-10",
+      "end_date": "2025-05",
+      "description": "Managed and revised bid proposals throughout 2022-2024 student competitions. Organize Binghamton University MCA Golf Tournament Fundraiser. Tour local companies in heating, air conditioning, refrigeration, plumbing, piping industries.",
+      "scope": "Placed 5th in 2024 competition for Kansas City Zoo Aquarium, winning $1,000 grant"
+    }
+  ],
+  "professional_affiliations": ["Mechanical Contractors Association (MCA)"],
+  "training": [],
+  "languages_spoken": [],
+  "all_technologies": ["MATLAB", "AutoCAD", "Simio", "Python", "Arduino", "Creo", "ANSYS Workbench", "SOLIDWORKS", "Fusion 360", "Factory Logix", "Microsoft Office Suite", "Google Workspace", "Ansys Fluent", "PTC Creo Parametric", "OmniUpdate", "Prusa Slicing software"],
+  "conflicts": []
+}

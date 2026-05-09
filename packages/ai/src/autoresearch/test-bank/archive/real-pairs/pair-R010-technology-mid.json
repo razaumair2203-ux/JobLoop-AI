@@ -1,0 +1,103 @@
+{
+  "id": "pair-R010",
+  "split": "train",
+  "persona": "mid_career",
+  "source_resume": {
+    "id": "mr-00043",
+    "dataset": "master_resumes",
+    "industry": "technology",
+    "seniority": "mid"
+  },
+  "jd": {
+    "title": "Python Developer (Python 3.0 or above, Django, Flask, Angular/React/Vue/JavaScript, Python Libraries (Panda/NumPy/Sci-kit), SQL and PL/SQL)",
+    "company": "Pyramid Consulting, Inc",
+    "location": "",
+    "experience_years": null,
+    "requirements": [
+      {
+        "text": "experience in Python Programming",
+        "type": "must_have"
+      },
+      {
+        "text": "experience with Django",
+        "type": "must_have"
+      },
+      {
+        "text": "experience with web application development (Angular/React/Vue/JavaScript)",
+        "type": "must_have"
+      },
+      {
+        "text": "experience with Python Libraries (For eg; NumPy/Panda/Sci-kit)",
+        "type": "must_have"
+      },
+      {
+        "text": "experience with SQL and PL/SQL",
+        "type": "must_have"
+      }
+    ],
+    "responsibilities": [],
+    "full_description": "Immediate need for a talented Python Developer (Python 3.0 or above, Django, Flask, Angular/React/Vue/JavaScript, Python Libraries (Panda/NumPy/Sci-kit), SQL and PL/SQL). This is a Fulltime opportunity with long-term potential and is located in Charlotte, NC(Hybrid). Please review the job description below and contact me ASAP if you are interested.  No of Positions: 20 Job Title/Role: Python Developer (Python 3.0 or above, Django, Flask, Angular/React/Vue/JavaScript, Python Libraries (Panda/NumPy/Sci-kit), SQL and PL/SQL) Work Location: Hybrid Work (3 days from office and 2 days from home)Charlotte, NCJersey City, NJNew York, NY Open to Relocate candidates can also apply. Required Skills:Python 3.0 or above, Django, Flask, Angular/React/Vue/JavaScript, Python Libraries (Panda/NumPy/Sci-kit), SQL and PL/SQL Key Requirements and Technology Experience: \nMust have Overall 7+ years of IT industry experience.Must have minimum 5+ years of development experience in Python Programming.Must have good Python/OOPs programming skills (Python 3.0 or above).Must have experience with Django, Flask.Must have experience with web application development (Angular/React/Vue/JavaScript).Must have experience with Python Libraries (For eg; NumPy/Panda/Sci-kit).Must have strong experience with SQL and PL/SQL.Must have strong development and programming skills.Must have good communication, analytical and problem-solving skills. Preferred:Banking/Financial ExperienceTrading/Marketing Experience COMPENSATION: The base pay for this position ranges from $90,000 to $130,000. Pay is based on a number of factors including market location and may vary depending on job-related knowledge, skills, and experience. Dependent on the position offered, commission, bonus, and other forms of compensation may be provided as part of a total compensation package.\nEmployee benefits include, but are not limited to, health insurance (medical, dental, vision), unlimited vacation and 401(k) plan.\nABOUT PYRAMID CONSULTING, Inc. – as one of the largest minorities and privately owned staffing firms in the U.S., Pyramid Consulting focuses on providing our clients with high-quality technical professionals and services to support their business and IT initiatives. The success of our clients is facilitated through our ability to provide full-spectrum support via our development centers – from a single consultant under their management, at their site, to full turnkey solutions onsite and offshore.\nPyramid Consulting, Inc. is an Equal Employment Opportunity Employer. All applicants hired will be subject to a background check and drug screening."
+  },
+  "expected_output": {
+    "summary": "",
+    "experience": [
+      {
+        "company": "KPIT Technologies",
+        "title": "Python RESTful API developer",
+        "start_date": "2011-07-06",
+        "end_date": "present",
+        "bullets": [
+          "Production and Maintenance of Projects",
+          "Handling projects in agile methodology",
+          "Handling projects in SDLC",
+          "Gather requirement and providing Estimate & solution document"
+        ]
+      }
+    ],
+    "skills": {
+      "technical": [
+        "Python",
+        "Java",
+        "Flask",
+        "Django",
+        "MongoDB",
+        "MySQL",
+        "PostgreSQL",
+        "Pivotal Cloud Foundry"
+      ]
+    },
+    "certifications": [],
+    "education": [
+      "[object Object], [object Object]",
+      "[object Object], [object Object]"
+    ]
+  },
+  "jd_requirements": [
+    "experience in Python Programming",
+    "experience with Django",
+    "experience with web application development (Angular/React/Vue/JavaScript)",
+    "experience with Python Libraries (For eg; NumPy/Panda/Sci-kit)",
+    "experience with SQL and PL/SQL"
+  ],
+  "cloud_skills": [
+    "Python",
+    "Java",
+    "Flask",
+    "Django",
+    "MongoDB",
+    "MySQL",
+    "PostgreSQL",
+    "Pivotal Cloud Foundry"
+  ],
+  "provenance": {
+    "data_source": "real_dataset",
+    "jd_source": "kaggle_linkedin",
+    "resume_dataset": "master_resumes",
+    "jd_id": "linkedin-3904972027",
+    "resume_id": "mr-00043",
+    "generated_at": "2026-05-08T08:47:53.847Z",
+    "expected_output_author": "auto_from_structured_data",
+    "circularity_risk": "low",
+    "notes": "Resume from real dataset (structured). JD from real job posting. Expected output auto-derived from structured resume data — needs human review to verify quality."
+  }
+}

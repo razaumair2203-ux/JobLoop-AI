@@ -154,6 +154,8 @@ Threshold: **2 mentions** in the same niche. Early enough to be useful, not so a
 
 ## What Accumulates Over Time (Niche Profiles)
 
+**Calibration principle (from Deep Research Report, May 2026):** If we ever convert outcome signals into predictive guidance (e.g., "roles like this typically require X"), it MUST be calibrated per job family, geography, and seniority band — never globally. A "gap" in fintech/data-eng means nothing for healthcare/nursing. Niche profiles are already structured this way; this note ensures we never flatten them into a global "what works" signal.
+
 After enough applications in a niche, the Cloud builds niche-specific intelligence:
 
 ```

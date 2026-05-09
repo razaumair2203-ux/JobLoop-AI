@@ -1,9 +1,9 @@
 {
   "drift": {
-    "similarity": 1,
+    "similarity": 0.9203821656050956,
     "drifted": false,
     "severity": "none",
-    "message": "Similarity 100.0% — within normal range"
+    "message": "Similarity 92.0% — within normal range"
   },
   "regression": {
     "original_pass_rate": 0,
@@ -19,8 +19,7 @@
       "Improvement is NOT statistically significant (ANOVA p >= 0.05)"
     ],
     "warnings": [
-      "Very low keep rate (0.0%) — most mutations were rejected",
-      "Only 5 iterations run — may be insufficient for reliable optimization",
+      "Only 3 iterations run — may be insufficient for reliable optimization",
       "Improvement (0.0pp) is below 2% threshold — may not be worth the risk"
     ],
     "requires_human_review": true,
@@ -35,7 +34,7 @@
     ]
   },
   "staleness": {
-    "last_rotated": "2026-05-03",
+    "last_rotated": "2026-05-08",
     "days_since_rotation": 0,
     "is_stale": false,
     "message": "Held-out set is 0 days old. Next rotation in 90 days."
@@ -50,14 +49,14 @@
   },
   "bayesian_ci": {
     "point_estimate": 0,
-    "ci_lower": 0.0015811117227658843,
-    "ci_upper": 0.20590721420119942,
-    "ci_width": 0.20432610247843355,
-    "n": 15,
+    "ci_lower": 0.0028091367465992037,
+    "ci_upper": 0.3362671168799342,
+    "ci_width": 0.333457980133335,
+    "n": 8,
     "successes": 0,
     "method": "bayesian_beta_binomial",
     "credibility": 0.95
   },
   "overall_safe": false,
-  "summary": "=== AutoResearch Safeguard Report ===\n\nDrift: NONE (100% similar to v0)\nRegression: MARGINAL (0.0pp)\nOverfitting: NONE (0.0pp train-holdout gap)\nStaleness: OK (0 days)\nBayesian 95% CI: [0.2%, 20.6%] (width: 20.4pp)\n\nBlockers: Improvement is NOT statistically significant (ANOVA p >= 0.05)\nWarnings: Very low keep rate (0.0%) — most mutations were rejected; Only 5 iterations run — may be insufficient for reliable optimization; Improvement (0.0pp) is below 2% threshold — may not be worth the risk\n\nOVERALL: BLOCKED — resolve issues before review\n\nHuman review checklist:\n  [ ] Compare v0 prompt side-by-side with optimized prompt\n  [ ] Run optimized prompt against 3-5 REAL user CVs + JDs (not test bank)\n  [ ] Verify no fabrication in generated outputs\n  [ ] Check that prompt still follows the advocate framing (no discouraging language)\n  [ ] Confirm education is separate from certifications in output\n  [ ] Test sensitivity handling (military platform names)\n  [ ] If all pass → deploy to 10% of users first, monitor for 48h"
+  "summary": "=== AutoResearch Safeguard Report ===\n\nDrift: NONE (92% similar to v0)\nRegression: MARGINAL (0.0pp)\nOverfitting: NONE (0.0pp train-holdout gap)\nStaleness: OK (0 days)\nBayesian 95% CI: [0.3%, 33.6%] (width: 33.3pp)\n\nBlockers: Improvement is NOT statistically significant (ANOVA p >= 0.05)\nWarnings: Only 3 iterations run — may be insufficient for reliable optimization; Improvement (0.0pp) is below 2% threshold — may not be worth the risk\n\nOVERALL: BLOCKED — resolve issues before review\n\nHuman review checklist:\n  [ ] Compare v0 prompt side-by-side with optimized prompt\n  [ ] Run optimized prompt against 3-5 REAL user CVs + JDs (not test bank)\n  [ ] Verify no fabrication in generated outputs\n  [ ] Check that prompt still follows the advocate framing (no discouraging language)\n  [ ] Confirm education is separate from certifications in output\n  [ ] Test sensitivity handling (military platform names)\n  [ ] If all pass → deploy to 10% of users first, monitor for 48h"
 }

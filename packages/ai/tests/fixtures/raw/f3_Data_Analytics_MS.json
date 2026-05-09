@@ -1,0 +1,48 @@
+{
+  "name": "FIRST AND LAST NAME",
+  "email": "bmail@binghamton.edu",
+  "phone": null,
+  "location": {
+    "city": null,
+    "country": null
+  },
+  "links": {
+    "linkedin": "www.linkedin.com/in/yourname",
+    "github": null,
+    "portfolio": null,
+    "other": []
+  },
+  "summary": null,
+  "total_experience_years": 0,
+  "experience": [],
+  "education": [
+    {
+      "institution": "Binghamton University, State University of New York, Thomas J. Watson College of Engineering and Applied Science",
+      "degree": "Master of Science",
+      "field": "Data Analytics",
+      "start_year": null,
+      "end_year": null,
+      "grade": null,
+      "research_topic": null,
+      "highlights": []
+    }
+  ],
+  "skills": [],
+  "competencies": [],
+  "certifications": [],
+  "awards": [],
+  "projects": [],
+  "publications": [],
+  "volunteer": [],
+  "leadership": [],
+  "professional_affiliations": [],
+  "training": [],
+  "languages_spoken": [],
+  "all_technologies": [],
+  "conflicts": [
+    {
+      "type": "other",
+      "description": "This is a blank resume template with placeholder text only — no real data to extract"
+    }
+  ]
+}

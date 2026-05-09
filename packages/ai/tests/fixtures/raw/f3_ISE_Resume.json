@@ -1,0 +1,348 @@
+{
+  "name": "ISE Resume Sample",
+  "email": "bmail@binghamton.edu",
+  "phone": "(607) 555-777",
+  "location": {
+    "city": "Binghamton",
+    "country": "United States"
+  },
+  "links": {
+    "linkedin": "www.linkedin.com/in/yourname",
+    "github": null,
+    "portfolio": null,
+    "other": []
+  },
+  "summary": null,
+  "total_experience_years": 2,
+  "experience": [
+    {
+      "company": "Wegmans Food Markets",
+      "employer": "Wegmans Food Markets",
+      "title": "Manufacturing Engineering Co-Op",
+      "start_date": "2025-01",
+      "end_date": "2025-05",
+      "duration_months": 5,
+      "location": "Rochester, NY",
+      "bullets": [
+        "Worked with contractors, stakeholders, and departments like EHS, Quality Assurance, Operations, and Maintenance to learn and apply department standards and procedures in manufacturing bakery items for stores",
+        "Ensured safe and sanitary design in bakery equipment modifications with welding contractors in the Rochester area, and Quality Assurance by adhering to industry standards",
+        "Led pedestrian pathway improvements in collaboration with international vendors to prevent forklift accidents, coordinated with management to establish project budgets of over $10,000, and saved $20,000 in maintenance costs"
+      ],
+      "technologies_used": [],
+      "metrics_mentioned": [
+        "project budgets of over $10,000",
+        "saved $20,000 in maintenance costs"
+      ],
+      "programs": [],
+      "team_size": null,
+      "seniority_signals": [
+        "co-op",
+        "led"
+      ],
+      "domain": "manufacturing"
+    },
+    {
+      "company": "Ernst & Young",
+      "employer": "Ernst & Young",
+      "title": "Technology Advisory Intern",
+      "start_date": "2024-06",
+      "end_date": "2024-08",
+      "duration_months": 3,
+      "location": "New York, NY",
+      "bullets": [
+        "Collaborated with a team comprised of EY professionals on a large-scale project, advising a large banking client on the transformation of their global service desk",
+        "Analyzed data collected from global data centers regarding the current state of the bank's service desk model",
+        "Examined collected data and created deliverables to be presented in global data centers using ITIL and TIPA knowledge"
+      ],
+      "technologies_used": [
+        "ITIL",
+        "TIPA"
+      ],
+      "metrics_mentioned": [],
+      "programs": [],
+      "team_size": null,
+      "seniority_signals": [
+        "intern"
+      ],
+      "domain": "consulting"
+    },
+    {
+      "company": "Information Technology Services",
+      "employer": "Binghamton University",
+      "title": "Computer Consultant",
+      "start_date": "2023-09",
+      "end_date": "2023-07",
+      "duration_months": 10,
+      "location": "Binghamton, NY",
+      "bullets": [
+        "Serviced computers and other electronics in all six residential communities to ensure guest satisfaction",
+        "Installed wireless internet connections, accessing university-wide servers for students and faculty across campus"
+      ],
+      "technologies_used": [],
+      "metrics_mentioned": [
+        "six residential communities"
+      ],
+      "programs": [],
+      "team_size": null,
+      "seniority_signals": [
+        "consultant"
+      ],
+      "domain": "information_technology"
+    },
+    {
+      "company": "Target",
+      "employer": "Target",
+      "title": "Sales Associate & Lead Cashier",
+      "start_date": "2023-03",
+      "end_date": "present",
+      "duration_months": 27,
+      "location": "Vestal, NY",
+      "bullets": [],
+      "technologies_used": [],
+      "metrics_mentioned": [],
+      "programs": [],
+      "team_size": null,
+      "seniority_signals": [
+        "lead"
+      ],
+      "domain": "retail"
+    },
+    {
+      "company": "YMCA",
+      "employer": "YMCA",
+      "title": "Seasonal Lifeguard",
+      "start_date": "2023-05",
+      "end_date": "2024-08",
+      "duration_months": 16,
+      "location": "Johnson City, NY",
+      "bullets": [],
+      "technologies_used": [],
+      "metrics_mentioned": [],
+      "programs": [],
+      "team_size": null,
+      "seniority_signals": [],
+      "domain": "recreation"
+    }
+  ],
+  "education": [
+    {
+      "institution": "Binghamton University, State University of New York, Thomas J. Watson College of Engineering and Applied Science",
+      "degree": "Bachelor of Science",
+      "field": "Industrial and Systems Engineering",
+      "start_year": null,
+      "end_year": 2026,
+      "grade": "3.87/4.00",
+      "research_topic": null,
+      "highlights": [
+        "Dean's List: Fall 2023 – Spring 2025",
+        "Tau Beta Pi Engineering Honor Society",
+        "Alpha Pi Mu Industrial Honor Society",
+        "Relevant Coursework: Human Factors, Engineering Economics, Enterprise Systems, Optimization and Operations Research"
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "name": "LabVIEW",
+      "original_text": "LabVIEW",
+      "domain": "engineering",
+      "category": "test_measurement_software",
+      "source": "skills_section"
+    },
+    {
+      "name": "MATLAB",
+      "original_text": "MATLAB",
+      "domain": "technology",
+      "category": "programming_languages",
+      "source": "skills_section"
+    },
+    {
+      "name": "Python",
+      "original_text": "Python",
+      "domain": "technology",
+      "category": "programming_languages",
+      "source": "skills_section"
+    },
+    {
+      "name": "Arena",
+      "original_text": "Arena",
+      "domain": "engineering",
+      "category": "simulation_software",
+      "source": "skills_section"
+    },
+    {
+      "name": "Minitab",
+      "original_text": "Minitab",
+      "domain": "engineering",
+      "category": "statistical_software",
+      "source": "skills_section"
+    },
+    {
+      "name": "AutoCAD",
+      "original_text": "AutoCAD",
+      "domain": "engineering",
+      "category": "cad_software",
+      "source": "skills_section"
+    },
+    {
+      "name": "Jupyter Notebook",
+      "original_text": "Jupyter Notebook",
+      "domain": "technology",
+      "category": "development_tools",
+      "source": "skills_section"
+    },
+    {
+      "name": "Simio",
+      "original_text": "Simio",
+      "domain": "engineering",
+      "category": "simulation_software",
+      "source": "skills_section"
+    },
+    {
+      "name": "Microsoft Visio",
+      "original_text": "Microsoft Visio",
+      "domain": "technology",
+      "category": "productivity_software",
+      "source": "skills_section"
+    },
+    {
+      "name": "Microsoft Project",
+      "original_text": "Microsoft Project",
+      "domain": "technology",
+      "category": "project_management_software",
+      "source": "skills_section"
+    },
+    {
+      "name": "SOLIDWORKS",
+      "original_text": "SOLIDWORKS",
+      "domain": "engineering",
+      "category": "cad_software",
+      "source": "skills_section"
+    },
+    {
+      "name": "Google Workspace",
+      "original_text": "Google Workspace",
+      "domain": "technology",
+      "category": "productivity_software",
+      "source": "skills_section"
+    },
+    {
+      "name": "Microsoft Office Suite",
+      "original_text": "Microsoft Office Suite",
+      "domain": "technology",
+      "category": "productivity_software",
+      "source": "skills_section"
+    },
+    {
+      "name": "ITIL",
+      "original_text": "ITIL",
+      "domain": "information_technology",
+      "category": "it_service_management",
+      "source": "experience"
+    },
+    {
+      "name": "TIPA",
+      "original_text": "TIPA",
+      "domain": "information_technology",
+      "category": "process_assessment",
+      "source": "experience"
+    }
+  ],
+  "competencies": [
+    "Manufacturing Engineering",
+    "Process Improvement",
+    "Data Analysis",
+    "IT Service Management",
+    "Quality Assurance",
+    "Project Budget Management",
+    "Stakeholder Collaboration"
+  ],
+  "certifications": [
+    {
+      "name": "Lean Six Sigma Green Belt",
+      "issuer": null,
+      "year": null,
+      "active": true,
+      "tier": "specialization"
+    },
+    {
+      "name": "Lean Six Sigma Black Belt",
+      "issuer": null,
+      "year": null,
+      "active": true,
+      "tier": "gold"
+    }
+  ],
+  "awards": [],
+  "projects": [
+    {
+      "name": "Tech X Case Competition: Square Balance Between Profitability and Innovation",
+      "description": "Managed team of four in compiling a comprehensive presentation within two weeks to illustrate a new business venture, 'Square Campus' for the company 'Square' to increase the company's profitability",
+      "outcome": "Progressed to the second round and presented to students, faculty, and professionals from EY",
+      "technologies": [],
+      "is_professional": false
+    }
+  ],
+  "publications": [],
+  "volunteer": [],
+  "leadership": [
+    {
+      "organization": "Systems Science Industrial Engineering (SSIE) Student Advisory Board",
+      "role": "Member",
+      "start_date": "2023-09",
+      "end_date": "present",
+      "description": "Represent student body voice in response to the ABET review and goals of the SSIE department; ensure growth and direction of the department by composing recommendation letters for faculty tenure",
+      "scope": null
+    },
+    {
+      "organization": "Society of Women Engineers",
+      "role": "Secretary",
+      "start_date": "2024-01",
+      "end_date": "2025-05",
+      "description": "Contributed to chapter meetings by taking clear and concise minutes shared with 70 members; promoted engineering activities by giving presentations on resume building, networking, and interview preparation",
+      "scope": "70 members"
+    },
+    {
+      "organization": "Engineering Design Division",
+      "role": "Undergraduate Course Assistant (UCA)",
+      "start_date": "2023-08",
+      "end_date": "2024-05",
+      "description": "Instructed first-year engineering students in Engineering Communications course; assisted with reverse engineering and Arduino projects; guided students on technical documentation, formatting, and presentation skills",
+      "scope": null
+    }
+  ],
+  "professional_affiliations": [
+    "Tau Beta Pi Engineering Honor Society",
+    "Alpha Pi Mu Industrial Honor Society",
+    "Society of Women Engineers",
+    "Systems Science Industrial Engineering (SSIE) Student Advisory Board"
+  ],
+  "training": [],
+  "languages_spoken": [
+    "Spanish (fluent)"
+  ],
+  "all_technologies": [
+    "LabVIEW",
+    "MATLAB",
+    "Python",
+    "Arena",
+    "Minitab",
+    "AutoCAD",
+    "Jupyter Notebook",
+    "Simio",
+    "Microsoft Visio",
+    "Microsoft Project",
+    "SOLIDWORKS",
+    "Google Workspace",
+    "Microsoft Office Suite",
+    "ITIL",
+    "TIPA",
+    "Arduino"
+  ],
+  "conflicts": [
+    {
+      "type": "overlapping_dates",
+      "description": "Information Technology Services role listed as September 2023 – July 2023 (end date before start date — likely a typo, possibly July 2024)"
+    }
+  ]
+}

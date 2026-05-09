@@ -1,0 +1,51 @@
+{
+  "id": "pair-R063",
+  "split": "validation",
+  "persona": "mid_career",
+  "source_resume": {
+    "id": "ra-00398",
+    "dataset": "resume_atlas",
+    "industry": "arts_media",
+    "seniority": "unknown"
+  },
+  "jd": {
+    "title": "Freelance Food News Writer",
+    "company": "Static Media",
+    "location": "",
+    "experience_years": null,
+    "requirements": [
+      {
+        "text": "Experience with building content in a CMS Familiarity with the Associated Press StylebookHow To Apply:To apply for this job",
+        "type": "must_have"
+      }
+    ],
+    "responsibilities": [],
+    "full_description": "Steady freelance work that pays on time! Static Media is seeking enthusiastic, hard-working freelance food writers to join our teams at Chowhound, Daily Meal, Food Republic, and The Takeout. Ideal candidates have at least three years of experience writing content for print or the web with a focus on food and beverage content. We are looking for creative individuals who are self-sufficient and versatile. These positions are work-from-home with flexible, stable hours.News Writer Responsibilities: Claim news and evergreen article topics from a selection of assignments Pitch relevant and timely news stories related to the site's areas of coverage Research and write 300- to 900-word articles in a custom CMS Write content on a quick turnaround as applicable Follow the guidelines of our style guide, editorial strategy, and publishing standards to uphold quality of contentWhat We Offer: Compensation: $21 per hour Reliable payment: we pay on time, twice a month Flexible scheduling: you choose the days and hours you work Fully remote: you can work from anywhere in the world Excellent exposure: Static Media’s sites receive more than 170 million monthly visitors and our content is syndicated via SmartNews, Apple News+, MSN, and YahooExperience Required: Minimum three years editorial experience writing and/or editing Experience with building content in a CMS Familiarity with the Associated Press StylebookHow To Apply:To apply for this job, please submit the following materials: Your resume A cover letter Three professional writing samples relevant to the content shared on the sites noted aboveApplications missing any of these elements will not be considered.All content on Static Media's sites is written entirely by humans. While we understand AI-written content is becoming prevalent, any articles submitted using AI during the hiring process will not be considered.We believe representation matters at Static Media and strongly encourage people of color, members of the LGBTQ+ community, veterans, those with disabilities, and individuals from other underrepresented groups to apply.Job Type: ContractPay: $21.00 per hourBenefits: Flexible scheduleExperience: professional writing or editing: 3 years (Required)Work Location: Remote"
+  },
+  "expected_output": {
+    "_status": "NEEDS_HUMAN_REVIEW",
+    "_raw_text_preview": "angela chan phone 6047892812 email achansfuca summary highly motivated theatre performance student studying simon fraser university seeking rewarding internship opportunity provide relevant work experience employment praxair canada cylinder cleaner june 2015 august 2015 summer position deshrouded devalved praxair grab go cylinders worked dangerous setting minimal supervision cleaned grab go cylinders valves followed specific cleaning procedures europe bakery deli storefront employee july 2013 ju",
+    "summary": "",
+    "experience": [],
+    "skills": {},
+    "certifications": [],
+    "education": []
+  },
+  "jd_requirements": [
+    "Experience with building content in a CMS Familiarity with the Associated Press StylebookHow To Appl"
+  ],
+  "cloud_skills": [
+    "go"
+  ],
+  "provenance": {
+    "data_source": "real_dataset_raw_text",
+    "jd_source": "github_indeed",
+    "resume_dataset": "resume_atlas",
+    "jd_id": "indeed-fd16afc002a2b09e",
+    "resume_id": "ra-00398",
+    "generated_at": "2026-05-08T08:47:53.883Z",
+    "expected_output_author": "NEEDS_HUMAN_REVIEW",
+    "circularity_risk": "low",
+    "notes": "Resume from real dataset (raw text). JD from real job posting. Expected output EMPTY — needs LLM parsing + human review."
+  }
+}

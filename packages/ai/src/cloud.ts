@@ -10,6 +10,36 @@
  */
 
 import { skillsMatch } from "./skill-matching";
+import { classifySkill } from "./taxonomy";
+
+// ============================================================
+// VOCABULARY UPGRADE TRACKING — "You said → We improved"
+// ============================================================
+
+export interface VocabularyUpgrade {
+  original: string;     // What appeared in the raw CV text
+  upgraded: string;     // What the LLM/parser chose as professional terminology
+  domain: string;
+  category: string;
+}
+
+/**
+ * Tracks vocabulary upgrades made during parsing.
+ * Shown to user during Confirmation Echo so they can review/correct.
+ */
+export interface SkillClassificationReport {
+  upgrades: VocabularyUpgrade[];          // Skills where name was upgraded
+  taxonomyOverrides: Array<{              // Skills where taxonomy overrode LLM classification
+    name: string;
+    llmDomain: string;
+    llmCategory: string;
+    taxonomyDomain: string;
+    taxonomyCategory: string;
+    overrideApplied: boolean;             // false if blocked by domain-coherence guard
+  }>;
+  primaryDomain: string;                  // Detected primary domain of the CV
+  domainDistribution: Map<string, number>;// Count of skills per domain
+}
 
 // ============================================================
 // EVIDENCE — What PROVES a skill/capability/domain
@@ -201,14 +231,13 @@ export function buildCloudFromParsedCV(parsedCV: {
     metrics_mentioned: string[];
     domain: string;
   }>;
-  skills: {
-    languages: string[];
-    frameworks: string[];
-    infrastructure: string[];
-    databases: string[];
-    tools: string[];
-    other: string[];
-  };
+  skills: Array<{
+    name: string;
+    original_text?: string;
+    domain: string;
+    category: string;
+    source: string;
+  }>;
   all_technologies: string[];
   education: Array<{
     institution: string;
@@ -222,33 +251,93 @@ export function buildCloudFromParsedCV(parsedCV: {
     highlights?: string[];
   }>;
   certifications: string[];
-}): ProfileCloud {
+}): { cloud: ProfileCloud; classificationReport: SkillClassificationReport } {
   const nodeMap = new Map<string, CloudNode>();
+  const report: SkillClassificationReport = {
+    upgrades: [],
+    taxonomyOverrides: [],
+    primaryDomain: "general",
+    domainDistribution: new Map(),
+  };
 
-  // Build nodes from skills section (these are "listed only" — weakest evidence)
-  const skillCategories: Array<{ category: string; items: string[] }> = [
-    { category: "language", items: parsedCV.skills.languages },
-    { category: "framework", items: parsedCV.skills.frameworks },
-    { category: "infrastructure", items: parsedCV.skills.infrastructure },
-    { category: "database", items: parsedCV.skills.databases },
-    { category: "tool", items: parsedCV.skills.tools },
-    { category: "other", items: parsedCV.skills.other },
-  ];
-
-  for (const { category, items } of skillCategories) {
-    for (const skillName of items) {
-      const key = skillName.toLowerCase();
-      if (!nodeMap.has(key)) {
-        nodeMap.set(key, {
-          id: generateId(),
-          type: "skill",
-          name: skillName,
-          category,
-          evidence: [],
-          summary: emptySummary(),
-        });
-      }
+  // STEP 1: Detect primary domain from experience (NOT skills section — experience is ground truth)
+  const domainCounts = new Map<string, number>();
+  for (const role of parsedCV.experience) {
+    const d = role.domain.toLowerCase();
+    if (d && d !== "general") {
+      domainCounts.set(d, (domainCounts.get(d) ?? 0) + role.duration_months);
     }
+  }
+  // Primary domain = most months worked
+  let maxMonths = 0;
+  for (const [domain, months] of domainCounts) {
+    if (months > maxMonths) {
+      maxMonths = months;
+      report.primaryDomain = domain;
+    }
+  }
+
+  // STEP 2: Build nodes from classified skills array with domain-coherence guard
+  for (const skill of parsedCV.skills) {
+    const key = skill.name.toLowerCase();
+    if (nodeMap.has(key)) continue;
+
+    // Taxonomy cache/override: curated entries take priority for CATEGORY only
+    const taxonomyResult = classifySkill(skill.name);
+    const hasCuratedEntry = taxonomyResult.domain !== "general" || taxonomyResult.category !== "general";
+
+    let resolvedCategory = skill.category;
+    let resolvedDomain = skill.domain;
+
+    if (hasCuratedEntry) {
+      // DOMAIN-COHERENCE GUARD: taxonomy can refine category, but should NOT
+      // pull a skill away from the CV's primary domain into a different one.
+      // Example: defense person's "risk management" — taxonomy says management/risk_governance,
+      // LLM says defense_aerospace/risk_management. If LLM domain matches primary domain,
+      // keep LLM's classification (it's more contextually aware).
+      const llmMatchesPrimary = skill.domain === report.primaryDomain;
+      const taxonomyMatchesPrimary = taxonomyResult.domain === report.primaryDomain;
+
+      const overrideApplied = !llmMatchesPrimary || taxonomyMatchesPrimary;
+
+      report.taxonomyOverrides.push({
+        name: skill.name,
+        llmDomain: skill.domain,
+        llmCategory: skill.category,
+        taxonomyDomain: taxonomyResult.domain,
+        taxonomyCategory: taxonomyResult.category,
+        overrideApplied,
+      });
+
+      if (overrideApplied) {
+        resolvedCategory = taxonomyResult.category;
+        resolvedDomain = taxonomyResult.domain;
+      }
+      // else: LLM classified this skill under the primary domain, and taxonomy wants to
+      // move it elsewhere — block the override to preserve domain coherence.
+    }
+
+    // Track vocabulary upgrades (original_text → name)
+    if (skill.original_text && skill.original_text.toLowerCase() !== skill.name.toLowerCase()) {
+      report.upgrades.push({
+        original: skill.original_text,
+        upgraded: skill.name,
+        domain: resolvedDomain,
+        category: resolvedCategory,
+      });
+    }
+
+    // Track domain distribution
+    report.domainDistribution.set(resolvedDomain, (report.domainDistribution.get(resolvedDomain) ?? 0) + 1);
+
+    nodeMap.set(key, {
+      id: generateId(),
+      type: "skill",
+      name: skill.name,
+      category: resolvedCategory,
+      evidence: [],
+      summary: emptySummary(),
+    });
   }
 
   // Enrich nodes with role evidence
@@ -283,10 +372,18 @@ export function buildCloudFromParsedCV(parsedCV: {
       });
     }
 
-    // Add metrics as impact evidence to related skills
+    // Add metrics as impact evidence — only to skills explicitly mentioned in the metric text,
+    // or if no skill is mentioned, attach to the first skill in the role (avoids inflation).
     for (const metric of role.metrics_mentioned) {
-      // Attach impact to all skills used in this role
-      for (const tech of role.technologies_used) {
+      const metricLower = metric.toLowerCase();
+      const matchedSkills = role.technologies_used.filter(tech =>
+        metricLower.includes(tech.toLowerCase()) || skillsMatch(tech, metricLower)
+      );
+
+      // If metric doesn't name a specific skill, attach to first tech only (conservative)
+      const targets = matchedSkills.length > 0 ? matchedSkills : [role.technologies_used[0]].filter(Boolean);
+
+      for (const tech of targets) {
         const key = tech.toLowerCase();
         const node = nodeMap.get(key);
         if (node) {
@@ -356,7 +453,7 @@ export function buildCloudFromParsedCV(parsedCV: {
   // Build achievements from metrics
   const achievements = extractAchievements(parsedCV.experience);
 
-  return {
+  const cloud: ProfileCloud = {
     user_id: "", // set by caller
     nodes: Array.from(nodeMap.values()),
     achievements,
@@ -384,6 +481,8 @@ export function buildCloudFromParsedCV(parsedCV: {
     languages_spoken: [],
     last_updated: new Date().toISOString(),
   };
+
+  return { cloud, classificationReport: report };
 }
 
 // ============================================================

@@ -9,9 +9,9 @@
  * 4. GENERATE CV (AI) — Cloud-enriched, evidence-backed tailoring
  *
  * Model selection is driven by Cloud maturity (the master signal):
- *   - Thin Cloud → Sonnet for everything (can't afford mistakes)
- *   - Rich Cloud → Haiku (known territory, save cost)
- *   - User escalation → Sonnet regardless
+ *   - Thin Cloud → quality tier for everything (can't afford mistakes)
+ *   - Rich Cloud → fast tier (known territory, save cost)
+ *   - User escalation → quality tier regardless
  *
  * This replaces analyzeSuitability() which bypasses the Cloud.
  */
@@ -47,7 +47,7 @@ export interface AnalysisOptions {
  * Analyze a JD against an existing Profile Cloud.
  * This is the primary analysis path once a user has uploaded their CV.
  *
- * Model selection: Cloud maturity × JD complexity → Haiku or Sonnet.
+ * Model selection: Cloud maturity × JD complexity → fast tier or quality tier.
  */
 export async function analyzeWithCloud(
   cloud: ProfileCloud,
@@ -85,12 +85,12 @@ export async function analyzeWithCloud(
 /**
  * Quick analysis — for first-time users who haven't built a Cloud yet.
  * Builds a temporary Cloud from parsed CV, then runs the full pipeline.
- * Cloud will be "thin" → Sonnet used automatically.
+ * Cloud will be "thin" → quality tier used automatically.
  */
 export async function analyzeQuick(
   parsedCV: ParsedCV,
   jdText: string
 ): Promise<CloudAnalysisResult> {
-  const cloud = buildCloudFromParsedCV(parsedCV);
+  const { cloud } = buildCloudFromParsedCV(parsedCV);
   return analyzeWithCloud(cloud, jdText);
 }

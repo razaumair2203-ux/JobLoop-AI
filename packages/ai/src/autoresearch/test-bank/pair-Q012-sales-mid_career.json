@@ -1,0 +1,200 @@
+{
+  "id": "pair-Q012",
+  "split": "train",
+  "persona": "mid_career",
+  "source_resume": {
+    "id": "snb-28377361",
+    "dataset": "snehaanbhawal_livecareer",
+    "industry": "sales",
+    "seniority": "mid"
+  },
+  "jd": {
+    "title": "Sales Representative - Uniform",
+    "company": "Cintas",
+    "location": "",
+    "experience_years": 1,
+    "requirements": [
+      {
+        "text": "Minimum of 1 year outside sales experience or successful completion of a Cintas sales training program",
+        "type": "must_have"
+      },
+      {
+        "text": "Valid driver's license",
+        "type": "must_have"
+      },
+      {
+        "text": "High School Diploma/GED; Bachelor's Degree preferred",
+        "type": "must_have"
+      },
+      {
+        "text": "New business-to-business (B2B) sales experience",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "Hunter sales mentality - goal driven and self-motivated",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "Proficiency with Microsoft Office (Word, Excel, PowerPoint, Outlook), intranet/internet and Contact Management System",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "Ability to transport samples of products for presentations",
+        "type": "must_have"
+      },
+      {
+        "text": "Ability to prospect, cold call, set appointments with prospects, and present programs",
+        "type": "must_have"
+      }
+    ],
+    "responsibilities": [
+      "Generating revenue and meeting sales targets",
+      "Developing and qualifying leads within respective territory to drive additional sales opportunities through cold-calling and lead generation campaigns",
+      "Gathering and utilizing business intelligence on prospects to support sales calls, product presentations and driving new business",
+      "Prospecting, cold calling, setting appointments with prospects, presenting programs and meeting a sales quota"
+    ],
+    "full_description": "Requisition Number: 170943\n\nJob Description\n\nCintas is seeking a Sales Representative - Uniform to focus on new business-to-business account development in our Uniform Division. Responsibilities include prospecting, cold calling, setting appointments with prospects, presenting programs and meeting a sales quota. Sales Representatives will also transport samples of products for presentations. Cintas provides a thorough sales training program, which includes product knowledge, mentorship, sales process and business development strategies.\n\nKey Responsibilities\n\nGenerating revenue and meeting sales targetsDeveloping and qualifying leads within respective territory to drive additional sales opportunities through cold-calling and lead generation campaignsGathering and utilizing business intelligence on prospects to support sales calls, product presentations and driving new business\n\nOur Sales Representatives Enjoy\n\nSolid base salary and commission potentialExtensive car package (lease/gas/insurance/maintenance allowance)Monthly/Quarterly performance bonuses & incentivesComprehensive 12-week sales training programMentorship programTablet & AirCardAnnual recognition events\n\nSkills/Qualifications\n\nRequired\n\nMinimum of 1 year outside sales experience or successful completion of a Cintas sales training programValid driver's licenseHigh School Diploma/GED; Bachelor's Degree preferred\n\nPreferred\n\nNew business-to-business (B2B) sales experienceHunter sales mentality - goal driven and self-motivatedProficiency with Microsoft Office (Word, Excel, PowerPoint, Outlook), intranet/internet and Contact Management System\n\nCintas offers comprehensive and competitive medical, dental and vision benefits, featuring employee health care premiums that are 30% lower than the national average for our industry. One of our medical plan options is even offered at zero cost to our partners.\n\nAdditionally, Our Employee-partners Enjoy\n\n Competitive Pay 401(k)/Profit Sharing/Employee Stock Ownership Program Disability and Life Insurance Packages Paid Time Off and Holidays Career Advancement Opportunities\n\nCompensation\n\nThis compensation information is a good faith estimate and provided in accordance with California local city or state law. Similar positions located outside of this jurisdiction may not necessarily receive the same compensation.\n\nThe total compensation generally ranges between $70,000.00/Year - $155,000.00/Year and is a combination of base salary plus monthly earned commissions. The range is an estimate based on an applicant’s skills and experience.\n\nHeadquartered in Cincinnati, Cintas is a publicly held company traded over the Nasdaq Global Select Market under the symbol CTAS and is a component of both the Standard & Poor’s 500 Index and Nasdaq-100 Index.\n\nCintas Corporation helps more than 900,000 businesses of all types and sizes get READY™ to open their doors with confidence every day by providing a wide range of products and services that enhance our customers’ image and help keep their facilities and employees clean, safe and looking their best. With products and services including uniforms, mats, mops, restroom supplies, first aid and safety products, fire extinguishers and testing, and safety and compliance training, Cintas helps customers get Ready for the Workday®.\n\nTo support our growth across North America, we’re seeking driven professionals with ambition to move up within our company. Our professional culture, our dedication to our employee-partners and limitless career opportunities—these are just a few benefits we’re proud to offer. Our employee-partners know every job is critical, and that teamwork drives innovation. Let’s talk about how you’ll fit into our team and how your hard work will be recognized through competitive pay, world-class benefits and ongoing career development. Are you Ready™ for limitless opportunities at Cintas?\n\nCintas Corporation is an EEO/Affirmative Action Employer and will make all employment-related decisions without regard to race, color, religion, sex, sexual orientation, gender identity, national origin, disability or protected veteran status.\n\nJob Category: Sales\n\nOrganization: Rental\n\nEmployee Status: Regular\n\nSchedule: Full Time\n\nShift: 1st Shift"
+  },
+  "expected_output": {
+    "summary": "Food service worker with fast food, retail and customer service experience, trained in food safety and handling, with a professional and reliable approach to team work and customer service.",
+    "experience": [
+      {
+        "company": "Company Name",
+        "title": "Sales Associate",
+        "start_date": "08/2013",
+        "end_date": "01/2014",
+        "bullets": [
+          "Computed sales prices, total purchases and processed payments",
+          "Described merchandise and explained operation of merchandise to customers",
+          "Maintained knowledge of current promotions, policies regarding payment and exchanges, and security practices",
+          "Placed special orders and called other stores to find desired items",
+          "Operated a cash register to process cash, check and credit card transactions",
+          "Guided customers in choosing items that reflected personal style and shape",
+          "Administered all point of sale opening and closing procedures",
+          "Explained information about the quality, value and style of products to influence customer buying decisions",
+          "Replenished floor stock and processed shipments to ensure product availability for customers"
+        ]
+      },
+      {
+        "company": "Company Name",
+        "title": "Barista",
+        "start_date": "02/2013",
+        "end_date": "07/2013",
+        "bullets": [
+          "Took necessary steps to meet customer needs and effectively resolve food or service issues",
+          "Correctly received orders, processed payments and responded appropriately to guest concerns",
+          "Served fresh, hot food with a smile in a timely manner",
+          "Communicated clearly and positively with co-workers and management",
+          "Cut and chopped food items and cooked on a grill or in fryers",
+          "Packaged menu items into bags or trays and placed drink orders into carriers",
+          "Accurately measured ingredients required for specific food items",
+          "Prepared and served beverages such as coffee, tea and fountain drinks",
+          "Mastered Point of Sale (POS) computer system for automated order taking",
+          "Carefully maintained sanitation, health and safety standards in all work areas",
+          "Frequently washed and sanitized hands, food areas and food preparation tools",
+          "Performed general maintenance duties, including mopping floors, washing dishes, wiping counter tops and emptying grease traps",
+          "Followed all established restaurant practices and procedures",
+          "Worked well with teammates and openly invited coaching from the management team",
+          "Took initiative to find extra tasks when scheduled duties were completed",
+          "Quickly unloaded product shipments and stocked freezers",
+          "Assisted management with monthly inventory control and weekly stock ordering",
+          "Prepared items according to written or verbal orders, working on several different orders simultaneously"
+        ]
+      },
+      {
+        "company": "Company Name",
+        "title": "Crew Member",
+        "start_date": "08/2014",
+        "end_date": "11/2014",
+        "bullets": [
+          "Demonstrated integrity and honesty while interacting with guests, team members and managers",
+          "Operated the drive-through window and sales register quickly and efficiently",
+          "Greeted customers and provided excellent customer service",
+          "Maintained high standards of customer service during high-volume, fast-paced operations",
+          "Prepared fountain drinks and ice cream items",
+          "Prepared all food orders within a 2-3 minute time frame",
+          "Assembled food orders while maintaining appropriate portion control",
+          "Prepared specialty foods such as pizzas and sandwiches, following specific methods that required quick prep time",
+          "Prepared a variety of foods according to customers' orders or supervisors' instructions, following approved procedures",
+          "Handled currency and credit transactions quickly and accurately",
+          "Placed food trays over food warmers for immediate service or stored them in refrigerated storage cabinets",
+          "Stored food in designated containers and storage areas to prevent spoilage or cross-contamination",
+          "Maintained clean and safe environment, including in the kitchen, bathrooms, building exterior, parking lot, dumpster and sidewalk",
+          "Reported to all shifts wearing a neat, clean and unwrinkled uniform",
+          "Reported to each shift on time and ready to work",
+          "Diligently restocked work stations and display cases",
+          "Cooked and packaged large batches of food that were prepared to order or kept hot until needed",
+          "Prepped items for later use to save staff time during busy hours"
+        ]
+      },
+      {
+        "company": "Company Name",
+        "title": "Sales Associate",
+        "start_date": "12/2012",
+        "end_date": "01/2013",
+        "bullets": [
+          "Greeted customers in a timely fashion while quickly determining their needs",
+          "Recommended merchandise to customers based on their needs and preferences",
+          "Responded to customer questions and requests in a prompt and efficient manner",
+          "Completed all cleaning, stocking and organizing tasks in assigned sales area",
+          "Organized racks and shelves to maintain the visual appeal of the store",
+          "Stocked shelves and supplies and organized displays",
+          "Checked out purchases"
+        ]
+      }
+    ],
+    "skills": {
+      "Technical": [
+        "cash register",
+        "POS",
+        "MS Office"
+      ],
+      "Soft Skills": [
+        "oral communication",
+        "Excellent communication",
+        "Listening",
+        "coaching"
+      ],
+      "Domain": [
+        "food safety",
+        "inventory control",
+        "safety"
+      ]
+    },
+    "certifications": [],
+    "education": [
+      "High School Diploma, Washtenaw Technical Middle College, Current"
+    ]
+  },
+  "jd_requirements": [
+    "Minimum of 1 year outside sales experience or successful completion of a Cintas sales training program",
+    "Valid driver's license",
+    "High School Diploma/GED; Bachelor's Degree preferred",
+    "Ability to transport samples of products for presentations",
+    "Ability to prospect, cold call, set appointments with prospects, and present programs"
+  ],
+  "cloud_skills": [
+    "cash register",
+    "POS",
+    "MS Office",
+    "oral communication",
+    "Excellent communication",
+    "Listening",
+    "coaching",
+    "food safety",
+    "inventory control",
+    "safety"
+  ],
+  "provenance": {
+    "cv_source": "snehaanbhawal/resume-dataset (LiveCareer, CC0)",
+    "jd_source": "R-series (Kaggle LinkedIn, real postings)",
+    "cv_dataset_id": 28377361,
+    "jd_pair_id": "pair-R024",
+    "expected_output_author": "NIM/meta/llama-3.3-70b-instruct",
+    "generated_at": "2026-05-08T15:29:49.193Z",
+    "circularity_risk": "medium-low",
+    "circularity_notes": "Real CV text + real JD text. Expected output is LLM-parsed extraction from real text (not invention). 4/8 scorecard checks structurally sound regardless.",
+    "needs_human_review": true
+  },
+  "raw_cv_text": "         SALES ASSOCIATE       Professional Summary    Food service worker with fast food, retail and customer service experience. Trained in food safety and handling. Highlights Neat, clean and professional appearance Delivers exceptional customer service Reliable team worker      Skills                    Work History      Sales Associate     08/2013  \n                                to   01/2014      Company Name   –   City  ,\n                              State      Computed sales prices, total purchases and processed payments.  Described merchandise and explain operation of merchandise to customers.  Maintained knowledge of current promotions, policies regarding payment and exchanges, and security practices.  Placed special orders and called other stores to find desired items.  Operated a cash register to process cash, check and credit card transactions.  Guided customers in choosing items that reflected personal style and shape.  Administered all point of sale opening and closing procedures.  Explained information about the quality, value and style of products to Influence customer buying decisions.  Replenished floor stock and processed shipments to ensure product availability for customers.         Barista     02/2013  \n                                to   07/2013      Company Name   –   City  ,\n                              State      Took necessary steps to meet customer needs and effectively resolve food or service issues.  Correctly received orders, processed payments and responded appropriately to guest concerns.  Served fresh, hot food with a smile in a timely manner.  Communicated clearly and positively with co-workers and management.  Cut and chopped food items and cooked on a grill or in fryers.  Packaged menu items into bags or trays and placed drink orders into carriers.  Accurately measured ingredients required for specific food items.  Prepared and served beverages such as coffee, tea and fountain drinks.  Mastered Point of Sale (POS) computer system for automated order taking.  Carefully maintained sanitation, health and safety standards in all work areas.  Frequently washed and sanitized hands, food areas and food preparation tools.  Performed general maintenance duties, including mopping floors, washing dishes, wiping counter tops and emptying grease traps.  Followed all established restaurant practices and procedures.  Worked well with teammates and openly invited coaching from the management team.  Took initiative to find extra tasks when scheduled duties were completed.  Quickly unloaded product shipments and stocked freezers.  Assisted management with monthly inventory control and weekly stock ordering.  Prepared items according to written or verbal orders, working on several different orders simultaneously.         Crew Member     08/2014  \n                                to   11/2014      Company Name   –   City  ,\n                              State      Demonstrated integrity and honesty while interacting with guests, team members and managers.  Operated the drive-through window and sales register quickly and efficiently.  Greeted customers and provided excellent customer service.  Maintained high standards of customer service during high-volume, fast-paced operations.  Prepared fountain drinks and ice cream items.  Prepared all food orders within a 2-3 minute time frame.  Assembled food orders while maintaining appropriate portion control.  Prepared specialty foods such as pizzas and sandwiches, following specific methods that required quick prep time.  Prepared a variety of foods according to customers' orders or supervisors' instructions, following approved procedures.  Handled currency and credit transactions quickly and accurately.  Placed food trays over food warmers for immediate service or stored them in refrigerated storage cabinets.  Stored food in designated containers and storage areas to prevent spoilage or cross-contamination.  Maintained clean and safe environment, including in the kitchen, bathrooms, building exterior, parking lot, dumpster and sidewalk.  Reported to all shifts wearing a neat, clean and unwrinkled uniform.  Reported to each shift on time and ready to work.  Diligently restocked work stations and display cases.  Cooked and packaged large batches of food that were prepared to order or kept hot until needed.  Prepped items for later use to save staff time during busy hours.         Sales Associate     12/2012  \n                                to   01/2013      Company Name   –   City  ,\n                              State      Greeted customers in a timely fashion while quickly determining their needs.  Recommended merchandise to customers based on their needs and preferences.  Responded to customer questions and requests in a prompt and efficient manner.  Completed all cleaning, stocking and organizing tasks in assigned sales area.  Organized racks and shelves to maintain the visual appeal of the store.  Stocked shelves and supplies and organized displays.  Check out purchases         Education      High School Diploma  :      Current     Washtenaw Technical Middle College    -\n                          City  ,\n                          State       Special program where I finish my last two years of high school and get my associates degree at the the same time.       Skills    cash register, closing, coaching, oral communication, Excellent communication, credit, Inventory control, Listening, MS Office, organizer, policies, POS, quality, safety, sales, tops, Written      Additional Information      Community Service\nSpringhill Teen Service Teen, 4 weeks of volunteer landscaping\nLivingston Human Society\n2|42 Community Church, Mission Trip to Native American reservation, working in the children's area     "
+}

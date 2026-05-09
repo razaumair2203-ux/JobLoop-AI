@@ -1,0 +1,175 @@
+{
+  "id": "pair-Q004",
+  "split": "train",
+  "persona": "mid_career",
+  "source_resume": {
+    "id": "snb-28035460",
+    "dataset": "snehaanbhawal_livecareer",
+    "industry": "information_technology",
+    "seniority": "mid"
+  },
+  "jd": {
+    "title": "Python Developer (Python 3.0 or above, Django, Flask, Angular/React/Vue/JavaScript, Python Libraries (Panda/NumPy/Sci-kit), SQL and PL/SQL)",
+    "company": "Pyramid Consulting, Inc",
+    "location": "",
+    "experience_years": 7,
+    "requirements": [
+      {
+        "text": "Python 3.0 or above",
+        "type": "must_have"
+      },
+      {
+        "text": "Django",
+        "type": "must_have"
+      },
+      {
+        "text": "Flask",
+        "type": "must_have"
+      },
+      {
+        "text": "Angular/React/Vue/JavaScript",
+        "type": "must_have"
+      },
+      {
+        "text": "Python Libraries (Panda/NumPy/Sci-kit)",
+        "type": "must_have"
+      },
+      {
+        "text": "SQL and PL/SQL",
+        "type": "must_have"
+      },
+      {
+        "text": "Banking/Financial Experience",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "Trading/Marketing Experience",
+        "type": "nice_to_have"
+      }
+    ],
+    "responsibilities": [
+      "Development in Python Programming",
+      "Web application development",
+      "Strong development and programming skills",
+      "Good communication, analytical and problem-solving skills"
+    ],
+    "full_description": "Immediate need for a talented Python Developer (Python 3.0 or above, Django, Flask, Angular/React/Vue/JavaScript, Python Libraries (Panda/NumPy/Sci-kit), SQL and PL/SQL). This is a Fulltime opportunity with long-term potential and is located in Charlotte, NC(Hybrid). Please review the job description below and contact me ASAP if you are interested.  No of Positions: 20 Job Title/Role: Python Developer (Python 3.0 or above, Django, Flask, Angular/React/Vue/JavaScript, Python Libraries (Panda/NumPy/Sci-kit), SQL and PL/SQL) Work Location: Hybrid Work (3 days from office and 2 days from home)Charlotte, NCJersey City, NJNew York, NY Open to Relocate candidates can also apply. Required Skills:Python 3.0 or above, Django, Flask, Angular/React/Vue/JavaScript, Python Libraries (Panda/NumPy/Sci-kit), SQL and PL/SQL Key Requirements and Technology Experience: \nMust have Overall 7+ years of IT industry experience.Must have minimum 5+ years of development experience in Python Programming.Must have good Python/OOPs programming skills (Python 3.0 or above).Must have experience with Django, Flask.Must have experience with web application development (Angular/React/Vue/JavaScript).Must have experience with Python Libraries (For eg; NumPy/Panda/Sci-kit).Must have strong experience with SQL and PL/SQL.Must have strong development and programming skills.Must have good communication, analytical and problem-solving skills. Preferred:Banking/Financial ExperienceTrading/Marketing Experience COMPENSATION: The base pay for this position ranges from $90,000 to $130,000. Pay is based on a number of factors including market location and may vary depending on job-related knowledge, skills, and experience. Dependent on the position offered, commission, bonus, and other forms of compensation may be provided as part of a total compensation package.\nEmployee benefits include, but are not limited to, health insurance (medical, dental, vision), unlimited vacation and 401(k) plan.\nABOUT PYRAMID CONSULTING, Inc. – as one of the largest minorities and privately owned staffing firms in the U.S., Pyramid Consulting focuses on providing our clients with high-quality technical professionals and services to support their business and IT initiatives. The success of our clients is facilitated through our ability to provide full-spectrum support via our development centers – from a single consultant under their management, at their site, to full turnkey solutions onsite and offshore.\nPyramid Consulting, Inc. is an Equal Employment Opportunity Employer. All applicants hired will be subject to a background check and drug screening."
+  },
+  "expected_output": {
+    "summary": "An accomplished Chemical Engineer and IT Professional, with 10+ years of International work experience in Chemical Engineer Development. Skilled in research and data analysis and experienced in solving complex problems. Seeking to attain a position where I can use my experience in Chemical Engineering and educational background in IT.",
+    "experience": [
+      {
+        "company": "Company Name – State",
+        "title": "Information Technology Specialist",
+        "start_date": "08/2015",
+        "end_date": "05/2020",
+        "bullets": [
+          "Build, implement or support electronic health records and other systems that store patient's data",
+          "Assisted in network management and software development",
+          "Took periodic review of set standards and database"
+        ]
+      },
+      {
+        "company": "National Board for Technology Incubation, Abuja Nigeria (Federal Ministry of Science and Technology)",
+        "title": "Principal Chemical Engineer / Information Technology Specialist",
+        "start_date": "10/2005",
+        "end_date": "06/2015",
+        "bullets": [
+          "Monitored, implemented, and maintained IT systems",
+          "Produced technical reports, analyzed data, and built databases",
+          "Facilitated discussions to resolve a safety concern with a key process monitoring instrument",
+          "Planned and designed technology related activities aimed at nurturing the growth of innovative businesses",
+          "Provided technical support and capacity building in science and technology",
+          "Collaborated with market development on new IT technologies for industrial and consumer groups"
+        ]
+      },
+      {
+        "company": "Company Name",
+        "title": "Facility Engineer Intern",
+        "start_date": "10/2002",
+        "end_date": "09/2003",
+        "bullets": [
+          "Analyzed process data from newly revamped furnace to improve efficiency of long-term performance monitoring plan by over 50%",
+          "Developed and maintained of engineering/operating standards through periodic review",
+          "Improved 40% Reliability/uptime performance and cost reduction efforts for the production units",
+          "Managed materials through preventive/corrective maintenance of products"
+        ]
+      },
+      {
+        "company": "Company Name",
+        "title": "Engineer Intern",
+        "start_date": "08/2000",
+        "end_date": "01/2001",
+        "bullets": [
+          "Produce a piping and instrumentation diagram of the pumphouse, cooling tower and condensate lines",
+          "Led weekly group meetings with interns and management for future improvements",
+          "Monitored, troubleshoot, and observed operations and processes for quality, damages and /or defects"
+        ]
+      }
+    ],
+    "skills": {
+      "Technical": [
+        "Microsoft Products",
+        "Databases",
+        "Database",
+        "Electronic health records"
+      ],
+      "Soft Skills": [
+        "Excellent Interpersonal Skills",
+        "Excellent Communication Skills",
+        "Problem Solving Skills",
+        "Administrative and organizational skills"
+      ],
+      "Domain": [
+        "Chemical Engineering",
+        "IT"
+      ],
+      "Management": [
+        "Cost reduction",
+        "Risk analysis and mitigation"
+      ]
+    },
+    "certifications": [
+      "Licensed Registered Engineer Council for regulation of Engineering in Nigeria (COREN)"
+    ],
+    "education": [
+      "Master of Science : Chemical Engineering, University of Lagos, 11/2005",
+      "Master of Science Degree : Computer Science and Information Technology, University of the District of Columbia",
+      "Bachelor of Engineering : Chemical Engineering, Federal University of Technology, 09/2001"
+    ]
+  },
+  "jd_requirements": [
+    "Python 3.0 or above",
+    "Django",
+    "Flask",
+    "Angular/React/Vue/JavaScript",
+    "Python Libraries (Panda/NumPy/Sci-kit)",
+    "SQL and PL/SQL"
+  ],
+  "cloud_skills": [
+    "Microsoft Products",
+    "Databases",
+    "Database",
+    "Electronic health records",
+    "Excellent Interpersonal Skills",
+    "Excellent Communication Skills",
+    "Problem Solving Skills",
+    "Administrative and organizational skills",
+    "Chemical Engineering",
+    "IT",
+    "Cost reduction",
+    "Risk analysis and mitigation"
+  ],
+  "provenance": {
+    "cv_source": "snehaanbhawal/resume-dataset (LiveCareer, CC0)",
+    "jd_source": "R-series (Kaggle LinkedIn, real postings)",
+    "cv_dataset_id": 28035460,
+    "jd_pair_id": "pair-R009",
+    "expected_output_author": "NIM/meta/llama-3.3-70b-instruct",
+    "generated_at": "2026-05-08T15:23:17.849Z",
+    "circularity_risk": "medium-low",
+    "circularity_notes": "Real CV text + real JD text. Expected output is LLM-parsed extraction from real text (not invention). 4/8 scorecard checks structurally sound regardless.",
+    "needs_human_review": true
+  },
+  "raw_cv_text": "         INFORMATION TECHNOLOGY SPECIALIST           Experience      Information Technology Specialist  ,     08/2015   to   05/2020     Company Name   –     State      Build, implement or support electronic health records and other systems that store patient's data.  Assisted in network management and software development.  Took periodic review of set standards and database.         Principal Chemical Engineer / Information Technology Specialist  ,     10/2005   to   06/2015      National Board for Technology Incubation, Abuja Nigeria \n(Federal Ministry of Science and Technology).  Monitored, implemented, and maintained IT systems.  Produced technical reports, analyzed data, and built databases.  Facilitated discussions to resolve a safety concern with a key process monitoring instrument.  Planned and designed technology related activities aimed at nurturing the growth of innovative businesses.  Provided technical support and capacity building in science and technology.  Collaborated with market development on new IT technologies for industrial and consumer groups.         Facility Engineer Intern  ,     10/2002   to   09/2003     Company Name          Analyzed process data from newly revamped furnace to improve efficiency of long-term performance monitoring plan by over 50%.  Developed and maintained of engineering/operating standards through periodic review.  Improved 40% Reliability/uptime performance and cost reduction efforts for the production units.  Managed materials through preventive/corrective maintenance of products.         Engineer Intern  ,     08/2000   to   01/2001     Company Name          Produce a piping and instrumentation diagram of the pumphouse, cooling tower and condensate lines.  Led weekly group meetings with interns and management for future improvements.  Monitored, troubleshoot, and observed operations and processes for quality, damages and /or defects.         Work History      Information Technology Specialist  ,   08/2015   to   05/2020     Company Name   –     State      Build, implement or support electronic health records and other systems that store patient's data.  Assisted in network management and software development.  Took periodic review of set standards and database.         Principal Chemical Engineer / Information Technology Specialist  ,   10/2005   to   06/2015      National Board for Technology Incubation, Abuja Nigeria \n(Federal Ministry of Science and Technology).  Monitored, implemented, and maintained IT systems.  Produced technical reports, analyzed data, and built databases.  Facilitated discussions to resolve a safety concern with a key process monitoring instrument.  Planned and designed technology related activities aimed at nurturing the growth of innovative businesses.  Provided technical support and capacity building in science and technology.  Collaborated with market development on new IT technologies for industrial and consumer groups.         Facility Engineer Intern  ,   10/2002   to   09/2003     Company Name          Analyzed process data from newly revamped furnace to improve efficiency of long-term performance monitoring plan by over 50%.  Developed and maintained of engineering/operating standards through periodic review.  Improved 40% Reliability/uptime performance and cost reduction efforts for the production units.  Managed materials through preventive/corrective maintenance of products.         Engineer Intern  ,   08/2000   to   01/2001     Company Name          Produce a piping and instrumentation diagram of the pumphouse, cooling tower and condensate lines.  Led weekly group meetings with interns and management for future improvements.  Monitored, troubleshoot, and observed operations and processes for quality, damages and /or defects.         Education      Master of Science  :   Chemical Engineering  ,   11/2005     University of Lagos   -   City             Master of Science Degree  :   Computer Science and Information Technology      University of the District of Columbia   -   City             Bachelor of Engineering  :   Chemical Engineering  ,   09/2001     Federal University of Technology   -     State            Data Communication Network, Course\nTitle: Ample view towards 5g mobile network  The paper focused on the future and technology of the 5G network.         University of the District of Columbia   -     State           Information Security, Course        University of the District of Columbia   -     State     Tittle: An overview of cloud software-as- a service (SaaS) computing model.  The paper focused on SaaS implementation, security, and its challenges.        Summary    CAREER OBJECTIVES \n An accomplished Chemical Engineer and IT Professional, with 10+ years of International work experience in Chemical Engineer Development. Skilled in research and data analysis and experienced in solving complex problems. Seeking to attain a position where I can use my experience in Chemical Engineering and educational background in IT.      Affiliations    Information Technology Specialist University of the District of Columbia, Workforce development 2018 \nLicensed Registered Engineer Council for regulation of Engineering in Nigeria COREN) Abuja, Nigeria 2006 \n\"Effective Research/Planning, Organizational Goal Implementation and Sustainable Monitoring Capacity 2014\n Building Programme\", Richflood International Limited, Abuja, Nigeria \n\"Project Plans and Implementation Plan Gap Management\", Supreme Management Training and 2012 \n Consultancy Services Limited Johannesburg, South Africa.      Highlights          Microsoft Products.  Highly proficient in Research and Development model.  Excellent Interpersonal Skills  Administrative and organizational skills  Excellent Communication Skills  Problem Solving Skills  International experience  Security analysis  Risk analysis and mitigation  Administrative  Excellent Interpersonal Skills  Excellent Communication  Cost reduction  Databases      Database  Electronic health records  Information Security  Market development  Materials  Meetings  Microsoft Products  Network management  Network  Organizational skills  Problem Solving Skills  Processes  Quality  Research  Risk analysis  Safety  Security analysis  Software development  Technical support  Troubleshoot  View            Skills     Administrative, Excellent Interpersonal Skills, Excellent Communication, cost reduction, databases, database, electronic health records, Information Security, market development, materials, meetings, Microsoft Products, network management, Network, organizational skills, Problem Solving Skills, processes, quality, Research, Risk analysis, safety, Security analysis, software development, technical support, troubleshoot, view    "
+}

@@ -1,0 +1,69 @@
+{
+  "id": "pair-R011",
+  "split": "train",
+  "persona": "senior",
+  "source_resume": {
+    "id": "ra-05754",
+    "dataset": "resume_atlas",
+    "industry": "finance",
+    "seniority": "senior"
+  },
+  "jd": {
+    "title": "Grants & Contract Accountant",
+    "company": "American Bird Conservancy",
+    "location": "",
+    "experience_years": null,
+    "requirements": [
+      {
+        "text": "experience in finance and grants management",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience of managing financial reporting for grants and contracts",
+        "type": "must_have"
+      },
+      {
+        "text": "Knowledge of measuring financial performance with Actual v Budget monitoring",
+        "type": "must_have"
+      },
+      {
+        "text": "knowledge of federal and non-federal regulations",
+        "type": "must_have"
+      },
+      {
+        "text": "Proficiency with all Microsoft Office programs",
+        "type": "must_have"
+      }
+    ],
+    "responsibilities": [],
+    "full_description": "Position Summary:Title:  Grants & Contract AccountantSupervisor: Grants and Finance ManagerLocation: RemoteContract: Full-timeSalary: Estimated at $75,000; Based on experienceSubmission Deadline: August 30, 2024 *Applications will be reviewed on a rolling basis.Introduction:The mission of American Bird Conservancy (ABC) is to conserve birds and their habitats – the places birds need to thrive – across the Americas. We are a growing group of 135+ dedicated staff, located across the United States and with a network of partners from Canada to Chile. Over 30 years, we have delivered an expanding array of results aimed at preventing bird species extinctions and reversing declines that are reducing populations of nearly all bird groups. Our work is guided by both science and our principles, which include a commitment to Justice, Equity, Diversity, and Inclusion.This position is one of 6 similar positions in ABC. ABC has grown significant over recent years and is supported by 35,000 individuals providing regular financial contributions, as well as by a range of Foundations, Organization and Federal and State grant making bodies. The Grant and Contract accountants manage the financial reporting and analysis for Federal and other bodies and are responsible for: Obtaining transaction data from our accounting system Financial management of grants Working closely with Development and Program colleagues to understand financial performance and budget for new projects Building and deliver appropriate financial reportsIn 2024, we moved from our current Financial Edge system to NetSuite and have implemented an ambitious combined finance and grant management system. The accounting team will take an active role in building good quality reporting in this new system.A team player and a great communicator, the individual will work with a range of accounting and non-accounting staff on financial issues.Primary Duties:1. Verify financial data in Netsuite for legitimacy, accuracy and allowability of charges. Create financial performance reports using data from our systems for multiple grants from Federal, State and other bodies2. Review and analyze financial performance v budgetary line items for material deviation.3. Work with Program and development teams to understand financial performance and understand key trends. Explain variances.4. Prepare and submit Financial Reports for federal, other governmental, and privately sponsored projects. Create invoices to be sent to donors. Manage various processes for receipt of funds from donors. Ensure compliance with all federal and state grant regulations.5. Coordinate across divisions and review submitted documents and submission of timely reports in accordance with sponsor financial reporting specifications.6. Review critical award information set up in the financial system.7. Monitor subawards and the financial performance of partners. Ensure payments are made in accordance with agreement.8. Assist with external audit reviews and provide financial and project information for awards within assigned areas.9. Assist in the preparation of annual budgets.10. Other duties as assigned.Position Requirements: 1. A bachelor’s degree in finance, accounting, business or related field and at least two to three years of work experience in finance and grants management.2. Experience extracting data from accounting ledgers.3. Experience of managing financial reporting for grants and contracts. Knowledge of measuring financial performance with Actual v Budget monitoring.4. Some knowledge of federal and non-federal regulations, Uniform guidance, agreement types, and the terms and conditions of sub-awards is an advantage.5. Proficiency with all Microsoft Office programs. Good understanding of Microsoft Excel with the ability to create simple, effective spreadsheets, summarizing key trends and well understood by non-finance staff6. Ability to work independently, efficiently, accurately, and within deadlines.7. Ability to work with a wide range of people at all levels.8. Good organizational, communication and administrative skills.9. Background screening required.10. Authorized U.S. Citizens, or Permanent ResidentBenefits: Benefits include medical, dental, and 403(b) plan. Paid vacation days, holidays, and sick leave. Approved equipment/office expenses covered. Pre-approved professional training and workshop expenses covered. Lodging and meals covered for travel away from home.To Apply:Please apply online at Paylocity.If you have any difficulties uploading your resume and cover letter, then please send them as ONE document to HR@abcbirds.orgAt American Bird Conservancy, we believe that a diversity of backgrounds, perspectives, and skills makes us more effective. We are committed to creating a respectful and inclusive work environment for all of our employees. As an equal opportunity employer, ABC is committed to ensuring that employees and applicants for employment have equal opportunities regardless of race, color, national origin, ancestry, sex, age, religion, physical or mental disability, medical condition, veteran status, marital status, pregnancy, sexual orientation, gender identity, gender expression, or any other factor unrelated to the requirements of the position.Job Type: Full-timePay: $75,000.00 per yearBenefits: Dental insurance Health insurance Life insurance Paid time offSchedule: Monday to FridayWork Location: Remote"
+  },
+  "expected_output": {
+    "_status": "NEEDS_HUMAN_REVIEW",
+    "_raw_text_preview": "jessica claire 100 montgomery st 10th floor 555 4321000 resumesampleexamplecom professional summary seek maintain fulltime position offers professional challenges utilizing interpersonal skills excellent time management problemsolving skills proven management leadership skills effectively manage multiple employees departments priorities include building sustaining relationships levels staff create maintain smooth work stream processes procedures superb organizational skills able effectively mana",
+    "summary": "",
+    "experience": [],
+    "skills": {},
+    "certifications": [],
+    "education": []
+  },
+  "jd_requirements": [
+    "experience in finance and grants management",
+    "Experience of managing financial reporting for grants and contracts",
+    "Knowledge of measuring financial performance with Actual v Budget monitoring",
+    "knowledge of federal and non-federal regulations",
+    "Proficiency with all Microsoft Office programs"
+  ],
+  "cloud_skills": [],
+  "provenance": {
+    "data_source": "real_dataset_raw_text",
+    "jd_source": "github_indeed",
+    "resume_dataset": "resume_atlas",
+    "jd_id": "indeed-24961ad1c84e1ad8",
+    "resume_id": "ra-05754",
+    "generated_at": "2026-05-08T08:47:53.848Z",
+    "expected_output_author": "NEEDS_HUMAN_REVIEW",
+    "circularity_risk": "low",
+    "notes": "Resume from real dataset (raw text). JD from real job posting. Expected output EMPTY — needs LLM parsing + human review."
+  }
+}

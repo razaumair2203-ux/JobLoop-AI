@@ -1,0 +1,56 @@
+{
+  "id": "pair-R031",
+  "split": "train",
+  "persona": "executive",
+  "source_resume": {
+    "id": "ra-11571",
+    "dataset": "resume_atlas",
+    "industry": "operations",
+    "seniority": "executive"
+  },
+  "jd": {
+    "title": "Project Manager - Pre Conditioned Air",
+    "company": "Populus Select Ltd",
+    "location": "",
+    "experience_years": null,
+    "requirements": [
+      {
+        "text": "experience in project management in a manufacturing environment\nIn this role you will:\nEstablish Milestones and coordinate with operations and supply chain timely progress of Pre Conditioned Air builds",
+        "type": "must_have"
+      },
+      {
+        "text": "knowledge of sheet metal and refrigeration to create optimized operation sequenceTrack daily and hourly progress of build as needed",
+        "type": "must_have"
+      }
+    ],
+    "responsibilities": [
+      "The ideal candidate will have experience in:Production and manufacturing or design of AC systemsManufacturing systems.Project management in manufacturing environmentSupply chain"
+    ],
+    "full_description": "As the Project Manager you will have experience in project management in a manufacturing environment\nIn this role you will:\nEstablish Milestones and coordinate with operations and supply chain timely progress of Pre Conditioned Air builds.Coordinate and conduct real time trouble shooting in consultation with engineeringOwn Pre Conditioned Air projects from beginning to end.Follow up with procurement on material shortagesOversee build progress, including coordination of in process inspection, and testingGuide operation teams on tactical details of execution, including training on work centersCoordinate with planning to ensure are milestones of the product build are being followedUtilize the knowledge of sheet metal and refrigeration to create optimized operation sequenceTrack daily and hourly progress of build as needed, resolve and remove obstacles and report progress to the plant manager.Utilize refrigeration systems knowledge to train people on AC unit build concepts.\nThe ideal candidate will have experience in:Production and manufacturing or design of AC systemsManufacturing systems.Project management in manufacturing environmentSupply chain"
+  },
+  "expected_output": {
+    "_status": "NEEDS_HUMAN_REVIEW",
+    "_raw_text_preview": "jessica claire resumesampleexamplecom 555 4321000 100 montgomery st 10th floor professional summary selfstarting operations manager offering highlevel experience supervision workover completion operations adept directing work completion consultants completion supervisors successful introducing lean manufacturing increase productivity cut costs completion well organized attentive detail vigilant achieving safety environmental impact reduction objectives advanced operations manager offering 30 yea",
+    "summary": "",
+    "experience": [],
+    "skills": {},
+    "certifications": [],
+    "education": []
+  },
+  "jd_requirements": [
+    "experience in project management in a manufacturing environment\nIn this role you will:\nEstablish Mil",
+    "knowledge of sheet metal and refrigeration to create optimized operation sequenceTrack daily and hou"
+  ],
+  "cloud_skills": [],
+  "provenance": {
+    "data_source": "real_dataset_raw_text",
+    "jd_source": "kaggle_linkedin",
+    "resume_dataset": "resume_atlas",
+    "jd_id": "linkedin-3901945070",
+    "resume_id": "ra-11571",
+    "generated_at": "2026-05-08T08:47:53.861Z",
+    "expected_output_author": "NEEDS_HUMAN_REVIEW",
+    "circularity_risk": "low",
+    "notes": "Resume from real dataset (raw text). JD from real job posting. Expected output EMPTY — needs LLM parsing + human review."
+  }
+}

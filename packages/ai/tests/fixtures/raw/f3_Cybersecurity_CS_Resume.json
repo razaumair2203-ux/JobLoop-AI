@@ -1,0 +1,181 @@
+{
+  "name": "CS Cybersecurity Resume Sample",
+  "email": "bmail@binghamton.edu",
+  "phone": "(111) 111-1111",
+  "location": {
+    "city": "Binghamton",
+    "country": "United States"
+  },
+  "links": {
+    "linkedin": "https://www.linkedin.com/in/yourname",
+    "github": null,
+    "portfolio": null,
+    "other": ["GitHub Link", "Portfolio Link"]
+  },
+  "summary": null,
+  "total_experience_years": 1,
+  "experience": [
+    {
+      "company": "Amazon",
+      "employer": null,
+      "title": "Cyber Security Analyst Intern",
+      "start_date": "May 2025",
+      "end_date": "Present",
+      "duration_months": 1,
+      "location": "Seattle, WA",
+      "bullets": [
+        "Monitor and analyze security events using AWS CloudTrail, GuardDuty, and Splunk to detect anomalous activity",
+        "Identify and investigate security alerts related to network access and suspicious API activity in cloud environments",
+        "Automate security analysis tasks using Python, improving threat detection and assisting in vulnerability assessments",
+        "Collaborate with cross-functional internal teams to document and present security findings and recommend mitigation strategies aligned with cloud security best practices"
+      ],
+      "technologies_used": ["AWS", "AWS CloudTrail", "AWS GuardDuty", "Splunk", "Python", "Linux", "Cloud Security"],
+      "metrics_mentioned": [],
+      "programs": [],
+      "team_size": null,
+      "seniority_signals": ["Intern"],
+      "domain": "technology"
+    },
+    {
+      "company": "Ernst & Young",
+      "employer": null,
+      "title": "IT Security Engineer Intern",
+      "start_date": "Jun 2024",
+      "end_date": "Aug 2024",
+      "duration_months": 3,
+      "location": "New York, NY",
+      "bullets": [
+        "Developed and implemented a security awareness program for 300+ employees, reducing phishing susceptibility by 50% via simulated phishing campaigns and training modules",
+        "Analyzed security incidents through log correlation and firewall/network logs to identify compromised accounts, and collaborated with stakeholders to support remediation initiatives",
+        "Presented security findings and risk mitigation strategies to 50+ Ernst & Young executives at the NY headquarters"
+      ],
+      "technologies_used": ["SIEM Tools", "Firewall Logs", "Python"],
+      "metrics_mentioned": [
+        "300+ employees",
+        "reducing phishing susceptibility by 50%",
+        "50+ Ernst & Young executives"
+      ],
+      "programs": [],
+      "team_size": null,
+      "seniority_signals": ["Intern"],
+      "domain": "consulting"
+    }
+  ],
+  "education": [
+    {
+      "institution": "Binghamton University, State University of New York, Thomas J. Watson College of Engineering and Applied Science",
+      "degree": "B.S.",
+      "field": "Computer Science, Artificial Intelligence Track",
+      "start_year": null,
+      "end_year": 2026,
+      "grade": "3.56/4.00",
+      "research_topic": null,
+      "highlights": [
+        "Dean's List: Fall 2023 - Spring 2025",
+        "Upsilon Pi Epsilon Honor Society"
+      ]
+    }
+  ],
+  "skills": [
+    { "name": "Python", "original_text": "Python", "domain": "technology", "category": "programming_language", "source": "experience" },
+    { "name": "C++", "original_text": "C++", "domain": "technology", "category": "programming_language", "source": "skills_section" },
+    { "name": "C", "original_text": "C", "domain": "technology", "category": "programming_language", "source": "skills_section" },
+    { "name": "Swift", "original_text": "Swift", "domain": "technology", "category": "programming_language", "source": "skills_section" },
+    { "name": "Java", "original_text": "Java", "domain": "technology", "category": "programming_language", "source": "skills_section" },
+    { "name": "Scala", "original_text": "Scala", "domain": "technology", "category": "programming_language", "source": "skills_section" },
+    { "name": "JavaScript", "original_text": "JavaScript", "domain": "technology", "category": "programming_language", "source": "skills_section" },
+    { "name": "Visual Basic .NET", "original_text": "Visual Basic .NET", "domain": "technology", "category": "programming_language", "source": "skills_section" },
+    { "name": "Xcode", "original_text": "XCode", "domain": "technology", "category": "ide", "source": "skills_section" },
+    { "name": "Eclipse", "original_text": "Eclipse", "domain": "technology", "category": "ide", "source": "skills_section" },
+    { "name": "Android Studio", "original_text": "Android Studio", "domain": "technology", "category": "ide", "source": "skills_section" },
+    { "name": "Visual Studio Code", "original_text": "Visual Studio Code", "domain": "technology", "category": "ide", "source": "skills_section" },
+    { "name": "Jupyter Notebook", "original_text": "Jupyter Notebook", "domain": "technology", "category": "data_science_tools", "source": "skills_section" },
+    { "name": "Git", "original_text": "Git", "domain": "technology", "category": "version_control", "source": "skills_section" },
+    { "name": "Linux", "original_text": "Linux", "domain": "technology", "category": "operating_system", "source": "experience" },
+    { "name": "Vim", "original_text": "Vim", "domain": "technology", "category": "text_editor", "source": "skills_section" },
+    { "name": "React", "original_text": "React", "domain": "technology", "category": "frontend_framework", "source": "skills_section" },
+    { "name": "Amazon Web Services", "original_text": "AWS", "domain": "technology", "category": "cloud_infrastructure", "source": "experience" },
+    { "name": "HTML", "original_text": "HTML", "domain": "technology", "category": "web_development", "source": "skills_section" },
+    { "name": "CSS", "original_text": "CSS", "domain": "technology", "category": "web_development", "source": "skills_section" },
+    { "name": "XML Parsing", "original_text": "XML Parsing", "domain": "technology", "category": "data_processing", "source": "skills_section" },
+    { "name": "TCP/IP", "original_text": "TCP/IP", "domain": "technology", "category": "networking", "source": "skills_section" },
+    { "name": "SQL Workbench", "original_text": "SQL Workbench", "domain": "technology", "category": "database", "source": "skills_section" },
+    { "name": "Data Visualization", "original_text": "Data Visualization", "domain": "technology", "category": "data_science_tools", "source": "skills_section" },
+    { "name": "Predictive Analysis", "original_text": "Predictive Analysis", "domain": "technology", "category": "machine_learning", "source": "skills_section" },
+    { "name": "AWS CloudTrail", "original_text": "AWS CloudTrail", "domain": "technology", "category": "cloud_security", "source": "experience" },
+    { "name": "AWS GuardDuty", "original_text": "GuardDuty", "domain": "technology", "category": "cloud_security", "source": "experience" },
+    { "name": "Splunk", "original_text": "Splunk", "domain": "technology", "category": "siem", "source": "experience" },
+    { "name": "Cloud Security", "original_text": "Cloud Security", "domain": "technology", "category": "cybersecurity", "source": "experience" },
+    { "name": "SIEM Tools", "original_text": "SIEM Tools", "domain": "technology", "category": "siem", "source": "experience" },
+    { "name": "Firewall Log Analysis", "original_text": "Firewall Logs", "domain": "technology", "category": "cybersecurity", "source": "experience" },
+    { "name": "Threat Detection", "original_text": "threat detection", "domain": "technology", "category": "cybersecurity", "source": "experience" },
+    { "name": "Vulnerability Assessment", "original_text": "vulnerability assessments", "domain": "technology", "category": "cybersecurity", "source": "experience" },
+    { "name": "Security Incident Analysis", "original_text": "security incidents through log correlation", "domain": "technology", "category": "cybersecurity", "source": "experience" },
+    { "name": "Phishing Campaign Simulation", "original_text": "simulated phishing campaigns", "domain": "technology", "category": "cybersecurity", "source": "experience" }
+  ],
+  "competencies": [],
+  "certifications": [
+    { "name": "Advanced Algorithms", "issuer": null, "year": null, "active": true, "tier": "course" },
+    { "name": "Advanced Machine Learning", "issuer": null, "year": null, "active": true, "tier": "course" },
+    { "name": "AWS Certified Cloud Practitioner", "issuer": "Amazon", "year": null, "active": true, "tier": "specialization" },
+    { "name": "AWS Certified Developer Associate", "issuer": "Amazon", "year": null, "active": true, "tier": "specialization" },
+    { "name": "Full-Stack Web Development", "issuer": null, "year": null, "active": true, "tier": "course" }
+  ],
+  "awards": [],
+  "projects": [
+    {
+      "name": "Security Operations Center (SOC) Simulation",
+      "description": "Built a SOC lab using Splunk to ingest and analyze 30k Windows Event Logs and Linux authentication logs via forwarders",
+      "outcome": "Simulated 1,000+ brute-force login attempts and privilege escalation attacks, developed custom SPL queries for real-time alerts",
+      "technologies": ["Splunk", "SPL", "Windows Event Logs", "Linux"],
+      "is_professional": false
+    },
+    {
+      "name": "False Data Injection Attack",
+      "description": "Reproduced false data injection attacks in a virtualized environment using Python scripts to manipulate system data",
+      "outcome": "Created rule-based and statistical detection techniques achieving 95% accuracy in detecting simulated attacks",
+      "technologies": ["Python", "Z-Score Analysis", "Statistical Detection"],
+      "is_professional": false
+    },
+    {
+      "name": "Salsa20 Implementation",
+      "description": "Implemented a Salsa20/8 encryption algorithm supporting plaintext sizes of 1KB and 128-bit, 256-bit, and non-standard 64-bit key handling",
+      "outcome": "Validated implementation correctness by testing against 10+ specification-defined input/output cases",
+      "technologies": ["Cryptography", "Salsa20"],
+      "is_professional": false
+    }
+  ],
+  "publications": [],
+  "volunteer": [],
+  "leadership": [
+    {
+      "organization": "Theta Tau Professional Engineering Fraternity",
+      "role": "Professional Development Chair",
+      "start_date": "Apr 2024",
+      "end_date": "Present",
+      "description": "Engaged in collaboration with multiple student organizations to organize and facilitate over 10 professional development workshops focused on enhancing skills such as resume writing and cover letter preparation",
+      "scope": null
+    },
+    {
+      "organization": "Association of Computing Machinery (ACM)",
+      "role": "Secretary",
+      "start_date": "Nov 2024",
+      "end_date": "May 2025",
+      "description": "Manage comprehensive records for the chapter and orchestrate three professional development workshops. Delivered persuasive presentations to groups ranging from 100 to 300 prospective members",
+      "scope": "100 to 300 prospective members"
+    }
+  ],
+  "professional_affiliations": ["Theta Tau Professional Engineering Fraternity", "Association of Computing Machinery (ACM)"],
+  "training": [],
+  "languages_spoken": [],
+  "all_technologies": [
+    "Python", "C++", "C", "Swift", "Java", "Scala", "JavaScript", "Visual Basic .NET",
+    "Xcode", "Eclipse", "Android Studio", "Visual Studio Code", "Jupyter Notebook",
+    "Git", "Linux", "Vim", "React", "AWS", "HTML", "CSS", "XML Parsing", "TCP/IP",
+    "SQL Workbench", "Data Visualization", "Predictive Analysis",
+    "AWS CloudTrail", "AWS GuardDuty", "Splunk", "Cloud Security",
+    "SIEM Tools", "Firewall Logs", "SPL", "Cryptography", "Salsa20",
+    "Z-Score Analysis"
+  ],
+  "conflicts": []
+}

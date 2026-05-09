@@ -1,0 +1,49 @@
+{
+  "id": "pair-R047",
+  "split": "train",
+  "persona": "early_career",
+  "source_resume": {
+    "id": "ra-03558",
+    "dataset": "resume_atlas",
+    "industry": "construction",
+    "seniority": "entry"
+  },
+  "jd": {
+    "title": "Construction Project Manager Trainee",
+    "company": "NVR, Inc.",
+    "location": "",
+    "experience_years": null,
+    "requirements": [
+      {
+        "text": "Applicants must be legally entitled to work in the United States, as NVR does not provide visa sponsorship.",
+        "type": "must_have"
+      }
+    ],
+    "responsibilities": [],
+    "full_description": "As a Construction   Project Manager   Trainee  at Ryan Homes, a brand of NVR, you can impact the lives of our customers while working in an environment of respect, empowerment, and professional development. You will have the opportunity to manage and oversee the entire home-building process for a community of new homes. In this structured training program, you will gain hands-on experience alongside a current Project Manager and will master the knowledge and skills you need to effectively manage a job site.\n\n What you will be doing: \n\n Participate in NVR’s world-class comprehensive training program that incorporates both classroom and on-the-job experience to ensure a successful transition into the Construction Project Manager role  Positively impact the customer experience while working directly with the Ryan Homes Community Team  Ensure all homes are completed within established budgets, timelines, and project scope  Supervise and schedule sub-contractors, while maintaining positive working relationships  Manage community assets, conduct quality control inspections, order building materials, and effectively manage customer relations. \n\n\n Qualified applicants have: \n\n Bachelor’s degree, preferred  Proficient time management, organizational skills, and attention to detail.  Excellent interpersonal skills, with the ability to develop strong working relationships  Demonstrated leadership abilities  Current Driver’s License  Construction and/or customer relations experience is a plus \n\n\n About NVR: \n\nAs the parent company of Ryan Homes, NVHomes and Heartland Homes, NVR is a Top 5 US homebuilder and Fortune 500 company that has been helping families build their happily ever after since 1948. All of our roles at NVR, whether you are in the field or in the office, allow you to make a major impact in the lives of those who are looking to achieve home ownership. Our management team is tenured and talented (nearly 80% of them promoted from within), so you will have mentors who share their knowledge, provide career guidance and encourage your success.\n\nView more about our exceptional culture and comprehensive benefits at https://www.nvrcareers.com/\n\nWe are an Equal Opportunity Employer .\n\nDrug Testing and Credit Check are required.\n\nApplicants must be legally entitled to work in the United States, as NVR does not provide visa sponsorship."
+  },
+  "expected_output": {
+    "_status": "NEEDS_HUMAN_REVIEW",
+    "_raw_text_preview": "home builder robert smith phone 123 456 78 99 email infoqwikresumecom website wwwqwikresumecom linkedin linkedincomqwikresume address 1737 marshville road alabama objective obtain challenging home builder position fastpaced driven business enabling utilize extensive experience part learning growing environment skills computer construction security delivery driving sales work experience home builder abc corporation 20082013 learned use types new materials consistently ranked top ten builders hous",
+    "summary": "",
+    "experience": [],
+    "skills": {},
+    "certifications": [],
+    "education": []
+  },
+  "jd_requirements": [
+    "Applicants must be legally entitled to work in the United States, as NVR does not provide visa spons"
+  ],
+  "cloud_skills": [],
+  "provenance": {
+    "data_source": "real_dataset_raw_text",
+    "jd_source": "kaggle_linkedin",
+    "resume_dataset": "resume_atlas",
+    "jd_id": "linkedin-3891289099",
+    "resume_id": "ra-03558",
+    "generated_at": "2026-05-08T08:47:53.871Z",
+    "expected_output_author": "NEEDS_HUMAN_REVIEW",
+    "circularity_risk": "low",
+    "notes": "Resume from real dataset (raw text). JD from real job posting. Expected output EMPTY — needs LLM parsing + human review."
+  }
+}

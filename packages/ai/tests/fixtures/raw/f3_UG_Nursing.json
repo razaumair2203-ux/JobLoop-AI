@@ -1,0 +1,286 @@
+{
+  "name": "First Last",
+  "email": "student@binghamton.edu",
+  "phone": "XXX-XXX-XXXX",
+  "location": {
+    "city": "Vestal",
+    "state": "NY",
+    "country": "USA"
+  },
+  "links": {
+    "linkedin": null,
+    "github": null,
+    "portfolio": null,
+    "other": []
+  },
+  "summary": null,
+  "total_experience_years": 0,
+  "experience": [
+    {
+      "company": "United Health Services - Wilson Medical Center",
+      "employer": "United Health Services",
+      "title": "Access Care Representative",
+      "start_date": "January 20XX",
+      "end_date": "Present",
+      "duration_months": null,
+      "location": "Johnson City, NY",
+      "bullets": [
+        "Act as the initial point of contact by greeting patients warmly and professionally, gathering personal and medical information accurately to support a compassionate and individualized care experience",
+        "Advocate for patients by ensuring they receive the necessary information and support to navigate the healthcare system, including scheduling, financial procedures, and insurance verification",
+        "Utilize scheduling software and electronic health records, applying knowledge of medical terminology and insurance protocols to ensure accuracy and compliance with healthcare standards"
+      ],
+      "technologies_used": [
+        "Electronic health records",
+        "Scheduling software"
+      ],
+      "metrics_mentioned": [],
+      "programs": [],
+      "team_size": null,
+      "seniority_signals": [],
+      "domain": "healthcare"
+    },
+    {
+      "company": "Guthrie - Lourdes Hospital",
+      "employer": "Guthrie",
+      "title": "Patient Care Technician",
+      "start_date": "February 20XX",
+      "end_date": "January 20XX",
+      "duration_months": null,
+      "location": "Binghamton, NY",
+      "bullets": [
+        "Supported patients across the lifespan with daily living activities, including lifting, turning, positioning, toileting, peri-care, and mobilization (transfers, ambulation) to ensure patient safety and comfort",
+        "Collaborated with registered nurses and other members of the healthcare team to ensure coordinated patient care, particularly in handling patient transfers and assisting with clinical procedures",
+        "Communicated with patients, families, and colleagues in a professional, courteous, and respectful manner using active listening skills to respond to patients' needs and concerns"
+      ],
+      "technologies_used": [],
+      "metrics_mentioned": [],
+      "programs": [],
+      "team_size": null,
+      "seniority_signals": [],
+      "domain": "healthcare"
+    },
+    {
+      "company": "Nursing Student Association, Binghamton University",
+      "employer": "Binghamton University",
+      "title": "Professional Development Chair",
+      "start_date": "August 20XX",
+      "end_date": "Present",
+      "duration_months": null,
+      "location": "Binghamton, NY",
+      "bullets": [
+        "Collaborated with the Fleishman Career Center to facilitate a series of 5 career workshops attended by over 150 nursing students, focusing on career development strategies tailored to the healthcare field",
+        "Conducted outreach to alumni and organized 3 professional development events per semester with guest speakers from various nursing specialties to provide insight into a variety of nursing career paths",
+        "Recruited for and implemented a mentorship program that paired 25 undergraduate nursing with upper-level nursing student mentors, focusing on academic support, career guidance, and personal development"
+      ],
+      "technologies_used": [],
+      "metrics_mentioned": [
+        "5 career workshops",
+        "over 150 nursing students",
+        "3 professional development events per semester",
+        "25 undergraduate nursing"
+      ],
+      "programs": [
+        "Mentorship program"
+      ],
+      "team_size": null,
+      "seniority_signals": [
+        "Chair"
+      ],
+      "domain": "education"
+    },
+    {
+      "company": "Cacciatore's Restaurant",
+      "employer": "Cacciatore's Restaurant",
+      "title": "Server",
+      "start_date": "January 20XX",
+      "end_date": "October 20XX",
+      "duration_months": null,
+      "location": "Johnson City, NY",
+      "bullets": [
+        "Provided excellent customer service in a high-volume restaurant by organizing and prioritizing tasks across 8+ tables at a time, ensuring timely service without compromising attention to detail or quality",
+        "Coordinated with kitchen and bar team of 12 to fulfill over 200 guest orders during peak hours without delays or errors by using efficient communication, anticipating needs, and adjusting to changing demands seamlessly",
+        "Tailored each dining experience by identifying guest needs such as dietary restrictions or special celebrations through rapport-building, leading to an increase in repeat customers and positive reviews"
+      ],
+      "technologies_used": [],
+      "metrics_mentioned": [
+        "8+ tables",
+        "team of 12",
+        "over 200 guest orders"
+      ],
+      "programs": [],
+      "team_size": 12,
+      "seniority_signals": [],
+      "domain": "hospitality"
+    }
+  ],
+  "education": [
+    {
+      "institution": "Binghamton University, State University of New York",
+      "degree": "Bachelor of Science",
+      "field": "Nursing",
+      "start_date": null,
+      "end_date": "Expected May 20XX",
+      "gpa": "3.64/4.00",
+      "honors": [
+        "Dean's List Fall 20XX-Spring 20XX",
+        "Sigma Theta Tau Spring 20XX"
+      ],
+      "location": "Binghamton, NY"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Epic",
+      "original_text": "Epic",
+      "domain": "healthcare",
+      "category": "technology",
+      "source": "skills_section"
+    },
+    {
+      "name": "MyChart",
+      "original_text": "MyChart",
+      "domain": "healthcare",
+      "category": "technology",
+      "source": "skills_section"
+    },
+    {
+      "name": "Teladoc Health",
+      "original_text": "Teladoc Health",
+      "domain": "healthcare",
+      "category": "technology",
+      "source": "skills_section"
+    },
+    {
+      "name": "Microsoft Office",
+      "original_text": "Microsoft Office",
+      "domain": "general",
+      "category": "technology",
+      "source": "skills_section"
+    },
+    {
+      "name": "Google Suite",
+      "original_text": "Google Suite",
+      "domain": "general",
+      "category": "technology",
+      "source": "skills_section"
+    },
+    {
+      "name": "Electronic Health Records",
+      "original_text": "electronic health records",
+      "domain": "healthcare",
+      "category": "technology",
+      "source": "experience"
+    },
+    {
+      "name": "Scheduling Software",
+      "original_text": "scheduling software",
+      "domain": "healthcare",
+      "category": "technology",
+      "source": "experience"
+    },
+    {
+      "name": "Medical Terminology",
+      "original_text": "medical terminology",
+      "domain": "healthcare",
+      "category": "knowledge",
+      "source": "experience"
+    },
+    {
+      "name": "Insurance Verification",
+      "original_text": "insurance verification",
+      "domain": "healthcare",
+      "category": "administrative",
+      "source": "experience"
+    },
+    {
+      "name": "Patient Care",
+      "original_text": "patient safety and comfort",
+      "domain": "healthcare",
+      "category": "clinical",
+      "source": "experience"
+    },
+    {
+      "name": "Patient Transfers",
+      "original_text": "handling patient transfers",
+      "domain": "healthcare",
+      "category": "clinical",
+      "source": "experience"
+    }
+  ],
+  "competencies": [
+    "Patient advocacy and navigation support",
+    "Daily living activities assistance",
+    "Interdisciplinary healthcare team collaboration",
+    "Professional development program coordination",
+    "High-volume customer service"
+  ],
+  "certifications": [
+    {
+      "name": "BLS First Aid/CPR/AED",
+      "issuer": null,
+      "year": null,
+      "active": true,
+      "tier": "gold"
+    },
+    {
+      "name": "Trained Facilitator, Open Airways for Schools",
+      "issuer": null,
+      "year": null,
+      "active": true,
+      "tier": "course"
+    }
+  ],
+  "awards": [],
+  "projects": [],
+  "publications": [],
+  "volunteer": [],
+  "leadership": [
+    {
+      "role": "Professional Development Chair",
+      "organization": "Nursing Student Association, Binghamton University",
+      "dates": "August 20XX-Present"
+    }
+  ],
+  "professional_affiliations": [],
+  "training": [],
+  "languages_spoken": [],
+  "conflicts": [],
+  "clinical_experience": [
+    {
+      "rotation": "Capstone Clinical - Cardiac",
+      "facility": "Wilson Regional Medical Center",
+      "location": "Johnson City, NY",
+      "dates": "Spring 20XX"
+    },
+    {
+      "rotation": "Community Health",
+      "facility": "Barnes-Kasson Home Health",
+      "location": "Susquehanna, PA",
+      "dates": "Fall 20XX"
+    },
+    {
+      "rotation": "Medical/Surgical",
+      "facility": "Lourdes Hospital",
+      "location": "Binghamton, NY",
+      "dates": "Spring 20XX"
+    },
+    {
+      "rotation": "Maternal and Newborn",
+      "facility": "Wilson Hospital",
+      "location": "Johnson City, NY",
+      "dates": "Spring 20XX"
+    },
+    {
+      "rotation": "Psychiatric",
+      "facility": "Binghamton General Hospital",
+      "location": "Binghamton, NY",
+      "dates": "Spring 20XX"
+    },
+    {
+      "rotation": "Geriatric",
+      "facility": "Ideal Senior Living Center",
+      "location": "Endicott, NY",
+      "dates": "Fall 20XX"
+    }
+  ]
+}

@@ -13,8 +13,15 @@ const MAX_FILES = 5;
 const MAX_SIZE = 10 * 1024 * 1024;
 const MAX_ZIP_SIZE = 50 * 1024 * 1024;
 
+export interface SocraticQuestion {
+  id: string;
+  question: string;
+  skill_name: string;
+  why_asking: string;
+}
+
 interface StepUploadProps {
-  onNext: (results: UploadResult[]) => void;
+  onNext: (results: UploadResult[], questions: SocraticQuestion[]) => void;
   onSkip: () => void;
 }
 
@@ -53,6 +60,7 @@ export function StepUpload({ onNext, onSkip }: StepUploadProps) {
 
     try {
       const allResults = [];
+      let capturedQuestions: SocraticQuestion[] = [];
 
       // Split files into CVs and LinkedIn ZIPs
       const cvFiles = files.filter((f) => !isZipFile(f));
@@ -77,6 +85,10 @@ export function StepUpload({ onNext, onSkip }: StepUploadProps) {
 
         const data = await res.json();
         allResults.push(...data.results);
+        // Capture socratic questions from upload response
+        if (data.socratic_questions?.length) {
+          capturedQuestions = data.socratic_questions;
+        }
       }
 
       // Upload LinkedIn ZIPs (one at a time)
@@ -106,7 +118,7 @@ export function StepUpload({ onNext, onSkip }: StepUploadProps) {
         });
       }
 
-      onNext(allResults);
+      onNext(allResults, capturedQuestions);
     } catch (err) {
       setError(err instanceof Error ? err.message : "Upload failed");
       setUploading(false);

@@ -1,0 +1,49 @@
+{
+  "id": "pair-R004",
+  "split": "train",
+  "persona": "senior",
+  "source_resume": {
+    "id": "ra-10575",
+    "dataset": "resume_atlas",
+    "industry": "hr",
+    "seniority": "senior"
+  },
+  "jd": {
+    "title": "Human Resources Business Partner",
+    "company": "Scion Staffing",
+    "location": "",
+    "experience_years": null,
+    "requirements": [
+      {
+        "text": "Experience in architecture",
+        "type": "must_have"
+      }
+    ],
+    "responsibilities": [],
+    "full_description": "Scion Staffing is searching for a HR Business Partner to join an impactful and well-established architecture firm based out of San Francisco, CA! This is a full-time, direct hire, hybrid role for immediate hire! \nOVERVIEW Reporting to the Human Resources Director based in the UK, this role will play a crucial role in molding company culture. Responsibilities will involve overseeing HR operations and initiatives for our American locations. This role demands independence, top-notch communication, meticulousness, and adept multitasking. Our partner is seeking a proactive individual enthusiastic about nurturing a supportive and diverse workplace atmosphere! \nPERKS Hybrid work position with flexible hours (fully onsite for first 90 days during training)! Full comprehensive benefits including health, dental, and vision, PTO, 401K + profit sharing plan! Bonus structure! Contribute to a supportive and innovative team! \nWHAT YOU WILL BE DOING Advise management on HR and people-related issues, shaping a high-impact people, talent, and culture function. Manage day-to-day people operations, covering onboarding to offboarding, benefits, payroll, talent acquisition, performance management, learning, and employee engagement. Lead recruitment and talent acquisition for key roles, ensuring top-quality hires within set timelines. Manage compensation and total rewards programs, aligning them with organizational goals, market trends, and employee needs. Supervise performance management, integrating it with employee development plans, career pathways, and succession planning. Drive culture, diversity, equity, and inclusion initiatives forward. Update employment policies to adhere to best practices and ensure legal compliance, collaborating with legal counsel when necessary. Address critical employee relations issues sensitively and confidentially, providing guidance to managers and employees. Support payroll processing and US benefits administration as required. Oversee HR projects, ensuring compliance with state and federal regulations. Manage FMLA, CFRA, disability leaves, and workers' compensation claims. Track HR metrics and produce reports for management as required. \nWHAT YOU NEED TO BE SUCCESSFUL 5+ years in Human Resources, with a focus on California and Florida labor laws. Experience in architecture, engineering, or related fields would be highly beneficial. Significant and deep knowledge across the areas of talent acquisition, talent management, performance and learning, total rewards including compensation and benefits, employee engagement, DEIA initiatives, and HR technologies. Strong understanding of employment law, government compliance regulations, and best practices in HR/People operations. Familiarity with HRIS systems (Paylocity, Oracle and Smart Recruiters experience is a bonus). \nCOMPENSATION This position offers a salary range of $80K – 120K DOE + opportunity for bonuses throughout the year. Benefits include health, dental, and vision, PTO, 401K + profit sharing plan, and more! \nABOUT OUR SEARCH FIRM Scion Staffing is a national award-winning staffing firm! Since 2006, we have had the pleasure of successfully placing thousands of talented professionals with amazing career opportunities. Through our innovative team building and recruiting solutions, we bridge the gap in executive leadership searches, direct hire recruiting, interim leadership placement, and temporary professional staffing. Our track record and recruitment process has made us one of the top recruitment firms in the nation. \nWe are proud to be part of the Forbes lists of the Best Recruitment Firms and the Best Executive Search Firms in America. Additionally, Scion has been recognized as a Clearly Rated Best of Staffing firm as well as a top recruitment firm by The Business Times. Additional information about us can also be found at www.scionstaffing.com. Scion Staffing, Inc. is an equal opportunity employer and service provider and does not discriminate on the basis of race, religion, gender, gender identity, national origin, citizenship status, sexual orientation, disability, political affiliation or belief, or any other protected class. We are committed to the principles of Equal Opportunity Employment and are dedicated to making employment decisions based on merit and value, for ourselves, our client companies, and for the candidates we represent. For opportunities located in a region that have enacted fair chance, arrest or conviction-based employment ordinances, Scion Staffing proactively follows the enacted guidance and considers for employment all qualified applications with arrest and conviction records. We believe in following best practices and considering all qualified applicants that apply with us."
+  },
+  "expected_output": {
+    "_status": "NEEDS_HUMAN_REVIEW",
+    "_raw_text_preview": "professional summary jessica claire 100 montgomery st 10th floor 555 4321000 resumesampleexamplecom goaloriented human resources specialist 65 years experience training protocol development policy implementation strong financial background demonstrated success budget development adherence accomplished analyzing company needs developing longterm solutions meet personnel objectives payroll expert 8 years track record collecting compiling payroll data accuracy expertise payroll software data entry ",
+    "summary": "",
+    "experience": [],
+    "skills": {},
+    "certifications": [],
+    "education": []
+  },
+  "jd_requirements": [
+    "Experience in architecture"
+  ],
+  "cloud_skills": [],
+  "provenance": {
+    "data_source": "real_dataset_raw_text",
+    "jd_source": "kaggle_linkedin",
+    "resume_dataset": "resume_atlas",
+    "jd_id": "linkedin-3891078251",
+    "resume_id": "ra-10575",
+    "generated_at": "2026-05-08T08:47:53.844Z",
+    "expected_output_author": "NEEDS_HUMAN_REVIEW",
+    "circularity_risk": "low",
+    "notes": "Resume from real dataset (raw text). JD from real job posting. Expected output EMPTY — needs LLM parsing + human review."
+  }
+}

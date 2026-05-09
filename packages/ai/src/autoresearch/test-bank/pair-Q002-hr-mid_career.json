@@ -1,0 +1,241 @@
+{
+  "id": "pair-Q002",
+  "split": "train",
+  "persona": "mid_career",
+  "source_resume": {
+    "id": "snb-32977530",
+    "dataset": "snehaanbhawal_livecareer",
+    "industry": "hr",
+    "seniority": "mid"
+  },
+  "jd": {
+    "title": "Human Resources Business Partner",
+    "company": "Scion Staffing",
+    "location": "",
+    "experience_years": 5,
+    "requirements": [
+      {
+        "text": "5+ years in Human Resources",
+        "type": "must_have"
+      },
+      {
+        "text": "Knowledge of California and Florida labor laws",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience in architecture, engineering, or related fields",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "Significant knowledge of talent acquisition",
+        "type": "must_have"
+      },
+      {
+        "text": "Significant knowledge of talent management",
+        "type": "must_have"
+      },
+      {
+        "text": "Significant knowledge of performance and learning",
+        "type": "must_have"
+      },
+      {
+        "text": "Significant knowledge of total rewards including compensation and benefits",
+        "type": "must_have"
+      },
+      {
+        "text": "Significant knowledge of employee engagement",
+        "type": "must_have"
+      },
+      {
+        "text": "Significant knowledge of DEIA initiatives",
+        "type": "must_have"
+      },
+      {
+        "text": "Significant knowledge of HR technologies",
+        "type": "must_have"
+      },
+      {
+        "text": "Strong understanding of employment law",
+        "type": "must_have"
+      },
+      {
+        "text": "Strong understanding of government compliance regulations",
+        "type": "must_have"
+      },
+      {
+        "text": "Familiarity with HRIS systems",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "Experience with Paylocity, Oracle and Smart Recruiters",
+        "type": "nice_to_have"
+      }
+    ],
+    "responsibilities": [
+      "Advise management on HR and people-related issues",
+      "Manage day-to-day people operations",
+      "Lead recruitment and talent acquisition for key roles",
+      "Manage compensation and total rewards programs",
+      "Supervise performance management",
+      "Drive culture, diversity, equity, and inclusion initiatives forward",
+      "Update employment policies to adhere to best practices and ensure legal compliance",
+      "Address critical employee relations issues"
+    ],
+    "full_description": "Scion Staffing is searching for a HR Business Partner to join an impactful and well-established architecture firm based out of San Francisco, CA! This is a full-time, direct hire, hybrid role for immediate hire! \nOVERVIEW Reporting to the Human Resources Director based in the UK, this role will play a crucial role in molding company culture. Responsibilities will involve overseeing HR operations and initiatives for our American locations. This role demands independence, top-notch communication, meticulousness, and adept multitasking. Our partner is seeking a proactive individual enthusiastic about nurturing a supportive and diverse workplace atmosphere! \nPERKS Hybrid work position with flexible hours (fully onsite for first 90 days during training)! Full comprehensive benefits including health, dental, and vision, PTO, 401K + profit sharing plan! Bonus structure! Contribute to a supportive and innovative team! \nWHAT YOU WILL BE DOING Advise management on HR and people-related issues, shaping a high-impact people, talent, and culture function. Manage day-to-day people operations, covering onboarding to offboarding, benefits, payroll, talent acquisition, performance management, learning, and employee engagement. Lead recruitment and talent acquisition for key roles, ensuring top-quality hires within set timelines. Manage compensation and total rewards programs, aligning them with organizational goals, market trends, and employee needs. Supervise performance management, integrating it with employee development plans, career pathways, and succession planning. Drive culture, diversity, equity, and inclusion initiatives forward. Update employment policies to adhere to best practices and ensure legal compliance, collaborating with legal counsel when necessary. Address critical employee relations issues sensitively and confidentially, providing guidance to managers and employees. Support payroll processing and US benefits administration as required. Oversee HR projects, ensuring compliance with state and federal regulations. Manage FMLA, CFRA, disability leaves, and workers' compensation claims. Track HR metrics and produce reports for management as required. \nWHAT YOU NEED TO BE SUCCESSFUL 5+ years in Human Resources, with a focus on California and Florida labor laws. Experience in architecture, engineering, or related fields would be highly beneficial. Significant and deep knowledge across the areas of talent acquisition, talent management, performance and learning, total rewards including compensation and benefits, employee engagement, DEIA initiatives, and HR technologies. Strong understanding of employment law, government compliance regulations, and best practices in HR/People operations. Familiarity with HRIS systems (Paylocity, Oracle and Smart Recruiters experience is a bonus). \nCOMPENSATION This position offers a salary range of $80K – 120K DOE + opportunity for bonuses throughout the year. Benefits include health, dental, and vision, PTO, 401K + profit sharing plan, and more! \nABOUT OUR SEARCH FIRM Scion Staffing is a national award-winning staffing firm! Since 2006, we have had the pleasure of successfully placing thousands of talented professionals with amazing career opportunities. Through our innovative team building and recruiting solutions, we bridge the gap in executive leadership searches, direct hire recruiting, interim leadership placement, and temporary professional staffing. Our track record and recruitment process has made us one of the top recruitment firms in the nation. \nWe are proud to be part of the Forbes lists of the Best Recruitment Firms and the Best Executive Search Firms in America. Additionally, Scion has been recognized as a Clearly Rated Best of Staffing firm as well as a top recruitment firm by The Business Times. Additional information about us can also be found at www.scionstaffing.com. Scion Staffing, Inc. is an equal opportunity employer and service provider and does not discriminate on the basis of race, religion, gender, gender identity, national origin, citizenship status, sexual orientation, disability, political affiliation or belief, or any other protected class. We are committed to the principles of Equal Opportunity Employment and are dedicated to making employment decisions based on merit and value, for ourselves, our client companies, and for the candidates we represent. For opportunities located in a region that have enacted fair chance, arrest or conviction-based employment ordinances, Scion Staffing proactively follows the enacted guidance and considers for employment all qualified applications with arrest and conviction records. We believe in following best practices and considering all qualified applicants that apply with us."
+  },
+  "expected_output": {
+    "summary": "I am an ethical, team-oriented and policy-driven individual with experience in AP/AR, Human Resource Administration, Auditing, Documentation experience, Property Management and a vast number of computer skills. I have expertise in customer relations, SAP, and strong communication skills. I am proficient in ERP software and have strong organizational skills.",
+    "experience": [
+      {
+        "company": "Company Name",
+        "title": "HR Clerk",
+        "start_date": "04/2015",
+        "end_date": "06/2015",
+        "bullets": [
+          "Managed the receptionist area, including greeting visitors and responding to telephone and in-person requests for information.",
+          "Made copies, sent faxes and handled all incoming and outgoing correspondence.",
+          "Organized files, developed spreadsheets, faxed reports and scanned documents."
+        ]
+      },
+      {
+        "company": "Company Name",
+        "title": "Accounts Payable Clerk",
+        "start_date": "02/2014",
+        "end_date": "03/2014",
+        "bullets": [
+          "Received and verified invoices and requirements and matched purchase orders to invoice",
+          "Prepared batches of invoices for data entry by matching invoices to correct vendor number",
+          "Responsible for management of the weekly check mailings",
+          "In charge of maintaining updated vendor files and file numbers",
+          "Daily task includes the management of a customer service line (payment status, missing invoice, etc.)",
+          "In charge of getting necessary documentation of Auditing Department."
+        ]
+      },
+      {
+        "company": "Company Name",
+        "title": "Accounts Payable Clerk",
+        "start_date": "12/2013",
+        "end_date": "02/2014",
+        "bullets": [
+          "Auditing of several months of Sprint bills to check for discrepancy in Plan rates.",
+          "Preformed calculations, collected bills, analyzed charges and complete variances in Excel Spreadsheets.",
+          "Completed and developed a procedure for the Auditing of Sprint Bills."
+        ]
+      },
+      {
+        "company": "Company Name",
+        "title": "AP/AR Clerk",
+        "start_date": "07/2013",
+        "end_date": "11/2013",
+        "bullets": [
+          "Executed accounts receivable reporting enhancements and reconciliation procedures.",
+          "Performed debit, credit and total accounts on computer spreadsheets/databases, using specialized accounting software.",
+          "Received, recorded, and banked cash, checks, and vouchers as well as reconciled records of bank transactions.",
+          "Verified details of transactions, including funds received and total account balances.",
+          "Coded the general ledger and processed vendor invoice payments.",
+          "Deposited third party checks, as well as monthly reserve transfers.",
+          "Coordinated approval processes of all accounts payable invoices.",
+          "Balanced batch summary reports for verification and approval.",
+          "Researched and resolved billing and invoice problems."
+        ]
+      },
+      {
+        "company": "Company Name",
+        "title": "Accounts Receivable Specialist III",
+        "start_date": "08/2000",
+        "end_date": "06/2011",
+        "bullets": [
+          "Posted overhead invoices to appropriate general ledger accounts.",
+          "Researched and resolved accounts payable discrepancies through invoice adjustments",
+          "Coded and entered at least 50 invoices each day.",
+          "Effectively managed a high-volume of inbound and outbound customer calls.",
+          "Recognized for having no late fees or shut in's on company utilities",
+          "Setup a Credit Card Process to ensure on time payment of utilities",
+          "Assisted with New Vendor Setup",
+          "Posted Cash and Completed Journal Entries",
+          "Preform Debit and Credit Memo's",
+          "Successfully implemented a scanning program to help with sox compliance."
+        ]
+      },
+      {
+        "company": "Company Name",
+        "title": "Apartment Manager/Leasing",
+        "start_date": "08/1999",
+        "end_date": "12/2000",
+        "bullets": [
+          "Leased, Managed and Maintained 96% Occupancy",
+          "Paid Bills by allocated Budget",
+          "Completed move-ins and Move outs",
+          "Got Painting and Sign bids (property rehab)",
+          "Serve Evictions and filed Evictions",
+          "Sent Letters out for Renewals and offered incentives for Renewals."
+        ]
+      }
+    ],
+    "skills": {
+      "Technical": [
+        "Microsoft Suite",
+        "SAP",
+        "Solomon",
+        "Quickbooks"
+      ],
+      "Soft Skills": [
+        "Customer Service",
+        "Communication",
+        "Organizational"
+      ],
+      "Domain": [
+        "Accounts Payable",
+        "Accounts Receivable",
+        "Human Resource Administration",
+        "Auditing",
+        "Documentation",
+        "Property Management"
+      ]
+    },
+    "certifications": [],
+    "education": [
+      "BSBA : Human Resource Management, CTU Online, 2011, GPA: 3.95"
+    ]
+  },
+  "jd_requirements": [
+    "5+ years in Human Resources",
+    "Knowledge of California and Florida labor laws",
+    "Significant knowledge of talent acquisition",
+    "Significant knowledge of talent management",
+    "Significant knowledge of performance and learning",
+    "Significant knowledge of total rewards including compensation and benefits",
+    "Significant knowledge of employee engagement",
+    "Significant knowledge of DEIA initiatives",
+    "Significant knowledge of HR technologies",
+    "Strong understanding of employment law",
+    "Strong understanding of government compliance regulations"
+  ],
+  "cloud_skills": [
+    "Microsoft Suite",
+    "SAP",
+    "Solomon",
+    "Quickbooks",
+    "Customer Service",
+    "Communication",
+    "Organizational",
+    "Accounts Payable",
+    "Accounts Receivable",
+    "Human Resource Administration",
+    "Auditing",
+    "Documentation",
+    "Property Management"
+  ],
+  "provenance": {
+    "cv_source": "snehaanbhawal/resume-dataset (LiveCareer, CC0)",
+    "jd_source": "R-series (Kaggle LinkedIn, real postings)",
+    "cv_dataset_id": 32977530,
+    "jd_pair_id": "pair-R004",
+    "expected_output_author": "NIM/meta/llama-3.3-70b-instruct",
+    "generated_at": "2026-05-08T15:21:39.764Z",
+    "circularity_risk": "medium-low",
+    "circularity_notes": "Real CV text + real JD text. Expected output is LLM-parsed extraction from real text (not invention). 4/8 scorecard checks structurally sound regardless.",
+    "needs_human_review": true
+  },
+  "raw_cv_text": "         HR CLERK       Summary     I am an ethical, team oriented and policy driven individual with experience in AP/AR, Human Resource Administration, Auditing, Documentation experience, Property Management (96 Units) and a vast number of computer skills.           Highlights         Accounts receivable professional  Expert in customer relations  Proficient in SAP  Strong communication skills  ERP (Enterprise Resource Planning) software      Strong organizational skills  Large cash/check deposits expert  Customer service expert  Invoice processing  Telecommunication skills  Active listening skills  Energetic work attitude  Courteous demeanor            Accomplishments      Research     Investigated and analyzed client complaints to identify and resolve issues.    Multitasking     Demonstrated proficiencies in telephone, e-mail, fax and front-desk reception within high-volume environment.    Customer Service     Handled customers effectively by identifying needs, quickly gaining trust, approaching complex situations and resolving problems to maximize efficiency.    Administration     Performed administration tasks such as filing, developing spreadsheets, faxing reports, photocopying collateral and scanning documents for inter-departmental use.    Training     Successfully trained staff in all office systems and databases, policies and procedures while focusing on minimizing errors and generating superior results.    Scheduling     Facilitated onboarding of new employees by scheduling training, answering questions and processing paperwork.   Multiple awards for performance. Computed Data Reports     Provided required weekly, monthly and quarterly reports listing sales figures and client track records.    Customer Service     Researched, calmed and rapidly resolved client conflicts to prevent loss of key accounts.    Market Research     Interviewed clients via market research surveys to identify product issues and customer needs.     Customer Interface     Greeted customers upon entrance and handled all cash and credit transactions.  Assisted customers over the phone regarding store operations, product, promotions and orders.    Research   Conducted research which led to the development of Resident Retention ].         Experience      HR Clerk    04/2015   to   06/2015     Company Name   City  ,   State      Managed the receptionist area, including greeting visitors and responding to telephone and in-person requests for information.(backup).Made copies, sent faxes and handled all incoming and outgoing correspondence.Organized files, developed spreadsheets, faxed reports and scanned documents.         Accounts Payable Clerk   02/2014   to   03/2014     Company Name   City  ,   State       Receive and verify invoices and requirements and match purchase orders to invoice Prepare batches of invoices for data entry by matching invoices to correct vendor number Responsible for management of the weekly check mailings In charge of maintaining updated vendor files and file numbers Daily task includes the management of a customer service line (payment status, missing invoice, etc.) In charge of getting necessary documentation of Auditing Department.          Accounts Payable Clerk   12/2013   to   02/2014     Company Name   City  ,   State       Auditing of several months of Sprint bills to check for discrepancy in Plan rates.  Preformed calculations, collected bills, analyzed charges and complete variances in Excel Spreadsheets.  Completed and developed a procedure for the Auditing of Sprint Bills.          AP/AR Clerk   07/2013   to   11/2013     Company Name   City  ,   State       Executed accounts receivable reporting enhancements and reconciliation procedures.Performed debit, credit and total accounts on computer spreadsheets/databases, using specialized accounting software.Received, recorded, and banked cash, checks, and vouchers as well as reconciled records of bank transactions.Verified details of transactions, including funds received and total account balances.Coded the general ledger and processed vendor invoice payments.Deposited third party checks, as well as monthly reserve transfers.Coordinated approval processes of all accounts payable invoices.Balanced batch summary reports for verification and approval.Researched and resolved billing and invoice problems.          Accounts Receivable Accounts Receivable Specialist III   08/2000   to   06/2011     Company Name   City  ,   State       Posted overhead invoices to appropriate general ledger accounts.  Researched and resolved accounts payable discrepancies through invoice adjustments Coded and entered at least [50] invoices each day.  Effectively managed a high-volume of inbound and outbound customer calls.  Recognized for having no late fees or shut in's on company utilities Setup a Credit Card Process to ensure on time payment of utilities Assisted with New Vendor Setup Recipient of multiple positive reviews acknowledging dedication to excellent customer service Posted Cash and Completed Journal Entries Preform Debit and Credit Memo's Successfully implemented a scanning program to help with sox compliance.          Apartment Manager/Leasing    08/1999   to   12/2000     Company Name   City  ,   State       Tipton Management- Pine Lake Village Apartments Leased, Managed and Maintained 96% Occupancy Paid Bills by allocated Budget Completed move-ins and Move outs Got Painting and Sign bids (property rehab) Serve Evictions and filed Evictions Sent Letters out for Renewals and offered incentives for Renewals.          Education      BSBA  :   Human Resource Management   2011       CTU Online   City  ,   State  ,   USA     GPA:   GPA: 3.95     Study Business Management with a emphasis on Human Resource Management. While enrolled I maintained  a 3.95 G.P.A. and was also a school mentor to at risk students.          Skills     Accounts Payable  Accounts Receivable  Customer Service   Microsoft Suite  SAP  Solomon    Knowledge of Quickbooks        "
+}

@@ -1,0 +1,135 @@
+{
+  "id": "pair-R019",
+  "split": "train",
+  "persona": "senior",
+  "source_resume": {
+    "id": "ra-08239",
+    "dataset": "resume_atlas",
+    "industry": "consulting",
+    "seniority": "senior"
+  },
+  "jd": {
+    "title": "GlobalView Sr. Lead Consultant ($5K Sign-On Bonus)",
+    "company": "ADP",
+    "location": "",
+    "experience_years": null,
+    "requirements": [
+      {
+        "text": "Must have configuration knowledge / consulting skills for at least two applicable SAP functional areas.   Must have outstanding functional / blueprinting knowledge.",
+        "type": "must_have"
+      },
+      {
+        "text": "PREFERRED QUALIFICATIONS: Preference will be given to candidates who have the following:",
+        "type": "must_have"
+      },
+      {
+        "text": "Proven ability to annually lead Multi Country HR/Payroll implementations.",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience in mentoring and coaching multiple Lead Consultants.",
+        "type": "must_have"
+      },
+      {
+        "text": "Professional manner and presentation and ability to professionally set, manage and satisfy customer expectations through personal involvement or delegation.",
+        "type": "must_have"
+      },
+      {
+        "text": "Teamwork, work collaboratively with others to achieve group goals, working together to accomplish business results.",
+        "type": "must_have"
+      },
+      {
+        "text": "Excellent written and verbal communication skills. Analytical thinking problem solving skills",
+        "type": "must_have"
+      },
+      {
+        "text": "work systematically and logically to resolve problems, address opportunities or manage the situation at hand, identify causes, relationships and implications.",
+        "type": "must_have"
+      },
+      {
+        "text": "Consulting skills, understand business requirements and mapping to ensure consistency to ADP template, while minimizing risk to both client and ADP.",
+        "type": "must_have"
+      },
+      {
+        "text": "Methodologies - demonstrate knowledge and application of key methodologies employed by Implementation team and Project implementation methodology.",
+        "type": "must_have"
+      },
+      {
+        "text": "Ability to prioritize tasks and time management skills, ability to work across various projects, ability to lead a team of consultants to effectively implement a solution.",
+        "type": "must_have"
+      },
+      {
+        "text": "Exceptional knowledge of one or more Payroll, Human Resources, Portal or Time Management SAP modules configuration and design.",
+        "type": "must_have"
+      },
+      {
+        "text": "Ability to use tools such as Microsoft Excel, Word, PowerPoint, Project and Visio to effectively update and maintain documentation/ training/ demonstrations.",
+        "type": "must_have"
+      },
+      {
+        "text": "Client focused, demonstrate concern for meeting and exceeding immediate and future needs of clients.",
+        "type": "must_have"
+      },
+      {
+        "text": "Good business process knowledge of SAP module being implemented.",
+        "type": "must_have"
+      }
+    ],
+    "responsibilities": [
+      "Analysis & Consultation",
+      "Implement the client's solution using ADP's Implementation Methodology and the ADP GlobalView product (based on SAP).",
+      "Perform blueprinting workshops to gather information on the client's requirements.",
+      "Design and document the client's solution including their business requirements and any program specifications required according to ADP's documentation guidelines.",
+      "Take ownership of issues & gaps between client requirement and ADP GV template and work with other GV streams/areas to resolve them.",
+      "Integration & Testing",
+      "Liaise with clients throughout the data cleansing, mapping and conversion phase and provide any assistance required including reconciliation.",
+      "Coordinate training delivery with Global Education Services and when required update training manuals, preparing training systems and conducting training sessions."
+    ],
+    "full_description": "Applications for this posting will be accepted until 07/5/2024.  ADP is hiring a Global View Senior Lead Consultant. \r\n At ADP we are driven by your success. We engage your unique talents and perspectives. We welcome your ideas on how to do things differently and better. In your efforts to achieve, learn and grow, we support you all the way. If success motivates you, you belong at ADP. \r\n We strive for every interaction to be driven by our CORE values: Insightful Expertise, Integrity is Everything, Service Excellence, Inspiring Innovation, Each Person Counts, Results-Driven, & Social Responsibility. \r\n This position requires 25% of travel activity. \r\n RESPONSIBILITIES: \r\n Analysis & Consultation \r\n   Implement the client's solution using ADP's Implementation Methodology and the ADP GlobalView product (based on SAP). \r\n  Perform blueprinting workshops to gather information on the client's requirements. \r\n  Design and document the client's solution including their business requirements and any program specifications required according to ADP's documentation guidelines. \r\n  Take ownership of issues & gaps between client requirement and ADP GV template and work with other GV streams/areas to resolve them. \r\n  Integration & Testing \r\n   Liaise with clients throughout the data cleansing, mapping and conversion phase and provide any assistance required including reconciliation. \r\n  Coordinate training delivery with Global Education Services and when required update training manuals, preparing training systems and conducting training sessions. \r\n  Provide sample test scripts to enable PS clients to adequately test the solution. \r\n  Support clients through the User Acceptance, Parallel Testing and Go-Live phases. \r\n  Responsible for achieving estimated days as per fixed price strategy. \r\n  Ensure that all deliverables are created on time and accurately as per project. schedule, such as Blueprints, specifications, BP reviews, Configuration Audits and configuration documentation. \r\n  Ensure timely handover to client services following ADP handover methodology. \r\n  Product Knowledge \r\n   Possess the highest level of HR and payroll knowledge and the necessary competencies to deliver the maximum value to ADP's clients. \r\n  Maintain up to date knowledge of the SAP Products, of SAP related news and any developments to the product and its competitors. \r\n  Maintain up to date knowledge of the ADP GlobalView template and ensure that the template is adhered to. \r\n  Liaise with the Product Manager to provide feedback on the template and to understand future product direction/ changes. \r\n  Provide assistance and liaise with the Product Manager & Project teams to design any non standard changes to the ADP GlobalView template. \r\n  Project Planning/Management Activities \r\n   Minimize ADP's exposure to risk while focusing on appropriate application of the ADP GlobalView template to maximize value to the client. \r\n  Demonstrate proactive participation in Implementation Team forums, contribute and participate in knowledge sharing and team development sessions. \r\n  Seek to act as a mentor and actively support fellow team members in an effort to develop their respective skills. \r\n  Liaise with the ADP Project Manager (Consulting) assigned to the project and Line Manager, providing regular status updates and early warning of any slippage/ problems that may occur. \r\n  Escalate project issues to Project Manager including scope variations, task slippages and risks that may arise during the project. \r\n  Provide relevant training and knowledge sharing opportunities for members of the Implementation Team, this can include informal on-the-job training to facilitating formal SAP training courses. \r\n  Demonstrate and apply knowledge of key implementation strategies such as the SAP ASAP methodology. \r\n  Knowledge of support methodologies including usage of an Issue tracking system. \r\n  Keep clients blueprints, configuration worksheets, client specific configuration documentation and training material up to date. \r\n  Liaise with internal groups including Basis, Client Services, Application Support, Project Management and Product Management to ensure that client's receive the highest levels of client service. \r\n  Provide pre-sales support including analyzing and providing answer for tender documentation, performing demonstrations and attending any workshops where specialist knowledge of payroll is required. \r\n  Perform Quality Assurance reviews on blueprints and configuration of the client's system. \r\n  Performs other related duties as assigned. \r\n  QUALIFICATIONS REQUIRED: \r\n   Must have 5-7 years of proven SAP Payroll consulting experience. \r\n  Must have configuration knowledge / consulting skills for at least two applicable SAP functional areas.   Must have outstanding functional / blueprinting knowledge. \r\n   PREFERRED QUALIFICATIONS: Preference will be given to candidates who have the following: \r\n   Proven ability to annually lead Multi Country HR/Payroll implementations. \r\n  Experience in mentoring and coaching multiple Lead Consultants. \r\n  Professional manner and presentation and ability to professionally set, manage and satisfy customer expectations through personal involvement or delegation. \r\n  Teamwork, work collaboratively with others to achieve group goals, working together to accomplish business results. \r\n  Excellent written and verbal communication skills. Analytical thinking problem solving skills \r\n  - work systematically and logically to resolve problems, address opportunities or manage the situation at hand, identify causes, relationships and implications. \r\n  Consulting skills, understand business requirements and mapping to ensure consistency to ADP template, while minimizing risk to both client and ADP. \r\n  Methodologies - demonstrate knowledge and application of key methodologies employed by Implementation team and Project implementation methodology. \r\n  Ability to prioritize tasks and time management skills, ability to work across various projects, ability to lead a team of consultants to effectively implement a solution. \r\n  Exceptional knowledge of one or more Payroll, Human Resources, Portal or Time Management SAP modules configuration and design. \r\n  Ability to use tools such as Microsoft Excel, Word, PowerPoint, Project and Visio to effectively update and maintain documentation/ training/ demonstrations. \r\n  Client focused, demonstrate concern for meeting and exceeding immediate and future needs of clients. \r\n  Good business process knowledge of SAP module being implemented. \r\n  #LI-AE1 \r\n #LI-Remote  \r\n Base salary offers for this position may vary based on factors such as location, skills, and relevant experience. Some positions may include additional compensation in the form of bonus, equity or commissions. We offer the following benefits: Medical, Dental, Vision, Life Insurance, Matched Retirement Savings, Wellness Program, Short-and Long-Term Disability, Charitable Contribution Match, Holidays, Personal Days & Vacation, Paid Volunteer Time Off, and more. The compensation for this role is $75,600.00 - $202,590.00 / Year \r\n Diversity, Equity, Inclusion & Equal Employment Opportunity at ADP: ADP is committed to an inclusive, diverse and equitable workplace, and is further committed to providing equal employment opportunities regardless of any protected characteristic including: race, color, genetic information, creed, national origin, religion, sex, affectional or sexual orientation, gender identity or expression, lawful alien status, ancestry, age, marital status, protected veteran status or disability. Hiring decisions are based upon ADP’s operating needs, and applicant merit including, but not limited to, qualifications, experience, ability, availability, cooperation, and job performance. \r\n Ethics at ADP: ADP has a long, proud history of conducting business with the highest ethical standards and full compliance with all applicable laws. We also expect our people to uphold our values with the highest level of integrity and behave in a manner that fosters an honest and respectful workplace. Click https://jobs.adp.com/life-at-adp/ to learn more about ADP’s culture and our full set of values."
+  },
+  "expected_output": {
+    "_status": "NEEDS_HUMAN_REVIEW",
+    "_raw_text_preview": "jessica claire 100 montgomery st 10th floor 555 4321000 resumesampleexamplecom summary gis consultant 97 years experience within industry main focus gis ge small world product suites esri gis product suites extensive experience working desktop enterprise level gis implementations integrations customizations data migration spatial data analysis using ge smallworld gis gis operations specialist expertise different gis desktop web field applications tools products like ge small world core ge gis ut",
+    "summary": "",
+    "experience": [],
+    "skills": {},
+    "certifications": [],
+    "education": []
+  },
+  "jd_requirements": [
+    "Must have configuration knowledge / consulting skills for at least two applicable SAP functional are",
+    "PREFERRED QUALIFICATIONS: Preference will be given to candidates who have the following:",
+    "Proven ability to annually lead Multi Country HR/Payroll implementations.",
+    "Experience in mentoring and coaching multiple Lead Consultants.",
+    "Professional manner and presentation and ability to professionally set, manage and satisfy customer ",
+    "Teamwork, work collaboratively with others to achieve group goals, working together to accomplish bu",
+    "Excellent written and verbal communication skills. Analytical thinking problem solving skills",
+    "work systematically and logically to resolve problems, address opportunities or manage the situation",
+    "Consulting skills, understand business requirements and mapping to ensure consistency to ADP templat",
+    "Methodologies - demonstrate knowledge and application of key methodologies employed by Implementatio",
+    "Ability to prioritize tasks and time management skills, ability to work across various projects, abi",
+    "Exceptional knowledge of one or more Payroll, Human Resources, Portal or Time Management SAP modules",
+    "Ability to use tools such as Microsoft Excel, Word, PowerPoint, Project and Visio to effectively upd",
+    "Client focused, demonstrate concern for meeting and exceeding immediate and future needs of clients.",
+    "Good business process knowledge of SAP module being implemented."
+  ],
+  "cloud_skills": [
+    "sql",
+    "sap",
+    "react",
+    "data analysis",
+    "agile",
+    "devops"
+  ],
+  "provenance": {
+    "data_source": "real_dataset_raw_text",
+    "jd_source": "github_indeed",
+    "resume_dataset": "resume_atlas",
+    "jd_id": "indeed-d10f8b81c242be31",
+    "resume_id": "ra-08239",
+    "generated_at": "2026-05-08T08:47:53.854Z",
+    "expected_output_author": "NEEDS_HUMAN_REVIEW",
+    "circularity_risk": "low",
+    "notes": "Resume from real dataset (raw text). JD from real job posting. Expected output EMPTY — needs LLM parsing + human review."
+  }
+}

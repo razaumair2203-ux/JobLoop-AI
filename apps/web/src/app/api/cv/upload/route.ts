@@ -16,6 +16,8 @@ import {
   cleanParsedCVs,
   buildConflictQuestions,
   extractContactDetails,
+  normalizeExtractedText,
+  assessExtractionQuality,
 } from "@jobloop/ai";
 import type { ProfileCloud, Evidence, ConflictReport, PersonaType } from "@jobloop/ai";
 
@@ -144,6 +146,31 @@ export async function POST(request: Request) {
 
       results.push({ filename: file.name, error: `Text extraction failed: ${errMsg}` });
       continue;
+    }
+
+    // Normalize text BEFORE sending to LLM — saves tokens, fixes encoding/spacing artifacts
+    const normalized = normalizeExtractedText(extractedText);
+    extractedText = normalized.text;
+    if (normalized.warnings.length > 0) {
+      console.warn(`[${file.name}] Normalization warnings:`, normalized.warnings);
+    }
+
+    // Assess extraction quality BEFORE sending to LLM
+    const quality = assessExtractionQuality(extractedText);
+    if (quality.quality === "failed") {
+      await supabase
+        .from("cv_uploads")
+        .update({
+          status: "error",
+          extracted_text: extractedText,
+          error_message: `Extraction quality too low: ${quality.issues.join("; ")}`,
+        })
+        .eq("id", upload.id);
+      results.push({ filename: file.name, error: `Poor extraction quality: ${quality.issues.join("; ")}` });
+      continue;
+    }
+    if (quality.quality === "poor") {
+      console.warn(`[${file.name}] Poor extraction quality:`, quality.issues);
     }
 
     if (!extractedText || extractedText.trim().length < 50) {
@@ -332,7 +359,7 @@ export async function POST(request: Request) {
 
     // Convert resolved profile to ParsedCV shape for Cloud builder
     const cleanParsedCV = resolvedProfileToParsedCV(resolvedProfile);
-    const cloud = buildCloudFromParsedCV(cleanParsedCV);
+    const { cloud } = buildCloudFromParsedCV(cleanParsedCV);
 
     // ================================================================
     // STEP 5: Preserve Socratic evidence from previous Cloud

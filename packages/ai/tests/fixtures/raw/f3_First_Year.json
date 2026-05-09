@@ -1,0 +1,159 @@
+{
+  "name": "First and Last Name",
+  "email": "bmail@binghamton.edu",
+  "phone": "(607) 555-7777",
+  "location": { "city": "Binghamton", "country": "US" },
+  "links": {
+    "linkedin": "www.linkedin.com/in/yourname",
+    "github": null,
+    "portfolio": null,
+    "other": []
+  },
+  "summary": null,
+  "total_experience_years": 1,
+  "experience": [
+    {
+      "company": "Binghamton University, Engineering Design Division",
+      "employer": "Binghamton University",
+      "title": "Course Assistant",
+      "start_date": "Jan 2026",
+      "end_date": "Present",
+      "duration_months": 4,
+      "location": "Binghamton, NY",
+      "bullets": [
+        "Instruct first-year engineering students in the First-Year Engineering Computing lab course by assisting with homework problems, answering questions during lab time, and guiding course assignments"
+      ],
+      "technologies_used": [],
+      "metrics_mentioned": [],
+      "programs": [],
+      "team_size": null,
+      "seniority_signals": [],
+      "domain": "academia"
+    },
+    {
+      "company": "Wally Ice Cream Parlor",
+      "employer": "Wally Ice Cream Parlor",
+      "title": "Sales Associate",
+      "start_date": "Jun 2025",
+      "end_date": "Aug 2025",
+      "duration_months": 3,
+      "location": null,
+      "bullets": [
+        "Provide guests with food and any other assistance in a timely and respectful manner",
+        "Stock and organize storage and inventory of the ice cream and additional material",
+        "Manage the cash register and all customer transactions while assuring accuracy and correct payments"
+      ],
+      "technologies_used": [],
+      "metrics_mentioned": [],
+      "programs": [],
+      "team_size": null,
+      "seniority_signals": [],
+      "domain": "retail"
+    }
+  ],
+  "education": [
+    {
+      "institution": "Binghamton University, SUNY, Thomas J. Watson College of Engineering and Applied Science",
+      "degree": "Bachelor of Science in Industrial and Systems Engineering",
+      "start_date": null,
+      "end_date": "May 2029",
+      "gpa": null,
+      "coursework": []
+    },
+    {
+      "institution": "Binghamton High School",
+      "degree": "High School Diploma",
+      "start_date": null,
+      "end_date": "Jun 2025",
+      "gpa": "3.56/4.00",
+      "coursework": []
+    }
+  ],
+  "skills": [
+    { "name": "SOLIDWORKS", "original_text": "SOLIDWORKS", "domain": "engineering", "category": "Software", "source": "skills_section" },
+    { "name": "Autodesk Inventor", "original_text": "Autodesk Inventor", "domain": "engineering", "category": "Software", "source": "skills_section" },
+    { "name": "Fusion 360", "original_text": "Fusion 360", "domain": "engineering", "category": "Software", "source": "skills_section" },
+    { "name": "Arduino", "original_text": "Arduino", "domain": "engineering", "category": "Software", "source": "skills_section" },
+    { "name": "Microsoft Office Suite", "original_text": "Microsoft Office Suite", "domain": "general", "category": "Software", "source": "skills_section" },
+    { "name": "MATLAB", "original_text": "MATLAB", "domain": "engineering", "category": "Languages", "source": "skills_section" },
+    { "name": "Python", "original_text": "Python", "domain": "software_engineering", "category": "Languages", "source": "skills_section" },
+    { "name": "C", "original_text": "C+", "domain": "software_engineering", "category": "Languages", "source": "skills_section" }
+  ],
+  "competencies": [],
+  "certifications": [],
+  "awards": [],
+  "projects": [
+    {
+      "name": "Global Issues Project: Solar Panel",
+      "role": "Team Leader",
+      "start_date": "Jan 2026",
+      "end_date": "May 2026",
+      "location": null,
+      "bullets": [
+        "Research energy generation systems, solar panels, and solar system designs to specifications based on a set of requirements to model a fully functional solar panel for implementation using CAD software",
+        "Manage a team of seven other engineers in brainstorming, scheduling, and task delegation to present designs for solar panels at an engineering exposition for faculty, students, and the public"
+      ],
+      "technologies_used": ["CAD"]
+    },
+    {
+      "name": "Arduino Project: Simon Says",
+      "role": "Team Leader",
+      "start_date": "Oct 2025",
+      "end_date": "Dec 2025",
+      "location": null,
+      "bullets": [
+        "Generated a functioning version of the game 'Simon Says' and presented the game along with a poster at the Watson Expo with over 400 students and faculty in attendance",
+        "Soldered wire connections to a printed circuit board from the breadboard model design prototype",
+        "Coded in C for an LCD score counter modification where the score increased by 1 for each successful input",
+        "Modeled a themed case for the game in SOLIDWORKS CAD and 3D printed the design for display at the exposition"
+      ],
+      "technologies_used": ["Arduino", "C", "SOLIDWORKS", "3D Printing"]
+    },
+    {
+      "name": "Reverse Engineering Project: Waffle Maker",
+      "role": "Team Leader",
+      "start_date": "Sep 2025",
+      "end_date": "Oct 2025",
+      "location": null,
+      "bullets": [
+        "Collaborated with a team of four to reverse engineer and re-design a waffle maker through analysis, deconstruction, and a CAD-modeled re-design outlining possible improvements",
+        "Constructed a 24-page technical report including Gantt Charts, evaluation matrices, CAD models, and technical revisions, which was presented to faculty and staff"
+      ],
+      "technologies_used": ["CAD"]
+    }
+  ],
+  "publications": [],
+  "volunteer": [],
+  "leadership": [
+    {
+      "organization": "Society of Hispanic Professional Engineers",
+      "role": "Member",
+      "start_date": "Sep 2025",
+      "end_date": "Present",
+      "location": null,
+      "bullets": [
+        "Actively participate in professional development workshops to enhance skills such as resume writing, interview techniques, and networking",
+        "Contribute to discussions in chapter meetings and activities aimed at promoting the goals of the chapter",
+        "Build connections with peers, mentors, and industry professionals through active participation in events"
+      ]
+    },
+    {
+      "organization": "The Society of Women Engineers",
+      "role": "Member",
+      "start_date": "Sep 2025",
+      "end_date": "Present",
+      "location": null,
+      "bullets": [
+        "Attend sessions focused on career advancement, technical skills, and leadership development",
+        "Volunteer in outreach programs to inspire and mentor young women interested in pursuing engineering"
+      ]
+    }
+  ],
+  "professional_affiliations": [
+    { "name": "Society of Hispanic Professional Engineers" },
+    { "name": "The Society of Women Engineers" }
+  ],
+  "training": [],
+  "languages_spoken": [],
+  "conflicts": []
+}

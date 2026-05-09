@@ -1,0 +1,57 @@
+{
+  "id": "pair-R022",
+  "split": "train",
+  "persona": "mid_career",
+  "source_resume": {
+    "id": "ra-00078",
+    "dataset": "resume_atlas",
+    "industry": "legal",
+    "seniority": "unknown"
+  },
+  "jd": {
+    "title": "Client Advocate (Remote)",
+    "company": "NFP Corp",
+    "location": "",
+    "experience_years": null,
+    "requirements": [
+      {
+        "text": "Knowledge of MS Excel",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience with HRIS and online benefit enrollment systems \r\n  Excellent communication",
+        "type": "must_have"
+      }
+    ],
+    "responsibilities": [],
+    "full_description": "Who We Are:  NFP, an Aon company, is a multiple Best Places to Work award winner in Business Insurance who has also earned the 5-Star Diversity, Equity and Inclusion (DEI) award from Insurance Business magazine and the WORK180 employer endorsement. We are an organization of consultative advisors and problem solvers. We help companies and individuals around the globe address their most significant risk, workforce, wealth management and retirement challenges through custom solutions and a people-first approach. To learn more, please visit: https://www.NFP.com. \r\n  Summary of Role:  As a Client Advocate, you will be a member of our client facing teams responsible for responding and resolving client/employee needs on a variety of topics. This is a full-time position that requires day to day benefit administration for multiple clients and entails completing enrollments, terminations and employee personnel changes, monthly billing reconciliation. The Client Advocate will answer emails and phone calls from our clients’ employees and be required to provide excellent customer service each day.  Essential Duties and Responsibilities:    Assists in the daily administration of health and welfare plans for clients; Includes medical, dental, life and disability plans; Works closely with internal partners, clients and external vendors each day to do so \r\n  Leads and participates in multiple assigned projects related to health and welfare including online enrollment system implementations \r\n  Client COBRA administration if necessary \r\n  Answer client emails that are filtered through the benefit administration email address \r\n  Assist employees with eligibility issues and specific employee requests \r\n  Review weekly EDI Feed Error Reports for assigned clients \r\n  Log all emails, calls and tasks into Salesforce \r\n  \r\n Education and/or Experience: \r\n  \r\n  Four Year of College or university degree or equivalent experience \r\n  2 or more years of health insurance experience preferred \r\n  Knowledge of MS Excel, MS Word, and MS Outlook \r\n  Benefit Administration and call center experience a plus \r\n  Experience with HRIS and online benefit enrollment systems \r\n  Excellent communication, interpersonal, organizational and project management skills \r\n  Ability to work perform well under pressure in a fast-paced environment \r\n  Ability to work autonomously, while recognizing team goals \r\n  \r\n Certificates, Licenses, Registration: \r\n  \r\n  Life, Accident and Health License \r\n  \r\n What We Offer:  NFP is proud to offer a competitive salary, PTO and paid holidays, 401(k) with match, exclusive discount programs, health and wellness programs, and more. Our people-first culture focuses on building and nurturing lifelong relationships with our employees because, at the end of the day, we exist to be there for others. The base salary range for this position is $45,000 – $80,000. The base salary offered will be determined by factors including, but not limited to, experience, credentials, education, certifications, skill level required for the position, the scope of the position, and geographic location. Actual base salary offered will be determined on a case-by-case basis. In addition to the base salary, this position may be eligible for performance-based incentives. \r\n  NFP and You... Better Together! \r\n  NFP is an inclusive Equal Employment Opportunity employer."
+  },
+  "expected_output": {
+    "_status": "NEEDS_HUMAN_REVIEW",
+    "_raw_text_preview": "elfriede bergstrom 734 tony extensions boston phone 1 555 744 2082 experience rempel inc 102018 present san francisco ca advocate excellent communication skills presentationoral writing skills comfortable working tight deadlines juggling multiple projects simultaneously working knowledge basic html code experience human resources administration andor benefits recent experience health information technology current valid license registered nurse allied health professional physician extenders adva",
+    "summary": "",
+    "experience": [],
+    "skills": {},
+    "certifications": [],
+    "education": []
+  },
+  "jd_requirements": [
+    "Knowledge of MS Excel",
+    "Experience with HRIS and online benefit enrollment systems \r\n  Excellent communication"
+  ],
+  "cloud_skills": [
+    "big data",
+    "machine learning"
+  ],
+  "provenance": {
+    "data_source": "real_dataset_raw_text",
+    "jd_source": "github_indeed",
+    "resume_dataset": "resume_atlas",
+    "jd_id": "indeed-3f8b37419bf05dc7",
+    "resume_id": "ra-00078",
+    "generated_at": "2026-05-08T08:47:53.855Z",
+    "expected_output_author": "NEEDS_HUMAN_REVIEW",
+    "circularity_risk": "low",
+    "notes": "Resume from real dataset (raw text). JD from real job posting. Expected output EMPTY — needs LLM parsing + human review."
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "id": "pair-R044",
+  "split": "train",
+  "persona": "early_career",
+  "source_resume": {
+    "id": "ra-12398",
+    "dataset": "resume_atlas",
+    "industry": "sales",
+    "seniority": "entry"
+  },
+  "jd": {
+    "title": "(Entry Level) Sales Executive",
+    "company": "University Recruiters",
+    "location": "",
+    "experience_years": null,
+    "requirements": [],
+    "responsibilities": [],
+    "full_description": "We are looking for top notch, customer focused team members to join our Sales Department and directly impact our growth\nAs an Account Executive, you will take our customers through the entire mortgage sales cycle and ensure a best-in-class customer experience. Customers call you in search of a financial solution, whether that's purchasing a new home or restructuring their current financial situation.\nProcess: We train you, then you do a great job of helping customers find homes. Great pay, great benefits, great friendships. Through our Leadership Program and our sales training you will also gain skills required to become a corporate and community leader\nResponsibilitiesEffectively prepare and present customized mortgage solutions to potential customersFollow up on inbound, direct marketing leadsAnalyze credit worthiness, calculate risk and provide unique financial solutionsAnalyze customer application, credit reports, and supporting documentationEngage and present to customers\nAbout You:Hungry ambitionPositive attitudeTeam mentalityBachelor’s Degree Career-minded, results oriented and takes actionExcellent interpersonal and communication skillsCan complete multiple projects simultaneously under tight deadlinesConfident to take on new challenges"
+  },
+  "expected_output": {
+    "_status": "NEEDS_HUMAN_REVIEW",
+    "_raw_text_preview": "jessica claire 100 montgomery st 10th floor 555 4321000 resumesampleexamplecom summary detailoriented shipping wellversed managing movement goods around warehouses showcases strong attention detail remarkable work ethic solid problemsolving communication organizational skills offering 18 years dynamic shipping distribution experience flexible hard worker ready learn contribute team success personable firefighter experience offering emergency response collaborating teams deep knowledge practice e",
+    "summary": "",
+    "experience": [],
+    "skills": {},
+    "certifications": [],
+    "education": []
+  },
+  "jd_requirements": [],
+  "cloud_skills": [],
+  "provenance": {
+    "data_source": "real_dataset_raw_text",
+    "jd_source": "kaggle_linkedin",
+    "resume_dataset": "resume_atlas",
+    "jd_id": "linkedin-3898172833",
+    "resume_id": "ra-12398",
+    "generated_at": "2026-05-08T08:47:53.869Z",
+    "expected_output_author": "NEEDS_HUMAN_REVIEW",
+    "circularity_risk": "low",
+    "notes": "Resume from real dataset (raw text). JD from real job posting. Expected output EMPTY — needs LLM parsing + human review."
+  }
+}

@@ -7,7 +7,7 @@
  * or flag issues.
  *
  * In dev mode: rule-based classification (no API call).
- * In API mode: Haiku classifies ambiguous messages, rules handle clear ones.
+ * In API mode: fast tier classifies ambiguous messages, rules handle clear ones.
  */
 
 import { getClient, MODELS } from "./client";
@@ -240,7 +240,7 @@ export async function classifyFeedback(
     };
   }
 
-  // API MODE — Haiku classifies (cheap, fast)
+  // API MODE — fast tier classifies (cheap, fast)
   const client = getClient();
   const response = await client.messages.create({
     model: MODELS.fast,

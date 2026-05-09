@@ -1,0 +1,84 @@
+{
+  "id": "pair-R036",
+  "split": "train",
+  "persona": "mid_career",
+  "source_resume": {
+    "id": "ra-12022",
+    "dataset": "resume_atlas",
+    "industry": "communications",
+    "seniority": "unknown"
+  },
+  "jd": {
+    "title": "Marketing & Public Relations Business Partner",
+    "company": "Burns & McDonnell",
+    "location": "",
+    "experience_years": 4,
+    "requirements": [
+      {
+        "text": "EEO/Minorities/Females/Disabled/Veterans",
+        "type": "must_have"
+      },
+      {
+        "text": "Job Public Relations",
+        "type": "must_have"
+      },
+      {
+        "text": "Primary Location US-MO-Kansas City",
+        "type": "must_have"
+      },
+      {
+        "text": "Other Locations US-MN-Minneapolis/St Paul, US-CT-Wallingford, US-CO-Denver, US-GA-Atlanta, US-TX-Houston, US-IL-Chicago",
+        "type": "must_have"
+      },
+      {
+        "text": "Schedule: Full-time",
+        "type": "must_have"
+      },
+      {
+        "text": "Travel: Yes, 5 % of the Time",
+        "type": "must_have"
+      },
+      {
+        "text": "Req ID: 241350",
+        "type": "must_have"
+      },
+      {
+        "text": "Job Hire Type Experienced #COR N/A",
+        "type": "must_have"
+      }
+    ],
+    "responsibilities": [],
+    "full_description": "Description\n\nThe Marketing & Public Relations (PR) Business Partner will develop and implement holistic strategies for Burns & McDonnell to build brand awareness, drive thought leadership and connect marketing to sales opportunities. The business partner will be an integral part of the firm’s marketing and PR department that partners with our business groups and regional offices.\n\nThe Marketing & PR Business Partner will work with 1898 & Co., a Burns & McDonnell company. 1898 & Co. is a global business, technology and security consultancy serving critical infrastructure industries. With a focus on marketing strategy and analytics, public relations, project management and creative execution, the business partner will work collaboratively to position the team’s services, projects and subject matter experts as industry leaders and ultimately position 1898 & Co., powered by the experience of Burns & McDonnell, as a top consulting partner in the industry.\n\nThe position can be based in any of the following office locations: Kansas City, Atlanta, Chicago, Denver, Houston, Minneapolis, or Wallingford. Travel to the Burns & McDonnell World Headquarters in Kansas City would be approximately once each month.\n\nSpecific responsibilities include the following, with other duties as assigned:\n\nPartner with business unit leaders to develop and execute strategic marketing and public relations plans to generate brand awareness and client engagement among existing and targeted clients.Develop, lead and implement promotional campaigns.Lead development of all market-specific material.Manage all marketing and public relations activities including webinars, conference promotion, media opportunities and events.Manage content marketing and thought leadership for owned and earned media channels.Provide project management guidance on all marketing and public relations activities and deliverables monitoring deadlines, benchmarks and effectiveness of initiatives.Serve as a liaison and collaborator between business units and all department resources and teams, such as sales enablement and digital strategy, market insights and customer experience and creative marketing.Manage, maintain and monitor local leads and client relationship database.Review of marketing and public relations activities for consistent brand strategies.Develop trusted relationships with business and trade media contacts making the firm the go-to source for thought leadership in our industry.Manage media relations serving as a key contact for the business unit.Proactively identify opportunities to promote company projects, industry trends, corporate culture and thought leadership (and more) to targeted media outlets.Work with internal clients to research and create content for targeted media outlets via news releases, bylined articles, blogs, videos and other channels, as needed.Proactively identify and manage award opportunities to promote our people and projects.Prepare all internal clients for interviews, speaking opportunities and events by developing briefing documents with background information and talking points.Monitor and measure media coverage, developing client-facing media reports for all projects.Staff and manage interviews and media events.All other duties as assigned.\n\nQualifications\n\nBachelor’s degree in marketing, communications, journalism or related degree.At least 4 years of experience working in marketing and/or public relations.Strong writing skills with knowledge of AP style.Excellent verbal and written communication skills.Experience working with professional services industry a plus.Strong media relations experience.Robust collaboration and leadership skills.Ability to develop strategic and innovative marketing and public relations strategies.Ability to build strong relationships and provide excellent client service.A self-starter with strong project management and organizational skills.Excellent oral and written communication skills, strong interpersonal skills and the ability to clearly present complex information. Proficient in Microsoft Office, CRM and Hubspot.\n\nEEO/Minorities/Females/Disabled/Veterans\n\nJob Public Relations\n\nPrimary Location US-MO-Kansas City\n\nOther Locations US-MN-Minneapolis/St Paul, US-CT-Wallingford, US-CO-Denver, US-GA-Atlanta, US-TX-Houston, US-IL-Chicago\n\nSchedule: Full-time\n\nTravel: Yes, 5 % of the Time\n\nReq ID: 241350\n\nJob Hire Type Experienced #COR N/A"
+  },
+  "expected_output": {
+    "_status": "NEEDS_HUMAN_REVIEW",
+    "_raw_text_preview": "summary jessica claire 100 montgomery st 10th floor555 4321000 resumesampleexamplecom talented marketing professional writes effective communication promote company brand improve public image skilled writer proofreader proactive mindset extensive experience 4 companies strategic pr title offering proven leadership creating comprehensive public relations communications strategies advance companys vision goals adept aspects public relations including media relations internal communications event p",
+    "summary": "",
+    "experience": [],
+    "skills": {},
+    "certifications": [],
+    "education": []
+  },
+  "jd_requirements": [
+    "EEO/Minorities/Females/Disabled/Veterans",
+    "Job Public Relations",
+    "Primary Location US-MO-Kansas City",
+    "Other Locations US-MN-Minneapolis/St Paul, US-CT-Wallingford, US-CO-Denver, US-GA-Atlanta, US-TX-Hou",
+    "Schedule: Full-time",
+    "Travel: Yes, 5 % of the Time",
+    "Req ID: 241350",
+    "Job Hire Type Experienced #COR N/A"
+  ],
+  "cloud_skills": [],
+  "provenance": {
+    "data_source": "real_dataset_raw_text",
+    "jd_source": "kaggle_linkedin",
+    "resume_dataset": "resume_atlas",
+    "jd_id": "linkedin-3904390153",
+    "resume_id": "ra-12022",
+    "generated_at": "2026-05-08T08:47:53.864Z",
+    "expected_output_author": "NEEDS_HUMAN_REVIEW",
+    "circularity_risk": "low",
+    "notes": "Resume from real dataset (raw text). JD from real job posting. Expected output EMPTY — needs LLM parsing + human review."
+  }
+}

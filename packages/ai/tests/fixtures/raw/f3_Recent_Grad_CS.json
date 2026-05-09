@@ -1,0 +1,422 @@
+{
+  "name": "First and Last Name",
+  "email": "bmail@binghamton.edu",
+  "phone": "(111) 111-1111",
+  "location": {
+    "city": "Binghamton",
+    "country": "US"
+  },
+  "links": {
+    "linkedin": "www.linkedin.com/in/yourname",
+    "github": "GitHub Link",
+    "portfolio": "Portfolio Link",
+    "other": []
+  },
+  "summary": null,
+  "total_experience_years": 2,
+  "experience": [
+    {
+      "company": "Amazon",
+      "employer": "Amazon",
+      "title": "Front-End Engineering Intern",
+      "start_date": "May 2024",
+      "end_date": "Aug 2024",
+      "duration_months": 4,
+      "location": "Seattle, WA",
+      "bullets": [
+        "Developed an internal online portal to automate the process of requesting/granting reward points for vendor use by utilizing React framework and Ant Design library",
+        "Designed an easy-to-use frontend UI system by integrating backend data into a tabular representation that can be easily filtered based on different criteria, including time and type of request",
+        "Increased process efficiency by up to 85% by enabling vendors to instantly create requests for reward points",
+        "Enabled status tracking of requests to distinguish successful requests from failed/in-process requests"
+      ],
+      "technologies_used": [
+        "Node.js",
+        "ReactJS",
+        "AWS",
+        "Ant Design"
+      ],
+      "metrics_mentioned": [
+        "85% process efficiency increase"
+      ],
+      "programs": [],
+      "team_size": null,
+      "seniority_signals": [],
+      "domain": "software_engineering"
+    },
+    {
+      "company": "Ernst & Young",
+      "employer": "Ernst & Young",
+      "title": "Trajectory Program Internship",
+      "start_date": "Jun 2023",
+      "end_date": "Aug 2023",
+      "duration_months": 3,
+      "location": "New York, NY",
+      "bullets": [
+        "Collaborated with a team of six to conduct a risk assessment by developing a tool using Microsoft Excel and VB.NET",
+        "Created UI for risk assessment tool by organizing the tool into sections, controlling workflow, and developing methodology to identify and assess areas of high risk",
+        "Analyzed security environment and related risk for the bank infrastructure to improve safety measures",
+        "Presented final recommendations to 50+ Ernst & Young executives at the NY headquarters"
+      ],
+      "technologies_used": [
+        "Node.js",
+        "VB.NET",
+        "MongoDB",
+        "Bash",
+        "WordPress",
+        "Microsoft Excel"
+      ],
+      "metrics_mentioned": [
+        "team of six",
+        "50+ executives"
+      ],
+      "programs": [],
+      "team_size": 6,
+      "seniority_signals": [],
+      "domain": "consulting"
+    }
+  ],
+  "education": [
+    {
+      "institution": "Binghamton University, State University of New York, Thomas J. Watson College of Engineering and Applied Science",
+      "degree": "Bachelor of Science in Computer Science, Artificial Intelligence Track",
+      "start_date": null,
+      "end_date": "May 2025",
+      "gpa": "3.56/4.00",
+      "coursework": [
+        "Data Structures and Algorithms",
+        "Object-Oriented Programming",
+        "Machine Learning",
+        "Operating Systems"
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "name": "C++",
+      "original_text": "C++",
+      "domain": "software_engineering",
+      "category": "Languages",
+      "source": "skills_section"
+    },
+    {
+      "name": "C",
+      "original_text": "C",
+      "domain": "software_engineering",
+      "category": "Languages",
+      "source": "skills_section"
+    },
+    {
+      "name": "Swift",
+      "original_text": "Swift",
+      "domain": "software_engineering",
+      "category": "Languages",
+      "source": "skills_section"
+    },
+    {
+      "name": "Java",
+      "original_text": "Java",
+      "domain": "software_engineering",
+      "category": "Languages",
+      "source": "skills_section"
+    },
+    {
+      "name": "Python",
+      "original_text": "Python",
+      "domain": "software_engineering",
+      "category": "Languages",
+      "source": "skills_section"
+    },
+    {
+      "name": "Scala",
+      "original_text": "Scala",
+      "domain": "software_engineering",
+      "category": "Languages",
+      "source": "skills_section"
+    },
+    {
+      "name": "JavaScript",
+      "original_text": "JavaScript",
+      "domain": "software_engineering",
+      "category": "Languages",
+      "source": "skills_section"
+    },
+    {
+      "name": "Visual Basic .NET",
+      "original_text": "Visual Basic .NET",
+      "domain": "software_engineering",
+      "category": "Languages",
+      "source": "skills_section"
+    },
+    {
+      "name": "X-86 Assembly",
+      "original_text": "X-86 Assembly",
+      "domain": "software_engineering",
+      "category": "Languages",
+      "source": "skills_section"
+    },
+    {
+      "name": "XCode",
+      "original_text": "XCode",
+      "domain": "software_engineering",
+      "category": "Software and OS",
+      "source": "skills_section"
+    },
+    {
+      "name": "Eclipse",
+      "original_text": "Eclipse",
+      "domain": "software_engineering",
+      "category": "Software and OS",
+      "source": "skills_section"
+    },
+    {
+      "name": "Android Studio",
+      "original_text": "Android Studio",
+      "domain": "software_engineering",
+      "category": "Software and OS",
+      "source": "skills_section"
+    },
+    {
+      "name": "Visual Studio Code",
+      "original_text": "Visual Studio Code",
+      "domain": "software_engineering",
+      "category": "Software and OS",
+      "source": "skills_section"
+    },
+    {
+      "name": "Jupyter Notebook",
+      "original_text": "Jupyter Notebook",
+      "domain": "data_science",
+      "category": "Software and OS",
+      "source": "skills_section"
+    },
+    {
+      "name": "Git",
+      "original_text": "Git",
+      "domain": "software_engineering",
+      "category": "Software and OS",
+      "source": "skills_section"
+    },
+    {
+      "name": "Linux",
+      "original_text": "Linux",
+      "domain": "software_engineering",
+      "category": "Software and OS",
+      "source": "skills_section"
+    },
+    {
+      "name": "Vim",
+      "original_text": "Vim",
+      "domain": "software_engineering",
+      "category": "Software and OS",
+      "source": "skills_section"
+    },
+    {
+      "name": "ReactJS",
+      "original_text": "ReactJS",
+      "domain": "software_engineering",
+      "category": "Additional",
+      "source": "skills_section"
+    },
+    {
+      "name": "AWS",
+      "original_text": "AWS",
+      "domain": "cloud_computing",
+      "category": "Additional",
+      "source": "skills_section"
+    },
+    {
+      "name": "HTML",
+      "original_text": "HTML",
+      "domain": "software_engineering",
+      "category": "Additional",
+      "source": "skills_section"
+    },
+    {
+      "name": "CSS",
+      "original_text": "CSS",
+      "domain": "software_engineering",
+      "category": "Additional",
+      "source": "skills_section"
+    },
+    {
+      "name": "XML Parsing",
+      "original_text": "XML Parsing",
+      "domain": "software_engineering",
+      "category": "Additional",
+      "source": "skills_section"
+    },
+    {
+      "name": "TCP/IP",
+      "original_text": "TCP/IP",
+      "domain": "networking",
+      "category": "Additional",
+      "source": "skills_section"
+    },
+    {
+      "name": "SQL Workbench",
+      "original_text": "SQL Workbench",
+      "domain": "software_engineering",
+      "category": "Additional",
+      "source": "skills_section"
+    },
+    {
+      "name": "Data Visualization",
+      "original_text": "Data Visualization",
+      "domain": "data_science",
+      "category": "Additional",
+      "source": "skills_section"
+    },
+    {
+      "name": "Predictive Analysis",
+      "original_text": "Predictive Analysis",
+      "domain": "data_science",
+      "category": "Additional",
+      "source": "skills_section"
+    }
+  ],
+  "competencies": [],
+  "certifications": [
+    {
+      "name": "Advanced Algorithms",
+      "issuer": null,
+      "year": null,
+      "active": true,
+      "tier": "course"
+    },
+    {
+      "name": "Advanced Machine Learning",
+      "issuer": null,
+      "year": null,
+      "active": true,
+      "tier": "course"
+    },
+    {
+      "name": "AWS Certified Cloud Practitioner",
+      "issuer": "AWS",
+      "year": null,
+      "active": true,
+      "tier": "gold"
+    },
+    {
+      "name": "AWS Certified Developer Associate",
+      "issuer": "AWS",
+      "year": null,
+      "active": true,
+      "tier": "gold"
+    },
+    {
+      "name": "Full-Stack Web Development",
+      "issuer": null,
+      "year": null,
+      "active": true,
+      "tier": "course"
+    }
+  ],
+  "awards": [
+    {
+      "name": "Dean's List (Fall 2021 - Spring 2025)",
+      "issuer": "Binghamton University",
+      "year": "2021"
+    },
+    {
+      "name": "Upsilon Pi Epsilon Honor Society",
+      "issuer": "Binghamton University",
+      "year": null
+    }
+  ],
+  "projects": [
+    {
+      "name": "To-Do Task Manager",
+      "role": "Full Stack Developer",
+      "start_date": "Jan 2025",
+      "end_date": "May 2025",
+      "location": null,
+      "bullets": [
+        "Partnered with a team of four to build a user-friendly iOS application to manage everyday tasks using Xcode and SwiftUI to provide the user with a vast range of options for categorizing and prioritizing tasks",
+        "Integrated with Google Calendar through adept utilization of the Google Calendar API, enhancing cross-platform convenience and accessibility for users",
+        "Launched application on the App Store, resulting in over 1,000 downloads in under two months"
+      ],
+      "technologies_used": [
+        "Xcode",
+        "SwiftUI",
+        "Google Calendar API",
+        "iOS"
+      ]
+    },
+    {
+      "name": "Trivia Game App",
+      "role": "Java Developer",
+      "start_date": "Sep 2024",
+      "end_date": "Dec 2024",
+      "location": null,
+      "bullets": [
+        "Created Android trivia game with an attractive UI using Java in Android Studio to test users' knowledge in different niches",
+        "Added features like customized user profiles, leaderboard, and social media integration to increase user engagement",
+        "Published app and made available for download on Google Play store, receiving 1,000+ downloads in less than 3 months"
+      ],
+      "technologies_used": [
+        "Java",
+        "Android Studio"
+      ]
+    },
+    {
+      "name": "Emotion Detection App",
+      "role": "Front-End (ReactJS) Developer",
+      "start_date": "Sep 2023",
+      "end_date": "Dec 2023",
+      "location": null,
+      "bullets": [
+        "Worked in a team of five to create a web application using Jupyter Notebook and a dataset from Kaggle to detect emotions via live video and image recognition",
+        "Achieved 95% accuracy by using the Support Vector Machine and 88% accuracy for the Convolutional Neural Network algorithm, and presented the app in front of 100+ students and faculty members"
+      ],
+      "technologies_used": [
+        "ReactJS",
+        "Jupyter Notebook",
+        "Kaggle",
+        "SVM",
+        "CNN"
+      ]
+    },
+    {
+      "name": "Weather App",
+      "role": "Web Developer",
+      "start_date": "May 2023",
+      "end_date": "Aug 2023",
+      "location": null,
+      "bullets": [
+        "Developed a web application using React with TypeScript, HTML, CSS, and Accuweather API with an easy-to-use user interface while utilizing a Model View Controller (MVC) design pattern to maintain the structure of the project directory"
+      ],
+      "technologies_used": [
+        "React",
+        "TypeScript",
+        "HTML",
+        "CSS",
+        "Accuweather API"
+      ]
+    }
+  ],
+  "publications": [],
+  "volunteer": [],
+  "leadership": [
+    {
+      "organization": "Association of Computing Machinery (ACM)",
+      "role": "President",
+      "start_date": "Nov 2024",
+      "end_date": "May 2025",
+      "location": null,
+      "bullets": [
+        "Delivered presentations on core computer science topics, including data structures and specialized fields, to educate and engage the campus engineering community",
+        "Partnered with e-board members to coordinate meetings, technical events, and programming competitions",
+        "Developed programming challenges to assess members' problem-solving skills and mastery of key data structures and algorithms"
+      ]
+    }
+  ],
+  "professional_affiliations": [
+    {
+      "name": "Association of Computing Machinery (ACM)"
+    }
+  ],
+  "training": [],
+  "languages_spoken": [],
+  "conflicts": []
+}

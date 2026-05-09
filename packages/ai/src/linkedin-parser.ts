@@ -293,10 +293,10 @@ export function parseLinkedInExport(csvFiles: LinkedInCSVFiles): LinkedInParseRe
   // --- Certifications ---
   const certifications = parseCertifications(csvFiles["Certifications.csv"], warnings);
 
-  // --- Languages (stored in skills.other) ---
+  // --- Languages (added to skills array) ---
   const languages = parseLanguages(csvFiles["Languages.csv"], warnings);
-  if (languages.length > 0) {
-    skills.other.push(...languages.map((l) => `${l} (language)`));
+  for (const lang of languages) {
+    skills.push({ name: lang, domain: "general", category: "spoken_language", source: "skills_section" });
   }
 
   // Calculate total experience
@@ -312,9 +312,7 @@ export function parseLinkedInExport(csvFiles: LinkedInCSVFiles): LinkedInParseRe
     for (const t of p.technologies_used) allTech.add(t);
   }
   // Also add skills
-  for (const category of Object.values(skills)) {
-    for (const s of category) allTech.add(s);
-  }
+  for (const s of skills) allTech.add(s.name);
 
   const parsedCV: ParsedCV = {
     total_experience_years: totalYears,
@@ -435,14 +433,7 @@ function parseSkills(
   csv: string | undefined,
   warnings: string[],
 ): ParsedCV["skills"] {
-  const skills: ParsedCV["skills"] = {
-    languages: [],
-    frameworks: [],
-    infrastructure: [],
-    databases: [],
-    tools: [],
-    other: [],
-  };
+  const skills: ParsedCV["skills"] = [];
 
   if (!csv) return skills;
 
@@ -452,7 +443,8 @@ function parseSkills(
     const skillName = r.name || r.skill || Object.values(raw)[0] || "";
     if (!skillName.trim()) continue;
 
-    categorizeSkill(skillName.trim(), skills);
+    const { domain, category } = classifyLinkedInSkill(skillName.trim());
+    skills.push({ name: skillName.trim(), domain, category, source: "skills_section" });
   }
 
   return skills;
@@ -568,29 +560,20 @@ function inferDomain(company: string, title: string, description: string): strin
   return "general";
 }
 
-/** Categorize a skill into the appropriate bucket */
-function categorizeSkill(skill: string, skills: ParsedCV["skills"]): void {
-  const s = skill.toLowerCase();
-
+/** Classify a LinkedIn skill into domain + category */
+function classifyLinkedInSkill(skill: string): { domain: string; category: string } {
   const languagePatterns = /^(python|java|javascript|typescript|c\+\+|c#|go|golang|rust|ruby|php|swift|kotlin|scala|r|matlab|perl|shell|bash|sql|html|css|objective-c|dart|lua|haskell|elixir|clojure)$/i;
   const frameworkPatterns = /^(react|angular|vue|next\.?js|nuxt|svelte|node\.?js|express|django|flask|fastapi|spring|rails|laravel|\.net|asp\.net|flutter|electron|gatsby|remix|astro)$/i;
   const infraPatterns = /^(aws|azure|gcp|google cloud|docker|kubernetes|k8s|terraform|ansible|jenkins|circleci|github actions|gitlab|ci\/cd|heroku|vercel|netlify|cloudflare|nginx|apache|linux|windows server)$/i;
   const dbPatterns = /^(postgresql|postgres|mysql|mongodb|redis|elasticsearch|dynamodb|cassandra|sql server|oracle|sqlite|mariadb|neo4j|couchdb|firebase|supabase|snowflake|bigquery|redshift)$/i;
   const toolPatterns = /^(git|jira|confluence|slack|figma|sketch|adobe|photoshop|illustrator|tableau|power bi|excel|salesforce|sap|workday|zendesk|intercom|datadog|grafana|splunk|new relic|postman|swagger|vs code|intellij)$/i;
 
-  if (languagePatterns.test(skill)) {
-    skills.languages.push(skill);
-  } else if (frameworkPatterns.test(skill)) {
-    skills.frameworks.push(skill);
-  } else if (infraPatterns.test(skill)) {
-    skills.infrastructure.push(skill);
-  } else if (dbPatterns.test(skill)) {
-    skills.databases.push(skill);
-  } else if (toolPatterns.test(skill)) {
-    skills.tools.push(skill);
-  } else {
-    skills.other.push(skill);
-  }
+  if (languagePatterns.test(skill)) return { domain: "technology", category: "programming_language" };
+  if (frameworkPatterns.test(skill)) return { domain: "technology", category: "framework" };
+  if (infraPatterns.test(skill)) return { domain: "technology", category: "cloud_infrastructure" };
+  if (dbPatterns.test(skill)) return { domain: "technology", category: "database" };
+  if (toolPatterns.test(skill)) return { domain: "technology", category: "tool" };
+  return { domain: "general", category: "general" };
 }
 
 /** Extract a 4-digit year from a date string */

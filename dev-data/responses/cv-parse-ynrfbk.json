@@ -1,0 +1,373 @@
+{
+  "name": "Dr. Sibgha Saliha",
+  "email": null,
+  "phone": "+966-547661758",
+  "location": {
+    "city": "Jeddah",
+    "country": "Saudi Arabia"
+  },
+  "links": {
+    "linkedin": null,
+    "github": null,
+    "portfolio": null,
+    "other": []
+  },
+  "summary": "Renowned Anesthesiologist and senior American Heart Association (AHA) Instructor. Currently serving as Lead Instructor for Basic Life Support (BLS) and Course Director of Advanced Cardiovascular Life Support (ACLS) at College of Physician and Surgeons, Pakistan. Proven history of managing critical emergencies and training over 400 healthcare professionals.",
+  "total_experience_years": 10,
+  "experience": [
+    {
+      "company": "College of Physicians & Surgeons, Pakistan",
+      "employer": null,
+      "title": "American Heart Association (AHA) Instructor",
+      "start_date": "2022",
+      "end_date": "Present",
+      "duration_months": 42,
+      "location": "Islamabad, Pakistan",
+      "bullets": [
+        "Serving as Lead Instructor for Basic Life Support (BLS) and Course Director for Advanced Cardiac Life Support (ACLS)",
+        "Conducted over 60 ACLS & BLS courses & mentored 400 healthcare professionals to achieve AHA certifications",
+        "Expanded emergency response capabilities by conducting AHA Heart Saver training for government/private sector and local community"
+      ],
+      "technologies_used": [],
+      "metrics_mentioned": [
+        "over 60 ACLS & BLS courses",
+        "400 healthcare professionals"
+      ],
+      "programs": [
+        "ACLS",
+        "BLS",
+        "Heart Saver"
+      ],
+      "team_size": null,
+      "seniority_signals": [
+        "Lead Instructor",
+        "Course Director"
+      ],
+      "domain": "healthcare"
+    },
+    {
+      "company": "PAF Hospital, Islamabad & Bolan Medical Complex, Quetta",
+      "employer": null,
+      "title": "Anesthesia Residency",
+      "start_date": "2020",
+      "end_date": "2024",
+      "duration_months": 48,
+      "location": "Islamabad / Quetta, Pakistan",
+      "bullets": [
+        "Successfully handled over 500 critical cases including cardiac, trauma, high-rise pediatric, difficult airway management, complex obstetric situations",
+        "Delivered life-saving interventions in 80 near-fatal emergencies",
+        "Successfully managed cases with ASA IV/V complexities and emergencies"
+      ],
+      "technologies_used": [],
+      "metrics_mentioned": [
+        "500 critical cases",
+        "80 near-fatal emergencies",
+        "ASA IV/V complexities"
+      ],
+      "programs": [
+        "FCPS Anesthesiology"
+      ],
+      "team_size": null,
+      "seniority_signals": [],
+      "domain": "healthcare"
+    },
+    {
+      "company": "Chengdu, China & Aier Eye Hospital, China",
+      "employer": null,
+      "title": "Independent Researcher & Volunteer",
+      "start_date": "2017",
+      "end_date": "2019",
+      "duration_months": 24,
+      "location": "Chengdu, China",
+      "bullets": [
+        "Conducted research on pain management and asthma prevalence, publishing in high-impact journals",
+        "Contributed to emergency response systems in rural China, addressing diverse healthcare challenges"
+      ],
+      "technologies_used": [],
+      "metrics_mentioned": [],
+      "programs": [],
+      "team_size": null,
+      "seniority_signals": [],
+      "domain": "healthcare"
+    },
+    {
+      "company": "Mayo Hospital, Lahore & Aziz Fatima Trust Hospital, Faisalabad",
+      "employer": null,
+      "title": "Medical Officer – Emergency & Critical Care",
+      "start_date": "2014",
+      "end_date": "2017",
+      "duration_months": 36,
+      "location": "Lahore / Faisalabad, Pakistan",
+      "bullets": [
+        "Developed expertise in emergency handling and patient stabilization protocols"
+      ],
+      "technologies_used": [],
+      "metrics_mentioned": [],
+      "programs": [],
+      "team_size": null,
+      "seniority_signals": [],
+      "domain": "healthcare"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Anesthesiology",
+      "original_text": "Anesthesiologist",
+      "domain": "healthcare",
+      "category": "anesthesiology",
+      "source": "experience"
+    },
+    {
+      "name": "Critical Care Medicine",
+      "original_text": "critical emergencies",
+      "domain": "healthcare",
+      "category": "critical_care",
+      "source": "experience"
+    },
+    {
+      "name": "Pain Management",
+      "original_text": "pain management",
+      "domain": "healthcare",
+      "category": "anesthesiology",
+      "source": "experience"
+    },
+    {
+      "name": "Perioperative Care",
+      "original_text": "perioperative care",
+      "domain": "healthcare",
+      "category": "anesthesiology",
+      "source": "experience"
+    },
+    {
+      "name": "Airway Management",
+      "original_text": "difficult airway management",
+      "domain": "healthcare",
+      "category": "anesthesiology",
+      "source": "experience"
+    },
+    {
+      "name": "ACLS Instruction",
+      "original_text": "Advanced Cardiovascular Life Support (ACLS)",
+      "domain": "healthcare",
+      "category": "emergency_medicine",
+      "source": "certification"
+    },
+    {
+      "name": "BLS Instruction",
+      "original_text": "Basic Life Support (BLS)",
+      "domain": "healthcare",
+      "category": "emergency_medicine",
+      "source": "certification"
+    },
+    {
+      "name": "Medical Education",
+      "original_text": "AHA-certified instructor",
+      "domain": "healthcare",
+      "category": "medical_education",
+      "source": "experience"
+    },
+    {
+      "name": "Emergency Response",
+      "original_text": "Heart Saver training",
+      "domain": "healthcare",
+      "category": "emergency_medicine",
+      "source": "experience"
+    },
+    {
+      "name": "Clinical Research",
+      "original_text": "Published researcher",
+      "domain": "healthcare",
+      "category": "research",
+      "source": "experience"
+    },
+    {
+      "name": "Trauma Management",
+      "original_text": "cardiac, trauma, high-rise pediatric cases",
+      "domain": "healthcare",
+      "category": "emergency_medicine",
+      "source": "experience"
+    },
+    {
+      "name": "Obstetric Anesthesia",
+      "original_text": "complex obstetric situations",
+      "domain": "healthcare",
+      "category": "anesthesiology",
+      "source": "experience"
+    }
+  ],
+  "all_technologies": [
+    "Anesthesiology",
+    "Critical Care Medicine",
+    "Pain Management",
+    "Perioperative Care",
+    "Airway Management",
+    "ACLS Instruction",
+    "BLS Instruction",
+    "Medical Education",
+    "Emergency Response",
+    "Clinical Research",
+    "Trauma Management",
+    "Obstetric Anesthesia"
+  ],
+  "education": [
+    {
+      "institution": "King Edward Medical University, Pakistan",
+      "degree": "MBBS",
+      "field": "Medicine",
+      "start_year": 2009,
+      "end_year": 2014,
+      "highlights": []
+    },
+    {
+      "institution": "College of Physicians & Surgeons, Pakistan",
+      "degree": "Fellowship (FCPS)",
+      "field": "Anesthesia",
+      "start_year": 2020,
+      "end_year": 2024,
+      "highlights": []
+    }
+  ],
+  "certifications": [
+    "Fellow of College of Physicians & Surgeons (FCPS) in Anesthesiology",
+    "American Heart Association Instructor - ACLS",
+    "American Heart Association Instructor - BLS",
+    "Anesthesiology Consultant License",
+    "Medical License"
+  ],
+  "certifications_detailed": [
+    {
+      "name": "Fellow of College of Physicians & Surgeons (FCPS) in Anesthesiology",
+      "issuer": "College of Physicians & Surgeons, Pakistan",
+      "year": 2024,
+      "active": true,
+      "tier": "gold"
+    },
+    {
+      "name": "American Heart Association Instructor - ACLS",
+      "issuer": "American Heart Association",
+      "year": 2023,
+      "active": true,
+      "tier": "gold"
+    },
+    {
+      "name": "American Heart Association Instructor - BLS",
+      "issuer": "American Heart Association",
+      "year": 2022,
+      "active": true,
+      "tier": "gold"
+    },
+    {
+      "name": "Anesthesiology Consultant License",
+      "issuer": "Pakistan Medical and Dental Council",
+      "year": 2014,
+      "active": true,
+      "tier": "gold"
+    },
+    {
+      "name": "Medical License",
+      "issuer": "Pakistan Medical and Dental Council",
+      "year": 2014,
+      "active": true,
+      "tier": "gold"
+    }
+  ],
+  "competencies": [
+    "Clinical Expertise: Proficient in managing diverse anesthetic procedures, perioperative care, pain management, and critical care",
+    "Medical Education: Experienced AHA-certified instructor",
+    "Emergency Response: Improved emergency preparedness by conducting Heart Saver training and community-focused healthcare programs",
+    "Research: Published researcher contributing to advancements in anesthesiology and healthcare",
+    "Leadership: Competent in training and mentoring healthcare professionals"
+  ],
+  "awards": [
+    {
+      "title": "Instructor Potential (IP) Distinction",
+      "issuer": "College of Physicians & Surgeons, Pakistan",
+      "context": "Recognition of teaching excellence",
+      "significance": "2022"
+    },
+    {
+      "title": "8th Position in MCAT Exam",
+      "issuer": "Pakistan Medical Entrance",
+      "context": "National medical entrance exam ranking",
+      "significance": "2008"
+    },
+    {
+      "title": "Commendations from Top Anesthesiologists",
+      "issuer": "Major General Anjum Qadri, Major General (r) Liaqat Ali, Dr. Xiaoli Lee",
+      "context": "International recognition in anesthesiology",
+      "significance": null
+    }
+  ],
+  "projects": [],
+  "publications": [
+    {
+      "title": "Pain Management in Critical Burn Cases",
+      "venue": "Indo-American Journal of Pharmaceutical Sciences",
+      "year": null,
+      "peer_reviewed": true
+    },
+    {
+      "title": "Asthma Prevalence Study in Pakistan",
+      "venue": "Indo-American Journal of Pharmaceutical Sciences",
+      "year": null,
+      "peer_reviewed": true
+    }
+  ],
+  "volunteer": [
+    {
+      "organization": "CPSP / Hospitals Collaboration",
+      "role": "Community Health Trainer",
+      "start_date": null,
+      "end_date": null,
+      "description": "Organized life-saving technique training for paramedics and first responders",
+      "impact": null
+    },
+    {
+      "organization": "CPSP Heart Saver Program",
+      "role": "Heart Saver Instructor",
+      "start_date": null,
+      "end_date": null,
+      "description": "Conducted Heart Saver training, educating over 200 participants including National Emergency Department (1122) Staff, Islamabad Club members",
+      "impact": "200+ participants trained in emergency preparedness"
+    }
+  ],
+  "leadership": [],
+  "professional_affiliations": [],
+  "training": [
+    {
+      "name": "Basic Assessment and Support in Intensive Care (BASIC)",
+      "provider": "Ministry of Health Sciences, Pakistan",
+      "year": 2020,
+      "hours": null
+    },
+    {
+      "name": "Instructor Essentials Course (BLS)",
+      "provider": "American Heart Association",
+      "year": 2022,
+      "hours": null
+    },
+    {
+      "name": "Instructor Essentials Course (ACLS)",
+      "provider": "American Heart Association",
+      "year": 2023,
+      "hours": null
+    },
+    {
+      "name": "Critical Care Symposium",
+      "provider": "Fouji Foundation Hospital",
+      "year": 2024,
+      "hours": null
+    },
+    {
+      "name": "Research Methodology & Biostatistics Workshop",
+      "provider": "CPSP",
+      "year": 2021,
+      "hours": null
+    }
+  ],
+  "languages_spoken": [
+    "English",
+    "Urdu"
+  ],
+  "conflicts": []
+}

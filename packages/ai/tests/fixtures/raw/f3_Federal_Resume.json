@@ -1,0 +1,348 @@
+{
+  "name": "First Name Last Name",
+  "email": null,
+  "phone": null,
+  "location": {
+    "city": null,
+    "country": "US"
+  },
+  "links": {
+    "linkedin": null,
+    "github": null,
+    "portfolio": null,
+    "other": []
+  },
+  "summary": "Highly motivated BS Computer Science student with hands-on experience in cybersecurity tools, possessing a CompTIA+ Security certification. Demonstrated knowledge of network security, risk management, vulnerability assessment, and privacy regulations. Seeking a cybersecurity analyst role in the federal sector to protect critical systems and data while contributing to national digital resilience.",
+  "total_experience_years": 0,
+  "experience": [
+    {
+      "company": "Organization Title",
+      "employer": "Organization Title",
+      "title": "Job Title",
+      "start_date": "May 2025",
+      "end_date": "Aug 2025",
+      "duration_months": 3,
+      "location": "City, State",
+      "bullets": [],
+      "technologies_used": [],
+      "metrics_mentioned": [],
+      "programs": [],
+      "team_size": null,
+      "seniority_signals": [],
+      "domain": "unknown"
+    },
+    {
+      "company": "Organization Title",
+      "employer": "Organization Title",
+      "title": "Position Title",
+      "start_date": "Sep 2024",
+      "end_date": "Present",
+      "duration_months": 8,
+      "location": "City, State",
+      "bullets": [],
+      "technologies_used": [],
+      "metrics_mentioned": [],
+      "programs": [],
+      "team_size": null,
+      "seniority_signals": [],
+      "domain": "unknown"
+    }
+  ],
+  "education": [
+    {
+      "institution": "Binghamton University, State University of New York, Thomas J. Watson College of Engineering and Applied Science",
+      "degree": "Master of Science in Computer Science, Cybersecurity Track",
+      "start_date": "Aug 2025",
+      "end_date": "May 2026",
+      "gpa": "3.XX/4.00",
+      "coursework": [
+        "Computer Security",
+        "Computer Networks",
+        "Data Privacy",
+        "Machine Learning"
+      ]
+    },
+    {
+      "institution": "Binghamton University, State University of New York, Thomas J. Watson College of Engineering and Applied Science",
+      "degree": "Bachelor of Science in Computer Science",
+      "start_date": "Aug 2021",
+      "end_date": "May 2025",
+      "gpa": "3.XX/4.00",
+      "coursework": [
+        "Computer Security",
+        "Science of Cybersecurity",
+        "Operating Systems",
+        "Design/Analysis of Algorithms",
+        "Data Structures and Algorithms",
+        "Computer Architecture"
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "name": "Python",
+      "original_text": "Python",
+      "domain": "software_engineering",
+      "category": "Programming & Scripting",
+      "source": "skills_section"
+    },
+    {
+      "name": "C/C++",
+      "original_text": "C/C++",
+      "domain": "software_engineering",
+      "category": "Programming & Scripting",
+      "source": "skills_section"
+    },
+    {
+      "name": "Java",
+      "original_text": "Java",
+      "domain": "software_engineering",
+      "category": "Programming & Scripting",
+      "source": "skills_section"
+    },
+    {
+      "name": "PowerShell",
+      "original_text": "PowerShell",
+      "domain": "cybersecurity",
+      "category": "Programming & Scripting",
+      "source": "skills_section"
+    },
+    {
+      "name": "Nmap",
+      "original_text": "Nmap",
+      "domain": "cybersecurity",
+      "category": "Cybersecurity Tools",
+      "source": "skills_section"
+    },
+    {
+      "name": "Wireshark",
+      "original_text": "Wireshark",
+      "domain": "cybersecurity",
+      "category": "Cybersecurity Tools",
+      "source": "skills_section"
+    },
+    {
+      "name": "Ettercap",
+      "original_text": "Ettercap",
+      "domain": "cybersecurity",
+      "category": "Cybersecurity Tools",
+      "source": "skills_section"
+    },
+    {
+      "name": "Kali Linux",
+      "original_text": "Kali Linux",
+      "domain": "cybersecurity",
+      "category": "Cybersecurity Tools",
+      "source": "skills_section"
+    },
+    {
+      "name": "Splunk",
+      "original_text": "Splunk",
+      "domain": "cybersecurity",
+      "category": "Cybersecurity Tools",
+      "source": "skills_section"
+    },
+    {
+      "name": "Ghidra",
+      "original_text": "Ghidra",
+      "domain": "cybersecurity",
+      "category": "Cybersecurity Tools",
+      "source": "skills_section"
+    },
+    {
+      "name": "Procmon",
+      "original_text": "Procmon",
+      "domain": "cybersecurity",
+      "category": "Cybersecurity Tools",
+      "source": "skills_section"
+    },
+    {
+      "name": "TCP/IP",
+      "original_text": "TCP/IP",
+      "domain": "cybersecurity",
+      "category": "Frameworks/Concepts",
+      "source": "skills_section"
+    },
+    {
+      "name": "Threat Modeling",
+      "original_text": "Threat Modeling",
+      "domain": "cybersecurity",
+      "category": "Frameworks/Concepts",
+      "source": "skills_section"
+    },
+    {
+      "name": "Malware Reverse Engineering",
+      "original_text": "Malware Reverse Engineering",
+      "domain": "cybersecurity",
+      "category": "Frameworks/Concepts",
+      "source": "skills_section"
+    },
+    {
+      "name": "Penetration Testing",
+      "original_text": "Penetration Testing",
+      "domain": "cybersecurity",
+      "category": "Frameworks/Concepts",
+      "source": "skills_section"
+    },
+    {
+      "name": "AWS",
+      "original_text": "AWS",
+      "domain": "cloud_computing",
+      "category": "Cloud/Virtualization",
+      "source": "skills_section"
+    },
+    {
+      "name": "Azure",
+      "original_text": "Azure",
+      "domain": "cloud_computing",
+      "category": "Cloud/Virtualization",
+      "source": "skills_section"
+    },
+    {
+      "name": "VMware",
+      "original_text": "VMware",
+      "domain": "infrastructure",
+      "category": "Cloud/Virtualization",
+      "source": "skills_section"
+    },
+    {
+      "name": "Docker",
+      "original_text": "Docker",
+      "domain": "infrastructure",
+      "category": "Cloud/Virtualization",
+      "source": "skills_section"
+    },
+    {
+      "name": "VirtualBox",
+      "original_text": "VirtualBox",
+      "domain": "infrastructure",
+      "category": "Cloud/Virtualization",
+      "source": "skills_section"
+    },
+    {
+      "name": "Network Security",
+      "original_text": "network security",
+      "domain": "cybersecurity",
+      "category": "Frameworks/Concepts",
+      "source": "summary"
+    },
+    {
+      "name": "Risk Management",
+      "original_text": "risk management",
+      "domain": "cybersecurity",
+      "category": "Frameworks/Concepts",
+      "source": "summary"
+    },
+    {
+      "name": "Vulnerability Assessment",
+      "original_text": "vulnerability assessment",
+      "domain": "cybersecurity",
+      "category": "Frameworks/Concepts",
+      "source": "summary"
+    }
+  ],
+  "competencies": [],
+  "certifications": [
+    {
+      "name": "CompTIA Security+",
+      "issuer": "CompTIA",
+      "year": "2025",
+      "active": true,
+      "tier": "gold"
+    },
+    {
+      "name": "CCNA - Cisco Certified Network Associate",
+      "issuer": "Cisco",
+      "year": "2026",
+      "active": false,
+      "tier": "gold"
+    }
+  ],
+  "awards": [
+    {
+      "name": "CyberCorps Scholarship for Service (SFS)",
+      "issuer": "National Science Foundation / Binghamton University",
+      "year": "2025"
+    },
+    {
+      "name": "Upsilon Pi Epsilon",
+      "issuer": "Binghamton University",
+      "year": "2024"
+    },
+    {
+      "name": "Dean's List (Fall 2022 - Spring 2025)",
+      "issuer": "Binghamton University",
+      "year": "2022"
+    }
+  ],
+  "projects": [
+    {
+      "name": "Descriptive Project Title",
+      "role": "Independent Project",
+      "start_date": "Feb 2025",
+      "end_date": "May 2025",
+      "location": "Binghamton, NY",
+      "bullets": [],
+      "technologies_used": []
+    },
+    {
+      "name": "Descriptive Project Title (Hackathon)",
+      "role": "Backend Developer",
+      "start_date": "Feb 2024",
+      "end_date": "Feb 2024",
+      "location": "Binghamton, NY",
+      "bullets": [],
+      "technologies_used": []
+    }
+  ],
+  "publications": [],
+  "volunteer": [
+    {
+      "organization": "Organization Name",
+      "role": "Title of Role",
+      "start_date": "Aug 2023",
+      "end_date": "May 2025",
+      "location": "Binghamton, NY",
+      "bullets": []
+    }
+  ],
+  "leadership": [
+    {
+      "organization": "Binghamton University Department Name",
+      "role": "Title of Role",
+      "start_date": "Aug 2023",
+      "end_date": "May 2025",
+      "location": "Binghamton, NY",
+      "bullets": []
+    },
+    {
+      "organization": "Binghamton University",
+      "role": "Teaching Assistant",
+      "start_date": "Aug 2024",
+      "end_date": "Dec 2024",
+      "location": "Binghamton, NY",
+      "bullets": []
+    },
+    {
+      "organization": "MITRE Embedded Capture the Flag at Binghamton University",
+      "role": "Captain",
+      "start_date": "Aug 2022",
+      "end_date": "May 2023",
+      "location": "Binghamton, NY",
+      "bullets": []
+    }
+  ],
+  "professional_affiliations": [],
+  "training": [],
+  "languages_spoken": [],
+  "conflicts": [
+    {
+      "type": "template_placeholder",
+      "description": "Resume is a template with placeholder text (e.g., 'Organization Title', 'Job Title', 'Bullet' instructions). Experience entries have no real content — only formatting guidance."
+    },
+    {
+      "type": "placeholder_data",
+      "description": "Security Clearance listed as 'in progress' (investigation initiated March 2025). Foreign Languages section contains instructions rather than actual languages."
+    }
+  ]
+}

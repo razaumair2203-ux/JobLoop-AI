@@ -1,0 +1,339 @@
+{
+  "name": "CS Master's Resume Sample",
+  "email": "bmail@binghamton.edu",
+  "phone": "(607) 555-7777",
+  "location": {
+    "city": null,
+    "country": null
+  },
+  "links": {
+    "linkedin": "www.linkedin.com/in/yourname",
+    "github": null,
+    "portfolio": null,
+    "other": []
+  },
+  "summary": null,
+  "total_experience_years": 2,
+  "experience": [
+    {
+      "company": "Bloomberg LP",
+      "employer": "Bloomberg LP",
+      "title": "Software Engineer",
+      "start_date": "2022-05",
+      "end_date": "2024-08",
+      "duration_months": 27,
+      "location": "Pune, India",
+      "bullets": [
+        "Contributed to the development of a real-time market data analytics tool designed to help financial analysts make faster and more informed decisions",
+        "Implemented high-performance algorithms using Python and C++ to process large-scale financial data streams, integrating with Bloomberg's real-time messaging infrastructure",
+        "Reduced data processing time by 20%, leading to quicker insights for traders and a more responsive user interface for over 10,000 daily users"
+      ],
+      "technologies_used": [
+        "Python",
+        "C++"
+      ],
+      "metrics_mentioned": [
+        "20% reduction in data processing time",
+        "10,000 daily users"
+      ],
+      "programs": [],
+      "team_size": null,
+      "seniority_signals": [],
+      "domain": "finance_technology"
+    }
+  ],
+  "education": [
+    {
+      "institution": "Binghamton University, State University of New York, Thomas J. Watson College of Engineering and Applied Science",
+      "degree": "Master of Science",
+      "field": "Computer Science, Artificial Intelligence Track",
+      "start_year": null,
+      "end_year": 2026,
+      "grade": "3.76/4.00",
+      "research_topic": null,
+      "highlights": [
+        "Relevant Coursework: Systems Programming, Operating Systems, Artificial Intelligence, Machine Learning"
+      ]
+    },
+    {
+      "institution": "Indian Institute of Technology Bombay",
+      "degree": "Bachelor of Technology",
+      "field": "Computer Science and Engineering",
+      "start_year": null,
+      "end_year": 2022,
+      "grade": null,
+      "research_topic": null,
+      "highlights": [
+        "Relevant Coursework: Data Structures and Algorithms, Object-Oriented Programming"
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "name": "C",
+      "original_text": "C",
+      "domain": "technology",
+      "category": "programming_languages",
+      "source": "skills_section"
+    },
+    {
+      "name": "C++",
+      "original_text": "C++",
+      "domain": "technology",
+      "category": "programming_languages",
+      "source": "skills_section"
+    },
+    {
+      "name": "Rust",
+      "original_text": "Rust",
+      "domain": "technology",
+      "category": "programming_languages",
+      "source": "skills_section"
+    },
+    {
+      "name": "Python",
+      "original_text": "Python",
+      "domain": "technology",
+      "category": "programming_languages",
+      "source": "skills_section"
+    },
+    {
+      "name": "JavaScript",
+      "original_text": "JavaScript",
+      "domain": "technology",
+      "category": "programming_languages",
+      "source": "skills_section"
+    },
+    {
+      "name": "Dart",
+      "original_text": "Dart",
+      "domain": "technology",
+      "category": "programming_languages",
+      "source": "skills_section"
+    },
+    {
+      "name": "x86 Assembly",
+      "original_text": "X-86 Assembly",
+      "domain": "technology",
+      "category": "programming_languages",
+      "source": "skills_section"
+    },
+    {
+      "name": "Git",
+      "original_text": "Git",
+      "domain": "technology",
+      "category": "version_control",
+      "source": "skills_section"
+    },
+    {
+      "name": "GitHub",
+      "original_text": "GitHub",
+      "domain": "technology",
+      "category": "version_control",
+      "source": "skills_section"
+    },
+    {
+      "name": "Linux",
+      "original_text": "Linux",
+      "domain": "technology",
+      "category": "operating_systems",
+      "source": "skills_section"
+    },
+    {
+      "name": "Unix",
+      "original_text": "Unix",
+      "domain": "technology",
+      "category": "operating_systems",
+      "source": "skills_section"
+    },
+    {
+      "name": "Visual Studio Code",
+      "original_text": "Visual Studio Code",
+      "domain": "technology",
+      "category": "development_tools",
+      "source": "skills_section"
+    },
+    {
+      "name": "Jupyter Notebook",
+      "original_text": "Jupyter Notebook",
+      "domain": "technology",
+      "category": "development_tools",
+      "source": "skills_section"
+    },
+    {
+      "name": "Vim",
+      "original_text": "Vim",
+      "domain": "technology",
+      "category": "development_tools",
+      "source": "skills_section"
+    },
+    {
+      "name": "React",
+      "original_text": "React",
+      "domain": "technology",
+      "category": "frontend_frameworks",
+      "source": "skills_section"
+    },
+    {
+      "name": "Flutter",
+      "original_text": "Flutter",
+      "domain": "technology",
+      "category": "mobile_development",
+      "source": "skills_section"
+    },
+    {
+      "name": "AWS",
+      "original_text": "Microsoft AWS",
+      "domain": "technology",
+      "category": "cloud_infrastructure",
+      "source": "skills_section"
+    },
+    {
+      "name": "Azure",
+      "original_text": "Azure",
+      "domain": "technology",
+      "category": "cloud_infrastructure",
+      "source": "skills_section"
+    },
+    {
+      "name": "HTML",
+      "original_text": "HTML",
+      "domain": "technology",
+      "category": "web_development",
+      "source": "skills_section"
+    },
+    {
+      "name": "CSS",
+      "original_text": "CSS",
+      "domain": "technology",
+      "category": "web_development",
+      "source": "skills_section"
+    },
+    {
+      "name": "PostgreSQL",
+      "original_text": "PostgreSQL",
+      "domain": "technology",
+      "category": "databases",
+      "source": "skills_section"
+    },
+    {
+      "name": "Firebase",
+      "original_text": "Firebase",
+      "domain": "technology",
+      "category": "cloud_infrastructure",
+      "source": "skills_section"
+    },
+    {
+      "name": "Flask",
+      "original_text": "Flask",
+      "domain": "technology",
+      "category": "backend_frameworks",
+      "source": "skills_section"
+    }
+  ],
+  "competencies": [],
+  "certifications": [
+    {
+      "name": "Azure Data Fundamentals",
+      "issuer": "Microsoft",
+      "year": null,
+      "active": true,
+      "tier": "gold"
+    },
+    {
+      "name": "AWS Certified Machine Learning",
+      "issuer": "Amazon Web Services",
+      "year": null,
+      "active": true,
+      "tier": "specialization"
+    }
+  ],
+  "awards": [],
+  "projects": [
+    {
+      "name": "Real-Time Portfolio Tracker",
+      "description": "Developed a real-time stock portfolio tracker to provide users with live updates on asset values and performance. Designed a C++ backend to fetch and process market data from APIs, storing results in PostgreSQL. Built responsive front-end using React.",
+      "outcome": "Delivered a fully functional application that processed and updated stock data with sub-second latency, providing users with real-time insights into their investments",
+      "technologies": [
+        "C++",
+        "PostgreSQL",
+        "React",
+        "GitHub",
+        "Linux"
+      ],
+      "is_professional": false
+    },
+    {
+      "name": "Mobile Expense Manager",
+      "description": "Built a mobile app to track personal expenses and generate monthly financial reports for users with a team of two. Developed the cross-platform app using Dart and Flutter, integrating Firebase for real-time data storage and user authentication.",
+      "outcome": "Released the app on both Android and iOS platforms, with over 200 downloads and an average rating of 4.7 stars on the Google Play Store",
+      "technologies": [
+        "Dart",
+        "Flutter",
+        "Firebase"
+      ],
+      "is_professional": false
+    },
+    {
+      "name": "Network Intrusion Detection System",
+      "description": "Created a Network Intrusion Detection System (NIDS) that identifies suspicious activity in real-time network traffic. Used Python and Flask to build the detection algorithms and a web interface. Deployed the system using AWS for scalability.",
+      "outcome": "Detected and alerted over 95% of intrusion attempts during testing, providing a scalable solution to monitor network traffic",
+      "technologies": [
+        "Python",
+        "Flask",
+        "AWS",
+        "Jupyter Notebook"
+      ],
+      "is_professional": false
+    }
+  ],
+  "publications": [],
+  "volunteer": [],
+  "leadership": [
+    {
+      "organization": "Binghamton University School of Computing",
+      "role": "Teaching Assistant",
+      "start_date": "2025-09",
+      "end_date": null,
+      "description": "Assist in teaching a course focusing on data structures and algorithms, using C++ as the primary language. Lead weekly lab sessions on topics such as trees, graphs, and sorting algorithms. Offer one-on-one help during office hours and review student code.",
+      "scope": "Undergraduate students"
+    },
+    {
+      "organization": "Binghamton Tech Collective",
+      "role": "Software Team Lead",
+      "start_date": "2024-08",
+      "end_date": null,
+      "description": "Lead a team of students skilled in full-stack development to conceptualize and develop a marketplace application for Binghamton University students. Use Dart and Flutter to build modern user profile pages. Employ Git and GitHub for version control.",
+      "scope": "Student development team"
+    }
+  ],
+  "professional_affiliations": [],
+  "training": [],
+  "languages_spoken": [],
+  "all_technologies": [
+    "C",
+    "C++",
+    "Rust",
+    "Python",
+    "JavaScript",
+    "Dart",
+    "x86 Assembly",
+    "Git",
+    "GitHub",
+    "Linux",
+    "Unix",
+    "Visual Studio Code",
+    "Jupyter Notebook",
+    "Vim",
+    "React",
+    "Flutter",
+    "AWS",
+    "Azure",
+    "HTML",
+    "CSS",
+    "PostgreSQL",
+    "Firebase",
+    "Flask"
+  ],
+  "conflicts": []
+}

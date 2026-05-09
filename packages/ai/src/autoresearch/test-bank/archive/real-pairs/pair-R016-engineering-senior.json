@@ -1,0 +1,83 @@
+{
+  "id": "pair-R016",
+  "split": "train",
+  "persona": "senior",
+  "source_resume": {
+    "id": "ra-00767",
+    "dataset": "resume_atlas",
+    "industry": "engineering",
+    "seniority": "senior"
+  },
+  "jd": {
+    "title": "Senior Mechanical Design Engineer",
+    "company": "Global Recruiters of Palmetto (GRN) Automation Recruitment Specialist",
+    "location": "",
+    "experience_years": null,
+    "requirements": [
+      {
+        "text": "Bachelor's Degree in Mechanical Engineering (BSME) or Mechanical Engineering Technology (BSMET)Ability to conceptualize and design highly complex automatic machines",
+        "type": "must_have"
+      }
+    ],
+    "responsibilities": [],
+    "full_description": "Our client has over 45 years in the automation industry. They offer their customers automation systems, integrated robotic systems, machine builds, manufacturing services, turnkey installations, maintenance, repair, upgrades, fabrication, custom controls, mechanical and electrical system designs, material handling systems, and other services. They are seeking a Mechanical Engineer III to provide mechanical engineering leadership for projects as well as testing and installation support.\nLocation: Greensboro, NC\nKey Bullet Points:10 years of progressive mechanical engineering experience, including substantial 3D modeling and automation systems design experienceBachelor's Degree in Mechanical Engineering (BSME) or Mechanical Engineering Technology (BSMET)Ability to conceptualize and design highly complex automatic machines, robotic cells, and material handling systems\nWatch: https://www.linkedin.com/feed/update/urn:li:activity:7059972218251857920\nSchedule a time to talk: https://calendly.com/sbryant-grn\nTo apply for this great opportunity and found out about all the details please contact me, Stormy Bryant, at Sbryant@GRNPalmetto.com or call me today at 803.369.7970"
+  },
+  "expected_output": {
+    "summary": "Senior Civil Engineer with 30 years of experience in design and construction of various facility projects, including utility, roads, streets, airfields, administrative, industrial, recreational, housing, and healthcare.",
+    "experience": [
+      {
+        "company": "Not specified",
+        "title": "Senior Civil Engineer",
+        "start_date": "Not specified",
+        "end_date": "Present",
+        "bullets": [
+          "Designed various facility projects",
+          "Constructed various facility projects",
+          "Renovated facilities",
+          "Restored facilities",
+          "Modernized facilities",
+          "Remediated hazardous materials"
+        ]
+      }
+    ],
+    "skills": {
+      "Technical": [
+        "Design",
+        "Construction",
+        "Renovation",
+        "Restoration",
+        "Modernization",
+        "Hazardous material remediation"
+      ]
+    },
+    "certifications": [],
+    "education": []
+  },
+  "jd_requirements": [
+    "10 years of progressive mechanical engineering experience",
+    "Bachelor's Degree in Mechanical Engineering (BSME) or Mechanical Engineering Technology (BSMET)",
+    "Ability to conceptualize and design highly complex automatic machines, robotic cells, and material handling systems",
+    "Substantial 3D modeling and automation systems design experience"
+  ],
+  "cloud_skills": [
+    "Design",
+    "Construction",
+    "Renovation",
+    "Restoration",
+    "Modernization",
+    "Hazardous material remediation"
+  ],
+  "provenance": {
+    "data_source": "real_dataset_raw_text",
+    "jd_source": "kaggle_linkedin",
+    "resume_dataset": "resume_atlas",
+    "jd_id": "linkedin-3889749113",
+    "resume_id": "ra-00767",
+    "generated_at": "2026-05-08T08:47:53.852Z",
+    "expected_output_author": "NIM/meta/llama-3.3-70b-instruct",
+    "circularity_risk": "medium",
+    "notes": "Resume from real dataset (raw text). JD from real job posting. Expected output EMPTY — needs LLM parsing + human review.",
+    "enriched_at": "2026-05-08T13:04:56.600Z",
+    "needs_human_review": true
+  }
+}

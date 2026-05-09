@@ -1,0 +1,267 @@
+{
+  "name": "PhD Resume Sample",
+  "email": null,
+  "phone": "(607) 727-1234",
+  "location": {
+    "city": null,
+    "country": "United States"
+  },
+  "links": {
+    "linkedin": "www.linkedin.com/in/yourname",
+    "github": null,
+    "portfolio": null,
+    "other": []
+  },
+  "summary": "Highly motivated biomedical engineering doctoral candidate with eight years of professional experience leveraging artificial neural networks and data science to enhance immune system response mechanisms. Expertise in R programming, MATLAB, and bioinformatics. Seeking a research-intensive role in the biotechnology or pharmaceutical industry to further therapeutic advancements in regenerative medicine.",
+  "total_experience_years": 8,
+  "experience": [
+    {
+      "company": "Binghamton University, Center of Bio-Manufacturing",
+      "employer": "Binghamton University",
+      "title": "Research Assistant",
+      "start_date": null,
+      "end_date": null,
+      "duration_months": 0,
+      "location": "Binghamton, NY",
+      "bullets": [
+        "Conceive theoretical and data science approaches to map out and analyze immune system response mechanisms based on gene expression",
+        "Examine Gene Expression Microarray Datasets from the National Biotechnology Center of Information (NCBI) with R Program and GEO Query computing software to construct clustering data heatmaps, histograms, and Bayesian Test Statistics",
+        "Construct a Boolean logic gene circuit to illustrate activated and deactivated genes during immune system response based on data heatmap results to create artificial neural networks for precise therapeutic application"
+      ],
+      "technologies_used": ["R Program", "GEO Query"],
+      "metrics_mentioned": [],
+      "programs": [],
+      "team_size": null,
+      "seniority_signals": [],
+      "domain": "biomedical_research"
+    },
+    {
+      "company": "Repperger Research Program, United States Air Force Research Laboratory",
+      "employer": "United States Air Force Research Laboratory",
+      "title": "Research Intern",
+      "start_date": null,
+      "end_date": null,
+      "duration_months": 0,
+      "location": "Fairborn, OH",
+      "bullets": [
+        "Reverse-engineered older human cadaver head and neck simulation test model to create a new hybrid simulation model",
+        "Performed Finite Element Analysis on a new hybrid simulation model using LS-DYNA Software and inputted Cadaver Neck Test Data for model verification & validation",
+        "Improved simulation and test methodology for future model projects by proposing the acquisition of updated LS-DYNA software",
+        "Summarized results in an MS PowerPoint Presentation and presented to Wright Patterson Air Force Base research staff and U.S. Military Officials during the 2022 U.S Air Force Research Laboratory Summer Research Summit"
+      ],
+      "technologies_used": ["LS-DYNA"],
+      "metrics_mentioned": [],
+      "programs": ["Repperger Research Program"],
+      "team_size": null,
+      "seniority_signals": ["Presented to Air Force Base research staff and U.S. Military Officials"],
+      "domain": "defense_aerospace"
+    },
+    {
+      "company": "Louisiana Tech University, Department of Biomedical Engineering",
+      "employer": "Louisiana Tech University",
+      "title": "Research Assistant",
+      "start_date": null,
+      "end_date": null,
+      "duration_months": 0,
+      "location": "Ruston, LA",
+      "bullets": [
+        "Assembled capped clay nanotubes combined with targeted stem cell hydrogels for regenerative medicine capabilities with three additional laboratory team members",
+        "Investigated novel ways to proliferate and transform stem cells through Cell Staining & Culturing, Macromolecule Probing, and Chemical Distillation and Titration",
+        "Articulated that healing factors aligned with influenced stem cells could heal bone deformities and injury sites",
+        "Accepted for presentation and publication based on experimentation results at the 2023 Experimental Biology Research Conference and the 2023 Biomedical Engineering Conference"
+      ],
+      "technologies_used": ["Cell Staining & Culturing", "Macromolecule Probing"],
+      "metrics_mentioned": [],
+      "programs": [],
+      "team_size": 4,
+      "seniority_signals": [],
+      "domain": "biomedical_research"
+    },
+    {
+      "company": "Binghamton University, Office of Entrepreneurship & Innovation",
+      "employer": "Binghamton University",
+      "title": "Technology Transfer Intern",
+      "start_date": null,
+      "end_date": null,
+      "duration_months": 0,
+      "location": "Binghamton, NY",
+      "bullets": [
+        "Examine technology transfer methods and patent portfolio of the entire Watson School of Engineering & Applied Science for strategic planning & execution",
+        "Remodel patent portfolio in Microsoft Excel by performing statistical analysis and data visualization",
+        "Aid division in discovering new trends such as frequently cited patents and patent life cycle after patent application date"
+      ],
+      "technologies_used": ["Microsoft Excel"],
+      "metrics_mentioned": [],
+      "programs": [],
+      "team_size": null,
+      "seniority_signals": [],
+      "domain": "technology_transfer"
+    },
+    {
+      "company": "Binghamton University, Watson Careers & Alumni Connections Office",
+      "employer": "Binghamton University",
+      "title": "Graduate Student Assistant",
+      "start_date": null,
+      "end_date": null,
+      "duration_months": 0,
+      "location": "Binghamton, NY",
+      "bullets": [
+        "Address and strengthen resumes and cover letters for undergraduate and graduate students in Engineering & Applied Science through personal appointments with four other student assistants",
+        "Archive and transform job and internship postings into newsletters and databases using Microsoft Excel and OmniUpdate",
+        "Research information to create new resume templates, contact industry and academic professionals, and execute plans for innovative career advancement for Engineering & Applied Science students"
+      ],
+      "technologies_used": ["Microsoft Excel", "OmniUpdate"],
+      "metrics_mentioned": ["four other student assistants"],
+      "programs": [],
+      "team_size": 5,
+      "seniority_signals": [],
+      "domain": "higher_education"
+    },
+    {
+      "company": "Binghamton University, Office of Residential Life",
+      "employer": "Binghamton University",
+      "title": "Academic Graduate Assistant",
+      "start_date": null,
+      "end_date": null,
+      "duration_months": 0,
+      "location": "Binghamton, NY",
+      "bullets": [
+        "Mentored and tutored over 1,100 undergraduate students to achieve above-satisfactory academic progress within STEM classes such as Biology, Calculus, Physics, and Organic Chemistry",
+        "Assembled class study kits and student support information to send to residential students with the help of 15 residential student assistants",
+        "Helped plan events that focused on STEM academic support outreach, career expansion, and extracurricular academic participation such as a STEAM Room Opening, Final Exam De-Stress, Discovery Program Tabling, Undergraduate Research Day, and the Job & Career Internship Fair",
+        "Improved the personal academic experiences and grade performances of undergraduate students that further led to strengthened career insight, focus, and prospects"
+      ],
+      "technologies_used": [],
+      "metrics_mentioned": ["1,100 undergraduate students", "15 residential student assistants"],
+      "programs": [],
+      "team_size": 15,
+      "seniority_signals": ["Mentored and tutored over 1,100 undergraduate students"],
+      "domain": "higher_education"
+    }
+  ],
+  "education": [
+    {
+      "institution": "Binghamton University, SUNY, Thomas J. Watson College of Engineering and Applied Science",
+      "degree": "Doctor of Philosophy",
+      "field": "Biomedical Engineering",
+      "start_year": null,
+      "end_year": null,
+      "grade": null,
+      "research_topic": null,
+      "highlights": []
+    },
+    {
+      "institution": "Cornell University, Meinig School of Biomedical Engineering",
+      "degree": "Master of Science",
+      "field": "Biomedical Engineering",
+      "start_year": null,
+      "end_year": null,
+      "grade": null,
+      "research_topic": null,
+      "highlights": []
+    },
+    {
+      "institution": "Huston Tillotson University, College of Natural Sciences",
+      "degree": "Bachelor of Science",
+      "field": "Biology with a Minor in Mathematics",
+      "start_year": null,
+      "end_year": null,
+      "grade": null,
+      "research_topic": null,
+      "highlights": []
+    }
+  ],
+  "skills": [
+    { "name": "R Programming", "original_text": "R Program", "domain": "technology", "category": "programming_languages", "source": "skills_section" },
+    { "name": "MATLAB", "original_text": "MATLAB", "domain": "engineering", "category": "simulation_modeling", "source": "skills_section" },
+    { "name": "Linux", "original_text": "Linux", "domain": "technology", "category": "operating_systems", "source": "skills_section" },
+    { "name": "Wolfram Alpha", "original_text": "Wolfram Alpha", "domain": "technology", "category": "computational_tools", "source": "skills_section" },
+    { "name": "LS-DYNA", "original_text": "LS-DYNA", "domain": "engineering", "category": "simulation_modeling", "source": "skills_section" },
+    { "name": "ABAQUS", "original_text": "ABAQUS Dassault Systems", "domain": "engineering", "category": "simulation_modeling", "source": "skills_section" },
+    { "name": "COMSOL Multiphysics", "original_text": "COMSOL Multiphysics", "domain": "engineering", "category": "simulation_modeling", "source": "skills_section" },
+    { "name": "Microsoft Office", "original_text": "MS Office (Excel, PowerPoint, Word, Windows Media)", "domain": "technology", "category": "productivity", "source": "skills_section" },
+    { "name": "Bioinformatics", "original_text": "Bioinformatics (Basic Search & Alignment Tool, Next Genome Sequencing, Genetic Expression Omnibus Databasing)", "domain": "biomedical_research", "category": "bioinformatics", "source": "skills_section" },
+    { "name": "OmniUpdate", "original_text": "OmniUpdate", "domain": "technology", "category": "web_development", "source": "skills_section" },
+    { "name": "Origin 7", "original_text": "Origin 7", "domain": "technology", "category": "data_visualization", "source": "skills_section" },
+    { "name": "Gel Electrophoresis", "original_text": "Gel Electrophoresis", "domain": "biomedical_research", "category": "laboratory_techniques", "source": "skills_section" },
+    { "name": "Cell Staining & Culturing", "original_text": "Cell Staining & Culturing", "domain": "biomedical_research", "category": "laboratory_techniques", "source": "skills_section" },
+    { "name": "Flow Cytometry", "original_text": "Flow Cytometry", "domain": "biomedical_research", "category": "laboratory_techniques", "source": "skills_section" },
+    { "name": "Macromolecule Blotting & Probing", "original_text": "Macromolecule Blotting & Probing", "domain": "biomedical_research", "category": "laboratory_techniques", "source": "skills_section" },
+    { "name": "Turbidity & Conductivity Analysis", "original_text": "Turbidity & Conductivity Analysis", "domain": "biomedical_research", "category": "laboratory_techniques", "source": "skills_section" },
+    { "name": "Aseptic Techniques", "original_text": "Aseptic Techniques", "domain": "biomedical_research", "category": "laboratory_techniques", "source": "skills_section" },
+    { "name": "Artificial Neural Networks", "original_text": "artificial neural networks", "domain": "technology", "category": "machine_learning", "source": "summary" },
+    { "name": "Data Science", "original_text": "data science", "domain": "technology", "category": "data_science", "source": "summary" },
+    { "name": "Finite Element Analysis", "original_text": "Finite Element Analysis", "domain": "engineering", "category": "simulation_modeling", "source": "experience" }
+  ],
+  "competencies": [],
+  "certifications": [],
+  "awards": [],
+  "projects": [],
+  "publications": [
+    {
+      "title": "Effect of single and multiple doses of low-level laser therapy on viability and proliferation of stem cells from human exfoliated deciduous teeth (SHED)",
+      "venue": "Lasers in Medical Science",
+      "year": 2022,
+      "peer_reviewed": true
+    }
+  ],
+  "volunteer": [],
+  "leadership": [
+    {
+      "organization": "Graduate Student Organization",
+      "role": "Employment & Labor Committee/Charter & Bylaws Committee",
+      "start_date": "2024-10",
+      "end_date": null,
+      "description": "Employment & Labor Committee and Charter & Bylaws Committee member",
+      "scope": null
+    },
+    {
+      "organization": "Campus Bible Fellowship",
+      "role": "Graduate Student Representative",
+      "start_date": "2023-04",
+      "end_date": null,
+      "description": "Graduate Student Representative",
+      "scope": null
+    },
+    {
+      "organization": "Universities Allied for Essential Medicines",
+      "role": "Graduate Student Representative/Research & Design Fellow",
+      "start_date": "2022-04",
+      "end_date": null,
+      "description": "Graduate Student Representative and Research & Design Fellow",
+      "scope": null
+    },
+    {
+      "organization": "Golden Key International Honor Society",
+      "role": "Member",
+      "start_date": "2022-03",
+      "end_date": null,
+      "description": "Huston Tillotson University Chapter member",
+      "scope": null
+    },
+    {
+      "organization": "National Society of Black Engineers",
+      "role": "Student Member",
+      "start_date": "2021-10",
+      "end_date": "2023-05",
+      "description": "Student Member",
+      "scope": null
+    }
+  ],
+  "professional_affiliations": [
+    "Graduate Student Organization",
+    "Campus Bible Fellowship",
+    "Universities Allied for Essential Medicines",
+    "Golden Key International Honor Society",
+    "National Society of Black Engineers"
+  ],
+  "training": [],
+  "languages_spoken": ["German (Intermediate)", "English (Native)"],
+  "all_technologies": ["R Program", "MATLAB", "Linux", "Wolfram Alpha", "LS-DYNA", "ABAQUS Dassault Systems", "COMSOL Multiphysics", "Microsoft Office", "OmniUpdate", "Origin 7", "Gel Electrophoresis", "Cell Staining & Culturing", "Flow Cytometry", "Macromolecule Blotting & Probing", "GEO Query", "Microsoft Excel"],
+  "conflicts": [
+    {
+      "type": "other",
+      "description": "All dates use placeholder format '20XX' — exact years cannot be determined from the text"
+    }
+  ]
+}

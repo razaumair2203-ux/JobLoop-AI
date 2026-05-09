@@ -1,0 +1,358 @@
+{
+  "name": "BME Resume Sample",
+  "email": "bmail@binghamton.edu",
+  "phone": "(607) 555-777",
+  "location": {
+    "city": null,
+    "country": "United States"
+  },
+  "links": {
+    "linkedin": "www.linkedin.com/in/yourname",
+    "github": null,
+    "portfolio": null,
+    "other": []
+  },
+  "summary": null,
+  "total_experience_years": 2,
+  "experience": [
+    {
+      "company": "Regeneron",
+      "employer": "Regeneron",
+      "title": "Pharmaceuticals Purification Development Intern",
+      "start_date": "2025-05",
+      "end_date": "2025-08",
+      "duration_months": 4,
+      "location": "Tarrytown, NY",
+      "bullets": [
+        "Conducted evaluation of mixed-mode chromatography for integration into a monoclonal antibody platform, enabling advanced research on monoclonal antibody therapy for cancer treatment",
+        "Performed calculations on loading capacities and utilized column packing for purification development advancements",
+        "Delivered a detailed overview of the downstream purification process, highlighting the significance of polishing chromatography and membrane unit operations, during a presentation to the Pre-Clinical Manufacturing and Process Development Department"
+      ],
+      "technologies_used": [
+        "mixed-mode chromatography",
+        "column packing"
+      ],
+      "metrics_mentioned": [],
+      "programs": [],
+      "team_size": null,
+      "seniority_signals": [
+        "intern"
+      ],
+      "domain": "pharmaceuticals"
+    },
+    {
+      "company": "Eco-Business Consulting",
+      "employer": "Eco-Business Consulting",
+      "title": "Consultant",
+      "start_date": "2024-09",
+      "end_date": "2025-05",
+      "duration_months": 9,
+      "location": "Binghamton, NY",
+      "bullets": [
+        "Designed a zero-waste landfill model for The Bagel Factory in Binghamton, NY by converting inventory to 100% compostable materials, which resulted in a 10% increase in the profitability of the company's business model",
+        "Implemented a functional greenhouse for hydroponics and composting by managing a team of four members through research and development and working closely with the head of food services at Binghamton University",
+        "Devised a comprehensive package for other small businesses seeking to become sustainable with a $2,000 budget"
+      ],
+      "technologies_used": [
+        "hydroponics",
+        "composting"
+      ],
+      "metrics_mentioned": [
+        "10% increase in profitability",
+        "$2,000 budget"
+      ],
+      "programs": [],
+      "team_size": 4,
+      "seniority_signals": [
+        "consultant"
+      ],
+      "domain": "sustainability_consulting"
+    },
+    {
+      "company": "Stem Cell Research",
+      "employer": "Binghamton University",
+      "title": "Undergraduate Research Assistant",
+      "start_date": "2023-09",
+      "end_date": "2024-05",
+      "duration_months": 9,
+      "location": null,
+      "bullets": [
+        "Researched the difference between stem cells and specialized cell types to discover practical applications of differences",
+        "Assisted in the bioprinting and biofabrication of human pancreatic islets from pluripotent stem cells for the purpose of advancing biomanufacturing under the mentorship of Prof. Sha Jin",
+        "Attended the Third World Congress of Cell Science & Stem Cell Research in Baltimore, MD to present a research poster on the \"Global Assessment of Stem Cell Science and Engineering\""
+      ],
+      "technologies_used": [
+        "bioprinting",
+        "biofabrication",
+        "pluripotent stem cells"
+      ],
+      "metrics_mentioned": [],
+      "programs": [],
+      "team_size": null,
+      "seniority_signals": [
+        "undergraduate research assistant"
+      ],
+      "domain": "biomedical_research"
+    }
+  ],
+  "education": [
+    {
+      "institution": "Binghamton University, State University of New York, Thomas J. Watson College of Engineering and Applied Science",
+      "degree": "Bachelor of Science",
+      "field": "Biomedical Engineering, Biomedical Devices & Instrumentations Concentration",
+      "start_year": null,
+      "end_year": 2026,
+      "grade": "3.XX/4.00",
+      "research_topic": null,
+      "highlights": [
+        "Dean's List: Fall 2023 – Spring 2025",
+        "Relevant Coursework: Biomedical Modeling, Biomedical Instruments, Bioimaging, Biomechanics, Biomaterials"
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "name": "Pipetting",
+      "original_text": "Pipetting",
+      "domain": "biomedical_engineering",
+      "category": "laboratory_techniques",
+      "source": "skills_section"
+    },
+    {
+      "name": "Buffer Preparation",
+      "original_text": "Buffer Preparation",
+      "domain": "biomedical_engineering",
+      "category": "laboratory_techniques",
+      "source": "skills_section"
+    },
+    {
+      "name": "Light Spectroscopy",
+      "original_text": "Light Spectroscopy",
+      "domain": "biomedical_engineering",
+      "category": "laboratory_techniques",
+      "source": "skills_section"
+    },
+    {
+      "name": "Cell Culture (Mammalian)",
+      "original_text": "Cell Culture (Mammalian)",
+      "domain": "biomedical_engineering",
+      "category": "laboratory_techniques",
+      "source": "skills_section"
+    },
+    {
+      "name": "C",
+      "original_text": "C",
+      "domain": "technology",
+      "category": "programming_languages",
+      "source": "skills_section"
+    },
+    {
+      "name": "R",
+      "original_text": "R",
+      "domain": "technology",
+      "category": "programming_languages",
+      "source": "skills_section"
+    },
+    {
+      "name": "Mathematica",
+      "original_text": "Mathematica",
+      "domain": "technology",
+      "category": "software",
+      "source": "skills_section"
+    },
+    {
+      "name": "MATLAB",
+      "original_text": "MATLAB",
+      "domain": "technology",
+      "category": "software",
+      "source": "skills_section"
+    },
+    {
+      "name": "PTC Creo",
+      "original_text": "PTC Creo",
+      "domain": "engineering",
+      "category": "cad_software",
+      "source": "skills_section"
+    },
+    {
+      "name": "Solid Edge",
+      "original_text": "Solid Edge",
+      "domain": "engineering",
+      "category": "cad_software",
+      "source": "skills_section"
+    },
+    {
+      "name": "Softplan",
+      "original_text": "Softplan",
+      "domain": "engineering",
+      "category": "cad_software",
+      "source": "skills_section"
+    },
+    {
+      "name": "Microsoft Office",
+      "original_text": "MS Office",
+      "domain": "technology",
+      "category": "productivity_software",
+      "source": "skills_section"
+    },
+    {
+      "name": "Google Workspace",
+      "original_text": "Google Workspace",
+      "domain": "technology",
+      "category": "productivity_software",
+      "source": "skills_section"
+    },
+    {
+      "name": "Oscilloscope",
+      "original_text": "Oscilloscope",
+      "domain": "engineering",
+      "category": "hardware_instruments",
+      "source": "skills_section"
+    },
+    {
+      "name": "Spectrophotometer",
+      "original_text": "Spectrophotometer",
+      "domain": "biomedical_engineering",
+      "category": "hardware_instruments",
+      "source": "skills_section"
+    },
+    {
+      "name": "PowerLab A/D Converter",
+      "original_text": "PowerLab A/D Converter",
+      "domain": "biomedical_engineering",
+      "category": "hardware_instruments",
+      "source": "skills_section"
+    },
+    {
+      "name": "EMG/ECG",
+      "original_text": "EMG/ECG",
+      "domain": "biomedical_engineering",
+      "category": "hardware_instruments",
+      "source": "skills_section"
+    },
+    {
+      "name": "Soldering",
+      "original_text": "Soldering",
+      "domain": "engineering",
+      "category": "hardware_skills",
+      "source": "skills_section"
+    },
+    {
+      "name": "Mixed-Mode Chromatography",
+      "original_text": "mixed-mode chromatography",
+      "domain": "pharmaceuticals",
+      "category": "purification",
+      "source": "experience"
+    },
+    {
+      "name": "Bioprinting",
+      "original_text": "bioprinting and biofabrication",
+      "domain": "biomedical_engineering",
+      "category": "biomedical_manufacturing",
+      "source": "experience"
+    },
+    {
+      "name": "Fusion 360",
+      "original_text": "Fusion 360",
+      "domain": "engineering",
+      "category": "cad_software",
+      "source": "experience"
+    },
+    {
+      "name": "Canva",
+      "original_text": "Canva",
+      "domain": "technology",
+      "category": "design_software",
+      "source": "experience"
+    }
+  ],
+  "competencies": [
+    "Research",
+    "Data Analysis",
+    "Technical Presentation",
+    "Team Management",
+    "Sustainability Consulting",
+    "Purification Development"
+  ],
+  "certifications": [],
+  "awards": [],
+  "projects": [
+    {
+      "name": "Brain Candy Capstone Design Project",
+      "description": "Promoted STEM activities for children grades 3-8 using a candy-based anatomy game designed on Canva with organ-shaped gummy candy created from 3D organ molds modeled on Fusion 360",
+      "outcome": "Presented completed game to 70+ class members and BME department faculty and compiled two 50-page technical documents consisting of product requirements, test methods and results, and verification of requirements",
+      "technologies": [
+        "Canva",
+        "Fusion 360",
+        "tensometer",
+        "3D organ molds"
+      ],
+      "is_professional": false
+    }
+  ],
+  "publications": [
+    {
+      "title": "Global Assessment of Stem Cell Science and Engineering",
+      "venue": "Third World Congress of Cell Science & Stem Cell Research, Baltimore, MD",
+      "year": null,
+      "peer_reviewed": false
+    }
+  ],
+  "volunteer": [
+    {
+      "organization": "Broome County River",
+      "role": "Volunteer",
+      "start_date": null,
+      "end_date": null,
+      "description": "Cleaned and sorted through large amounts of trash and learned about the dangers and effects of pollution",
+      "impact": null
+    }
+  ],
+  "leadership": [
+    {
+      "organization": "Binghamton University Admissions",
+      "role": "Tour Guide",
+      "start_date": "2024-09",
+      "end_date": "present",
+      "description": "Inform prospective students and parents about the campus, admissions process, academic offerings, and student life during bi-weekly campus tours",
+      "scope": null
+    },
+    {
+      "organization": "Biomedical Engineering Society",
+      "role": "Vice President",
+      "start_date": "2024-08",
+      "end_date": "2025-05",
+      "description": "Organize collaborative graduate student/alumni panels specifically for biomedical engineering, biology, and chemistry students interested in pursuing an advanced degree in biomedical engineering",
+      "scope": null
+    }
+  ],
+  "professional_affiliations": [
+    "Biomedical Engineering Society (BMES)"
+  ],
+  "training": [],
+  "languages_spoken": [],
+  "all_technologies": [
+    "C",
+    "R",
+    "Mathematica",
+    "MATLAB",
+    "PTC Creo",
+    "Solid Edge",
+    "Softplan",
+    "MS Office",
+    "Google Workspace",
+    "Oscilloscope",
+    "Spectrophotometer",
+    "PowerLab A/D Converter",
+    "EMG/ECG",
+    "Soldering",
+    "Fusion 360",
+    "Canva",
+    "mixed-mode chromatography",
+    "column packing",
+    "bioprinting",
+    "biofabrication",
+    "tensometer"
+  ],
+  "conflicts": []
+}

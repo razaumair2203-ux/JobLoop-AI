@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { createClient } from "@/lib/supabase/server";
+import { getAuthUser } from "@/lib/auth";
 import {
   Briefcase,
   MessageSquare,
@@ -8,16 +9,53 @@ import {
   Search,
   Upload,
   ArrowRight,
+  Lightbulb,
 } from "lucide-react";
 
 export default async function DashboardPage() {
   const supabase = await createClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
+  const { user } = await getAuthUser(supabase);
 
   const firstName =
     user?.user_metadata?.full_name?.split(" ")[0] ?? user?.email?.split("@")[0] ?? "there";
+
+  // Fetch real stats
+  let total = 0;
+  let interviews = 0;
+  let offers = 0;
+  let patterns: Array<{ gap: string; count: number; message: string }> = [];
+
+  if (user) {
+    const { data: apps } = await supabase
+      .from("applications")
+      .select("id, outcome, match_analysis")
+      .eq("user_id", user.id);
+
+    if (apps) {
+      total = apps.length;
+      interviews = apps.filter((a) => a.outcome === "interview" || a.outcome === "callback").length;
+      offers = apps.filter((a) => a.outcome === "offer").length;
+
+      // Pattern detection (same logic as /api/applications)
+      const gapCounts: Record<string, number> = {};
+      for (const app of apps) {
+        const gaps = (app.match_analysis as { gaps?: string[] })?.gaps ?? [];
+        for (const gap of gaps) {
+          const key = gap.toLowerCase();
+          gapCounts[key] = (gapCounts[key] || 0) + 1;
+        }
+      }
+      patterns = Object.entries(gapCounts)
+        .filter(([, count]) => count >= 2)
+        .sort(([, a], [, b]) => b - a)
+        .slice(0, 3)
+        .map(([gap, count]) => ({
+          gap,
+          count,
+          message: `Your applications show a pattern: ${count} JDs flagged "${gap}" as a gap. Want to address this in your Cloud?`,
+        }));
+    }
+  }
 
   return (
     <div>
@@ -25,26 +63,49 @@ export default async function DashboardPage() {
         Welcome, {firstName}
       </h1>
       <p className="mt-1 text-sm text-zinc-500">
-        Your voice, amplified. Let's find the right opportunity.
+        Your voice, amplified. Let&apos;s find the right opportunity.
       </p>
+
+      {/* Pattern Insights */}
+      {patterns.length > 0 && (
+        <div className="mt-6 space-y-2">
+          {patterns.map((p) => (
+            <div
+              key={p.gap}
+              className="flex items-start gap-3 rounded-xl border border-amber-200 bg-amber-50 p-4"
+            >
+              <Lightbulb className="mt-0.5 h-5 w-5 shrink-0 text-amber-600" />
+              <div>
+                <p className="text-sm font-medium text-amber-900">{p.message}</p>
+                <Link
+                  href="/cloud"
+                  className="mt-1 text-xs font-medium text-amber-700 hover:text-amber-800"
+                >
+                  View your Cloud profile
+                </Link>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
 
       {/* Stat cards */}
       <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
         <DashCard
           label="Applications"
-          value="0"
+          value={String(total)}
           icon={Briefcase}
           accent="bg-blue-50 text-blue-600"
         />
         <DashCard
           label="Interviews"
-          value="0"
+          value={String(interviews)}
           icon={MessageSquare}
           accent="bg-amber-50 text-amber-600"
         />
         <DashCard
           label="Offers"
-          value="0"
+          value={String(offers)}
           icon={Trophy}
           accent="bg-green-50 text-green-600"
         />

@@ -310,7 +310,7 @@ async function main() {
   );
 
   const cleanParsedCV = resolvedProfileToParsedCV(resolvedProfile);
-  const cloud = buildCloudFromParsedCV(cleanParsedCV);
+  const { cloud } = buildCloudFromParsedCV(cleanParsedCV);
 
   console.log(`│  Resolved roles: ${resolvedProfile.roles.length}`);
   console.log(`│  Employer: ${resolvedProfile.employer ?? "Multiple"}`);

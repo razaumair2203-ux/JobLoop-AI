@@ -1,0 +1,311 @@
+{
+  "name": "Carla V. Pharmacy",
+  "email": "Cpharma1@binghamton.edu",
+  "phone": "(123) 555-1212",
+  "location": {
+    "city": "Binghamton",
+    "state": "NY",
+    "country": "USA"
+  },
+  "links": {
+    "linkedin": null,
+    "github": null,
+    "portfolio": null,
+    "other": []
+  },
+  "summary": null,
+  "total_experience_years": 1,
+  "experience": [
+    {
+      "company": "Kia Drug",
+      "employer": "Kia Drug",
+      "title": "Pharmacy Intern",
+      "start_date": "January 20XX",
+      "end_date": "Present",
+      "duration_months": null,
+      "location": "Vestal, NY",
+      "bullets": [],
+      "technologies_used": [],
+      "metrics_mentioned": [],
+      "programs": [],
+      "team_size": null,
+      "seniority_signals": [],
+      "domain": "pharmacy"
+    },
+    {
+      "company": "New Health Hospital - West",
+      "employer": "New Health Hospital",
+      "title": "Pharmacy Intern",
+      "start_date": "April 20XX",
+      "end_date": "January 20XX",
+      "duration_months": null,
+      "location": "Endicott, New York",
+      "bullets": [],
+      "technologies_used": [],
+      "metrics_mentioned": [],
+      "programs": [],
+      "team_size": null,
+      "seniority_signals": [],
+      "domain": "pharmacy"
+    },
+    {
+      "company": "National Research Institute of Infectious Disease",
+      "employer": "National Research Institute of Infectious Disease",
+      "title": "Research Assistant",
+      "start_date": "June 20XX",
+      "end_date": "August 20XX",
+      "duration_months": null,
+      "location": null,
+      "bullets": [
+        "Researched means of inhibiting several biological toxins, maintained cell cultures, performed cell assays"
+      ],
+      "technologies_used": [
+        "Cell cultures",
+        "Cell assays"
+      ],
+      "metrics_mentioned": [],
+      "programs": [],
+      "team_size": null,
+      "seniority_signals": [],
+      "domain": "pharmaceutical_research"
+    },
+    {
+      "company": "Binghamton University School of Pharmacy",
+      "employer": "Binghamton University",
+      "title": "Research Assistant",
+      "start_date": "September 20XX",
+      "end_date": "April 20XX",
+      "duration_months": null,
+      "location": "Binghamton, NY",
+      "bullets": [
+        "Studied the permeability of the blood-brain barrier to chemotherapeutic agents"
+      ],
+      "technologies_used": [],
+      "metrics_mentioned": [],
+      "programs": [],
+      "team_size": null,
+      "seniority_signals": [],
+      "domain": "pharmaceutical_research"
+    },
+    {
+      "company": "Veterans' Affairs Outpatient Clinic",
+      "employer": "Veterans' Affairs",
+      "title": "Clerkship - Ambulatory Care",
+      "start_date": "September 20XX",
+      "end_date": "September 20XX",
+      "duration_months": 1,
+      "location": "Binghamton, New York",
+      "bullets": [],
+      "technologies_used": [],
+      "metrics_mentioned": [],
+      "programs": [],
+      "team_size": null,
+      "seniority_signals": [],
+      "domain": "pharmacy"
+    },
+    {
+      "company": "New Health Hospital",
+      "employer": "New Health Hospital",
+      "title": "Clerkship - Oncology/Hematology",
+      "start_date": "August 20XX",
+      "end_date": "August 20XX",
+      "duration_months": 1,
+      "location": "Endicott, NY",
+      "bullets": [],
+      "technologies_used": [],
+      "metrics_mentioned": [],
+      "programs": [],
+      "team_size": null,
+      "seniority_signals": [],
+      "domain": "pharmacy"
+    }
+  ],
+  "education": [
+    {
+      "institution": "Binghamton University, State University of New York",
+      "degree": "Pharm.D.",
+      "field": "Pharmacy",
+      "start_date": "August 20XX",
+      "end_date": "Present",
+      "gpa": null,
+      "honors": [],
+      "location": "Binghamton, NY"
+    },
+    {
+      "institution": "Binghamton University, State University of New York",
+      "degree": "Bachelor of Science",
+      "field": "Biological Sciences",
+      "start_date": "August 20XX",
+      "end_date": "May 20XX",
+      "gpa": "3.75/4.00",
+      "honors": [],
+      "location": "Binghamton, NY"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Cell Cultures",
+      "original_text": "maintained cell cultures",
+      "domain": "pharmaceutical_research",
+      "category": "laboratory",
+      "source": "experience"
+    },
+    {
+      "name": "Cell Assays",
+      "original_text": "performed cell assays",
+      "domain": "pharmaceutical_research",
+      "category": "laboratory",
+      "source": "experience"
+    },
+    {
+      "name": "Blood-Brain Barrier Research",
+      "original_text": "permeability of the blood-brain barrier to chemotherapeutic agents",
+      "domain": "pharmaceutical_research",
+      "category": "research",
+      "source": "experience"
+    },
+    {
+      "name": "Ambulatory Care",
+      "original_text": "Ambulatory Care",
+      "domain": "pharmacy",
+      "category": "clinical",
+      "source": "experience"
+    },
+    {
+      "name": "Oncology/Hematology",
+      "original_text": "Oncology/Hematology",
+      "domain": "pharmacy",
+      "category": "clinical",
+      "source": "experience"
+    },
+    {
+      "name": "Immunization Delivery",
+      "original_text": "APhA Pharmacy-Based Immunization Delivery",
+      "domain": "pharmacy",
+      "category": "clinical",
+      "source": "certification"
+    },
+    {
+      "name": "Patient Counseling",
+      "original_text": "Patient Counseling Competition",
+      "domain": "pharmacy",
+      "category": "clinical",
+      "source": "experience"
+    }
+  ],
+  "competencies": [
+    "Pharmacy dispensing and intern duties",
+    "Biological and pharmaceutical research",
+    "Clinical pharmacy rotations",
+    "Patient counseling",
+    "Immunization delivery"
+  ],
+  "certifications": [
+    {
+      "name": "Cardiopulmonary Resuscitation / BLS",
+      "issuer": null,
+      "year": null,
+      "active": true,
+      "tier": "gold"
+    },
+    {
+      "name": "HIPAA Certified",
+      "issuer": "Binghamton University",
+      "year": null,
+      "active": true,
+      "tier": "gold"
+    },
+    {
+      "name": "APhA Pharmacy-Based Immunization Delivery",
+      "issuer": "American Pharmacists Association",
+      "year": null,
+      "active": true,
+      "tier": "specialization"
+    },
+    {
+      "name": "New York State Board of Pharmacy Intern Licensure",
+      "issuer": "New York State Board of Pharmacy",
+      "year": null,
+      "active": true,
+      "tier": "gold"
+    }
+  ],
+  "awards": [
+    {
+      "name": "Rho Chi Honor Society",
+      "issuer": "Rho Chi",
+      "year": null
+    },
+    {
+      "name": "Runner-Up Binghamton University Patient Counseling Competition",
+      "issuer": "Binghamton University",
+      "year": null
+    }
+  ],
+  "projects": [],
+  "publications": [
+    {
+      "title": "Treating lung biofilm infections: dispersion and eradication via dry powder aerosols",
+      "authors": "C.Pharmacy, I. Scriptt, B. Cane",
+      "venue": "Respir. Drug Deliv. 20XX",
+      "status": "In press"
+    }
+  ],
+  "volunteer": [
+    {
+      "organization": "White Lakes Mall",
+      "role": "Brown Bag Medication Review",
+      "dates": "20XX"
+    },
+    {
+      "organization": "Binghamton Food Drive Committee",
+      "role": "Committee member",
+      "dates": "20XX"
+    }
+  ],
+  "leadership": [
+    {
+      "role": "PSSNY Student Ambassador",
+      "organization": "Pharmacy Society of the State of New York",
+      "dates": "20XX-Present"
+    },
+    {
+      "role": "Member",
+      "organization": "Graduate Student Organization",
+      "dates": "20XX-Present"
+    }
+  ],
+  "professional_affiliations": [
+    {
+      "name": "American College of Clinical Pharmacy (ACCP)",
+      "dates": null
+    },
+    {
+      "name": "American Pharmacists Association (APhA)",
+      "dates": null
+    },
+    {
+      "name": "ASP - Binghamton University Chapter",
+      "dates": null
+    }
+  ],
+  "training": [],
+  "languages_spoken": [],
+  "conflicts": [],
+  "presentations": [
+    {
+      "title": "Implementing a pharmacist-managed dyslipidemia clinic",
+      "venue": "Pharmacy Grand Rounds, Veteran's Affairs Outpatient Clinic, Binghamton, New York",
+      "date": "September 20XX"
+    },
+    {
+      "title": "Novel chemotherapeutic agent permeability of the blood-brain barrier in a bovine brain model",
+      "venue": "Student Research Forum, Binghamton University, Binghamton, New York",
+      "date": "August 20XX"
+    }
+  ],
+  "professional_meetings": [
+    "American College of Clinical Pharmacy Annual Meeting 20XX",
+    "ASHP Mid-Year Clinical Meeting 20XX"
+  ]
+}

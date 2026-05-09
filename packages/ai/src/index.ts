@@ -1,6 +1,6 @@
 // Cloud — the core data model
 export { buildCloudFromParsedCV, findNode, computeSummary, getValidatedSkills, getWeakClaims, getRepeatedSkills, reconstructTrajectory } from "./cloud";
-export type { ProfileCloud, CloudNode, Evidence, EvidenceSummary, Achievement, CareerTrajectory } from "./cloud";
+export type { ProfileCloud, CloudNode, Evidence, EvidenceSummary, Achievement, CareerTrajectory, VocabularyUpgrade, SkillClassificationReport } from "./cloud";
 export type { RoleEvidence, ImpactEvidence, CertificationEvidence, AwardEvidence, ProjectEvidence, SocraticEvidence } from "./cloud";
 
 // Socratic questioning
@@ -9,29 +9,24 @@ export type { SocraticQuestion, SocraticAnswer, ContradictionResult } from "./so
 
 // Cloud matcher (JD vs Cloud evidence)
 export { matchCloudToJD } from "./cloud-matcher";
-export type { CloudMatchReport, CloudRequirementMatch, CloudTechMatch, MatchVerdict } from "./cloud-matcher";
+export type { CloudMatchReport, CloudRequirementMatch, CloudTechMatch, MatchVerdict, EligibilityGate, EligibilityCheck, EligibilityStatus } from "./cloud-matcher";
 
 // Cloud pipeline (the correct full pipeline)
 export { analyzeWithCloud, analyzeQuick } from "./cloud-pipeline";
 export type { CloudAnalysisResult, AnalysisOptions } from "./cloud-pipeline";
 
-// Flat matcher (legacy — works without cloud, from parsed CV)
-export { matchCVToJD } from "./matcher";
-export type { MatchReport, RequirementMatch, TechMatch, ExperienceComparison, DomainOverlap, PositionAssessment, MatchStatus } from "./matcher";
+// Flat matcher REMOVED (May 6, 2026) — use matchCloudToJD from cloud-matcher.ts
 
 // Parsers (AI extraction)
 export { parseJD, parseCV, classifyJDComplexity } from "./analyze";
 
-// Dev-mode parser (regex fallback when no API key)
-export { parseCVLocal } from "./dev-parser";
+// Dev-mode parser REMOVED (May 6, 2026) — use three-tier dev mode (fixtures/CLI/error)
 
 // Suitability Insights (transparent reasoning, not scores)
 export { generateInsights } from "./insights";
 export type { SuitabilityInsights, Insight, InsightType } from "./insights";
 
-// Full pipeline (legacy — bypasses Cloud, kept for backwards compat)
-export { analyzeSuitability } from "./analyze";
-export type { FullAnalysisResult, NarratedAdvice } from "./analyze";
+// Legacy analyzeSuitability REMOVED (May 6, 2026) — use analyzeWithCloud from cloud-pipeline.ts
 
 // CV Generation
 export { generateTailoredCV, generateCloudTailoredCV } from "./generate-cv";
@@ -82,7 +77,7 @@ export type { GapFillingQuestion, GapFillingContext } from "./gap-filling";
 
 // AutoResearch loop
 export {
-  scoreCVGeneration, scoreJDParsing, compareScorecards,
+  scoreCVGeneration, scoreJDParsing, compareScorecards, parsedJDToScorecardInput, cvContentToScorecardInput,
   selectMutation, buildMutationPrompt, getMutationStats,
   initLoopState, selectTrainingBatch, selectWeightedTrainingBatch, runIteration, shouldStop, shouldValidate,
   toTSVLine, TSV_HEADER, DEFAULT_CONFIG,
@@ -90,7 +85,7 @@ export {
   computeFeedbackWeights, selectWeightedBatch,
 } from "./autoresearch";
 export type {
-  CheckResult, ScorecardResult, GateVerdict, CVScorecardInput, JDScorecardInput,
+  CheckResult, ScorecardResult, GateVerdict, CVScorecardInput, JDScorecardInput, CircularityRisk,
   MutationType, MutationRecord, MutationInstruction,
   TargetPrompt, TestPair, IterationResult, LoopState, LoopConfig,
   PretestResult,
@@ -98,10 +93,10 @@ export type {
 } from "./autoresearch";
 
 // Skill Taxonomy & Classification
-export { classifySkill, classifyCloud, inferDepthLevel, detectGaps } from "./taxonomy";
+export { classifySkill, classifyCloud, inferDepthLevel, detectGaps, normalizeDomain, normalizeCategory, normalizeTaxonomy, getTaxonomyGaps, clearTaxonomyGaps, APPROVED_DOMAINS } from "./taxonomy";
 export type {
   DepthLevel, DepthAssessment, ClassifiedSkill, ClassifiedCloud, ClassifiedRole,
-  TaxonomyDomain, TaxonomyCategory, SkillGap,
+  TaxonomyDomain, TaxonomyCategory, SkillGap, TaxonomyGapEntry,
 } from "./taxonomy";
 
 // Cloud Maturity — the master signal for model selection
@@ -117,9 +112,24 @@ export type {
 export { classifyFeedback, toUserFeedback } from "./feedback-classifier";
 export type { FeedbackIntent, ClassifiedFeedback } from "./feedback-classifier";
 
+// Text Normalizer — pre-LLM extraction cleanup
+export { normalizeExtractedText, assessExtractionQuality } from "./text-normalizer";
+export type { NormalizedText, ExtractionQuality } from "./text-normalizer";
+
 // CV Cleaner — pre-Cloud data quality
 export { cleanTitle, filterGarbageBullets, validateDates, verifyAgainstSourceText, verifySkills, extractContactDetails, buildConflictQuestions, cleanParsedCVs } from "./cv-cleaner";
 export type { DateValidationIssue, SourceVerificationResult, CleaningReport, Phase1Question, ExtractedContact } from "./cv-cleaner";
+
+// Schema Validation — runtime Zod validation for LLM output
+export { ParsedCVOutputSchema, validateParsedCVOutput, repairLLMOutput } from "./schema-validator";
+export type { ValidatedParsedCVOutput, ValidationResult } from "./schema-validator";
+
+// Pipeline Errors — typed error categories
+export {
+  PipelineError, ExtractionError, ExtractionQualityError, SchemaValidationError,
+  ModelTimeoutError, ModelRateLimitError, TaxonomyGapError, EmptyCVError,
+  UnsupportedFileError, GenerationSafetyError, NoProviderError,
+} from "./errors";
 
 // Config
 export { MODELS } from "./client";

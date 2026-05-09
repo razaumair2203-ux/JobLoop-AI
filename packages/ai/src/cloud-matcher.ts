@@ -44,7 +44,31 @@ export interface CloudTechMatch {
   node: CloudNode | null;
 }
 
+// ============================================================
+// ELIGIBILITY GATE — Pass/Hold/Fail for mandatory requirements
+// ============================================================
+
+export type EligibilityStatus = "pass" | "hold" | "fail";
+
+export interface EligibilityCheck {
+  requirement_text: string;
+  category: string;               // "certification" | "education" | "language" | "location" | "experience"
+  status: EligibilityStatus;
+  reason: string;                  // human-readable explanation
+  can_resolve: boolean;            // true if Socratic question could resolve (hold → pass)
+  suggested_question: string | null; // question to ask user if hold
+}
+
+export interface EligibilityGate {
+  status: EligibilityStatus;       // worst status across all checks
+  checks: EligibilityCheck[];
+  summary: string;                 // human-readable: "2 pass, 1 hold (nursing license unverified), 0 fail"
+}
+
 export interface CloudMatchReport {
+  // Eligibility gate — BEFORE position assessment
+  eligibility: EligibilityGate;
+
   // Position assessment (same transparent rules)
   position: {
     label: "Strong position" | "Competitive" | "Stretch" | "Major gaps";
@@ -92,6 +116,9 @@ export function matchCloudToJD(
   cloud: ProfileCloud,
   parsedJD: ParsedJD
 ): CloudMatchReport {
+  // Eligibility gate — check mandatory requirements FIRST
+  const eligibility = checkEligibility(cloud, parsedJD);
+
   // Match each requirement against the cloud
   const requirements: CloudRequirementMatch[] = [];
 
@@ -160,6 +187,7 @@ export function matchCloudToJD(
   }
 
   return {
+    eligibility,
     position,
     requirements,
     technologies,
@@ -170,6 +198,200 @@ export function matchCloudToJD(
     missing,
     improvement_opportunities: opportunities,
   };
+}
+
+// ============================================================
+// ELIGIBILITY GATE
+// ============================================================
+
+const ELIGIBILITY_CATEGORIES = new Set([
+  "certification", "education", "language", "location",
+]);
+
+function checkEligibility(
+  cloud: ProfileCloud,
+  parsedJD: ParsedJD
+): EligibilityGate {
+  const checks: EligibilityCheck[] = [];
+
+  // Only hard requirements in eligibility categories trigger the gate
+  for (const req of parsedJD.requirements.hard) {
+    if (!ELIGIBILITY_CATEGORIES.has(req.category)) continue;
+
+    const check = evaluateEligibilityRequirement(req, cloud, parsedJD);
+    checks.push(check);
+  }
+
+  // Experience years as eligibility (if min specified and gap is severe)
+  if (parsedJD.experience_years.min !== null) {
+    const actual = cloud.trajectory.total_experience_years;
+    const required = parsedJD.experience_years.min;
+    const gap = required - actual;
+
+    if (gap > 3) {
+      checks.push({
+        requirement_text: `${parsedJD.experience_years.raw_text} experience required`,
+        category: "experience",
+        status: "fail",
+        reason: `You have ${actual} years; role requires ${required}+ years (${gap} year gap)`,
+        can_resolve: false,
+        suggested_question: null,
+      });
+    } else if (gap > 1) {
+      checks.push({
+        requirement_text: `${parsedJD.experience_years.raw_text} experience required`,
+        category: "experience",
+        status: "hold",
+        reason: `You have ${actual} years; role asks for ${required}+ (${gap} year gap — close but may need strong evidence)`,
+        can_resolve: true,
+        suggested_question: `The role asks for ${required}+ years. You have ${actual}. Do you have additional experience (consulting, freelance, academic) that could close this gap?`,
+      });
+    }
+  }
+
+  // Determine overall status (worst across all checks)
+  let overall: EligibilityStatus = "pass";
+  if (checks.some((c) => c.status === "fail")) overall = "fail";
+  else if (checks.some((c) => c.status === "hold")) overall = "hold";
+
+  // Build summary
+  const passCount = checks.filter((c) => c.status === "pass").length;
+  const holdCount = checks.filter((c) => c.status === "hold").length;
+  const failCount = checks.filter((c) => c.status === "fail").length;
+
+  let summary: string;
+  if (checks.length === 0) {
+    summary = "No mandatory eligibility requirements detected in JD";
+  } else {
+    const parts = [`${passCount} pass`];
+    if (holdCount > 0) {
+      const holdItems = checks.filter((c) => c.status === "hold").map((c) => c.requirement_text);
+      parts.push(`${holdCount} hold (${holdItems.join("; ")})`);
+    }
+    if (failCount > 0) {
+      const failItems = checks.filter((c) => c.status === "fail").map((c) => c.requirement_text);
+      parts.push(`${failCount} fail (${failItems.join("; ")})`);
+    }
+    summary = parts.join(", ");
+  }
+
+  return { status: overall, checks, summary };
+}
+
+function evaluateEligibilityRequirement(
+  req: { text: string; category: string; keywords: string[] },
+  cloud: ProfileCloud,
+  parsedJD: ParsedJD
+): EligibilityCheck {
+  switch (req.category) {
+    case "certification": {
+      // Check if any cert in Cloud matches
+      const hasCert = req.keywords.some((kw) =>
+        cloud.certifications.some((cert) => skillsMatch(cert.name, kw))
+      );
+      if (hasCert) {
+        return {
+          requirement_text: req.text,
+          category: req.category,
+          status: "pass",
+          reason: "Matching certification found in profile",
+          can_resolve: false,
+          suggested_question: null,
+        };
+      }
+      // Check if adjacent cert exists
+      const hasRelated = cloud.certifications.some((cert) =>
+        req.keywords.some((kw) => {
+          const certLower = cert.name.toLowerCase();
+          const kwLower = kw.toLowerCase();
+          return certLower.split(/[\s\-/]+/).some((p: string) => kwLower.includes(p));
+        })
+      );
+      return {
+        requirement_text: req.text,
+        category: req.category,
+        status: "hold",
+        reason: hasRelated
+          ? "No exact match but related certification exists — verify with user"
+          : "Required certification not found in profile",
+        can_resolve: true,
+        suggested_question: `This role requires "${req.text}". Do you hold this certification, or are you currently pursuing it?`,
+      };
+    }
+
+    case "education": {
+      // Check education entries for degree keywords
+      const hasMatch = cloud.nodes.some((n) =>
+        n.type === "domain" && req.keywords.some((kw) => skillsMatch(n.name, kw))
+      );
+      // Also check raw education data if available via trajectory
+      if (hasMatch) {
+        return {
+          requirement_text: req.text,
+          category: req.category,
+          status: "pass",
+          reason: "Matching education evidence found in profile",
+          can_resolve: false,
+          suggested_question: null,
+        };
+      }
+      return {
+        requirement_text: req.text,
+        category: req.category,
+        status: "hold",
+        reason: "Required education not confirmed in profile",
+        can_resolve: true,
+        suggested_question: `This role requires "${req.text}". Do you meet this education requirement?`,
+      };
+    }
+
+    case "language": {
+      // Language requirements — check Cloud for language nodes or just pass through as hold
+      const langMatch = req.keywords.some((kw) =>
+        cloud.nodes.some((n) => skillsMatch(n.name, kw))
+      );
+      if (langMatch) {
+        return {
+          requirement_text: req.text,
+          category: req.category,
+          status: "pass",
+          reason: "Language found in profile",
+          can_resolve: false,
+          suggested_question: null,
+        };
+      }
+      return {
+        requirement_text: req.text,
+        category: req.category,
+        status: "hold",
+        reason: "Required language not found in profile",
+        can_resolve: true,
+        suggested_question: `This role requires "${req.text}". Do you speak this language?`,
+      };
+    }
+
+    case "location": {
+      // Location/work authorization — always hold unless we have explicit data
+      return {
+        requirement_text: req.text,
+        category: req.category,
+        status: "hold",
+        reason: "Location/work authorization requirement — needs user confirmation",
+        can_resolve: true,
+        suggested_question: `This role requires: "${req.text}". Can you confirm you meet this requirement?`,
+      };
+    }
+
+    default:
+      return {
+        requirement_text: req.text,
+        category: req.category,
+        status: "hold",
+        reason: "Unrecognized eligibility requirement — needs user confirmation",
+        can_resolve: true,
+        suggested_question: `This role requires: "${req.text}". Can you confirm?`,
+      };
+  }
 }
 
 // ============================================================

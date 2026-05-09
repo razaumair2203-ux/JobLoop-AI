@@ -1,0 +1,56 @@
+{
+  "id": "pair-R068",
+  "split": "held_out",
+  "persona": "military",
+  "source_resume": {
+    "id": "ra-07044",
+    "dataset": "resume_atlas",
+    "industry": "aviation",
+    "seniority": "unknown"
+  },
+  "jd": {
+    "title": "Flight Instructor",
+    "company": "Splendid Aviation",
+    "location": "",
+    "experience_years": null,
+    "requirements": [
+      {
+        "text": "Bachelor's degree in Aviation or related field is a plus",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience in Commercial Piloting and Flight SafetyExcellent communication and interpersonal skillsAbility to work in a team and maintain professionalismStrong attention to detail and problem-solving abilitiesFAA Flight Instructor certificationExperience as a flight instructor or airline pilot is highly desirableBachelor's degree in Aviation or related field is a plus",
+        "type": "must_have"
+      }
+    ],
+    "responsibilities": [],
+    "full_description": "Role Description This is a part-time on-site role for a Flight Instructor at Splendid Aviation located in Corpus Christi, TX. The Flight Instructor will be responsible for conducting flight training, providing instruction in aviation theory and practical application, ensuring flight safety, and guiding students towards achieving their pilot licenses. The Flight Instructor will also participate in flight planning and debriefing sessions.\n Qualifications Instrument Rating, Aviation, and Piloting skillsExperience in Commercial Piloting and Flight SafetyExcellent communication and interpersonal skillsAbility to work in a team and maintain professionalismStrong attention to detail and problem-solving abilitiesFAA Flight Instructor certificationExperience as a flight instructor or airline pilot is highly desirableBachelor's degree in Aviation or related field is a plus"
+  },
+  "expected_output": {
+    "_status": "NEEDS_HUMAN_REVIEW",
+    "_raw_text_preview": "jessica claire resumesampleexamplecom 555 4321000 professional summary highly motivated skilled individual ability manage andor work well others also bring following skills abilities certifications task undertake assigned faa certified airframe powerplant technician inspection authorization amt 35 years experience areas expertise include aircraft aircraft powerplant manufacturing maintenance repair overhaul direct experience maintenance inspections 112 thru 114 commander aircraft individual cust",
+    "summary": "",
+    "experience": [],
+    "skills": {},
+    "certifications": [],
+    "education": []
+  },
+  "jd_requirements": [
+    "Bachelor's degree in Aviation or related field is a plus",
+    "Experience in Commercial Piloting and Flight SafetyExcellent communication and interpersonal skillsA"
+  ],
+  "cloud_skills": [
+    "project management"
+  ],
+  "provenance": {
+    "data_source": "real_dataset_raw_text",
+    "jd_source": "kaggle_linkedin",
+    "resume_dataset": "resume_atlas",
+    "jd_id": "linkedin-3902341957",
+    "resume_id": "ra-07044",
+    "generated_at": "2026-05-08T08:47:53.886Z",
+    "expected_output_author": "NEEDS_HUMAN_REVIEW",
+    "circularity_risk": "low",
+    "notes": "Resume from real dataset (raw text). JD from real job posting. Expected output EMPTY — needs LLM parsing + human review."
+  }
+}

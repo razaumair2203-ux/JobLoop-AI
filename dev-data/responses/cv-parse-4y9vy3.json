@@ -1,55 +1,131 @@
 {
+  "name": "M. Umair Raza",
+  "email": "razaumair2203@gmail.com",
+  "phone": "+966-53-7179386",
+  "location": {
+    "city": "Jeddah",
+    "country": "Saudi Arabia"
+  },
+  "links": {
+    "linkedin": "https://www.linkedin.com/in/mumairaza",
+    "github": null,
+    "portfolio": null,
+    "other": []
+  },
+  "summary": "Strategy and defense programs professional with 15+ years of experience across aerospace and defense environments, supporting strategy-to-capture execution, opportunity shaping, and complex international programs. PMP and PMI-ACP certified.",
   "total_experience_years": 18,
   "experience": [
     {
       "company": "College of Aeronautical Engineering, Risalpur & NUTECH University",
+      "employer": "Pakistan Air Force / Higher Education Commission",
       "title": "Program Lead, Professional Education",
       "start_date": "Jan 2023",
       "end_date": "Present",
       "duration_months": 29,
+      "location": "Risalpur, Pakistan",
+      "bullets": [
+        "Support capability development and workforce strategy for national aerospace and defense programs",
+        "Advise senior stakeholders on technology roadmaps, skills localization, and system engineering maturity"
+      ],
       "technologies_used": [],
       "metrics_mentioned": [],
-      "domain": "defense"
+      "programs": [],
+      "team_size": null,
+      "seniority_signals": [
+        "Program Lead",
+        "Advise senior stakeholders"
+      ],
+      "domain": "defense_aerospace"
     },
     {
       "company": "Air Force PMO",
+      "employer": "Pakistan Air Force",
       "title": "Deputy Director Avionics, PMO",
       "start_date": "Jan 2020",
       "end_date": "Dec 2023",
       "duration_months": 36,
+      "location": "Islamabad, Pakistan",
+      "bullets": [
+        "Supported strategy-to-execution alignment for multiple fixed-wing, UAV, translating Air Force operational needs into actionable program strategies",
+        "Coordinated engineering, operations, test, & logistics teams",
+        "Led programs, risk mitigation, RAID management, and EVM reporting",
+        "Supported international collaboration and export projects, airworthiness certification, and acceptance Tests"
+      ],
       "technologies_used": [
         "EVM",
         "RAID"
       ],
       "metrics_mentioned": [],
-      "domain": "defense"
+      "programs": [
+        "Fixed-wing Programs",
+        "UAV Programs"
+      ],
+      "team_size": null,
+      "seniority_signals": [
+        "Deputy Director",
+        "Led programs"
+      ],
+      "domain": "defense_aerospace"
     },
     {
       "company": "Chengdu Aircraft Design Institute (CADI), China",
+      "employer": "AVIC International",
       "title": "Aerospace Systems Integration Lead",
       "start_date": "Jan 2018",
       "end_date": "Dec 2020",
       "duration_months": 36,
+      "location": "Chengdu, China",
+      "bullets": [
+        "Worked within a multi-national defense environment, supporting integration, validation, and acceptance of critical aircraft systems",
+        "Supported early solution shaping and requirements definition, aligning system architectures and delivery timelines",
+        "Acted as a technical and program interface between customer representatives and program leadership"
+      ],
       "technologies_used": [],
       "metrics_mentioned": [],
-      "domain": "defense"
+      "programs": [
+        "Lead Fighter Aircraft Program"
+      ],
+      "team_size": null,
+      "seniority_signals": [
+        "Lead"
+      ],
+      "domain": "defense_aerospace"
     },
     {
       "company": "Airborne Early Warning & Control Systems, Air Force",
+      "employer": "Pakistan Air Force",
       "title": "Engineering Operations Manager",
       "start_date": "Jan 2016",
       "end_date": "Dec 2018",
       "duration_months": 36,
+      "location": "Pakistan",
+      "bullets": [
+        "Supported sustainment and mission readiness of C2-enabled AEW&C platforms",
+        "Provided real-time technical advisory support to operational stakeholders in high-tempo environments"
+      ],
       "technologies_used": [],
       "metrics_mentioned": [],
-      "domain": "defense"
+      "programs": [
+        "AEW&C Platform"
+      ],
+      "team_size": null,
+      "seniority_signals": [
+        "Manager"
+      ],
+      "domain": "defense_aerospace"
     },
     {
       "company": "Pakistan Aeronautical Complex Kamra",
+      "employer": "Pakistan Air Force",
       "title": "Systems Engineering & Integration Engineer",
       "start_date": "Jan 2008",
       "end_date": "Dec 2013",
       "duration_months": 60,
+      "location": "Kamra, Pakistan",
+      "bullets": [
+        "Led Agile program delivery of aircraft systems using iterative planning, incremental delivery, and stakeholder engagement",
+        "Project manager for aircraft platform modernization that delivered exports and generated multi-million dollar revenue"
+      ],
       "technologies_used": [
         "Agile"
       ],
@@ -57,40 +133,149 @@
         "multi-million dollar revenue",
         "exports"
       ],
-      "domain": "defense"
+      "programs": [
+        "Aircraft Platform Modernization"
+      ],
+      "team_size": null,
+      "seniority_signals": [
+        "Project manager"
+      ],
+      "domain": "defense_aerospace"
     }
   ],
-  "skills": {
-    "languages": [],
-    "frameworks": [
-      "Agile"
-    ],
-    "infrastructure": [],
-    "databases": [],
-    "tools": [
-      "EVM",
-      "RAID"
-    ],
-    "other": [
-      "Systems Engineering",
-      "Strategy-to-Execution",
-      "Requirements Definition",
-      "Airworthiness Certification",
-      "International Collaboration",
-      "Multi-national Defense",
-      "Technology Roadmaps",
-      "Workforce Strategy",
-      "Program Management",
-      "Risk Management",
-      "Stakeholder Management",
-      "Platform Modernization",
-      "AEW&C Sustainment"
-    ]
-  },
+  "skills": [
+    {
+      "name": "Strategy-to-Execution Planning",
+      "original_text": "strategy-to-capture execution",
+      "domain": "management",
+      "category": "strategic_planning",
+      "source": "experience"
+    },
+    {
+      "name": "International Defense Collaboration",
+      "original_text": "complex international programs",
+      "domain": "defense_aerospace",
+      "category": "international_cooperation",
+      "source": "experience"
+    },
+    {
+      "name": "Opportunity Shaping",
+      "original_text": "opportunity shaping",
+      "domain": "management",
+      "category": "strategic_planning",
+      "source": "experience"
+    },
+    {
+      "name": "Systems Integration",
+      "original_text": "Systems Integration",
+      "domain": "defense_aerospace",
+      "category": "systems_engineering",
+      "source": "experience"
+    },
+    {
+      "name": "Requirements Definition",
+      "original_text": "requirements definition",
+      "domain": "defense_aerospace",
+      "category": "systems_engineering",
+      "source": "experience"
+    },
+    {
+      "name": "Risk Management",
+      "original_text": "risk mitigation, RAID management",
+      "domain": "management",
+      "category": "risk_management",
+      "source": "experience"
+    },
+    {
+      "name": "Earned Value Management",
+      "original_text": "EVM reporting",
+      "domain": "management",
+      "category": "project_management",
+      "source": "experience"
+    },
+    {
+      "name": "Airworthiness Certification",
+      "original_text": "airworthiness certification",
+      "domain": "defense_aerospace",
+      "category": "airworthiness",
+      "source": "experience"
+    },
+    {
+      "name": "Technology Roadmap Development",
+      "original_text": "technology roadmaps",
+      "domain": "management",
+      "category": "strategic_planning",
+      "source": "experience"
+    },
+    {
+      "name": "Workforce Strategy",
+      "original_text": "workforce strategy",
+      "domain": "management",
+      "category": "leadership",
+      "source": "experience"
+    },
+    {
+      "name": "Program Management",
+      "original_text": "Program Management",
+      "domain": "management",
+      "category": "program_management",
+      "source": "experience"
+    },
+    {
+      "name": "Stakeholder Management",
+      "original_text": "stakeholder engagement",
+      "domain": "management",
+      "category": "stakeholder_management",
+      "source": "experience"
+    },
+    {
+      "name": "Platform Modernization",
+      "original_text": "aircraft platform modernization",
+      "domain": "defense_aerospace",
+      "category": "systems_engineering",
+      "source": "experience"
+    },
+    {
+      "name": "MBSE",
+      "original_text": "MBSE",
+      "domain": "defense_aerospace",
+      "category": "systems_engineering",
+      "source": "experience"
+    },
+    {
+      "name": "MIL-STD Compliance",
+      "original_text": "MIL-STD, DO-178C, DO-254",
+      "domain": "defense_aerospace",
+      "category": "standards",
+      "source": "experience"
+    },
+    {
+      "name": "Agile",
+      "original_text": "Agile",
+      "domain": "management",
+      "category": "methodology",
+      "source": "experience"
+    }
+  ],
   "all_technologies": [
+    "Strategy-to-Execution Planning",
+    "International Defense Collaboration",
+    "Opportunity Shaping",
+    "Systems Integration",
+    "Requirements Definition",
+    "Risk Management",
+    "Earned Value Management",
+    "Airworthiness Certification",
+    "Technology Roadmap Development",
+    "Workforce Strategy",
+    "Program Management",
+    "Stakeholder Management",
+    "Platform Modernization",
+    "MBSE",
+    "MIL-STD Compliance",
+    "Agile",
     "EVM",
-    "RAID",
-    "Agile"
+    "RAID"
   ],
   "education": [
     {
@@ -99,7 +284,6 @@
       "field": "Aeronautical Engineering",
       "start_year": 2004,
       "end_year": 2008,
-      "research_topic": null,
       "highlights": []
     },
     {
@@ -108,7 +292,6 @@
       "field": "Signal & Image Processing",
       "start_year": 2013,
       "end_year": 2015,
-      "research_topic": null,
       "highlights": []
     }
   ],
@@ -116,12 +299,174 @@
     "Project Management Professional (PMP)",
     "Agile Certified Practitioner (PMI-ACP)",
     "Professional Engineer (PE)",
-    "System Engineering Specialization (University of Colorado Boulder)",
-    "Engineering Management Specialization (Rice University)",
-    "Project Management Specialization (Google)",
+    "System Engineering Specialization",
+    "Engineering Management Specialization",
+    "Project Management Specialization",
     "Fighter Aircraft Type Rating Course",
     "AWACS Aircraft Type Rating Course",
     "Basic Staff Course",
     "Senior Command & Staff Course"
-  ]
+  ],
+  "certifications_detailed": [
+    {
+      "name": "Project Management Professional (PMP)",
+      "issuer": "Project Management Institute, USA",
+      "year": null,
+      "active": true,
+      "tier": "gold"
+    },
+    {
+      "name": "Agile Certified Practitioner (PMI-ACP)",
+      "issuer": "Project Management Institute, USA",
+      "year": null,
+      "active": true,
+      "tier": "gold"
+    },
+    {
+      "name": "Professional Engineer (PE)",
+      "issuer": "Pakistan Engineering Council",
+      "year": null,
+      "active": true,
+      "tier": "gold"
+    },
+    {
+      "name": "System Engineering Specialization",
+      "issuer": "University of Colorado Boulder, USA",
+      "year": null,
+      "active": true,
+      "tier": "specialization"
+    },
+    {
+      "name": "Engineering Management Specialization",
+      "issuer": "Rice University, USA",
+      "year": null,
+      "active": true,
+      "tier": "specialization"
+    },
+    {
+      "name": "Project Management Specialization",
+      "issuer": "Google",
+      "year": null,
+      "active": true,
+      "tier": "specialization"
+    },
+    {
+      "name": "Fighter Aircraft Type Rating Course",
+      "issuer": "Pakistan Air Force",
+      "year": null,
+      "active": true,
+      "tier": "military"
+    },
+    {
+      "name": "AWACS Aircraft Type Rating Course",
+      "issuer": "Pakistan Air Force",
+      "year": null,
+      "active": true,
+      "tier": "military"
+    },
+    {
+      "name": "Basic Staff Course",
+      "issuer": "Pakistan Air Force",
+      "year": null,
+      "active": true,
+      "tier": "military"
+    },
+    {
+      "name": "Senior Command & Staff Course",
+      "issuer": "Pakistan Air Force",
+      "year": null,
+      "active": true,
+      "tier": "military"
+    }
+  ],
+  "competencies": [
+    "Strategic & International Program Exposure including defense exports, customer acceptance, and localization-driven delivery models",
+    "Systems Integration across avionics, mission systems, and weapons platforms using MBSE",
+    "Validation, Test & Airworthiness including flight test campaigns for fighter and AEW&C platforms",
+    "Configuration & Lifecycle Management supporting operations serviceability above 90%",
+    "Compliance & Standards Governance (MIL-STD, DO-178C, DO-254)"
+  ],
+  "awards": [
+    {
+      "title": "Chief of the Airstaff Commendation",
+      "issuer": "Pakistan Air Force",
+      "context": "Exceptional services during the avionics integration and retrofit Program",
+      "significance": null
+    },
+    {
+      "title": "Chairman's Appreciation Letter",
+      "issuer": "Pakistan Aeronautical Complex",
+      "context": "Contributions to defense manufacturing",
+      "significance": null
+    },
+    {
+      "title": "CADI Commendation",
+      "issuer": "Chengdu Aircraft Design Institute, China",
+      "context": "Development & Integration activities of Lead Fighter Aircraft Program",
+      "significance": null
+    },
+    {
+      "title": "HEC National Capacity Building Selection",
+      "issuer": "Higher Education Commission, Pakistan",
+      "context": "National Capacity Building Program in System Engineering",
+      "significance": null
+    }
+  ],
+  "projects": [
+    {
+      "name": "Radar ECCM Capability Development",
+      "description": "Developed & fielded novel ECCM algorithm for ground radar systems",
+      "outcome": "Requirements management, verification planning, and deployment",
+      "technologies": [
+        "ECCM",
+        "Radar"
+      ],
+      "is_professional": true
+    },
+    {
+      "name": "Fleet Configuration Management System",
+      "description": "Architected enterprise CMDB for fleet sustainment",
+      "outcome": "Improved turnaround times, fleet serviceability above 90%",
+      "technologies": [
+        "CMDB"
+      ],
+      "is_professional": true
+    },
+    {
+      "name": "Indigenous Backup Mission Computer",
+      "description": "Subsystem development for lead fighter",
+      "outcome": "135+ systems, USD 1.27M+ savings",
+      "technologies": [
+        "Embedded Systems"
+      ],
+      "is_professional": true
+    },
+    {
+      "name": "Glass Cockpit Modernization",
+      "description": "Glass cockpit program integrating Dynon and Garmin avionics suites",
+      "outcome": "Export to 11 countries, multi-million-dollar revenue",
+      "technologies": [
+        "Dynon",
+        "Garmin"
+      ],
+      "is_professional": true
+    }
+  ],
+  "publications": [],
+  "volunteer": [],
+  "leadership": [],
+  "professional_affiliations": [],
+  "training": [
+    {
+      "name": "Transfer of Source Code (Aircraft)",
+      "provider": "Chengdu Aircraft Design Institute, China",
+      "year": null,
+      "hours": null
+    }
+  ],
+  "languages_spoken": [
+    "English",
+    "Urdu"
+  ],
+  "conflicts": []
 }

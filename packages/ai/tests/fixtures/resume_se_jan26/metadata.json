@@ -1,0 +1,17 @@
+{
+  "fixture_id": "resume_se_jan26",
+  "source_file": "Resume_SE_Jan26.txt",
+  "model_used": "claude-opus-4-6",
+  "prompt_version": "cv-parser-v3",
+  "reviewed_by": "pending",
+  "approved": false,
+  "created_at": "2026-05-07",
+  "stats": {
+    "roles": 5,
+    "years": 18,
+    "skills": 26,
+    "technologies": 33,
+    "education": 2,
+    "certifications": 11
+  }
+}

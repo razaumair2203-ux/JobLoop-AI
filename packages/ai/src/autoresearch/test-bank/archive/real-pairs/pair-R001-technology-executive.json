@@ -1,0 +1,52 @@
+{
+  "id": "pair-R001",
+  "split": "train",
+  "persona": "executive",
+  "source_resume": {
+    "id": "ra-10603",
+    "dataset": "resume_atlas",
+    "industry": "technology",
+    "seniority": "executive"
+  },
+  "jd": {
+    "title": "Information Technology Officer",
+    "company": "Memphis-Shelby County Schools",
+    "location": "",
+    "experience_years": null,
+    "requirements": [
+      {
+        "text": "experience in a comparable position where you identified a problem and implemented a solution through completion to enhance the efficiency of a large organization",
+        "type": "must_have"
+      }
+    ],
+    "responsibilities": [],
+    "full_description": "OVERVIEW\nMemphis-Shelby County Schools is seeking dynamic educational champions ready to position our district as a national exemplar of education transformation. We need leaders with a fierce commitment to actualizing a bold vision that yields ambitious outcomes for more than 110,000 students and families across the Memphis-Shelby County area. The reality is that we can do better for kids, and we will with the right leaders in place. The most successful candidates believe that more is possible for Memphis and are:\nCourageous Thinkers & Doers: Prepared to navigate and thrive in a complex and ambiguous environment on day one, present innovative ideas to address systemwide issues, and execute sustainable plans toward transformation.\nSolutions-Oriented: See the possibilities, demonstrate the capacity to synthesize information and adjust short and long-term goals, and consistently find a window when doors close to deliver measurable results for kids and families.\nHigh-Performing Gamechangers: Leader of leaders with the capacity to mobilize and empower an outstanding team, make people-centered data-informed decisions, and operate with a relentless hyper-focus on removing stubborn barriers that destroy the hopes and dreams of too many of our students.\nSUMMARY DESCRIPTION Under the direction of the Assistant Superintendent of Business Operations, the Information Technology Officer provides leadership and support for all digital and technology systems in student services, teaching and learning, business operations, voice and data communications, and local and wide area networking within Memphis-Shelby County Schools.\nINFORMATION FOR CANDIDATESThank you for your interest in serving as Talent Management Officer to contribute to enhancing the LEGACY of Memphis-Shelby County Schools. Please review the information provided to ensure full consideration.\nDeadline for Submission - All materials are due on or by 5pm Friday, April 26, 2024.Interviews - Interviews will begin immediately and occur until the position is filled.\nApplication RequirementsSubmit an updated resume, current writing sample, and video responses to legacyleader@scsk12.org with the title of the position in the subject.\nRecord -In a quiet setting, candidates should record a response to the prompts below within the specified timeframe.\nPrompt (60 seconds)- Please share your experience in a comparable position where you identified a problem and implemented a solution through completion to enhance the efficiency of a large organization.\nPrompt (90 seconds)- What experience do you have that demonstrates your capacity to effectively manage the District’s technology and related platforms to ensure secure transactions and effective digital experiences for students and staff? Please be succinct and specific.\nSave all files using the naming convention: [Last Name. First Name. Title of Position Seeking. Resume (or WritingSample)].\nSubmissions exceeding the time listed or without the correct naming convention will not be reviewed."
+  },
+  "expected_output": {
+    "_status": "NEEDS_HUMAN_REVIEW",
+    "_raw_text_preview": "executive profile jessica claire montgomery street san francisco ca 94105555 4321000 resumesampleexamplecom performancedriven executive experienced building technology organizations make strategic partner company creates competitive advantages capability scale leveraging bestinclass infrastructures highly experienced building improving turning around organizations skill highlights strategy management project management business intelligence cloud computing sox hipaa glba team building enterprise",
+    "summary": "",
+    "experience": [],
+    "skills": {},
+    "certifications": [],
+    "education": []
+  },
+  "jd_requirements": [
+    "experience in a comparable position where you identified a problem and implemented a solution throug"
+  ],
+  "cloud_skills": [
+    "project management",
+    "cloud computing"
+  ],
+  "provenance": {
+    "data_source": "real_dataset_raw_text",
+    "jd_source": "kaggle_linkedin",
+    "resume_dataset": "resume_atlas",
+    "jd_id": "linkedin-3901601435",
+    "resume_id": "ra-10603",
+    "generated_at": "2026-05-08T08:47:53.841Z",
+    "expected_output_author": "NEEDS_HUMAN_REVIEW",
+    "circularity_risk": "low",
+    "notes": "Resume from real dataset (raw text). JD from real job posting. Expected output EMPTY — needs LLM parsing + human review."
+  }
+}

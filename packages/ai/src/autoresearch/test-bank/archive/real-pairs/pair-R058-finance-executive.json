@@ -1,0 +1,54 @@
+{
+  "id": "pair-R058",
+  "split": "validation",
+  "persona": "executive",
+  "source_resume": {
+    "id": "ra-03362",
+    "dataset": "resume_atlas",
+    "industry": "finance",
+    "seniority": "executive"
+  },
+  "jd": {
+    "title": "Consultant/Accountant",
+    "company": "Miaplaza Inc.",
+    "location": "",
+    "experience_years": null,
+    "requirements": [
+      {
+        "text": "Expertise in Quickbooks Online",
+        "type": "must_have"
+      },
+      {
+        "text": "experience in a US corporate setting Working knowledge of tax laws and GAAP principles Strong organizational skills and a keen attention to detail Strong interpersonal and communication skills Growth mindset and motivated by constructive feedback Proven ability to work independently",
+        "type": "must_have"
+      }
+    ],
+    "responsibilities": [],
+    "full_description": "Location: 100% remote from within or outside the U.S.Classification: 1099 independent contractorPay Range: $2,000 - $2,500 per monthExpected Hours: 40-50 hours/monthWelcome to Miaplaza! Our vision is to elevate online learning by applying the most successful approaches in virtual education to create an accessible and inclusive homeschool curriculum platform where all students can be successful! Our K-8 platforms include Miacademy, Always Ice Cream, and Clever Dragons, and our 9-12 options include MiaPrep and MiaPrep Online High School. Our student base is rapidly growing, and we’re hiring for multiple positions across several departments! Our expansion stems from our commitment to providing exceptional educational content and our pursuit of new opportunities.You can hear our CEO, Johannes Ziegler, discuss our company’s values and future here: !How you’ll make an impact:The Contracted Accountant collaborates with the Chief Financial Officer, internal stakeholders, and external accounting firms to ensure the smooth-running of our financial operations. As the company is growing quickly, you’ll also play an integral role in defining and scaling our financial structure. The ideal candidate combines analytical prowess, effective communication, and a passion for education to deliver financial insights to guide strategic decisions and contribute to our mission.What you’ll do: Maintain the general ledger and perform other accounting duties as assigned Prepare and perform account reconciliations Make recommendations to optimize the company’s accounting procedures and detect inaccuracies Prepare financial statements on a monthly/quarterly basis Support with revenue projections and forecast expenditures Assist with financial and tax audits Make recommendations regarding accounting processes and policies to strengthen internal controlsYou may be a good fit if you have: a Bachelor’s degree in Accounting, Finance, or a related field Expertise in Quickbooks Online, Microsoft Excel, and Google Suite 5+ years of general accounting experience in a US corporate setting Working knowledge of tax laws and GAAP principles Strong organizational skills and a keen attention to detail Strong interpersonal and communication skills Growth mindset and motivated by constructive feedback Proven ability to work independently, manage schedules, and meet deadlines Highly motivated, proactive, and seeks opportunities for continuous improvement High standards of integrity and transparency Access to a computer/laptop (with camera) and reliable high-speed internet connectionWhat makes you stand out: CPA or CMA certification Familiarity with Professional Employer Organizations (PEOs) like JustWorks Your own unique talents! Your background has given you a unique perspective and set of skills that might not be listed here but may still be transferable to this role. If you don’t meet 100% of the qualifications outlined above, we still strongly encourage you to apply.What you’ll love about working with Miaplaza: You’ll be part of a mission-driven team dedicated to innovative education solutions for children who learn in diverse ways. Our 100% remote team can work from any productive location within or outside the U.S. (no travel required!) We promote flexibility and encourage independent contractors to shape their work environments and schedules around their lives! You’ll collaborate on challenging and rewarding projects, and connect through community and culture events. Learn more by visiting our careers page!Ready to apply?Please start by submitting your application and resume. The hiring process varies by position but generally includes assessments, a phone call interview, an assignment, and a final video interview. Reflecting our commitment to our students, we prioritize accessibility and inclusivity within our hiring practices and team. Please contact HR if you need accommodation.Links: Miacademy: https://parents.miacademy.co/ Always Ice Cream: https://parents.always-icecream.com/ Clever Dragons: https://parents.clever-dragons.com/ MiaPrep: https://parents.miaprep.com/ MiaPrep Online High School: https://miaprep.com/online-school/ Hear our CEO, Johannes Ziegler, discuss our company’s values and future: https://tinyurl.com/miaplaza-CEO-video/ Careers page: https://careers.miaplaza.com/Job Type: ContractPay: $2,000.00 - $2,500.00 per monthBenefits: Work from homeWork Location: Remote"
+  },
+  "expected_output": {
+    "_status": "NEEDS_HUMAN_REVIEW",
+    "_raw_text_preview": "andreane connelly 20215 friesen mountains phoenix az 1 555 374 4153 work experience senior corporate banking manager philadelphia pa job works departments managing director executive directors directors role direct indirect impact following 012017 present work product directly impacts growth initiatives risk management requirements within business unit client portfolios transaction analyst involved key measures include limited following number initial reviews potential investment opportunities q",
+    "summary": "",
+    "experience": [],
+    "skills": {},
+    "certifications": [],
+    "education": []
+  },
+  "jd_requirements": [
+    "Expertise in Quickbooks Online",
+    "experience in a US corporate setting Working knowledge of tax laws and GAAP principles Strong organi"
+  ],
+  "cloud_skills": [],
+  "provenance": {
+    "data_source": "real_dataset_raw_text",
+    "jd_source": "github_indeed",
+    "resume_dataset": "resume_atlas",
+    "jd_id": "indeed-17bdbb3258c6bab4",
+    "resume_id": "ra-03362",
+    "generated_at": "2026-05-08T08:47:53.879Z",
+    "expected_output_author": "NEEDS_HUMAN_REVIEW",
+    "circularity_risk": "low",
+    "notes": "Resume from real dataset (raw text). JD from real job posting. Expected output EMPTY — needs LLM parsing + human review."
+  }
+}

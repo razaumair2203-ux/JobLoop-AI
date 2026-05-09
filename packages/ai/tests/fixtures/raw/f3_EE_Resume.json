@@ -1,0 +1,394 @@
+{
+  "name": "EE Resume Sample",
+  "email": "bmail@binghamton.edu",
+  "phone": "(607) 555-7777",
+  "location": {
+    "city": "Binghamton",
+    "country": "United States"
+  },
+  "links": {
+    "linkedin": "www.linkedin.com/in/yourname",
+    "github": null,
+    "portfolio": null,
+    "other": []
+  },
+  "summary": null,
+  "total_experience_years": 2,
+  "experience": [
+    {
+      "company": "National Institute of Standards & Technology",
+      "employer": "National Institute of Standards & Technology",
+      "title": "Undergraduate Research Fellowship",
+      "start_date": "2025-05",
+      "end_date": "present",
+      "duration_months": 4,
+      "location": "Maryland, MD",
+      "bullets": [
+        "Develop a Smart Grid Test Facility prototype laboratory for the Power Device Metrology Group of PML to simulate the behavior of smart grid systems and assess the design and development of physical systems before installation",
+        "Configure the Home Area Energy Network (HAN) to incorporate the Power Conditioning System (PCS), Energy Management System (EMS), battery storage, solar cell emulator, and programmable load interfaced to a PC",
+        "Implement a Graphical User Interface (GUI) in LabWindows/CVI to control the programmable load parameters, show live output parameters, and log the outputs to a .csv file utilizing asynchronous timers and the integrated device drivers"
+      ],
+      "technologies_used": [
+        "LabWindows/CVI",
+        "Smart Grid",
+        "Power Conditioning System",
+        "Energy Management System",
+        "asynchronous timers"
+      ],
+      "metrics_mentioned": [],
+      "programs": [],
+      "team_size": null,
+      "seniority_signals": [
+        "undergraduate research fellowship"
+      ],
+      "domain": "electrical_engineering"
+    },
+    {
+      "company": "Lawrence Aerospace – Liquids Dynamic Division",
+      "employer": "Lawrence Aerospace",
+      "title": "Firmware Intern",
+      "start_date": "2024-06",
+      "end_date": "2024-08",
+      "duration_months": 3,
+      "location": "New York, NY",
+      "bullets": [
+        "Utilized object-oriented programming and GUI concepts to develop an application in Visual C# that decodes 128KB of raw data from the Non-Volatile Memory into readable information to reduce errors in packet data transmissions",
+        "Devised test procedures for both high and low-level program requirements of the Bombardier C-Series main fuel-gauging computer to validate software requirements to be used by quality assurance engineers and the customer"
+      ],
+      "technologies_used": [
+        "Visual C#",
+        "Non-Volatile Memory"
+      ],
+      "metrics_mentioned": [
+        "128KB of raw data"
+      ],
+      "programs": [
+        "Bombardier C-Series"
+      ],
+      "team_size": null,
+      "seniority_signals": [
+        "intern"
+      ],
+      "domain": "aerospace"
+    },
+    {
+      "company": "Target",
+      "employer": "Target",
+      "title": "Sales Associate & Lead Cashier",
+      "start_date": "2024-03",
+      "end_date": "present",
+      "duration_months": 15,
+      "location": "Vestal, NY",
+      "bullets": [],
+      "technologies_used": [],
+      "metrics_mentioned": [],
+      "programs": [],
+      "team_size": null,
+      "seniority_signals": [
+        "lead"
+      ],
+      "domain": "retail"
+    },
+    {
+      "company": "YMCA",
+      "employer": "YMCA",
+      "title": "Seasonal Lifeguard",
+      "start_date": "2023-05",
+      "end_date": "2024-08",
+      "duration_months": 16,
+      "location": "Johnson City, NY",
+      "bullets": [],
+      "technologies_used": [],
+      "metrics_mentioned": [],
+      "programs": [],
+      "team_size": null,
+      "seniority_signals": [],
+      "domain": "recreation"
+    }
+  ],
+  "education": [
+    {
+      "institution": "Binghamton University, State University of New York, Thomas J. Watson College of Engineering and Applied Science",
+      "degree": "Bachelor of Science",
+      "field": "Electrical Engineering",
+      "start_year": null,
+      "end_year": 2026,
+      "grade": "3.83/4.00",
+      "research_topic": null,
+      "highlights": [
+        "Dean's List: Fall 2023, Spring 2025",
+        "Tau Beta Pi Engineering Honor Society",
+        "Eta Kappa Nu National Electrical Engineering Honor Society",
+        "Relevant Coursework: Electronics, Digital Systems Design, Digital Signal Processing, Analog Circuit Design"
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "name": "MATLAB",
+      "original_text": "MATLAB",
+      "domain": "technology",
+      "category": "programming_languages",
+      "source": "skills_section"
+    },
+    {
+      "name": "C++",
+      "original_text": "C++",
+      "domain": "technology",
+      "category": "programming_languages",
+      "source": "skills_section"
+    },
+    {
+      "name": "C",
+      "original_text": "C",
+      "domain": "technology",
+      "category": "programming_languages",
+      "source": "skills_section"
+    },
+    {
+      "name": "Objective-C",
+      "original_text": "Objective-C",
+      "domain": "technology",
+      "category": "programming_languages",
+      "source": "skills_section"
+    },
+    {
+      "name": "Ladder Logic",
+      "original_text": "Ladder Logic",
+      "domain": "engineering",
+      "category": "plc_programming",
+      "source": "skills_section"
+    },
+    {
+      "name": "X-86 Assembly",
+      "original_text": "X-86 Assembly",
+      "domain": "technology",
+      "category": "programming_languages",
+      "source": "skills_section"
+    },
+    {
+      "name": "LabWindows/CVI",
+      "original_text": "LabWindows/CVI",
+      "domain": "engineering",
+      "category": "test_measurement_software",
+      "source": "skills_section"
+    },
+    {
+      "name": "Logisim",
+      "original_text": "Logisim",
+      "domain": "engineering",
+      "category": "digital_design_software",
+      "source": "skills_section"
+    },
+    {
+      "name": "P-Spice",
+      "original_text": "P-Spice",
+      "domain": "engineering",
+      "category": "circuit_simulation",
+      "source": "skills_section"
+    },
+    {
+      "name": "LabVIEW",
+      "original_text": "LabVIEW",
+      "domain": "engineering",
+      "category": "test_measurement_software",
+      "source": "skills_section"
+    },
+    {
+      "name": "Microsoft Office Suite",
+      "original_text": "Microsoft Office Suite",
+      "domain": "technology",
+      "category": "productivity_software",
+      "source": "skills_section"
+    },
+    {
+      "name": "Linux",
+      "original_text": "Linux",
+      "domain": "technology",
+      "category": "operating_systems",
+      "source": "skills_section"
+    },
+    {
+      "name": "OS X",
+      "original_text": "OS 10",
+      "domain": "technology",
+      "category": "operating_systems",
+      "source": "skills_section"
+    },
+    {
+      "name": "XML Parsing",
+      "original_text": "XML Parsing",
+      "domain": "technology",
+      "category": "data_processing",
+      "source": "skills_section"
+    },
+    {
+      "name": "Digital Circuit Design",
+      "original_text": "Digital Circuit Design",
+      "domain": "engineering",
+      "category": "electrical_design",
+      "source": "skills_section"
+    },
+    {
+      "name": "Soldering",
+      "original_text": "Soldering",
+      "domain": "engineering",
+      "category": "hardware_skills",
+      "source": "skills_section"
+    },
+    {
+      "name": "Visual C#",
+      "original_text": "Visual C#",
+      "domain": "technology",
+      "category": "programming_languages",
+      "source": "experience"
+    },
+    {
+      "name": "GUI Development",
+      "original_text": "Graphical User Interface (GUI)",
+      "domain": "technology",
+      "category": "software_development",
+      "source": "experience"
+    },
+    {
+      "name": "Smart Grid Systems",
+      "original_text": "Smart Grid Test Facility",
+      "domain": "electrical_engineering",
+      "category": "power_systems",
+      "source": "experience"
+    },
+    {
+      "name": "Microsoft Project",
+      "original_text": "Microsoft Project",
+      "domain": "technology",
+      "category": "project_management_software",
+      "source": "experience"
+    },
+    {
+      "name": "OmniUpdate",
+      "original_text": "OmniUpdate",
+      "domain": "technology",
+      "category": "content_management",
+      "source": "experience"
+    }
+  ],
+  "competencies": [
+    "Firmware Development",
+    "Test Procedure Development",
+    "GUI Development",
+    "Power Systems",
+    "Circuit Design",
+    "Technical Documentation"
+  ],
+  "certifications": [
+    {
+      "name": "Introduction to Machine Learning",
+      "issuer": null,
+      "year": null,
+      "active": true,
+      "tier": "course"
+    },
+    {
+      "name": "Introduction to Python",
+      "issuer": null,
+      "year": null,
+      "active": true,
+      "tier": "course"
+    },
+    {
+      "name": "Project Management Essentials",
+      "issuer": null,
+      "year": null,
+      "active": true,
+      "tier": "course"
+    }
+  ],
+  "awards": [],
+  "projects": [
+    {
+      "name": "Senior Design Project: Magnetic Field Mapper",
+      "description": "Collaborate with a multidisciplinary team of engineers to design and build a magnetic field mapper to generate a high-resolution isometric display of the observed magnetic field intended for biomedical applications",
+      "outcome": "Implemented user-driven design approach; developed project timeline using Microsoft Project and coordinated with team to certify deliverables met on time",
+      "technologies": [
+        "Microsoft Project"
+      ],
+      "is_professional": false
+    },
+    {
+      "name": "Junior Design Project: Temperature Control System",
+      "description": "Led a team of four engineers to model a temperature controller that regulates the temperature of a cement power resistor using a voltage divider, 2-bit flash ADC, binary comparisons, and transistor circuit concepts",
+      "outcome": "Tested flash ADC conversion of varying thermistor to utilize appropriate resistance values and choose reference voltage for op-amp comparators to maximize temperature resolution",
+      "technologies": [
+        "voltage divider",
+        "flash ADC",
+        "op-amp comparators",
+        "transistor circuits"
+      ],
+      "is_professional": false
+    }
+  ],
+  "publications": [],
+  "volunteer": [
+    {
+      "organization": "Binghamton Nicaragua Initiative (BNI)",
+      "role": "Vice President",
+      "start_date": "2023-01",
+      "end_date": "2023-05",
+      "description": "Generated over $1,500 in donations to fund the construction of two houses in Nicaragua; cultivated language and communication skills during multiple trips; organized weekly meetings for 100 members",
+      "impact": "$1,500+ raised, 2 houses funded, 100 members engaged"
+    }
+  ],
+  "leadership": [
+    {
+      "organization": "Watson Career and Alumni Connections",
+      "role": "Student Assistant",
+      "start_date": "2024-08",
+      "end_date": "present",
+      "description": "Advise undergraduate and graduate students on job/internship application materials; coordinate networking events and career exploration sessions each month; organize career services website content using OmniUpdate",
+      "scope": null
+    },
+    {
+      "organization": "Binghamton Nicaragua Initiative (BNI)",
+      "role": "Vice President",
+      "start_date": "2023-01",
+      "end_date": "2023-05",
+      "description": "Generated over $1,500 in donations to fund construction of two houses in Nicaragua; organized weekly meetings for 100 members to increase engagement and recruitment",
+      "scope": "100 members"
+    }
+  ],
+  "professional_affiliations": [
+    "Tau Beta Pi Engineering Honor Society",
+    "Eta Kappa Nu National Electrical Engineering Honor Society"
+  ],
+  "training": [],
+  "languages_spoken": [],
+  "all_technologies": [
+    "MATLAB",
+    "C++",
+    "C",
+    "Objective-C",
+    "Ladder Logic",
+    "X-86 Assembly",
+    "LabWindows/CVI",
+    "Logisim",
+    "P-Spice",
+    "LabVIEW",
+    "Microsoft Office Suite",
+    "Linux",
+    "OS 10",
+    "XML Parsing",
+    "Digital Circuit Design",
+    "Soldering",
+    "Visual C#",
+    "Smart Grid",
+    "Power Conditioning System",
+    "Energy Management System",
+    "Non-Volatile Memory",
+    "Microsoft Project",
+    "OmniUpdate",
+    "voltage divider",
+    "flash ADC",
+    "op-amp comparators"
+  ],
+  "conflicts": []
+}

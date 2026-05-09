@@ -1,0 +1,56 @@
+{
+  "id": "pair-R033",
+  "split": "train",
+  "persona": "early_career",
+  "source_resume": {
+    "id": "ra-02218",
+    "dataset": "resume_atlas",
+    "industry": "communications",
+    "seniority": "entry"
+  },
+  "jd": {
+    "title": "Head of Global Public Relations at Amazfit",
+    "company": "Zepp Health",
+    "location": "",
+    "experience_years": 10,
+    "requirements": [
+      {
+        "text": "10+ years of experience in public relations or media relations",
+        "type": "must_have"
+      },
+      {
+        "text": "experience in public relations or media relations",
+        "type": "must_have"
+      }
+    ],
+    "responsibilities": [],
+    "full_description": "About Zepp Health and AmazfitAt Zepp Health, innovation meets wellness to redefine what's possible in health, fitness, and wellness through our groundbreaking Amazfit smartwatches and wearable technologies. Since our inception in 2013, we've been at the forefront of merging cutting-edge science and technology to develop wearables that not only stand out for their style but also their performance. Amazfit, our global consumer brand, is more than just a product line; it's a commitment to empowering individuals to elevate their game, offering an array of devices from smartwatches to earbuds and fitness gear that seamlessly integrate into the fabric of daily life.We're on a mission to not just participate in the global smartwatch and wearables market but to lead it with innovation, quality, and a deep understanding of our users' needs. This is where you come in. If you've honed your skills at dynamic companies or have experience working with lifestyle brands at marketing agencies, and you're passionate about leveraging marketing to tell compelling stories that resonate and inspire action, we want you.\nRole Summary:The Head of Global Public Relations will play a crucial role in shaping the narrative around Amazfit’s products and innovations. By forging strong relationships with key media players, influencers, and tech communities, you will help us articulate our mission to revolutionize the wearable technology space. Your efforts will amplify our voice, increase brand awareness, and drive engagement with our target audiences.\nKey Responsibilities:Develop and implement strategic PR campaigns that align with Amazfit’s marketing objectives, highlighting our innovations in the tech and wellness sectors.Craft compelling, engaging stories and pitches that resonate with media outlets, bloggers, podcasters, and influencers, securing top-tier coverage.Manage and expand our media relations network, including journalists, editors, and industry influencers, ensuring Amazfit is top-of-mind for technology and lifestyle segments.Coordinate product launch events, press conferences, and media briefings, from planning to execution, to maximize exposure and media attendance.Facilitate media training for Amazfit spokespeople, preparing them for interviews and public appearances.Work closely with global marketing and product teams to maintain a cohesive brand narrative across all external communications.Monitor, analyze, and report on PR campaign results, utilizing insights to guide future strategies.Stay abreast of industry trends, competitor activities, and media opportunities to continually adapt and refine our PR approach.\nQualifications:Bachelor’s Degree in Public Relations, Marketing, Communications, Journalism, or a related field.10+ years of experience in public relations or media relations, preferably within the technology or consumer electronics industry.Demonstrated success in securing media coverage in top-tier outlets, with established relationships in the tech media landscape globally (focus on EMEA and North America).Exceptional written and verbal communication skills, with the ability to craft stories that engage and persuade.Experience organizing and managing press events, product launches, and media briefings.Proven ability to work collaboratively across departments and with international teams to create a unified brand voice.Strong organizational skills, capable of handling multiple projects simultaneously while meeting deadlines.Passion for technology, wellness, and the wearable tech industry, with a keen understanding of the current trends and consumer preferences.\nWhat Amazfit Offers:A vibrant, innovative team that is passionate about making a difference in the tech and wellness spaces.The opportunity to work on groundbreaking products that are changing the way people think about wearable technology.A collaborative, diverse work environment where creativity and innovation are celebrated.Competitive salary, comprehensive benefits, and a commitment to work-life balance.\nJoin Us:If you’re a strategic thinker with a passion for technology and storytelling, eager to make a significant impact in the wearable tech industry, we’d love to hear from you. Apply now to join our team and help us share the Amazfit story with the world.\nBenefits of Working At Zepp Health:Competitive salary, Vacation day, sick day and a remote-friendly cultureHealth insurance, Vision insurance, Dental insurance, life insurance401K & MatchingYear-end Bonus payOther Benefits\n\nZepp Health is an Equal Opportunity employer and welcomes everyone to our team. If you need reasonable accommodation at any point in the application or interview process, please let us know. In your application, please feel free to note which pronouns you use (for example: she/her/hers, he/him/his, they/them/theirs, etc)."
+  },
+  "expected_output": {
+    "_status": "NEEDS_HUMAN_REVIEW",
+    "_raw_text_preview": "emily prosser pr specialist address 542 byers lane philadelphia pa 19019 usa phone 215 837 0553 email emilyprossergmailcom www emilyinsightscom linkedin linkedincominemilymargaretprosser twitter twittercomemmyprosser55 senior pr specialist 9 years experience marketing corporate public relations pitched press releases prominent industry magazines secure 20 leads month top media outlets managed multiple pr marketing annual budgets 5000 300000 helped increase clients annual sales 40 experience 2013",
+    "summary": "",
+    "experience": [],
+    "skills": {},
+    "certifications": [],
+    "education": []
+  },
+  "jd_requirements": [
+    "10+ years of experience in public relations or media relations",
+    "experience in public relations or media relations"
+  ],
+  "cloud_skills": [
+    "sap"
+  ],
+  "provenance": {
+    "data_source": "real_dataset_raw_text",
+    "jd_source": "kaggle_linkedin",
+    "resume_dataset": "resume_atlas",
+    "jd_id": "linkedin-3886838042",
+    "resume_id": "ra-02218",
+    "generated_at": "2026-05-08T08:47:53.862Z",
+    "expected_output_author": "NEEDS_HUMAN_REVIEW",
+    "circularity_risk": "low",
+    "notes": "Resume from real dataset (raw text). JD from real job posting. Expected output EMPTY — needs LLM parsing + human review."
+  }
+}

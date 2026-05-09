@@ -1,0 +1,396 @@
+{
+  "name": "M U. R.",
+  "email": "redacted@example.com",
+  "phone": "+XX-XXXXXXXXXX",
+  "location": {
+    "city": "Jeddah",
+    "country": "Saudi Arabia"
+  },
+  "links": {
+    "linkedin": "https://linkedin.com/in/redacted",
+    "github": null,
+    "portfolio": null,
+    "other": []
+  },
+  "summary": "With extensive experience in aerospace and systems engineering, currently serving as System Engineering Manager at the College of Aeronautical Engineering, leading transformative programs in Model-Based Systems Engineering (MBSE) and professional education.",
+  "total_experience_years": 18,
+  "experience": [
+    {
+      "company": "National University of Sciences and Technology (NUST)",
+      "employer": null,
+      "title": "Assistant Professor",
+      "start_date": "Jan 2025",
+      "end_date": "Present",
+      "duration_months": 5,
+      "location": "Risalpur Cantonment, Pakistan",
+      "bullets": [
+        "Led the Systems Engineering Training Program, focusing on MBSE and industry partnerships",
+        "Managed the Postgraduate Systems Engineering program, enhancing capacity development with HEC Pakistan",
+        "Spearheaded professional education initiatives to elevate systems engineering standards"
+      ],
+      "technologies_used": [
+        "MBSE"
+      ],
+      "metrics_mentioned": [],
+      "programs": [
+        "Systems Engineering Training Program"
+      ],
+      "team_size": null,
+      "seniority_signals": [
+        "Assistant Professor",
+        "Led",
+        "Managed"
+      ],
+      "domain": "academia"
+    },
+    {
+      "company": "National University of Technology (NUTECH)",
+      "employer": null,
+      "title": "Assistant Director Quality",
+      "start_date": "Sep 2022",
+      "end_date": "Dec 2025",
+      "duration_months": 39,
+      "location": "Islamabad, Pakistan",
+      "bullets": [
+        "Ensured Academic Quality Standards inline with OBE and PEC/HEC guidelines",
+        "Ensured ISO certification",
+        "Conducted local audits to improve academic programs",
+        "Conducted first ever capacity enhancement audit in collaboration with HEC"
+      ],
+      "technologies_used": [
+        "ISO",
+        "OBE"
+      ],
+      "metrics_mentioned": [
+        "first ever capacity enhancement audit"
+      ],
+      "programs": [],
+      "team_size": null,
+      "seniority_signals": [
+        "Assistant Director"
+      ],
+      "domain": "academia"
+    },
+    {
+      "company": "Pakistan Air Force",
+      "employer": null,
+      "title": "Deputy Program Manager",
+      "start_date": "Jan 2020",
+      "end_date": "Sep 2022",
+      "duration_months": 33,
+      "location": "Islamabad, Pakistan",
+      "bullets": [
+        "Managed the integration of 28 avionics and weapons subsystems for the Air Force PMO",
+        "Delivered integration and I&T to flight-test phases, ensuring project milestones were met",
+        "Led risk workshops, developed mitigation plans, and maintained RAID logs for effective project control"
+      ],
+      "technologies_used": [
+        "RAID",
+        "EVM"
+      ],
+      "metrics_mentioned": [
+        "28 avionics and weapons subsystems"
+      ],
+      "programs": [
+        "Air Force PMO"
+      ],
+      "team_size": null,
+      "seniority_signals": [
+        "Deputy Program Manager",
+        "Led"
+      ],
+      "domain": "defense_aerospace"
+    },
+    {
+      "company": "AVIC International Holding Corporation",
+      "employer": null,
+      "title": "Aerospace Systems Integration Lead",
+      "start_date": "Nov 2017",
+      "end_date": "Dec 2019",
+      "duration_months": 25,
+      "location": "Chengdu, Sichuan, China",
+      "bullets": [
+        "Served as technical program lead at Chengdu Aircraft Design Institute (CADI), China within international development team",
+        "Liaison Program Manager — International Development & Supplier Handover",
+        "Tested & Integrated Avionics Systems on the Aircraft Design Rig"
+      ],
+      "technologies_used": [],
+      "metrics_mentioned": [],
+      "programs": [
+        "Lead Fighter Aircraft Program"
+      ],
+      "team_size": null,
+      "seniority_signals": [
+        "Lead",
+        "Program Manager"
+      ],
+      "domain": "defense_aerospace"
+    },
+    {
+      "company": "Government of Pakistan",
+      "employer": null,
+      "title": "Maintenance Support Engineer",
+      "start_date": "Jan 2016",
+      "end_date": "Nov 2017",
+      "duration_months": 22,
+      "location": "Karachi, Pakistan",
+      "bullets": [
+        "Managed spares planning and depot-level coordination to ensure operational efficiency",
+        "Oversaw vendor contracts and executed reliability improvement plans",
+        "Tracked MTBF/MTTR metrics and implemented cost-control measures, maintaining fleet reliability above 90%",
+        "Provided round-the-clock operational readiness"
+      ],
+      "technologies_used": [
+        "MTBF/MTTR"
+      ],
+      "metrics_mentioned": [
+        "fleet reliability above 90%"
+      ],
+      "programs": [],
+      "team_size": null,
+      "seniority_signals": [],
+      "domain": "defense_aerospace"
+    },
+    {
+      "company": "Pakistan Aeronautical Complex Kamra",
+      "employer": null,
+      "title": "Integrated Systems & Design Specialist",
+      "start_date": "Oct 2008",
+      "end_date": "Oct 2013",
+      "duration_months": 60,
+      "location": "Attock, Punjab, Pakistan",
+      "bullets": [
+        "Led the program delivery of aircraft systems, ensuring alignment with project goals and timelines",
+        "Managed the modernization of aircraft platforms, resulting in significant exports and multi-million dollar revenue generation",
+        "Oversaw program scope, procurement, quality assurance, scheduling, and acceptance processes"
+      ],
+      "technologies_used": [],
+      "metrics_mentioned": [
+        "multi-million dollar revenue"
+      ],
+      "programs": [
+        "Aircraft Platform Modernization"
+      ],
+      "team_size": null,
+      "seniority_signals": [
+        "Specialist",
+        "Led"
+      ],
+      "domain": "defense_aerospace"
+    }
+  ],
+  "skills": [
+    {
+      "name": "DevOps",
+      "original_text": "DevOps",
+      "domain": "technology",
+      "category": "devops",
+      "source": "skills_section"
+    },
+    {
+      "name": "Enterprise Engineering",
+      "original_text": "Enterprise Engineering",
+      "domain": "management",
+      "category": "systems_engineering",
+      "source": "skills_section"
+    },
+    {
+      "name": "MBSE",
+      "original_text": "Model-based Systems Engineering (MBSE)",
+      "domain": "defense_aerospace",
+      "category": "systems_engineering",
+      "source": "skills_section"
+    },
+    {
+      "name": "Systems Integration",
+      "original_text": "Systems Integration",
+      "domain": "defense_aerospace",
+      "category": "systems_engineering",
+      "source": "experience"
+    },
+    {
+      "name": "Program Management",
+      "original_text": "Program Management",
+      "domain": "management",
+      "category": "program_management",
+      "source": "experience"
+    },
+    {
+      "name": "Quality Assurance",
+      "original_text": "Academic Quality Standards",
+      "domain": "management",
+      "category": "quality_assurance",
+      "source": "experience"
+    },
+    {
+      "name": "ISO Certification",
+      "original_text": "ISO CERTIFICATION",
+      "domain": "management",
+      "category": "quality_assurance",
+      "source": "experience"
+    },
+    {
+      "name": "Risk Management",
+      "original_text": "RAID logs",
+      "domain": "management",
+      "category": "risk_management",
+      "source": "experience"
+    },
+    {
+      "name": "Earned Value Management",
+      "original_text": "EVM",
+      "domain": "management",
+      "category": "project_management",
+      "source": "experience"
+    },
+    {
+      "name": "Avionics",
+      "original_text": "avionics and weapons subsystems",
+      "domain": "defense_aerospace",
+      "category": "avionics",
+      "source": "experience"
+    },
+    {
+      "name": "MTBF/MTTR Analysis",
+      "original_text": "MTBF/MTTR metrics",
+      "domain": "maintenance_engineering",
+      "category": "reliability",
+      "source": "experience"
+    },
+    {
+      "name": "Spares Planning",
+      "original_text": "spares planning",
+      "domain": "maintenance_engineering",
+      "category": "logistics",
+      "source": "experience"
+    },
+    {
+      "name": "Outcome-Based Education",
+      "original_text": "OBE",
+      "domain": "education",
+      "category": "academic_standards",
+      "source": "experience"
+    }
+  ],
+  "all_technologies": [
+    "DevOps",
+    "Enterprise Engineering",
+    "MBSE",
+    "Systems Integration",
+    "Program Management",
+    "Quality Assurance",
+    "ISO Certification",
+    "Risk Management",
+    "Earned Value Management",
+    "Avionics",
+    "MTBF/MTTR Analysis",
+    "Spares Planning",
+    "Outcome-Based Education",
+    "ISO",
+    "OBE",
+    "RAID",
+    "EVM",
+    "MTBF/MTTR"
+  ],
+  "education": [
+    {
+      "institution": "College of Aeronautical Engineering Risalpur",
+      "degree": "BE",
+      "field": "Aerospace, Aeronautical and Astronautical Engineering",
+      "start_year": 2004,
+      "end_year": 2008,
+      "highlights": []
+    },
+    {
+      "institution": "Air University",
+      "degree": "MS",
+      "field": "Signals and Image Processing",
+      "start_year": 2013,
+      "end_year": 2015,
+      "highlights": []
+    }
+  ],
+  "certifications": [
+    "Project Management Professional (PMP)",
+    "PMI Agile Certified Practitioner (PMI-ACP)",
+    "Google Project Management Certificate",
+    "Engineering Project Management Specialization",
+    "Introduction to Systems Engineering Specialization"
+  ],
+  "certifications_detailed": [
+    {
+      "name": "Project Management Professional (PMP)",
+      "issuer": "Project Management Institute",
+      "year": null,
+      "active": true,
+      "tier": "gold"
+    },
+    {
+      "name": "PMI Agile Certified Practitioner (PMI-ACP)",
+      "issuer": "Project Management Institute",
+      "year": null,
+      "active": true,
+      "tier": "gold"
+    },
+    {
+      "name": "Google Project Management Certificate",
+      "issuer": "Google",
+      "year": null,
+      "active": true,
+      "tier": "specialization"
+    },
+    {
+      "name": "Engineering Project Management Specialization",
+      "issuer": "Rice University",
+      "year": null,
+      "active": true,
+      "tier": "specialization"
+    },
+    {
+      "name": "Introduction to Systems Engineering Specialization",
+      "issuer": "University of Colorado Boulder",
+      "year": null,
+      "active": true,
+      "tier": "specialization"
+    }
+  ],
+  "competencies": [],
+  "awards": [
+    {
+      "title": "Capacity Building Campaign",
+      "issuer": "Higher Education Commission",
+      "context": "National capacity building program selection",
+      "significance": null
+    },
+    {
+      "title": "Transfer of Technology JF-17 Aircraft",
+      "issuer": "Pakistan Air Force",
+      "context": "Technology transfer for JF-17 fighter aircraft program",
+      "significance": null
+    }
+  ],
+  "projects": [],
+  "publications": [
+    {
+      "title": "TK-Patch: Universal Top-K Adversarial Patches for Cross-Model Person Evasion",
+      "venue": "Research Publication",
+      "year": null,
+      "peer_reviewed": true
+    },
+    {
+      "title": "Low-Latency Architectures for Real-Time Multi-Stream Object Detection",
+      "venue": "Research Publication",
+      "year": null,
+      "peer_reviewed": true
+    }
+  ],
+  "volunteer": [],
+  "leadership": [],
+  "professional_affiliations": [],
+  "training": [],
+  "languages_spoken": [
+    "English",
+    "Urdu"
+  ],
+  "conflicts": []
+}

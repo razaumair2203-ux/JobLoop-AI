@@ -1,0 +1,61 @@
+{
+  "id": "pair-R005",
+  "split": "train",
+  "persona": "executive",
+  "source_resume": {
+    "id": "ra-10511",
+    "dataset": "resume_atlas",
+    "industry": "hr",
+    "seniority": "executive"
+  },
+  "jd": {
+    "title": "Senior Vice President Human Resources",
+    "company": "Meduit | Driving Revenue Cycle Performance",
+    "location": "",
+    "experience_years": null,
+    "requirements": [
+      {
+        "text": "experience with M&A work including due diligence and integration required",
+        "type": "must_have"
+      },
+      {
+        "text": "Knowledge of HR compliance",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience with delivering a broad range of HR services in a fast paced",
+        "type": "must_have"
+      }
+    ],
+    "responsibilities": [],
+    "full_description": "The SVP of Human Resources is responsible for developing and executing human resource strategy in support of the overall business plan and strategic direction of the organization, specifically in the areas of succession planning, talent management, change management, organizational and performance management, employee development, and compensation. The VP/SVP, HR provides strategic leadership by articulating HR needs and plans to the executive management team, shareholders, and the board of directors. Reporting directly to the CEO and serving as a member of the Executive Leadership Team (ELT), this position includes the following key components: Serves as a strategic advisor and trusted business partner to the CEO and other members of the ELT. Establish and implement HR efforts that effectively communicate and support the company's mission and strategic vision. Develop HR strategic plans to support the achievement of the overall business operations objectives that ultimately result in the Company being an employer of choice through engagement efforts. Provide overall leadership and guidance to the HR function by overseeing talent acquisition, employee training and development, succession planning, retention, leadership development, compensation, and benefits. Responsible for leading initiatives to improve recruiting, engagement, and retention. Specifically, will develop a comprehensive recruiting and retention plan to meet the human capital needs of strategic goals.Cultivate additional comprehensive and real-time reporting and statistical analysis to support ongoing business decision. Talent management including enhanced selection methods, performance management, succession planning, leadership, and employee development programs. Employee engagement including oversight of administering the annual engagement survey, monitoring action plans and progress, and providing guidance to Leadership that improves engagement. Total rewards leadership overseeing all aspects of compensation including executive compensation and working with the Compensation Committee along with all employee benefits design and program management. Support HR function of Merger and Acquisition activity in due diligence and integration. Ensure company policies, procedures, and programs comply with applicable state and federal regulations.Build and own Human Resources departmental budget incorporating collaborative outreach with business leaders, corporate level expectations, strategic planning, contingency planning and transparent reporting and communication.Initiatives are in line with business objectives, within HR operating budget, and align in meeting EBITDA and other financial goals.Continue to develop and promote opportunities for career advancement and cross functional collaboration for all HR Staff. A leader who measures performance with metrics and creates business results through performance management and can create a culture of such. \nDesired skills and qualifications:  10 to 15 years of progressive HR experience who can demonstrate the identification and adoption of best practices with at least 5-7 (of those years) at a Director/VP level in a mid-size organization. 2-3 years’ experience with M&A work including due diligence and integration required. A leader who measures performance with metrics and creates business results through performance management and can create a culture of such. Knowledge of HR compliance, regulations, and industry best practices. Experience with delivering a broad range of HR services in a fast paced, growing company. \nEducation/Certification Requirements:  BS/BA required; Masters preferred. SHRM Senior Certified Professional (SHRM-SCP) or SHRM Certified Professional (SHRM-CP) certification preferred"
+  },
+  "expected_output": {
+    "_status": "NEEDS_HUMAN_REVIEW",
+    "_raw_text_preview": "professional summary jessica claire montgomery street san francisco ca 94105555 4321000 resumesampleexamplecom customeroriented general manager five years experience focused increasing function organization work environment business concept adaptive deadlineoriented capacity execute complete multiple projects highstress environments meticulous leader strategic planner comprehensive managerial acumen offering development achievements business continuity skills project management conflict resoluti",
+    "summary": "",
+    "experience": [],
+    "skills": {},
+    "certifications": [],
+    "education": []
+  },
+  "jd_requirements": [
+    "experience with M&A work including due diligence and integration required",
+    "Knowledge of HR compliance",
+    "Experience with delivering a broad range of HR services in a fast paced"
+  ],
+  "cloud_skills": [
+    "project management"
+  ],
+  "provenance": {
+    "data_source": "real_dataset_raw_text",
+    "jd_source": "kaggle_linkedin",
+    "resume_dataset": "resume_atlas",
+    "jd_id": "linkedin-3900076014",
+    "resume_id": "ra-10511",
+    "generated_at": "2026-05-08T08:47:53.844Z",
+    "expected_output_author": "NEEDS_HUMAN_REVIEW",
+    "circularity_risk": "low",
+    "notes": "Resume from real dataset (raw text). JD from real job posting. Expected output EMPTY — needs LLM parsing + human review."
+  }
+}

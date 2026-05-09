@@ -1,0 +1,225 @@
+{
+  "id": "pair-Q037",
+  "split": "validation",
+  "persona": "early_career",
+  "source_resume": {
+    "id": "snb-34792238",
+    "dataset": "snehaanbhawal_livecareer",
+    "industry": "fitness",
+    "seniority": "entry"
+  },
+  "jd": {
+    "title": "Senior Vice President Human Resources",
+    "company": "Meduit | Driving Revenue Cycle Performance",
+    "location": "",
+    "experience_years": 10,
+    "requirements": [
+      {
+        "text": "10 to 15 years of progressive HR experience",
+        "type": "must_have"
+      },
+      {
+        "text": "5-7 years of experience at a Director/VP level in a mid-size organization",
+        "type": "must_have"
+      },
+      {
+        "text": "2-3 years of experience with M&A work including due diligence and integration",
+        "type": "must_have"
+      },
+      {
+        "text": "Knowledge of HR compliance, regulations, and industry best practices",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience with delivering a broad range of HR services in a fast paced, growing company",
+        "type": "must_have"
+      },
+      {
+        "text": "BS/BA required",
+        "type": "must_have"
+      },
+      {
+        "text": "Masters degree",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "SHRM Senior Certified Professional (SHRM-SCP) or SHRM Certified Professional (SHRM-CP) certification",
+        "type": "nice_to_have"
+      },
+      {
+        "text": "Ability to measure performance with metrics and create business results through performance management",
+        "type": "must_have"
+      },
+      {
+        "text": "Ability to create a culture of performance management",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience with talent management, including selection methods, performance management, succession planning, leadership, and employee development programs",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience with employee engagement, including oversight of administering the annual engagement survey",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience with total rewards leadership, including executive compensation and employee benefits design and program management",
+        "type": "must_have"
+      }
+    ],
+    "responsibilities": [
+      "Develop and execute human resource strategy in support of the overall business plan and strategic direction of the organization",
+      "Provide strategic leadership by articulating HR needs and plans to the executive management team, shareholders, and the board of directors",
+      "Establish and implement HR efforts that effectively communicate and support the company's mission and strategic vision",
+      "Develop HR strategic plans to support the achievement of the overall business operations objectives",
+      "Lead initiatives to improve recruiting, engagement, and retention",
+      "Oversee talent acquisition, employee training and development, succession planning, retention, leadership development, compensation, and benefits",
+      "Support HR function of Merger and Acquisition activity in due diligence and integration",
+      "Ensure company policies, procedures, and programs comply with applicable state and federal regulations"
+    ],
+    "full_description": "The SVP of Human Resources is responsible for developing and executing human resource strategy in support of the overall business plan and strategic direction of the organization, specifically in the areas of succession planning, talent management, change management, organizational and performance management, employee development, and compensation. The VP/SVP, HR provides strategic leadership by articulating HR needs and plans to the executive management team, shareholders, and the board of directors. Reporting directly to the CEO and serving as a member of the Executive Leadership Team (ELT), this position includes the following key components: Serves as a strategic advisor and trusted business partner to the CEO and other members of the ELT. Establish and implement HR efforts that effectively communicate and support the company's mission and strategic vision. Develop HR strategic plans to support the achievement of the overall business operations objectives that ultimately result in the Company being an employer of choice through engagement efforts. Provide overall leadership and guidance to the HR function by overseeing talent acquisition, employee training and development, succession planning, retention, leadership development, compensation, and benefits. Responsible for leading initiatives to improve recruiting, engagement, and retention. Specifically, will develop a comprehensive recruiting and retention plan to meet the human capital needs of strategic goals.Cultivate additional comprehensive and real-time reporting and statistical analysis to support ongoing business decision. Talent management including enhanced selection methods, performance management, succession planning, leadership, and employee development programs. Employee engagement including oversight of administering the annual engagement survey, monitoring action plans and progress, and providing guidance to Leadership that improves engagement. Total rewards leadership overseeing all aspects of compensation including executive compensation and working with the Compensation Committee along with all employee benefits design and program management. Support HR function of Merger and Acquisition activity in due diligence and integration. Ensure company policies, procedures, and programs comply with applicable state and federal regulations.Build and own Human Resources departmental budget incorporating collaborative outreach with business leaders, corporate level expectations, strategic planning, contingency planning and transparent reporting and communication.Initiatives are in line with business objectives, within HR operating budget, and align in meeting EBITDA and other financial goals.Continue to develop and promote opportunities for career advancement and cross functional collaboration for all HR Staff. A leader who measures performance with metrics and creates business results through performance management and can create a culture of such. \nDesired skills and qualifications:  10 to 15 years of progressive HR experience who can demonstrate the identification and adoption of best practices with at least 5-7 (of those years) at a Director/VP level in a mid-size organization. 2-3 years’ experience with M&A work including due diligence and integration required. A leader who measures performance with metrics and creates business results through performance management and can create a culture of such. Knowledge of HR compliance, regulations, and industry best practices. Experience with delivering a broad range of HR services in a fast paced, growing company. \nEducation/Certification Requirements:  BS/BA required; Masters preferred. SHRM Senior Certified Professional (SHRM-SCP) or SHRM Certified Professional (SHRM-CP) certification preferred"
+  },
+  "expected_output": {
+    "summary": "Results-driven wellness director with experience in health education, group instruction, and one-on-one coaching, skilled in data management, supervision, and leadership. Proven track record of helping clients achieve health and wellness goals and driving business growth through effective operations management. Committed to delivering high-quality services and promoting health, wellness, and safety.",
+    "experience": [
+      {
+        "company": "Company Name",
+        "title": "WELLNESS DIRECTOR",
+        "start_date": "09/2015",
+        "end_date": "Current",
+        "bullets": [
+          "Helped clients set and achieve health and wellness goals",
+          "Conducted group wellness presentations for classes up to 80+ participants",
+          "Demonstrated safe and correct forms for each exercise and piece of equipment",
+          "Conducted needs assessments or surveys to determine interest in or satisfaction with wellness and fitness programs, events or services",
+          "Met or exceeded monthly revenue and training goals",
+          "Performed screenings every month for markers such as blood pressure, weight and BMI",
+          "Built strong relationships with members to promote health, wellness and available services",
+          "Eliminated downtime and maximized revenue by providing top project quality control"
+        ]
+      },
+      {
+        "company": "Company Name",
+        "title": "Unknown",
+        "start_date": "01/2009",
+        "end_date": "Current",
+        "bullets": [
+          "Expanded cross-functional organizational capacity by collaborating across departments on priorities, functions and common goals",
+          "Maximized productivity by keeping detailed records of daily progress and identifying and rectifying areas for improvement",
+          "Explained and taught regulations and rules to athletes and coaches",
+          "Verified accuracy of score calculations before winners were announced",
+          "Communicated with athletic regulation staff, athletes and trainers",
+          "Collected daily reports for improved efficiency during athletic events",
+          "Inspected equipment for compliance with safety and event regulations",
+          "Established clear benchmarks for performance and monitored individual and athlete progress",
+          "Educated athletes, trainers and fellow athletic regulation co-workers about rules and regulations",
+          "Reviewed video playbacks and slow-motion camera footage to evaluate calls and judge appeals",
+          "Calculated athlete and event statistics on rolling basis during event",
+          "Monitored play times and elapsed time during particular events, stopping clocks to meet regulatory requirements",
+          "Educated and mentored more than 20+ co-workers on policy and procedures during high pressured events",
+          "Improved athlete medical outcomes and delivery of care through improved clinical quality processes"
+        ]
+      },
+      {
+        "company": "Company Name",
+        "title": "Unknown",
+        "start_date": "09/2000",
+        "end_date": "Current",
+        "bullets": [
+          "Adapted classes to meet expectations and interests of members, resulting in improved participation",
+          "Consulted with clients to define personal health needs, formulate effective fitness, nutritional or rehabilitation plans and improve overall well-being",
+          "Modified workout plans according to fitness levels and medical considerations",
+          "Broadcasted information about events, gym classes and community offerings",
+          "Coordinated healthy and safe use of fitness tools, equipment and spaces to prevent injuries",
+          "Worked independently and as member of cohesive team to support individual needs",
+          "Supported program development by adding new and exciting classes to facility schedules",
+          "Taught staff and participants proper methods for best use of equipment to meet individual fitness goals",
+          "Applied performance data to evaluate and improve operations, target current business conditions and forecast needs",
+          "Stayed current with market trends to determine optimal pricing of goods and services and to capitalize on emerging opportunities",
+          "Established, optimized and enforced business policies to maintain consistency and high-quality standards across multiple vendor operations",
+          "Used knowledge of market trends to create value-added solutions resulting in 80% increase in service utilization",
+          "Directed business operations to maintain and improve company financial gains",
+          "Managed day-to-day business operations, including accounting, finance, HR, marketing and public relations",
+          "Devised, deployed and monitored processes to boost long-term business success and increase profit levels",
+          "Set, enforced and optimized internal policies to maintain efficiency and responsiveness to demands",
+          "Recruited, hired and trained initial personnel, working to establish key internal functions and outline scope of positions for new organization",
+          "Founded and managed business operations, growing revenue through personal training and on-site group fitness instruction with major business companies and its' employee base to include staff families"
+        ]
+      }
+    ],
+    "skills": {
+      "Technical": [
+        "Body composition evaluations",
+        "Telehealth experience",
+        "Data management"
+      ],
+      "Management": [
+        "Supervision",
+        "Planning and Coordination",
+        "Training & Development",
+        "Leadership"
+      ],
+      "Domain": [
+        "Health education",
+        "Group Instruction",
+        "One-on-one coaching"
+      ],
+      "Soft Skills": [
+        "Compassion",
+        "Conflict resolution",
+        "Communication",
+        "Organizational",
+        "Team player"
+      ]
+    },
+    "certifications": [
+      "Group Fitness Instructor, NIFS Certified",
+      "Certified Therapeutic Exercise Specialist, ACE Certified",
+      "Yoga, Tai Chi, Spin, TRX, Behavior Modification, Parkinson's, Health and Wellness, Aquatics NETA, Aquatic Exercise and Science and ACE Certified",
+      "Mixed Martial Arts and Boxing certified Inspector, Association of Boxing Commissioners"
+    ],
+    "education": []
+  },
+  "jd_requirements": [
+    "10 to 15 years of progressive HR experience",
+    "5-7 years of experience at a Director/VP level in a mid-size organization",
+    "2-3 years of experience with M&A work including due diligence and integration",
+    "Knowledge of HR compliance, regulations, and industry best practices",
+    "Experience with delivering a broad range of HR services in a fast paced, growing company",
+    "BS/BA required",
+    "Ability to measure performance with metrics and create business results through performance management",
+    "Ability to create a culture of performance management",
+    "Experience with talent management, including selection methods, performance management, succession planning, leadership, and employee development programs",
+    "Experience with employee engagement, including oversight of administering the annual engagement survey",
+    "Experience with total rewards leadership, including executive compensation and employee benefits design and program management"
+  ],
+  "cloud_skills": [
+    "Body composition evaluations",
+    "Telehealth experience",
+    "Data management",
+    "Supervision",
+    "Planning and Coordination",
+    "Training & Development",
+    "Leadership",
+    "Health education",
+    "Group Instruction",
+    "One-on-one coaching",
+    "Compassion",
+    "Conflict resolution",
+    "Communication",
+    "Organizational",
+    "Team player"
+  ],
+  "provenance": {
+    "cv_source": "snehaanbhawal/resume-dataset (LiveCareer, CC0)",
+    "jd_source": "R-series (Kaggle LinkedIn, real postings)",
+    "cv_dataset_id": 34792238,
+    "jd_pair_id": "pair-R005",
+    "expected_output_author": "NIM/meta/llama-3.3-70b-instruct",
+    "generated_at": "2026-05-08T15:48:20.087Z",
+    "circularity_risk": "medium-low",
+    "circularity_notes": "Real CV text + real JD text. Expected output is LLM-parsed extraction from real text (not invention). 4/8 scorecard checks structurally sound regardless.",
+    "needs_human_review": true
+  },
+  "raw_cv_text": "           WELLNESS DIRECTOR         Professional Summary          Skills          SKILLS  Body composition evaluations  Telehealth experience  Group Instruction  One-on-one coaching  Health education  Data management  Supervision  Planning and Coordination  Training & Development  Leadership  Compassion  Conflict resolution  CERTIFICATIONS  Group Fitness Instructor, NIFS Certified  Certified Therapeutic Exercise Specialist, ACE Certified  Yoga, Tai Chi, Spin, TRX, Behavior Modification, Parkinson's, Health and  Wellness, Aquatics NETA, Aquatic Exercise and Science and ACE  Certified,  Mixed Martial Arts and Boxing certified Inspector, Association of Boxing  Commissioners.      Accounting, HR, Promotion  Administrative, Instructor, Public relations  Arts, Instruction, Quality  Budgets, Leadership, Quality control  Business operations, Managing, Relationship-building  Coaching, Marketing, Safety  Chi, Market, Sales  Interpersonal, Access, Statistics  Excellent, NETA, Supervision  Communication, Organizational, Team player  Conflict resolution, Personnel, Trainer  Clients, Camera, Video  Data management, Policies, Composition  Delivery, Presentations  Educator, Pricing  Finance, Processes  Financial, Profit  Forms, Program development  Functional, Progress            Work History      WELLNESS DIRECTOR  ,     09/2015   to    Current      Company Name    –    City  ,   State        Helped clients set and achieve health and wellness goals.  Conducted group wellness presentations for classes up to 80+ participants.  Demonstrated safe and correct forms for each exercise and piece of\nequipment.  Conducted needs assessments or surveys to determine interest in or\nsatisfaction with wellness and fitness programs, events or services.  Met or exceeded monthly revenue and training goals.  Performed screenings every month for markers such as blood pressure,\nweight and BMI.  Conducted needs assessments or surveys to determine interest in or\nsatisfaction with wellness and fitness programs, events or services.  Demonstrated safe and correct forms for each exercise and piece of\nequipment.  Built strong relationships with members to promote health, wellness and\navailable services.  Conducted group wellness presentations for classes up to 80+ participants.  Helped clients set and achieve health and wellness goals.  Eliminated downtime and maximized revenue by providing top project\nquality control.         01/2009   to    Current      Company Name    –    City  ,   State        Expanded cross-functional organizational capacity by collaborating across\ndepartments on priorities, functions and common goals.  Maximized productivity by keeping detailed records of daily progress and\nidentifying and rectifying areas for improvement.  Explained and taught regulations and rules to athletes and coaches.  Verified accuracy of score calculations before winners were announced.  Communicated with athletic regulation staff, athletes and trainers.  Collected daily reports for improved efficiency during athletic events.  Inspected equipment for compliance with safety and event regulations.  Established clear benchmarks for performance and monitored individual\nand athlete progress.  Educated athletes, trainers and fellow athletic regulation co-workers about\nrules and regulations.  Reviewed video playbacks and slow-motion camera footage to evaluate\ncalls and judge appeals.  Calculated athlete and event statistics on rolling basis during event.  Monitored play times and elapsed time during particular events, stopping\nclocks to meet regulatory requirements.  Educated and mentored more than 20+ co-workers on policy and\nprocedures during high pressured events.  Improved athlete medical outcomes and delivery of care through improved\nclinical quality processes.         09/2000   to    Current      Company Name    –    City  ,   State        Adapted classes to meet expectations and interests of members, resulting\nin improved participation.  Consulted with clients to define personal health needs, formulate effective\nfitness, nutritional or rehabilitation plans and improve overall well-being.  Modified workout plans according to fitness levels and medical\nconsiderations.  Broadcasted information about events, gym classes and community\nofferings.  Coordinated healthy and safe use of fitness tools, equipment and spaces to\nprevent injuries.  Worked independently and as member of cohesive team to support\nindividual needs.  Supported program development by adding new and exciting classes to\nfacility schedules.  Taught staff and participants proper methods for best use of equipment to\nmeet individual fitness goals.  Applied performance data to evaluate and improve operations, target\ncurrent business conditions and forecast needs.  Stayed current with market trends to determine optimal pricing of goods\nand services and to capitalize on emerging opportunities.  Established, optimized and enforced business policies to maintain\nconsistency and high-quality standards across multiple vendor operations.  Used knowledge of market trends to create value-added solutions resulting\nin 80% increase in service utilization.  Directed business operations to maintain and improve company financial\ngains.  Managed day-to-day business operations, including accounting, finance,\nHR, marketing and public relations.  Devised, deployed and monitored processes to boost long-term business\nsuccess and increase profit levels.  Set, enforced and optimized internal policies to maintain efficiency and\nresponsiveness to demands.  Recruited, hired and trained initial personnel, working to establish key\ninternal functions and outline scope of positions for new organization.  Founded and managed business operations, growing revenue through\npersonal training and on-site group fitness instruction with major business\ncompanies and its' employee base to include staff families.  Applied performance data to evaluate and improve operations, target\ncurrent business conditions and forecast needs.  Maintained up-to-date administrative records to monitor operational\nconditions.  Managed key accounts, including developing sales presentations and\npromotion initiatives to drive product sales and increase brand awareness.  Enhanced operational efficiency and productivity by managing budgets,\naccounts and analyzing company needs and industry trends.         Education      Bachelor of Science  :   Natural Health Studies  ,   05/2007     Clayton College of Natural Health   -   City  ,   State           Work History      WELLNESS DIRECTOR  ,   09/2015   to    Current      Company Name   –   City  ,   State      Helped clients set and achieve health and wellness goals.  Conducted group wellness presentations for classes up to 80+ participants.  Demonstrated safe and correct forms for each exercise and piece of\nequipment.  Conducted needs assessments or surveys to determine interest in or\nsatisfaction with wellness and fitness programs, events or services.  Met or exceeded monthly revenue and training goals.  Performed screenings every month for markers such as blood pressure,\nweight and BMI.  Conducted needs assessments or surveys to determine interest in or\nsatisfaction with wellness and fitness programs, events or services.  Demonstrated safe and correct forms for each exercise and piece of\nequipment.  Built strong relationships with members to promote health, wellness and\navailable services.  Conducted group wellness presentations for classes up to 80+ participants.  Helped clients set and achieve health and wellness goals.  Eliminated downtime and maximized revenue by providing top project\nquality control.           01/2009   to    Current      Company Name   –   City  ,   State      Expanded cross-functional organizational capacity by collaborating across\ndepartments on priorities, functions and common goals.  Maximized productivity by keeping detailed records of daily progress and\nidentifying and rectifying areas for improvement.  Explained and taught regulations and rules to athletes and coaches.  Verified accuracy of score calculations before winners were announced.  Communicated with athletic regulation staff, athletes and trainers.  Collected daily reports for improved efficiency during athletic events.  Inspected equipment for compliance with safety and event regulations.  Established clear benchmarks for performance and monitored individual\nand athlete progress.  Educated athletes, trainers and fellow athletic regulation co-workers about\nrules and regulations.  Reviewed video playbacks and slow-motion camera footage to evaluate\ncalls and judge appeals.  Calculated athlete and event statistics on rolling basis during event.  Monitored play times and elapsed time during particular events, stopping\nclocks to meet regulatory requirements.  Educated and mentored more than 20+ co-workers on policy and\nprocedures during high pressured events.  Improved athlete medical outcomes and delivery of care through improved\nclinical quality processes.           09/2000   to    Current      Company Name   –   City  ,   State      Adapted classes to meet expectations and interests of members, resulting\nin improved participation.  Consulted with clients to define personal health needs, formulate effective\nfitness, nutritional or rehabilitation plans and improve overall well-being.  Modified workout plans according to fitness levels and medical\nconsiderations.  Broadcasted information about events, gym classes and community\nofferings.  Coordinated healthy and safe use of fitness tools, equipment and spaces to\nprevent injuries.  Worked independently and as member of cohesive team to support\nindividual needs.  Supported program development by adding new and exciting classes to\nfacility schedules.  Taught staff and participants proper methods for best use of equipment to\nmeet individual fitness goals.  Applied performance data to evaluate and improve operations, target\ncurrent business conditions and forecast needs.  Stayed current with market trends to determine optimal pricing of goods\nand services and to capitalize on emerging opportunities.  Established, optimized and enforced business policies to maintain\nconsistency and high-quality standards across multiple vendor operations.  Used knowledge of market trends to create value-added solutions resulting\nin 80% increase in service utilization.  Directed business operations to maintain and improve company financial\ngains.  Managed day-to-day business operations, including accounting, finance,\nHR, marketing and public relations.  Devised, deployed and monitored processes to boost long-term business\nsuccess and increase profit levels.  Set, enforced and optimized internal policies to maintain efficiency and\nresponsiveness to demands.  Recruited, hired and trained initial personnel, working to establish key\ninternal functions and outline scope of positions for new organization.  Founded and managed business operations, growing revenue through\npersonal training and on-site group fitness instruction with major business\ncompanies and its' employee base to include staff families.  Applied performance data to evaluate and improve operations, target\ncurrent business conditions and forecast needs.  Maintained up-to-date administrative records to monitor operational\nconditions.  Managed key accounts, including developing sales presentations and\npromotion initiatives to drive product sales and increase brand awareness.  Enhanced operational efficiency and productivity by managing budgets,\naccounts and analyzing company needs and industry trends.         Certifications      CERTIFICATIONS  Group Fitness Instructor, NIFS Certified  Certified Therapeutic Exercise Specialist, ACE Certified  Yoga, Tai Chi, Spin, TRX, Behavior Modification, Parkinson's, Health and\nWellness, Aquatics NETA, Aquatic Exercise and Science and ACE\ncertified,  Mixed Martial Arts and Boxing certified Inspector, Association of Boxing\nCommissioners.        Skills     Accounting, administrative, Arts, budgets, business operations, coaching, Chi, interpersonal, excellent  Communication, Conflict resolution, clients, Data management, delivery, educator, finance, financial, forms, functional, HR, Instructor, Instruction, Leadership, managing, marketing, market, access, NETA, organizational, personnel, camera, policies, presentations, pricing, processes, profit, program development, progress, promotion, public relations, quality, quality control, relationship-building, safety, sales, statistics, Supervision, team player, trainer, video, composition       Additional Information      Enthusiastic wellness and fitness professional experienced in personal fitness\ntraining throughout all age groups, group instruction with a strong background in\ntherapeutic exercise. Hardworking and dedicated team player with excellent\ncommunication and relationship-building skills. Known for personable demeanor\nand determined attitude. A fitness instructor and personal trainer with over 20\nyears of successful experience in preparing clients for their life long journey into\nhealth and wellness. Recognized consistently for performance excellence and\ncontributions to success in the health and wellness industry. Strengths in building\ninterpersonal relationships and am a seasoned ACE and NETA certified group\nfitness instructor in multiple areas (i.e. Tai chi, yoga, spin, TRX), certified\npersonal trainer and therapeutic exercise specialist. Multi-talented fitness leader\nwith a successful history helping individuals of all backgrounds and abilities\nimprove health, fitness and overall well-being. Knowledgeable about healthy\neating, exercise programs and good lifestyle choices. Adept at leading groups\nand individual coaching sessions to promote wellness. Excellent educator adept\nat working with people at all skills levels to improve physical strength, stamina\nand health.\nACCOMPLISHMENTS   Collaborated with multidisciplinary teams in the development of community\nhealth and wellness programs to promote positive outcomes.\n  Supervised team of 5 staff members.\n  Documented and improved community access which led to increases in\nmultiple user accessibility and promoted long-term community engagement.     "
+}

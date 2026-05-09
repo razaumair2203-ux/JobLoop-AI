@@ -1,0 +1,49 @@
+{
+  "id": "pair-R045",
+  "split": "train",
+  "persona": "early_career",
+  "source_resume": {
+    "id": "ra-12584",
+    "dataset": "resume_atlas",
+    "industry": "sales",
+    "seniority": "entry"
+  },
+  "jd": {
+    "title": "Regional Sales Manager",
+    "company": "Confidential",
+    "location": "",
+    "experience_years": null,
+    "requirements": [
+      {
+        "text": "experience in sales management in a technology sector or B-to-B",
+        "type": "must_have"
+      }
+    ],
+    "responsibilities": [],
+    "full_description": "We are seeking a highly motivated and experienced Regional Sales Manager to join our team. As a Regional Sales Manager, you will be responsible for driving sales growth and managing key accounts within your assigned region. This is a dynamic and challenging role that requires strong sales skills, excellent communication abilities, multi-tasking and a proven track record of success in technology sales.\nResponsibilitiesComprehend and communicate the Company's competitive advantages and go to market strategies.Build and maintain strong relationships with key clients, prospects, and industry stakeholders to identify business opportunities and drive revenue growth.Use these relationships to support and grow the sales of the Company's products and solutions to the resellers in the territory.Network in the market to find sources of lead opportunities and follow them through to closing.Work and communicate closely with remote staff to report sales activity and opportunities within our CRM system.Prepare and present regular sales reports, forecasts, and insights to senior management.Collaborate with cross-functional teams including marketing, product development, and customer service to ensure seamless execution of sales initiatives.Travel to the various areas in the territory to conduct personal meetings and sales calls on a regular basis. (65% travel)\nEducation and ExperienceBachelors' degree, preferably in a major with emphasis on business, communication or marketing.Post Graduate work a plus.At least three years of experience in sales management in a technology sector or B-to-B.Self-confidence and ability to thrive in a fast-paced, dynamic environment and adapt to changing priorities.Good interpersonal and communication skills.An ability to leverage good judgment when challenged with pricing pressure and competitive strengths.Ability to conduct presentations of technical information concerning specific projects or technologies.Strong computer skills including Excel, Word and PowerPoint.Ability to perform in a self-managed environment must be a \"self-starter\".Must be able to travel up to 65 % as needed.Must have valid and legal driver’s license.Must be located in Texas."
+  },
+  "expected_output": {
+    "_status": "NEEDS_HUMAN_REVIEW",
+    "_raw_text_preview": "jessica claire montgomery street san francisco ca 94105 555 4321000 resumesampleexamplecom professional summary healthcare representative processing patient information hospital physicians provide direct communication patient attending physician coordinate patient scheduling medical records well versed customer support high work volume environments superior computer skills telephone etiquette motivated customer service administration specialist 15 years corporategovernment experience fastpaced t",
+    "summary": "",
+    "experience": [],
+    "skills": {},
+    "certifications": [],
+    "education": []
+  },
+  "jd_requirements": [
+    "experience in sales management in a technology sector or B-to-B"
+  ],
+  "cloud_skills": [],
+  "provenance": {
+    "data_source": "real_dataset_raw_text",
+    "jd_source": "kaggle_linkedin",
+    "resume_dataset": "resume_atlas",
+    "jd_id": "linkedin-3898163419",
+    "resume_id": "ra-12584",
+    "generated_at": "2026-05-08T08:47:53.870Z",
+    "expected_output_author": "NEEDS_HUMAN_REVIEW",
+    "circularity_risk": "low",
+    "notes": "Resume from real dataset (raw text). JD from real job posting. Expected output EMPTY — needs LLM parsing + human review."
+  }
+}

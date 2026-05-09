@@ -6,7 +6,7 @@
  *
  * Two-zone architecture (matches Socratic engine design):
  *   Zone 1: Template-based questions — NO API call, instant ($0)
- *   Zone 2: Answer parsing — 1 Haiku call to extract structured evidence ($0.002-0.004)
+ *   Zone 2: Answer parsing — 1 fast tier call to extract structured evidence
  *
  * This module handles Zone 1 only. Zone 2 reuses the existing
  * Socratic answer processing in socratic.ts.

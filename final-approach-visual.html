@@ -483,7 +483,7 @@
     <div class="flow-node danger wide">
       <div class="label">System 3</div>
       <div class="title">AutoResearch Loop</div>
-      <div class="detail">Optimizes prompts on OUR test bank (50 synthetic profiles)<br>No user data. Ever. Better prompts ship to all users equally.</div>
+      <div class="detail">Optimizes prompts on OUR test bank (45 pairs, 23/13/14 split)<br>No user data. Ever. Better prompts ship to all users equally.</div>
     </div>
   </div>
 </div>
@@ -669,19 +669,29 @@
   has_outcome is the most important signal. "What changed because of your work?" is always answerable, even without numbers. HR, design, support, admin roles can all reach Strong confidence.
 </div>
 
-<h3>7 Persona Framings</h3>
-<p>Same logic, different words. Persona detection is automatic from CV analysis.</p>
+<h3>9 Persona Framings</h3>
+<p>Same logic, different words. Persona detection is automatic from CV analysis. Research-backed: McKinsey 5 talent pools, Jobvite Job Seeker Quadrant, TopResume 2026 (2K respondents), Huntr 2025 (1.7M apps).</p>
 
 <div class="persona-grid">
   <div class="persona-card">
-    <div class="name" style="color: var(--emerald)">Veteran</div>
-    <div class="signal">Single employer &gt;10yr + military keywords</div>
-    <div class="approach">Ask about TYPE not details (classified). Translate rank &rarr; leadership. Security clearances = Tier 1 evidence.</div>
+    <div class="name" style="color: var(--sky)">Early Career</div>
+    <div class="signal">Education only or &lt;2yr experience</div>
+    <div class="approach">"Let's find what you DO have." Capstone &gt; internship &gt; coursework &gt; projects. Never make them feel inadequate.</div>
   </div>
   <div class="persona-card">
-    <div class="name" style="color: var(--sky)">Recent Graduate</div>
-    <div class="signal">Education only, no work experience</div>
-    <div class="approach">"Let's find what you DO have." Capstone &gt; internship &gt; coursework &gt; projects. Never make them feel inadequate.</div>
+    <div class="name" style="color: var(--sky)">Mid Career</div>
+    <div class="signal">5-15yr experience, established but not senior</div>
+    <div class="approach">Biggest talent pool. Probe for leadership moments, mentoring, cross-team impact. Quantify scope growth over time.</div>
+  </div>
+  <div class="persona-card">
+    <div class="name" style="color: var(--emerald)">Senior</div>
+    <div class="signal">15yr+ experience, deep domain expertise</div>
+    <div class="approach">Role progression within org. Internal transfers count. Depth = strength, not limitation. Ask about architectural decisions, team building.</div>
+  </div>
+  <div class="persona-card">
+    <div class="name" style="color: var(--red)">Executive</div>
+    <div class="signal">VP/Director/C-level titles</div>
+    <div class="approach">Ask about scope/budget/team, not technical details. Before/after states. Business outcomes.</div>
   </div>
   <div class="persona-card">
     <div class="name" style="color: var(--amber)">Career Changer</div>
@@ -694,19 +704,19 @@
     <div class="approach">Ask for top 3-5 projects, not all 50. Aggregate stats are valid. Client names + portfolio if possible.</div>
   </div>
   <div class="persona-card">
-    <div class="name" style="color: var(--red)">Executive</div>
-    <div class="signal">VP/Director/C-level titles</div>
-    <div class="approach">Ask about scope/budget/team, not technical details. Before/after states. Business outcomes.</div>
-  </div>
-  <div class="persona-card">
     <div class="name" style="color: var(--emerald)">Returner</div>
-    <div class="signal">Timeline gap &gt;1 year</div>
+    <div class="signal">Timeline gap &gt;1 year (voluntary)</div>
     <div class="approach">Don't ask WHY they took a break. Pre-gap strength + during-gap activity. Domain knowledge doesn't decay.</div>
   </div>
   <div class="persona-card">
-    <div class="name" style="color: var(--sky)">Long Tenure</div>
-    <div class="signal">Single employer &gt;10yr (non-military)</div>
-    <div class="approach">Role progression within org. Internal transfers count. Depth = strength, not limitation.</div>
+    <div class="name" style="color: var(--red)">Laid Off</div>
+    <div class="signal">Recent involuntary separation, urgency signals</div>
+    <div class="approach">Distinct from voluntary returner. Address urgency without panic. Focus on transferable strengths. 9% of job seekers (TopResume 2026), 13% AI-displaced (Huntr 2025).</div>
+  </div>
+  <div class="persona-card">
+    <div class="name" style="color: var(--emerald)">Military</div>
+    <div class="signal">Military keywords, ranks, service branches</div>
+    <div class="approach">Ask about TYPE not details (classified). Translate rank &rarr; leadership. Security clearances = Tier 1 evidence.</div>
   </div>
 </div>
 
@@ -982,28 +992,28 @@
   </ul>
 </div>
 
-<h3>The Loop (Karpathy-Faithful)</h3>
+<h3>The Loop (Updated May 9, 2026)</h3>
 
 <div class="flow-diagram">
-  <h4 style="text-align:center; margin-bottom: 20px;">Nightly AutoResearch: 2 AM UTC</h4>
+  <h4 style="text-align:center; margin-bottom: 20px;">AutoResearch Session (~50 iterations, ~$3.60 on DeepSeek V4 Pro)</h4>
 
   <div class="flow-row">
     <div class="flow-node action">
       <div class="label">Step 1</div>
-      <div class="title">Select Prompt</div>
-      <div class="detail">cv-generation.ts<br>OR jd-parser.ts</div>
+      <div class="title">Load Deterministic Batch</div>
+      <div class="detail">Sort 23 train pairs by ID.<br>Take first 10. Same batch every run.</div>
     </div>
     <div class="flow-arrow">&rarr;</div>
     <div class="flow-node purple">
       <div class="label">Step 2</div>
-      <div class="title">AI Reads History</div>
-      <div class="detail">results.tsv + current prompt<br>What worked before? What didn't?</div>
+      <div class="title">Select Mutation (Weighted)</div>
+      <div class="detail">First 6: round-robin baseline.<br>After: select by keep rate +<br>exploration bonus. Never repeat last.</div>
     </div>
     <div class="flow-arrow">&rarr;</div>
     <div class="flow-node warning">
       <div class="label">Step 3</div>
-      <div class="title">Propose Modification</div>
-      <div class="detail">AI modifies prompt text<br>(guided by program.md rules)</div>
+      <div class="title">LLM Mutates Prompt</div>
+      <div class="detail">DeepSeek V4 Pro. 8K max_tokens.<br>Markdown stripping. 6 operator types.</div>
     </div>
   </div>
 
@@ -1012,45 +1022,46 @@
   <div class="flow-row">
     <div class="flow-node primary">
       <div class="label">Step 4</div>
-      <div class="title">Run Against Test Bank</div>
-      <div class="detail">50 synthetic CV/JD pairs<br>OUR data, not user data</div>
+      <div class="title">Run Against 10 Train Pairs</div>
+      <div class="detail">45 pairs (23/13/14 split).<br>OUR data, not user data.<br>JSON mode enforced.</div>
     </div>
     <div class="flow-arrow">&rarr;</div>
     <div class="flow-node action">
       <div class="label">Step 5</div>
-      <div class="title">Composite Scorecard</div>
-      <div class="detail">Structural checks + BERTScore F1<br>Both must improve. No weights.</div>
+      <div class="title">Gated Scorecard (8 checks)</div>
+      <div class="detail">Per-pair: &ge;6/8 checks pass (75%)<br>Aggregate: &ge;70% pairs pass gate<br>All thresholds calibrated from P10 of ideal</div>
     </div>
     <div class="flow-arrow">&rarr;</div>
     <div class="flow-node" style="border-color: var(--text-dim);">
-      <div class="title">Better?</div>
+      <div class="title">compareScorecards()</div>
+      <div class="detail" style="font-size:10px;">Gate1 &rarr; BERTScore &rarr; check count &rarr; float avg (0.02 deadband) &rarr; tie = incumbent</div>
     </div>
   </div>
 
   <div style="display: flex; justify-content: center; gap: 80px; margin-top: 16px;">
     <div>
-      <div class="flow-arrow-down" style="color: var(--emerald);">&darr; YES</div>
+      <div class="flow-arrow-down" style="color: var(--emerald);">&darr; CHALLENGER WINS</div>
       <div class="flow-node primary" style="margin: 0 auto;">
         <div class="title">KEEP</div>
-        <div class="detail">Advance to new version</div>
+        <div class="detail">New incumbent. Reset discards.<br>Invalidate output cache.</div>
       </div>
     </div>
     <div>
-      <div class="flow-arrow-down" style="color: var(--red);">&darr; NO</div>
+      <div class="flow-arrow-down" style="color: var(--red);">&darr; INCUMBENT WINS</div>
       <div class="flow-node danger" style="margin: 0 auto;">
         <div class="title">DISCARD</div>
-        <div class="detail">Stay on current version</div>
+        <div class="detail">Revert. consecutive_discards++.<br>10+ discards = force RESTRUCTURE.</div>
       </div>
     </div>
   </div>
 
-  <div class="flow-arrow-down">&darr; repeat (~15-20 runs per night, $5-10 cost)</div>
+  <div class="flow-arrow-down">&darr; repeat (50 iterations max, 20 consecutive discards = hard stop)</div>
 
   <div class="flow-row">
     <div class="flow-node primary wide">
       <div class="label">Result</div>
       <div class="title">Better prompt ships to all users equally</div>
-      <div class="detail">No user data was used. Improvement is system-wide.</div>
+      <div class="detail">No user data was used. ANOVA pre-test on held-out set confirms improvement. Safeguards check for drift/overfitting/regression.</div>
     </div>
   </div>
 </div>
@@ -1060,39 +1071,39 @@
 <table>
   <tr>
     <th>Prompt</th>
-    <th>In Nightly Loop?</th>
+    <th>In Loop?</th>
     <th>Metric</th>
     <th>Why</th>
   </tr>
   <tr>
     <td>cv-generation.ts</td>
     <td><span class="tag tag-green">YES &mdash; HIGH VALUE</span></td>
-    <td>Composite scorecard (8 structural checks + BERTScore F1)</td>
-    <td>Prompt quality = CV output quality. Users see this directly. Small prompt changes &rarr; big impact.</td>
+    <td>Gated scorecard (8 checks, calibrated thresholds)</td>
+    <td>Prompt quality = CV output quality. Users see this directly.</td>
   </tr>
   <tr>
     <td>jd-parser.ts</td>
     <td><span class="tag tag-blue">YES &mdash; MEDIUM VALUE</span></td>
-    <td>Composite scorecard (7 structural checks + BERTScore F1)</td>
-    <td>Parsing accuracy affects everything downstream. Measurable, improvable.</td>
+    <td>Gated scorecard (7 checks)</td>
+    <td>Parsing accuracy affects everything downstream.</td>
   </tr>
   <tr>
     <td>socratic.ts</td>
     <td><span class="tag tag-amber">NO &mdash; Manual Review</span></td>
     <td>Human evaluation of question quality</td>
-    <td>Architecture matters more than phrasing. Hand-craft and test manually.</td>
+    <td>Architecture matters more than phrasing.</td>
   </tr>
   <tr>
-    <td>socratic-parser.ts</td>
-    <td><span class="tag tag-amber">NO &mdash; Manual Review</span></td>
-    <td>Parsing precision on edge cases</td>
-    <td>Modern LLMs handle this well. Improve by adding test cases, not prompt tweaks.</td>
+    <td>cover-letter.ts</td>
+    <td><span class="tag tag-amber">PLANNED &mdash; P3</span></td>
+    <td>9 checks (word count, no banned phrases, citations, etc.)</td>
+    <td>Shares test pairs with cv-gen. Needs its own scorecard.</td>
   </tr>
   <tr>
-    <td>insights.ts</td>
-    <td><span class="tag tag-amber">NO &mdash; Manual Review</span></td>
-    <td>User engagement (post-launch)</td>
-    <td>Needs real user data to evaluate. Monthly manual review.</td>
+    <td>cv-parser.ts</td>
+    <td><span class="tag tag-amber">PLANNED &mdash; P1</span></td>
+    <td>10 checks (field completeness, skills recall/precision, etc.)</td>
+    <td>Parser accuracy is foundation. Needs 45 pairs from Alpha CVs.</td>
   </tr>
 </table>
 
@@ -1102,38 +1113,43 @@
   <tr>
     <th>Property</th>
     <th>Karpathy's val_bpb</th>
-    <th>Our Composite Scorecard</th>
+    <th>Our Gated Scorecard</th>
   </tr>
   <tr>
     <td>Deterministic?</td>
     <td>Yes (math)</td>
-    <td>Yes (code checks + frozen BERT model)</td>
+    <td>Yes (code checks, no LLM judge)</td>
   </tr>
   <tr>
     <td>Comparable?</td>
     <td>Lower = better</td>
-    <td>Higher = better (both dimensions)</td>
+    <td>4-level cascade: gate &rarr; BERTScore &rarr; count &rarr; float avg</td>
   </tr>
   <tr>
     <td>Non-circular?</td>
     <td>Yes (no LLM judges)</td>
-    <td>Yes (structural checks are code, BERTScore uses frozen BERT)</td>
+    <td>Yes (all checks compare against raw human-written source text)</td>
   </tr>
   <tr>
     <td>Available day 1?</td>
     <td>Yes (training data)</td>
-    <td>Yes (test bank + scorecard functions)</td>
+    <td>Yes (45 pairs + scorecard functions)</td>
   </tr>
   <tr>
-    <td>Correlates with quality?</td>
+    <td>Calibrated?</td>
+    <td>N/A (exact metric)</td>
+    <td>Yes (P10 of ideal output distribution per check)</td>
+  </tr>
+  <tr>
+    <td>Proven?</td>
     <td>Yes (model accuracy)</td>
-    <td>Yes (checks = correctness, BERT = semantic quality)</td>
+    <td><strong>NO &mdash; total_iterations=0</strong>. Architecture sound, unproven in practice.</td>
   </tr>
 </table>
 
 <div class="correction">
-  <div class="label">Edit Distance Rejected</div>
-  No prompt optimization framework uses edit distance. It penalizes valid paraphrases ("Led 8 engineers" vs "Managed 8 engineers" = high edit distance, same quality). Composite scorecard: structural checks (deterministic code) + BERTScore F1 (frozen model, semantic). Both must improve &mdash; no invented weights.
+  <div class="label">Edit Distance Rejected + Threshold Calibration</div>
+  No prompt optimization framework uses edit distance. Gated scorecard: 8 deterministic checks with thresholds calibrated from P10 of 45 ideal outputs. Per-pair gate (&ge;6/8) + aggregate gate (&ge;70%) + float score tiebreaking (0.02 deadband). BERTScore F1 as future tiebreaker (placeholder). All checks compare against raw source text &mdash; zero circular.
 </div>
 
 <!-- ============================================================ -->
@@ -1180,7 +1196,7 @@
   <tr>
     <td>"Compound effect: outcomes &rarr; better prompts"</td>
     <td>Breaks at privacy wall &mdash; user data can't feed system prompts</td>
-    <td>Two separate systems. AutoResearch uses our data. Outcomes stay per-user.</td>
+    <td>Two separate systems. AutoResearch uses our 45-pair test bank. Outcomes stay per-user.</td>
   </tr>
   <tr>
     <td>"LLM-as-judge question quality rubric"</td>
@@ -1307,7 +1323,7 @@
     <div class="card-header" style="color: var(--red)">3. AutoResearch Loop</div>
     <p><strong>What:</strong> Nightly prompt optimization on our synthetic test bank</p>
     <p><strong>Intelligence:</strong> Karpathy's keep/discard loop (not invention, application)</p>
-    <p><strong>Data:</strong> Our 50 synthetic CV/JD pairs (never user data)</p>
+    <p><strong>Data:</strong> Our 45 CV/JD pairs (4 real human + 41 Kaggle-sourced, never user data)</p>
     <p><strong>Improvement:</strong> Prompts get better &rarr; all users benefit equally</p>
     <p><strong>Optimization:</strong> 2 prompts nightly (cv-gen, jd-parser). 3 manual review.</p>
   </div>
@@ -1322,7 +1338,7 @@
 
 <p style="text-align: center; color: var(--text-dim); margin-top: 48px; font-size: 12px;">
   JobLoop AI &mdash; Final Approach &mdash; May 2026<br>
-  Research-validated. Fabrications removed. Outcome Intelligence v3. ~45% built. Implementation in progress.
+  Research-validated. Fabrications removed. Outcome Intelligence v3. AutoResearch loop built (13 modules, ~3,200 lines). All wireframes complete + audited. Full app simulation passing (5 CVs &rarr; 13/13 checks). 9 personas. 3 CV templates. Implementation in progress.
 </p>
 
 </div>

@@ -1,0 +1,49 @@
+{
+  "id": "pair-R052",
+  "split": "validation",
+  "persona": "mid_career",
+  "source_resume": {
+    "id": "ra-00743",
+    "dataset": "resume_atlas",
+    "industry": "engineering",
+    "seniority": "unknown"
+  },
+  "jd": {
+    "title": "Senior Mechanical Design Engineer",
+    "company": "Global Recruiters of Palmetto (GRN) Automation Recruitment Specialist",
+    "location": "",
+    "experience_years": null,
+    "requirements": [
+      {
+        "text": "Bachelor's Degree in Mechanical Engineering (BSME) or Mechanical Engineering Technology (BSMET)Ability to conceptualize and design highly complex automatic machines",
+        "type": "must_have"
+      }
+    ],
+    "responsibilities": [],
+    "full_description": "Our client has over 45 years in the automation industry. They offer their customers automation systems, integrated robotic systems, machine builds, manufacturing services, turnkey installations, maintenance, repair, upgrades, fabrication, custom controls, mechanical and electrical system designs, material handling systems, and other services. They are seeking a Mechanical Engineer III to provide mechanical engineering leadership for projects as well as testing and installation support.\nLocation: Greensboro, NC\nKey Bullet Points:10 years of progressive mechanical engineering experience, including substantial 3D modeling and automation systems design experienceBachelor's Degree in Mechanical Engineering (BSME) or Mechanical Engineering Technology (BSMET)Ability to conceptualize and design highly complex automatic machines, robotic cells, and material handling systems\nWatch: https://www.linkedin.com/feed/update/urn:li:activity:7059972218251857920\nSchedule a time to talk: https://calendly.com/sbryant-grn\nTo apply for this great opportunity and found out about all the details please contact me, Stormy Bryant, at Sbryant@GRNPalmetto.com or call me today at 803.369.7970"
+  },
+  "expected_output": {
+    "_status": "NEEDS_HUMAN_REVIEW",
+    "_raw_text_preview": "bridget spector current address smc 123 5032 forbes avenue pittsburgh pa 15289 412 5114422 permanent address 21school avenue philadelphia pa 19111 objective obtain summer internship field civil engineering utilize problem solving leadership skills education carnegie mellon university bachelor science civil engineering may 2015 pittsburgh pa overall gpa 32040 best high school philadelphia pa projects work experience high school diploma june 2011 gpa 38240 cardboard structure fall 2011 designed co",
+    "summary": "",
+    "experience": [],
+    "skills": {},
+    "certifications": [],
+    "education": []
+  },
+  "jd_requirements": [
+    "Bachelor's Degree in Mechanical Engineering (BSME) or Mechanical Engineering Technology (BSMET)Abili"
+  ],
+  "cloud_skills": [],
+  "provenance": {
+    "data_source": "real_dataset_raw_text",
+    "jd_source": "kaggle_linkedin",
+    "resume_dataset": "resume_atlas",
+    "jd_id": "linkedin-3889749113",
+    "resume_id": "ra-00743",
+    "generated_at": "2026-05-08T08:47:53.875Z",
+    "expected_output_author": "NEEDS_HUMAN_REVIEW",
+    "circularity_risk": "low",
+    "notes": "Resume from real dataset (raw text). JD from real job posting. Expected output EMPTY — needs LLM parsing + human review."
+  }
+}

@@ -2,7 +2,7 @@
  * Resolution Merger
  *
  * Takes:
- *   1. Parsed CVs (from Haiku parse or local parser)
+ *   1. Parsed CVs (from LLM parse or local parser)
  *   2. Conflict detection report
  *   3. Parsed user answers (from answer-parser)
  *   4. Direct option selections (employer confirmation, etc.)
@@ -673,13 +673,13 @@ const KNOWN_FRAMEWORKS = new Set(["react", "next.js", "nextjs", "angular", "vue"
 const KNOWN_INFRA = new Set(["aws", "azure", "gcp", "docker", "kubernetes", "k8s", "terraform", "ansible", "jenkins", "github actions", "gitlab ci", "circleci", "nginx", "apache", "linux", "vercel", "netlify", "cloudflare", "heroku", "datadog", "grafana", "prometheus"]);
 const KNOWN_DATABASES = new Set(["postgresql", "postgres", "mysql", "mongodb", "redis", "elasticsearch", "dynamodb", "cassandra", "sqlite", "oracle", "sql server", "supabase", "firebase", "neo4j", "couchdb", "mariadb"]);
 
-function categorizeSkill(name: string): "language" | "framework" | "infrastructure" | "database" | "tool" | "other" {
+function categorizeSkill(name: string): { domain: string; category: string } {
   const lower = name.toLowerCase();
-  if (KNOWN_LANGUAGES.has(lower)) return "language";
-  if (KNOWN_FRAMEWORKS.has(lower)) return "framework";
-  if (KNOWN_INFRA.has(lower)) return "infrastructure";
-  if (KNOWN_DATABASES.has(lower)) return "database";
-  return "other";
+  if (KNOWN_LANGUAGES.has(lower)) return { domain: "technology", category: "programming_language" };
+  if (KNOWN_FRAMEWORKS.has(lower)) return { domain: "technology", category: "framework" };
+  if (KNOWN_INFRA.has(lower)) return { domain: "technology", category: "cloud_infrastructure" };
+  if (KNOWN_DATABASES.has(lower)) return { domain: "technology", category: "database" };
+  return { domain: "general", category: "general" };
 }
 
 /**
@@ -687,10 +687,9 @@ function categorizeSkill(name: string): "language" | "framework" | "infrastructu
  * Extracts technologies from programs + bullet text, metrics from bullets.
  */
 export function resolvedProfileToParsedCV(profile: ResolvedProfile): ParsedCV {
-  const skills: ParsedCV["skills"] = {
-    languages: [], frameworks: [], infrastructure: [], databases: [], tools: [], other: [],
-  };
+  const skills: ParsedCV["skills"] = [];
   const allTechSet = new Set<string>();
+  const addedSkills = new Set<string>();
 
   const experience: ParsedCV["experience"] = profile.roles.map((role) => {
     // Technologies: carried from parsed CVs + programs + any known tech in bullets
@@ -726,22 +725,21 @@ export function resolvedProfileToParsedCV(profile: ResolvedProfile): ParsedCV {
     };
   });
 
-  // Categorize all discovered technologies into skill buckets
+  // Build classified skills array from discovered technologies
   for (const tech of allTechSet) {
-    const cat = categorizeSkill(tech);
-    const bucket = cat === "language" ? skills.languages
-      : cat === "framework" ? skills.frameworks
-      : cat === "infrastructure" ? skills.infrastructure
-      : cat === "database" ? skills.databases
-      : cat === "tool" ? skills.tools
-      : skills.other;
-    if (!bucket.includes(tech)) bucket.push(tech);
+    const key = tech.toLowerCase();
+    if (addedSkills.has(key)) continue;
+    addedSkills.add(key);
+    const { domain, category } = categorizeSkill(tech);
+    skills.push({ name: tech, domain, category, source: "experience" });
   }
 
-  // Also add programs from all roles into skills.other if not already categorized
+  // Also add programs from all roles if not already present
   for (const prog of profile.programs) {
-    if (!allTechSet.has(prog.toLowerCase())) {
-      skills.other.push(prog);
+    const key = prog.toLowerCase();
+    if (!addedSkills.has(key)) {
+      addedSkills.add(key);
+      skills.push({ name: prog, domain: "general", category: "program", source: "experience" });
     }
   }
 

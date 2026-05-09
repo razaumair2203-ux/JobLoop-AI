@@ -4,7 +4,7 @@
  * During development: "dev" mode reads from local JSON files.
  *   You generate these by pasting prompts into Claude Code (this extension).
  *
- * During production: "api" mode calls Anthropic API.
+ * During production: "api" mode calls NVIDIA NIM API.
  *
  * The rest of the app doesn't care which one is active.
  *
@@ -17,9 +17,9 @@ import type { ParsedJD, ParsedCV } from "./types";
 
 export type ProviderMode = "dev" | "api";
 
-// Auto-detect mode from environment: if ANTHROPIC_API_KEY is set, use API mode
+// Auto-detect mode from environment: if any LLM key is set, use API mode
 let currentMode: ProviderMode =
-  typeof process !== "undefined" && process.env?.ANTHROPIC_API_KEY
+  typeof process !== "undefined" && !!process.env?.NVIDIA_NIM_API_KEY
     ? "api"
     : "dev";
 let devDataDir: string = "./dev-data";

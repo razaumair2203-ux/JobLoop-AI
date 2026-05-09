@@ -18,6 +18,15 @@ Persistent record of decisions, reviews, and corrections. Created May 3, 2026.
 - For synthetic pairs (005-050): circularity is MEDIUM — both expected and baseline are Claude-generated
 - ANOVA (F=19.68, p=0.000009) is mathematically valid but measures "can the scorecard distinguish two Claude outputs" not "can the scorecard distinguish good from bad by human standards"
 
+### 2026-05-08: Circularity Tagging Made Machine-Readable
+- DECISION: Added `CircularityRisk` type (`"none" | "low" | "medium"`) and optional `circularity` field to `CheckResult`
+- Every scorecard check now classified via `CHECK_CIRCULARITY` map and `tagCheck()` wrapper
+- **none** (structurally valid regardless of data source): factual_preservation, word_count, ats_structure, action_verbs, field_completeness, json_structure, required_fields
+- **low** (reference data matters but check logic is structural): metrics_preserved, no_fabricated_skills
+- **medium** (evaluates AI output against AI reference): jd_requirements_coverage, no_fabrication, keyword_coverage, experience_relevance, section_completeness, technology_extraction
+- This makes the circularity assessment from May 3 queryable in code — enables filtering circular checks when scoring against synthetic pairs
+- Also added type adapter functions: `parsedJDToScorecardInput()` and `cvContentToScorecardInput()` to bridge real pipeline types to scorecard input types
+
 ### Threshold Decisions (LOCKED)
 - 70%/80%/80% thresholds are practitioner judgement, NOT research-backed
 - DECISION: Empirically calibrate AFTER real optimization loop completes (not from baseline alone)
@@ -69,6 +78,57 @@ Persistent record of decisions, reviews, and corrections. Created May 3, 2026.
 - /coding-standards — check files against project conventions
 - /pre-commit-check — quick pre-commit validation
 - CLAUDE.md created at project root
+
+---
+
+## 2026-05-08: Real Data Pipeline + Quality Audit + Loop Authenticity
+
+### Data Pipeline Execution
+- Kaggle CLI installed, API key configured
+- 3 JD datasets downloaded: LinkedIn (2,800 sample from 3.3M), JD 2025 (1,068), Indeed (1,000)
+- 18,206 resumes clustered: 87 clusters x 22 industries x 5 seniority levels
+- 150 candidate pairs matched (142 good, avg relevance score 3.3)
+- 74 raw test pairs generated in test-bank format (60/20/20 split)
+- Scripts created: cluster-resumes.ts, match-resumes-to-jds.ts, generate-test-pairs.ts, extract-linkedin-sample.py
+
+### Quality Audit: 74 Pairs NOT READY
+- Avg cloud_skills: 0.9 (vs 22.1 in existing synthetic, scorecard needs 15+)
+- Avg jd_requirements: 3.6 (vs 8.7 in existing, scorecard needs 6+)
+- 68/74 pairs (92%) have <3 skills
+- Root cause: extractSkillsFromText() is naive regex (~30 tech keywords)
+- Impact: Scorecard checks become trivial/meaningless with sparse data
+- **DECISION**: Option C — run 40 best-diversity pairs through real pipeline (Haiku) + human review. Cost ~$2-4. Keep 4 Alpha gold pairs.
+
+### Adzuna API: REJECTED
+- Returns truncated JD snippets only — useless for JD parsing evaluation
+- Kaggle LinkedIn (124K full descriptions) is far superior and free
+
+### NVIDIA NIM: REJECTED
+- Routes Claude Code CLI through open-source models (Qwen, GLM)
+- NOT for production (prompts tuned for Claude), NOT for AutoResearch (wrong model), NOT reliable for tool calling
+- Only useful for hobbyists wanting free CLI
+
+### Loop Authenticity Assessment
+**cv-generation (P0): 7/10 — AUTHENTIC BUT UNTESTED**
+- Architecture: TRUE Karpathy 3-file pattern
+- Data: 50 pairs exist but 46/50 synthetic (circular). Need real-data replacement.
+- ANOVA: Proves machinery works, not outcomes
+- Status: Never run (total_iterations=0)
+
+**jd-parser (P1): 3/10 — PLANNED ONLY**
+- No scorecard, no test pairs in correct format
+- 5.8K raw JDs available but no parsed ground truth
+- Blocked until cv-generation validated
+
+**cv-parser (P2): 3/10 — PLANNED ONLY**
+- No scorecard, best test data available (Alpha CVs + 18K structured)
+- Depends on taxonomy normalization layer (not built)
+
+**Rejected loops: 10/10 — ALL CORRECT**
+- Only LLM-powered, user-facing output steps justify loops (3 total)
+- All CODE steps, socratic architecture, answer parsing correctly excluded
+
+**Overall honest status**: One loop built, zero validated, two planned. No fabricated claims.
 
 ---
 

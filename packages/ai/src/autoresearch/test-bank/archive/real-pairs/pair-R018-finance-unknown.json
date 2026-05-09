@@ -1,0 +1,59 @@
+{
+  "id": "pair-R018",
+  "split": "train",
+  "persona": "mid_career",
+  "source_resume": {
+    "id": "ra-04542",
+    "dataset": "resume_atlas",
+    "industry": "finance",
+    "seniority": "unknown"
+  },
+  "jd": {
+    "title": "Analyst, Sponsor Finance & Direct Lending",
+    "company": "MUFG Bank, Ltd.",
+    "location": "",
+    "experience_years": null,
+    "requirements": [
+      {
+        "text": "knowledge of industries represented in portfolio",
+        "type": "must_have"
+      },
+      {
+        "text": "experience in financial institutions or equivalent credit risk related function analyzing corporate customers   Knowledge of accounting and corporate finance   Strong written",
+        "type": "must_have"
+      },
+      {
+        "text": "experience of our workforce to create opportunities for our colleagues and our business",
+        "type": "must_have"
+      }
+    ],
+    "responsibilities": [],
+    "full_description": "Do you want your voice heard and your actions to count?   Discover your opportunity with Mitsubishi UFJ Financial Group (MUFG), the 7th largest financial group in the world. Across the globe, we’re 120,000 colleagues, striving to make a difference for every client, organization, and community we serve. We stand for our values, building long-term relationships, serving society, and fostering shared and sustainable growth for a better world.   With a vision to be the world’s most trusted financial group, it’s part of our culture to put people first, listen to new and diverse ideas and collaborate toward greater innovation, speed and agility. This means investing in talent, technologies, and tools that empower you to own your career.   Join MUFG, where being inspired is expected and making a meaningful impact is rewarded.  The selected colleague will work at an MUFG office or client sites four days per week and work remotely one day. A member of our recruitment team will provide more details.\r\n   Job Summary:  Overall Purpose of Job:  Analyst will provide primary support for evaluating and underwriting Direct Loans and other credit exposures to Private Equity owned non-investment grade borrowers ranging in size from middle market to large corporate within the Sponsor Finance & Direct Lending business unit. Analysts will also provide support for the Originations (Financial Sponsor coverage), Syndications, Monitoring and Sponsor portfolio company Relationship Management functions by assignment within the business unit.   Analyst will be a corporate finance professional, supporting Sponsor Finance & Direct Lending including non-investment grade transaction origination and credit analysis efforts. Critical functions include assessing risk factors associated with each credit and determining the appropriate risk ratings based on established policies and guidelines. Responsibilities will include active credit management and monitoring for potential upgrades, downgrades or general credit deterioration with the goal of maximizing the bank’s net income while minimizing credit costs.   Responsibilities:    Support the credit analysis and management of the Sponsor/Direct Lending business unit   Perform due diligence on new transactions as well as regularly scheduled evaluation of the existing loan portfolio   Provide support for evaluating, structuring and negotiating terms and credit agreements with Sponsor clients   Support the preparation of detailed credit analyses and required credit applications in accordance with internal policies and regulatory guidance, including the evaluation of company-specific, industry, and regulatory risks; and company historical operating performance, projected operating performance and capital structure.   Modeling skills required for both the credit application process and quarterly review presentations.   Provide support for coverage team’s idea generation and pitch books for Sponsor clients and potential clients and attend client meetings as required   Provide support for the syndication strategy, including lender presentations and liaison with participant lenders, including banks and private credit firms   Responsible for the coordination and communication of account information across various constituencies throughout the organization.   Generalist coverage responsibilities including the need to understand current relevant industry conditions in assigned portfolio utilizing internal and external sources.   Oversight of facility closing procedures including both operations and documentation.    Advanced Client Solutions:    Work within deal team environment (with GRM, Corporate Advisory, Capital Markets, and Syndications) supporting the development and analysis of financing structures/strategies, including leveraged capital markets and other product areas.   Support credit analysis for structured credit transactions (derivatives transactions, margin lending, receivable securitizations, supply chain finance).   Understand and maintain knowledge of industries represented in portfolio, including technical aspects and regulatory issues.   Participate in client and bank meetings as necessary.   Policy and Transaction Responsibilities:    Support the communication with the credit approval division including final hold level strategies to ensure alignment of risk strategy and policy.   Evaluate and establish appropriate ratings for transactions and correlate appropriate exposure level with regard to exposure on both a transaction and group level.   Ensure compliance with policy and regulatory requirements.   Requirements:    Bachelor’s degree, CFA candidacy is a plus.   Work experience in financial institutions or equivalent credit risk related function analyzing corporate customers   Knowledge of accounting and corporate finance   Strong written, verbal, and interpersonal skills   Strong financial modeling skills   Good computer skills in Microsoft Word, Power Point, and Excel.   Able to work independently and under pressure.    The typical base pay range for this role is between $105k-$130k+ depending on job-related knowledge, skills, experience and location. This role may also be eligible for certain discretionary performance-based bonus and/or incentive compensation. Additionally, our Total Rewards program provides colleagues with a competitive benefits package (in accordance with the eligibility requirements and respective terms of each) that includes comprehensive health and wellness benefits, retirement plans, educational assistance and training programs, income replacement for qualified employees with disabilities, paid maternity and parental bonding leave, and paid vacation, sick days, and holidays. For more information on our Total Rewards package, please click the link below.  MUFG Benefits Summary  The above statements are intended to describe the general nature and level of work being performed. They are not intended to be construed as an exhaustive list of all responsibilities duties and skills required of personnel so classified.\r\n  We are proud to be an Equal Opportunity Employer and committed to leveraging the diverse backgrounds, perspectives and experience of our workforce to create opportunities for our colleagues and our business. We do not discriminate on the basis of race, color, national origin, religion, gender expression, gender identity, sex, age, ancestry, marital status, protected veteran and military status, disability, medical condition, sexual orientation, genetic information, or any other status of an individual or that individual’s associates or relatives that is protected under applicable federal, state, or local law."
+  },
+  "expected_output": {
+    "_status": "NEEDS_HUMAN_REVIEW",
+    "_raw_text_preview": "james north cpa 1080 dtx senior finance executive startups turnarounds corporate finance financial consulting restructurings reorganizations marketing technology leadership highly compedance executive excellence reducing costs increasing officiency stil bnline prestandoler organition esporte spent doc inational role officing headship hacked operations hk marketing business development technological expertise pre record leading metaturings songanizations challenging settings manages megolarkan da",
+    "summary": "",
+    "experience": [],
+    "skills": {},
+    "certifications": [],
+    "education": []
+  },
+  "jd_requirements": [
+    "knowledge of industries represented in portfolio",
+    "experience in financial institutions or equivalent credit risk related function analyzing corporate ",
+    "experience of our workforce to create opportunities for our colleagues and our business"
+  ],
+  "cloud_skills": [],
+  "provenance": {
+    "data_source": "real_dataset_raw_text",
+    "jd_source": "github_indeed",
+    "resume_dataset": "resume_atlas",
+    "jd_id": "indeed-0b74c08928671880",
+    "resume_id": "ra-04542",
+    "generated_at": "2026-05-08T08:47:53.853Z",
+    "expected_output_author": "NEEDS_HUMAN_REVIEW",
+    "circularity_risk": "low",
+    "notes": "Resume from real dataset (raw text). JD from real job posting. Expected output EMPTY — needs LLM parsing + human review."
+  }
+}

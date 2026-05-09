@@ -1,7 +1,7 @@
 /**
  * CV Parser System Prompt — Production Quality
  *
- * Sent to Claude Haiku to parse raw CV/resume text into structured JSON.
+ * Sent to LLM (fast tier) to parse raw CV/resume text into structured JSON.
  * The output feeds directly into buildCloudFromParsedCV() (cloud.ts) and
  * mergeIntoCloud() (cv/upload/route.ts).
  *
@@ -62,14 +62,13 @@ export interface ParsedCVOutput {
     highlights: string[];
   }>;
 
-  skills: {
-    languages: string[];
-    frameworks: string[];
-    infrastructure: string[];
-    databases: string[];
-    tools: string[];
-    other: string[];
-  };
+  skills: Array<{
+    name: string;           // Professional domain terminology — e.g., "Reliability Centered Maintenance" not "RCM stuff"
+    original_text: string;  // Exactly what appeared in the CV — e.g., "RCM", "budget tracking", "fixing avionics"
+    domain: string;         // Top-level domain — e.g., "defense_aerospace", "healthcare", "technology", "management"
+    category: string;       // Sub-category — e.g., "avionics", "anesthesiology", "cloud_infrastructure", "project_management"
+    source: "skills_section" | "experience" | "certification" | "education" | "summary";
+  }>;
 
   competencies: string[];
 
@@ -101,6 +100,33 @@ export interface ParsedCVOutput {
     venue: string;
     year: number | null;
     peer_reviewed: boolean;
+  }>;
+
+  volunteer: Array<{
+    organization: string;
+    role: string;
+    start_date: string | null;
+    end_date: string | null;
+    description: string;
+    impact: string | null;
+  }>;
+
+  leadership: Array<{
+    organization: string;
+    role: string;
+    start_date: string | null;
+    end_date: string | null;
+    description: string;
+    scope: string | null;
+  }>;
+
+  professional_affiliations: string[];
+
+  training: Array<{
+    name: string;
+    provider: string | null;
+    year: number | null;
+    hours: number | null;
   }>;
 
   languages_spoken: string[];
@@ -188,14 +214,29 @@ Return ONLY this JSON object. No markdown fences. No commentary.
       "highlights": ["Dean's List", "Thesis: ..."]
     }
   ],
-  "skills": {
-    "languages": ["Programming languages: Python, Java, C++, MATLAB, VBA, R, etc."],
-    "frameworks": ["Software frameworks: React, Django, Spring, .NET, etc."],
-    "infrastructure": ["Cloud/DevOps/platforms: AWS, Docker, Kubernetes, Linux, etc."],
-    "databases": ["Data stores: PostgreSQL, MongoDB, Oracle, SQL Server, etc."],
-    "tools": ["Tools/software: SAP, Primavera, AMOS, Jira, Power BI, AutoCAD, CATIA, SolidWorks, MATLAB, etc."],
-    "other": ["EVERYTHING ELSE: domain skills, methodologies, processes, soft skills — e.g., MBSE, Airworthiness, Lean Six Sigma, Stakeholder Management, Fleet Management, Root Cause Analysis, FMEA, Risk Management, Requirements Engineering"]
-  },
+  "skills": [
+    {
+      "name": "Reliability Centered Maintenance",
+      "original_text": "RCM",
+      "domain": "maintenance_engineering",
+      "category": "reliability",
+      "source": "skills_section"
+    },
+    {
+      "name": "Python",
+      "original_text": "Python",
+      "domain": "technology",
+      "category": "programming_language",
+      "source": "experience"
+    },
+    {
+      "name": "Hemodynamic Monitoring",
+      "original_text": "vitals monitoring",
+      "domain": "healthcare",
+      "category": "critical_care",
+      "source": "experience"
+    }
+  ],
   "competencies": [
     "Verbatim competency statements from any 'Core Competencies' / 'Key Skills' section"
   ],
@@ -231,6 +272,35 @@ Return ONLY this JSON object. No markdown fences. No commentary.
       "venue": "Journal name, conference, or blog",
       "year": 2023,
       "peer_reviewed": true
+    }
+  ],
+  "volunteer": [
+    {
+      "organization": "Organization name",
+      "role": "Role or activity description",
+      "start_date": "Jan 2020 or null",
+      "end_date": "Dec 2022 or null",
+      "description": "What was done",
+      "impact": "200 participants trained, organized annual food drive, or null"
+    }
+  ],
+  "leadership": [
+    {
+      "organization": "Club, org, or committee name",
+      "role": "President, Chair, Board Member, etc.",
+      "start_date": "Jan 2020 or null",
+      "end_date": "Dec 2022 or null",
+      "description": "What was done in this leadership role",
+      "scope": "chapter of 150 members, student senate, or null"
+    }
+  ],
+  "professional_affiliations": ["ACCP", "IEEE", "PMI", "ASHP"],
+  "training": [
+    {
+      "name": "Course or workshop name",
+      "provider": "Issuing institution or null",
+      "year": 2023,
+      "hours": 40
     }
   ],
   "languages_spoken": ["English", "Arabic", "French"],
@@ -290,11 +360,23 @@ Return ONLY this JSON object. No markdown fences. No commentary.
 - Calculate duration_months accurately. If month is unknown, assume Jan for start and Dec for end, then round.
 - total_experience_years: from earliest role start_date to latest role end_date (or today if "Present"). Round to nearest integer.
 
-### Skills Classification
-- "languages" = PROGRAMMING languages only. Human languages go in languages_spoken.
-- "other" is a CATCH-ALL — put domain skills, methodologies, soft skills, processes here. This is often the largest category for non-tech professionals. Examples: Systems Engineering, MBSE, Airworthiness, Fleet Management, Configuration Management, Lean Manufacturing, Risk Management, Clinical Trials, Financial Modeling, Project Controls, EVM, Stakeholder Management.
-- If a skill fits multiple categories, put it in the MOST SPECIFIC one.
-- Acronyms: expand if unambiguous (RCA → Root Cause Analysis), keep as-is if ambiguous.
+### Skills Classification (CRITICAL — this feeds the Profile Cloud)
+- Output an array of skill objects, each with: name, domain, category, source.
+- **original_text**: The EXACT text as it appeared in the CV. Copy verbatim — abbreviations, slang, typos and all. This is what the user wrote. If name and original_text are identical, that's fine — it means the user already used professional terminology.
+- **name**: Use PROFESSIONAL DOMAIN TERMINOLOGY. Upgrade the user's colloquial or abbreviated language to what a domain expert or recruiter would recognize. Examples:
+  - "RCM stuff" → "Reliability Centered Maintenance"
+  - "vitals monitoring" → "Hemodynamic Monitoring"
+  - "cloud stuff" → "Cloud Infrastructure" or the specific service (AWS, GCP, etc.)
+  - "budget tracking" → "Earned Value Management" (if context confirms EVM)
+  - "fixing planes" → "Aircraft Maintenance Engineering"
+  - Keep well-known acronyms that ARE the professional term: PMP, ACLS, FMECA, SAP, MATLAB, DO-178C
+  - Expand ambiguous acronyms: RCA → "Root Cause Analysis", CM → "Configuration Management" or "Change Management" (use context)
+- **domain**: Assign the top-level industry domain. Use specific labels: defense_aerospace, healthcare, technology, management, finance, construction, energy, manufacturing, education, logistics, consulting, government, retail, legal, media. Use "general" ONLY for truly cross-industry skills (e.g., "Communication", "Team Leadership").
+- **category**: Assign a meaningful sub-category within the domain. Examples: avionics, anesthesiology, cloud_infrastructure, project_management, reliability, critical_care, programming_language, database, quality_assurance, procurement, etc. Be specific — "other" is NOT a valid category.
+- **source**: Where this skill was found — "skills_section", "experience" (from role bullets/technologies_used), "certification", "education", or "summary".
+- Human languages go in languages_spoken, NOT in skills.
+- Include EVERY skill from every section — skills section, role bullets, certifications, education, summary. Cast a wide net. The Cloud builder will deduplicate.
+- If a skill appears in multiple places (skills section AND a role), include it ONCE with source = "experience" (stronger evidence wins).
 
 ### Certifications
 - Extract the full name, not just the acronym.
@@ -321,6 +403,29 @@ Return ONLY this JSON object. No markdown fences. No commentary.
 ### Publications
 - Journal articles, conference papers, patents, technical reports, blog posts with publications.
 - peer_reviewed: true for journals and conferences, false for blogs/internal reports.
+
+### Volunteer / Community Service (8% of resumes — often missed)
+- Look for sections labeled: "Volunteer", "Community Service", "CSR", "Social Work", "Pro Bono", "Outreach"
+- Also check for volunteer activities embedded in experience bullets (e.g., "Conducted Heart Saver training for community")
+- impact: Extract quantified results if available (e.g., "200 participants trained", "organized annual food drive for 500 families")
+- If none found, return empty array.
+
+### Leadership / Extracurricular (35% of resumes)
+- Look for sections labeled: "Leadership", "Extracurricular", "Activities", "Student Government", "Board Roles"
+- Also extract leadership roles from experience that are not employment (e.g., "President, ACM Chapter", "Board Member, Industry Association")
+- scope: Quantify the leadership scope if mentioned (e.g., "chapter of 150 members", "annual event with 500 attendees")
+- If none found, return empty array.
+
+### Professional Affiliations (8% of resumes)
+- Look for sections labeled: "Affiliations", "Memberships", "Professional Organizations", "Societies"
+- Extract as a flat list of organization names: ["IEEE", "PMI", "ACCP", "ASHP"]
+- If none found, return empty array.
+
+### Training / Workshops (60% of resumes — VERY common)
+- Look for sections labeled: "Training", "Workshops", "Professional Development", "Continuing Education", "CPD", "CME"
+- These are SEPARATE from certifications (training = attended a course, certification = passed an exam)
+- hours: Extract if mentioned (e.g., "40-hour course", "3-day workshop" = 24 hours). null if not stated.
+- Do NOT put training items in the certifications array. Training is weaker evidence — courses show awareness, certs prove competence.
 
 ### Conflict Detection
 - overlapping_dates: Two roles at different companies with overlapping date ranges (unless one is clearly part-time/consulting).
@@ -368,7 +473,10 @@ These fields allow INFERENCE (derive from extracted data):
 
 - You are an ADVOCATE. If in doubt about whether something is a skill, include it.
 - NEVER fabricate information. If something is ambiguous, extract the text as-is and let downstream handle it.
-- technologies_used per role = evidence linking. This is THE most important field for the Profile Cloud. Extract generously from bullet text — but ONLY from THIS role's bullets.
+- technologies_used per role = evidence linking. This is THE most important field for the Profile Cloud. Extract generously from bullet text — but ONLY from THIS role's bullets. Do NOT bleed technologies from one role into another.
+- languages_spoken: ONLY include languages explicitly stated in the text (e.g., "Languages: English, Arabic"). NEVER infer languages from location, name, or country. If no languages section exists, return ["English"] only if the CV is written in English.
+- phone: If multiple phone numbers are listed, use the FIRST one. Note any additional numbers cannot be captured in the current schema.
+- Regulatory bodies and standards mentioned in the summary/about section (e.g., GACA, FAA, ICAO, Part-145, ISO, OSHA) MUST be extracted as skills with source: "summary". These are critical keywords for job matching.
 - Return ONLY the JSON object. No explanations, no markdown, no preamble.`;
 
 // ============================================================
@@ -570,48 +678,42 @@ export const CV_PARSER_EXAMPLE_OUTPUT: ParsedCVOutput = {
       ],
     },
   ],
-  skills: {
-    languages: ["MATLAB", "Python"],
-    frameworks: [],
-    infrastructure: [],
-    databases: ["Oracle"],
-    tools: [
-      "AMOS",
-      "SAP",
-      "MS Project",
-      "Primavera",
-      "DOORS",
-      "Cameo Systems Modeler",
-    ],
-    other: [
-      "Avionics",
-      "Systems Engineering",
-      "MBSE",
-      "Systems Integration",
-      "Airworthiness",
-      "Configuration Management",
-      "Fault Diagnosis",
-      "Fleet Management",
-      "Predictive Maintenance",
-      "Safety Management",
-      "Quality Assurance",
-      "Root Cause Analysis",
-      "Risk Management",
-      "Stakeholder Management",
-      "EVM",
-      "Requirements Engineering",
-      "Technical Documentation",
-      "Program Management",
-      "Team Leadership",
-      "Training",
-      "Procurement",
-      "Reliability Engineering",
-      "MRO",
-      "EASA Part-145",
-      "Radar Systems",
-      "Electronic Warfare",
-    ],
-  },
+  skills: [
+    { name: "MATLAB", original_text: "MATLAB", domain: "technology", category: "programming_language", source: "skills_section" as const },
+    { name: "Python", original_text: "Python", domain: "technology", category: "programming_language", source: "skills_section" as const },
+    { name: "Oracle", original_text: "Oracle", domain: "technology", category: "database", source: "skills_section" as const },
+    { name: "AMOS", original_text: "AMOS", domain: "maintenance_engineering", category: "mro_systems", source: "experience" as const },
+    { name: "SAP", original_text: "SAP", domain: "technology", category: "enterprise_software", source: "skills_section" as const },
+    { name: "MS Project", original_text: "MS Project", domain: "management", category: "project_management", source: "skills_section" as const },
+    { name: "Primavera", original_text: "Primavera P6", domain: "management", category: "project_management", source: "skills_section" as const },
+    { name: "DOORS", original_text: "DOORS", domain: "technology", category: "requirements_management", source: "skills_section" as const },
+    { name: "Cameo Systems Modeler", original_text: "Cameo", domain: "technology", category: "systems_engineering", source: "skills_section" as const },
+    { name: "Avionics Systems Integration", original_text: "avionics integration", domain: "defense_aerospace", category: "avionics", source: "experience" as const },
+    { name: "Systems Engineering", original_text: "Systems Engineering", domain: "defense_aerospace", category: "systems_engineering", source: "experience" as const },
+    { name: "Model-Based Systems Engineering", original_text: "MBSE", domain: "defense_aerospace", category: "systems_engineering", source: "experience" as const },
+    { name: "Airworthiness Management", original_text: "airworthiness", domain: "defense_aerospace", category: "airworthiness", source: "experience" as const },
+    { name: "Configuration Management", original_text: "CM baselines", domain: "management", category: "configuration_management", source: "experience" as const },
+    { name: "Fault Diagnosis", original_text: "fault diagnosis", domain: "maintenance_engineering", category: "reliability", source: "experience" as const },
+    { name: "Fleet Management", original_text: "fleet of 22 aircraft", domain: "maintenance_engineering", category: "fleet_operations", source: "experience" as const },
+    { name: "Predictive Maintenance", original_text: "predictive maintenance", domain: "maintenance_engineering", category: "reliability", source: "experience" as const },
+    { name: "Safety Management", original_text: "safety investigation", domain: "defense_aerospace", category: "safety", source: "experience" as const },
+    { name: "Quality Assurance", original_text: "QA", domain: "management", category: "quality_assurance", source: "experience" as const },
+    { name: "Root Cause Analysis", original_text: "root cause analysis", domain: "management", category: "quality_assurance", source: "experience" as const },
+    { name: "Risk Management", original_text: "Risk Management", domain: "management", category: "risk_management", source: "experience" as const },
+    { name: "Stakeholder Management", original_text: "Stakeholder Management", domain: "management", category: "stakeholder_management", source: "experience" as const },
+    { name: "Earned Value Management", original_text: "EVM", domain: "management", category: "project_management", source: "experience" as const },
+    { name: "Requirements Engineering", original_text: "requirements", domain: "defense_aerospace", category: "systems_engineering", source: "experience" as const },
+    { name: "Technical Documentation", original_text: "technical documentation", domain: "management", category: "documentation", source: "experience" as const },
+    { name: "Program Management", original_text: "Program Management", domain: "management", category: "program_management", source: "experience" as const },
+    { name: "Team Leadership", original_text: "team of 14 engineers", domain: "general", category: "leadership", source: "experience" as const },
+    { name: "Training Program Development", original_text: "training program for 25 technicians", domain: "general", category: "training", source: "experience" as const },
+    { name: "Procurement Management", original_text: "$12M annual spares procurement", domain: "management", category: "procurement", source: "experience" as const },
+    { name: "Reliability Engineering", original_text: "reliability", domain: "maintenance_engineering", category: "reliability", source: "experience" as const },
+    { name: "Maintenance, Repair & Overhaul", original_text: "MRO", domain: "maintenance_engineering", category: "mro_systems", source: "experience" as const },
+    { name: "EASA Part-145 Compliance", original_text: "EASA Part-145", domain: "defense_aerospace", category: "airworthiness", source: "experience" as const },
+    { name: "Radar Systems", original_text: "radar", domain: "defense_aerospace", category: "electronic_systems", source: "experience" as const },
+    { name: "Electronic Warfare", original_text: "electronic warfare systems", domain: "defense_aerospace", category: "electronic_systems", source: "experience" as const },
+  ],
   competencies: [
     "Military and commercial avionics systems integration",
     "Multi-stakeholder defense program coordination",
@@ -700,6 +802,17 @@ export const CV_PARSER_EXAMPLE_OUTPUT: ParsedCVOutput = {
       venue: "Journal of Aerospace Engineering (ASCE)",
       year: 2018,
       peer_reviewed: true,
+    },
+  ],
+  volunteer: [],
+  leadership: [],
+  professional_affiliations: ["INCOSE", "SAE International"],
+  training: [
+    {
+      name: "EASA Part-66 Module Examinations",
+      provider: "King Abdulaziz City for Science and Technology",
+      year: 2010,
+      hours: null,
     },
   ],
   languages_spoken: ["Arabic", "English", "French"],

@@ -1,0 +1,17 @@
+{
+  "fixture_id": "profile_linkedin",
+  "source_file": "Profile_Linkedin.txt",
+  "model_used": "claude-opus-4-6",
+  "prompt_version": "cv-parser-v3",
+  "reviewed_by": "pending",
+  "approved": false,
+  "created_at": "2026-05-07",
+  "stats": {
+    "roles": 6,
+    "years": 18,
+    "skills": 13,
+    "technologies": 18,
+    "education": 2,
+    "certifications": 5
+  }
+}

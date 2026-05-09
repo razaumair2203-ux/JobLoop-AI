@@ -1,0 +1,64 @@
+{
+  "id": "pair-R072",
+  "split": "held_out",
+  "persona": "senior",
+  "source_resume": {
+    "id": "ra-07554",
+    "dataset": "resume_atlas",
+    "industry": "construction",
+    "seniority": "senior"
+  },
+  "jd": {
+    "title": "Countertop Installer (construction/install) - Full-time",
+    "company": "Builders",
+    "location": "",
+    "experience_years": null,
+    "requirements": [
+      {
+        "text": "Worksite Location: Spelts-Schultz Countertops - 2600 E Hwy 30, Suite 9 - Kearney, NE 68847.",
+        "type": "must_have"
+      },
+      {
+        "text": "Check out our website builderscorp.com. To apply and review full job description click on our careers page.",
+        "type": "must_have"
+      },
+      {
+        "text": "Construction, Installation, Installer, Countertop Installation, Countertop Installer, Manufacturing",
+        "type": "must_have"
+      },
+      {
+        "text": "PI239165648",
+        "type": "must_have"
+      }
+    ],
+    "responsibilities": [],
+    "full_description": "Spelts-Schultz Countertops (a division of Builders), a countertop manufacturing facility, is looking to add an additional Countertop Installer crew! \nPrior construction experience is helpful but not required. On the job training will be provided.\nFull-time position\nOpportunity to travel and specialize in product installation. We offer countertop installation services for various countertop styles and sizes. Take pride in serving customers in their residential or commercial product completion. Your expertise will complete the finished product that will be on display for years to come!\nCountertop Installers install various types of countertops for residential homes and commercial buildings.  Daily travel is required. Position will require loading, unloading and installing countertops according to manufacturer’s specifications. Prior construction experience is helpful. Heavy lifting will be required. Must have a valid drivers license with good driving record. \nWage: $16.50 - $20.00 / hour\nSpelts-Schultz Countertops is open Monday - Friday. No weekends required!\nWorksite Location: Spelts-Schultz Countertops - 2600 E Hwy 30, Suite 9 - Kearney, NE 68847.\n\n \n\nCheck out our website builderscorp.com. To apply and review full job description click on our careers page.\n\n \nBenefits\nVacation Leave\nSick Leave\n6 Paid Holidays\nEmployee Discount\n401k Retirement Plan (with company match)\nProfit Sharing Plan\n \nInsurance\nMedical\nDental\nVision\nDisability\nLife\nMedical and Dependent Flex Accounts\nHSA Account\n \nBackground check and pre-employment drug test required.\nBuilders has been serving the community for 40 years. We are a family-oriented company seeking constant improvement to support services and being proactive in meeting our customer needs. We do this by building relationships with our customers in order to help them achieve their project goals with teamwork-oriented staff, quality products and outstanding customer service. Our customers include contractors, builders, re-modelers and do-it-yourselfers. We offer building materials and home improvement essentials.\nEach location/department within our organization plays a vital role in helping our customers determine the best solutions for their project, home or commercial needs. Working as a core TEAM we guide our customers from start to finish no matter how large or small. Our Team sells, designs, builds and installs the products needed to assist our customers in achieving their goals. Customer Service is KEY to Exceeding our Customers' Expectations.\nConstruction, Installation, Installer, Countertop Installation, Countertop Installer, Manufacturing \nPI239165648"
+  },
+  "expected_output": {
+    "_status": "NEEDS_HUMAN_REVIEW",
+    "_raw_text_preview": "links jessica claire 100 montgomery st 10th floor 555 4321000 resumesampleexamplecom wwwsaunasurroundyoucom professional summary licensed general contractor knowledgeable construction protocols standards offering 30 years experience construction industry knowledgeable individual skilled multiple trades including electrical plumbing carpentry successful general contractor successful working various personalities meeting tight deadlines variety commercial residential projects project safety skills",
+    "summary": "",
+    "experience": [],
+    "skills": {},
+    "certifications": [],
+    "education": []
+  },
+  "jd_requirements": [
+    "Worksite Location: Spelts-Schultz Countertops - 2600 E Hwy 30, Suite 9 - Kearney, NE 68847.",
+    "Check out our website builderscorp.com. To apply and review full job description click on our career",
+    "Construction, Installation, Installer, Countertop Installation, Countertop Installer, Manufacturing",
+    "PI239165648"
+  ],
+  "cloud_skills": [],
+  "provenance": {
+    "data_source": "real_dataset_raw_text",
+    "jd_source": "kaggle_linkedin",
+    "resume_dataset": "resume_atlas",
+    "jd_id": "linkedin-3887486130",
+    "resume_id": "ra-07554",
+    "generated_at": "2026-05-08T08:47:53.890Z",
+    "expected_output_author": "NEEDS_HUMAN_REVIEW",
+    "circularity_risk": "low",
+    "notes": "Resume from real dataset (raw text). JD from real job posting. Expected output EMPTY — needs LLM parsing + human review."
+  }
+}

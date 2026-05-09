@@ -1,0 +1,437 @@
+{
+  "name": "Rehabilitation Sciences Resume Sample",
+  "email": null,
+  "phone": null,
+  "location": {
+    "city": "Binghamton",
+    "state": "NY",
+    "country": "USA"
+  },
+  "links": {
+    "linkedin": null,
+    "github": null,
+    "portfolio": null,
+    "other": []
+  },
+  "summary": null,
+  "total_experience_years": 1,
+  "experience": [
+    {
+      "company": "Binghamton General Hospital, United Health Services",
+      "employer": "United Health Services",
+      "title": "Occupational Therapy Intern",
+      "start_date": "May 20XX",
+      "end_date": "Present",
+      "duration_months": null,
+      "location": "Binghamton, NY",
+      "bullets": [
+        "Conducted assessments for approximately 20 patients weekly to evaluate physical, cognitive, and psychosocial abilities, using standardized tools and observation to inform treatment plans",
+        "Implemented personalized therapeutic interventions for activities of daily living such as dressing, bathing, and meal preparation to improve patient independence",
+        "Educated patients and families on the use of adaptive equipment, such as grab bars and reachers, enhancing safety and functionality within their homes",
+        "Collaborated with a multidisciplinary team, including physical therapists, speech-language pathologists, and case managers, to develop and execute comprehensive patient care plans"
+      ],
+      "technologies_used": [],
+      "metrics_mentioned": [
+        "approximately 20 patients weekly"
+      ],
+      "programs": [],
+      "team_size": null,
+      "seniority_signals": [],
+      "domain": "healthcare"
+    },
+    {
+      "company": "Vestal Hills Elementary School",
+      "employer": "Vestal Hills Elementary School",
+      "title": "Occupational Therapy Intern",
+      "start_date": "August 20XX",
+      "end_date": "December 20XX",
+      "duration_months": null,
+      "location": "Vestal, NY",
+      "bullets": [
+        "Supported school-based occupational therapy services for students ages 5-12 by assisting with assessments to evaluate students' fine motor, visual-motor, and sensory processing skills",
+        "Implemented targeted interventions under supervision, including handwriting exercises, sensory regulation activities, and classroom-based skill-building tasks",
+        "Modified classroom materials and workstations to support students' functional independence and active participation in academic tasks",
+        "Collaborated directly with teachers and occupational therapists to reinforce strategies and ensure consistent application of therapy goals within the classroom"
+      ],
+      "technologies_used": [],
+      "metrics_mentioned": [
+        "students ages 5-12"
+      ],
+      "programs": [],
+      "team_size": null,
+      "seniority_signals": [],
+      "domain": "healthcare"
+    },
+    {
+      "company": "Binghamton University, Occupational Therapy Department",
+      "employer": "Binghamton University",
+      "title": "Research Assistant",
+      "start_date": "August 20XX",
+      "end_date": "December 20XX",
+      "duration_months": null,
+      "location": "Binghamton, NY",
+      "bullets": [
+        "Contributed to a faculty-led research study examining how simulation-based learning enhances clinical reasoning skills in occupational therapy students, assisting with study design and implementation",
+        "Conducted literature reviews and synthesized findings to support the development of simulation scenarios and assessment tools grounded in current evidence",
+        "Collected and analyzed quantitative and qualitative data on student performance and feedback, identifying key themes to inform recommendations for curriculum improvement"
+      ],
+      "technologies_used": [],
+      "metrics_mentioned": [],
+      "programs": [],
+      "team_size": null,
+      "seniority_signals": [],
+      "domain": "research"
+    },
+    {
+      "company": "American Occupational Therapy Association",
+      "employer": "AOTA",
+      "title": "Conference Presenter, 20XX Education Summit",
+      "start_date": "November 20XX",
+      "end_date": "November 20XX",
+      "duration_months": 1,
+      "location": "Salt Lake City, UT",
+      "bullets": [
+        "Developed presentation materials for session titled \"Integrating Simulation-Based Learning to Build Clinical Reasoning in Occupational Therapy Students,\" synthesizing current research findings",
+        "Designed interactive elements for the session, including small-group reflection prompts and debriefing questions to demonstrate how simulation can be applied across different stages of OT education",
+        "Co-presented the session at the AOTA Education Summit alongside a faculty mentor, sharing outcomes from a pilot project and discussing best practices for integrating simulation into OT curricula"
+      ],
+      "technologies_used": [],
+      "metrics_mentioned": [],
+      "programs": [
+        "AOTA Education Summit"
+      ],
+      "team_size": null,
+      "seniority_signals": [],
+      "domain": "healthcare"
+    },
+    {
+      "company": "Starbucks",
+      "employer": "Starbucks",
+      "title": "Shift Lead",
+      "start_date": "May 20XX",
+      "end_date": "Present",
+      "duration_months": null,
+      "location": "Vestal, NY",
+      "bullets": [
+        "Built strong relationships with a team of 12 baristas and 200+ daily customers by actively listening and responding to needs, fostering collaboration and creating a positive work environment",
+        "Addressed 15-20 customer and operational issues per week by identifying problems quickly and implementing solutions, ensuring smooth store operations and maintaining customer satisfaction",
+        "Trained and coached 12 team members using tailored communication and guidance strategies to support different learning styles"
+      ],
+      "technologies_used": [],
+      "metrics_mentioned": [
+        "team of 12 baristas",
+        "200+ daily customers",
+        "15-20 customer and operational issues per week",
+        "12 team members"
+      ],
+      "programs": [],
+      "team_size": 12,
+      "seniority_signals": [
+        "Shift Lead"
+      ],
+      "domain": "retail"
+    },
+    {
+      "company": "Starbucks",
+      "employer": "Starbucks",
+      "title": "Barista",
+      "start_date": "September 20XX",
+      "end_date": "May 20XX",
+      "duration_months": null,
+      "location": "Vestal, NY",
+      "bullets": [
+        "Provided personalized service to 150+ daily customers by actively listening to their preferences and handling special requests, ensuring a positive customer experience",
+        "Maintained a clean, organized, and well-stocked workspace by sanitizing equipment, restocking supplies, and monitoring inventory, supporting smooth operations and minimizing service delays",
+        "Managed 20-30 simultaneous drink and food orders during peak hours by prioritizing tasks, coordinating with team members, and streamlining workflow"
+      ],
+      "technologies_used": [],
+      "metrics_mentioned": [
+        "150+ daily customers",
+        "20-30 simultaneous drink and food orders"
+      ],
+      "programs": [],
+      "team_size": null,
+      "seniority_signals": [],
+      "domain": "retail"
+    },
+    {
+      "company": "Wilson Hospital, United Health Services",
+      "employer": "United Health Services",
+      "title": "Nursing Assistant, Psychiatric Unit",
+      "start_date": "October 20XX",
+      "end_date": "April 20XX",
+      "duration_months": null,
+      "location": "Johnson City, NY",
+      "bullets": [
+        "Provided compassionate care to patients on a psychiatric unit and collaborated with the interdisciplinary healthcare team to adapt individualized patient care plans",
+        "Conducted patient rounds, documented all findings in patient charts, and communicated effectively with nurses, psychiatrists, other healthcare professionals, patients, and families as appropriate",
+        "Employed de-escalation techniques and crisis intervention strategies to address and manage challenging behaviors, maintaining a focus on patient safety"
+      ],
+      "technologies_used": [],
+      "metrics_mentioned": [],
+      "programs": [],
+      "team_size": null,
+      "seniority_signals": [],
+      "domain": "healthcare"
+    },
+    {
+      "company": "Johnson City Mentor Program",
+      "employer": "Johnson City Mentor Program",
+      "title": "Mentor",
+      "start_date": "January 20XX",
+      "end_date": "December 20XX",
+      "duration_months": null,
+      "location": "Johnson City, NY",
+      "bullets": [
+        "Fostered a supportive and personalized mentorship experience for an eighth-grade student at Johnson City Middle School, aiding in a smooth transition to high school by providing individualized guidance and emotional support",
+        "Guided mentee in establishing clear academic and personal objectives on a weekly basis, cultivating a sense of accountability and drive for achievement in their high school endeavors"
+      ],
+      "technologies_used": [],
+      "metrics_mentioned": [],
+      "programs": [
+        "Johnson City Mentor Program"
+      ],
+      "team_size": null,
+      "seniority_signals": [],
+      "domain": "education"
+    }
+  ],
+  "education": [
+    {
+      "institution": "Binghamton University, State University of New York",
+      "degree": "Doctor of Occupational Therapy",
+      "field": "Occupational Therapy",
+      "start_date": null,
+      "end_date": "Expected May 20XX",
+      "gpa": "3.88/4.00",
+      "honors": [],
+      "location": "Binghamton, NY"
+    },
+    {
+      "institution": "Stony Brook University, State University of New York",
+      "degree": "Bachelor of Science",
+      "field": "Biological Sciences",
+      "start_date": null,
+      "end_date": "May 20XX",
+      "gpa": "3.64/4.00",
+      "honors": [
+        "Dean's List Fall 20XX, Spring 20XX, Fall 20XX"
+      ],
+      "location": "Stony Brook, NY"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Read&Write",
+      "original_text": "Read&Write",
+      "domain": "healthcare",
+      "category": "technology",
+      "source": "skills_section"
+    },
+    {
+      "name": "XRHealth",
+      "original_text": "XRHealth",
+      "domain": "healthcare",
+      "category": "technology",
+      "source": "skills_section"
+    },
+    {
+      "name": "Epic",
+      "original_text": "Epic",
+      "domain": "healthcare",
+      "category": "technology",
+      "source": "skills_section"
+    },
+    {
+      "name": "eClinicalWorks",
+      "original_text": "eClinicalWorks",
+      "domain": "healthcare",
+      "category": "technology",
+      "source": "skills_section"
+    },
+    {
+      "name": "Google Suite",
+      "original_text": "Google Suite",
+      "domain": "general",
+      "category": "technology",
+      "source": "skills_section"
+    },
+    {
+      "name": "Microsoft Office",
+      "original_text": "Microsoft Office",
+      "domain": "general",
+      "category": "technology",
+      "source": "skills_section"
+    },
+    {
+      "name": "Standardized Assessment Tools",
+      "original_text": "using standardized tools and observation to inform treatment plans",
+      "domain": "healthcare",
+      "category": "clinical",
+      "source": "experience"
+    },
+    {
+      "name": "Activities of Daily Living (ADL) Interventions",
+      "original_text": "personalized therapeutic interventions for activities of daily living such as dressing, bathing, and meal preparation",
+      "domain": "healthcare",
+      "category": "clinical",
+      "source": "experience"
+    },
+    {
+      "name": "Adaptive Equipment Education",
+      "original_text": "use of adaptive equipment, such as grab bars and reachers",
+      "domain": "healthcare",
+      "category": "clinical",
+      "source": "experience"
+    },
+    {
+      "name": "Fine Motor Assessment",
+      "original_text": "fine motor, visual-motor, and sensory processing skills",
+      "domain": "healthcare",
+      "category": "clinical",
+      "source": "experience"
+    },
+    {
+      "name": "Sensory Processing",
+      "original_text": "sensory processing skills",
+      "domain": "healthcare",
+      "category": "clinical",
+      "source": "experience"
+    },
+    {
+      "name": "Handwriting Interventions",
+      "original_text": "handwriting exercises",
+      "domain": "healthcare",
+      "category": "clinical",
+      "source": "experience"
+    },
+    {
+      "name": "Sensory Regulation",
+      "original_text": "sensory regulation activities",
+      "domain": "healthcare",
+      "category": "clinical",
+      "source": "experience"
+    },
+    {
+      "name": "Simulation-Based Learning",
+      "original_text": "simulation-based learning enhances clinical reasoning skills",
+      "domain": "education",
+      "category": "research",
+      "source": "experience"
+    },
+    {
+      "name": "Quantitative and Qualitative Data Analysis",
+      "original_text": "Collected and analyzed quantitative and qualitative data",
+      "domain": "research",
+      "category": "research_methods",
+      "source": "experience"
+    },
+    {
+      "name": "Literature Review",
+      "original_text": "Conducted literature reviews and synthesized findings",
+      "domain": "research",
+      "category": "research_methods",
+      "source": "experience"
+    },
+    {
+      "name": "De-escalation Techniques",
+      "original_text": "de-escalation techniques and crisis intervention strategies",
+      "domain": "healthcare",
+      "category": "clinical",
+      "source": "experience"
+    },
+    {
+      "name": "Patient Charting",
+      "original_text": "documented all findings in patient charts",
+      "domain": "healthcare",
+      "category": "clinical",
+      "source": "experience"
+    }
+  ],
+  "competencies": [
+    "Occupational therapy assessment and treatment planning",
+    "Pediatric and adult occupational therapy interventions",
+    "Activities of daily living rehabilitation",
+    "Adaptive equipment selection and patient/family education",
+    "Multidisciplinary team collaboration",
+    "School-based therapy services",
+    "Simulation-based learning research",
+    "Psychiatric patient care and crisis intervention",
+    "Conference presentation and academic dissemination"
+  ],
+  "certifications": [
+    {
+      "name": "BLS First Aid/CPR/AED",
+      "issuer": null,
+      "year": null,
+      "active": true,
+      "tier": "gold"
+    },
+    {
+      "name": "Mental Health First Aid",
+      "issuer": null,
+      "year": null,
+      "active": true,
+      "tier": "gold"
+    },
+    {
+      "name": "Collaborative Institutional Training Initiative (CITI)",
+      "issuer": null,
+      "year": null,
+      "active": true,
+      "tier": "course"
+    }
+  ],
+  "awards": [],
+  "projects": [],
+  "publications": [],
+  "volunteer": [
+    {
+      "organization": "Johnson City Mentor Program",
+      "role": "Mentor",
+      "dates": "January 20XX-December 20XX",
+      "location": "Johnson City, NY"
+    }
+  ],
+  "leadership": [
+    {
+      "role": "Vice President",
+      "organization": "Stony Brook University HOSA - Future Health Professionals",
+      "dates": "20XX-20XX"
+    },
+    {
+      "role": "Board Member",
+      "organization": "Stony Brook University Health Equity Collective",
+      "dates": "20XX-20XX"
+    }
+  ],
+  "professional_affiliations": [
+    {
+      "name": "American Occupational Therapy Association",
+      "role": "Member",
+      "dates": "20XX-Present"
+    },
+    {
+      "name": "Rehabilitation Engineering and Assistive Technology Society of North America",
+      "role": "Student Member",
+      "dates": "20XX-Present"
+    },
+    {
+      "name": "Binghamton University Occupational Therapy Graduate Student Organization",
+      "role": "Member",
+      "dates": "20XX-Present"
+    }
+  ],
+  "training": [
+    {
+      "name": "Open Airways for Schools Facilitator",
+      "expires": "June 20XX"
+    },
+    {
+      "name": "Epic Training",
+      "completed": "May 20XX"
+    }
+  ],
+  "languages_spoken": [],
+  "conflicts": []
+}

@@ -1,0 +1,75 @@
+{
+  "id": "pair-R013",
+  "split": "train",
+  "persona": "early_career",
+  "source_resume": {
+    "id": "ra-08029",
+    "dataset": "resume_atlas",
+    "industry": "engineering",
+    "seniority": "entry"
+  },
+  "jd": {
+    "title": "Metallurgical Process Engineer",
+    "company": "Amotec Inc.",
+    "location": "",
+    "experience_years": null,
+    "requirements": [],
+    "responsibilities": [],
+    "full_description": "Amotec is actively recruiting candidates for a Metallurgical Process Engineer role with a major, established steel manufacturing company. Located within driving distance of the major cities of Charleston and Huntington, West Virginia, our client has established a significant new facility in that region that is poised for major and sustained growth over the next several years. The person in this role will be in a great position to experience major career advancement within an exciting, new, and growing environment. \nReporting to the Melt & Cast Supervisor, the Process Engineer is focused on the melt shop and will be responsible for improving the efficiency of metallurgical processes in that area. Our client is known for high employee retention and phenomenal benefits; additionally, relocation assistance will be offered for this role.\nResponsibilities: Resolve metallurgical issues to improve process efficiency in the melt shop Collaborate with other teams to optimize production parameters and product qualityDrive continuous improvement initiatives Conduct metallurgical analysis on equipment to drive upgrades, improvements, and maintenance \nRequirements:Bachelor’s or Master’s degree in Metallurgical Engineering, Chemical Engineering, or Material ScienceStrong knowledge and understanding of steel metallurgical process, materials, and quality controlProven experience within the steel manufacturing industry  \nIf interested in this Metallurgical Process Engineer opportunity, please submit your resume and reach out to Zachary Swindell at 216.535.2710 x5501 or email at zswindell@amotecinc.com."
+  },
+  "expected_output": {
+    "summary": "Promote and exhibit knowledge to coworkers, maintain good communications for performance growth, with expertise in carpentry and residential construction.",
+    "experience": [
+      {
+        "company": "Enernoc Inc",
+        "title": "Civil Supervisor",
+        "start_date": "10/2008",
+        "end_date": "Present",
+        "bullets": [
+          "Maintain good communications",
+          "Exhibit knowledge to coworkers"
+        ]
+      }
+    ],
+    "skills": {
+      "Technical": [
+        "carpentry",
+        "blueprint reading",
+        "accurate measurements",
+        "estimates"
+      ],
+      "Management": [
+        "leadership"
+      ]
+    },
+    "certifications": [
+      "Building Construction Trades Certificate"
+    ],
+    "education": []
+  },
+  "jd_requirements": [
+    "Bachelor’s or Master’s degree in Metallurgical Engineering, Chemical Engineering, or Material Science",
+    "Strong knowledge and understanding of steel metallurgical process, materials, and quality control",
+    "Proven experience within the steel manufacturing industry"
+  ],
+  "cloud_skills": [
+    "carpentry",
+    "blueprint reading",
+    "accurate measurements",
+    "estimates",
+    "leadership"
+  ],
+  "provenance": {
+    "data_source": "real_dataset_raw_text",
+    "jd_source": "kaggle_linkedin",
+    "resume_dataset": "resume_atlas",
+    "jd_id": "linkedin-3901695080",
+    "resume_id": "ra-08029",
+    "generated_at": "2026-05-08T08:47:53.850Z",
+    "expected_output_author": "NIM/meta/llama-3.3-70b-instruct",
+    "circularity_risk": "medium",
+    "notes": "Resume from real dataset (raw text). JD from real job posting. Expected output EMPTY — needs LLM parsing + human review.",
+    "enriched_at": "2026-05-08T13:03:51.636Z",
+    "needs_human_review": true
+  }
+}

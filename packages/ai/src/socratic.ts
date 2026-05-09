@@ -14,8 +14,8 @@
  *
  * Model selection — Cloud maturity is the master signal:
  *   - computeCloudMaturity() + gap complexity → selectModel()
- *   - Thin Cloud → Sonnet (can't afford mistakes early)
- *   - Rich Cloud → Haiku (known territory, save cost)
+ *   - Thin Cloud → quality tier (can't afford mistakes early)
+ *   - Rich Cloud → fast tier (known territory, save cost)
  *   - 90-day skip decay on existing evidence
  *   - Question count controlled by gates, not hardcoded caps
  */
@@ -28,6 +28,7 @@ import { getProviderMode, getDevResponse } from "./provider";
 import { safeParseJSON, generateId } from "./utils";
 import { computeCloudMaturity, selectModel, type CloudMaturity } from "./cloud-maturity";
 import { SOCRATIC_QUESTION_PROMPT } from "./prompts/socratic";
+import { skillsMatch } from "./skill-matching";
 
 // ============================================================
 // TYPES
@@ -164,7 +165,7 @@ function evaluateMarginalValue(
 
 // ============================================================
 // RULE-BASED GAP CLASSIFIER (Finding 1 + Finding 2)
-// Decides Haiku vs Sonnet for question generation
+// Decides fast tier vs quality tier for question generation
 // ============================================================
 
 type GapComplexity = "simple" | "complex" | "gray_zone";
@@ -214,7 +215,7 @@ function classifyGapComplexity(
   const hasEvidenceDomainTerm = domainSpecificTerms.some(t => nodeEvidence.includes(t));
   if (hasJdDomainTerm && !hasEvidenceDomainTerm) return "complex";
 
-  return "gray_zone"; // Sonnet classifies
+  return "gray_zone"; // quality tier classifies
 }
 
 function selectQuestionModel(complexity: GapComplexity): "fast" | "quality" {
@@ -383,10 +384,7 @@ export async function generateJDQuestions(
 
   for (const skillName of uniqueSkills) {
     const node = cloud.nodes.find(
-      (n) =>
-        n.name.toLowerCase() === skillName ||
-        n.name.toLowerCase().includes(skillName) ||
-        skillName.includes(n.name.toLowerCase())
+      (n) => skillsMatch(n.name, skillName)
     );
 
     if (!node) continue;
@@ -478,11 +476,12 @@ export function detectContradictions(
   // Extract all org names mentioned in answers
   for (const a of answers) {
     // Look for "at [Company]", "for [Company]", "with [Company]"
-    const orgMatches = a.answer.match(/(?:at|for|with|from)\s+([A-Z][a-zA-Z\s&]+?)(?:\s+(?:from|during|in|as|where|,|\.))/g);
+    // Case-insensitive: handles "at google", "for The Government", non-English names
+    const orgMatches = a.answer.match(/(?:at|for|with|from)\s+([a-zA-Z\u00C0-\u024F][a-zA-Z\u00C0-\u024F\s&'.()-]+?)(?:\s+(?:from|during|in|as|where|,|\.|$))/gi);
     if (orgMatches) {
       for (const m of orgMatches) {
         const org = m.replace(/^(?:at|for|with|from)\s+/i, "").replace(/\s+(?:from|during|in|as|where|,|\.)$/i, "").trim();
-        if (org.length > 2) employerMentions.add(org);
+        if (org.length > 2 && !/^(?:the|a|an|that|this|my|our)$/i.test(org)) employerMentions.add(org);
       }
     }
   }

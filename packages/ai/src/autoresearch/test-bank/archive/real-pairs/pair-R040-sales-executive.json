@@ -1,0 +1,42 @@
+{
+  "id": "pair-R040",
+  "split": "train",
+  "persona": "executive",
+  "source_resume": {
+    "id": "ra-05504",
+    "dataset": "resume_atlas",
+    "industry": "sales",
+    "seniority": "executive"
+  },
+  "jd": {
+    "title": "Sales Director Packaging Division - 1591031",
+    "company": "RightWorks",
+    "location": "",
+    "experience_years": null,
+    "requirements": [],
+    "responsibilities": [],
+    "full_description": "We are looking for a high-performing Sales Director in charge of the Packaging . The successful candidate will meet our customer acquisition and revenue growth objectives.\n\nSales director responsibilities include developing key growth sales strategies, tactics and action plans. Successful execution of these strategies is required to achieve your financial targets. Sales director duties will include hitting annual targets, building relationships and understanding customer trends.\n\nResponsibilities\n\n Own and hit/exceed annual sales targets within assigned territory and accounts  Develop and execute strategic plan to achieve sales targets and expand our customer base  Build and maintain strong, long-lasting customer relationships  Partner with customers to understand their business needs and objectives  Effectively communicate the value proposition through proposals and presentations  Understand category-specific landscapes and trends  Reporting on forces that shift tactical budgets and strategic direction of accounts \n\n\nRequirements And Skills\n\n Proven sales executive experience, meeting or exceeding targets  Previous experience as a sales executive, sales manager or sales and marketing director  Ability to communicate, present and influence all levels of the organization, including executive and C-level  Proven ability to drive the sales process from plan to close  Proven ability to articulate the distinct aspects of products and services  Proven ability to position products against competitors  Demonstrable experience as head of sales, developing client-focused, differentiated and achievable solutions  Excellent listening, negotiation and presentation skills  Excellent verbal and written communications skills  BA/BS degree or equivalent \n\n\n, ,"
+  },
+  "expected_output": {
+    "_status": "NEEDS_HUMAN_REVIEW",
+    "_raw_text_preview": "sarah melgrini 14884394359namegmailcom twittercomname cincinnati oh experience vice president sales petrichor 2018 ongoing cho petrichor automation technology company makers cycle service allows developers build deploy scale automate cloud applications one platform promoted director vp 2015 supervised 12 direct reports source new product reduced printing expenses 60 saving 500000year material costs vice president sales acting vp marketing zagster 20172018 cina oh zagster fastest growing bike sha",
+    "summary": "",
+    "experience": [],
+    "skills": {},
+    "certifications": [],
+    "education": []
+  },
+  "jd_requirements": [],
+  "cloud_skills": [],
+  "provenance": {
+    "data_source": "real_dataset_raw_text",
+    "jd_source": "kaggle_linkedin",
+    "resume_dataset": "resume_atlas",
+    "jd_id": "linkedin-3904369316",
+    "resume_id": "ra-05504",
+    "generated_at": "2026-05-08T08:47:53.867Z",
+    "expected_output_author": "NEEDS_HUMAN_REVIEW",
+    "circularity_risk": "low",
+    "notes": "Resume from real dataset (raw text). JD from real job posting. Expected output EMPTY — needs LLM parsing + human review."
+  }
+}

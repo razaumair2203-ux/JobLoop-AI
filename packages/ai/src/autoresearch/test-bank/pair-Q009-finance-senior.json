@@ -1,0 +1,200 @@
+{
+  "id": "pair-Q009",
+  "split": "validation",
+  "persona": "senior",
+  "source_resume": {
+    "id": "snb-15011085",
+    "dataset": "snehaanbhawal_livecareer",
+    "industry": "finance",
+    "seniority": "senior"
+  },
+  "jd": {
+    "title": "Grants & Contract Accountant",
+    "company": "American Bird Conservancy",
+    "location": "",
+    "experience_years": 2,
+    "requirements": [
+      {
+        "text": "Bachelor’s degree in finance, accounting, business or related field",
+        "type": "must_have"
+      },
+      {
+        "text": "At least two to three years of work experience in finance and grants management",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience extracting data from accounting ledgers",
+        "type": "must_have"
+      },
+      {
+        "text": "Experience managing financial reporting for grants and contracts",
+        "type": "must_have"
+      },
+      {
+        "text": "Knowledge of measuring financial performance with Actual v Budget monitoring",
+        "type": "must_have"
+      },
+      {
+        "text": "Proficiency with all Microsoft Office programs",
+        "type": "must_have"
+      },
+      {
+        "text": "Good understanding of Microsoft Excel",
+        "type": "must_have"
+      },
+      {
+        "text": "Ability to work independently, efficiently, accurately, and within deadlines",
+        "type": "must_have"
+      },
+      {
+        "text": "Knowledge of federal and non-federal regulations, Uniform guidance, agreement types, and the terms and conditions of sub-awards",
+        "type": "nice_to_have"
+      }
+    ],
+    "responsibilities": [
+      "Verify financial data in Netsuite for legitimacy, accuracy and allowability of charges",
+      "Review and analyze financial performance v budgetary line items for material deviation",
+      "Prepare and submit Financial Reports for federal, other governmental, and privately sponsored projects",
+      "Coordinate across divisions and review submitted documents and submission of timely reports",
+      "Monitor subawards and the financial performance of partners",
+      "Assist with external audit reviews and provide financial and project information for awards",
+      "Assist in the preparation of annual budgets",
+      "Create invoices to be sent to donors and manage various processes for receipt of funds from donors"
+    ],
+    "full_description": "Position Summary:Title:  Grants & Contract AccountantSupervisor: Grants and Finance ManagerLocation: RemoteContract: Full-timeSalary: Estimated at $75,000; Based on experienceSubmission Deadline: August 30, 2024 *Applications will be reviewed on a rolling basis.Introduction:The mission of American Bird Conservancy (ABC) is to conserve birds and their habitats – the places birds need to thrive – across the Americas. We are a growing group of 135+ dedicated staff, located across the United States and with a network of partners from Canada to Chile. Over 30 years, we have delivered an expanding array of results aimed at preventing bird species extinctions and reversing declines that are reducing populations of nearly all bird groups. Our work is guided by both science and our principles, which include a commitment to Justice, Equity, Diversity, and Inclusion.This position is one of 6 similar positions in ABC. ABC has grown significant over recent years and is supported by 35,000 individuals providing regular financial contributions, as well as by a range of Foundations, Organization and Federal and State grant making bodies. The Grant and Contract accountants manage the financial reporting and analysis for Federal and other bodies and are responsible for: Obtaining transaction data from our accounting system Financial management of grants Working closely with Development and Program colleagues to understand financial performance and budget for new projects Building and deliver appropriate financial reportsIn 2024, we moved from our current Financial Edge system to NetSuite and have implemented an ambitious combined finance and grant management system. The accounting team will take an active role in building good quality reporting in this new system.A team player and a great communicator, the individual will work with a range of accounting and non-accounting staff on financial issues.Primary Duties:1. Verify financial data in Netsuite for legitimacy, accuracy and allowability of charges. Create financial performance reports using data from our systems for multiple grants from Federal, State and other bodies2. Review and analyze financial performance v budgetary line items for material deviation.3. Work with Program and development teams to understand financial performance and understand key trends. Explain variances.4. Prepare and submit Financial Reports for federal, other governmental, and privately sponsored projects. Create invoices to be sent to donors. Manage various processes for receipt of funds from donors. Ensure compliance with all federal and state grant regulations.5. Coordinate across divisions and review submitted documents and submission of timely reports in accordance with sponsor financial reporting specifications.6. Review critical award information set up in the financial system.7. Monitor subawards and the financial performance of partners. Ensure payments are made in accordance with agreement.8. Assist with external audit reviews and provide financial and project information for awards within assigned areas.9. Assist in the preparation of annual budgets.10. Other duties as assigned.Position Requirements: 1. A bachelor’s degree in finance, accounting, business or related field and at least two to three years of work experience in finance and grants management.2. Experience extracting data from accounting ledgers.3. Experience of managing financial reporting for grants and contracts. Knowledge of measuring financial performance with Actual v Budget monitoring.4. Some knowledge of federal and non-federal regulations, Uniform guidance, agreement types, and the terms and conditions of sub-awards is an advantage.5. Proficiency with all Microsoft Office programs. Good understanding of Microsoft Excel with the ability to create simple, effective spreadsheets, summarizing key trends and well understood by non-finance staff6. Ability to work independently, efficiently, accurately, and within deadlines.7. Ability to work with a wide range of people at all levels.8. Good organizational, communication and administrative skills.9. Background screening required.10. Authorized U.S. Citizens, or Permanent ResidentBenefits: Benefits include medical, dental, and 403(b) plan. Paid vacation days, holidays, and sick leave. Approved equipment/office expenses covered. Pre-approved professional training and workshop expenses covered. Lodging and meals covered for travel away from home.To Apply:Please apply online at Paylocity.If you have any difficulties uploading your resume and cover letter, then please send them as ONE document to HR@abcbirds.orgAt American Bird Conservancy, we believe that a diversity of backgrounds, perspectives, and skills makes us more effective. We are committed to creating a respectful and inclusive work environment for all of our employees. As an equal opportunity employer, ABC is committed to ensuring that employees and applicants for employment have equal opportunities regardless of race, color, national origin, ancestry, sex, age, religion, physical or mental disability, medical condition, veteran status, marital status, pregnancy, sexual orientation, gender identity, gender expression, or any other factor unrelated to the requirements of the position.Job Type: Full-timePay: $75,000.00 per yearBenefits: Dental insurance Health insurance Life insurance Paid time offSchedule: Monday to FridayWork Location: Remote"
+  },
+  "expected_output": {
+    "summary": "Senior Finance leader with 12+ years of professional experience heavily focused in financial analytics and accounting practices. Professional presence with a solid work ethic and customer service oriented. Team player who is comfortable working with all levels of management and staff.",
+    "experience": [
+      {
+        "company": "Company Name",
+        "title": "DIRECTOR OF FINANCE",
+        "start_date": "07/2011",
+        "end_date": "Current",
+        "bullets": [
+          "Facilitated and led team during month-end close processes, invoicing, journal entries and account reconciliations.",
+          "Created executive analysis reports highlighting business issues, potential risks and profit opportunities.",
+          "Created detailed financial models and analytical tools to facilitate variance analysis.",
+          "Managed $250K+ annual expense budgets across logistics finance organization",
+          "Providing guidance for monthly forecast process and giving strategic financial leadership to the business on achieving goals",
+          "Analyze financial, operational, and accounting data for the development of reports to be delivered to various business segments",
+          "Support reporting and analytics such as KPI's, metrics, financial reports and creating & improving dashboards",
+          "Provide metrics and KPI's that improve the key drivers of operations and enable effective management, decision-making and execution",
+          "Perform analysis, financial planning and provide recommendations to senior management to achieve strategic goals",
+          "Perform ad-hoc reporting and analysis as required to support the business and its leaders",
+          "Recap and analyze business results versus plan and forecast on a weekly, monthly, quarterly and ad-hoc basis to ensure goals are reached",
+          "Streamlined spending analysis to a more accurate, efficient and automated process",
+          "Designed and created weekly and monthly spending reports",
+          "Executed and reported variance and gap analysis",
+          "Created monthly PowerPoint presentations illustrating business performance and goals"
+        ]
+      },
+      {
+        "company": "Company Name",
+        "title": "DIRECTOR OF FINANCE",
+        "start_date": "07/2011",
+        "end_date": "Current",
+        "bullets": [
+          "Facilitated and led team during month-end close processes, invoicing, journal entries and account reconciliations.",
+          "Created executive analysis reports highlighting business issues, potential risks and profit opportunities.",
+          "Created detailed financial models and analytical tools to facilitate variance analysis.",
+          "Managed $250M+ annual expense budgets across logistics finance organization",
+          "Responsible for $350M sales business unit P&L management including revenue, cost of goods, SG&A, and profit margins",
+          "Providing guidance for monthly forecast process and giving strategic financial leadership to the business on achieving goals",
+          "Analyze financial, operational, and accounting data for the development of reports to be delivered to various business segments",
+          "Support reporting and analytics such as KPI's, metrics, financial reports and creating & improving dashboards",
+          "Provide metrics and KPI's that improve the key drivers of operations and enable effective management, decision-making and execution",
+          "Perform analysis, financial planning and provide recommendations to senior management to achieve strategic goals",
+          "Perform ad-hoc reporting and analysis as required to support the business and its leaders",
+          "Recap and analyze business results versus plan and forecast on a weekly, monthly, quarterly and ad-hoc basis to ensure goals are reached",
+          "Streamlined spending analysis to a more accurate, efficient and automated process",
+          "Designed and created weekly and monthly spending reports",
+          "Executed and reported variance and gap analysis",
+          "Created monthly PowerPoint presentations illustrating business performance and goals"
+        ]
+      },
+      {
+        "company": "Company Name",
+        "title": "DIRECTOR OF FINANCE",
+        "start_date": "07/2011",
+        "end_date": "Current",
+        "bullets": [
+          "Facilitated and led logistics finance team during month-end close processes, including invoicing, journal entries, accrual obligations and account reconciliations.",
+          "Created executive analysis reports highlighting business issues, potential risks and profit opportunities.",
+          "Created detailed financial models and analytical tools to facilitate variance analysis.",
+          "Managed $250M+ annual expense budgets across logistics finance organization",
+          "Responsible for $350M sales business unit P&L management including revenue, cost of goods, SG&A, and profit margins",
+          "Providing guidance for monthly forecast process and giving strategic financial leadership to the business on achieving goals",
+          "Analyze financial, operational, and accounting data for the development of reports to be delivered to various business segments",
+          "Support reporting and analytics such as KPI's, metrics, financial reports and creating & improving dashboards",
+          "Provide metrics and KPI's that improve the key drivers of operations and enable effective management, decision-making and execution",
+          "Perform analysis, financial planning and provide recommendations to senior management to achieve strategic goals",
+          "Perform ad-hoc reporting and analysis as required to support the business and its leaders",
+          "Recap and analyze business results versus plan and forecast on a weekly, monthly, quarterly and ad-hoc basis to ensure goals are reached"
+        ]
+      }
+    ],
+    "skills": {
+      "Technical": [
+        "Microsoft Office",
+        "ERP",
+        "Financial modeling",
+        "Data analysis"
+      ],
+      "Management": [
+        "Financial leadership",
+        "Strategic planning",
+        "Team management"
+      ],
+      "Domain": [
+        "Financial analytics",
+        "Accounting practices",
+        "Logistics finance"
+      ],
+      "Soft Skills": [
+        "Communication",
+        "Customer service",
+        "Problem solving"
+      ]
+    },
+    "certifications": [],
+    "education": []
+  },
+  "jd_requirements": [
+    "Bachelor’s degree in finance, accounting, business or related field",
+    "At least two to three years of work experience in finance and grants management",
+    "Experience extracting data from accounting ledgers",
+    "Experience managing financial reporting for grants and contracts",
+    "Knowledge of measuring financial performance with Actual v Budget monitoring",
+    "Proficiency with all Microsoft Office programs",
+    "Good understanding of Microsoft Excel",
+    "Ability to work independently, efficiently, accurately, and within deadlines"
+  ],
+  "cloud_skills": [
+    "Microsoft Office",
+    "ERP",
+    "Financial modeling",
+    "Data analysis",
+    "Financial leadership",
+    "Strategic planning",
+    "Team management",
+    "Financial analytics",
+    "Accounting practices",
+    "Logistics finance",
+    "Communication",
+    "Customer service",
+    "Problem solving"
+  ],
+  "provenance": {
+    "cv_source": "snehaanbhawal/resume-dataset (LiveCareer, CC0)",
+    "jd_source": "R-series (Kaggle LinkedIn, real postings)",
+    "cv_dataset_id": 15011085,
+    "jd_pair_id": "pair-R011",
+    "expected_output_author": "NIM/meta/llama-3.3-70b-instruct",
+    "generated_at": "2026-05-08T15:27:42.094Z",
+    "circularity_risk": "medium-low",
+    "circularity_notes": "Real CV text + real JD text. Expected output is LLM-parsed extraction from real text (not invention). 4/8 scorecard checks structurally sound regardless.",
+    "needs_human_review": true
+  },
+  "raw_cv_text": "         DIRECTOR OF FINANCE         Summary    Senior Finance leader with 12+ years of professional experience heavily focused in financial analytics and accounting practices. Professional presence with a solid work ethic and customer service oriented. Team player who is comfortable working with all levels of management and staff. Creative problem solver who provides and implements cost effective solutions and continuously looking for way to create efficiencies and drive business profitability. Detail oriented with advanced skills in all Microsoft office applications.      Highlights           Strong experience in both short and long term financial planning      Polished communication skills and comfortable working with all levels of management driving motivation and success with human capital      Proficient in creating and tracking key performance indicators to drive business   Experienced in ERP/System conversions and transitions from legacy systems     Creation of financial reporting and modeling to communicate manufacturing cost goals and targets            Experience      Company Name    City  ,   State    DIRECTOR OF FINANCE   07/2011   to   Current             Company Name    City  ,   State    DIRECTOR OF FINANCE   07/2011   to   Current       Facilitated and led team during month-end close processes, invoicing, journal entries and account reconciliations.  Created executive analysis reports highlighting business issues, potential risks and profit opportunities.  Created detailed financial models and analytical tools to facilitate variance analysis.  Managed $250K+ annual expense budgets across logistics finance organization   Providing guidance for monthly forecast process and giving strategic financial leadership to the business on achieving goals  Analyze financial, operational, and accounting data for the development of reports to be delivered to various business segments  Support reporting and analytics such as KPI's, metrics, financial reports and creating & improving dashboards  Provide metrics and KPI's that improve the key drivers of operations and enable effective management, decision-making and execution  Perform analysis, financial planning and provide recommendations to senior management to achieve strategic goals  Perform ad-hoc reporting and analysis as required to support the business and its leaders  Recap and analyze business results versus plan and forecast on a weekly, monthly, quarterly and ad-hoc basis to ensure goals are reached  Streamlined spending analysis to a more accurate, efficient and automated process  Designed and created weekly and monthly spending reports  Executed and reported variance and gap analysis   Created monthly PowerPoint presentations illustrating business performance and goals                     Company Name    City  ,   State    DIRECTOR OF FINANCE   07/2011   to   Current       Facilitated and led team during month-end close processes, invoicing, journal entries and account reconciliations.  Created executive analysis reports highlighting business issues, potential risks and profit opportunities.  Created detailed financial models and analytical tools to facilitate variance analysis.  Managed $250M+ annual expense budgets across logistics finance organization  Responsible for $350M sales business unit P&L management including revenue, cost of goods, SG&A, and profit margins  Providing guidance for monthly forecast process and giving strategic financial leadership to the business on achieving goals  Analyze financial, operational, and accounting data for the development of reports to be delivered to various business segments  Support reporting and analytics such as KPI's, metrics, financial reports and creating & improving dashboards  Provide metrics and KPI's that improve the key drivers of operations and enable effective management, decision-making and execution  Perform analysis, financial planning and provide recommendations to senior management to achieve strategic goals  Perform ad-hoc reporting and analysis as required to support the business and its leaders  Recap and analyze business results versus plan and forecast on a weekly, monthly, quarterly and ad-hoc basis to ensure goals are reached  Streamlined spending analysis to a more accurate, efficient and automated process  Designed and created weekly and monthly spending reports  Executed and reported variance and gap analysis   Created monthly PowerPoint presentations illustrating business performance and goals           Company Name    City  ,   State    DIRECTOR OF FINANCE   07/2011   to   Current       Facilitated and led logistics finance team during month-end close processes, including invoicing, journal entries, accrual obligations and account reconciliations.  Created executive analysis reports highlighting business issues, potential risks and profit opportunities.  Created detailed financial models and analytical tools to facilitate variance analysis.  Managed $250M+ annual expense budgets across logistics finance organization  Responsible for $350M sales business unit P&L management including revenue, cost of goods, SG&A, and profit margins  Providing guidance for monthly forecast process and giving strategic financial leadership to the business on achieving goals  Analyze financial, operational, and accounting data for the development of reports to be delivered to various business segments  Support reporting and analytics such as KPI's, metrics, financial reports and creating & improving dashboards  Provide metrics and KPI's that improve the key drivers of operations and enable effective management, decision-making and execution  Perform analysis, financial planning and provide recommendations to senior management to achieve strategic goals  Perform ad-hoc reporting and analysis as required to support the business and its leaders  Recap and analyze business results versus plan and forecast on a weekly, monthly, quarterly and ad-hoc basis to ensure goals are reached  Streamlined spending analysis to a more accurate, efficient and automated process  Designed and created weekly and monthly spending reports  Executed and reported variance and gap analysis             Created monthly PowerPoint presentations illustrating business performance and goals           Company Name    City  ,   State    DIRECTOR OF FINANCE   07/2011   to   Current       Facilitated and led logistics finance team during month-end close processes, including invoicing, journal entries, accrual obligations and account reconciliations.  Created executive analysis reports highlighting business issues, potential risks and profit opportunities.  Created detailed financial models and analytical tools to facilitate variance analysis.  Managed $250M+ annual expense budgets across logistics finance organization  Responsible for $350M sales business unit P&L management including revenue, cost of goods, SG&A, and profit margins  Providing guidance for monthly forecast process and giving strategic financial leadership to the business on achieving goals  Analyze financial, operational, and accounting data for the development of reports to be delivered to various business segments  Provide metrics and KPI's that improve the key drivers of operations and enable effective management, decision-making and execution  Perform analysis, financial planning and provide recommendations to senior management to achieve strategic goals  Perform ad-hoc reporting and analysis as required to support the business and its leaders  Recap and analyze business results versus plan and forecast on a weekly, monthly, quarterly and ad-hoc basis to ensure goals are reached  Streamlined spending analysis to a more accurate, efficient and automated process  Designed and created weekly and monthly spending reports            Executed and reported variance and gap analysis   Created monthly PowerPoint presentations illustrating business performance and goals           Company Name    City  ,   State    DIRECTOR OF FINANCE   07/2011   to   Current       Facilitated and led logistics finance team during month-end close processes, including invoicing, journal entries, accrual obligations and account reconciliations.  Created executive analysis reports highlighting business issues, potential risks and profit opportunities.  Created detailed financial models and analytical tools to facilitate variance analysis.  Managed $250M+ annual expense budgets across logistics finance organization  Responsible for $350M sales business unit P&L management including revenue, cost of goods, SG&A, and profit margins  Providing guidance for monthly forecast process and giving strategic financial leadership to the business on achieving goals  Analyze financial, operational, and accounting data for the development of reports to be delivered to various business segments  Provide metrics and KPI's that improve the key drivers of operations and enable effective management, decision-making and execution  Standard costing experience and budgeting across manufacturing function.   Perform analysis, financial planning and provide recommendations to senior management to achieve strategic goals  Recap and analyze business results versus plan and forecast on a weekly, monthly, quarterly and ad-hoc basis to ensure goals are reached   Streamlined spending analysis to create more accurate, efficient and automated processes  Participated in large ERP system transitions and new implementations in finance organization  Worked closely across all business functions to create strong relationship and partnerships and ensuring communication across the company and knowledge of all downstream/upstream processes are considered.  Participating in quarterly and annual audits with both internal and external partners.          Company Name    City  ,   State    DIRECTOR OF FINANCE   07/2011   to   Current       Facilitated and led logistics finance team during month-end close processes, including invoicing, journal entries, accrual obligations and account reconciliations.  Created executive analysis reports highlighting business issues, potential risks and profit opportunities.  Created detailed financial models and analytical tools to facilitate variance analysis.  Managed $250M+ annual expense budgets across logistics finance organization  Responsible for $350M sales business unit P&L management including revenue, cost of goods, SG&A, and profit margins  Providing guidance for monthly forecast process and giving strategic financial leadership to the business on achieving goals  Analyze financial, operational, and accounting data for the development of reports to be delivered to various business segments  Provide metrics and KPI's that improve the key drivers of operations and enable effective management, decision-making and execution  Standard costing experience and budgeting across manufacturing functions.   Perform analysis, financial planning and provide recommendations to senior management to achieve strategic goals  Recap and analyze business results versus plan and forecast on a weekly, monthly, quarterly and ad-hoc basis to ensure goals are reached   Streamlined spending analysis to create more accurate, efficient and automated processes  Participated in large ERP system transitions and new implementations in finance organization  Worked closely across all business functions to create strong relationship and partnerships and ensuring communication across the company and knowledge of all downstream/upstream processes are considered.            Participating in quarterly and annual audits with both internal and external partners.          Company Name    City  ,   State    DIRECTOR OF FINANCE   07/2011   to   Current       Facilitated and led logistics finance team during month-end close processes, including invoicing, journal entries, accrual obligations and account reconciliations.  Created executive analysis reports highlighting business issues, potential risks and profit opportunities.  Created detailed financial models and analytical tools to facilitate variance analysis.  Managed $250M+ annual expense budgets across logistics finance organization  Responsible for $350M sales business unit P&L management including revenue, cost of goods, SG&A, and profit margins  Providing guidance for monthly forecast process and giving strategic financial leadership to the business on achieving goals  Analyze financial, operational, and accounting data for the development of reports to be delivered to various business segments  Provide metrics and KPI's that improve the key drivers of operations and enable effective management, decision-making and execution  Standard costing experience and budgeting across manufacturing functions.   Perform analysis, financial planning and provide recommendations to senior management to achieve strategic goals  Recap and analyze business results versus plan and forecast on a weekly, monthly, quarterly and ad-hoc basis to ensure goals are reached   Streamlined spending analysis to create more accurate, efficient and automated processes  Participated in large ERP system transitions and new implementations in finance organization  Worked closely across all business functions to create strong relationship and partnerships and ensuring communication across the company and knowledge of all downstream/upstream processes are considered.  Participating in quarterly and annual audits with both internal and external partners.  Created and presented pro forma statements and \"what if\" analysis to exective leadership          Company Name    City  ,   State    DIRECTOR OF FINANCE   07/2011   to   Current       Facilitated and led logistics finance team during month-end close processes, including invoicing, journal entries, accrual obligations and account reconciliations  Created executive analysis reports highlighting business issues, potential risks and profit opportunities  Created detailed financial models and analytical tools to facilitate variance analysis  Managed $250M+ annual expense budgets across logistics finance organization  Responsible for $350M sales business unit P&L management including revenue, cost of goods, SG&A, and profit margins  Providing guidance for monthly forecast process and giving strategic financial leadership to the business on achieving goals  Analyze financial, operational, and accounting data for the development of reports to be delivered to various business segments  Provide metrics and KPI's that improve the key drivers of operations and enable effective management, decision-making and execution  Standard costing experience and budgeting across manufacturing functions   Perform analysis, financial planning and provide recommendations to senior management to achieve strategic goals  Recap and analyze business results versus plan and forecast on a weekly, monthly, quarterly and ad-hoc basis to ensure goals are reached   Streamlined spending analysis to create more accurate, efficient and automated processes  Participated in large ERP system transitions and new implementations in finance organization  Worked closely across all business functions to create strong relationship and partnerships and ensuring communication across the company and knowledge of all downstream/upstream processes are considered  Participating in quarterly and annual audits with both internal and external partners            Created and presented pro forma statements and \"what if\" analysis to exective leadership          Company Name    City  ,   State    DIRECTOR OF FINANCE   07/2011   to   Current       Facilitated and led logistics finance team during month-end close processes, including invoicing, journal entries, accrual obligations and account reconciliations  Created executive analysis reports highlighting business issues, potential risks and profit opportunities  Created detailed financial models and analytical tools to facilitate variance analysis  Managed $250M+ annual expense budgets across logistics finance organization  Responsible for $350M sales business unit P&L management including revenue, cost of goods, SG&A, and profit margins  Providing guidance for monthly forecast process and giving strategic financial leadership to the business on achieving goals  Analyze financial, operational, and accounting data for the development of reports to be delivered to various business segments  Provide metrics and KPI's that improve the key drivers of operations and enable effective management, decision-making and execution  Standard costing experience and budgeting across manufacturing functions  Recap and analyze business results versus plan and forecast on a weekly, monthly, quarterly and ad-hoc basis to ensure goals are reached   Streamlined spending analysis to create more accurate, efficient and automated processes  Participated in large ERP system transitions and new implementations in finance organization  Worked closely across all business functions to create strong relationship and partnerships and ensuring communication across the company and knowledge of all downstream/upstream processes are considered  Participating in quarterly and annual audits with both internal and external partners            Created and presented pro forma statements and \"what if\" analysis to exective leadership          Company Name    City  ,   State    FINANCIAL ANALYST/PROJECT MANAGER   04/2007   to   06/2011       Monthly P&L management, including Financial and operations analysis for profitability comparisons, risk management, and expense management.  Develop and maintain comprehensive and summarized reporting package to monitor the performance each month in all critical areas - sales, gross margin, expenses, inventory, productivity, etc.  SuperUser of Data Warehouse and reporting systems (Oracle, OBIEE, EssBase, Business Objects) Developed consolidated reporting for EOA (Lens and Lab divisions) for senior executives.  Produce pro-forma/trend analysis using, forecast, budget, and history to identify threats and opportunities.  Develop a business partner relationship by providing them with the means to understand their sales, margin, and expenses while offering recommendations for ways to improve their business.  Budget/Forecasting development and management using input from top management and operations.  Prepare management presentations to be reviewed at Executive Board meetings.  Master System User of Budgeting and Planning Application (SAP/Business Objects) to provide support for all business units using this software (140 users) Support the VP of Finance Business Analysis on special projects for system and business process re-engineering, cost reduction, and systems enhancements (ACE) Coordination point for consolidated reporting in the Commercial Sales Business Initiate projects to achieve improvements in identified areas Six Sigma/Lean Management Certified.          Company Name    City  ,   State    OPERATIONS SUPERVISOR   10/2006   to   04/2007       Create and prepare training documentation (handouts, training guides, test cases) and presentation material to be available for new hires.  Strategic planning and forecasting to assist in new cost reduction projects/programs.  Develop program and system mapping exercises for database conversion Prepare as Subject Matter Expert for assigned project Responsible for the integration of an internal corporate treasury security tracking program from Boston  office to Dallas.          Company Name    City  ,   State    PRICING ANALYST   10/2005   to   10/2006       Research and analyze domestic and foreign securities Prepare daily and monthly security reports via our pricing vendors Work closely with Accounting Department to ensure timely and accurate reporting to our clients regarding their investment portfolios Management of various corporate retirement accounts,  reporting on a monthly and daily basis Prepare daily and monthly pricing variance reports for specific accounts.          Education      MBA  :  FINANCE   2006     University of North Texas  ,   City  ,   State              Bachelor of Science  :  ACCOUNTING   2003     Southeastern Oklahoma State University  ,   City  ,   State       Participated in the VITA program  Accounting Club Member          Skills    Accounting, Budgeting and Planning, Business Analysis, Business process re-engineering, Cost reduction analysis, Finance Reporting, Financial Statements, Forecasting, Inventory reconciliations, Manufacturing Costing analysis, Oracle, Payroll, Risk management, Sales, System conversions/Implementations, SAP, Six Sigma, Strategic planning, Tax returns, Trend analysis   "
+}

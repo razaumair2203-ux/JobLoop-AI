@@ -6,7 +6,7 @@
  * and tests whether the improvement is real or noise.
  *
  * Based on: "Prompt Optimization Is a Coin Flip" (April 2026, arXiv:2604.14585)
- *   - 72 optimization runs on Claude Haiku: 49% improved (= random)
+ *   - 72 optimization runs on LLM (fast tier): 49% improved (= random)
  *   - We must prove our loop beats random BEFORE investing compute
  *
  * Protocol:

@@ -1,0 +1,98 @@
+{
+  "id": "pair-R073",
+  "split": "held_out",
+  "persona": "mid_career",
+  "source_resume": {
+    "id": "ra-02872",
+    "dataset": "resume_atlas",
+    "industry": "agriculture",
+    "seniority": "unknown"
+  },
+  "jd": {
+    "title": "Central Indexer - Remote in Farmington, CT",
+    "company": "Optum",
+    "location": "",
+    "experience_years": null,
+    "requirements": [
+      {
+        "text": "Reside within commutable distance of our office location at 3 Farm Glen Blvd, Farmington, CT 6032",
+        "type": "must_have"
+      },
+      {
+        "text": "Ability to keep all company sensitive documents secure (if applicable)",
+        "type": "must_have"
+      },
+      {
+        "text": "Required to have a dedicated work area established that is separated from other living areas and provides information privacy.",
+        "type": "must_have"
+      },
+      {
+        "text": "Must live in a location that can receive a UnitedHealth Group approved high-speed internet connection or leverage an existing high-speed internet service.",
+        "type": "must_have"
+      },
+      {
+        "text": "Soft Skills:",
+        "type": "must_have"
+      },
+      {
+        "text": "Ability to Multi-task",
+        "type": "must_have"
+      },
+      {
+        "text": "Team player",
+        "type": "must_have"
+      },
+      {
+        "text": "Strong communication skills",
+        "type": "must_have"
+      },
+      {
+        "text": "UnitedHealth Group is a drug - free workplace. Candidates are required to pass a drug test before beginning employment.",
+        "type": "must_have"
+      }
+    ],
+    "responsibilities": [
+      "Index patient documents into Medical Records for all practice sites",
+      "Indexing/filing into patient charts such documents as progress notes, lab reports, mail, etc.",
+      "Indexing/filing patient charts, ensuring accuracy and completeness",
+      "Maintain knowledge of current OSHA regulations, practice policies, and standard workflows",
+      "Assist coworkers as possible to assure smooth practice operation and delivery of excellent services through teamwork",
+      "Support Central Services operations as assigned",
+      "You’ll be rewarded and recognized for your performance in an environment that will challenge you and give you clear direction on what it takes to succeed in your role as well as provide development for other roles you may be interested in.  Required Qualifications:",
+      "High School Diploma / GED   Must be 18 years old OR older"
+    ],
+    "full_description": "If you are located within commutable distance of our office location at 3 Farm Glen Blvd, Farmington, CT 6032, you will have the flexibility to telecommute* (work from home) as you take on some tough challenges. \r\n  ProHealth Physicians is a physician-led medical group with 85 practice locations throughout Connecticut serving more than 10% of the state's residents. We empower physicians and advanced clinicians to better serve patients through enhanced care processes in support of improved patient outcomes. Formed in 1997, ProHealth Physicians has grown to include more than 350 primary care and specialty clinicians and offers select specialty and diagnostic/therapeutic services. \r\n  The Central Indexer is responsible for maintaining patients' health records, results/outcomes, and medical history. Main duties include filing patient information in the electronic health record, and maintaining patient documents within the appropriate folders and databases supporting our practice care teams and providers.  Must live in a commutable distance to the office as you may have to go onsite on occasion.  This is a remote position with the option to work out of our administrative building in Farmington, Connecticut. \r\n  This position is full time. Employees are required to have flexibility to work any of our 8-hour shift schedules during our normal business hours 8:30 AM to 5:00 PM, Monday - Friday. It may be necessary, given the business need, to work occasional overtime or weekends. \r\n  \r\n   All Telecommuters will be required to adhere to UnitedHealth Group’s Telecommuter Policy.  \r\n  Primary Responsibilities: \r\n  \r\n  Index patient documents into Medical Records for all practice sites \r\n  Indexing/filing into patient charts such documents as progress notes, lab reports, mail, etc. \r\n  Indexing/filing patient charts, ensuring accuracy and completeness \r\n  Maintain knowledge of current OSHA regulations, practice policies, and standard workflows \r\n  Assist coworkers as possible to assure smooth practice operation and delivery of excellent services through teamwork \r\n  Support Central Services operations as assigned \r\n  \r\n You’ll be rewarded and recognized for your performance in an environment that will challenge you and give you clear direction on what it takes to succeed in your role as well as provide development for other roles you may be interested in.  Required Qualifications: \r\n  \r\n  High School Diploma / GED   Must be 18 years old OR older \r\n  1+ years of healthcare experience (administrative or medical records) \r\n  Basic computer knowledge and Windows PC applications   Ability to work any of our 8-hour shift schedules during our normal business hours 8:30 AM to 5:00 PM, Monday - Friday \r\n  \r\n Telecommuting Requirements: \r\n  \r\n  Reside within commutable distance of our office location at 3 Farm Glen Blvd, Farmington, CT 6032 \r\n  Ability to keep all company sensitive documents secure (if applicable) \r\n  Required to have a dedicated work area established that is separated from other living areas and provides information privacy. \r\n  Must live in a location that can receive a UnitedHealth Group approved high-speed internet connection or leverage an existing high-speed internet service. \r\n  \r\n Soft Skills: \r\n  \r\n  Ability to Multi-task \r\n  Team player \r\n  Strong communication skills \r\n  \r\n Connecticut Residents Only: The hourly range for this is $16.00 - $28.27 per hour. Pay is based on several factors including but not limited to local labor markets, education, work experience, certifications, etc. UnitedHealth Group complies with all minimum wage laws as applicable. In addition to your salary, UnitedHealth Group offers benefits such as, a comprehensive benefits package, incentive and recognition programs, equity stock purchase and 401k contribution (all benefits are subject to eligibility requirements). No matter where or when you begin a career with UnitedHealth Group, you’ll find a far-reaching choice of benefits and incentives. \r\n    At UnitedHealth Group, our mission is to help people live healthier lives and make the health system work better for everyone. We believe everyone–of every race, gender, sexuality, age, location, and income–deserves the opportunity to live their healthiest life. Today, however, there are still far too many barriers to good health which are disproportionately experienced by people of color, historically marginalized groups, and those with lower incomes. We are committed to mitigating our impact on the environment and enabling and delivering equitable care that addresses health disparities and improves health outcomes — an enterprise priority reflected in our mission.   \r\n  \r\n    Diversity creates a healthier atmosphere: UnitedHealth Group is an Equal Employment Opportunity / Affirmative Action employer, and all qualified applicants will receive consideration for employment without regard to race, color, religion, sex, age, national origin, protected veteran status, disability status, sexual orientation, gender identity or expression, marital status, genetic information, or any other characteristic protected by law.   \r\n  \r\n    UnitedHealth Group is a drug - free workplace. Candidates are required to pass a drug test before beginning employment.\r\n   \r\n  \r\n    #RPO"
+  },
+  "expected_output": {
+    "_status": "NEEDS_HUMAN_REVIEW",
+    "_raw_text_preview": "simran preet grewal female email simrangrewalgmailcom 919953363632 year degree pursuin bschons agriculture g 2014 xiicbse 2012 xcbse academic qualifications institute lovely professional university phagwara dav public school bhilai dav public school bhilai lovely professional university cgpa percentage 85210 70 9010 projectsinternship syngenta india limited haryana jun 2017july 2017 cotton crops product development undergone 45 days training researched extensively problems farmers faced interact",
+    "summary": "",
+    "experience": [],
+    "skills": {},
+    "certifications": [],
+    "education": []
+  },
+  "jd_requirements": [
+    "Reside within commutable distance of our office location at 3 Farm Glen Blvd, Farmington, CT 6032",
+    "Ability to keep all company sensitive documents secure (if applicable)",
+    "Required to have a dedicated work area established that is separated from other living areas and pro",
+    "Must live in a location that can receive a UnitedHealth Group approved high-speed internet connectio",
+    "Soft Skills:",
+    "Ability to Multi-task",
+    "Team player",
+    "Strong communication skills",
+    "UnitedHealth Group is a drug - free workplace. Candidates are required to pass a drug test before be"
+  ],
+  "cloud_skills": [],
+  "provenance": {
+    "data_source": "real_dataset_raw_text",
+    "jd_source": "github_indeed",
+    "resume_dataset": "resume_atlas",
+    "jd_id": "indeed-6834351973f4dbb8",
+    "resume_id": "ra-02872",
+    "generated_at": "2026-05-08T08:47:53.890Z",
+    "expected_output_author": "NEEDS_HUMAN_REVIEW",
+    "circularity_risk": "low",
+    "notes": "Resume from real dataset (raw text). JD from real job posting. Expected output EMPTY — needs LLM parsing + human review."
+  }
+}

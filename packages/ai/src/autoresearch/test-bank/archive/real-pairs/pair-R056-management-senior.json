@@ -1,0 +1,51 @@
+{
+  "id": "pair-R056",
+  "split": "validation",
+  "persona": "senior",
+  "source_resume": {
+    "id": "ra-11817",
+    "dataset": "resume_atlas",
+    "industry": "management",
+    "seniority": "senior"
+  },
+  "jd": {
+    "title": "General Manager",
+    "company": "Confidential",
+    "location": "",
+    "experience_years": null,
+    "requirements": [
+      {
+        "text": "Required education and experienceBS/BA in business administration or relevant fieldProficient in Microsoft Outlook, Word, and ExcelExperience working in a Windows/ MAC OS based environment.AV industry experience preferred.",
+        "type": "must_have"
+      }
+    ],
+    "responsibilities": [],
+    "full_description": "Duties for the General Manager will include allocating budget resources, formulating policies, coordinating business operations, monitoring and motivating staff, managing operational costs, ensuring good customer service, improving administration processes, engaging with vendors, hiring, and training employees, identifying business opportunities, and monitoring financial activities. Management and supervision of all staff within assigned location. Essential FunctionsDevelop forecasts, financial objectives and business plans for all departments.Manage budget and allocate funds appropriately.Bring out the best in location personnel by providing ongoing training, coaching, development, and motivation.Locate areas of improvement and propose corrective action to meet challenges and leverage growth opportunity.Share knowledge with other locations and leadership on effective practices, competitive intelligence, business opportunities and needs.Address and resolve client and employee satisfaction issues promptly.Adhere to high ethical standards and comply with all regulations/applicable laws.Consistently meet deadlines established by direct supervisor or above.Network to improve the presence and reputation of the location and company.Stay abreast of competing markets and provide reports on market movement and penetration.Report directly to Operations VP on all issues and needs within location.Perform other duties as assigned by supervisor.Ability to work flexible hours and overtime, including weekends and holidays, when needed.\nKnowledge, Skills and AbilitiesMinimum 5-7 years’ success supervising operations teams of 30 or more staffStrong track record of effectively leading teams to obtain desired business results.History of developing others into leadership positionsMust have a strong work ethic and show proven metrics for success.History of implementing change managementLean/Continuous improvement experience is a plus.Goal driven, “can do” mentality; willing to jump in and work hard-- lead by example.Experience with A/V video equipment and production preferred.Highly detail-oriented with superior organizational skillsAbility to prioritize multiple projects.\nCompetenciesProven leadership skills in a time pressured environmentAbility to interact with customers on a professional level.Must possess excellent interpersonal, clear verbal and written communication. Fluency in English requiredMust have demonstrated time management skills and be able to meet deadlines in a fast-paced multi-task environment with minimal supervision.Must have strong organizational skills and be able to prioritize work to meet deadlinesAbility to maintain a calm demeanor in a stressful environment with ability to adapt positively to changes in the work setting with ease.Must be able to troubleshoot and execute other job functions with high attention to detail.\nPhysical DemandsMust be able to remain in a stationary position for extended periods of time.The employee may occasionally lift and/or move up to 20 pounds.The position requires the ability to see clearly (with or without the aid of glasses or contact lenses) during responsibilities on and off a computer.Must be able to communicate effectively by listening and in both written and verbal forms.\nTravel- As required\nRequired education and experienceBS/BA in business administration or relevant fieldProficient in Microsoft Outlook, Word, and ExcelExperience working in a Windows/ MAC OS based environment.AV industry experience preferred."
+  },
+  "expected_output": {
+    "_status": "NEEDS_HUMAN_REVIEW",
+    "_raw_text_preview": "jessica claire resumesampleexamplecom 555 4321000 100 montgomery st 10th floor professional summary committed hardworking food service manager 40 years experience directing industrial type foodservice operations wellrounded leader talent supervising employees building winning team utilizing training skills swift problem solver using effective solutions wide array kitchen operations issues seek maintain fulltime position offers professional challenges utilizing interpersonal skills excellent time",
+    "summary": "",
+    "experience": [],
+    "skills": {},
+    "certifications": [],
+    "education": []
+  },
+  "jd_requirements": [
+    "Required education and experienceBS/BA in business administration or relevant fieldProficient in Mic"
+  ],
+  "cloud_skills": [
+    "swift"
+  ],
+  "provenance": {
+    "data_source": "real_dataset_raw_text",
+    "jd_source": "kaggle_linkedin",
+    "resume_dataset": "resume_atlas",
+    "jd_id": "linkedin-3903482043",
+    "resume_id": "ra-11817",
+    "generated_at": "2026-05-08T08:47:53.877Z",
+    "expected_output_author": "NEEDS_HUMAN_REVIEW",
+    "circularity_risk": "low",
+    "notes": "Resume from real dataset (raw text). JD from real job posting. Expected output EMPTY — needs LLM parsing + human review."
+  }
+}

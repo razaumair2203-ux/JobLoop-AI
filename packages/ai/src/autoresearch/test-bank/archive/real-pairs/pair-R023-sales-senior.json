@@ -1,0 +1,42 @@
+{
+  "id": "pair-R023",
+  "split": "train",
+  "persona": "senior",
+  "source_resume": {
+    "id": "ra-12570",
+    "dataset": "resume_atlas",
+    "industry": "sales",
+    "seniority": "senior"
+  },
+  "jd": {
+    "title": "Territory Sales Manager",
+    "company": "Uline",
+    "location": "",
+    "experience_years": null,
+    "requirements": [],
+    "responsibilities": [],
+    "full_description": "Bakersfield, California     Territory Sales Manager   Pay from $75,000 to $95,000 per year     Strong customer relationships built on trust - that’s the foundation of Uline’s sales culture! As a Territory Sales Manager, build out your territory supported by the best training, tools and product offering to win in the field every day! Uline continues to grow, creating new career opportunities and job stability you can count on. \r\n    Territory Sales Managers can be based anywhere within your sales territory, with regular visits to your Uline Branch / Sales Office. \r\n    Why Sales at Uline?                                                                                             Success from the Start - You’ll get 4 weeks of training followed by a 12-week mentorship program along with weekly learning and strategy meetings with leadership.              “CEO” of Your Territory - Manage accounts in all industries with opportunities to travel to new markets.              Design Your Day - Spend assigned days in the office with your peers planning face-to-face customer visits. Structure your schedule with work-life balance in mind.                                     Position Responsibilities                          Manage and grow existing accounts as well as bring in new business within your territory.              Provide effective business solutions at annual, on-site customer consultations, including recommendations from our catalog of over 40,000 quality products.              Deliver legendary customer service with the help of our sales support team.                                     Minimum Requirements                          Bachelor’s degree.              Previous sales experience preferred, but our thorough training will support you to win every day!              Valid driver’s license and great driving record.              Excellent communication, problem-solving and presentation skills.                                     Benefits                          Complete insurance coverage that includes medical, dental, vision and more.              401(k) with 6% employer match.              Paid holidays and generous paid time off.              Bonus programs that include annual performance, profit sharing, sales goals, contests and top performer incentives.              Tuition assistance program that covers professional continuing education.              Monthly internet / cell phone allowance.              Car mileage reimbursement.              As our company expands, you’ll have the chance to transition to new markets, and we’ll provide support for your move.                                                                                                    About Uline                               Uline is North America's leading distributor of shipping, industrial and packaging materials. We're a family-owned company known for incredible service, quality products and same-day shipping of our huge in-stock inventory. With over 9,000 employees across 13 branch locations and 15 sales offices, it's time you joined Uline. \r\n                              Uline is proud to operate as a drug-free workplace. \r\n                              EEO/AA Employer/Vet/Disabled \r\n                              #LI-JG3 \r\n               #LI-REMOTE \r\n               (#IN-CASLS) \r\n                                                                                                           Our employees make the difference and we are committed to offering exceptional benefits and perks! Explore https://www.uline.jobs/#working-here_blankUline.jobs to learn more!"
+  },
+  "expected_output": {
+    "_status": "NEEDS_HUMAN_REVIEW",
+    "_raw_text_preview": "jessica claire 100 montgomery st 10th floor 555 4321000 resumesampleexamplecom summary dedicated sales associate offering 40 years success fostering quality shopping experiences expert needs assessment extensive product knowledge proven history exceeding sales targets meeting customer needs effective product solutions skilled training mentoring new associates customer service sales best practices performancedriven automotive sales professional stellar record accomplishment connecting type custom",
+    "summary": "",
+    "experience": [],
+    "skills": {},
+    "certifications": [],
+    "education": []
+  },
+  "jd_requirements": [],
+  "cloud_skills": [],
+  "provenance": {
+    "data_source": "real_dataset_raw_text",
+    "jd_source": "github_indeed",
+    "resume_dataset": "resume_atlas",
+    "jd_id": "indeed-fcf3b25912db5b04",
+    "resume_id": "ra-12570",
+    "generated_at": "2026-05-08T08:47:53.856Z",
+    "expected_output_author": "NEEDS_HUMAN_REVIEW",
+    "circularity_risk": "low",
+    "notes": "Resume from real dataset (raw text). JD from real job posting. Expected output EMPTY — needs LLM parsing + human review."
+  }
+}
