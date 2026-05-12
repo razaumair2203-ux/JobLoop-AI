@@ -283,7 +283,7 @@ export function buildCloudFromParsedCV(parsedCV: {
     if (nodeMap.has(key)) continue;
 
     // Taxonomy cache/override: curated entries take priority for CATEGORY only
-    const taxonomyResult = classifySkill(skill.name);
+    const taxonomyResult = classifySkill(skill.name, skill.domain, skill.category);
     const hasCuratedEntry = taxonomyResult.domain !== "general" || taxonomyResult.category !== "general";
 
     let resolvedCategory = skill.category;
@@ -345,11 +345,12 @@ export function buildCloudFromParsedCV(parsedCV: {
     for (const tech of role.technologies_used) {
       const key = tech.toLowerCase();
       if (!nodeMap.has(key)) {
+        const techClassification = classifySkill(tech, role.domain);
         nodeMap.set(key, {
           id: generateId(),
           type: "skill",
           name: tech,
-          category: "unknown",
+          category: techClassification.category,
           evidence: [],
           summary: emptySummary(),
         });

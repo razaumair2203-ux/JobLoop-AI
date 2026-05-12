@@ -555,7 +555,7 @@
   </tr>
   <tr>
     <td><strong>AI model</strong></td>
-    <td class="highlight">Claude Haiku 4.5 (fast) + Sonnet 4.6 (quality) for production pipeline. DeepSeek V4 Pro for AutoResearch (prompt optimization loop). <span class="badge badge-built">BUILT</span><br><span class="caveat">In client.ts + autoresearch/. Maturity-driven model selection: Cloud maturity &times; task complexity &rarr; Haiku or Sonnet.</span></td>
+    <td class="highlight">DeepSeek Flash (fast + quality tiers) for all LLM calls. Single provider, two tiers via complexity detection. <span class="badge badge-built">BUILT</span><br><span class="caveat">In client.ts. Dev mode: Claude Code IS the LLM (zero API). Prod: set DEEPSEEK_API_KEY env var.</span></td>
     <td>OpenAI/GPT (version unknown)</td>
     <td>GPT-4</td>
     <td>Undisclosed proprietary</td>
@@ -849,7 +849,7 @@
     <td><strong>Outcome Intelligence</strong><br><small>Application Memory System</small></td>
     <td><span class="badge badge-specced">SPECCED</span></td>
     <td>Loopcv (A/B email tracking only)</td>
-    <td>Per-user application memory: outcome feedback parsed by Haiku enriches Cloud with niche-specific signals. Silent context injection in future CV gen ($0 extra). Same-company detection with full history recall. Gap accumulation across employers triggers Socratic questions. Zero competitors parse WHY outcomes happened. See outcome-intelligence-v3.md.</td>
+    <td>Per-user application memory: outcome feedback parsed by DeepSeek Flash enriches Cloud with niche-specific signals. Silent context injection in future CV gen ($0 extra). Same-company detection with full history recall. Gap accumulation across employers triggers Socratic questions. Zero competitors parse WHY outcomes happened. See outcome-intelligence-v3.md.</td>
   </tr>
   <tr>
     <td><strong>Experimentation Engine</strong><br><small>A/B test CV variations</small></td>
@@ -868,7 +868,7 @@
 <!-- ============================================================ -->
 <div class="reality-box">
   <h3>REALITY CHECK: What's Actually Built vs. Specced</h3>
-  <p><strong>BUILT (in codebase, working):</strong> Living Profile Cloud (9 evidence types), Socratic Questioning v2 (two-phase: conflict resolution + enrichment, validated with real CVs + human answers), Cloud-based matching (40+ skill aliases, word boundaries), "Because" chain insights, Advocate framing (no scores, no "skip"), Cloud-enriched CV generation, Cloud-backed cover letter generation (4 tones), AI client (Haiku + Sonnet, maturity-driven selection), three-tier dev mode (fixture cache &rarr; real API + auto-cache &rarr; explicit error), safe JSON parsing + Zod validation, anti-hallucination pipeline (6-layer), 355-skill taxonomy across 17 domains, CV cleaner module (garbage filtering, date validation, source text verification), conflict detection across multiple CVs, 9 persona-aware filtering (research-backed), maturity-driven model selection (Cloud maturity &rarr; Haiku/Sonnet), natural language feedback classifier, JD complexity classifier, AutoResearch prompt optimization loop (13 modules, ~3,200 lines, 45 test pairs, gated scorecard with 8 deterministic checks), full app simulation passing (5 Alpha CVs &rarr; 13/13 checks). All UI wireframes complete + audited in Figma (26 findings fixed, 13 user journey steps).</p>
+  <p><strong>BUILT (in codebase, working):</strong> Living Profile Cloud (9 evidence types), Socratic Questioning v2 (two-phase: conflict resolution + enrichment, validated with real CVs + human answers), Cloud-based matching (40+ skill aliases, word boundaries), "Because" chain insights, Advocate framing (no scores, no "skip"), Cloud-enriched CV generation, Cloud-backed cover letter generation (4 tones), AI client (DeepSeek Flash, fast + quality tiers), dev mode (Claude Code IS the LLM via Supabase, zero API), safe JSON parsing + Zod validation, anti-hallucination pipeline (6-layer), 355-skill taxonomy across 17 domains, CV cleaner module (garbage filtering, date validation, source text verification), conflict detection across multiple CVs, 9 persona-aware filtering (research-backed), maturity-driven model selection (Cloud maturity &rarr; fast/quality tier), natural language feedback classifier, JD complexity classifier, AutoResearch prompt optimization loop (13 modules, ~3,200 lines, 45 test pairs, gated scorecard with 8 deterministic checks), full app simulation passing (5 Alpha CVs &rarr; 13/13 checks). All UI wireframes complete + audited in Figma (26 findings fixed, 13 user journey steps).</p>
   <p style="margin-top:6px"><strong>NOT BUILT (spec only):</strong> ALL billing/payments (Lemon Squeezy planned), PDF/DOCX export (tech chosen: @react-pdf + docx npm), job tracker persistence, outcome learning, experimentation engine, insights dashboard, interview prep, voice/tone profiling, browser extension, mobile app (Expo scaffolded only), follow-up reminders, contact management, rate limiting, prompt caching.</p>
   <p style="margin-top:6px"><strong>Bottom line:</strong> We have a validated AI engine + complete wireframes. The engine passes full pipeline simulation. The hard part — production UI, persistence, auth, billing, polish — is ahead of us. Every competitor in this document has shipped a product that real people use today. We have 0 users.</p>
 </div>

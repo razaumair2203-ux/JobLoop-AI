@@ -700,72 +700,306 @@ const CATEGORY_DISPLAY: Record<string, string> = {
 
 /**
  * Classify a raw skill name into the taxonomy.
- * Falls back to domain inference from the skill name itself.
+ *
+ * Priority order:
+ *   1. Curated table — exact match (known-correct, ~300 entries)
+ *   2. Curated table — substring match (≥4 char keys)
+ *   3. LLM/context classification — the LLM saw the full CV, trust it
+ *   4. Regex keyword fallback — infer domain from skill name patterns
+ *   5. Last resort — "general/general"
+ *
+ * @param name - Raw skill name to classify
+ * @param contextDomain - Domain from LLM classification or role context (optional)
+ * @param contextCategory - Category from LLM classification (optional)
  */
 export function classifySkill(
   name: string,
+  contextDomain?: string,
+  contextCategory?: string,
 ): { domain: string; category: string } {
   const lower = name.toLowerCase().trim();
+
+  // 1. Curated table — exact match (highest confidence)
   const match = SKILL_TAXONOMY[lower];
   if (match) return match;
 
-  // Fuzzy matching: try partial matches (require min 4 chars to avoid "r"/"go" matching everything)
+  // 2. Curated table — substring match (require min 4 chars to avoid "r"/"go" matching everything)
   for (const [key, val] of Object.entries(SKILL_TAXONOMY)) {
-    if (key.length < 4) continue; // skip short keys like "r", "go", "c#", "qa"
+    if (key.length < 4) continue;
     if (lower.includes(key) || key.includes(lower)) return val;
   }
 
-  // Fallback: infer from keywords in the name
+  // 3. LLM/context classification — the LLM saw full CV context (titles, bullets, companies)
+  //    Trust it if it's not "general". This is what makes us work for ANY profession.
+  if (contextDomain && contextDomain !== "general") {
+    return {
+      domain: contextDomain,
+      category: contextCategory && contextCategory !== "general"
+        ? contextCategory
+        : inferCategoryFromKeywords(name, contextDomain),
+    };
+  }
+
+  // 4. Regex keyword fallback — infer domain from skill name patterns
+  const regexResult = inferDomainFromKeywords(name);
+  if (regexResult) return regexResult;
+
+  // 5. Last resort
+  return { domain: "general", category: "general" };
+}
+
+/**
+ * Infer domain from keywords in a skill name. Pure regex, no LLM.
+ * Returns null if no pattern matches (caller falls to "general").
+ */
+function inferDomainFromKeywords(name: string): { domain: string; category: string } | null {
   if (/avion|aircraft|aero|flight|radar|defense|defence|military/i.test(name)) {
-    return { domain: "defense_aerospace", category: "general" };
+    return { domain: "defense_aerospace", category: inferCategoryFromKeywords(name, "defense_aerospace") };
   }
   if (/manag|program|project|portfolio|pmo/i.test(name)) {
-    return { domain: "management", category: "general" };
+    return { domain: "management", category: inferCategoryFromKeywords(name, "management") };
   }
   if (/quality|compli|config|require|audit|iso|standard/i.test(name)) {
-    return { domain: "quality_compliance", category: "general" };
+    return { domain: "quality_compliance", category: inferCategoryFromKeywords(name, "quality_compliance") };
   }
   if (/maintain|fleet|reliab|fault|mro|camo/i.test(name)) {
-    return { domain: "maintenance_ops", category: "general" };
+    return { domain: "maintenance_ops", category: inferCategoryFromKeywords(name, "maintenance_ops") };
   }
   if (/lead|team|train|mentor|coach|supervis/i.test(name)) {
-    return { domain: "leadership", category: "general" };
+    return { domain: "leadership", category: inferCategoryFromKeywords(name, "leadership") };
   }
-  if (/health|medical|clinical|patient|pharma|nurs|diagnos|epidem/i.test(name)) {
-    return { domain: "healthcare", category: "general" };
+  if (/health|medical|clinical|patient|pharma|nurs|diagnos|epidem|surg|anesth|cardio|ortho|neuro/i.test(name)) {
+    return { domain: "healthcare", category: inferCategoryFromKeywords(name, "healthcare") };
   }
-  if (/financ|account|bank|invest|actuar|tax|treasury|audit/i.test(name)) {
-    return { domain: "finance", category: "general" };
+  if (/financ|account|bank|invest|actuar|tax|treasury/i.test(name)) {
+    return { domain: "finance", category: inferCategoryFromKeywords(name, "finance") };
   }
   if (/market|seo|advertis|brand|sales|crm|copywr|content/i.test(name)) {
-    return { domain: "marketing", category: "general" };
+    return { domain: "marketing", category: inferCategoryFromKeywords(name, "marketing") };
   }
   if (/civil|structur|construct|bim|survey|hvac|geotec|estimat/i.test(name)) {
-    return { domain: "construction", category: "general" };
+    return { domain: "construction", category: inferCategoryFromKeywords(name, "construction") };
   }
   if (/legal|law|litigat|patent|contract|gdpr|privacy/i.test(name)) {
-    return { domain: "legal", category: "general" };
+    return { domain: "legal", category: inferCategoryFromKeywords(name, "legal") };
   }
   if (/educ|curricul|teach|instruct|learn|academ|accredit/i.test(name)) {
-    return { domain: "education", category: "general" };
+    return { domain: "education", category: inferCategoryFromKeywords(name, "education") };
   }
   if (/recruit|talent|onboard|hr|hris|payroll|employee|compensation/i.test(name)) {
-    return { domain: "hr", category: "general" };
+    return { domain: "hr", category: inferCategoryFromKeywords(name, "hr") };
   }
   if (/ux|ui|wireframe|prototype|figma|sketch|graphic|usability/i.test(name)) {
-    return { domain: "design", category: "general" };
+    return { domain: "design", category: inferCategoryFromKeywords(name, "design") };
   }
   if (/supply.?chain|logistics|warehouse|inventor|procure|manufactur/i.test(name)) {
-    return { domain: "operations", category: "general" };
+    return { domain: "operations", category: inferCategoryFromKeywords(name, "operations") };
   }
   if (/energy|solar|wind|renew|oil|gas|sustain|esg|power.?system/i.test(name)) {
-    return { domain: "energy", category: "general" };
+    return { domain: "energy", category: inferCategoryFromKeywords(name, "energy") };
   }
   if (/secur|cyber|pentest|siem|soc|incident.?resp|vulnerab/i.test(name)) {
     return { domain: "technology", category: "security" };
   }
 
-  return { domain: "general", category: "general" };
+  return null;
+}
+
+/**
+ * Given a domain, infer a more specific category from keyword patterns in the skill name.
+ * This gives us "healthcare/clinical" instead of "healthcare/general" when the LLM
+ * provided the domain but no useful category.
+ */
+function inferCategoryFromKeywords(name: string, domain: string): string {
+  const lower = name.toLowerCase();
+
+  switch (domain) {
+    case "healthcare":
+      if (/surg|anesth|intubat|airway|perioper|icu|ventilat|resuscit/i.test(lower)) return "clinical";
+      if (/cardio|ecg|echo|catheter|pacemaker/i.test(lower)) return "cardiology";
+      if (/neuro|brain|spine|cranio/i.test(lower)) return "neurology";
+      if (/ortho|fracture|joint|bone/i.test(lower)) return "orthopedics";
+      if (/nurs|patient care|wound|triage/i.test(lower)) return "nursing";
+      if (/research|study|trial|epidem|biostat/i.test(lower)) return "research";
+      if (/pharma|drug|prescri|dosage|formul/i.test(lower)) return "pharmaceutical";
+      if (/radiol|imaging|mri|ct scan|x-ray|ultrasound/i.test(lower)) return "radiology";
+      if (/lab|pathol|blood|hematol|microbi/i.test(lower)) return "laboratory";
+      if (/educat|train|instruct|mentor|teach|bls|acls|pals/i.test(lower)) return "medical_education";
+      if (/compli|regulat|hipaa|jci|accredit|audit/i.test(lower)) return "compliance";
+      if (/admin|billing|coding|icd|cpt|ehr|emr/i.test(lower)) return "administration";
+      if (/rehab|physio|therap|occupat/i.test(lower)) return "rehabilitation";
+      if (/dent|oral|endodont|orthodont/i.test(lower)) return "dental";
+      if (/ophthalm|eye|vision|retina/i.test(lower)) return "ophthalmology";
+      if (/psych|mental|counsel|behav/i.test(lower)) return "mental_health";
+      if (/pediatr|neonat|child/i.test(lower)) return "pediatrics";
+      if (/obstet|gynec|matern|pregnan/i.test(lower)) return "obstetrics";
+      return "general";
+
+    case "defense_aerospace":
+      if (/avion|electron|sensor|radar|ew|ecm/i.test(lower)) return "avionics";
+      if (/system|integrat|mbse|sysml/i.test(lower)) return "systems_integration";
+      if (/flight|pilot|airborne|aew/i.test(lower)) return "flight_operations";
+      if (/weapon|missile|munition|ordnance/i.test(lower)) return "weapons";
+      if (/maintain|repair|overhaul|servic/i.test(lower)) return "maintenance";
+      if (/standard|mil-std|do-178|do-254|as9100/i.test(lower)) return "standards";
+      if (/certif|airworth|qualify|accept/i.test(lower)) return "airworthiness";
+      if (/program|pmo|acquis/i.test(lower)) return "program_management";
+      if (/config|baseline|change.?control/i.test(lower)) return "configuration";
+      if (/reliab|mtbf|mttr|failure/i.test(lower)) return "reliability";
+      if (/navig|gps|ins|cns|atm/i.test(lower)) return "navigation";
+      if (/propuls|engine|turbine|thrust/i.test(lower)) return "propulsion";
+      if (/structur|aerodynam|composit|fuselage/i.test(lower)) return "structures";
+      return "general";
+
+    case "technology":
+      if (/python|java|type|rust|go|swift|kotlin|ruby|php|scala|c\+\+|c#/i.test(lower)) return "languages";
+      if (/react|angular|vue|next|node|django|flask|spring|express/i.test(lower)) return "frameworks";
+      if (/aws|gcp|azure|cloud|docker|kubernetes|terraform|ansible/i.test(lower)) return "cloud_infra";
+      if (/sql|postgres|mysql|mongo|redis|elastic|kafka|data/i.test(lower)) return "data";
+      if (/ml|ai|deep.?learn|nlp|vision|tensor|pytorch|model/i.test(lower)) return "ai_data";
+      if (/ci|cd|jenkins|github.?action|deploy|devops|pipeline/i.test(lower)) return "devops";
+      if (/secur|crypto|pentest|siem|firewall|oauth/i.test(lower)) return "security";
+      if (/test|selenium|cypress|jest|playwright|qa/i.test(lower)) return "testing";
+      if (/mobile|ios|android|react.?native|flutter|swift/i.test(lower)) return "mobile";
+      if (/html|css|tailwind|sass|webpack|frontend/i.test(lower)) return "frontend";
+      if (/api|rest|graphql|microservice|architect/i.test(lower)) return "architecture";
+      if (/git|jira|confluence|notion|tool/i.test(lower)) return "tools";
+      return "general";
+
+    case "management":
+      if (/program|portfolio|pmo/i.test(lower)) return "program_management";
+      if (/project|schedil|timeline|gantt/i.test(lower)) return "project_management";
+      if (/risk|raid|mitigat|contingenc/i.test(lower)) return "risk_governance";
+      if (/stakeholder|commun|negotiat/i.test(lower)) return "leadership";
+      if (/contract|vendor|supplier|procur|sourcing/i.test(lower)) return "procurement";
+      if (/budget|cost|financ|evm|earned.?value/i.test(lower)) return "financial";
+      if (/agile|scrum|kanban|lean|six.?sigma/i.test(lower)) return "methodology";
+      if (/change|transform|organi/i.test(lower)) return "organizational";
+      return "general";
+
+    case "finance":
+      if (/account|ledger|journal|reconcil|payable|receivable/i.test(lower)) return "accounting";
+      if (/audit|sox|internal.?control/i.test(lower)) return "audit";
+      if (/tax|vat|gst|withhold/i.test(lower)) return "tax";
+      if (/invest|portfolio|asset|equity|bond|fund/i.test(lower)) return "investment";
+      if (/bank|credit|loan|mortgage|treasury/i.test(lower)) return "banking";
+      if (/risk|credit.?risk|market.?risk|basel/i.test(lower)) return "risk";
+      if (/compli|aml|kyc|regulat/i.test(lower)) return "compliance";
+      if (/insur|actuar|underwr|claim/i.test(lower)) return "insurance";
+      if (/analy|model|forecast|valuat/i.test(lower)) return "analysis";
+      return "general";
+
+    case "construction":
+      if (/civil|structur|geotec|foundation/i.test(lower)) return "engineering";
+      if (/electr|power|wiring|circuit/i.test(lower)) return "electrical";
+      if (/mechan|hvac|plumb|piping/i.test(lower)) return "mechanical";
+      if (/autocad|revit|solidwork|catia|bim/i.test(lower)) return "tools";
+      if (/estimat|quantity|cost|tender|bid/i.test(lower)) return "estimating";
+      if (/site|supervis|foreman|construct/i.test(lower)) return "site";
+      if (/safety|osha|hse|hazard/i.test(lower)) return "safety";
+      if (/survey|topograph|gis|mapping/i.test(lower)) return "surveying";
+      return "general";
+
+    case "marketing":
+      if (/seo|sem|ppc|google.?ads|facebook.?ads|advertis/i.test(lower)) return "digital";
+      if (/content|copywr|blog|editorial/i.test(lower)) return "content";
+      if (/social|instagram|twitter|linkedin|tiktok/i.test(lower)) return "social";
+      if (/brand|position|identit/i.test(lower)) return "brand";
+      if (/crm|salesforce|hubspot|customer/i.test(lower)) return "crm";
+      if (/analytic|metric|attribution|roi/i.test(lower)) return "analytics";
+      if (/sale|b2b|b2c|lead|pipeline|prospect/i.test(lower)) return "sales";
+      if (/event|conferenc|trade.?show|webinar/i.test(lower)) return "events";
+      if (/pr|press|media.?relation|communicat/i.test(lower)) return "pr";
+      return "general";
+
+    case "legal":
+      if (/corporate|m&a|merger|acquisit|due.?dilig/i.test(lower)) return "corporate";
+      if (/litigat|dispute|arbitrat|trial/i.test(lower)) return "litigation";
+      if (/ip|patent|trademark|copyright/i.test(lower)) return "ip";
+      if (/employ|labor|workplace|discriminat/i.test(lower)) return "employment";
+      if (/contract|draft|negotiat|agreement/i.test(lower)) return "contracts";
+      if (/gdpr|privacy|data.?protect/i.test(lower)) return "data_privacy";
+      if (/regulat|compli|licens/i.test(lower)) return "compliance";
+      return "general";
+
+    case "hr":
+      if (/recruit|talent|hire|sourcing|interview/i.test(lower)) return "recruitment";
+      if (/onboard|orient|induct/i.test(lower)) return "employee_lifecycle";
+      if (/perform|review|apprais|goal/i.test(lower)) return "performance";
+      if (/compens|benefit|payroll|salary/i.test(lower)) return "comp_benefits";
+      if (/hris|workday|successfactor|bamboo/i.test(lower)) return "systems";
+      if (/divers|inclus|equity|dei/i.test(lower)) return "dei";
+      if (/train|develop|learn|l&d/i.test(lower)) return "development";
+      if (/labor|union|relation|grievanc/i.test(lower)) return "relations";
+      return "general";
+
+    case "design":
+      if (/ux|user.?experience|usabil|accessib/i.test(lower)) return "ux";
+      if (/ui|user.?interface|visual|layout/i.test(lower)) return "ui";
+      if (/research|interview|survey|persona/i.test(lower)) return "research";
+      if (/figma|sketch|adobe|photoshop|illustrat|invision/i.test(lower)) return "tools";
+      if (/graphic|poster|brochure|print/i.test(lower)) return "visual";
+      if (/motion|animation|video|after.?effect/i.test(lower)) return "motion";
+      if (/design.?system|component|token|style.?guide/i.test(lower)) return "systems";
+      return "general";
+
+    case "education":
+      if (/curricul|syllabus|lesson|course.?design/i.test(lower)) return "instruction";
+      if (/e-learn|lms|moodle|canvas|online/i.test(lower)) return "edtech";
+      if (/assess|exam|rubric|grading/i.test(lower)) return "assessment";
+      if (/research|publish|peer|journal/i.test(lower)) return "research";
+      if (/accredit|obe|quality|standard/i.test(lower)) return "quality";
+      if (/teach|tutor|lecture|professor/i.test(lower)) return "teaching";
+      if (/special|disabil|inclusive/i.test(lower)) return "specialized";
+      return "general";
+
+    case "operations":
+      if (/supply.?chain|scm|procurement|sourcing/i.test(lower)) return "supply_chain";
+      if (/logist|freight|shipping|transport|distribut/i.test(lower)) return "logistics";
+      if (/inventor|stock|warehou|wms/i.test(lower)) return "inventory";
+      if (/manufactur|lean|six.?sigma|kaizen|tqm/i.test(lower)) return "manufacturing";
+      if (/demand|forecast|plan|s&op/i.test(lower)) return "planning";
+      if (/sap|erp|oracle|netsuite/i.test(lower)) return "systems";
+      return "general";
+
+    case "energy":
+      if (/solar|wind|renew|hydro|biomass/i.test(lower)) return "renewables";
+      if (/oil|gas|petrol|drill|refin|upstream|downstream/i.test(lower)) return "oil_gas";
+      if (/power|grid|transmiss|distribut|substation/i.test(lower)) return "power";
+      if (/sustain|esg|carbon|emiss|climate/i.test(lower)) return "sustainability";
+      if (/hse|safety|hazard|permit/i.test(lower)) return "safety";
+      if (/nuclear|reactor|radiation/i.test(lower)) return "nuclear";
+      return "general";
+
+    case "quality_compliance":
+      if (/quality|qa|tqm|inspection/i.test(lower)) return "quality";
+      if (/config|baseline|change/i.test(lower)) return "configuration";
+      if (/require|traceab|specif/i.test(lower)) return "requirements";
+      if (/compli|regulat|licens|certif/i.test(lower)) return "compliance";
+      if (/audit|assess|review/i.test(lower)) return "compliance";
+      if (/safety|hazard|fmea|risk/i.test(lower)) return "safety";
+      if (/iso|as9100|cmmi|standard/i.test(lower)) return "standards";
+      return "general";
+
+    case "maintenance_ops":
+      if (/fleet|aircraft|vehicle/i.test(lower)) return "fleet";
+      if (/maintain|repair|overhaul|mro|servic/i.test(lower)) return "maintenance";
+      if (/reliab|mtbf|mttr|failure|rca/i.test(lower)) return "reliability";
+      if (/airworth|camo|part.?145|easa/i.test(lower)) return "airworthiness";
+      if (/fault|diagnos|troubleshoot/i.test(lower)) return "diagnostics";
+      return "general";
+
+    case "leadership":
+      if (/team|people|staff|direct.?report/i.test(lower)) return "people";
+      if (/train|develop|mentor|coach/i.test(lower)) return "development";
+      if (/communicat|present|negotiat|influenc/i.test(lower)) return "interpersonal";
+      if (/strateg|vision|roadmap|plan/i.test(lower)) return "strategy";
+      if (/process|improv|optimi|efficien/i.test(lower)) return "process";
+      return "general";
+
+    default:
+      return "general";
+  }
 }
 
 // ============================================================

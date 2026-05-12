@@ -1,0 +1,180 @@
+{
+  "timestamp": "2026-05-09T19:44:00.940Z",
+  "total_pairs": 41,
+  "pairs_fixed": 14,
+  "total_corrections": 17,
+  "corrections": [
+    {
+      "file": "pair-Q001-hr-mid_career.json",
+      "corrections": [
+        {
+          "field": "location",
+          "old_value": "(empty)",
+          "new_value": "Denver, CO near RiNo",
+          "source": "\"Location: Denver, CO near RiNo\""
+        },
+        {
+          "field": "experience_years_max (NEW)",
+          "old_value": "(not set)",
+          "new_value": "10",
+          "source": "\"5-10 years\""
+        }
+      ]
+    },
+    {
+      "file": "pair-Q002-hr-mid_career.json",
+      "corrections": [
+        {
+          "field": "location",
+          "old_value": "(empty)",
+          "new_value": "San Francisco, CA",
+          "source": "Found \"San Francisco, CA\" in text"
+        }
+      ]
+    },
+    {
+      "file": "pair-Q004-information-technology-mid_career.json",
+      "corrections": [
+        {
+          "field": "location",
+          "old_value": "(empty)",
+          "new_value": "York, NY",
+          "source": "Extracted \"York, NY\" from Location field"
+        }
+      ]
+    },
+    {
+      "file": "pair-Q009-finance-senior.json",
+      "corrections": [
+        {
+          "field": "location",
+          "old_value": "(empty)",
+          "new_value": "Remote",
+          "source": "\"Work Location: Remote\""
+        }
+      ]
+    },
+    {
+      "file": "pair-Q015-construction-senior.json",
+      "corrections": [
+        {
+          "field": "location",
+          "old_value": "(empty)",
+          "new_value": "New York and Maine",
+          "source": "\"based in New York and Maine\""
+        }
+      ]
+    },
+    {
+      "file": "pair-Q016-construction-senior.json",
+      "corrections": [
+        {
+          "field": "company",
+          "old_value": "NVR, Inc.",
+          "new_value": "NVR",
+          "source": "\"About NVR\""
+        }
+      ]
+    },
+    {
+      "file": "pair-Q019-aviation-senior.json",
+      "corrections": [
+        {
+          "field": "location",
+          "old_value": "(empty)",
+          "new_value": "Corpus Christi, TX",
+          "source": "\"based in Corpus Christi, TX\""
+        }
+      ]
+    },
+    {
+      "file": "pair-Q020-designer-freelancer.json",
+      "corrections": [
+        {
+          "field": "location",
+          "old_value": "(empty)",
+          "new_value": "Remote",
+          "source": "\"Location: Remote\""
+        }
+      ]
+    },
+    {
+      "file": "pair-Q028-chef-career_changer.json",
+      "corrections": [
+        {
+          "field": "location",
+          "old_value": "(empty)",
+          "new_value": "Remote",
+          "source": "\"Location: Remote\""
+        }
+      ]
+    },
+    {
+      "file": "pair-Q029-chef-career_changer.json",
+      "corrections": [
+        {
+          "field": "location",
+          "old_value": "(empty)",
+          "new_value": "Remote",
+          "source": "\"Location: Remote\""
+        }
+      ]
+    },
+    {
+      "file": "pair-Q032-agriculture-mid_career.json",
+      "corrections": [
+        {
+          "field": "location",
+          "old_value": "(empty)",
+          "new_value": "Farmington, CT",
+          "source": "Found \"Farmington, CT\" in text"
+        }
+      ]
+    },
+    {
+      "file": "pair-Q037-fitness-early_career.json",
+      "corrections": [
+        {
+          "field": "experience_years",
+          "old_value": "10",
+          "new_value": "2",
+          "source": "\"2-3 years\""
+        },
+        {
+          "field": "experience_years_max (NEW)",
+          "old_value": "(not set)",
+          "new_value": "3",
+          "source": "\"2-3 years\""
+        }
+      ]
+    },
+    {
+      "file": "pair-Q043-automobile-mid_career.json",
+      "corrections": [
+        {
+          "field": "location",
+          "old_value": "(empty)",
+          "new_value": "Greensboro, NC",
+          "source": "\"Location: Greensboro, NC\""
+        }
+      ]
+    },
+    {
+      "file": "pair-Q046-bpo-early_career.json",
+      "corrections": [
+        {
+          "field": "experience_years",
+          "old_value": "8",
+          "new_value": "3",
+          "source": "\"3 - 5 years\""
+        },
+        {
+          "field": "experience_years_max (NEW)",
+          "old_value": "(not set)",
+          "new_value": "5",
+          "source": "\"3 - 5 years\""
+        }
+      ]
+    }
+  ]
+}

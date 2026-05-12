@@ -9,15 +9,13 @@
  * Process:
  *   1. Sample 40 CVs across 20 categories (2 per category)
  *   2. Match each with industry-appropriate R-series JD
- *   3. Parse CV via NIM → structured expected_output + cloud_skills
- *   4. Extract JD requirements via NIM → structured jd_requirements
+ *   3. Parse CV via DeepSeek → structured expected_output + cloud_skills
+ *   4. Extract JD requirements via DeepSeek → structured jd_requirements
  *   5. Add 4 Alpha pairs + 6 best synthetic pairs = 50 total
  *   6. Split: 25 train / 15 validation / 10 held-out
  *
  * Usage:
- *   NVIDIA_NIM_API_KEY=... npx tsx packages/ai/src/autoresearch/build-quality-pairs.ts
- *
- * Rate limited to 40 RPM (NIM free tier). ~80 API calls = ~2 minutes.
+ *   DEEPSEEK_API_KEY=... npx tsx packages/ai/src/autoresearch/build-quality-pairs.ts
  */
 
 import * as fs from "fs";
@@ -45,8 +43,8 @@ const DATASET_PATH = path.resolve(__dirname, "../../../../dev-data/datasets/sneh
 const REAL_PAIRS_DIR = path.join(__dirname, "test-bank", "real-pairs");
 const TEST_BANK_DIR = path.join(__dirname, "test-bank");
 const ARCHIVE_DIR = path.join(__dirname, "test-bank", "archive");
-const NIM_BASE_URL = process.env.NVIDIA_NIM_BASE_URL || "https://integrate.api.nvidia.com/v1";
-const NIM_MODEL = process.env.NVIDIA_NIM_MODEL || "meta/llama-3.3-70b-instruct";
+const DEEPSEEK_BASE_URL = process.env.DEEPSEEK_BASE_URL || "https://api.deepseek.com/v1";
+const DEEPSEEK_MODEL = process.env.DEEPSEEK_MODEL || "deepseek-chat";
 
 // Category → R-series industry mapping
 const CATEGORY_TO_INDUSTRY: Record<string, string[]> = {
@@ -105,7 +103,7 @@ const CATEGORY_TO_PERSONA: Record<string, string> = {
 };
 
 // ============================================================
-// NIM API
+// DeepSeek API
 // ============================================================
 
 let lastCallMs = 0;
@@ -115,20 +113,20 @@ async function rateLimit(): Promise<void> {
   lastCallMs = Date.now();
 }
 
-async function callNIM(system: string, user: string, maxTokens = 4096): Promise<string> {
-  const apiKey = process.env.NVIDIA_NIM_API_KEY;
-  if (!apiKey) throw new Error("NVIDIA_NIM_API_KEY not set");
+async function callDeepSeek(system: string, user: string, maxTokens = 4096): Promise<string> {
+  const apiKey = process.env.DEEPSEEK_API_KEY;
+  if (!apiKey) throw new Error("DEEPSEEK_API_KEY not set");
 
   await rateLimit();
 
-  const res = await fetch(`${NIM_BASE_URL}/chat/completions`, {
+  const res = await fetch(`${DEEPSEEK_BASE_URL}/chat/completions`, {
     method: "POST",
     headers: {
       "Authorization": `Bearer ${apiKey}`,
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      model: NIM_MODEL,
+      model: DEEPSEEK_MODEL,
       messages: [
         { role: "system", content: system },
         { role: "user", content: user },
@@ -142,7 +140,7 @@ async function callNIM(system: string, user: string, maxTokens = 4096): Promise<
 
   if (!res.ok) {
     const err = await res.text();
-    throw new Error(`NIM ${res.status}: ${err.slice(0, 200)}`);
+    throw new Error(`DeepSeek ${res.status}: ${err.slice(0, 200)}`);
   }
 
   const data = await res.json() as {
@@ -284,11 +282,11 @@ interface TestPairOutput {
 
 async function main() {
   console.log("\n=== Building Quality Test Pairs ===");
-  console.log(`Model: ${NIM_MODEL}`);
-  console.log(`API key: ${process.env.NVIDIA_NIM_API_KEY ? "SET" : "NOT SET"}\n`);
+  console.log(`Model: ${DEEPSEEK_MODEL}`);
+  console.log(`API key: ${process.env.DEEPSEEK_API_KEY ? "SET" : "NOT SET"}\n`);
 
-  if (!process.env.NVIDIA_NIM_API_KEY) {
-    console.error("ERROR: Set NVIDIA_NIM_API_KEY");
+  if (!process.env.DEEPSEEK_API_KEY) {
+    console.error("ERROR: Set DEEPSEEK_API_KEY");
     process.exit(1);
   }
 
@@ -386,8 +384,8 @@ async function main() {
 
   console.log(`\nTotal CV+JD pairings: ${selectedCVs.length}`);
 
-  // 4. Parse CVs and extract JD requirements via NIM
-  console.log("\n=== Parsing CVs + Extracting JD Requirements via NIM ===\n");
+  // 4. Parse CVs and extract JD requirements via DeepSeek
+  console.log("\n=== Parsing CVs + Extracting JD Requirements via DeepSeek ===\n");
 
   const newPairs: TestPairOutput[] = [];
   let successCount = 0;
@@ -403,7 +401,7 @@ async function main() {
 
     try {
       // Parse CV
-      const cvResponse = await callNIM(CV_PARSE_PROMPT, `Resume text:\n\n${cv.resume_str.slice(0, 6000)}`);
+      const cvResponse = await callDeepSeek(CV_PARSE_PROMPT, `Resume text:\n\n${cv.resume_str.slice(0, 6000)}`);
       const cvParsed = safeParseJSON(cvResponse) as TestPairOutput["expected_output"] | null;
 
       if (!cvParsed || !cvParsed.experience || (cvParsed.experience as Array<unknown>).length === 0) {
@@ -413,7 +411,7 @@ async function main() {
       }
 
       // Extract JD requirements
-      const jdResponse = await callNIM(JD_EXTRACT_PROMPT, `Job Description:\n\n${jd.full_description.slice(0, 5000)}`);
+      const jdResponse = await callDeepSeek(JD_EXTRACT_PROMPT, `Job Description:\n\n${jd.full_description.slice(0, 5000)}`);
       const jdParsed = safeParseJSON(jdResponse) as {
         requirements: Array<{ text: string; type: string }>;
         experience_years: number | null;
@@ -484,7 +482,7 @@ async function main() {
           jd_source: "R-series (Kaggle LinkedIn, real postings)",
           cv_dataset_id: cv.id,
           jd_pair_id: jd.id,
-          expected_output_author: `NIM/${NIM_MODEL}`,
+          expected_output_author: `DeepSeek/${DEEPSEEK_MODEL}`,
           generated_at: new Date().toISOString(),
           circularity_risk: "medium-low",
           circularity_notes: "Real CV text + real JD text. Expected output is LLM-parsed extraction from real text (not invention). 4/8 scorecard checks structurally sound regardless.",
@@ -506,7 +504,7 @@ async function main() {
     }
   }
 
-  console.log(`\n=== NIM Processing Complete ===`);
+  console.log(`\n=== DeepSeek Processing Complete ===`);
   console.log(`Success: ${successCount}, Failed: ${failCount}`);
 
   if (newPairs.length < 30) {

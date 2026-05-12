@@ -4,7 +4,7 @@
  * During development: "dev" mode reads from local JSON files.
  *   You generate these by pasting prompts into Claude Code (this extension).
  *
- * During production: "api" mode calls NVIDIA NIM API.
+ * During production: "api" mode calls DeepSeek API.
  *
  * The rest of the app doesn't care which one is active.
  *
@@ -19,7 +19,7 @@ export type ProviderMode = "dev" | "api";
 
 // Auto-detect mode from environment: if any LLM key is set, use API mode
 let currentMode: ProviderMode =
-  typeof process !== "undefined" && !!process.env?.NVIDIA_NIM_API_KEY
+  typeof process !== "undefined" && !!process.env?.DEEPSEEK_API_KEY
     ? "api"
     : "dev";
 let devDataDir: string = "./dev-data";

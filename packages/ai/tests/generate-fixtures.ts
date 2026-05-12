@@ -1,13 +1,11 @@
 /**
- * Generate CV Parse Fixtures — Calls real Haiku API and caches results
+ * Generate CV Parse Fixtures — Calls real DeepSeek Flash API and caches results
  *
  * Usage:
- *   ANTHROPIC_API_KEY=sk-xxx npx tsx packages/ai/tests/generate-fixtures.ts
+ *   DEEPSEEK_API_KEY=sk-xxx npx tsx packages/ai/tests/generate-fixtures.ts
  *
  * This is the industry-standard approach: real API + caching.
  * After running once, all subsequent dev-mode calls hit cached fixtures (zero cost).
- *
- * Cost: ~$0.01–0.05 total for all 5 CVs via Haiku.
  */
 
 import * as fs from "fs";
@@ -16,9 +14,9 @@ import { setProvider } from "../src/provider";
 import { parseCV } from "../src/analyze";
 
 // Force API mode — we WANT to hit the real API and cache
-if (!process.env.ANTHROPIC_API_KEY) {
-  console.error("ERROR: ANTHROPIC_API_KEY not set. Cannot generate fixtures.");
-  console.error("Run: ANTHROPIC_API_KEY=sk-xxx npx tsx packages/ai/tests/generate-fixtures.ts");
+if (!process.env.DEEPSEEK_API_KEY) {
+  console.error("ERROR: DEEPSEEK_API_KEY not set. Cannot generate fixtures.");
+  console.error("Run: DEEPSEEK_API_KEY=sk-xxx npx tsx packages/ai/tests/generate-fixtures.ts");
   process.exit(1);
 }
 

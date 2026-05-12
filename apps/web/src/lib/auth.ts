@@ -36,7 +36,7 @@ export async function getAuthUser(
   // Dev bypass: only when explicitly enabled AND no API key (pure dev mode)
   if (
     process.env.DEV_AUTH_BYPASS === "true" &&
-    !process.env.ANTHROPIC_API_KEY
+    !process.env.DEEPSEEK_API_KEY
   ) {
     return { user: DEV_USER, isDevBypass: true };
   }

@@ -1,21 +1,20 @@
 /**
- * LLM Client — NVIDIA NIM (DeepSeek V4 Pro via OpenAI-compatible API).
+ * LLM Client — DeepSeek V4 Flash via OpenAI-compatible API.
  *
  * Returns an object with `.messages.create()` so all call sites work uniformly.
- * Under the hood, calls NIM's OpenAI-compatible API via native fetch.
+ * Under the hood, calls DeepSeek's OpenAI-compatible API via native fetch.
  * Zero external dependencies.
  *
- * Requires: NVIDIA_NIM_API_KEY in environment.
- * Rate limit: 40 RPM (free tier).
+ * Requires: DEEPSEEK_API_KEY in environment.
  */
 
-/** Rate limiter: 40 RPM max on NIM free tier */
+/** Rate limiter: respect API rate limits */
 let lastCallMs = 0;
 async function rateLimit(): Promise<void> {
   const now = Date.now();
   const gap = now - lastCallMs;
-  if (gap < 1500) {
-    await new Promise(r => setTimeout(r, 1500 - gap));
+  if (gap < 200) {
+    await new Promise(r => setTimeout(r, 200 - gap));
   }
   lastCallMs = Date.now();
 }
@@ -34,6 +33,7 @@ interface CreateParams {
   max_tokens: number;
   system: string;
   messages: Array<{ role: string; content: string }>;
+  json_mode?: boolean;
 }
 
 interface LLMClient {
@@ -43,11 +43,11 @@ interface LLMClient {
 }
 
 // ============================================================
-// NIM Client (OpenAI-compatible, native fetch)
+// DeepSeek Client (OpenAI-compatible, native fetch)
 // ============================================================
 
-function createNIMClient(apiKey: string): LLMClient {
-  const baseURL = process.env.NVIDIA_NIM_BASE_URL || "https://integrate.api.nvidia.com/v1";
+function createDeepSeekClient(apiKey: string): LLMClient {
+  const baseURL = process.env.DEEPSEEK_BASE_URL || "https://api.deepseek.com/v1";
 
   return {
     messages: {
@@ -56,27 +56,42 @@ function createNIMClient(apiKey: string): LLMClient {
 
         const model = resolveModel(params.model);
 
-        const res = await fetch(`${baseURL}/chat/completions`, {
-          method: "POST",
-          headers: {
-            "Authorization": `Bearer ${apiKey}`,
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            model,
-            messages: [
-              { role: "system", content: params.system },
-              ...params.messages,
-            ],
-            max_tokens: params.max_tokens,
-            temperature: 0.7,
-            stream: false,
-          }),
-        });
+        const controller = new AbortController();
+        const timeout = setTimeout(() => controller.abort(), 60_000); // 60s timeout
+
+        let res: Response;
+        try {
+          res = await fetch(`${baseURL}/chat/completions`, {
+            method: "POST",
+            headers: {
+              "Authorization": `Bearer ${apiKey}`,
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              model,
+              messages: [
+                { role: "system", content: params.system },
+                ...params.messages,
+              ],
+              max_tokens: params.max_tokens,
+              temperature: 0.7,
+              stream: false,
+              ...(params.json_mode ? { response_format: { type: "json_object" } } : {}),
+            }),
+            signal: controller.signal,
+          });
+        } catch (err: unknown) {
+          clearTimeout(timeout);
+          if (err instanceof Error && err.name === "AbortError") {
+            throw new Error(`DeepSeek API timeout after 60s for model ${model}`);
+          }
+          throw err;
+        }
+        clearTimeout(timeout);
 
         if (!res.ok) {
           const errText = await res.text();
-          throw new Error(`NIM API ${res.status}: ${errText.slice(0, 300)}`);
+          throw new Error(`DeepSeek API ${res.status}: ${errText.slice(0, 300)}`);
         }
 
         const data = await res.json() as {
@@ -99,20 +114,19 @@ function createNIMClient(apiKey: string): LLMClient {
 }
 
 /**
- * Resolve model ID. If already a NIM model (contains "/"), pass through.
- * Otherwise map tier aliases to NIM model IDs.
+ * Resolve model ID. Maps tier aliases to DeepSeek model IDs.
+ * Fast tier: DeepSeek V4 Flash (cheap, fast parsing/classification).
+ * Quality tier: DeepSeek V4 Flash (same model — single model strategy).
+ * Override via DEEPSEEK_MODEL / DEEPSEEK_MODEL_QUALITY env vars.
  */
 function resolveModel(model: string): string {
-  if (model.includes("/")) return model; // Already a NIM model ID
+  if (model.includes("/")) return model; // Already a full model ID
 
-  const nimModel = process.env.NVIDIA_NIM_MODEL || "meta/llama-3.3-70b-instruct";
-
-  // Quality tier: larger model for CV gen, cover letters, insights.
-  // Falls back to fast tier if not set or unavailable.
-  const qualityModel = process.env.NVIDIA_NIM_MODEL_QUALITY || "nvidia/nemotron-3-super-120b-a12b";
+  const fastModel = process.env.DEEPSEEK_MODEL || "deepseek-chat";
+  const qualityModel = process.env.DEEPSEEK_MODEL_QUALITY || "deepseek-chat";
 
   if (model === MODELS.quality) return qualityModel;
-  return nimModel;
+  return fastModel;
 }
 
 // ============================================================
@@ -124,22 +138,22 @@ let clientInstance: LLMClient | null = null;
 export function getClient(): LLMClient {
   if (clientInstance) return clientInstance;
 
-  const nimKey = process.env.NVIDIA_NIM_API_KEY;
-  if (!nimKey) {
+  const apiKey = process.env.DEEPSEEK_API_KEY;
+  if (!apiKey) {
     throw new Error(
-      "No LLM provider configured. Set NVIDIA_NIM_API_KEY in .env.local (free tier: https://build.nvidia.com)"
+      "No LLM provider configured. Set DEEPSEEK_API_KEY in .env.local"
     );
   }
 
-  clientInstance = createNIMClient(nimKey);
+  clientInstance = createDeepSeekClient(apiKey);
   return clientInstance;
 }
 
 /**
  * Model tiers — used by call sites to indicate intent (fast vs quality).
- * Both resolve to DeepSeek V4 Pro on NIM free tier unless overridden.
+ * Both resolve to DeepSeek V4 Flash unless overridden via env vars.
  */
 export const MODELS = {
-  fast: "nim-fast" as const,
-  quality: "nim-quality" as const,
+  fast: "deepseek-fast" as const,
+  quality: "deepseek-quality" as const,
 } as const;

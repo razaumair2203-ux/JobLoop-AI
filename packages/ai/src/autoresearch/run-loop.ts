@@ -17,7 +17,7 @@
  *   npx tsx packages/ai/src/autoresearch/run-loop.ts [--target cv-generation|jd-parser] [--iterations 20] [--pretest]
  *
  * Dev mode: uses mock AI responses (no API calls)
- * Prod mode: calls NVIDIA NIM API (DeepSeek/Llama)
+ * Prod mode: calls DeepSeek Flash API
  */
 
 import * as fs from "fs";
@@ -188,7 +188,7 @@ function deployPromptToSource(target: TargetPrompt, prompt: string): void {
 }
 
 // ============================================================
-// LLM INTERFACE (NVIDIA NIM or mock for dev)
+// LLM INTERFACE (DeepSeek or mock for dev)
 // ============================================================
 
 interface LLMResponse {
@@ -198,7 +198,7 @@ interface LLMResponse {
 
 // ============================================================
 // GENERIC OpenAI-COMPATIBLE LLM CLIENT
-// All providers (Cerebras, SambaNova, Groq, NIM) use the same API shape.
+// All providers (DeepSeek, Gemini, Cerebras, SambaNova, Groq) use the same API shape.
 // ============================================================
 
 interface LLMProvider {
@@ -219,7 +219,7 @@ function resolveProviders(): LLMProvider[] {
   if (_providers) return _providers;
   const providers: LLMProvider[] = [];
 
-  // Priority order: Gemini (generous free) → Cerebras → SambaNova → Groq → NIM
+  // Priority order: DeepSeek → Gemini → Cerebras → SambaNova → Groq
   if (process.env.GEMINI_API_KEY) {
     providers.push({
       name: "Gemini",
@@ -256,13 +256,13 @@ function resolveProviders(): LLMProvider[] {
       rateGapMs: 2000,
     });
   }
-  if (process.env.NVIDIA_NIM_API_KEY) {
+  if (process.env.DEEPSEEK_API_KEY) {
     providers.push({
-      name: "NIM",
-      baseUrl: "https://integrate.api.nvidia.com/v1/chat/completions",
-      apiKey: process.env.NVIDIA_NIM_API_KEY,
-      model: process.env.NVIDIA_NIM_MODEL || "meta/llama-3.3-70b-instruct",
-      rateGapMs: 1500, // 40 RPM
+      name: "DeepSeek",
+      baseUrl: "https://api.deepseek.com/v1/chat/completions",
+      apiKey: process.env.DEEPSEEK_API_KEY,
+      model: process.env.DEEPSEEK_MODEL || "deepseek-chat",
+      rateGapMs: 200,
     });
   }
 
@@ -450,7 +450,7 @@ async function main() {
   if (providers.length > 0) {
     console.log(`LLM: ${providers.map(p => `${p.name} (${p.model})`).join(" → ")}`);
   } else {
-    console.log(`LLM: Mock (dev mode — set CEREBRAS_API_KEY, SAMBANOVA_API_KEY, GROQ_API_KEY, or NVIDIA_NIM_API_KEY)`);
+    console.log(`LLM: Mock (dev mode — set DEEPSEEK_API_KEY, CEREBRAS_API_KEY, SAMBANOVA_API_KEY, or GROQ_API_KEY)`);
   }
   console.log();
 

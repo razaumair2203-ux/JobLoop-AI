@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>JobLoop AI &mdash; Complete Pipeline v3</title>
+<title>JobLoop AI &mdash; Complete Pipeline v4 (May 12, 2026)</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
@@ -223,7 +223,7 @@
 
 <h1>JobLoop AI &mdash; Complete Pipeline v3</h1>
 <p class="subtitle">
-  46 tasks &bull; 32 code &bull; 9 Haiku &bull; 5 Sonnet &bull; Any user, any profession<br>
+  46 tasks &bull; 32 code &bull; 14 DeepSeek Flash &bull; Any user, any profession<br>
   Onboarding: $0.006&ndash;$0.097 &bull; Per JD: $0.02&ndash;$0.05
 </p>
 
@@ -234,7 +234,7 @@
     <div class="dt-question" style="color: #f8fafc;">Does a recruiter or user read the output and judge its QUALITY?</div>
     <div class="dt-branches">
       <div class="dt-branch" style="background: #2a1a3e; border: 1px solid #9333ea;">
-        <div class="dt-branch-title" style="color: #d8b4fe;">YES &rarr; SONNET</div>
+        <div class="dt-branch-title" style="color: #d8b4fe;">YES &rarr; LLM</div>
         <div class="dt-branch-detail" style="color: #c4b5fd;">
           CV bullets, CV summary,<br>cover letter, bridge strategies,<br>application strategy
         </div>
@@ -245,7 +245,7 @@
         <div class="dt-question" style="color: #94a3b8; font-size: 12px; margin-bottom: 12px;">NO &rarr; Is input unstructured text that needs to become structured data?</div>
         <div style="display: flex; gap: 12px;">
           <div style="flex: 1; background: #1a2e1f; border: 1px solid #166534; border-radius: 8px; padding: 12px;">
-            <div class="dt-branch-title" style="color: #6ee7b7;">YES &rarr; HAIKU</div>
+            <div class="dt-branch-title" style="color: #6ee7b7;">YES &rarr; LLM</div>
             <div class="dt-branch-detail" style="color: #86efac;">
               CV parsing, JD parsing,<br>free-text answer parsing,<br>feedback classification,<br>"Why this wording?"
             </div>
@@ -287,20 +287,20 @@
       <div class="arrow">&rarr;</div>
       <div class="block process">
         <div class="block-label">#1 Code</div>
-        <div class="block-title">pdf-parse</div>
+        <div class="block-title">pdf.js-extract</div>
         <div class="block-detail">Extract raw text from each document</div>
         <div><span class="tag code">CODE</span><span class="tag free">$0</span></div>
       </div>
       <div class="arrow">&rarr;</div>
       <div class="block llm">
-        <div class="block-label">#2 Haiku &times; N</div>
+        <div class="block-label">#2 DeepSeek Flash &times; N</div>
         <div class="block-title">Parser Prompt</div>
         <div class="block-detail">
-          <span class="model-tag haiku">Haiku 4.5</span><br>
+          <span class="model-tag haiku">DeepSeek Flash</span><br>
           ~1,500 in + ~2,000 out tokens/CV<br>
           Unstructured text &rarr; structured JSON
         </div>
-        <div><span class="tag llm">HAIKU</span><span class="tag cost">~$0.003/CV</span></div>
+        <div><span class="tag llm">LLM</span><span class="tag cost">~$0.003/CV</span></div>
       </div>
       <div class="arrow">&rarr;</div>
       <div class="block output">
@@ -322,7 +322,7 @@
       </div>
     </div>
     <div style="margin-top: 12px; padding: 10px; background: #1c1917; border: 1px dashed #78350f; border-radius: 8px; font-size: 11px; color: #fbbf24;">
-      FALLBACK: If Haiku parse quality drops below scorecard threshold on complex CVs &rarr; escalate that specific CV to Sonnet. Measured, not guessed.
+      FALLBACK: If DeepSeek Flash parse quality drops below scorecard threshold on complex CVs &rarr; escalate to quality tier. Measured, not guessed.
     </div>
   </div>
 </div>
@@ -437,14 +437,14 @@
       </div>
       <div class="arrow">&rarr;</div>
       <div class="block llm">
-        <div class="block-label">#7 Haiku (conditional)</div>
+        <div class="block-label">#7 DeepSeek Flash (conditional)</div>
         <div class="block-title">Free Text Parser</div>
         <div class="block-detail">
-          <span class="model-tag haiku">Haiku 4.5</span><br>
+          <span class="model-tag haiku">DeepSeek Flash</span><br>
           ONLY if user typed "Other"<br>
           ~500 in + ~300 out tokens
         </div>
-        <div><span class="tag llm">HAIKU</span><span class="tag cost">~$0.001/ans</span></div>
+        <div><span class="tag llm">LLM</span><span class="tag cost">~$0.001/ans</span></div>
       </div>
     </div>
 
@@ -494,14 +494,14 @@
       </div>
       <div class="arrow">&rarr;</div>
       <div class="block llm" style="flex: 1;">
-        <div class="block-label">#10 Haiku (conditional)</div>
+        <div class="block-label">#10 DeepSeek Flash (conditional)</div>
         <div class="block-title">Afterthought Parser</div>
         <div class="block-detail">
-          <span class="model-tag haiku">Haiku 4.5</span><br>
+          <span class="model-tag haiku">DeepSeek Flash</span><br>
           ONLY if user adds free text<br>
           "I also have a patent from 2019"
         </div>
-        <div><span class="tag llm">HAIKU</span><span class="tag cost">~$0.001</span></div>
+        <div><span class="tag llm">LLM</span><span class="tag cost">~$0.001</span></div>
       </div>
     </div>
 
@@ -527,7 +527,7 @@
     <div class="confirm-gate" style="margin-top: 16px;">
       <div class="confirm-gate-title">CONFIRMATION GATE</div>
       <div class="confirm-gate-detail">
-        Confirms &rarr; Phase 5 &bull; Corrects &rarr; update + re-render ($0) &bull; Adds free text &rarr; Haiku parse ($0.001)
+        Confirms &rarr; Phase 5 &bull; Corrects &rarr; update + re-render ($0) &bull; Adds free text &rarr; DeepSeek Flash parse ($0.001)
       </div>
     </div>
   </div>
@@ -619,14 +619,14 @@
       </div>
       <div class="arrow">&rarr;</div>
       <div class="block llm">
-        <div class="block-label">#13 Haiku &times; A</div>
+        <div class="block-label">#13 DeepSeek Flash &times; A</div>
         <div class="block-title">Answer Parser</div>
         <div class="block-detail">
-          <span class="model-tag haiku">Haiku 4.5</span><br>
+          <span class="model-tag haiku">DeepSeek Flash</span><br>
           ~500 in + ~300 out tokens/answer<br>
           Free text &rarr; evidence nodes
         </div>
-        <div><span class="tag llm">HAIKU</span><span class="tag cost">~$0.001/ans</span></div>
+        <div><span class="tag llm">LLM</span><span class="tag cost">~$0.001/ans</span></div>
       </div>
     </div>
 
@@ -798,15 +798,15 @@
       </div>
       <div class="arrow">&rarr;</div>
       <div class="block llm">
-        <div class="block-label">#17 Haiku</div>
+        <div class="block-label">#17 DeepSeek Flash</div>
         <div class="block-title">JD Parser</div>
         <div class="block-detail">
-          <span class="model-tag haiku">Haiku 4.5</span><br>
+          <span class="model-tag haiku">DeepSeek Flash</span><br>
           ~1,200 in + ~1,500 out tokens<br>
           Requirements, technologies,<br>
           responsibilities, seniority
         </div>
-        <div><span class="tag llm">HAIKU</span><span class="tag cost">~$0.007</span></div>
+        <div><span class="tag llm">LLM</span><span class="tag cost">~$0.007</span></div>
       </div>
       <div class="arrow">&rarr;</div>
       <div class="block output">
@@ -890,7 +890,7 @@
   </div>
   <div class="phase-content">
     <p style="font-size: 12px; color: #f472b6; margin-bottom: 16px; text-align: center; font-weight: 600;">
-      SONNET enters here. Output is advice the user reads and acts on.
+      LLM enters here. Output is advice the user reads and acts on.
     </p>
 
     <div class="flow">
@@ -901,27 +901,27 @@
       </div>
       <div class="arrow">&rarr;</div>
       <div class="block sonnet-block" style="flex: 1.3;">
-        <div class="block-label">#24 Sonnet</div>
+        <div class="block-label">#24 DeepSeek Flash</div>
         <div class="block-title">Bridge Strategy Gen</div>
         <div class="block-detail">
-          <span class="model-tag sonnet">Sonnet 4.6</span><br>
+          <span class="model-tag sonnet">DeepSeek Flash</span><br>
           ~2,500 in + ~800 out tokens<br>
           "You lack Kubernetes but your Docker +<br>
           AWS + CI/CD experience transfers. Frame as..."
         </div>
-        <div><span class="tag sonnet-tag">SONNET</span><span class="tag cost">~$0.020</span></div>
+        <div><span class="tag sonnet-tag">LLM</span><span class="tag cost">~$0.020</span></div>
       </div>
       <div class="arrow">&rarr;</div>
       <div class="block sonnet-block" style="flex: 1.3;">
-        <div class="block-label">#25 Sonnet</div>
+        <div class="block-label">#25 DeepSeek Flash</div>
         <div class="block-title">Application Strategy</div>
         <div class="block-detail">
-          <span class="model-tag sonnet">Sonnet 4.6</span><br>
+          <span class="model-tag sonnet">DeepSeek Flash</span><br>
           ~2,000 in + ~600 out tokens<br>
           "Lead with program management,<br>
           bridge the technical gap by..."
         </div>
-        <div><span class="tag sonnet-tag">SONNET</span><span class="tag cost">~$0.015</span></div>
+        <div><span class="tag sonnet-tag">LLM</span><span class="tag cost">~$0.015</span></div>
       </div>
     </div>
 
@@ -945,13 +945,13 @@
       </div>
       <div class="arrow">&rarr;</div>
       <div class="block llm">
-        <div class="block-label">#27 Haiku (conditional)</div>
+        <div class="block-label">#27 DeepSeek Flash (conditional)</div>
         <div class="block-title">Answer Parser</div>
         <div class="block-detail">
-          <span class="model-tag haiku">Haiku 4.5</span><br>
+          <span class="model-tag haiku">DeepSeek Flash</span><br>
           Free text &rarr; structured
         </div>
-        <div><span class="tag llm">HAIKU</span><span class="tag cost">~$0.001</span></div>
+        <div><span class="tag llm">LLM</span><span class="tag cost">~$0.001</span></div>
       </div>
     </div>
   </div>
@@ -964,7 +964,7 @@
   </div>
   <div class="phase-content">
     <p style="font-size: 12px; color: #34d399; margin-bottom: 16px; text-align: center; font-weight: 600;">
-      SONNET writes what recruiters read. Everything else is code.
+      LLM writes what recruiters read. Everything else is code.
     </p>
 
     <div class="flow">
@@ -1002,40 +1002,40 @@
 
     <div class="flow" style="margin-top: 12px;">
       <div class="block sonnet-block" style="flex: 1.3;">
-        <div class="block-label">#30 Sonnet</div>
+        <div class="block-label">#30 DeepSeek Flash</div>
         <div class="block-title">Generate CV Bullets</div>
         <div class="block-detail">
-          <span class="model-tag sonnet">Sonnet 4.6</span><br>
+          <span class="model-tag sonnet">DeepSeek Flash</span><br>
           ~3,000 in + ~2,000 out tokens<br>
           Persuasive, mirrors JD language,<br>
           quantifies impact. Recruiter reads this.
         </div>
-        <div><span class="tag sonnet-tag">SONNET</span><span class="tag cost">~$0.039</span></div>
+        <div><span class="tag sonnet-tag">LLM</span><span class="tag cost">~$0.039</span></div>
       </div>
       <div class="arrow">&rarr;</div>
       <div class="block sonnet-block" style="flex: 1.3;">
-        <div class="block-label">#31 Sonnet</div>
+        <div class="block-label">#31 DeepSeek Flash</div>
         <div class="block-title">Generate CV Summary</div>
         <div class="block-detail">
-          <span class="model-tag sonnet">Sonnet 4.6</span><br>
+          <span class="model-tag sonnet">DeepSeek Flash</span><br>
           ~2,000 in + ~500 out tokens<br>
           Narrative coherence. First thing<br>
           recruiter reads. Must be compelling.
         </div>
-        <div><span class="tag sonnet-tag">SONNET</span><span class="tag cost">~$0.014</span></div>
+        <div><span class="tag sonnet-tag">LLM</span><span class="tag cost">~$0.014</span></div>
       </div>
     </div>
 
     <div class="flow" style="margin-top: 12px;">
       <div class="block llm">
-        <div class="block-label">#33 Haiku</div>
+        <div class="block-label">#33 DeepSeek Flash</div>
         <div class="block-title">"Why this wording?"</div>
         <div class="block-detail">
-          <span class="model-tag haiku">Haiku 4.5</span><br>
+          <span class="model-tag haiku">DeepSeek Flash</span><br>
           Explain a decision already made.<br>
           User reads it, but explanatory.
         </div>
-        <div><span class="tag llm">HAIKU</span><span class="tag cost">~$0.002</span></div>
+        <div><span class="tag llm">LLM</span><span class="tag cost">~$0.002</span></div>
       </div>
       <div class="arrow">&rarr;</div>
       <div class="block process">
@@ -1057,15 +1057,15 @@
 
     <div class="flow">
       <div class="block sonnet-block" style="flex: 1.5;">
-        <div class="block-label">#36 Sonnet</div>
+        <div class="block-label">#36 DeepSeek Flash</div>
         <div class="block-title">Generate Cover Letter</div>
         <div class="block-detail">
-          <span class="model-tag sonnet">Sonnet 4.6</span><br>
+          <span class="model-tag sonnet">DeepSeek Flash</span><br>
           ~3,000 in + ~1,500 out tokens<br>
           Creative, personalized, persuasive.<br>
           Hiring manager reads this.
         </div>
-        <div><span class="tag sonnet-tag">SONNET</span><span class="tag cost">~$0.032</span></div>
+        <div><span class="tag sonnet-tag">LLM</span><span class="tag cost">~$0.032</span></div>
       </div>
       <div class="arrow">&rarr;</div>
       <div class="block process">
@@ -1076,13 +1076,13 @@
       </div>
       <div class="arrow">&rarr;</div>
       <div class="block llm">
-        <div class="block-label">#38 Haiku</div>
+        <div class="block-label">#38 DeepSeek Flash</div>
         <div class="block-title">"Why this approach?"</div>
         <div class="block-detail">
-          <span class="model-tag haiku">Haiku 4.5</span><br>
+          <span class="model-tag haiku">DeepSeek Flash</span><br>
           Explain the letter strategy
         </div>
-        <div><span class="tag llm">HAIKU</span><span class="tag cost">~$0.002</span></div>
+        <div><span class="tag llm">LLM</span><span class="tag cost">~$0.002</span></div>
       </div>
     </div>
   </div>
@@ -1112,24 +1112,24 @@
       </div>
       <div class="arrow">&rarr;</div>
       <div class="block llm">
-        <div class="block-label">#40 Haiku (fallback)</div>
+        <div class="block-label">#40 DeepSeek Flash (fallback)</div>
         <div class="block-title">Ambiguous Classifier</div>
         <div class="block-detail">
-          <span class="model-tag haiku">Haiku 4.5</span><br>
+          <span class="model-tag haiku">DeepSeek Flash</span><br>
           30% of messages rules can't handle
         </div>
-        <div><span class="tag llm">HAIKU</span><span class="tag cost">~$0.001</span></div>
+        <div><span class="tag llm">LLM</span><span class="tag cost">~$0.001</span></div>
       </div>
       <div class="arrow">&rarr;</div>
       <div class="block llm">
-        <div class="block-label">#41 Haiku</div>
+        <div class="block-label">#41 DeepSeek Flash</div>
         <div class="block-title">Outcome Parser</div>
         <div class="block-detail">
-          <span class="model-tag haiku">Haiku 4.5</span><br>
+          <span class="model-tag haiku">DeepSeek Flash</span><br>
           "They said I was overqualified"<br>
           &rarr; structured outcome signal
         </div>
-        <div><span class="tag llm">HAIKU</span><span class="tag cost">~$0.001</span></div>
+        <div><span class="tag llm">LLM</span><span class="tag cost">~$0.001</span></div>
       </div>
     </div>
     <div class="flow" style="margin-top: 12px;">
@@ -1180,7 +1180,7 @@
     <tr><td style="font-weight: 700;">Job</td><td>Fix contradictions between CVs</td><td>Deepen Cloud with missing evidence</td></tr>
     <tr><td style="font-weight: 700;">Trigger</td><td>Deterministic conflict detection</td><td>Rule engine (persona + Cloud gaps)</td></tr>
     <tr><td style="font-weight: 700;">Questions from</td><td>Templates (CODE, $0)</td><td>Templates (CODE, $0)</td></tr>
-    <tr><td style="font-weight: 700;">Answers parsed by</td><td>UI captures + Haiku fallback</td><td>Haiku (free text always)</td></tr>
+    <tr><td style="font-weight: 700;">Answers parsed by</td><td>UI captures + DeepSeek Flash fallback</td><td>DeepSeek Flash (free text always)</td></tr>
     <tr><td style="font-weight: 700;">Hard cap</td><td>6 questions</td><td>5 questions</td></tr>
     <tr><td style="font-weight: 700;">UX feel</td><td>"Fixing errors" &mdash; quick, factual</td><td>"Telling your story" &mdash; reflective</td></tr>
     <tr><td style="font-weight: 700;">Prerequisite</td><td>Parsed CVs with conflicts</td><td>Clean Cloud v1 (conflicts resolved)</td></tr>
@@ -1193,53 +1193,53 @@
   <div class="cost-table-title">All 46 Tasks &mdash; Complete Model Assignment</div>
   <table>
     <tr><th>#</th><th>Task</th><th>Handler</th><th>Why This Handler</th></tr>
-    <tr><td>1</td><td>PDF text extraction</td><td><span class="model-tag none">CODE</span></td><td>Library call (pdf-parse)</td></tr>
-    <tr><td>2</td><td>CV parsing &rarr; JSON</td><td><span class="model-tag haiku">HAIKU</span></td><td>Unstructured &rarr; structured</td></tr>
+    <tr><td>1</td><td>PDF text extraction</td><td><span class="model-tag none">CODE</span></td><td>Library call (pdf.js-extract)</td></tr>
+    <tr><td>2</td><td>CV parsing &rarr; JSON</td><td><span class="model-tag haiku">LLM</span></td><td>Unstructured &rarr; structured</td></tr>
     <tr><td>3</td><td>Clean &amp; normalize</td><td><span class="model-tag none">CODE</span></td><td>String operations, date math</td></tr>
     <tr><td>4</td><td>Conflict detection</td><td><span class="model-tag none">CODE</span></td><td>Structured comparison</td></tr>
     <tr><td>5</td><td>Conflict question gen</td><td><span class="model-tag none">CODE</span></td><td>Template interpolation</td></tr>
     <tr><td>6</td><td>Structured answer capture</td><td><span class="model-tag none">CODE</span></td><td>UI radio/dropdown</td></tr>
-    <tr><td>7</td><td>Free-text answer parse</td><td><span class="model-tag haiku">HAIKU</span></td><td>Unstructured &rarr; structured (conditional)</td></tr>
+    <tr><td>7</td><td>Free-text answer parse</td><td><span class="model-tag haiku">LLM</span></td><td>Unstructured &rarr; structured (conditional)</td></tr>
     <tr><td>8</td><td>Resolution merge</td><td><span class="model-tag none">CODE</span></td><td>Data merge logic</td></tr>
     <tr><td>9</td><td>Echo render</td><td><span class="model-tag none">CODE</span></td><td>Template formatting</td></tr>
-    <tr><td>10</td><td>Afterthought parse</td><td><span class="model-tag haiku">HAIKU</span></td><td>Unstructured &rarr; structured (conditional)</td></tr>
+    <tr><td>10</td><td>Afterthought parse</td><td><span class="model-tag haiku">LLM</span></td><td>Unstructured &rarr; structured (conditional)</td></tr>
     <tr><td>11</td><td>Cloud building</td><td><span class="model-tag none">CODE</span></td><td>Graph construction</td></tr>
     <tr><td>12</td><td>Enrichment question gen</td><td><span class="model-tag none">CODE</span></td><td>Persona rules + templates</td></tr>
-    <tr><td>13</td><td>Enrichment answer parse</td><td><span class="model-tag haiku">HAIKU</span></td><td>Unstructured &rarr; structured (always free text)</td></tr>
+    <tr><td>13</td><td>Enrichment answer parse</td><td><span class="model-tag haiku">LLM</span></td><td>Unstructured &rarr; structured (always free text)</td></tr>
     <tr><td>14</td><td>Post-enrichment integrity</td><td><span class="model-tag none">CODE</span></td><td>Dedup + conflict recheck</td></tr>
     <tr><td>15</td><td>Cloud summary</td><td><span class="model-tag none">CODE</span></td><td>Counting + template</td></tr>
 
     <tr><td colspan="4" style="background: #0f172a; font-weight: 700; color: #f472b6; font-size: 11px; text-transform: uppercase; letter-spacing: 1px;">JD Analysis</td></tr>
     <tr><td>16</td><td>JD text extraction</td><td><span class="model-tag none">CODE</span></td><td>Scraper / PDF extract</td></tr>
-    <tr><td>17</td><td>JD parsing &rarr; JSON</td><td><span class="model-tag haiku">HAIKU</span></td><td>Unstructured &rarr; structured</td></tr>
+    <tr><td>17</td><td>JD parsing &rarr; JSON</td><td><span class="model-tag haiku">LLM</span></td><td>Unstructured &rarr; structured</td></tr>
     <tr><td>18</td><td>Requirement classification</td><td><span class="model-tag none">CODE</span></td><td>Keyword rules</td></tr>
     <tr><td>19</td><td>Cloud vs JD matching</td><td><span class="model-tag none">CODE</span></td><td>Structured comparison</td></tr>
     <tr><td>20</td><td>Match strength calc</td><td><span class="model-tag none">CODE</span></td><td>Math (coverage %)</td></tr>
     <tr><td>21</td><td>Gap identification</td><td><span class="model-tag none">CODE</span></td><td>Set difference</td></tr>
     <tr><td>22</td><td>JD red flags</td><td><span class="model-tag none">CODE</span></td><td>Pattern rules</td></tr>
     <tr><td>23</td><td>Recommendation badge</td><td><span class="model-tag none">CODE</span></td><td>Threshold rules</td></tr>
-    <tr><td>24</td><td>Bridge strategy gen</td><td><span class="model-tag sonnet">SONNET</span></td><td>Transferable skill reasoning &mdash; user reads</td></tr>
-    <tr><td>25</td><td>Application strategy</td><td><span class="model-tag sonnet">SONNET</span></td><td>Narrative advice &mdash; user reads and acts on</td></tr>
+    <tr><td>24</td><td>Bridge strategy gen</td><td><span class="model-tag sonnet">LLM</span></td><td>Transferable skill reasoning &mdash; user reads</td></tr>
+    <tr><td>25</td><td>Application strategy</td><td><span class="model-tag sonnet">LLM</span></td><td>Narrative advice &mdash; user reads and acts on</td></tr>
     <tr><td>26</td><td>JD gap Socratic Qs</td><td><span class="model-tag none">CODE</span></td><td>Template from gap list</td></tr>
-    <tr><td>27</td><td>JD Socratic answer parse</td><td><span class="model-tag haiku">HAIKU</span></td><td>Unstructured &rarr; structured (conditional)</td></tr>
+    <tr><td>27</td><td>JD Socratic answer parse</td><td><span class="model-tag haiku">LLM</span></td><td>Unstructured &rarr; structured (conditional)</td></tr>
 
     <tr><td colspan="4" style="background: #0f172a; font-weight: 700; color: #34d399; font-size: 11px; text-transform: uppercase; letter-spacing: 1px;">CV &amp; Cover Letter Generation</td></tr>
     <tr><td>28</td><td>Node selector</td><td><span class="model-tag none">CODE</span></td><td>Filter + rank by relevance</td></tr>
     <tr><td>29</td><td>Template selector</td><td><span class="model-tag none">CODE</span></td><td>Persona + industry rules</td></tr>
-    <tr><td>30</td><td>CV bullet generation</td><td><span class="model-tag sonnet">SONNET</span></td><td>Persuasive writing &mdash; recruiter reads</td></tr>
-    <tr><td>31</td><td>CV summary generation</td><td><span class="model-tag sonnet">SONNET</span></td><td>Narrative coherence &mdash; recruiter reads</td></tr>
+    <tr><td>30</td><td>CV bullet generation</td><td><span class="model-tag sonnet">LLM</span></td><td>Persuasive writing &mdash; recruiter reads</td></tr>
+    <tr><td>31</td><td>CV summary generation</td><td><span class="model-tag sonnet">LLM</span></td><td>Narrative coherence &mdash; recruiter reads</td></tr>
     <tr><td>32</td><td>Section ordering</td><td><span class="model-tag none">CODE</span></td><td>Persona rules</td></tr>
-    <tr><td>33</td><td>"Why this wording?"</td><td><span class="model-tag haiku">HAIKU</span></td><td>Explain decision &mdash; not persuasive, just explanatory</td></tr>
+    <tr><td>33</td><td>"Why this wording?"</td><td><span class="model-tag haiku">LLM</span></td><td>Explain decision &mdash; not persuasive, just explanatory</td></tr>
     <tr><td>34</td><td>Before/After diff</td><td><span class="model-tag none">CODE</span></td><td>Text diff algorithm</td></tr>
     <tr><td>35</td><td>Evidence strength bar</td><td><span class="model-tag none">CODE</span></td><td>Count evidence sources</td></tr>
-    <tr><td>36</td><td>Cover letter generation</td><td><span class="model-tag sonnet">SONNET</span></td><td>Creative + personalized &mdash; hiring manager reads</td></tr>
+    <tr><td>36</td><td>Cover letter generation</td><td><span class="model-tag sonnet">LLM</span></td><td>Creative + personalized &mdash; hiring manager reads</td></tr>
     <tr><td>37</td><td>Citation linker</td><td><span class="model-tag none">CODE</span></td><td>Match claims to evidence nodes</td></tr>
-    <tr><td>38</td><td>"Why this approach?"</td><td><span class="model-tag haiku">HAIKU</span></td><td>Explain strategy &mdash; explanatory</td></tr>
+    <tr><td>38</td><td>"Why this approach?"</td><td><span class="model-tag haiku">LLM</span></td><td>Explain strategy &mdash; explanatory</td></tr>
 
     <tr><td colspan="4" style="background: #0f172a; font-weight: 700; color: #fbbf24; font-size: 11px; text-transform: uppercase; letter-spacing: 1px;">Production Systems</td></tr>
     <tr><td>39</td><td>Rule-based feedback</td><td><span class="model-tag none">CODE</span></td><td>7 regex pattern categories</td></tr>
-    <tr><td>40</td><td>Ambiguous feedback classify</td><td><span class="model-tag haiku">HAIKU</span></td><td>Unstructured &rarr; classified (fallback)</td></tr>
-    <tr><td>41</td><td>Outcome feedback parse</td><td><span class="model-tag haiku">HAIKU</span></td><td>Unstructured &rarr; structured signal</td></tr>
+    <tr><td>40</td><td>Ambiguous feedback classify</td><td><span class="model-tag haiku">LLM</span></td><td>Unstructured &rarr; classified (fallback)</td></tr>
+    <tr><td>41</td><td>Outcome feedback parse</td><td><span class="model-tag haiku">LLM</span></td><td>Unstructured &rarr; structured signal</td></tr>
     <tr><td>42</td><td>Outcome pattern detection</td><td><span class="model-tag none">CODE</span></td><td>Aggregate + count</td></tr>
     <tr><td>43</td><td>Same-company detection</td><td><span class="model-tag none">CODE</span></td><td>String match</td></tr>
     <tr><td>44</td><td>Gap accumulation check</td><td><span class="model-tag none">CODE</span></td><td>Count per niche</td></tr>
@@ -1253,22 +1253,22 @@
   <div class="scenarios-title">Cost Per User Journey</div>
   <div class="scenario">
     <div class="scenario-name">Onboarding: Simple (1 CV, no conflicts, 3 enrichment answers)</div>
-    <div class="scenario-detail">1 Haiku parse + 3 Haiku answer parses = 4 LLM calls</div>
+    <div class="scenario-detail">1 DeepSeek Flash parse + 3 DeepSeek Flash answer parses = 4 LLM calls</div>
     <div class="scenario-cost">$0.003 + 3&times;$0.001 = $0.006</div>
   </div>
   <div class="scenario">
     <div class="scenario-name">Onboarding: Complex (5 CVs, 6 conflicts, 2 free-text, 1 afterthought, 5 enrichment)</div>
-    <div class="scenario-detail">5 Haiku parses + 2 free-text + 1 afterthought + 5 enrichment parses = 13 LLM calls</div>
+    <div class="scenario-detail">5 DeepSeek Flash parses + 2 free-text + 1 afterthought + 5 enrichment parses = 13 LLM calls</div>
     <div class="scenario-cost">5&times;$0.003 + 3&times;$0.001 + 5&times;$0.001 = $0.023</div>
   </div>
   <div class="scenario">
     <div class="scenario-name">Per JD Analysis (typical: moderate match, 2 gaps, cover letter)</div>
-    <div class="scenario-detail">1 JD parse + 2 Sonnet strategies + 1 Sonnet CV bullets + 1 Sonnet CV summary + 1 Sonnet cover letter + 1 Haiku "why" = 7 LLM calls</div>
+    <div class="scenario-detail">1 JD parse + 2 DeepSeek Flash strategies + 1 DeepSeek Flash CV bullets + 1 DeepSeek Flash CV summary + 1 DeepSeek Flash cover letter + 1 DeepSeek Flash "why" = 7 LLM calls</div>
     <div class="scenario-cost">$0.007 + $0.020 + $0.015 + $0.039 + $0.014 + $0.032 + $0.002 = $0.129</div>
   </div>
   <div class="scenario">
     <div class="scenario-name">Per JD Analysis (simple: strong match, no cover letter)</div>
-    <div class="scenario-detail">1 JD parse + 1 Sonnet strategy + 1 Sonnet CV bullets + 1 Sonnet CV summary = 4 LLM calls</div>
+    <div class="scenario-detail">1 JD parse + 1 DeepSeek Flash strategy + 1 DeepSeek Flash CV bullets + 1 DeepSeek Flash CV summary = 4 LLM calls</div>
     <div class="scenario-cost">$0.007 + $0.015 + $0.039 + $0.014 = $0.075</div>
   </div>
   <div class="scenario">
@@ -1284,18 +1284,18 @@
   <table>
     <tr><th>Model</th><th>Input</th><th>Output</th><th>Speed</th><th>Used For (in this product)</th></tr>
     <tr>
-      <td><span class="model-tag haiku">Haiku 4.5</span></td>
+      <td><span class="model-tag haiku">DeepSeek Flash</span></td>
       <td>$0.80 / 1M</td><td>$4.00 / 1M</td><td>~0.5&ndash;1s</td>
       <td>All parsing (CV, JD, answers, feedback). All explanations. 9 tasks.</td>
     </tr>
     <tr>
-      <td><span class="model-tag sonnet">Sonnet 4.6</span></td>
+      <td><span class="model-tag sonnet">DeepSeek Flash</span></td>
       <td>$3.00 / 1M</td><td>$15.00 / 1M</td><td>~1&ndash;3s</td>
       <td>CV bullets, CV summary, cover letter, bridge strategy, app strategy. 5 tasks.</td>
     </tr>
     <tr class="note-row">
       <td colspan="5">
-        Haiku: cheap bulk worker (extraction, parsing, classification). Sonnet: quality writer (only when a human judges the output).
+        DeepSeek Flash: cheap bulk worker (extraction, parsing, classification). DeepSeek Flash: quality writer (only when a human judges the output).
         CODE handles 32 of 46 tasks at $0.
       </td>
     </tr>
@@ -1309,14 +1309,91 @@
     <tr><th>Scenario</th><th>Default</th><th>Escalation</th><th>Trigger</th></tr>
     <tr>
       <td>CV parsing (Task #2)</td>
-      <td><span class="model-tag haiku">Haiku</span> ($0.003)</td>
-      <td><span class="model-tag sonnet">Sonnet</span> ($0.013)</td>
+      <td><span class="model-tag haiku">DeepSeek Flash</span> ($0.003)</td>
+      <td><span class="model-tag sonnet">DeepSeek Flash</span> ($0.013)</td>
       <td>Parser scorecard fails &mdash; complex CV (military rotational, 20+ roles, multi-employer). Measured by scorecard, not guessed.</td>
     </tr>
     <tr class="note-row">
       <td colspan="4">This is the ONLY dynamic model selection in the product. Everything else is statically assigned. No maturity matrix, no complexity classifiers.</td>
     </tr>
   </table>
+</div>
+
+<!-- ============================================================ -->
+<!-- DEV vs PROD + FILE MAP -->
+<!-- ============================================================ -->
+<div style="max-width: 1100px; margin: 60px auto 0;">
+  <h2 style="font-size: 24px; color: #60a5fa; border-bottom: 2px solid #1e40af; padding-bottom: 8px; margin-bottom: 24px;">Development vs Production Handoff</h2>
+
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 40px;">
+    <div style="background: #0f2922; border: 2px solid #059669; border-radius: 12px; padding: 24px;">
+      <h3 style="color: #34d399; margin-bottom: 12px; font-size: 16px;">DEVELOPMENT</h3>
+      <ul style="list-style: none; font-size: 13px; line-height: 2;">
+        <li><strong style="color: #34d399;">LLM:</strong> Claude Code (you) IS the LLM. Zero API calls.</li>
+        <li><strong style="color: #34d399;">Flow:</strong> User uploads &rarr; Supabase stores extracted text &rarr; Claude Code reads, parses, writes JSON back</li>
+        <li><strong style="color: #34d399;">Extraction:</strong> pdf.js-extract (local, no API)</li>
+        <li><strong style="color: #34d399;">Auth:</strong> DEV_AUTH_BYPASS=true</li>
+        <li><strong style="color: #34d399;">Cost:</strong> $0 (Claude Code subscription only)</li>
+        <li><strong style="color: #34d399;">Steps 1-4, 6-8, 10-12:</strong> Identical to production (pure code)</li>
+        <li><strong style="color: #34d399;">Steps 5, 9:</strong> Claude Code replaces DeepSeek API</li>
+      </ul>
+    </div>
+    <div style="background: #1a1333; border: 2px solid #7c3aed; border-radius: 12px; padding: 24px;">
+      <h3 style="color: #a78bfa; margin-bottom: 12px; font-size: 16px;">PRODUCTION</h3>
+      <ul style="list-style: none; font-size: 13px; line-height: 2;">
+        <li><strong style="color: #a78bfa;">LLM:</strong> DeepSeek Flash API (deepseek-chat)</li>
+        <li><strong style="color: #a78bfa;">Flow:</strong> User uploads &rarr; extract &rarr; DeepSeek parses &rarr; Cloud builds automatically</li>
+        <li><strong style="color: #a78bfa;">Extraction:</strong> pdf.js-extract (same as dev)</li>
+        <li><strong style="color: #a78bfa;">Auth:</strong> Supabase Auth (Google + LinkedIn OAuth)</li>
+        <li><strong style="color: #a78bfa;">Cost:</strong> ~$0.01/CV parse, ~$0.05/JD analysis</li>
+        <li><strong style="color: #a78bfa;">Handoff:</strong> Set DEEPSEEK_API_KEY env var. That's it.</li>
+        <li><strong style="color: #a78bfa;">Same code:</strong> Zero code changes between dev and prod</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2 style="font-size: 24px; color: #fbbf24; border-bottom: 2px solid #d97706; padding-bottom: 8px; margin-bottom: 24px;">File Location Map</h2>
+
+  <table style="width: 100%; border-collapse: collapse; font-size: 12px;">
+    <thead>
+      <tr>
+        <th style="background: #1e293b; color: #fff; padding: 10px; text-align: left; width: 30%;">File</th>
+        <th style="background: #1e293b; color: #fff; padding: 10px; text-align: left; width: 20%;">Pipeline Step</th>
+        <th style="background: #1e293b; color: #fff; padding: 10px; text-align: left;">Purpose</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td style="padding: 8px; border-bottom: 1px solid #1f2937; color: #60a5fa; font-family: monospace;">packages/ai/src/pdf-extractor.ts</td><td style="padding: 8px; border-bottom: 1px solid #1f2937;">#1 Extract</td><td style="padding: 8px; border-bottom: 1px solid #1f2937;">Position-aware PDF extraction, multi-column reconstruction</td></tr>
+      <tr><td style="padding: 8px; border-bottom: 1px solid #1f2937; color: #60a5fa; font-family: monospace;">packages/ai/src/text-normalizer.ts</td><td style="padding: 8px; border-bottom: 1px solid #1f2937;">#1 Normalize</td><td style="padding: 8px; border-bottom: 1px solid #1f2937;">Encoding fixes, character spacing, page artifacts, quality assessment</td></tr>
+      <tr><td style="padding: 8px; border-bottom: 1px solid #1f2937; color: #60a5fa; font-family: monospace;">packages/ai/src/analyze.ts</td><td style="padding: 8px; border-bottom: 1px solid #1f2937;">#2 Parse CV, #17 Parse JD</td><td style="padding: 8px; border-bottom: 1px solid #1f2937;">LLM parsing calls (CV and JD text &rarr; structured JSON)</td></tr>
+      <tr><td style="padding: 8px; border-bottom: 1px solid #1f2937; color: #60a5fa; font-family: monospace;">packages/ai/src/prompts/cv-parser.ts</td><td style="padding: 8px; border-bottom: 1px solid #1f2937;">#2 Parse CV</td><td style="padding: 8px; border-bottom: 1px solid #1f2937;">300-line system prompt for CV parsing</td></tr>
+      <tr><td style="padding: 8px; border-bottom: 1px solid #1f2937; color: #60a5fa; font-family: monospace;">packages/ai/src/cv-cleaner.ts</td><td style="padding: 8px; border-bottom: 1px solid #1f2937;">#3 Clean</td><td style="padding: 8px; border-bottom: 1px solid #1f2937;">Garbage filtering, title normalization, date validation, source verification</td></tr>
+      <tr><td style="padding: 8px; border-bottom: 1px solid #1f2937; color: #60a5fa; font-family: monospace;">packages/ai/src/conflict-detector.ts</td><td style="padding: 8px; border-bottom: 1px solid #1f2937;">#4 Detect Conflicts</td><td style="padding: 8px; border-bottom: 1px solid #1f2937;">Cross-CV date overlaps, title mismatches, gaps, persona-aware</td></tr>
+      <tr><td style="padding: 8px; border-bottom: 1px solid #1f2937; color: #60a5fa; font-family: monospace;">packages/ai/src/answer-parser.ts</td><td style="padding: 8px; border-bottom: 1px solid #1f2937;">#7, #10, #13, #27 Parse Answers</td><td style="padding: 8px; border-bottom: 1px solid #1f2937;">Free-text user answers &rarr; structured data (complexity-based tier)</td></tr>
+      <tr><td style="padding: 8px; border-bottom: 1px solid #1f2937; color: #60a5fa; font-family: monospace;">packages/ai/src/resolution-merger.ts</td><td style="padding: 8px; border-bottom: 1px solid #1f2937;">#8 Merge</td><td style="padding: 8px; border-bottom: 1px solid #1f2937;">Conflict answers + clean CVs &rarr; unified ResolvedProfile</td></tr>
+      <tr><td style="padding: 8px; border-bottom: 1px solid #1f2937; color: #60a5fa; font-family: monospace;">packages/ai/src/cloud.ts</td><td style="padding: 8px; border-bottom: 1px solid #1f2937;">#11 Build Cloud</td><td style="padding: 8px; border-bottom: 1px solid #1f2937;">Skill nodes, evidence linking, depth inference</td></tr>
+      <tr><td style="padding: 8px; border-bottom: 1px solid #1f2937; color: #60a5fa; font-family: monospace;">packages/ai/src/taxonomy.ts</td><td style="padding: 8px; border-bottom: 1px solid #1f2937;">#11 Classify</td><td style="padding: 8px; border-bottom: 1px solid #1f2937;">17-domain skill taxonomy, depth levels, gap detection</td></tr>
+      <tr><td style="padding: 8px; border-bottom: 1px solid #1f2937; color: #60a5fa; font-family: monospace;">packages/ai/src/cloud-matcher.ts</td><td style="padding: 8px; border-bottom: 1px solid #1f2937;">#19 Match</td><td style="padding: 8px; border-bottom: 1px solid #1f2937;">Cloud vs JD requirement matching</td></tr>
+      <tr><td style="padding: 8px; border-bottom: 1px solid #1f2937; color: #60a5fa; font-family: monospace;">packages/ai/src/generate-cv.ts</td><td style="padding: 8px; border-bottom: 1px solid #1f2937;">#30-31 CV Gen</td><td style="padding: 8px; border-bottom: 1px solid #1f2937;">Cloud-evidence-backed CV generation</td></tr>
+      <tr><td style="padding: 8px; border-bottom: 1px solid #1f2937; color: #60a5fa; font-family: monospace;">packages/ai/src/generate-cover-letter.ts</td><td style="padding: 8px; border-bottom: 1px solid #1f2937;">#36 Cover Letter</td><td style="padding: 8px; border-bottom: 1px solid #1f2937;">Personalized cover letter with citations</td></tr>
+      <tr><td style="padding: 8px; border-bottom: 1px solid #1f2937; color: #60a5fa; font-family: monospace;">packages/ai/src/feedback-classifier.ts</td><td style="padding: 8px; border-bottom: 1px solid #1f2937;">#39-40 Feedback</td><td style="padding: 8px; border-bottom: 1px solid #1f2937;">Rule-based + LLM fallback feedback classification</td></tr>
+      <tr><td style="padding: 8px; border-bottom: 1px solid #1f2937; color: #60a5fa; font-family: monospace;">packages/ai/src/client.ts</td><td style="padding: 8px; border-bottom: 1px solid #1f2937;">All LLM calls</td><td style="padding: 8px; border-bottom: 1px solid #1f2937;">DeepSeek API client (fast + quality tiers)</td></tr>
+      <tr><td style="padding: 8px; border-bottom: 1px solid #1f2937; color: #60a5fa; font-family: monospace;">packages/ai/src/provider.ts</td><td style="padding: 8px; border-bottom: 1px solid #1f2937;">Mode switch</td><td style="padding: 8px; border-bottom: 1px solid #1f2937;">Auto-detect dev/api mode from DEEPSEEK_API_KEY env var</td></tr>
+      <tr><td style="padding: 8px; border-bottom: 1px solid #1f2937; color: #60a5fa; font-family: monospace;">apps/web/src/app/api/cv/upload/route.ts</td><td style="padding: 8px; border-bottom: 1px solid #1f2937;">Steps 1-12 orchestration</td><td style="padding: 8px; border-bottom: 1px solid #1f2937;">Upload route &mdash; the main pipeline entry point</td></tr>
+      <tr><td style="padding: 8px; border-bottom: 1px solid #1f2937; color: #60a5fa; font-family: monospace;">apps/web/src/app/api/analyze/route.ts</td><td style="padding: 8px; border-bottom: 1px solid #1f2937;">Steps 17-25</td><td style="padding: 8px; border-bottom: 1px solid #1f2937;">JD analysis route</td></tr>
+    </tbody>
+  </table>
+
+  <div style="background: #1e293b; border-radius: 12px; padding: 24px; margin-top: 24px;">
+    <h3 style="color: #f8fafc; margin-bottom: 12px;">Production Handoff Checklist</h3>
+    <ol style="font-size: 13px; line-height: 2.2; padding-left: 20px;">
+      <li>Set <code style="color: #60a5fa;">DEEPSEEK_API_KEY</code> in Vercel environment variables</li>
+      <li>Remove <code style="color: #60a5fa;">DEV_AUTH_BYPASS=true</code> from env</li>
+      <li>Configure Supabase Auth (Google + LinkedIn OAuth)</li>
+      <li>Verify <code style="color: #60a5fa;">serverExternalPackages: ["pdf.js-extract"]</code> in next.config.ts</li>
+      <li>Deploy. Same code, same pipeline. API replaces Claude Code as the LLM.</li>
+    </ol>
+  </div>
 </div>
 
 </body>

@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
+import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import * as Tabs from "@radix-ui/react-tabs";
 import {
@@ -148,7 +149,78 @@ const mockBranches = [
   { id: "stripe", name: "Tailored for Stripe", isBase: false, jobTarget: "Frontend Platform Lead", lastEdited: "Apr 28, 2026" },
 ];
 
+/** Convert API GeneratedCV to the shape the UI expects */
+function apiCVToLocal(data: {
+  cv: {
+    summary: string;
+    experience: Array<{
+      company: string;
+      title: string;
+      start_date: string;
+      end_date: string;
+      location?: string;
+      bullets: string[];
+    }>;
+    skills: Record<string, string[]>;
+    education: Array<{
+      institution: string;
+      degree: string;
+      year: string;
+      highlights?: string[];
+    }>;
+    certifications: string[];
+  };
+  company?: string;
+  role?: string;
+}) {
+  const cv = data.cv;
+  return {
+    contact: {
+      full_name: "",
+      email: "",
+      phone: "",
+      location: "",
+      linkedin_url: "",
+      github_url: "",
+      portfolio_url: null,
+    },
+    summary: cv.summary || "",
+    experience: (cv.experience || []).map((exp) => ({
+      company: exp.company,
+      title: exp.title,
+      start_date: exp.start_date,
+      end_date: exp.end_date,
+      location: exp.location || "",
+      bullets: (exp.bullets || []).map((b) =>
+        typeof b === "string"
+          ? { text: b, jd_matches: [] as string[], evidence_sources: [] as string[] }
+          : b,
+      ),
+    })),
+    skills: cv.skills || {},
+    education: (cv.education || []).map((edu) => ({
+      institution: edu.institution,
+      degree: edu.degree,
+      year: edu.year,
+      highlights: edu.highlights || [],
+    })),
+    certifications: cv.certifications || [],
+    settings: {
+      section_order: ["summary", "experience", "skills", "education", "certifications"],
+      max_pages: 1 as const,
+      template_id: "professional" as const,
+      accent_color: "#db2777",
+      font: "inter" as const,
+      show_photo: false,
+      photo_url: null,
+    },
+  };
+}
+
 export default function CVBuilderPage() {
+  const searchParams = useSearchParams();
+  const appId = searchParams.get("app");
+
   const [cv, setCv] = useState(mockCV);
   const [activeTab, setActiveTab] = useState("summary");
   const [template, setTemplate] = useState<TemplateId>("professional");
@@ -162,6 +234,39 @@ export default function CVBuilderPage() {
   const [font, setFont] = useState("inter");
   const [accentColor, setAccentColor] = useState("brand");
   const [spacing, setSpacing] = useState("normal");
+  const [generating, setGenerating] = useState(false);
+  const [genError, setGenError] = useState<string | null>(null);
+
+  const generateCV = useCallback(async (applicationId: string) => {
+    setGenerating(true);
+    setGenError(null);
+    try {
+      const res = await fetch("/api/cv/generate", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ application_id: applicationId }),
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        setGenError(data.error || "Generation failed");
+        return;
+      }
+      const localCV = apiCVToLocal(data);
+      setCv(localCV);
+      setCvName(`Tailored for ${data.company || "role"}`);
+      setActiveBranch("generated");
+    } catch (err) {
+      setGenError(err instanceof Error ? err.message : "Network error");
+    } finally {
+      setGenerating(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (appId) {
+      generateCV(appId);
+    }
+  }, [appId, generateCV]);
 
   const sensors = useSensors(
     useSensor(PointerSensor, { activationConstraint: { distance: 5 } }),
@@ -177,6 +282,35 @@ export default function CVBuilderPage() {
         return arrayMove(prev, oldIndex, newIndex);
       });
     }
+  }
+
+  if (generating) {
+    return (
+      <div className="flex h-[calc(100vh-4rem)] items-center justify-center">
+        <div className="text-center">
+          <div className="mx-auto h-10 w-10 animate-spin rounded-full border-4 border-brand-200 border-t-brand-600" />
+          <p className="mt-4 text-sm font-medium text-zinc-700">Generating your tailored CV...</p>
+          <p className="mt-1 text-xs text-zinc-400">This usually takes 10-30 seconds</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (genError) {
+    return (
+      <div className="flex h-[calc(100vh-4rem)] items-center justify-center">
+        <div className="max-w-md rounded-xl border border-red-200 bg-red-50 p-6 text-center">
+          <p className="text-sm font-medium text-red-800">CV Generation Failed</p>
+          <p className="mt-2 text-xs text-red-600">{genError}</p>
+          <button
+            onClick={() => appId && generateCV(appId)}
+            className="mt-4 rounded-lg bg-brand-600 px-4 py-2 text-xs font-medium text-white hover:bg-brand-700"
+          >
+            Try again
+          </button>
+        </div>
+      </div>
+    );
   }
 
   return (

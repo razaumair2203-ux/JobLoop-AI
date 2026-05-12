@@ -1,9 +1,9 @@
 {
   "drift": {
-    "similarity": 0.9203821656050956,
+    "similarity": 0.6245883644346871,
     "drifted": false,
     "severity": "none",
-    "message": "Similarity 92.0% — within normal range"
+    "message": "Similarity 62.5% — within normal range"
   },
   "regression": {
     "original_pass_rate": 0,
@@ -19,7 +19,6 @@
       "Improvement is NOT statistically significant (ANOVA p >= 0.05)"
     ],
     "warnings": [
-      "Only 3 iterations run — may be insufficient for reliable optimization",
       "Improvement (0.0pp) is below 2% threshold — may not be worth the risk"
     ],
     "requires_human_review": true,
@@ -34,18 +33,18 @@
     ]
   },
   "staleness": {
-    "last_rotated": "2026-05-08",
+    "last_rotated": "2026-05-09",
     "days_since_rotation": 0,
     "is_stale": false,
     "message": "Held-out set is 0 days old. Next rotation in 90 days."
   },
   "overfitting": {
-    "train_pass_rate": 0,
+    "train_pass_rate": 0.1,
     "heldout_pass_rate": 0,
-    "gap": 0,
+    "gap": 0.1,
     "is_overfit": false,
     "severity": "none",
-    "message": "Train-holdout gap is 0.0pp — no overfitting detected."
+    "message": "Train-holdout gap is 10.0pp — no overfitting detected."
   },
   "bayesian_ci": {
     "point_estimate": 0,
@@ -58,5 +57,5 @@
     "credibility": 0.95
   },
   "overall_safe": false,
-  "summary": "=== AutoResearch Safeguard Report ===\n\nDrift: NONE (92% similar to v0)\nRegression: MARGINAL (0.0pp)\nOverfitting: NONE (0.0pp train-holdout gap)\nStaleness: OK (0 days)\nBayesian 95% CI: [0.3%, 33.6%] (width: 33.3pp)\n\nBlockers: Improvement is NOT statistically significant (ANOVA p >= 0.05)\nWarnings: Only 3 iterations run — may be insufficient for reliable optimization; Improvement (0.0pp) is below 2% threshold — may not be worth the risk\n\nOVERALL: BLOCKED — resolve issues before review\n\nHuman review checklist:\n  [ ] Compare v0 prompt side-by-side with optimized prompt\n  [ ] Run optimized prompt against 3-5 REAL user CVs + JDs (not test bank)\n  [ ] Verify no fabrication in generated outputs\n  [ ] Check that prompt still follows the advocate framing (no discouraging language)\n  [ ] Confirm education is separate from certifications in output\n  [ ] Test sensitivity handling (military platform names)\n  [ ] If all pass → deploy to 10% of users first, monitor for 48h"
+  "summary": "=== AutoResearch Safeguard Report ===\n\nDrift: NONE (62% similar to v0)\nRegression: MARGINAL (0.0pp)\nOverfitting: NONE (10.0pp train-holdout gap)\nStaleness: OK (0 days)\nBayesian 95% CI: [0.3%, 33.6%] (width: 33.3pp)\n\nBlockers: Improvement is NOT statistically significant (ANOVA p >= 0.05)\nWarnings: Improvement (0.0pp) is below 2% threshold — may not be worth the risk\n\nOVERALL: BLOCKED — resolve issues before review\n\nHuman review checklist:\n  [ ] Compare v0 prompt side-by-side with optimized prompt\n  [ ] Run optimized prompt against 3-5 REAL user CVs + JDs (not test bank)\n  [ ] Verify no fabrication in generated outputs\n  [ ] Check that prompt still follows the advocate framing (no discouraging language)\n  [ ] Confirm education is separate from certifications in output\n  [ ] Test sensitivity handling (military platform names)\n  [ ] If all pass → deploy to 10% of users first, monitor for 48h"
 }

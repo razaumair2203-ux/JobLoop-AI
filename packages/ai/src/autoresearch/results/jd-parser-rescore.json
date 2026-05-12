@@ -1,0 +1,2037 @@
+{
+  "timestamp": "2026-05-09T21:04:25.836Z",
+  "note": "Re-scored with improved company/location scoring + corrected GT (Q037, Q046 exp years)",
+  "pairs_scored": 38,
+  "distributions": {
+    "company": {
+      "min": 0,
+      "p10": 0.07692307692307687,
+      "p25": 0.16194029850746267,
+      "median": 0.9,
+      "p75": 1,
+      "max": 1,
+      "mean": 0.6487514843928569
+    },
+    "title": {
+      "min": 0.288135593220339,
+      "p10": 0.43243243243243246,
+      "p25": 0.9,
+      "median": 0.9,
+      "p75": 1,
+      "max": 1,
+      "mean": 0.8321679539175114
+    },
+    "location": {
+      "min": 0.11111111111111116,
+      "p10": 0.5,
+      "p25": 0.5,
+      "median": 1,
+      "p75": 1,
+      "max": 1,
+      "mean": 0.7660818713450293
+    },
+    "exp_min": {
+      "min": 0,
+      "p10": 1,
+      "p25": 1,
+      "median": 1,
+      "p75": 1,
+      "max": 1,
+      "mean": 0.9473684210526315
+    },
+    "exp_max": {
+      "min": 0,
+      "p10": 1,
+      "p25": 1,
+      "median": 1,
+      "p75": 1,
+      "max": 1,
+      "mean": 0.9736842105263158
+    },
+    "req_recall": {
+      "min": 0.18181818181818182,
+      "p10": 0.4116666666666667,
+      "p25": 0.6666666666666666,
+      "median": 0.9090909090909091,
+      "p75": 1,
+      "max": 1,
+      "mean": 0.8038613433350277
+    },
+    "req_precision": {
+      "min": 0.5,
+      "p10": 0.8925000000000001,
+      "p25": 1,
+      "median": 1,
+      "p75": 1,
+      "max": 1,
+      "mean": 0.9576110293215557
+    },
+    "req_types": {
+      "min": 0.8,
+      "p10": 0.8538461538461538,
+      "p25": 0.9041666666666667,
+      "median": 0.9791666666666667,
+      "p75": 1,
+      "max": 1,
+      "mean": 0.9488473879921246
+    },
+    "resp_recall": {
+      "min": 0,
+      "p10": 0.47000000000000003,
+      "p25": 0.8142857142857143,
+      "median": 1,
+      "p75": 1,
+      "max": 1,
+      "mean": 0.861372180451128
+    }
+  },
+  "overall": {
+    "min": 0.6205137525748213,
+    "p10": 0.736018921018921,
+    "p25": 0.8164460637447926,
+    "median": 0.8825525789293904,
+    "p75": 0.9271464646464647,
+    "max": 0.9944444444444444,
+    "mean": 0.8599717647037978
+  },
+  "per_pair": [
+    {
+      "id": "pair-Q001",
+      "fields": [
+        {
+          "field": "company",
+          "score": 1,
+          "detail": "exact"
+        },
+        {
+          "field": "title",
+          "score": 1,
+          "detail": "ok"
+        },
+        {
+          "field": "location",
+          "score": 1,
+          "detail": "city match: \"denver\" ~ \"denver\""
+        },
+        {
+          "field": "exp_min",
+          "score": 1,
+          "detail": "exact"
+        },
+        {
+          "field": "exp_max",
+          "score": 1,
+          "detail": "exact"
+        },
+        {
+          "field": "req_recall",
+          "score": 1,
+          "detail": "13/13"
+        },
+        {
+          "field": "req_precision",
+          "score": 0.9230769230769231,
+          "detail": "12/13"
+        },
+        {
+          "field": "req_types",
+          "score": 0.8461538461538461,
+          "detail": "11/13"
+        },
+        {
+          "field": "resp_recall",
+          "score": 1,
+          "detail": "8/8"
+        }
+      ],
+      "avg": 0.9743589743589745
+    },
+    {
+      "id": "pair-Q003",
+      "fields": [
+        {
+          "field": "company",
+          "score": 1,
+          "detail": "exact"
+        },
+        {
+          "field": "title",
+          "score": 1,
+          "detail": "ok"
+        },
+        {
+          "field": "location",
+          "score": 0.5,
+          "detail": "extra: Memphis, USA"
+        },
+        {
+          "field": "exp_min",
+          "score": 1,
+          "detail": "both null"
+        },
+        {
+          "field": "exp_max",
+          "score": 1,
+          "detail": "both null"
+        },
+        {
+          "field": "req_recall",
+          "score": 0.6666666666666666,
+          "detail": "8/12"
+        },
+        {
+          "field": "req_precision",
+          "score": 1,
+          "detail": "8/8"
+        },
+        {
+          "field": "req_types",
+          "score": 1,
+          "detail": "8/8"
+        },
+        {
+          "field": "resp_recall",
+          "score": 0.375,
+          "detail": "3/8"
+        }
+      ],
+      "avg": 0.837962962962963
+    },
+    {
+      "id": "pair-Q004",
+      "fields": [
+        {
+          "field": "company",
+          "score": 1,
+          "detail": "exact"
+        },
+        {
+          "field": "title",
+          "score": 0.9,
+          "detail": "ok"
+        },
+        {
+          "field": "location",
+          "score": 1,
+          "detail": "city match: \"charlotte\" ~ \"charlotte\""
+        },
+        {
+          "field": "exp_min",
+          "score": 1,
+          "detail": "exact"
+        },
+        {
+          "field": "exp_max",
+          "score": 1,
+          "detail": "both null"
+        },
+        {
+          "field": "req_recall",
+          "score": 1,
+          "detail": "8/8"
+        },
+        {
+          "field": "req_precision",
+          "score": 0.6153846153846154,
+          "detail": "8/13"
+        },
+        {
+          "field": "req_types",
+          "score": 1,
+          "detail": "7/7"
+        },
+        {
+          "field": "resp_recall",
+          "score": 0,
+          "detail": "0/4"
+        }
+      ],
+      "avg": 0.8350427350427351
+    },
+    {
+      "id": "pair-Q005",
+      "fields": [
+        {
+          "field": "company",
+          "score": 0.25,
+          "detail": "mismatch (0.25)"
+        },
+        {
+          "field": "title",
+          "score": 0.9,
+          "detail": "ok"
+        },
+        {
+          "field": "location",
+          "score": 0.5,
+          "detail": "extra: USA"
+        },
+        {
+          "field": "exp_min",
+          "score": 1,
+          "detail": "exact"
+        },
+        {
+          "field": "exp_max",
+          "score": 1,
+          "detail": "both null"
+        },
+        {
+          "field": "req_recall",
+          "score": 0.5,
+          "detail": "4/8"
+        },
+        {
+          "field": "req_precision",
+          "score": 1,
+          "detail": "3/3"
+        },
+        {
+          "field": "req_types",
+          "score": 1,
+          "detail": "4/4"
+        },
+        {
+          "field": "resp_recall",
+          "score": 0.5,
+          "detail": "4/8"
+        }
+      ],
+      "avg": 0.7388888888888889
+    },
+    {
+      "id": "pair-Q008",
+      "fields": [
+        {
+          "field": "company",
+          "score": 1,
+          "detail": "exact"
+        },
+        {
+          "field": "title",
+          "score": 0.4274809160305344,
+          "detail": "mismatch (0.43)"
+        },
+        {
+          "field": "location",
+          "score": 0.5,
+          "detail": "extra: New York, USA"
+        },
+        {
+          "field": "exp_min",
+          "score": 0,
+          "detail": "5 vs null"
+        },
+        {
+          "field": "exp_max",
+          "score": 1,
+          "detail": "both null"
+        },
+        {
+          "field": "req_recall",
+          "score": 0.35714285714285715,
+          "detail": "5/14"
+        },
+        {
+          "field": "req_precision",
+          "score": 0.5,
+          "detail": "3/6"
+        },
+        {
+          "field": "req_types",
+          "score": 0.8,
+          "detail": "4/5"
+        },
+        {
+          "field": "resp_recall",
+          "score": 1,
+          "detail": "8/8"
+        }
+      ],
+      "avg": 0.6205137525748213
+    },
+    {
+      "id": "pair-Q009",
+      "fields": [
+        {
+          "field": "company",
+          "score": 1,
+          "detail": "exact"
+        },
+        {
+          "field": "title",
+          "score": 1,
+          "detail": "ok"
+        },
+        {
+          "field": "location",
+          "score": 1,
+          "detail": "remote match"
+        },
+        {
+          "field": "exp_min",
+          "score": 1,
+          "detail": "exact"
+        },
+        {
+          "field": "exp_max",
+          "score": 0,
+          "detail": "3 vs null"
+        },
+        {
+          "field": "req_recall",
+          "score": 1,
+          "detail": "9/9"
+        },
+        {
+          "field": "req_precision",
+          "score": 0.9,
+          "detail": "9/10"
+        },
+        {
+          "field": "req_types",
+          "score": 1,
+          "detail": "9/9"
+        },
+        {
+          "field": "resp_recall",
+          "score": 0.875,
+          "detail": "7/8"
+        }
+      ],
+      "avg": 0.8638888888888889
+    },
+    {
+      "id": "pair-Q010",
+      "fields": [
+        {
+          "field": "company",
+          "score": 1,
+          "detail": "exact"
+        },
+        {
+          "field": "title",
+          "score": 1,
+          "detail": "ok"
+        },
+        {
+          "field": "location",
+          "score": 0.5,
+          "detail": "extra: United States"
+        },
+        {
+          "field": "exp_min",
+          "score": 1,
+          "detail": "exact"
+        },
+        {
+          "field": "exp_max",
+          "score": 1,
+          "detail": "both null"
+        },
+        {
+          "field": "req_recall",
+          "score": 0.9090909090909091,
+          "detail": "10/11"
+        },
+        {
+          "field": "req_precision",
+          "score": 1,
+          "detail": "7/7"
+        },
+        {
+          "field": "req_types",
+          "score": 0.95,
+          "detail": "9.5/10"
+        },
+        {
+          "field": "resp_recall",
+          "score": 1,
+          "detail": "8/8"
+        }
+      ],
+      "avg": 0.9287878787878788
+    },
+    {
+      "id": "pair-Q011",
+      "fields": [
+        {
+          "field": "company",
+          "score": 1,
+          "detail": "exact"
+        },
+        {
+          "field": "title",
+          "score": 1,
+          "detail": "ok"
+        },
+        {
+          "field": "location",
+          "score": 0.5,
+          "detail": "extra: Bakersfield, USA"
+        },
+        {
+          "field": "exp_min",
+          "score": 1,
+          "detail": "both null"
+        },
+        {
+          "field": "exp_max",
+          "score": 1,
+          "detail": "both null"
+        },
+        {
+          "field": "req_recall",
+          "score": 1,
+          "detail": "7/7"
+        },
+        {
+          "field": "req_precision",
+          "score": 1,
+          "detail": "4/4"
+        },
+        {
+          "field": "req_types",
+          "score": 1,
+          "detail": "7/7"
+        },
+        {
+          "field": "resp_recall",
+          "score": 0.875,
+          "detail": "7/8"
+        }
+      ],
+      "avg": 0.9305555555555556
+    },
+    {
+      "id": "pair-Q012",
+      "fields": [
+        {
+          "field": "company",
+          "score": 1,
+          "detail": "exact"
+        },
+        {
+          "field": "title",
+          "score": 1,
+          "detail": "ok"
+        },
+        {
+          "field": "location",
+          "score": 0.5,
+          "detail": "extra: USA"
+        },
+        {
+          "field": "exp_min",
+          "score": 1,
+          "detail": "exact"
+        },
+        {
+          "field": "exp_max",
+          "score": 1,
+          "detail": "both null"
+        },
+        {
+          "field": "req_recall",
+          "score": 0.75,
+          "detail": "6/8"
+        },
+        {
+          "field": "req_precision",
+          "score": 1,
+          "detail": "7/7"
+        },
+        {
+          "field": "req_types",
+          "score": 0.9166666666666666,
+          "detail": "5.5/6"
+        },
+        {
+          "field": "resp_recall",
+          "score": 1,
+          "detail": "4/4"
+        }
+      ],
+      "avg": 0.9074074074074076
+    },
+    {
+      "id": "pair-Q013",
+      "fields": [
+        {
+          "field": "company",
+          "score": 0.85,
+          "detail": "subsidiary: parent=\"stride\""
+        },
+        {
+          "field": "title",
+          "score": 1,
+          "detail": "ok"
+        },
+        {
+          "field": "location",
+          "score": 0.5,
+          "detail": "extra: USA"
+        },
+        {
+          "field": "exp_min",
+          "score": 1,
+          "detail": "exact"
+        },
+        {
+          "field": "exp_max",
+          "score": 1,
+          "detail": "both null"
+        },
+        {
+          "field": "req_recall",
+          "score": 1,
+          "detail": "10/10"
+        },
+        {
+          "field": "req_precision",
+          "score": 1,
+          "detail": "9/9"
+        },
+        {
+          "field": "req_types",
+          "score": 0.95,
+          "detail": "9.5/10"
+        },
+        {
+          "field": "resp_recall",
+          "score": 1,
+          "detail": "7/7"
+        }
+      ],
+      "avg": 0.9222222222222223
+    },
+    {
+      "id": "pair-Q014",
+      "fields": [
+        {
+          "field": "company",
+          "score": 1,
+          "detail": "exact"
+        },
+        {
+          "field": "title",
+          "score": 0.5116279069767442,
+          "detail": "mismatch (0.51)"
+        },
+        {
+          "field": "location",
+          "score": 0.5,
+          "detail": "extra: Newark, USA"
+        },
+        {
+          "field": "exp_min",
+          "score": 1,
+          "detail": "both null"
+        },
+        {
+          "field": "exp_max",
+          "score": 1,
+          "detail": "both null"
+        },
+        {
+          "field": "req_recall",
+          "score": 1,
+          "detail": "10/10"
+        },
+        {
+          "field": "req_precision",
+          "score": 1,
+          "detail": "10/10"
+        },
+        {
+          "field": "req_types",
+          "score": 0.95,
+          "detail": "9.5/10"
+        },
+        {
+          "field": "resp_recall",
+          "score": 1,
+          "detail": "8/8"
+        }
+      ],
+      "avg": 0.884625322997416
+    },
+    {
+      "id": "pair-Q015",
+      "fields": [
+        {
+          "field": "company",
+          "score": 0.9,
+          "detail": "contains: \"Samuel Knight Energy's client\" ~ \"Samuel Knight Energy\""
+        },
+        {
+          "field": "title",
+          "score": 0.288135593220339,
+          "detail": "mismatch (0.29)"
+        },
+        {
+          "field": "location",
+          "score": 0.11111111111111116,
+          "detail": "mismatch (0.11)"
+        },
+        {
+          "field": "exp_min",
+          "score": 1,
+          "detail": "both null"
+        },
+        {
+          "field": "exp_max",
+          "score": 1,
+          "detail": "both null"
+        },
+        {
+          "field": "req_recall",
+          "score": 1,
+          "detail": "12/12"
+        },
+        {
+          "field": "req_precision",
+          "score": 1,
+          "detail": "6/6"
+        },
+        {
+          "field": "req_types",
+          "score": 1,
+          "detail": "12/12"
+        },
+        {
+          "field": "resp_recall",
+          "score": 1,
+          "detail": "8/8"
+        }
+      ],
+      "avg": 0.8110274115923833
+    },
+    {
+      "id": "pair-Q016",
+      "fields": [
+        {
+          "field": "company",
+          "score": 0.9,
+          "detail": "contains: \"Ryan Homes, a brand of NVR\" ~ \"NVR\""
+        },
+        {
+          "field": "title",
+          "score": 1,
+          "detail": "ok"
+        },
+        {
+          "field": "location",
+          "score": 0.5,
+          "detail": "extra: United States"
+        },
+        {
+          "field": "exp_min",
+          "score": 1,
+          "detail": "both null"
+        },
+        {
+          "field": "exp_max",
+          "score": 1,
+          "detail": "both null"
+        },
+        {
+          "field": "req_recall",
+          "score": 1,
+          "detail": "8/8"
+        },
+        {
+          "field": "req_precision",
+          "score": 1,
+          "detail": "7/7"
+        },
+        {
+          "field": "req_types",
+          "score": 1,
+          "detail": "8/8"
+        },
+        {
+          "field": "resp_recall",
+          "score": 1,
+          "detail": "8/8"
+        }
+      ],
+      "avg": 0.9333333333333333
+    },
+    {
+      "id": "pair-Q017",
+      "fields": [
+        {
+          "field": "company",
+          "score": 0.3125,
+          "detail": "mismatch (0.31)"
+        },
+        {
+          "field": "title",
+          "score": 1,
+          "detail": "ok"
+        },
+        {
+          "field": "location",
+          "score": 1,
+          "detail": "both empty"
+        },
+        {
+          "field": "exp_min",
+          "score": 1,
+          "detail": "exact"
+        },
+        {
+          "field": "exp_max",
+          "score": 1,
+          "detail": "both null"
+        },
+        {
+          "field": "req_recall",
+          "score": 0.18181818181818182,
+          "detail": "2/11"
+        },
+        {
+          "field": "req_precision",
+          "score": 1,
+          "detail": "2/2"
+        },
+        {
+          "field": "req_types",
+          "score": 1,
+          "detail": "2/2"
+        },
+        {
+          "field": "resp_recall",
+          "score": 1,
+          "detail": "8/8"
+        }
+      ],
+      "avg": 0.8327020202020202
+    },
+    {
+      "id": "pair-Q018",
+      "fields": [
+        {
+          "field": "company",
+          "score": 0.19999999999999996,
+          "detail": "mismatch (0.20)"
+        },
+        {
+          "field": "title",
+          "score": 0.9,
+          "detail": "ok"
+        },
+        {
+          "field": "location",
+          "score": 1,
+          "detail": "both empty"
+        },
+        {
+          "field": "exp_min",
+          "score": 1,
+          "detail": "both null"
+        },
+        {
+          "field": "exp_max",
+          "score": 1,
+          "detail": "both null"
+        },
+        {
+          "field": "req_recall",
+          "score": 0.875,
+          "detail": "7/8"
+        },
+        {
+          "field": "req_precision",
+          "score": 1,
+          "detail": "7/7"
+        },
+        {
+          "field": "req_types",
+          "score": 1,
+          "detail": "7/7"
+        },
+        {
+          "field": "resp_recall",
+          "score": 1,
+          "detail": "8/8"
+        }
+      ],
+      "avg": 0.8861111111111111
+    },
+    {
+      "id": "pair-Q019",
+      "fields": [
+        {
+          "field": "company",
+          "score": 1,
+          "detail": "exact"
+        },
+        {
+          "field": "title",
+          "score": 1,
+          "detail": "ok"
+        },
+        {
+          "field": "location",
+          "score": 1,
+          "detail": "city match: \"corpus christi\" ~ \"corpus christi\""
+        },
+        {
+          "field": "exp_min",
+          "score": 1,
+          "detail": "both null"
+        },
+        {
+          "field": "exp_max",
+          "score": 1,
+          "detail": "both null"
+        },
+        {
+          "field": "req_recall",
+          "score": 1,
+          "detail": "10/10"
+        },
+        {
+          "field": "req_precision",
+          "score": 1,
+          "detail": "9/9"
+        },
+        {
+          "field": "req_types",
+          "score": 0.95,
+          "detail": "9.5/10"
+        },
+        {
+          "field": "resp_recall",
+          "score": 1,
+          "detail": "5/5"
+        }
+      ],
+      "avg": 0.9944444444444444
+    },
+    {
+      "id": "pair-Q020",
+      "fields": [
+        {
+          "field": "company",
+          "score": 0,
+          "detail": "mismatch (0.00)"
+        },
+        {
+          "field": "title",
+          "score": 0.4571428571428572,
+          "detail": "mismatch (0.46)"
+        },
+        {
+          "field": "location",
+          "score": 1,
+          "detail": "remote match"
+        },
+        {
+          "field": "exp_min",
+          "score": 1,
+          "detail": "exact"
+        },
+        {
+          "field": "exp_max",
+          "score": 1,
+          "detail": "both null"
+        },
+        {
+          "field": "req_recall",
+          "score": 0.4,
+          "detail": "4/10"
+        },
+        {
+          "field": "req_precision",
+          "score": 1,
+          "detail": "3/3"
+        },
+        {
+          "field": "req_types",
+          "score": 0.875,
+          "detail": "3.5/4"
+        },
+        {
+          "field": "resp_recall",
+          "score": 0.625,
+          "detail": "5/8"
+        }
+      ],
+      "avg": 0.7063492063492064
+    },
+    {
+      "id": "pair-Q022",
+      "fields": [
+        {
+          "field": "company",
+          "score": 0.9,
+          "detail": "contains: \"Zillow Group\" ~ \"Zillow\""
+        },
+        {
+          "field": "title",
+          "score": 1,
+          "detail": "ok"
+        },
+        {
+          "field": "location",
+          "score": 0.5,
+          "detail": "extra: United States"
+        },
+        {
+          "field": "exp_min",
+          "score": 1,
+          "detail": "exact"
+        },
+        {
+          "field": "exp_max",
+          "score": 1,
+          "detail": "both null"
+        },
+        {
+          "field": "req_recall",
+          "score": 0.6666666666666666,
+          "detail": "8/12"
+        },
+        {
+          "field": "req_precision",
+          "score": 0.6666666666666666,
+          "detail": "4/6"
+        },
+        {
+          "field": "req_types",
+          "score": 0.8125,
+          "detail": "6.5/8"
+        },
+        {
+          "field": "resp_recall",
+          "score": 1,
+          "detail": "7/7"
+        }
+      ],
+      "avg": 0.838425925925926
+    },
+    {
+      "id": "pair-Q024",
+      "fields": [
+        {
+          "field": "company",
+          "score": 1,
+          "detail": "exact"
+        },
+        {
+          "field": "title",
+          "score": 0.9,
+          "detail": "ok"
+        },
+        {
+          "field": "location",
+          "score": 1,
+          "detail": "both empty"
+        },
+        {
+          "field": "exp_min",
+          "score": 1,
+          "detail": "exact"
+        },
+        {
+          "field": "exp_max",
+          "score": 1,
+          "detail": "both null"
+        },
+        {
+          "field": "req_recall",
+          "score": 1,
+          "detail": "9/9"
+        },
+        {
+          "field": "req_precision",
+          "score": 0.875,
+          "detail": "7/8"
+        },
+        {
+          "field": "req_types",
+          "score": 0.8888888888888888,
+          "detail": "8/9"
+        },
+        {
+          "field": "resp_recall",
+          "score": 1,
+          "detail": "8/8"
+        }
+      ],
+      "avg": 0.9626543209876544
+    },
+    {
+      "id": "pair-Q025",
+      "fields": [
+        {
+          "field": "company",
+          "score": 1,
+          "detail": "exact"
+        },
+        {
+          "field": "title",
+          "score": 0.9375,
+          "detail": "ok"
+        },
+        {
+          "field": "location",
+          "score": 0.5,
+          "detail": "extra: Kansas City, US"
+        },
+        {
+          "field": "exp_min",
+          "score": 1,
+          "detail": "exact"
+        },
+        {
+          "field": "exp_max",
+          "score": 1,
+          "detail": "both null"
+        },
+        {
+          "field": "req_recall",
+          "score": 1,
+          "detail": "12/12"
+        },
+        {
+          "field": "req_precision",
+          "score": 1,
+          "detail": "12/12"
+        },
+        {
+          "field": "req_types",
+          "score": 0.9583333333333334,
+          "detail": "11.5/12"
+        },
+        {
+          "field": "resp_recall",
+          "score": 1,
+          "detail": "8/8"
+        }
+      ],
+      "avg": 0.9328703703703702
+    },
+    {
+      "id": "pair-Q026",
+      "fields": [
+        {
+          "field": "company",
+          "score": 0,
+          "detail": "missing, expected: Brilliant®"
+        },
+        {
+          "field": "title",
+          "score": 1,
+          "detail": "ok"
+        },
+        {
+          "field": "location",
+          "score": 1,
+          "detail": "both empty"
+        },
+        {
+          "field": "exp_min",
+          "score": 1,
+          "detail": "both null"
+        },
+        {
+          "field": "exp_max",
+          "score": 1,
+          "detail": "both null"
+        },
+        {
+          "field": "req_recall",
+          "score": 1,
+          "detail": "9/9"
+        },
+        {
+          "field": "req_precision",
+          "score": 1,
+          "detail": "7/7"
+        },
+        {
+          "field": "req_types",
+          "score": 0.9444444444444444,
+          "detail": "8.5/9"
+        },
+        {
+          "field": "resp_recall",
+          "score": 1,
+          "detail": "8/8"
+        }
+      ],
+      "avg": 0.8827160493827161
+    },
+    {
+      "id": "pair-Q027",
+      "fields": [
+        {
+          "field": "company",
+          "score": 0.9,
+          "detail": "contains: \"JPMorgan Chase\" ~ \"JPMorgan Chase & Co\""
+        },
+        {
+          "field": "title",
+          "score": 0.9,
+          "detail": "ok"
+        },
+        {
+          "field": "location",
+          "score": 0.5,
+          "detail": "extra: New York City,Boston,Chicago,Houston,Los Angeles,San Francisco, USA"
+        },
+        {
+          "field": "exp_min",
+          "score": 1,
+          "detail": "both null"
+        },
+        {
+          "field": "exp_max",
+          "score": 1,
+          "detail": "both null"
+        },
+        {
+          "field": "req_recall",
+          "score": 1,
+          "detail": "10/10"
+        },
+        {
+          "field": "req_precision",
+          "score": 1,
+          "detail": "9/9"
+        },
+        {
+          "field": "req_types",
+          "score": 1,
+          "detail": "10/10"
+        },
+        {
+          "field": "resp_recall",
+          "score": 1,
+          "detail": "8/8"
+        }
+      ],
+      "avg": 0.9222222222222223
+    },
+    {
+      "id": "pair-Q028",
+      "fields": [
+        {
+          "field": "company",
+          "score": 0.07692307692307687,
+          "detail": "mismatch (0.08)"
+        },
+        {
+          "field": "title",
+          "score": 0.43243243243243246,
+          "detail": "mismatch (0.43)"
+        },
+        {
+          "field": "location",
+          "score": 1,
+          "detail": "remote match"
+        },
+        {
+          "field": "exp_min",
+          "score": 1,
+          "detail": "exact"
+        },
+        {
+          "field": "exp_max",
+          "score": 1,
+          "detail": "both null"
+        },
+        {
+          "field": "req_recall",
+          "score": 0.45454545454545453,
+          "detail": "5/11"
+        },
+        {
+          "field": "req_precision",
+          "score": 1,
+          "detail": "3/3"
+        },
+        {
+          "field": "req_types",
+          "score": 0.8,
+          "detail": "4/5"
+        },
+        {
+          "field": "resp_recall",
+          "score": 0.8,
+          "detail": "4/5"
+        }
+      ],
+      "avg": 0.7293223293223292
+    },
+    {
+      "id": "pair-Q029",
+      "fields": [
+        {
+          "field": "company",
+          "score": 0.07692307692307687,
+          "detail": "mismatch (0.08)"
+        },
+        {
+          "field": "title",
+          "score": 0.43243243243243246,
+          "detail": "mismatch (0.43)"
+        },
+        {
+          "field": "location",
+          "score": 1,
+          "detail": "remote match"
+        },
+        {
+          "field": "exp_min",
+          "score": 1,
+          "detail": "exact"
+        },
+        {
+          "field": "exp_max",
+          "score": 1,
+          "detail": "both null"
+        },
+        {
+          "field": "req_recall",
+          "score": 0.4166666666666667,
+          "detail": "5/12"
+        },
+        {
+          "field": "req_precision",
+          "score": 1,
+          "detail": "3/3"
+        },
+        {
+          "field": "req_types",
+          "score": 1,
+          "detail": "5/5"
+        },
+        {
+          "field": "resp_recall",
+          "score": 0.8,
+          "detail": "4/5"
+        }
+      ],
+      "avg": 0.7473357973357974
+    },
+    {
+      "id": "pair-Q030",
+      "fields": [
+        {
+          "field": "company",
+          "score": 0.9,
+          "detail": "contains: \"Medco\" ~ \"Medco Tool\""
+        },
+        {
+          "field": "title",
+          "score": 1,
+          "detail": "ok"
+        },
+        {
+          "field": "location",
+          "score": 1,
+          "detail": "both empty"
+        },
+        {
+          "field": "exp_min",
+          "score": 1,
+          "detail": "exact"
+        },
+        {
+          "field": "exp_max",
+          "score": 1,
+          "detail": "both null"
+        },
+        {
+          "field": "req_recall",
+          "score": 0.8,
+          "detail": "8/10"
+        },
+        {
+          "field": "req_precision",
+          "score": 1,
+          "detail": "6/6"
+        },
+        {
+          "field": "req_types",
+          "score": 1,
+          "detail": "8/8"
+        },
+        {
+          "field": "resp_recall",
+          "score": 1,
+          "detail": "7/7"
+        }
+      ],
+      "avg": 0.9666666666666666
+    },
+    {
+      "id": "pair-Q031",
+      "fields": [
+        {
+          "field": "company",
+          "score": 0.09999999999999998,
+          "detail": "mismatch (0.10)"
+        },
+        {
+          "field": "title",
+          "score": 0.6857142857142857,
+          "detail": "mismatch (0.69)"
+        },
+        {
+          "field": "location",
+          "score": 1,
+          "detail": "both empty"
+        },
+        {
+          "field": "exp_min",
+          "score": 0,
+          "detail": "0.5 vs null"
+        },
+        {
+          "field": "exp_max",
+          "score": 1,
+          "detail": "both null"
+        },
+        {
+          "field": "req_recall",
+          "score": 0.875,
+          "detail": "7/8"
+        },
+        {
+          "field": "req_precision",
+          "score": 1,
+          "detail": "7/7"
+        },
+        {
+          "field": "req_types",
+          "score": 1,
+          "detail": "7/7"
+        },
+        {
+          "field": "resp_recall",
+          "score": 1,
+          "detail": "8/8"
+        }
+      ],
+      "avg": 0.7400793650793651
+    },
+    {
+      "id": "pair-Q032",
+      "fields": [
+        {
+          "field": "company",
+          "score": 0.09999999999999998,
+          "detail": "mismatch (0.10)"
+        },
+        {
+          "field": "title",
+          "score": 0.9,
+          "detail": "ok"
+        },
+        {
+          "field": "location",
+          "score": 1,
+          "detail": "city match: \"farmington\" ~ \"farmington\""
+        },
+        {
+          "field": "exp_min",
+          "score": 1,
+          "detail": "exact"
+        },
+        {
+          "field": "exp_max",
+          "score": 1,
+          "detail": "both null"
+        },
+        {
+          "field": "req_recall",
+          "score": 0.9090909090909091,
+          "detail": "10/11"
+        },
+        {
+          "field": "req_precision",
+          "score": 0.9090909090909091,
+          "detail": "10/11"
+        },
+        {
+          "field": "req_types",
+          "score": 0.95,
+          "detail": "9.5/10"
+        },
+        {
+          "field": "resp_recall",
+          "score": 1,
+          "detail": "6/6"
+        }
+      ],
+      "avg": 0.8631313131313132
+    },
+    {
+      "id": "pair-Q034",
+      "fields": [
+        {
+          "field": "company",
+          "score": 1,
+          "detail": "exact"
+        },
+        {
+          "field": "title",
+          "score": 0.9,
+          "detail": "ok"
+        },
+        {
+          "field": "location",
+          "score": 1,
+          "detail": "both empty"
+        },
+        {
+          "field": "exp_min",
+          "score": 1,
+          "detail": "exact"
+        },
+        {
+          "field": "exp_max",
+          "score": 1,
+          "detail": "both null"
+        },
+        {
+          "field": "req_recall",
+          "score": 1,
+          "detail": "11/11"
+        },
+        {
+          "field": "req_precision",
+          "score": 1,
+          "detail": "8/8"
+        },
+        {
+          "field": "req_types",
+          "score": 0.8636363636363636,
+          "detail": "9.5/11"
+        },
+        {
+          "field": "resp_recall",
+          "score": 1,
+          "detail": "7/7"
+        }
+      ],
+      "avg": 0.9737373737373738
+    },
+    {
+      "id": "pair-Q035",
+      "fields": [
+        {
+          "field": "company",
+          "score": 0.9,
+          "detail": "contains: \"Penske Media Corp. (PMC)\" ~ \"PMC\""
+        },
+        {
+          "field": "title",
+          "score": 0.9,
+          "detail": "ok"
+        },
+        {
+          "field": "location",
+          "score": 0.5,
+          "detail": "extra: Los Angeles, USA"
+        },
+        {
+          "field": "exp_min",
+          "score": 1,
+          "detail": "exact"
+        },
+        {
+          "field": "exp_max",
+          "score": 1,
+          "detail": "both null"
+        },
+        {
+          "field": "req_recall",
+          "score": 0.5833333333333334,
+          "detail": "7/12"
+        },
+        {
+          "field": "req_precision",
+          "score": 1,
+          "detail": "6/6"
+        },
+        {
+          "field": "req_types",
+          "score": 1,
+          "detail": "7/7"
+        },
+        {
+          "field": "resp_recall",
+          "score": 1,
+          "detail": "8/8"
+        }
+      ],
+      "avg": 0.8759259259259259
+    },
+    {
+      "id": "pair-Q036",
+      "fields": [
+        {
+          "field": "company",
+          "score": 0.08695652173913049,
+          "detail": "mismatch (0.09)"
+        },
+        {
+          "field": "title",
+          "score": 0.9,
+          "detail": "ok"
+        },
+        {
+          "field": "location",
+          "score": 1,
+          "detail": "both empty"
+        },
+        {
+          "field": "exp_min",
+          "score": 1,
+          "detail": "both null"
+        },
+        {
+          "field": "exp_max",
+          "score": 1,
+          "detail": "both null"
+        },
+        {
+          "field": "req_recall",
+          "score": 1,
+          "detail": "11/11"
+        },
+        {
+          "field": "req_precision",
+          "score": 1,
+          "detail": "11/11"
+        },
+        {
+          "field": "req_types",
+          "score": 0.9545454545454546,
+          "detail": "10.5/11"
+        },
+        {
+          "field": "resp_recall",
+          "score": 1,
+          "detail": "8/8"
+        }
+      ],
+      "avg": 0.8823891084760649
+    },
+    {
+      "id": "pair-Q037",
+      "fields": [
+        {
+          "field": "company",
+          "score": 0,
+          "detail": "missing, expected: Meduit | Driving Revenue Cycle Performance"
+        },
+        {
+          "field": "title",
+          "score": 0.925,
+          "detail": "ok"
+        },
+        {
+          "field": "location",
+          "score": 1,
+          "detail": "both empty"
+        },
+        {
+          "field": "exp_min",
+          "score": 1,
+          "detail": "exact"
+        },
+        {
+          "field": "exp_max",
+          "score": 1,
+          "detail": "exact"
+        },
+        {
+          "field": "req_recall",
+          "score": 0.8461538461538461,
+          "detail": "11/13"
+        },
+        {
+          "field": "req_precision",
+          "score": 1,
+          "detail": "7/7"
+        },
+        {
+          "field": "req_types",
+          "score": 1,
+          "detail": "11/11"
+        },
+        {
+          "field": "resp_recall",
+          "score": 0.75,
+          "detail": "6/8"
+        }
+      ],
+      "avg": 0.8356837606837606
+    },
+    {
+      "id": "pair-Q038",
+      "fields": [
+        {
+          "field": "company",
+          "score": 1,
+          "detail": "exact"
+        },
+        {
+          "field": "title",
+          "score": 1,
+          "detail": "ok"
+        },
+        {
+          "field": "location",
+          "score": 1,
+          "detail": "both empty"
+        },
+        {
+          "field": "exp_min",
+          "score": 1,
+          "detail": "both null"
+        },
+        {
+          "field": "exp_max",
+          "score": 1,
+          "detail": "both null"
+        },
+        {
+          "field": "req_recall",
+          "score": 1,
+          "detail": "9/9"
+        },
+        {
+          "field": "req_precision",
+          "score": 1,
+          "detail": "9/9"
+        },
+        {
+          "field": "req_types",
+          "score": 0.8888888888888888,
+          "detail": "8/9"
+        },
+        {
+          "field": "resp_recall",
+          "score": 1,
+          "detail": "8/8"
+        }
+      ],
+      "avg": 0.9876543209876544
+    },
+    {
+      "id": "pair-Q039",
+      "fields": [
+        {
+          "field": "company",
+          "score": 0.09999999999999998,
+          "detail": "mismatch (0.10)"
+        },
+        {
+          "field": "title",
+          "score": 0.9,
+          "detail": "ok"
+        },
+        {
+          "field": "location",
+          "score": 1,
+          "detail": "both empty"
+        },
+        {
+          "field": "exp_min",
+          "score": 1,
+          "detail": "both null"
+        },
+        {
+          "field": "exp_max",
+          "score": 1,
+          "detail": "both null"
+        },
+        {
+          "field": "req_recall",
+          "score": 1,
+          "detail": "10/10"
+        },
+        {
+          "field": "req_precision",
+          "score": 1,
+          "detail": "10/10"
+        },
+        {
+          "field": "req_types",
+          "score": 1,
+          "detail": "10/10"
+        },
+        {
+          "field": "resp_recall",
+          "score": 1,
+          "detail": "7/7"
+        }
+      ],
+      "avg": 0.8888888888888888
+    },
+    {
+      "id": "pair-Q041",
+      "fields": [
+        {
+          "field": "company",
+          "score": 0.8,
+          "detail": "word_overlap (1)"
+        },
+        {
+          "field": "title",
+          "score": 0.9,
+          "detail": "ok"
+        },
+        {
+          "field": "location",
+          "score": 1,
+          "detail": "both empty"
+        },
+        {
+          "field": "exp_min",
+          "score": 1,
+          "detail": "exact"
+        },
+        {
+          "field": "exp_max",
+          "score": 1,
+          "detail": "both null"
+        },
+        {
+          "field": "req_recall",
+          "score": 0.7777777777777778,
+          "detail": "7/9"
+        },
+        {
+          "field": "req_precision",
+          "score": 1,
+          "detail": "7/7"
+        },
+        {
+          "field": "req_types",
+          "score": 0.8571428571428571,
+          "detail": "6/7"
+        },
+        {
+          "field": "resp_recall",
+          "score": 0.8571428571428571,
+          "detail": "6/7"
+        }
+      ],
+      "avg": 0.9102292768959435
+    },
+    {
+      "id": "pair-Q042",
+      "fields": [
+        {
+          "field": "company",
+          "score": 1,
+          "detail": "exact"
+        },
+        {
+          "field": "title",
+          "score": 0.37037037037037035,
+          "detail": "mismatch (0.37)"
+        },
+        {
+          "field": "location",
+          "score": 0.5,
+          "detail": "extra: USA"
+        },
+        {
+          "field": "exp_min",
+          "score": 1,
+          "detail": "both null"
+        },
+        {
+          "field": "exp_max",
+          "score": 1,
+          "detail": "both null"
+        },
+        {
+          "field": "req_recall",
+          "score": 0.3,
+          "detail": "3/10"
+        },
+        {
+          "field": "req_precision",
+          "score": 1,
+          "detail": "3/3"
+        },
+        {
+          "field": "req_types",
+          "score": 1,
+          "detail": "3/3"
+        },
+        {
+          "field": "resp_recall",
+          "score": 0.375,
+          "detail": "3/8"
+        }
+      ],
+      "avg": 0.7272633744855966
+    },
+    {
+      "id": "pair-Q043",
+      "fields": [
+        {
+          "field": "company",
+          "score": 0.14925373134328357,
+          "detail": "mismatch (0.15)"
+        },
+        {
+          "field": "title",
+          "score": 0.4545454545454546,
+          "detail": "mismatch (0.45)"
+        },
+        {
+          "field": "location",
+          "score": 1,
+          "detail": "city match: \"greensboro\" ~ \"greensboro\""
+        },
+        {
+          "field": "exp_min",
+          "score": 1,
+          "detail": "exact"
+        },
+        {
+          "field": "exp_max",
+          "score": 1,
+          "detail": "both null"
+        },
+        {
+          "field": "req_recall",
+          "score": 0.7777777777777778,
+          "detail": "7/9"
+        },
+        {
+          "field": "req_precision",
+          "score": 1,
+          "detail": "4/4"
+        },
+        {
+          "field": "req_types",
+          "score": 1,
+          "detail": "7/7"
+        },
+        {
+          "field": "resp_recall",
+          "score": 0.4,
+          "detail": "2/5"
+        }
+      ],
+      "avg": 0.7535085515185018
+    },
+    {
+      "id": "pair-Q044",
+      "fields": [
+        {
+          "field": "company",
+          "score": 0.25,
+          "detail": "mismatch (0.25)"
+        },
+        {
+          "field": "title",
+          "score": 0.9,
+          "detail": "ok"
+        },
+        {
+          "field": "location",
+          "score": 0.5,
+          "detail": "extra: USA"
+        },
+        {
+          "field": "exp_min",
+          "score": 1,
+          "detail": "exact"
+        },
+        {
+          "field": "exp_max",
+          "score": 1,
+          "detail": "both null"
+        },
+        {
+          "field": "req_recall",
+          "score": 0.5,
+          "detail": "4/8"
+        },
+        {
+          "field": "req_precision",
+          "score": 1,
+          "detail": "3/3"
+        },
+        {
+          "field": "req_types",
+          "score": 1,
+          "detail": "4/4"
+        },
+        {
+          "field": "resp_recall",
+          "score": 0.5,
+          "detail": "4/8"
+        }
+      ],
+      "avg": 0.7388888888888889
+    },
+    {
+      "id": "pair-Q046",
+      "fields": [
+        {
+          "field": "company",
+          "score": 0.9,
+          "detail": "contains: \"Harley-Davidson Motor Company\" ~ \"Harley-Davidson\""
+        },
+        {
+          "field": "title",
+          "score": 0.9,
+          "detail": "ok"
+        },
+        {
+          "field": "location",
+          "score": 0.5,
+          "detail": "extra: United States"
+        },
+        {
+          "field": "exp_min",
+          "score": 1,
+          "detail": "exact"
+        },
+        {
+          "field": "exp_max",
+          "score": 1,
+          "detail": "both null"
+        },
+        {
+          "field": "req_recall",
+          "score": 1,
+          "detail": "10/10"
+        },
+        {
+          "field": "req_precision",
+          "score": 1,
+          "detail": "9/9"
+        },
+        {
+          "field": "req_types",
+          "score": 0.9,
+          "detail": "9/10"
+        },
+        {
+          "field": "resp_recall",
+          "score": 1,
+          "detail": "8/8"
+        }
+      ],
+      "avg": 0.911111111111111
+    }
+  ]
+}

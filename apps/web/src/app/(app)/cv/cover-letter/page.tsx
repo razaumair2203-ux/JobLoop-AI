@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
+import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import {
   ArrowLeft,
@@ -67,11 +68,48 @@ const sourceIcons: Record<string, React.ComponentType<{ className?: string }>> =
 };
 
 export default function CoverLetterPage() {
+  const searchParams = useSearchParams();
+  const appId = searchParams.get("app");
+
   const [tone, setTone] = useState<Tone>("professional");
   const [paragraphs, setParagraphs] = useState(mockParagraphs);
   const [expandedStrategy, setExpandedStrategy] = useState<number | null>(null);
   const [sourcesExpanded, setSourcesExpanded] = useState(false);
   const [copied, setCopied] = useState(false);
+  const [generating, setGenerating] = useState(false);
+  const [genError, setGenError] = useState<string | null>(null);
+
+  const generateLetter = useCallback(async (applicationId: string, selectedTone: Tone) => {
+    setGenerating(true);
+    setGenError(null);
+    try {
+      const res = await fetch("/api/cv/cover-letter", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ application_id: applicationId, tone: selectedTone }),
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        setGenError(data.error || "Generation failed");
+        return;
+      }
+      if (data.letter?.paragraphs) {
+        setParagraphs(data.letter.paragraphs);
+      }
+    } catch (err) {
+      setGenError(err instanceof Error ? err.message : "Network error");
+    } finally {
+      setGenerating(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (appId) {
+      generateLetter(appId, tone);
+    }
+  // Only run on mount with appId, not on tone change
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [appId]);
 
   const wordCount = paragraphs
     .reduce((acc, p) => acc + p.text.split(/\s+/).length, 0);
@@ -81,6 +119,35 @@ export default function CoverLetterPage() {
     navigator.clipboard.writeText(text);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
+  }
+
+  if (generating) {
+    return (
+      <div className="mx-auto flex max-w-3xl items-center justify-center py-32">
+        <div className="text-center">
+          <div className="mx-auto h-10 w-10 animate-spin rounded-full border-4 border-brand-200 border-t-brand-600" />
+          <p className="mt-4 text-sm font-medium text-zinc-700">Generating your cover letter...</p>
+          <p className="mt-1 text-xs text-zinc-400">This usually takes 10-20 seconds</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (genError) {
+    return (
+      <div className="mx-auto flex max-w-3xl items-center justify-center py-32">
+        <div className="max-w-md rounded-xl border border-red-200 bg-red-50 p-6 text-center">
+          <p className="text-sm font-medium text-red-800">Cover Letter Generation Failed</p>
+          <p className="mt-2 text-xs text-red-600">{genError}</p>
+          <button
+            onClick={() => appId && generateLetter(appId, tone)}
+            className="mt-4 rounded-lg bg-brand-600 px-4 py-2 text-xs font-medium text-white hover:bg-brand-700"
+          >
+            Try again
+          </button>
+        </div>
+      </div>
+    );
   }
 
   return (
@@ -232,7 +299,10 @@ export default function CoverLetterPage() {
       <div className="mt-4 flex items-center justify-between">
         <span className="text-xs text-zinc-400">{wordCount} words</span>
         <div className="flex gap-2">
-          <button className="flex items-center gap-1.5 rounded-lg border border-zinc-200 px-3 py-1.5 text-xs font-medium text-zinc-600 hover:bg-zinc-50">
+          <button
+            onClick={() => appId && generateLetter(appId, tone)}
+            className="flex items-center gap-1.5 rounded-lg border border-zinc-200 px-3 py-1.5 text-xs font-medium text-zinc-600 hover:bg-zinc-50"
+          >
             <RefreshCw className="h-3.5 w-3.5" />
             Regenerate
           </button>

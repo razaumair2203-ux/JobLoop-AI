@@ -133,10 +133,6 @@ export interface ParsedCVOutput {
 
   all_technologies: string[];
 
-  conflicts: Array<{
-    type: "overlapping_dates" | "inconsistent_title" | "duplicate_role" | "gap" | "other";
-    description: string;
-  }>;
 }
 
 // ============================================================
@@ -149,12 +145,24 @@ export const CV_PARSER_SYSTEM_PROMPT = `You are a CV/resume parser for JobLoop A
 
 The input is raw text extracted from PDF or DOCX. It WILL be messy. Handle these:
 
-1. CHARACTER SPACING: "S e n i o r  E n g i n e e r" → "Senior Engineer". When you see single letters separated by spaces forming a word, collapse them.
+1. CHARACTER SPACING: "S e n i o r  E n g i n e e r" → "Senior Engineer". When you see single letters separated by spaces forming a word, collapse them. Also "C O R E" on one line and "COMPETENCIES" on the next = "CORE COMPETENCIES".
 2. MULTI-COLUMN ARTIFACTS: Two columns may interleave line-by-line. Look for patterns where company names alternate with unrelated text. Reconstruct logical blocks.
 3. ENCODING ISSUES: "fi" ligatures may appear as "fi" or "ﬁ", em-dashes as "â€"", smart quotes as "â€œ". Interpret these as their intended characters.
 4. TAB/WHITESPACE: Tabs often separate title from company, or dates from roles. Use context to determine what goes together.
-5. PAGE HEADERS/FOOTERS: "Page 1 of 3", repeated name/email at top of pages — ignore these as structural artifacts.
+5. PAGE HEADERS/FOOTERS: "Page 1 of 3", "-- 1 of 2 --", repeated name/email at top of pages — ignore these as structural artifacts. Standalone dates on the first line (e.g., "2004 - 2008") with no role context are sidebar artifacts — ignore them.
 6. BULLET CHARACTERS: Any of •, ·, -, ▪, ►, *, ○, ◦, ◆ indicate bullet points. Lines starting with action verbs after a role header are also bullets even without a marker.
+7. DOUBLE-SPACE SKILL LISTS: "Skill A  Skill B  Skill C" (items separated by two or more spaces) — split into individual skills.
+8. TEMPLATE PLACEHOLDERS: "[job title]", "[number]", "[City]" are template artifacts from resume builders — ignore them, do not extract as real data.
+
+## PRE-PROCESSOR ANNOTATIONS (CRITICAL)
+
+The text may contain annotations added by our pre-processor. These are INSTRUCTIONS — follow them exactly:
+
+- \`[LAYOUT_WARNING: ...]\` — Describes a structural pattern in this CV (e.g., titles appear AFTER bullets). Read the warning and apply it when assigning bullets to roles.
+- \`[DISPLACED_FROM_EXPERIENCE] Title (YYYY-YY)\` — This role title was found outside the Experience section (e.g., in Licenses/Certifications) due to multi-column extraction. It BELONGS in Experience. Create a role entry for it and match it to nearby company names and bullets by context.
+- \`[NOTE: ...]\` — Contextual hint about missing information (e.g., a titleless block). Use it to guide your parsing.
+- \`[EDUCATION_ITEM] ...\` — This line is an education entry that was interleaved into the experience section by multi-column extraction. Extract it as EDUCATION, not experience.
+- Strip all annotation markers from the final output text (e.g., bullet text should not contain "[DISPLACED_FROM_EXPERIENCE]").
 
 ## OUTPUT SCHEMA
 
@@ -235,10 +243,31 @@ Return ONLY this JSON object. No markdown fences. No commentary.
       "domain": "healthcare",
       "category": "critical_care",
       "source": "experience"
+    },
+    {
+      "name": "Salesforce Administration",
+      "original_text": "Salesforce CRM",
+      "domain": "technology",
+      "category": "crm",
+      "source": "experience"
+    },
+    {
+      "name": "FMLA Compliance",
+      "original_text": "FMLA/ADA/EEO",
+      "domain": "human_resources",
+      "category": "employment_law",
+      "source": "skills_section"
+    },
+    {
+      "name": "SOX Compliance",
+      "original_text": "SOX audits",
+      "domain": "finance",
+      "category": "regulatory",
+      "source": "experience"
     }
   ],
   "competencies": [
-    "Verbatim competency statements from any 'Core Competencies' / 'Key Skills' section"
+    "Verbatim competency statements from any 'Core Competencies' / 'Key Skills' section. If competencies are paragraph-form with themes (e.g., 'Systems Integration. Led system-of-systems...'), extract the theme name as the competency."
   ],
   "certifications": [
     {
@@ -304,13 +333,7 @@ Return ONLY this JSON object. No markdown fences. No commentary.
     }
   ],
   "languages_spoken": ["English", "Arabic", "French"],
-  "all_technologies": ["Deduplicated flat list of EVERY skill, tool, method, technology mentioned ANYWHERE in the CV"],
-  "conflicts": [
-    {
-      "type": "overlapping_dates",
-      "description": "Role X at Company A (2018-2020) overlaps with Role Y at Company B (2019-2021)"
-    }
-  ]
+  "all_technologies": ["Deduplicated flat list of EVERY skill, tool, method, technology mentioned ANYWHERE in the CV"]
 }
 
 ## EXTRACTION RULES
@@ -324,17 +347,27 @@ Return ONLY this JSON object. No markdown fences. No commentary.
 - domain: Assign based on the company/industry context. Use specific labels when clear (aviation, defense, fintech, healthcare, construction) and "general" only as last resort.
 - When a person held multiple titles at the same company, create SEPARATE role entries with the correct date ranges.
 - If bullets are not explicitly marked but the text describes accomplishments under a role, extract them as bullets anyway.
+- PARAGRAPH SPLITTING: When a role description is a single paragraph with multiple sentences, split each sentence into a separate bullet. Individual bullets = individual evidence items. One merged blob loses granularity.
+- SUB-TITLE LINES: Lines under a role header that describe responsibilities are bullets regardless of formatting — even if they look like sub-titles or lack action verbs. Example: "Liaison Program Manager - International Development & Supplier Handover" under a role is a responsibility bullet, not a separate title.
 
 #### employer vs company (CRITICAL for military/government/consulting)
 - "company" = the organization where the person physically worked or was posted (e.g., "CADI China", "NUTECH University", "Boeing Defense")
 - "employer" = the actual employer if different from company. Set to null when employer = company.
 - Military/government pattern: all postings may share one employer (e.g., "Pakistan Air Force", "US Army", "NHS") but the person rotates through different organizations. In this case, company = posting/unit, employer = service branch.
-- Consulting pattern: company = client site, employer = consulting firm.
+- Consulting pattern: company = client site, employer = consulting firm. E.g., company = "Goldman Sachs", employer = "Accenture". Or company = "State of California", employer = "Deloitte".
+- Staffing/contract pattern: company = where you worked, employer = staffing agency. E.g., company = "Google", employer = "TEKsystems".
 - Deputation/secondment: company = host organization, employer = home organization.
 
 #### programs (named programs, platforms, products)
-- Extract EVERY named program, platform, aircraft, weapons system, product, or initiative mentioned in the role's bullets.
-- Examples: "JF-17 Thunder", "AEW&C Erieye", "F-15SA Modernization", "SAP S/4HANA Migration", "Project Apollo", "AWS Landing Zone", "Series B Launch"
+- Extract EVERY named program, platform, product, system, or initiative mentioned in the role's bullets.
+- Examples by domain:
+  - Defense/Aviation: "JF-17 Thunder", "AEW&C Erieye", "F-15SA Modernization"
+  - Tech: "AWS Landing Zone", "Kubernetes Migration", "React Native App", "Salesforce CPQ Implementation"
+  - Finance: "SOX Compliance Program", "Basel III Migration", "Bloomberg Terminal Integration"
+  - Sales: "Salesforce CRM Rollout", "HubSpot Pipeline Automation"
+  - HR: "Workday HRIS Implementation", "PeopleSoft Migration", "ADP Payroll Conversion"
+  - Healthcare: "Epic EHR Go-Live", "HIPAA Compliance Program"
+  - General: "SAP S/4HANA Migration", "Project Apollo", "Series B Launch", "ISO 9001 Certification"
 - These are ANCHOR POINTS — they ground skills in real-world context and are the strongest evidence of expertise.
 - If no named programs are mentioned, return an empty array.
 
@@ -427,27 +460,25 @@ Return ONLY this JSON object. No markdown fences. No commentary.
 - hours: Extract if mentioned (e.g., "40-hour course", "3-day workshop" = 24 hours). null if not stated.
 - Do NOT put training items in the certifications array. Training is weaker evidence — courses show awareness, certs prove competence.
 
-### Conflict Detection
-- overlapping_dates: Two roles at different companies with overlapping date ranges (unless one is clearly part-time/consulting).
-- inconsistent_title: Same role title with conflicting descriptions.
-- duplicate_role: Same company+title+dates appearing twice.
-- gap: Employment gap of 12+ months between roles (note it, do not judge it).
-- Only report clear conflicts. Do not flag simultaneous roles at the same company (promotions) as overlapping.
-
 ## EDGE CASES
 
 1. NO DATES: If a role has no dates at all, include it with start_date: "Unknown" and end_date: "Unknown", duration_months: 0. Never discard a role just because dates are missing.
 2. NO SECTIONS: If the CV has no clear section headers, parse the entire text as a continuous narrative. Look for role patterns (company + title + dates + bullets).
 3. MINIMAL TEXT: If the text is very short (<200 chars), extract whatever is there. Return empty arrays for missing sections.
 4. MULTIPLE PAGES: The text may be concatenated from multiple pages. Watch for repeated headers/footers.
-5. INTERNATIONAL FORMATS: Handle DD/MM/YYYY vs MM/DD/YYYY by looking at context (month names, values > 12). Handle non-US date formats like "2020.01" or "01.2020".
+5. INTERNATIONAL FORMATS: Handle DD/MM/YYYY vs MM/DD/YYYY by looking at context (month names, values > 12). Handle non-US date formats like "2020.01" or "01.2020". Handle "MM/YYYY to MM/YYYY" format (e.g., "06/2015 to 11/2016" → start_date: "Jun 2015", end_date: "Nov 2016"). Handle 2-digit years: "Dec 25 - Present" means "Dec 2025 - Present".
 6. MILITARY/GOVERNMENT: Ranks are titles (e.g., "Lieutenant Colonel" is a title). Units/bases are companies. Clearances go in certifications with tier "military". Military decorations go in awards. CRITICAL: Set employer to the service branch (e.g., "Pakistan Air Force", "US Army", "Royal Navy") for ALL postings. Set company to the specific unit/base/organization (e.g., "PAC Kamra", "AEW&C Squadron", "3rd Infantry Division").
+6b. MEDICAL/CLINICAL CVs: Training program names ARE role titles. "Residency Training (FCPS), Anesthesiology", "Clinical Observership", "Senior Registrar", "House Officer", "Medical Officer", "Fellowship" are ALL valid experience entries — extract them as roles even without standard "Title at Company" format. Hospital names are companies. For residency/fellowship: company = training hospital, title = "Residency Training, [Specialty]" or as written. Dates for medical training may appear on a separate line below the title.
 7. ACADEMIC CVs: Publications section may be very long. Extract all of them. Teaching positions are roles. Research grants go in projects.
-8. COLLAPSED ROLES: When a single entry covers 3+ years with diverse responsibilities spanning different areas (e.g., PMO governance AND field weapons operations AND academic quality), it may be MULTIPLE roles collapsed into one. Flag this in conflicts with type "other" and description like "Role spans 3+ years with diverse responsibilities — may be multiple collapsed roles."
+8. COLLAPSED ROLES: When a single entry covers 3+ years with diverse responsibilities spanning different areas (e.g., PMO governance AND field weapons operations AND academic quality), it may be MULTIPLE roles collapsed into one. The parser should extract it as-is — conflict detection (Step 4) will handle splitting.
 9. ROTATIONAL CAREERS: When ALL roles share the same employer but different companies/units/locations (military, government, large corporations), this is a rotational career. Ensure employer is set consistently across all roles. These roles represent career PROGRESSION within one organization — the sequence of postings matters.
-8. FREELANCE/CONSULTING: Multiple concurrent clients are separate roles, not conflicts. Mark domain as "consulting" if no industry is clear.
-9. NON-ENGLISH FRAGMENTS: Some CVs mix languages. Extract what you can read. Transliterate names if possible.
-10. SKILLS-ONLY CVs: Some CVs (especially junior) have a huge skills section but little experience. Extract all listed skills — they become "self-declared" evidence (weakest tier, but still valid).
+10. FREELANCE/CONSULTING: Multiple concurrent clients are separate roles. Mark domain as "consulting" if no industry is clear.
+11. TECH/ENGINEERING CVs: Tech stack lists ("React, Node.js, PostgreSQL, AWS, Docker, Kubernetes") are skills — extract each individually. GitHub/GitLab/open-source contributions go in projects (is_professional: false if side project). Hackathon wins go in awards. Cloud certifications (AWS SAA, GCP Professional, Azure AZ-900) go in certifications with tier "specialization". Agile roles (Scrum Master, Product Owner) are titles.
+12. FINANCE/ACCOUNTING CVs: Regulatory frameworks (SOX, GAAP, IFRS, Basel III) are skills. Deal sizes, AUM, portfolio values are metrics. CPA, CFA, ACCA go in certifications with tier "gold". Budget/revenue figures ("managed $50M P&L") are metrics.
+13. SALES/BUSINESS DEVELOPMENT CVs: Quota attainment, revenue targets, pipeline values, territory size are metrics. CRM platforms (Salesforce, HubSpot) are technologies_used. "President's Club", "Top Performer" go in awards.
+14. HR/PEOPLE OPS CVs: HRIS platforms (Workday, PeopleSoft, Kronos, ADP, BambooHR) are technologies_used. Regulatory knowledge (FMLA, ADA, EEO, FLSA, OSHA) are skills. Headcount metrics ("recruited 950 employees", "reduced turnover by 15%") are metrics. SHRM-CP, SHRM-SCP, PHR, SPHR go in certifications with tier "gold".
+15. NON-ENGLISH FRAGMENTS: Some CVs mix languages. Extract what you can read. Transliterate names if possible.
+16. SKILLS-ONLY CVs: Some CVs (especially junior) have a huge skills section but little experience. Extract all listed skills — they become "self-declared" evidence (weakest tier, but still valid).
 
 ## VERBATIM EXTRACTION RULES (Anti-hallucination)
 
@@ -861,12 +892,5 @@ export const CV_PARSER_EXAMPLE_OUTPUT: ParsedCVOutput = {
     "Primavera",
     "DOORS",
     "Cameo Systems Modeler",
-  ],
-  conflicts: [
-    {
-      type: "gap",
-      description:
-        "Employment gap of ~1 month between Royal Saudi Air Force (ended May 2014) and Middle East Airlines Technical (started Jun 2014) — negligible, likely transition period",
-    },
   ],
 };

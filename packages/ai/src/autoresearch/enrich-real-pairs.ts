@@ -1,21 +1,19 @@
 /**
- * Enrich Real Test Pairs — Populate expected_output via NIM API
+ * Enrich Real Test Pairs — Populate expected_output via DeepSeek API
  *
  * Reads real pairs from test-bank/real-pairs/, sends raw resume text
  * through CV parser prompt, populates expected_output + cloud_skills.
  *
  * Usage:
- *   NVIDIA_NIM_API_KEY=... npx tsx packages/ai/src/autoresearch/enrich-real-pairs.ts [--limit 15] [--start R001]
- *
- * Rate limited to 40 RPM (NIM free tier).
+ *   DEEPSEEK_API_KEY=... npx tsx packages/ai/src/autoresearch/enrich-real-pairs.ts [--limit 15] [--start R001]
  */
 
 import * as fs from "fs";
 import * as path from "path";
 
 const REAL_PAIRS_DIR = path.join(__dirname, "test-bank", "real-pairs");
-const NIM_BASE_URL = process.env.NVIDIA_NIM_BASE_URL || "https://integrate.api.nvidia.com/v1";
-const NIM_MODEL = process.env.NVIDIA_NIM_MODEL || "meta/llama-3.3-70b-instruct";
+const DEEPSEEK_BASE_URL = process.env.DEEPSEEK_BASE_URL || "https://api.deepseek.com/v1";
+const DEEPSEEK_MODEL = process.env.DEEPSEEK_MODEL || "deepseek-chat";
 
 interface RealPair {
   id: string;
@@ -59,20 +57,20 @@ async function rateLimit(): Promise<void> {
   lastCallMs = Date.now();
 }
 
-async function callNIM(system: string, user: string): Promise<string> {
-  const apiKey = process.env.NVIDIA_NIM_API_KEY;
-  if (!apiKey) throw new Error("NVIDIA_NIM_API_KEY not set");
+async function callDeepSeek(system: string, user: string): Promise<string> {
+  const apiKey = process.env.DEEPSEEK_API_KEY;
+  if (!apiKey) throw new Error("DEEPSEEK_API_KEY not set");
 
   await rateLimit();
 
-  const res = await fetch(`${NIM_BASE_URL}/chat/completions`, {
+  const res = await fetch(`${DEEPSEEK_BASE_URL}/chat/completions`, {
     method: "POST",
     headers: {
       "Authorization": `Bearer ${apiKey}`,
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      model: NIM_MODEL,
+      model: DEEPSEEK_MODEL,
       messages: [
         { role: "system", content: system },
         { role: "user", content: user },
@@ -86,7 +84,7 @@ async function callNIM(system: string, user: string): Promise<string> {
 
   if (!res.ok) {
     const err = await res.text();
-    throw new Error(`NIM ${res.status}: ${err.slice(0, 200)}`);
+    throw new Error(`DeepSeek ${res.status}: ${err.slice(0, 200)}`);
   }
 
   const data = await res.json() as {
@@ -151,12 +149,12 @@ async function main() {
     : null;
 
   console.log(`\n=== Enriching Real Test Pairs ===`);
-  console.log(`Model: ${NIM_MODEL}`);
+  console.log(`Model: ${DEEPSEEK_MODEL}`);
   console.log(`Limit: ${limit}`);
-  console.log(`API key: ${process.env.NVIDIA_NIM_API_KEY ? "SET" : "NOT SET"}`);
+  console.log(`API key: ${process.env.DEEPSEEK_API_KEY ? "SET" : "NOT SET"}`);
 
-  if (!process.env.NVIDIA_NIM_API_KEY) {
-    console.error("ERROR: Set NVIDIA_NIM_API_KEY");
+  if (!process.env.DEEPSEEK_API_KEY) {
+    console.error("ERROR: Set DEEPSEEK_API_KEY");
     process.exit(1);
   }
 
@@ -197,7 +195,7 @@ async function main() {
     console.log(`[${processed}/${limit}] ${pair.id} (${pair.source_resume.industry}/${pair.source_resume.seniority})...`);
 
     try {
-      const response = await callNIM(CV_PARSE_SYSTEM, `Resume text:\n\n${rawText}`);
+      const response = await callDeepSeek(CV_PARSE_SYSTEM, `Resume text:\n\n${rawText}`);
       const parsed = safeParseJSON(response);
 
       if (!parsed || !parsed.experience || parsed.experience.length === 0) {
@@ -220,7 +218,7 @@ async function main() {
       let jdReqs = pair.jd_requirements;
       if (jdReqs.length < 3 && pair.jd.full_description.length > 100) {
         try {
-          const jdResponse = await callNIM(
+          const jdResponse = await callDeepSeek(
             "Extract the key requirements from this job description. Return a JSON array of strings, each being one requirement. Return ONLY the JSON array.",
             pair.jd.full_description.slice(0, 3000),
           );
@@ -251,7 +249,7 @@ async function main() {
       pair.jd_requirements = jdReqs;
       pair.provenance = {
         ...pair.provenance,
-        expected_output_author: `NIM/${NIM_MODEL}`,
+        expected_output_author: `DeepSeek/${DEEPSEEK_MODEL}`,
         enriched_at: new Date().toISOString(),
         circularity_risk: "medium", // LLM-generated expected output
         needs_human_review: true,

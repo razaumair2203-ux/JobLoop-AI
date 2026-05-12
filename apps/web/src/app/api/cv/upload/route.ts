@@ -18,6 +18,7 @@ import {
   extractContactDetails,
   normalizeExtractedText,
   assessExtractionQuality,
+  extractPDFText,
 } from "@jobloop/ai";
 import type { ProfileCloud, Evidence, ConflictReport, PersonaType } from "@jobloop/ai";
 
@@ -32,14 +33,14 @@ export async function POST(request: Request) {
   await ensureUserExists(supabase, user);
 
   // Determine CV parse model from existing Cloud maturity
-  // Empty/thin Cloud (first-time user) → Sonnet catches garbled PDF structure
-  // Rich Cloud (returning user) → Haiku is fine for incremental uploads
+  // Empty/thin Cloud (first-time user) → quality tier catches garbled PDF structure
+  // Rich Cloud (returning user) → fast tier is fine for incremental uploads
   const { data: existingNodes } = await supabase
     .from("cloud_nodes")
     .select("id, name, type, category, evidence, summary")
     .eq("user_id", user.id);
 
-  let cvModelTier: "fast" | "quality" = "quality"; // default to Sonnet for new users
+  let cvModelTier: "fast" | "quality" = "quality"; // default to quality tier for new users
   if (existingNodes && existingNodes.length > 0) {
     const existingCloud: ProfileCloud = {
       user_id: user.id,
@@ -122,12 +123,12 @@ export async function POST(request: Request) {
     let extractedText: string;
     try {
       if (ext === "pdf") {
-        // pdf-parse v2.x: PDFParse class, Uint8Array input, getText() returns {text, pages, total}
-        // eslint-disable-next-line @typescript-eslint/no-require-imports, @typescript-eslint/no-explicit-any
-        const { PDFParse } = require("pdf-parse") as any;
-        const parser = new PDFParse(new Uint8Array(buffer));
-        const pdfData = await parser.getText();
-        extractedText = pdfData.text ?? pdfData.pages.map((p: { text: string }) => p.text).join("\n");
+        // Position-aware extraction with multi-column reconstruction
+        const pdfResult = await extractPDFText(buffer);
+        extractedText = pdfResult.text;
+        if (pdfResult.isMultiColumn) {
+          console.log(`[${file.name}] Multi-column PDF detected (${pdfResult.columnsDetected} columns) — reading order reconstructed`);
+        }
       } else {
         const mammoth = await import("mammoth");
         const result = await mammoth.extractRawText({ buffer });
@@ -199,11 +200,26 @@ export async function POST(request: Request) {
       })
       .eq("id", upload.id);
 
-    // Parse CV: model selected by Cloud maturity
-    // Three-tier: fixture cache → real API (Haiku/Sonnet) → explicit error
-    // NO regex fallback — production-quality output or nothing
+    // DEV MODE: Skip LLM parsing — Claude Code parses via Supabase workflow
+    // PROD MODE: Uncomment parseCVWithAI call below
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     let parsedCV: any;
+    if (process.env.DEV_AUTH_BYPASS === "true") {
+      // Dev: just mark as "pending_parse" — Claude Code will parse from Supabase
+      await supabase
+        .from("cv_uploads")
+        .update({ status: "parsed", parsed_cv: null })
+        .eq("id", upload.id);
+
+      results.push({
+        id: upload.id,
+        filename: file.name,
+        status: "pending_parse",
+        skills_found: 0,
+        experience_count: 0,
+      });
+      continue;
+    }
     try {
       parsedCV = await parseCVWithAI(extractedText, cvModelTier);
     } catch (err) {

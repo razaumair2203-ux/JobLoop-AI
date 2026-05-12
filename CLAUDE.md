@@ -16,6 +16,7 @@
 - Evidence over scores — no opaque ratings, no black boxes
 - Advocate framing — never discourage applying, help apply strongest
 - "Closed" not "Rejected" for application outcomes
+- ALWAYS save money — exhaust free/cheap alternatives before suggesting paid options. Never default to paid when free works. When money is involved, ALWAYS do alternative analysis first (free tiers, open-source, self-hosted, cheaper providers). Quality is the only valid reason to spend — never convenience or speed alone.
 
 ## Coding Standards
 - TypeScript strict mode everywhere. No `any` types in shared/ai packages.
@@ -37,7 +38,25 @@
 - AutoResearch uses JSON fixture test bank (packages/ai/src/autoresearch/test-bank/)
 - No unit test framework yet — manual tsx scripts in packages/ai/tests/
 
-## Skills Available
-- `/tech-debt-pass` — Full technical debt audit
-- `/coding-standards` — Check changed files against project standards
-- `/pre-commit-check` — Quick validation before git commit
+## Dev Pipeline (HARD RULE)
+- In development: Claude Code IS the LLM. Browser → Supabase → Claude Code reads/writes. ZERO external API calls.
+- NEVER mention API keys, fixture caches, provider fallbacks, or connectivity checks during dev work.
+- Production handoff: Set `DEEPSEEK_API_KEY` env var. Same code, API replaces Claude Code.
+- Reference: dev-pipeline-workflow.md
+
+## Skills Available & Trigger Points
+- `/discipline` — **RUN FIRST** before any task. 8 hard gates: dev pipeline check, research-before-suggest, read-before-code, user's exact words, prior corrections, honest progress, migration completeness, journal decisions. Also run mid-work when about to suggest a tool/API/approach.
+- `/oversight` — **RUN AFTER** completing any significant work. 18 anti-patterns (v2.0). Adversarial self-review.
+- `/coding-standards` — **RUN BEFORE** committing. Check changed files against project standards.
+- `/pre-commit-check` — **RUN BEFORE** git commit. TS compilation + staged file checks.
+- `/tech-debt-pass` — Full technical debt audit. Run periodically or when user requests.
+
+### Mandatory Skill Triggers
+- **Continuing from previous session** → Re-read dev-pipeline-workflow.md + check memory files for prior corrections BEFORE doing anything
+- **Starting a task** → `/discipline` (at minimum, run the 8 gates mentally)
+- **About to suggest a library/API/tool** → Gate 2 (research first) from `/discipline`
+- **About to write code against a package** → Gate 3 (read installed docs) from `/discipline`
+- **Declaring work "done"** → `/oversight` (full adversarial review)
+- **After user correction** → Gate 8 (journal immediately) from `/discipline`, then update the relevant skill/memory/CLAUDE.md
+- **Before git commit** → `/pre-commit-check` then `/coding-standards`
+- **After rename/migration** → Gate 7 (grep entire codebase) from `/discipline`

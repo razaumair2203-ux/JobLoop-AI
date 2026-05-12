@@ -11,7 +11,7 @@
  *   npx tsx packages/ai/src/autoresearch/cron-entry.ts [--deploy] [--iterations 20]
  *
  * Environment:
- *   NVIDIA_NIM_API_KEY — required for LLM calls (without it, runs in dev mode)
+ *   DEEPSEEK_API_KEY — required for LLM calls (without it, runs in dev mode)
  *   SUPABASE_URL — required for feedback export
  *   SUPABASE_SERVICE_KEY — required for feedback export (service role, not anon)
  *
@@ -147,7 +147,7 @@ function saveLog(config: CronConfig, feedbackCount: number, results: Array<{ tar
     feedback_exported: feedbackCount,
     results,
     env: {
-      has_api_key: !!process.env.NVIDIA_NIM_API_KEY,
+      has_api_key: !!process.env.DEEPSEEK_API_KEY,
       has_supabase: !!process.env.SUPABASE_URL,
       node_version: process.version,
     },
@@ -169,7 +169,7 @@ async function main() {
   console.log(`Targets: ${config.targets.join(", ")}`);
   console.log(`Iterations: ${config.iterations}`);
   console.log(`Deploy: ${config.deploy}`);
-  console.log(`API key: ${process.env.NVIDIA_NIM_API_KEY ? "SET" : "NOT SET (dev mode)"}`);
+  console.log(`API key: ${process.env.DEEPSEEK_API_KEY ? "SET" : "NOT SET (dev mode)"}`);
   console.log(`Supabase: ${process.env.SUPABASE_URL ? "SET" : "NOT SET (no feedback)"}`);
   console.log();
 

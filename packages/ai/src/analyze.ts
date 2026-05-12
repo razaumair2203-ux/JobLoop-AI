@@ -7,9 +7,9 @@
  * 2. MATCH (code)            — Compare facts: what's met, what's not
  * 3. NARRATE (AI or dev)     — Human-readable advice based on facts
  *
- * In DEV mode: parsing reads from local JSON files (fixture cache).
- * In API mode: parsing calls NVIDIA NIM API.
- * Steps 2 is always code — no AI involved, same in both modes.
+ * In DEV mode: Claude Code parses via Supabase (zero API calls).
+ * In PROD mode: DeepSeek Flash API parses.
+ * Step 2 is always code — no AI involved, same in both modes.
  */
 
 import { getClient, MODELS } from "./client";
@@ -88,7 +88,6 @@ function apiOutputToParsedCV(raw: ParsedCVOutput): ParsedCV {
     professional_affiliations: raw.professional_affiliations,
     training: raw.training,
     languages_spoken: raw.languages_spoken,
-    conflicts: raw.conflicts,
   };
 }
 import {
@@ -128,8 +127,8 @@ export async function parseJD(jd: string, modelTier?: "fast" | "quality"): Promi
     const promptText = `SYSTEM:\n${JD_PARSER_SYSTEM_PROMPT}\n\nUSER:\n${buildJDParserPrompt(jd)}`;
     saveDevPrompt("jd-parse", jd, promptText);
     throw new Error(
-      `[JD PARSE] No NVIDIA_NIM_API_KEY and no cached fixture found. ` +
-      `Set NVIDIA_NIM_API_KEY in .env.local to enable auto-caching, or run: ` +
+      `[JD PARSE] No DEEPSEEK_API_KEY and no cached fixture found. ` +
+      `Set DEEPSEEK_API_KEY in .env.local to enable auto-caching, or run: ` +
       `npx tsx packages/ai/tests/generate-fixtures.ts`
     );
   }
@@ -173,8 +172,8 @@ export async function parseCV(cv: string, modelTier?: "fast" | "quality"): Promi
     const promptText = `SYSTEM:\n${CV_PARSER_SYSTEM_PROMPT}\n\nUSER:\n${buildCVParserPrompt(cv)}`;
     saveDevPrompt("cv-parse", cv, promptText);
     throw new NoProviderError(
-      `[CV PARSE] No NVIDIA_NIM_API_KEY and no cached fixture found. ` +
-      `Set NVIDIA_NIM_API_KEY in .env.local or run: npx tsx packages/ai/tests/generate-fixtures.ts`
+      `[CV PARSE] No DEEPSEEK_API_KEY and no cached fixture found. ` +
+      `Set DEEPSEEK_API_KEY in .env.local or run: npx tsx packages/ai/tests/generate-fixtures.ts`
     );
   }
 
@@ -213,7 +212,8 @@ export async function parseCV(cv: string, modelTier?: "fast" | "quality"): Promi
   );
 }
 
-/** Call the CV parser API and return raw parsed JSON */
+/** Call the CV parser API and return raw parsed JSON.
+ *  Returns empty object on parse failure so retry logic in parseCV() can kick in. */
 async function callCVParser(
   client: ReturnType<typeof getClient>,
   model: string,
@@ -232,7 +232,13 @@ async function callCVParser(
   });
 
   const text = response.content[0].type === "text" ? response.content[0].text : "";
-  return safeParseJSON<Record<string, unknown>>(text, "CV parsing");
+  try {
+    return safeParseJSON<Record<string, unknown>>(text, "CV parsing");
+  } catch {
+    // LLM returned non-JSON (e.g. reasoning preamble) — return empty so retry logic runs
+    console.warn(`[CV PARSE] JSON extraction failed for model ${model}. Text starts with: ${text.slice(0, 100)}`);
+    return {};
+  }
 }
 
 /** Repair common LLM issues, then validate */

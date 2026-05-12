@@ -14,7 +14,7 @@ export interface EnvConfig {
 export function validateEnv(): EnvConfig {
   const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-  const apiKey = process.env.ANTHROPIC_API_KEY;
+  const apiKey = process.env.DEEPSEEK_API_KEY;
   const devBypass = process.env.DEV_AUTH_BYPASS === "true";
   const appUrl = process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000";
   const isProduction = process.env.NODE_ENV === "production";
@@ -31,7 +31,7 @@ export function validateEnv(): EnvConfig {
   if (isProduction) {
     if (!apiKey) {
       throw new Error(
-        "ANTHROPIC_API_KEY is required in production. AI features will not work without it.",
+        "DEEPSEEK_API_KEY is required in production. AI features will not work without it.",
       );
     }
     if (devBypass) {

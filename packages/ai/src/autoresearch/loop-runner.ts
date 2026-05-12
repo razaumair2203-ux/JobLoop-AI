@@ -125,7 +125,12 @@ export function initLoopState(target: TargetPrompt): LoopState {
 }
 
 /**
- * Select random training pairs for a minibatch.
+ * Select training pairs for a minibatch — deterministic by ID.
+ *
+ * Sort by ID then take first batchSize. This ensures reproducible
+ * evaluation across runs (same pairs, same order). The weighted
+ * variant (selectWeightedTrainingBatch) handles feedback-based
+ * oversampling when user signals are available.
  */
 export function selectTrainingBatch(
   pairs: TestPair[],
@@ -134,13 +139,9 @@ export function selectTrainingBatch(
   const trainPairs = pairs.filter(p => p.split === "train");
   if (trainPairs.length <= batchSize) return trainPairs;
 
-  // Fisher-Yates shuffle, take first batchSize
-  const shuffled = [...trainPairs];
-  for (let i = shuffled.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-  }
-  return shuffled.slice(0, batchSize);
+  // Deterministic: sort by ID, take first batchSize
+  const sorted = [...trainPairs].sort((a, b) => a.id.localeCompare(b.id));
+  return sorted.slice(0, batchSize);
 }
 
 /**

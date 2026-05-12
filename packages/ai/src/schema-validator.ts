@@ -105,11 +105,6 @@ const TrainingSchema = z.object({
   hours: z.number().nullable(),
 });
 
-const ConflictSchema = z.object({
-  type: z.enum(["overlapping_dates", "inconsistent_title", "duplicate_role", "gap", "other"]),
-  description: z.string(),
-});
-
 export const ParsedCVOutputSchema = z.object({
   name: z.string().min(1),
   email: z.string().nullable(),
@@ -140,7 +135,6 @@ export const ParsedCVOutputSchema = z.object({
   training: z.array(TrainingSchema),
   languages_spoken: z.array(z.string()),
   all_technologies: z.array(z.string()),
-  conflicts: z.array(ConflictSchema),
 });
 
 export type ValidatedParsedCVOutput = z.infer<typeof ParsedCVOutputSchema>;
@@ -185,7 +179,7 @@ export function repairLLMOutput(data: Record<string, unknown>): Record<string, u
     "experience", "education", "skills", "competencies", "certifications",
     "awards", "projects", "publications", "volunteer", "leadership",
     "professional_affiliations", "training", "languages_spoken",
-    "all_technologies", "conflicts",
+    "all_technologies",
   ];
   for (const field of arrayFields) {
     if (repaired[field] === undefined || repaired[field] === null) {

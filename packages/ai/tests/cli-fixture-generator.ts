@@ -114,7 +114,6 @@ function apiOutputToParsedCV(raw: ParsedCVOutput): ParsedCV {
     professional_affiliations: raw.professional_affiliations,
     training: raw.training,
     languages_spoken: raw.languages_spoken,
-    conflicts: raw.conflicts,
   };
 }
 

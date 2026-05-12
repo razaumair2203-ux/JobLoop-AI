@@ -116,6 +116,10 @@ export type { FeedbackIntent, ClassifiedFeedback } from "./feedback-classifier";
 export { normalizeExtractedText, assessExtractionQuality } from "./text-normalizer";
 export type { NormalizedText, ExtractionQuality } from "./text-normalizer";
 
+// PDF Extractor — position-aware multi-column extraction
+export { extractPDFText } from "./pdf-extractor";
+export type { PDFExtractionResult } from "./pdf-extractor";
+
 // CV Cleaner — pre-Cloud data quality
 export { cleanTitle, filterGarbageBullets, validateDates, verifyAgainstSourceText, verifySkills, extractContactDetails, buildConflictQuestions, cleanParsedCVs } from "./cv-cleaner";
 export type { DateValidationIssue, SourceVerificationResult, CleaningReport, Phase1Question, ExtractedContact } from "./cv-cleaner";

@@ -6,6 +6,6 @@ export async function register() {
     console.warn("[JobLoop] DEV_AUTH_BYPASS is enabled — auth checks bypassed");
   }
   if (!config.hasApiKey) {
-    console.warn("[JobLoop] No ANTHROPIC_API_KEY — running in dev mode (file-based AI)");
+    console.warn("[JobLoop] No DEEPSEEK_API_KEY — running in dev mode (file-based AI)");
   }
 }
