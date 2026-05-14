@@ -116,6 +116,10 @@ export type { FeedbackIntent, ClassifiedFeedback } from "./feedback-classifier";
 export { normalizeExtractedText, assessExtractionQuality } from "./text-normalizer";
 export type { NormalizedText, ExtractionQuality } from "./text-normalizer";
 
+// Text Pre-Processor — multi-column layout fix (runs after normalizer, before LLM)
+export { preprocessExtractedText } from "./text-preprocessor";
+export type { PreprocessResult } from "./text-preprocessor";
+
 // PDF Extractor — position-aware multi-column extraction
 export { extractPDFText } from "./pdf-extractor";
 export type { PDFExtractionResult } from "./pdf-extractor";
@@ -137,3 +141,7 @@ export {
 
 // Config
 export { MODELS } from "./client";
+
+// Country/Profession Licensing Lookup — structured, zero hallucination
+export { lookupLicensingRequirement } from "./licensing-lookup";
+export type { LicensingRequirement, LicensingLookupResult } from "./licensing-lookup";

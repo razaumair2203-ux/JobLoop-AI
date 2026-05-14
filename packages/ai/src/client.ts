@@ -34,6 +34,7 @@ interface CreateParams {
   system: string;
   messages: Array<{ role: string; content: string }>;
   json_mode?: boolean;
+  temperature?: number;
 }
 
 interface LLMClient {
@@ -74,7 +75,7 @@ function createDeepSeekClient(apiKey: string): LLMClient {
                 ...params.messages,
               ],
               max_tokens: params.max_tokens,
-              temperature: 0.7,
+              temperature: params.temperature ?? 0.7,
               stream: false,
               ...(params.json_mode ? { response_format: { type: "json_object" } } : {}),
             }),

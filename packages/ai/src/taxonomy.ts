@@ -17,6 +17,21 @@
 import type { Evidence, CloudNode } from "./cloud";
 
 // ============================================================
+// DATE UTILITY — Extract year from date strings like "Jan 2014", "2014", "Present"
+// ============================================================
+
+function extractYearFromDate(dateStr: string | undefined): number {
+  if (!dateStr) return NaN;
+  const s = String(dateStr);
+  if (s.toLowerCase() === "present" || s.toLowerCase() === "current") return new Date().getFullYear();
+  const yearMatch = s.match(/\b(19|20)\d{2}\b/);
+  if (yearMatch) return parseInt(yearMatch[0], 10);
+  const parsed = parseInt(s, 10);
+  if (!isNaN(parsed) && parsed >= 1950 && parsed <= 2100) return parsed;
+  return NaN;
+}
+
+// ============================================================
 // DEPTH LEVELS — Evidence-based, not self-declared
 // ============================================================
 
@@ -62,10 +77,8 @@ export function inferDepthLevel(evidence: Evidence[]): DepthAssessment {
   const roleSpans: Array<{ start: number; end: number }> = [];
   for (const r of roles) {
     const role = r as { start_date?: string; end_date?: string; duration_months?: number };
-    const startYear = parseInt(String(role.start_date), 10);
-    const endYear = role.end_date === "present" || role.end_date === "Present"
-      ? new Date().getFullYear()
-      : parseInt(String(role.end_date), 10);
+    const startYear = extractYearFromDate(role.start_date);
+    const endYear = extractYearFromDate(role.end_date);
     if (!isNaN(startYear) && !isNaN(endYear) && endYear >= startYear) {
       roleSpans.push({ start: startYear * 12, end: endYear * 12 });
     }
@@ -281,6 +294,53 @@ const SKILL_TAXONOMY: Record<string, { domain: string; category: string }> = {
   "outcome based education": { domain: "education", category: "pedagogy" },
 
   // ---- Healthcare ----
+  "anesthesiology": { domain: "healthcare", category: "clinical" },
+  "anesthesia": { domain: "healthcare", category: "clinical" },
+  "critical care": { domain: "healthcare", category: "clinical" },
+  "intensive care": { domain: "healthcare", category: "clinical" },
+  "pain management": { domain: "healthcare", category: "clinical" },
+  "perioperative care": { domain: "healthcare", category: "clinical" },
+  "airway management": { domain: "healthcare", category: "clinical" },
+  "regional anesthesia": { domain: "healthcare", category: "clinical" },
+  "general anesthesia": { domain: "healthcare", category: "clinical" },
+  "sedation": { domain: "healthcare", category: "clinical" },
+  "surgery": { domain: "healthcare", category: "clinical" },
+  "cardiology": { domain: "healthcare", category: "clinical" },
+  "neurology": { domain: "healthcare", category: "clinical" },
+  "orthopedics": { domain: "healthcare", category: "clinical" },
+  "pediatrics": { domain: "healthcare", category: "clinical" },
+  "obstetrics": { domain: "healthcare", category: "clinical" },
+  "emergency medicine": { domain: "healthcare", category: "clinical" },
+  "internal medicine": { domain: "healthcare", category: "clinical" },
+  "radiology": { domain: "healthcare", category: "clinical" },
+  "pathology": { domain: "healthcare", category: "clinical" },
+  "dermatology": { domain: "healthcare", category: "clinical" },
+  "psychiatry": { domain: "healthcare", category: "clinical" },
+  "ophthalmology": { domain: "healthcare", category: "clinical" },
+  "ent": { domain: "healthcare", category: "clinical" },
+  "urology": { domain: "healthcare", category: "clinical" },
+  "oncology": { domain: "healthcare", category: "clinical" },
+  "nephrology": { domain: "healthcare", category: "clinical" },
+  "gastroenterology": { domain: "healthcare", category: "clinical" },
+  "pulmonology": { domain: "healthcare", category: "clinical" },
+  "endocrinology": { domain: "healthcare", category: "clinical" },
+  "rheumatology": { domain: "healthcare", category: "clinical" },
+  "hematology": { domain: "healthcare", category: "clinical" },
+  "infectious disease": { domain: "healthcare", category: "clinical" },
+  "family medicine": { domain: "healthcare", category: "clinical" },
+  "general practice": { domain: "healthcare", category: "clinical" },
+  // Healthcare certifications (supporting, not core)
+  "acls": { domain: "healthcare", category: "medical_education" },
+  "bls": { domain: "healthcare", category: "medical_education" },
+  "pals": { domain: "healthcare", category: "medical_education" },
+  "atls": { domain: "healthcare", category: "medical_education" },
+  "nrp": { domain: "healthcare", category: "medical_education" },
+  "fcps": { domain: "healthcare", category: "certifications" },
+  "mrcp": { domain: "healthcare", category: "certifications" },
+  "frcs": { domain: "healthcare", category: "certifications" },
+  "usmle": { domain: "healthcare", category: "certifications" },
+  "plab": { domain: "healthcare", category: "certifications" },
+  "smle": { domain: "healthcare", category: "certifications" },
   "clinical trials": { domain: "healthcare", category: "research" },
   "patient care": { domain: "healthcare", category: "clinical" },
   "ehr": { domain: "healthcare", category: "systems" },
@@ -299,6 +359,18 @@ const SKILL_TAXONOMY: Record<string, { domain: string; category: string }> = {
   "diagnostics": { domain: "healthcare", category: "clinical" },
   "biostatistics": { domain: "healthcare", category: "research" },
   "public health": { domain: "healthcare", category: "policy" },
+  "hemodynamic monitoring": { domain: "healthcare", category: "critical_care" },
+  "hemodynamic stabilization": { domain: "healthcare", category: "critical_care" },
+  "patient stabilization": { domain: "healthcare", category: "emergency" },
+  "cardiac anesthesia": { domain: "healthcare", category: "clinical" },
+  "emergency handling": { domain: "healthcare", category: "emergency" },
+  "emergency response": { domain: "healthcare", category: "emergency" },
+  "resuscitation": { domain: "healthcare", category: "emergency" },
+  "cfam": { domain: "healthcare", category: "clinical" },
+  "intubation": { domain: "healthcare", category: "clinical" },
+  "ventilator management": { domain: "healthcare", category: "critical_care" },
+  "trauma management": { domain: "healthcare", category: "emergency" },
+  "triage": { domain: "healthcare", category: "emergency" },
 
   // ---- Finance & Accounting ----
   "financial analysis": { domain: "finance", category: "analysis" },
@@ -613,7 +685,19 @@ const CATEGORY_DISPLAY: Record<string, string> = {
   regulatory: "Regulatory Bodies",
   // Healthcare
   research: "Research",
-  clinical: "Clinical",
+  clinical: "Clinical Practice",
+  medical_education: "Medical Training & Certifications",
+  cardiology: "Cardiology",
+  neurology: "Neurology",
+  orthopedics: "Orthopedics",
+  radiology: "Radiology",
+  laboratory: "Laboratory",
+  rehabilitation: "Rehabilitation",
+  dental: "Dental",
+  ophthalmology: "Ophthalmology",
+  mental_health: "Mental Health",
+  pediatrics: "Pediatrics",
+  obstetrics: "Obstetrics & Gynecology",
   systems: "Systems",
   devices: "Devices",
   pharma: "Pharmaceutical",
@@ -658,6 +742,7 @@ const CATEGORY_DISPLAY: Record<string, string> = {
   contracts: "Contracts",
   data_privacy: "Data Privacy",
   // Education
+  pedagogy: "Pedagogy",
   instruction: "Instruction",
   edtech: "Educational Technology",
   assessment: "Assessment",
@@ -768,7 +853,7 @@ function inferDomainFromKeywords(name: string): { domain: string; category: stri
   if (/lead|team|train|mentor|coach|supervis/i.test(name)) {
     return { domain: "leadership", category: inferCategoryFromKeywords(name, "leadership") };
   }
-  if (/health|medical|clinical|patient|pharma|nurs|diagnos|epidem|surg|anesth|cardio|ortho|neuro/i.test(name)) {
+  if (/health|medical|clinical|patient|pharma|nurs|diagnos|epidem|surg|anesth|cardio|ortho|neuro|icu|resuscit|emergency.*care|critical.*care|perioper|intubat|ventilat|trauma|triage|vital|hemodynam|stabiliz|life support|bls|acls|pals|aha|pain.*manag/i.test(name)) {
     return { domain: "healthcare", category: inferCategoryFromKeywords(name, "healthcare") };
   }
   if (/financ|account|bank|invest|actuar|tax|treasury/i.test(name)) {
@@ -1046,6 +1131,34 @@ export function classifyCloud(nodes: CloudNode[]): ClassifiedCloud {
     })
     .filter((s) => s.depth.level !== "mentioned" || s.evidence.length > 0);
 
+  // Category-aware score adjustment (profession-agnostic)
+  // Determine the user's primary domain (most evidence-heavy)
+  const domainEvidenceCounts = new Map<string, number>();
+  for (const s of classified) {
+    domainEvidenceCounts.set(s.domain, (domainEvidenceCounts.get(s.domain) ?? 0) + s.evidence.length);
+  }
+  const primaryDomain = [...domainEvidenceCounts.entries()]
+    .sort((a, b) => b[1] - a[1])[0]?.[0] ?? "general";
+
+  // Supporting categories that should NOT outrank core domain skills:
+  // - "certifications" (PMP, PRINCE2, etc.)
+  // - categories ending in "_education" (medical_education, etc.)
+  // - "methodology" (Agile, Scrum — frameworks not core practice)
+  const isSupportingCategory = (cat: string) =>
+    cat === "certifications" || cat.endsWith("_education") || cat === "methodology";
+
+  for (const skill of classified) {
+    const rawScore = skill.depth.score;
+    if (skill.domain === primaryDomain && !isSupportingCategory(skill.category)) {
+      // Core domain skills: boost by 1.3x (max 110 to stay in range)
+      skill.depth.score = Math.min(110, Math.round(rawScore * 1.3));
+    } else if (isSupportingCategory(skill.category)) {
+      // Supporting certifications/methodologies: cap at 0.6x
+      skill.depth.score = Math.round(rawScore * 0.6);
+    }
+    // Skills in non-primary domains keep their raw score — no penalty
+  }
+
   // Group into domain > category hierarchy
   const domainMap = new Map<string, Map<string, ClassifiedSkill[]>>();
   for (const skill of classified) {
@@ -1098,10 +1211,8 @@ export function classifyCloud(nodes: CloudNode[]): ClassifiedCloud {
     for (const ev of node.evidence) {
       if (ev.type === "role") {
         const role = ev as { company?: string; title?: string; start_date?: string; end_date?: string; duration_months?: number };
-        const sy = parseInt(String(role.start_date), 10);
-        const ey = role.end_date === "present" || role.end_date === "Present"
-          ? new Date().getFullYear()
-          : parseInt(String(role.end_date), 10);
+        const sy = extractYearFromDate(role.start_date);
+        const ey = extractYearFromDate(role.end_date);
         if (!isNaN(sy)) allStartYears.push(sy);
         if (!isNaN(ey)) allEndYears.push(ey);
         if (!isNaN(sy) && !isNaN(ey)) {
@@ -1123,7 +1234,7 @@ export function classifyCloud(nodes: CloudNode[]): ClassifiedCloud {
     }
   }
 
-  // Career start: detect education gap
+  // Career start: detect education gap (skip pre-career education years)
   const sortedStarts = [...new Set(allStartYears)].sort((a, b) => a - b);
   let careerStart = sortedStarts[0] ?? 0;
   if (sortedStarts.length >= 2) {
@@ -1136,6 +1247,12 @@ export function classifyCloud(nodes: CloudNode[]): ClassifiedCloud {
   }
   const careerEnd = allEndYears.length > 0 ? Math.max(...allEndYears) : 0;
 
+  // Safety: if careerStart is 0 or invalid, years should be 0 (not 2026)
+  // Also cap at reasonable maximum (60 years) to catch any remaining bugs
+  const careerYears = (careerStart > 0 && careerEnd > careerStart)
+    ? Math.min(careerEnd - careerStart, 60)
+    : 0;
+
   // Collect unique roles sorted by start year
   const roles = [...roleMap.values()].sort((a, b) => a.startYear - b.startYear);
 
@@ -1146,7 +1263,7 @@ export function classifyCloud(nodes: CloudNode[]): ClassifiedCloud {
     careerSpan: {
       startYear: careerStart,
       endYear: careerEnd,
-      years: careerEnd > careerStart ? careerEnd - careerStart : 0,
+      years: careerYears,
     },
     totalRoles: roleMap.size,
     totalEvidencePoints: totalEvidence,

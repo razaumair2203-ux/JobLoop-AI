@@ -56,7 +56,7 @@ export const OUTCOME_LABELS: Record<string, string> = {
   callback: "Callback",
   interview: "Interview",
   offer: "Offer",
-  rejected: "Closed",   // "Closed" not "Rejected" — advocate framing
+  closed: "Closed",
   ghosted: "No Response",
 };
 
@@ -65,7 +65,7 @@ export const OUTCOME_COLORS: Record<string, string> = {
   callback: "blue",
   interview: "purple",
   offer: "green",
-  rejected: "slate",
+  closed: "slate",
   ghosted: "zinc",
 };
 

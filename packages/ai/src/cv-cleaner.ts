@@ -483,22 +483,62 @@ export function verifySkills(skills: string[]): { valid: string[]; rejected: str
 // ============================================================
 
 /** Build Phase 1 Socratic questions from a conflict report. Hard cap: 6 questions. */
+/**
+ * Shorten a filename for display: remove extension, "Copy of" prefixes, trim.
+ */
+function shortName(filename: string): string {
+  return filename
+    .replace(/\.pdf$/i, "")
+    .replace(/\.docx$/i, "")
+    .replace(/^(Copy of )+/gi, "")
+    .trim();
+}
+
 export function buildConflictQuestions(report: ConflictReport): Phase1Question[] {
   const questions: Phase1Question[] = [];
 
   // Conflict resolution questions (pick-one)
   for (const conflict of report.conflicts) {
-    const options = conflict.entries.map((entry) => ({
-      label: `${entry.source_name}: "${entry.title}" at ${entry.company} (${entry.start_date} - ${entry.end_date})`,
-      value: `${entry.source_id}:${entry.title}:${entry.start_date}`,
-    }));
+    // Deduplicate options by unique title+dates (multiple CVs may have identical entries)
+    const seen = new Map<string, { label: string; value: string }>();
+    for (const entry of conflict.entries) {
+      const key = `${entry.title}|${entry.start_date}|${entry.end_date}`.toLowerCase();
+      if (!seen.has(key)) {
+        const dates = entry.start_date && entry.end_date
+          ? ` (${entry.start_date} – ${entry.end_date})`
+          : "";
+        seen.set(key, {
+          label: `"${entry.title}"${dates}`,
+          value: `${entry.source_id}:${entry.title}:${entry.start_date}`,
+        });
+      }
+    }
+    const options = Array.from(seen.values());
 
-    questions.push({
-      id: conflict.id,
-      type: "conflict",
-      question: conflict.description,
-      options,
-    });
+    // Build a cleaner question based on conflict type
+    const company = conflict.entries[0]?.company ?? "this role";
+    let question: string;
+    if (conflict.fields.includes("title")) {
+      const uniqueTitles = [...new Set(conflict.entries.map(e => e.title))];
+      question = `Your CVs use different titles for your role at ${company}. Which is most accurate?`;
+      if (uniqueTitles.length === 2) {
+        question = `At ${company}, your CVs say "${uniqueTitles[0]}" and "${uniqueTitles[1]}". Which title is correct?`;
+      }
+    } else if (conflict.fields.includes("start_date") || conflict.fields.includes("end_date")) {
+      question = `Your CVs show different dates for your time at ${company}. Which dates are correct?`;
+    } else {
+      question = `We found conflicting information about your role at ${company}. Which version is correct?`;
+    }
+
+    // Only add if there are actually different options to choose from
+    if (options.length > 1) {
+      questions.push({
+        id: conflict.id,
+        type: "conflict",
+        question,
+        options,
+      });
+    }
   }
 
   // Gap questions (yes/no + free text)
@@ -514,13 +554,14 @@ export function buildConflictQuestions(report: ConflictReport): Phase1Question[]
   // Employer group confirmations
   for (let i = 0; i < report.employer_groups.length; i++) {
     const group = report.employer_groups[i];
+    const titles = [...new Set(group.roles.map(r => r.title))].slice(0, 4).join(", ");
     questions.push({
       id: `employer-${i}`,
       type: "employer_group",
-      question: group.prompt,
+      question: `You held ${group.distinct_titles} different titles at ${group.employer} (${titles}). Were these all within the same organization?`,
       options: [
-        { label: "Yes, same organization (rotational/transfers)", value: "same_employer" },
-        { label: "No, different employers", value: "different_employers" },
+        { label: "Yes — same organization (transfers, name changes, or rotations)", value: "same_employer" },
+        { label: "No — these are different employers", value: "different_employers" },
       ],
     });
   }
@@ -627,12 +668,26 @@ export function cleanParsedCVs(
       // in the report for potential Socratic confirmation.
     }
 
+    // Carry top-level skills (parser extracts these even when technologies_used per role is empty)
+    const rawSkills = (cv.skills ?? []) as Array<{ name: string; domain?: string; category?: string; source?: string }>;
+    const topLevelSkills = rawSkills
+      .filter(s => s.name && s.name.length >= 2)
+      .map(s => ({
+        name: s.name,
+        domain: s.domain ?? "general",
+        category: s.category ?? "general",
+        source: s.source ?? "skills_section",
+      }));
+
     cleanedCVs.push({
       id: raw.id,
       name: raw.filename,
       roles,
       education: (cv.education as InputCV["education"]) ?? [],
-      certifications: (cv.certifications as string[]) ?? [],
+      certifications: (Array.isArray(cv.certifications) ? cv.certifications : []).map(
+        (c: unknown) => (typeof c === "string" ? c : (c as { name?: string })?.name ?? String(c))
+      ),
+      skills: topLevelSkills,
     });
 
     reports.push({

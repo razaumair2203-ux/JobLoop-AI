@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
 import { getAuthUser } from "@/lib/auth";
-import { detectConflicts, type PersonaType } from "@jobloop/ai";
+import { detectConflicts, buildConflictQuestions, type PersonaType } from "@jobloop/ai";
 
 /**
  * GET /api/cv/conflicts
@@ -21,7 +21,7 @@ export async function GET() {
     .from("cv_uploads")
     .select("id, filename, parsed_cv")
     .eq("user_id", user.id)
-    .eq("status", "parsed")
+    .in("status", ["parsed", "conflicts_detected"])
     .not("parsed_cv", "is", null);
 
   if (error) {
@@ -33,13 +33,13 @@ export async function GET() {
   }
 
   // Load user's persona for persona-aware conflict filtering
-  const { data: profile } = await supabase
-    .from("profiles")
+  const { data: userRow } = await supabase
+    .from("users")
     .select("persona")
     .eq("id", user.id)
     .single();
 
-  const persona = (profile?.persona as PersonaType) ?? undefined;
+  const persona = (userRow?.persona as PersonaType) ?? undefined;
 
   if (!uploads || uploads.length < 2) {
     return NextResponse.json({
@@ -79,6 +79,10 @@ export async function GET() {
   });
 
   const report = detectConflicts(documents, persona);
+  const questions = buildConflictQuestions(report);
 
-  return NextResponse.json(report);
+  return NextResponse.json({
+    ...report,
+    questions,
+  });
 }

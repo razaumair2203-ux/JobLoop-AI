@@ -25,11 +25,19 @@ interface StepUploadProps {
   onSkip: () => void;
 }
 
+interface ExistingCV {
+  id: string;
+  filename: string;
+  created_at: string;
+}
+
 export function StepUpload({ onNext, onSkip }: StepUploadProps) {
   const [files, setFiles] = useState<File[]>([]);
   const [dragging, setDragging] = useState(false);
   const [uploading, setUploading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [atLimit, setAtLimit] = useState<{ existing_cvs: ExistingCV[]; need_to_free: number } | null>(null);
+  const [deleting, setDeleting] = useState<string | null>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
   function addFiles(incoming: FileList | File[]) {
@@ -51,6 +59,27 @@ export function StepUpload({ onNext, onSkip }: StepUploadProps) {
 
   function removeFile(name: string) {
     setFiles((prev) => prev.filter((f) => f.name !== name));
+  }
+
+  async function deleteExistingCV(cvId: string) {
+    setDeleting(cvId);
+    try {
+      const res = await fetch(`/api/cv/${cvId}`, { method: "DELETE" });
+      if (!res.ok) throw new Error("Failed to delete");
+
+      setAtLimit((prev) => {
+        if (!prev) return null;
+        const updated = prev.existing_cvs.filter((c) => c.id !== cvId);
+        const newNeed = prev.need_to_free - 1;
+        if (newNeed <= 0) return null; // enough room, clear the picker
+        return { existing_cvs: updated, need_to_free: newNeed };
+      });
+      setError(null);
+    } catch {
+      setError("Failed to delete CV. Try again.");
+    } finally {
+      setDeleting(null);
+    }
   }
 
   async function handleUpload() {
@@ -78,12 +107,17 @@ export function StepUpload({ onNext, onSkip }: StepUploadProps) {
           body: formData,
         });
 
+        const data = await res.json();
+
         if (!res.ok) {
-          const data = await res.json();
-          throw new Error(data.error || "CV upload failed");
+          if (data.error === "at_limit") {
+            setAtLimit({ existing_cvs: data.existing_cvs, need_to_free: data.need_to_free });
+            setUploading(false);
+            return;
+          }
+          throw new Error(data.message || data.error || "CV upload failed");
         }
 
-        const data = await res.json();
         allResults.push(...data.results);
         // Capture socratic questions from upload response
         if (data.socratic_questions?.length) {
@@ -137,6 +171,50 @@ export function StepUpload({ onNext, onSkip }: StepUploadProps) {
         and achievements from all of them to build a richer Profile Cloud. PDF or
         DOCX, up to {MAX_FILES} files.
       </p>
+
+      {/* At-limit picker: user must delete existing CVs before uploading more */}
+      {atLimit && (
+        <div className="mt-4 rounded-lg border border-amber-300 bg-amber-50 p-4">
+          <h3 className="text-sm font-semibold text-amber-900">
+            CV limit reached ({MAX_FILES} max)
+          </h3>
+          <p className="mt-1 text-xs text-amber-700">
+            Delete {atLimit.need_to_free} CV{atLimit.need_to_free > 1 ? "s" : ""} to make room for your new upload{files.length > 1 ? "s" : ""}.
+          </p>
+          <div className="mt-3 space-y-2">
+            {atLimit.existing_cvs.map((cv) => (
+              <div
+                key={cv.id}
+                className="flex items-center justify-between rounded-md border border-amber-200 bg-white px-3 py-2"
+              >
+                <div className="min-w-0 flex-1">
+                  <p className="truncate text-sm font-medium text-zinc-900">
+                    {cv.filename}
+                  </p>
+                  <p className="text-xs text-zinc-500">
+                    Uploaded {new Date(cv.created_at).toLocaleDateString()}
+                  </p>
+                </div>
+                <button
+                  onClick={() => deleteExistingCV(cv.id)}
+                  disabled={deleting === cv.id}
+                  className="ml-3 shrink-0 rounded-md border border-red-200 px-2.5 py-1 text-xs font-medium text-red-600 hover:bg-red-50 disabled:opacity-40"
+                >
+                  {deleting === cv.id ? "Deleting..." : "Delete"}
+                </button>
+              </div>
+            ))}
+          </div>
+          {atLimit.need_to_free <= 0 && (
+            <button
+              onClick={handleUpload}
+              className="mt-3 w-full rounded-lg bg-brand-600 py-2 text-sm font-medium text-white hover:bg-brand-700"
+            >
+              Continue upload
+            </button>
+          )}
+        </div>
+      )}
 
       {/* LinkedIn fast-path */}
       <div className="mt-6 rounded-lg border border-blue-200 bg-blue-50 p-4">
@@ -284,7 +362,7 @@ export function StepUpload({ onNext, onSkip }: StepUploadProps) {
           {uploading ? (
             <>
               <Loader2 className="h-4 w-4 animate-spin" />
-              Building your Profile Cloud...
+              Reading your career story...
             </>
           ) : files.length > 0 ? (
             `Upload ${files.length} CV${files.length > 1 ? "s" : ""} & continue`

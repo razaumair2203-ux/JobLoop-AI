@@ -66,7 +66,7 @@ export type OutcomeStatus =
   | "callback"
   | "interview"
   | "offer"
-  | "rejected"
+  | "closed"
   | "ghosted";
 
 // Outcome Signal — per-skill feedback from employer interactions
@@ -125,6 +125,10 @@ export interface Application {
   } | null;
   cloud_snapshot_id: string | null;
   socratic_qa: Array<{ question: string; answer: string }>;
+
+  // Finalized artifacts (stored per application, not on source CVs)
+  tailored_cv: Record<string, unknown> | null; // CVContent JSON for this JD
+  cover_letter_content: Record<string, unknown> | null; // CoverLetterContent JSON
 
   notes: string | null;
   created_at: string;

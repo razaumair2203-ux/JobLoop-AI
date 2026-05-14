@@ -38,13 +38,61 @@ export async function loadCloudFromDB(
   // Reconstruct trajectory from role evidence (not stored separately in DB)
   const trajectory = reconstructTrajectory(nodes);
 
+  // Load education from parsed CVs
+  const { data: cvRows } = await supabase
+    .from("cv_uploads")
+    .select("parsed_cv")
+    .eq("user_id", userId)
+    .not("parsed_cv", "is", null);
+
+  const education: ProfileCloud["education"] = [];
+  const seenEdu = new Set<string>();
+  if (cvRows) {
+    for (const row of cvRows) {
+      const parsed = row.parsed_cv as Record<string, unknown> | null;
+      const eduList = (parsed?.education ?? []) as Array<{
+        institution?: string; degree?: string; field?: string; field_of_study?: string;
+        start_year?: number | null; end_year?: number | null; year?: string;
+        grade?: string; research_topic?: string | null; highlights?: string[];
+      }>;
+      for (const ed of eduList) {
+        const key = `${ed.institution ?? ""}|${ed.degree ?? ""}`.toLowerCase();
+        if (seenEdu.has(key)) continue;
+        seenEdu.add(key);
+        let startYear: number | null = ed.start_year ?? null;
+        let endYear: number | null = ed.end_year ?? null;
+        if (startYear === null && endYear === null && ed.year) {
+          const parsed = parseInt(ed.year, 10);
+          if (!isNaN(parsed)) endYear = parsed;
+        }
+        education.push({
+          institution: ed.institution ?? "",
+          degree: ed.degree ?? "",
+          field: ed.field ?? ed.field_of_study ?? "",
+          start_year: startYear,
+          end_year: endYear,
+          grade: ed.grade ?? null,
+          research_topic: ed.research_topic ?? null,
+          highlights: ed.highlights ?? [],
+        });
+      }
+    }
+  }
+
+  // Extract certifications from cloud nodes
+  const certNodes = nodes.filter((n) => n.evidence.some((e) => e.type === "certification"));
+  const certifications = certNodes.map((n) => {
+    const certEv = n.evidence.find((e) => e.type === "certification");
+    return certEv as NonNullable<typeof certEv>;
+  }).filter(Boolean);
+
   return {
     user_id: userId,
     nodes,
     achievements: [],
     trajectory,
-    education: [],
-    certifications: [],
+    education,
+    certifications,
     languages_spoken: [],
     last_updated: new Date().toISOString(),
   };

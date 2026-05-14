@@ -10,7 +10,9 @@ import { spawn } from "child_process";
  * GET  — Returns latest loop status + last deploy info
  * POST — Triggers a loop run OR exports feedback weights
  *
- * Auth: requires authenticated user (admin check deferred to RLS/role system)
+ * Auth: requires authenticated admin user.
+ * Set ADMIN_EMAILS env var (comma-separated) to allowlist admins.
+ * In dev bypass mode, the dev user is always allowed.
  */
 
 const RESULTS_DIR = path.join(
@@ -24,6 +26,24 @@ const RESULTS_DIR = path.join(
   "results",
 );
 
+const ALLOWED_TARGETS = ["cv-generation", "jd-parser"] as const;
+const MAX_ITERATIONS = 100;
+
+function isAdmin(email: string | undefined): boolean {
+  if (!email) return false;
+
+  // Dev bypass user is always admin
+  if (email === "dev@jobloop.local" && process.env.DEV_AUTH_BYPASS === "true") {
+    return true;
+  }
+
+  const adminEmails = (process.env.ADMIN_EMAILS ?? "")
+    .split(",")
+    .map((e) => e.trim().toLowerCase())
+    .filter(Boolean);
+  return adminEmails.includes(email.toLowerCase());
+}
+
 // ============================================================
 // GET — Status
 // ============================================================
@@ -35,12 +55,16 @@ export async function GET() {
     return Response.json({ error: "Unauthorized" }, { status: 401 });
   }
 
+  if (!isAdmin(user.email)) {
+    return Response.json({ error: "Forbidden" }, { status: 403 });
+  }
+
   const status: Record<string, unknown> = {
-    available_targets: ["cv-generation", "jd-parser"],
+    available_targets: ALLOWED_TARGETS,
   };
 
   // Load latest state for each target
-  for (const target of ["cv-generation", "jd-parser"]) {
+  for (const target of ALLOWED_TARGETS) {
     const statePath = path.join(RESULTS_DIR, `${target}-state.json`);
     const deployPath = path.join(RESULTS_DIR, `${target}-last-deploy.json`);
     const safeguardPath = path.join(RESULTS_DIR, `${target}-safeguards.json`);
@@ -87,6 +111,10 @@ export async function POST(request: Request) {
   const { user } = await getAuthUser(supabase);
   if (!user) {
     return Response.json({ error: "Unauthorized" }, { status: 401 });
+  }
+
+  if (!isAdmin(user.email)) {
+    return Response.json({ error: "Forbidden" }, { status: 403 });
   }
 
   const body = await request.json();
@@ -147,7 +175,6 @@ async function exportFeedbackWeights(supabase: Awaited<ReturnType<typeof createC
   return Response.json({
     success: true,
     exported: enriched.length,
-    path: outputPath,
   });
 }
 
@@ -162,6 +189,22 @@ async function triggerLoop(body: {
   const target = body.target ?? "cv-generation";
   const iterations = body.iterations ?? 20;
   const deploy = body.deploy ?? false;
+
+  // Validate target against allowlist
+  if (!ALLOWED_TARGETS.includes(target as typeof ALLOWED_TARGETS[number])) {
+    return Response.json(
+      { error: `Invalid target: ${target}. Allowed: ${ALLOWED_TARGETS.join(", ")}` },
+      { status: 400 },
+    );
+  }
+
+  // Validate iterations bounds
+  if (!Number.isInteger(iterations) || iterations < 1 || iterations > MAX_ITERATIONS) {
+    return Response.json(
+      { error: `Iterations must be an integer between 1 and ${MAX_ITERATIONS}` },
+      { status: 400 },
+    );
+  }
 
   // Build CLI args
   const args = [

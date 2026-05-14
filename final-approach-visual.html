@@ -483,7 +483,7 @@
     <div class="flow-node danger wide">
       <div class="label">System 3</div>
       <div class="title">AutoResearch Loop</div>
-      <div class="detail">Optimizes prompts on OUR test bank (45 pairs, 23/13/14 split)<br>No user data. Ever. Better prompts ship to all users equally.</div>
+      <div class="detail">Optimizes prompts on OUR test bank (45 pairs, 25/12/8 train/val/held-out)<br>No user data. Ever. Better prompts ship to all users equally.</div>
     </div>
   </div>
 </div>
@@ -848,7 +848,7 @@
     <div class="flow-node warning">
       <div class="label">Step 4</div>
       <div class="title">Outcome Update</div>
-      <div class="detail">Dropdown: Callback / Interview /<br>Offer / Rejected / Ghosted</div>
+      <div class="detail">Dropdown: Callback / Interview /<br>Offer / Closed / Ghosted</div>
     </div>
     <div class="flow-arrow">&rarr;</div>
     <div class="flow-node purple">
@@ -860,7 +860,7 @@
     <div class="flow-node action">
       <div class="label">Step 6</div>
       <div class="title">DeepSeek Flash Parses Feedback</div>
-      <div class="detail">1 API call ($0.004)<br>Maps to Cloud skills<br>Extracts positive/gap signals</div>
+      <div class="detail">1 API call (&lt;$0.001)<br>Maps to Cloud skills<br>Extracts positive/gap signals</div>
     </div>
   </div>
 
@@ -885,7 +885,7 @@
     <div class="flow-node purple" style="min-width: 240px;">
       <div class="label">Step 8b</div>
       <div class="title">Gap Accumulation</div>
-      <div class="detail">2+ employers flag same gap<br>&rarr; Socratic question surfaces it<br>1 DeepSeek Flash call ($0.004)</div>
+      <div class="detail">2+ employers flag same gap<br>&rarr; Socratic question surfaces it<br>1 DeepSeek Flash call (&lt;$0.001)</div>
     </div>
   </div>
 </div>
@@ -995,13 +995,13 @@
 <h3>The Loop (Updated May 9, 2026)</h3>
 
 <div class="flow-diagram">
-  <h4 style="text-align:center; margin-bottom: 20px;">AutoResearch Session (~50 iterations, ~$3.60 on DeepSeek V4 Pro)</h4>
+  <h4 style="text-align:center; margin-bottom: 20px;">AutoResearch Session (~50 iterations, ~$0.50 on DeepSeek V4 Flash)</h4>
 
   <div class="flow-row">
     <div class="flow-node action">
       <div class="label">Step 1</div>
       <div class="title">Load Deterministic Batch</div>
-      <div class="detail">Sort 23 train pairs by ID.<br>Take first 10. Same batch every run.</div>
+      <div class="detail">Sort 25 train pairs by ID.<br>Take first 10. Same batch every run.</div>
     </div>
     <div class="flow-arrow">&rarr;</div>
     <div class="flow-node purple">
@@ -1338,7 +1338,7 @@
 
 <p style="text-align: center; color: var(--text-dim); margin-top: 48px; font-size: 12px;">
   JobLoop AI &mdash; Final Approach &mdash; May 2026<br>
-  Research-validated. Fabrications removed. Outcome Intelligence v3. AutoResearch loop built (13 modules, ~3,200 lines). All wireframes complete + audited. Full app simulation passing (5 CVs &rarr; 13/13 checks). 9 personas. 3 CV templates. Implementation in progress.
+  Research-validated. Fabrications removed. Outcome Intelligence v3. AutoResearch loop built (13 modules, ~3,200 lines, 0 iterations run). Full codebase audit: 23 findings, 14 fixed, 0 TS errors. Pipeline hardened: output validation on CV gen + cover letter, temperature 0.2 for parsing, JD parse retry, SHA-256 fixture hashing. 9 personas. 3 CV templates. All 14 API routes auth-guarded. Updated May 13, 2026.
 </p>
 
 </div>

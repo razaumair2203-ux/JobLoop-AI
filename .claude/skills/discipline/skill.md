@@ -23,11 +23,11 @@ Every gate is a STOP/GO decision. If any gate returns STOP, you must correct bef
 ---
 
 ### Gate 1: Dev Pipeline Check
-**Question**: "Am I about to suggest an API call, API key, fixture cache, provider fallback, or connectivity check?"
-**Rule**: In development, Claude Code IS the LLM. Data flows: browser → Supabase → Claude Code reads/writes. ZERO external API calls.
-**Reference**: dev-pipeline-workflow.md, CLAUDE.md
-**STOP if**: You're about to mention `DEEPSEEK_API_KEY`, `process.env.*_KEY`, fixture caching, provider modes, three-tier fallbacks, or "when we have API access"
-**Exception**: ONLY when explicitly discussing production handoff architecture (user asks about prod)
+**Question**: "Am I doing LLM work through the same code path that production will use?"
+**Rule**: In development, Claude Code IS the LLM — but must follow production prompts exactly. The code path is: prompt → LLM (me now, DeepSeek later) → JSON → validate → downstream. I am a drop-in replacement, not a special case.
+**Reference**: dev-pipeline-workflow.md, handoff-checklist.md
+**STOP if**: You're doing LLM work outside a defined prompt, using conversation context the API won't have, or manually writing to Supabase when an API route should handle it
+**Key**: Every prompt IS the product. If the prompt produces bad output, fix the prompt.
 
 ### Gate 2: Research Before Suggest
 **Question**: "Am I about to claim a tool/API/library can do something? Have I VERIFIED this?"
@@ -70,6 +70,31 @@ Every gate is a STOP/GO decision. If any gate returns STOP, you must correct bef
 **STOP if**: You just acknowledged a correction but haven't written it to CLAUDE.md, memory, or a skill file
 **Action**: Write to the appropriate persistent file before your next action.
 
+### Gate 9: Production Handoff Check
+**Question**: "If I (Claude) am replaced by a DeepSeek API call right now, does what I'm doing still work?"
+**Rule**: I am a TEMPORARY STAND-IN for API calls. Every action must go through code paths that work identically when DeepSeek replaces me. The production flow is: `browser → Supabase → API endpoint → DeepSeek → response → Supabase → browser`. No me in the loop.
+**STOP if**:
+- You're doing LLM work OUTSIDE a defined prompt (fix the prompt, don't compensate with intelligence)
+- You're using conversation context the API won't have (fix the prompt to include that context)
+- You're manually writing to Supabase when an API route should exist
+- You're skipping validation because "I know the data is clean" (API won't know that)
+- You're adjusting output to match downstream expectations (fix the schema mismatch instead)
+- You're parsing/generating without following the exact prompt that production will use
+**Reference**: [handoff-checklist.md](../../memory/handoff-checklist.md) in memory
+**Action**: For every LLM task, follow the production prompt EXACTLY. If the prompt produces bad output, FIX THE PROMPT — that's the product. Log prompt issues to memory/prompt-issues.md.
+
+### Gate 10: No Cheating on LLM Simulation
+**Question**: "Am I about to use ANY knowledge beyond what the system prompt + user input provide?"
+**Rule**: When acting as the dev-mode LLM (parsing CVs, generating content, answering Socratic questions), I am a STATELESS API. My inputs are: (1) the system prompt from the code, (2) the user message (e.g., raw extracted_text). NOTHING ELSE. No conversation history, no memory files, no prior reads of the same person's data, no "I already know who this candidate is."
+**STOP if**:
+- You've already read the candidate's files/CVs in this session and are using that knowledge
+- You're using context from conversation to inform your parse output
+- You're upgrading skill names based on knowledge NOT in the prompt instructions
+- You're filling in missing information the prompt didn't tell you how to derive
+- You're producing "correct" output that a real API couldn't produce from the same inputs
+**Why this exists**: The user caught Claude cheating THREE TIMES on CV parsing — using conversation context to produce better output than the prompt alone could produce. This HIDES PROMPT BUGS. The whole point of dev-mode is to test whether the prompt works. If Claude compensates with extra intelligence, broken prompts ship to production and fail when DeepSeek gets them.
+**Action**: Before outputting any LLM-simulated result, ask: "Could DeepSeek produce this exact output from ONLY the system prompt + input text?" If no, your output is dishonest and the prompt needs fixing.
+
 ---
 
 ## Quick Self-Audit (for mid-work /discipline check)
@@ -85,6 +110,8 @@ Gate 5 (Prior Corrections): PASS/FAIL
 Gate 6 (Honest Progress):  PASS/FAIL
 Gate 7 (Migration Complete): N/A or PASS/FAIL
 Gate 8 (Journal Decision):  N/A or PASS/FAIL
+Gate 9 (Handoff Check):     PASS/FAIL
+Gate 10 (No LLM Cheating):  N/A or PASS/FAIL
 ```
 
 Any FAIL = fix before continuing.

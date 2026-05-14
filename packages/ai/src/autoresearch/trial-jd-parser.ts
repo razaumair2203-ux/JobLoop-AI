@@ -48,7 +48,7 @@ interface RawTestPair {
     company: string;
     location: string;
     experience_years: number | null;
-    requirements: Array<{ text: string; type: string }>;
+    requirements: Array<{ text: string; type: "must_have" | "nice_to_have" }>;
     responsibilities: string[];
     full_description: string;
   };

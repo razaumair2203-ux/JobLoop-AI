@@ -97,7 +97,24 @@ async function callCVGeneration(userPrompt: string, modelTier?: "fast" | "qualit
   });
 
   const text = response.content[0].type === "text" ? response.content[0].text : "";
-  return safeParseJSON<GeneratedCV>(text, "CV generation");
+  const result = safeParseJSON<GeneratedCV>(text, "CV generation");
+  validateGeneratedCV(result);
+  return result;
+}
+
+function validateGeneratedCV(cv: GeneratedCV): void {
+  if (typeof cv.summary !== "string") {
+    throw new Error("[CV GEN] Invalid output: missing 'summary' string");
+  }
+  if (!Array.isArray(cv.experience)) {
+    throw new Error("[CV GEN] Invalid output: missing 'experience' array");
+  }
+  if (typeof cv.skills !== "object" || cv.skills === null || Array.isArray(cv.skills)) {
+    throw new Error("[CV GEN] Invalid output: missing 'skills' object");
+  }
+  if (!Array.isArray(cv.education)) {
+    throw new Error("[CV GEN] Invalid output: missing 'education' array");
+  }
 }
 
 function buildCloudContext(cloud: ProfileCloud, report: CloudMatchReport): string {

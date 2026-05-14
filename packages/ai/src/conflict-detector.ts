@@ -185,6 +185,68 @@ function jaccardSimilarity(a: Set<string>, b: Set<string>): number {
   return union === 0 ? 0 : intersection / union;
 }
 
+/**
+ * Check if two words share a common stem (prefix ≥ 6 chars).
+ * Catches: anesthesiology↔anesthesia, engineering↔engineer,
+ * management↔manager, programming↔programmer, etc.
+ */
+function stemMatch(a: string, b: string): boolean {
+  const minLen = Math.min(a.length, b.length);
+  if (minLen < 5) return a === b;
+  const prefixLen = Math.min(6, minLen);
+  return a.slice(0, prefixLen) === b.slice(0, prefixLen);
+}
+
+/**
+ * Stem-aware word matching: count how many words in set A
+ * have a stem-match in set B.
+ */
+function stemAwareOverlap(a: Set<string>, b: Set<string>): number {
+  let matches = 0;
+  for (const wordA of a) {
+    for (const wordB of b) {
+      if (stemMatch(wordA, wordB)) { matches++; break; }
+    }
+  }
+  return matches;
+}
+
+/**
+ * Check if two role titles are synonymous (same role, different wording).
+ * Uses stem-aware matching to handle:
+ * - "Residency Training (FCPS), Anesthesiology" vs "Anesthesia Residency"
+ * - "Software Engineer" vs "Software Development Engineer"
+ * - "Project Manager" vs "PM - Project Management"
+ * - "Senior Consultant" vs "Sr. Consulting Lead"
+ *
+ * Returns true if titles describe the same role.
+ */
+function titlesAreSynonymous(a: string, b: string): boolean {
+  // Exact match after normalization
+  if (normalize(a) === normalize(b)) return true;
+
+  const wordsA = significantWords(a);
+  const wordsB = significantWords(b);
+
+  // If either is empty, can't compare
+  if (wordsA.size === 0 || wordsB.size === 0) return false;
+
+  // Containment: all words of the shorter title stem-match in the longer
+  const [smaller, larger] = wordsA.size <= wordsB.size ? [wordsA, wordsB] : [wordsB, wordsA];
+  const containedCount = stemAwareOverlap(smaller, larger);
+  if (containedCount === smaller.size) return true;
+
+  // Stem-aware Jaccard: symmetric overlap > 50%
+  // Strictly >0.5: "House Officer" vs "Medical Officer" (1/2=0.5) must be DIFF
+  const overlapAB = stemAwareOverlap(wordsA, wordsB);
+  const overlapBA = stemAwareOverlap(wordsB, wordsA);
+  const totalOverlap = Math.max(overlapAB, overlapBA);
+  const maxSize = Math.max(wordsA.size, wordsB.size);
+  if (totalOverlap / maxSize > 0.5) return true;
+
+  return false;
+}
+
 /** Check if two company names are likely the same entity */
 function companiesMatch(a: string, b: string): boolean {
   const na = normalize(a);
@@ -545,17 +607,31 @@ function detectConflictsInGroup(group: ParsedRole[], groupIndex: number): RoleCo
     });
   }
 
-  // Check title mismatches
+  // Check title mismatches — but skip if titles are synonymous
+  // (e.g. "Residency Training (FCPS), Anesthesiology" ≈ "Anesthesia Residency")
   const titles = new Set(group.map(r => normalize(r.title)));
   if (titles.size > 1) {
-    const titleEntries = group.map(r => `${r.source_name}: "${r.title}"`);
-    conflicts.push({
-      id: `conflict-${groupIndex}-titles`,
-      type: "title_mismatch",
-      entries: group,
-      description: `Different titles for "${group[0].company}": ${titleEntries.join(" vs ")}`,
-      fields: ["title"],
-    });
+    // Check all pairs — if ALL are synonymous, no conflict
+    const uniqueTitles = [...titles];
+    let allSynonymous = true;
+    for (let i = 0; i < uniqueTitles.length && allSynonymous; i++) {
+      for (let j = i + 1; j < uniqueTitles.length && allSynonymous; j++) {
+        if (!titlesAreSynonymous(uniqueTitles[i], uniqueTitles[j])) {
+          allSynonymous = false;
+        }
+      }
+    }
+
+    if (!allSynonymous) {
+      const titleEntries = group.map(r => `${r.source_name}: "${r.title}"`);
+      conflicts.push({
+        id: `conflict-${groupIndex}-titles`,
+        type: "title_mismatch",
+        entries: group,
+        description: `Different titles for "${group[0].company}": ${titleEntries.join(" vs ")}`,
+        fields: ["title"],
+      });
+    }
   }
 
   // Check description gaps (one CV has bullets, another doesn't)

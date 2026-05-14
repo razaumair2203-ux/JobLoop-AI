@@ -17,12 +17,41 @@ interface DepthAssessment {
 }
 
 interface Evidence {
-  type: string;
-  source_role?: string;
+  type: "role" | "impact" | "certification" | "award" | "project" | "education" | "workshop" | "publication" | "socratic";
+  // role
+  company?: string;
+  title?: string;
+  duration_months?: number;
+  context?: string;
+  start_date?: string;
+  end_date?: string;
+  // impact
   description?: string;
-  metric?: string;
+  source_role?: string;
+  metric?: string | null;
+  // certification / award / workshop / publication
+  name?: string;
+  issuer?: string;
+  year?: number | null;
+  active?: boolean;
+  // project
+  url?: string | null;
+  is_professional?: boolean;
+  // education
+  institution?: string;
+  degree?: string;
+  field?: string;
+  relevance?: string;
+  // workshop
+  provider?: string;
+  // publication
+  venue?: string;
+  peer_reviewed?: boolean;
+  // socratic
   question?: string;
   answer?: string;
+  date?: string;
+  triggered_by?: string | null;
 }
 
 interface ClassifiedSkill {
@@ -298,9 +327,53 @@ function SkillCard({
             {skill.evidence.map((ev, i) => (
               <div key={i} className="text-xs text-zinc-600">
                 <span className="font-medium text-zinc-700">{ev.type}</span>
-                {ev.source_role && <span className="text-zinc-400"> · {ev.source_role}</span>}
-                {ev.description && <p className="mt-0.5 text-zinc-500">{ev.description}</p>}
-                {ev.metric && <p className="mt-0.5 font-medium text-emerald-700">{ev.metric}</p>}
+                {ev.type === "role" && (
+                  <>
+                    <span className="text-zinc-400"> · {ev.company}{ev.title ? ` — ${ev.title}` : ""}</span>
+                    {ev.duration_months != null && <span className="text-zinc-400"> · {ev.duration_months}mo</span>}
+                    {ev.context && <p className="mt-0.5 text-zinc-500">{ev.context}</p>}
+                  </>
+                )}
+                {ev.type === "impact" && (
+                  <>
+                    {ev.source_role && <span className="text-zinc-400"> · {ev.source_role}</span>}
+                    {ev.description && <p className="mt-0.5 text-zinc-500">{ev.description}</p>}
+                    {ev.metric && <p className="mt-0.5 font-medium text-emerald-700">{ev.metric}</p>}
+                  </>
+                )}
+                {ev.type === "certification" && (
+                  <span className="text-zinc-400"> · {ev.name}{ev.issuer ? ` (${ev.issuer})` : ""}{ev.year ? `, ${ev.year}` : ""}</span>
+                )}
+                {ev.type === "award" && (
+                  <>
+                    <span className="text-zinc-400"> · {ev.name}{ev.issuer ? ` — ${ev.issuer}` : ""}</span>
+                    {ev.context && <p className="mt-0.5 text-zinc-500">{ev.context}</p>}
+                  </>
+                )}
+                {ev.type === "project" && (
+                  <>
+                    <span className="text-zinc-400"> · {ev.name}{ev.is_professional ? " (work)" : " (personal)"}</span>
+                    {ev.description && <p className="mt-0.5 text-zinc-500">{ev.description}</p>}
+                  </>
+                )}
+                {ev.type === "education" && (
+                  <span className="text-zinc-400"> · {ev.degree} in {ev.field}{ev.institution ? `, ${ev.institution}` : ""}</span>
+                )}
+                {ev.type === "workshop" && (
+                  <span className="text-zinc-400"> · {ev.name}{ev.provider ? ` (${ev.provider})` : ""}{ev.year ? `, ${ev.year}` : ""}</span>
+                )}
+                {ev.type === "publication" && (
+                  <>
+                    <span className="text-zinc-400"> · {ev.title}{ev.venue ? ` — ${ev.venue}` : ""}{ev.year ? `, ${ev.year}` : ""}</span>
+                    {ev.peer_reviewed && <span className="ml-1 rounded bg-emerald-50 px-1 py-0.5 text-[10px] text-emerald-600">peer-reviewed</span>}
+                  </>
+                )}
+                {ev.type === "socratic" && (
+                  <>
+                    {ev.question && <p className="mt-0.5 italic text-zinc-500">Q: {ev.question}</p>}
+                    {ev.answer && <p className="mt-0.5 text-zinc-600">A: {ev.answer}</p>}
+                  </>
+                )}
               </div>
             ))}
           </div>

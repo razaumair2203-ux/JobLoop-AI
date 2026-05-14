@@ -97,8 +97,6 @@ import {
   saveDevParsedJD,
   saveDevParsedCV,
   saveDevPrompt,
-  getDevResponse,
-  saveDevResponse,
 } from "./provider";
 import { safeParseJSON } from "./utils";
 
@@ -133,23 +131,36 @@ export async function parseJD(jd: string, modelTier?: "fast" | "quality"): Promi
     );
   }
 
-  const response = await client.messages.create({
-    model,
-    max_tokens: 4096,
-    system: JD_PARSER_SYSTEM_PROMPT,
-    messages: [{ role: "user", content: buildJDParserPrompt(jd) }],
-  });
+  // Attempt 1: initial parse
+  let lastError: unknown;
+  for (let attempt = 1; attempt <= 2; attempt++) {
+    try {
+      const response = await client.messages.create({
+        model,
+        max_tokens: 4096,
+        system: JD_PARSER_SYSTEM_PROMPT,
+        messages: [{ role: "user", content: buildJDParserPrompt(jd) }],
+        temperature: 0.2,
+      });
 
-  const text = response.content[0].type === "text" ? response.content[0].text : "";
-  const result = safeParseJSON<ParsedJD>(text, "JD parsing");
+      const text = response.content[0].type === "text" ? response.content[0].text : "";
+      const result = safeParseJSON<ParsedJD>(text, "JD parsing");
 
-  // Auto-cache in dev mode — next run hits Tier 1 instantly
-  if (getProviderMode() === "dev") {
-    saveDevParsedJD(jd, result);
-    console.log(`[DEV] JD parse cached (${model}) — next call will be instant`);
+      // Auto-cache in dev mode — next run hits Tier 1 instantly
+      if (getProviderMode() === "dev") {
+        saveDevParsedJD(jd, result);
+        console.log(`[DEV] JD parse cached (${model}) — next call will be instant`);
+      }
+
+      return result;
+    } catch (err) {
+      lastError = err;
+      if (attempt < 2) {
+        console.warn(`[JD PARSE] Attempt ${attempt} failed: ${err instanceof Error ? err.message : err}. Retrying...`);
+      }
+    }
   }
-
-  return result;
+  throw lastError;
 }
 
 export async function parseCV(cv: string, modelTier?: "fast" | "quality"): Promise<ParsedCV> {
@@ -229,6 +240,7 @@ async function callCVParser(
     max_tokens: 4096,
     system: CV_PARSER_SYSTEM_PROMPT,
     messages: [{ role: "user", content: userContent }],
+    temperature: 0.2,
   });
 
   const text = response.content[0].type === "text" ? response.content[0].text : "";
@@ -323,7 +335,7 @@ export function classifyJDComplexity(jd: string): JDComplexity {
 }
 
 // ============================================================
-// BASIC JD EXTRACTOR (dev mode fallback, no AI)
+// TECH KEYWORDS — used by classifyJDComplexity()
 // ============================================================
 
 const TECH_KEYWORDS = new Set([
@@ -334,49 +346,3 @@ const TECH_KEYWORDS = new Set([
   "graphql", "rest", "api", "microservices", "agile", "scrum", "git",
   "machine learning", "deep learning", "ai", "data science", "sql",
 ]);
-
-function extractJDBasic(jd: string): ParsedJD {
-  const lines = jd.split("\n").map(l => l.trim()).filter(Boolean);
-  const lower = jd.toLowerCase();
-
-  // Extract tech mentions
-  const techFound: Array<{ name: string; context: "required" | "mentioned" }> = [];
-  for (const tech of TECH_KEYWORDS) {
-    if (lower.includes(tech)) {
-      techFound.push({ name: tech, context: "required" });
-    }
-  }
-
-  // Extract bullet-point requirements
-  const requirements = lines
-    .filter(l => /^[-•*]\s/.test(l) || /^\d+[.)]\s/.test(l))
-    .map(l => l.replace(/^[-•*\d.)]+\s*/, "").trim())
-    .filter(l => l.length > 10);
-
-  const hard = requirements.slice(0, 8).map(text => ({
-    text,
-    category: "extracted",
-    keywords: text.split(/\s+/).filter(w => w.length > 3).slice(0, 5),
-  }));
-
-  // Try to extract years
-  const yearsMatch = lower.match(/(\d+)\+?\s*years?\s*(of\s+)?experience/);
-  const minYears = yearsMatch ? parseInt(yearsMatch[1]) : null;
-
-  return {
-    company: "",
-    role_title: lines[0]?.slice(0, 100) || "Unknown Role",
-    seniority_level: minYears && minYears >= 7 ? "senior" : minYears && minYears >= 3 ? "mid" : "unknown",
-    location: { city: null, country: null, remote: lower.includes("remote") },
-    experience_years: { min: minYears, max: null, raw_text: yearsMatch?.[0] || "" },
-    requirements: { hard, preferred: [] },
-    technologies_mentioned: techFound,
-    responsibilities: [],
-  };
-}
-
-// ============================================================
-// LEGACY analyzeSuitability REMOVED (May 6, 2026)
-// Use analyzeWithCloud() from cloud-pipeline.ts instead.
-// Old code archived at: archive/dead-code/matcher.ts
-// ============================================================

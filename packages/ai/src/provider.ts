@@ -23,6 +23,7 @@ let currentMode: ProviderMode =
     ? "api"
     : "dev";
 let devDataDir: string = "./dev-data";
+let _devDataDirResolved = false;
 
 // Lazy-loaded fs functions — only resolved when dev mode actually runs
 let _fs: typeof import("fs") | null = null;
@@ -69,17 +70,33 @@ export function getProviderMode(): ProviderMode {
 // ============================================================
 
 /**
- * In dev mode, AI calls become file reads.
- *
- * Workflow:
- * 1. App calls parseJD("some job description text")
- * 2. In dev mode, it writes the prompt to dev-data/prompts/jd-parse-{hash}.txt
- * 3. You open that file, paste it into Claude, get the JSON response
- * 4. You save the response to dev-data/responses/jd-parse-{hash}.json
- * 5. Next time the app runs, it reads the cached response
- *
- * OR (simpler): You manually create the JSON files once, they're reused.
+ * Resolve dev-data dir to monorepo root on first access.
+ * CWD varies (apps/web/ vs packages/ai/) but monorepo root is stable.
  */
+function getDevDataDir(): string {
+  if (!_devDataDirResolved) {
+    _devDataDirResolved = true;
+    try {
+      const fs = getFs();
+      const path = getPath();
+      // Walk up from CWD until we find a dir with dev-data/responses/
+      let dir = process.cwd();
+      for (let i = 0; i < 5; i++) {
+        const candidate = path.join(dir, "dev-data", "responses");
+        if (fs.existsSync(candidate)) {
+          devDataDir = path.join(dir, "dev-data");
+          break;
+        }
+        const parent = path.dirname(dir);
+        if (parent === dir) break;
+        dir = parent;
+      }
+    } catch {
+      // keep default
+    }
+  }
+  return devDataDir;
+}
 
 function ensureDir(dir: string) {
   const fs = getFs();
@@ -87,18 +104,24 @@ function ensureDir(dir: string) {
 }
 
 function hashString(s: string): string {
-  let hash = 0;
-  for (let i = 0; i < s.length; i++) {
-    const char = s.charCodeAt(i);
-    hash = ((hash << 5) - hash) + char;
-    hash |= 0;
+  try {
+    const crypto = require("crypto") as typeof import("crypto");
+    return crypto.createHash("sha256").update(s).digest("hex").slice(0, 16);
+  } catch {
+    // Fallback for environments without crypto (shouldn't happen in Node)
+    let hash = 0;
+    for (let i = 0; i < s.length; i++) {
+      const char = s.charCodeAt(i);
+      hash = ((hash << 5) - hash) + char;
+      hash |= 0;
+    }
+    return Math.abs(hash).toString(36);
   }
-  return Math.abs(hash).toString(36);
 }
 
 export function saveDevPrompt(type: string, input: string, prompt: string): string {
   const path = getPath();
-  const dir = path.join(devDataDir, "prompts");
+  const dir = path.join(getDevDataDir(), "prompts");
   ensureDir(dir);
   const id = `${type}-${hashString(input)}`;
   const filePath = path.join(dir, `${id}.txt`);
@@ -110,7 +133,7 @@ export function getDevResponse<T>(type: string, input: string): T | null {
   const fs = getFs();
   const path = getPath();
   const id = `${type}-${hashString(input)}`;
-  const filePath = path.join(devDataDir, "responses", `${id}.json`);
+  const filePath = path.join(getDevDataDir(), "responses", `${id}.json`);
   if (fs.existsSync(filePath)) {
     try {
       return JSON.parse(fs.readFileSync(filePath, "utf-8")) as T;
@@ -124,7 +147,7 @@ export function getDevResponse<T>(type: string, input: string): T | null {
 
 export function saveDevResponse(type: string, input: string, response: unknown): void {
   const path = getPath();
-  const dir = path.join(devDataDir, "responses");
+  const dir = path.join(getDevDataDir(), "responses");
   ensureDir(dir);
   const id = `${type}-${hashString(input)}`;
   const filePath = path.join(dir, `${id}.json`);

@@ -45,7 +45,7 @@ export async function POST(request: Request) {
     .from("cv_uploads")
     .select("id, filename, parsed_cv")
     .eq("user_id", user.id)
-    .eq("status", "parsed")
+    .in("status", ["parsed", "conflicts_detected"])
     .not("parsed_cv", "is", null);
 
   if (loadError || !uploads || uploads.length === 0) {

@@ -17,7 +17,7 @@ export async function GET() {
 
   const { data: apps, error } = await supabase
     .from("applications")
-    .select("id, company, role, stage, source, source_url, applied_date, position, match_analysis, outcome, notes, excitement, created_at, updated_at")
+    .select("id, company, role, stage, source, source_url, applied_date, position, match_analysis, outcome:outcome_status, notes, excitement, created_at, updated_at")
     .eq("user_id", user.id)
     .order("created_at", { ascending: false });
 

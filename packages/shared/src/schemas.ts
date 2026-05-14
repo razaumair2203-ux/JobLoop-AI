@@ -42,7 +42,7 @@ export const outcomeUpdateSchema = z.object({
     "callback",
     "interview",
     "offer",
-    "rejected",
+    "closed",
     "ghosted",
   ]),
   user_feedback: z.string().optional(), // "Anything worth noting?"

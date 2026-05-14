@@ -342,7 +342,30 @@ export function buildCloudFromParsedCV(parsedCV: {
 
   // Enrich nodes with role evidence
   for (const role of parsedCV.experience) {
-    for (const tech of role.technologies_used) {
+    // Determine which skills to link: use technologies_used if available,
+    // otherwise match top-level skills against role title + bullets
+    let techsForRole = role.technologies_used;
+    if (techsForRole.length === 0 && parsedCV.skills.length > 0) {
+      // Fallback: match skills from top-level skills array against role content
+      const roleText = [
+        role.title,
+        role.company,
+        ...((role as Record<string, unknown>).bullets as string[] ?? []),
+      ].join(" ").toLowerCase();
+      techsForRole = parsedCV.skills
+        .filter(s => {
+          const name = s.name.toLowerCase();
+          // Match if skill name appears in role text, or significant words overlap
+          if (roleText.includes(name)) return true;
+          // For multi-word skills, check if all significant words appear
+          const words = name.split(/\s+/).filter(w => w.length >= 4);
+          if (words.length >= 1 && words.every(w => roleText.includes(w))) return true;
+          return skillsMatch(s.name, roleText);
+        })
+        .map(s => s.name);
+    }
+
+    for (const tech of techsForRole) {
       const key = tech.toLowerCase();
       if (!nodeMap.has(key)) {
         const techClassification = classifySkill(tech, role.domain);
@@ -361,12 +384,17 @@ export function buildCloudFromParsedCV(parsedCV: {
       const titleLower = role.title.toLowerCase();
       const techLower = tech.toLowerCase();
       const inTitle = titleLower.includes(techLower) || techLower.includes(titleLower.replace(/senior |lead |principal |junior |staff /gi, "").trim());
+      // Use actual bullet text as context when available — much more informative than a formula string
+      const roleBullets = (role as Record<string, unknown>).bullets as string[] | undefined ?? [];
+      const relevantBullet = roleBullets.find((b: string) => b.toLowerCase().includes(techLower));
       node.evidence.push({
         type: "role",
         company: role.company,
         title: role.title,
         duration_months: role.duration_months,
-        context: `Used in role: ${role.title} at ${role.company}`,
+        context: relevantBullet
+          ? relevantBullet.slice(0, 120)
+          : `Used in role: ${role.title} at ${role.company}`,
         start_date: role.start_date || "unknown",
         end_date: role.end_date || "unknown",
         mention_context: inTitle ? "title" : "bullet",
@@ -377,12 +405,12 @@ export function buildCloudFromParsedCV(parsedCV: {
     // or if no skill is mentioned, attach to the first skill in the role (avoids inflation).
     for (const metric of role.metrics_mentioned) {
       const metricLower = metric.toLowerCase();
-      const matchedSkills = role.technologies_used.filter(tech =>
+      const matchedSkills = techsForRole.filter(tech =>
         metricLower.includes(tech.toLowerCase()) || skillsMatch(tech, metricLower)
       );
 
       // If metric doesn't name a specific skill, attach to first tech only (conservative)
-      const targets = matchedSkills.length > 0 ? matchedSkills : [role.technologies_used[0]].filter(Boolean);
+      const targets = matchedSkills.length > 0 ? matchedSkills : [techsForRole[0]].filter(Boolean);
 
       for (const tech of targets) {
         const key = tech.toLowerCase();
@@ -423,7 +451,7 @@ export function buildCloudFromParsedCV(parsedCV: {
     }
   }
 
-  // Add certification evidence
+  // Add certification evidence — attach to matching nodes OR create standalone cert nodes
   const certEvidences: CertificationEvidence[] = [];
   for (const certName of parsedCV.certifications) {
     const cert: CertificationEvidence = {
@@ -436,9 +464,28 @@ export function buildCloudFromParsedCV(parsedCV: {
     certEvidences.push(cert);
 
     // Try to attach cert to relevant skill nodes
+    let attached = false;
     for (const [key, node] of nodeMap) {
       if (certName.toLowerCase().includes(key) || key.includes(certName.toLowerCase())) {
         node.evidence.push(cert);
+        attached = true;
+      }
+    }
+
+    // If cert didn't match ANY existing node, create a standalone cert node
+    // This ensures certs like ACLS, BLS, PALS, PMP always appear in the Cloud
+    if (!attached) {
+      const certKey = certName.toLowerCase();
+      if (!nodeMap.has(certKey)) {
+        const certClassification = classifySkill(certName, report.primaryDomain);
+        nodeMap.set(certKey, {
+          id: generateId(),
+          type: "skill",
+          name: certName,
+          category: certClassification.category !== "general" ? certClassification.category : "certification",
+          evidence: [cert],
+          summary: emptySummary(),
+        });
       }
     }
   }
@@ -622,12 +669,43 @@ function emptySummary(): EvidenceSummary {
 
 function extractIssuer(certName: string): string {
   const lower = certName.toLowerCase();
+  // Tech
   if (lower.includes("aws") || lower.includes("amazon")) return "Amazon";
   if (lower.includes("google") || lower.includes("gcp")) return "Google";
   if (lower.includes("azure") || lower.includes("microsoft")) return "Microsoft";
   if (lower.includes("cisco")) return "Cisco";
-  if (lower.includes("pmp") || lower.includes("pmi")) return "PMI";
+  if (lower.includes("oracle")) return "Oracle";
+  if (lower.includes("salesforce")) return "Salesforce";
+  if (lower.includes("comptia")) return "CompTIA";
+  if (lower.includes("isaca") || lower.includes("cisa") || lower.includes("cism")) return "ISACA";
+  if (lower.includes("isc2") || lower.includes("(isc)") || lower.includes("cissp")) return "(ISC)²";
+  // Management & PM
+  if (lower.includes("pmp") || lower.includes("pmi") || lower.includes("capm")) return "PMI";
+  if (lower.includes("prince2")) return "Axelos";
   if (lower.includes("scrum")) return "Scrum Alliance";
+  if (lower.includes("six sigma") || lower.includes("lean")) return "ASQ";
+  // Healthcare
+  if (lower.includes("acls") || lower.includes("bls") || lower.includes("pals") || lower.includes("aha") || lower.includes("american heart")) return "American Heart Association";
+  if (lower.includes("fcps") || lower.includes("cpsp") || lower.includes("college of physicians & surgeons")) return "CPSP Pakistan";
+  if (lower.includes("pmdc") || lower.includes("pakistan medical")) return "PMDC";
+  if (lower.includes("scfhs") || lower.includes("saudi commission")) return "SCFHS";
+  if (lower.includes("usmle")) return "NBME";
+  if (lower.includes("acgme")) return "ACGME";
+  // Finance & Accounting
+  if (lower.includes("cpa")) return "AICPA";
+  if (lower.includes("cfa")) return "CFA Institute";
+  if (lower.includes("acca")) return "ACCA";
+  if (lower.includes("frm")) return "GARP";
+  // HR
+  if (lower.includes("shrm")) return "SHRM";
+  if (lower.includes("phr") || lower.includes("sphr")) return "HRCI";
+  // Engineering
+  if (lower.includes("pe ") || lower === "pe" || lower.includes("professional engineer")) return "NCEES";
+  if (lower.includes("incose") || lower.includes("csep") || lower.includes("asep")) return "INCOSE";
+  // Aviation
+  if (lower.includes("faa")) return "FAA";
+  if (lower.includes("easa")) return "EASA";
+  if (lower.includes("gaca")) return "GACA";
   return "Unknown";
 }
 

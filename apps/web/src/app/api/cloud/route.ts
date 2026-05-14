@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
 import { getAuthUser } from "@/lib/auth";
 import { classifyCloud, detectGaps } from "@jobloop/ai";
+import { loadCloudFromDB } from "@/lib/cloud-from-db";
 
 export async function GET() {
   const supabase = await createClient();
@@ -11,35 +12,20 @@ export async function GET() {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
-  const { data: nodes } = await supabase
-    .from("cloud_nodes")
-    .select("id, name, type, category, evidence, summary")
-    .eq("user_id", user.id);
+  const cloud = await loadCloudFromDB(supabase, user.id);
 
-  if (!nodes || nodes.length === 0) {
+  if (!cloud) {
     return NextResponse.json({ classified: null });
   }
 
-  // Map DB rows to CloudNode shape
-  const cloudNodes = nodes.map((n) => ({
-    id: n.id,
-    name: n.name,
-    type: n.type as "skill" | "capability" | "domain",
-    category: n.category,
-    evidence: Array.isArray(n.evidence) ? n.evidence : [],
-    summary: n.summary ?? {
-      total_months_used: 0,
-      number_of_roles: 0,
-      has_impact: false,
-      has_external_validation: false,
-      has_depth: false,
-      has_project: false,
-      last_used: null,
-    },
-  }));
-
-  const classified = classifyCloud(cloudNodes);
+  const classified = classifyCloud(cloud.nodes);
   classified.gaps = detectGaps(classified);
 
-  return NextResponse.json({ classified });
+  return NextResponse.json({
+    classified,
+    education: cloud.education,
+    certifications: cloud.certifications,
+    achievements: cloud.achievements,
+    trajectory: cloud.trajectory,
+  });
 }

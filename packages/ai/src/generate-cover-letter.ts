@@ -84,7 +84,26 @@ export async function generateCoverLetter(
   });
 
   const text = response.content[0].type === "text" ? response.content[0].text : "";
-  return safeParseJSON<GeneratedCoverLetter>(text, "Cover letter generation");
+  const result = safeParseJSON<GeneratedCoverLetter>(text, "Cover letter generation");
+  validateGeneratedCoverLetter(result);
+  return result;
+}
+
+function validateGeneratedCoverLetter(cl: GeneratedCoverLetter): void {
+  if (!Array.isArray(cl.paragraphs) || cl.paragraphs.length === 0) {
+    throw new Error("[COVER LETTER] Invalid output: missing or empty 'paragraphs' array");
+  }
+  for (const p of cl.paragraphs) {
+    if (!["opening", "body", "closing"].includes(p.type)) {
+      throw new Error(`[COVER LETTER] Invalid paragraph type: '${p.type}'`);
+    }
+    if (typeof p.text !== "string" || p.text.length === 0) {
+      throw new Error("[COVER LETTER] Invalid output: paragraph has empty text");
+    }
+  }
+  if (typeof cl.word_count !== "number") {
+    throw new Error("[COVER LETTER] Invalid output: missing 'word_count' number");
+  }
 }
 
 // ============================================================

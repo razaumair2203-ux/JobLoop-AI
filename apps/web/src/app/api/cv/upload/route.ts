@@ -17,10 +17,11 @@ import {
   buildConflictQuestions,
   extractContactDetails,
   normalizeExtractedText,
+  preprocessExtractedText,
   assessExtractionQuality,
   extractPDFText,
 } from "@jobloop/ai";
-import type { ProfileCloud, Evidence, ConflictReport, PersonaType } from "@jobloop/ai";
+import type { ProfileCloud, Evidence, ConflictReport, PersonaType, ParsedCV } from "@jobloop/ai";
 
 export async function POST(request: Request) {
   const supabase = await createClient();
@@ -31,6 +32,49 @@ export async function POST(request: Request) {
   }
 
   await ensureUserExists(supabase, user);
+
+  // ================================================================
+  // GUARD: Max 5 source CVs per user
+  // Source CVs build the Cloud. Tailored CVs per JD = separate (stored in applications).
+  // ================================================================
+  const MAX_SOURCE_CVS = 5;
+  const { count: existingCVCount } = await supabase
+    .from("cv_uploads")
+    .select("id", { count: "exact", head: true })
+    .eq("user_id", user.id)
+    .not("status", "eq", "error");
+
+  const currentCount = existingCVCount ?? 0;
+
+  const formData = await request.formData();
+  const files = formData.getAll("files") as File[];
+
+  if (files.length === 0) {
+    return NextResponse.json({ error: "No files provided" }, { status: 400 });
+  }
+
+  // At limit: return existing CVs so user chooses which to delete first.
+  // Frontend shows picker → user calls DELETE /api/cv/[id] → then retries upload.
+  if (currentCount + files.length > MAX_SOURCE_CVS) {
+    const { data: existingCVs } = await supabase
+      .from("cv_uploads")
+      .select("id, filename, created_at")
+      .eq("user_id", user.id)
+      .not("status", "eq", "error")
+      .order("created_at", { ascending: true });
+
+    return NextResponse.json(
+      {
+        error: "at_limit",
+        message: `You have ${currentCount} CVs. Delete one or more to make room for new uploads.`,
+        current_count: currentCount,
+        max_allowed: MAX_SOURCE_CVS,
+        need_to_free: (currentCount + files.length) - MAX_SOURCE_CVS,
+        existing_cvs: existingCVs ?? [],
+      },
+      { status: 409 },
+    );
+  }
 
   // Determine CV parse model from existing Cloud maturity
   // Empty/thin Cloud (first-time user) → quality tier catches garbled PDF structure
@@ -61,13 +105,6 @@ export async function POST(request: Request) {
     };
     const maturity = computeCloudMaturity(existingCloud);
     cvModelTier = selectModel(maturity, "cv_parse");
-  }
-
-  const formData = await request.formData();
-  const files = formData.getAll("files") as File[];
-
-  if (files.length === 0) {
-    return NextResponse.json({ error: "No files provided" }, { status: 400 });
   }
 
   const results = [];
@@ -156,6 +193,13 @@ export async function POST(request: Request) {
       console.warn(`[${file.name}] Normalization warnings:`, normalized.warnings);
     }
 
+    // Pre-process to fix multi-column layout artifacts (displaced headers, interleaved sections)
+    const preprocessed = preprocessExtractedText(extractedText);
+    extractedText = preprocessed.text;
+    if (preprocessed.changes.length > 0) {
+      console.log(`[${file.name}] Pre-processor: ${preprocessed.changes.length} fix(es) — ${preprocessed.sectionsFound.join(", ")} sections, ${preprocessed.roleHeadersFound} role headers, ${preprocessed.displacedTitlesFixed} displaced titles`);
+    }
+
     // Assess extraction quality BEFORE sending to LLM
     const quality = assessExtractionQuality(extractedText);
     if (quality.quality === "failed") {
@@ -200,15 +244,14 @@ export async function POST(request: Request) {
       })
       .eq("id", upload.id);
 
-    // DEV MODE: Skip LLM parsing — Claude Code parses via Supabase workflow
-    // PROD MODE: Uncomment parseCVWithAI call below
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    let parsedCV: any;
+    // DEV MODE: Claude Code IS the LLM — reads extracted_text from Supabase,
+    // parses following CV_PARSER_SYSTEM_PROMPT, writes parsed_cv back.
+    // PROD MODE: DeepSeek API parses inline via parseCVWithAI().
+    let parsedCV!: ParsedCV;
     if (process.env.DEV_AUTH_BYPASS === "true") {
-      // Dev: just mark as "pending_parse" — Claude Code will parse from Supabase
       await supabase
         .from("cv_uploads")
-        .update({ status: "parsed", parsed_cv: null })
+        .update({ status: "pending_parse" })
         .eq("id", upload.id);
 
       results.push({
@@ -244,14 +287,17 @@ export async function POST(request: Request) {
     if (contactDetails.phones.length > 0) {
       parsedCV.phone = contactDetails.phones[0];
     }
+    if (!parsedCV.links) {
+      parsedCV.links = { linkedin: null, github: null, portfolio: null, other: [] };
+    }
     if (contactDetails.linkedin) {
-      parsedCV.linkedin = contactDetails.linkedin;
+      parsedCV.links.linkedin = contactDetails.linkedin;
     }
     if (contactDetails.github) {
-      parsedCV.github = contactDetails.github;
+      parsedCV.links.github = contactDetails.github;
     }
     if (contactDetails.portfolio) {
-      parsedCV.portfolio = contactDetails.portfolio;
+      parsedCV.links.portfolio = contactDetails.portfolio;
     }
 
     // Save parsed result
@@ -358,6 +404,7 @@ export async function POST(request: Request) {
           employer_groups: conflictReport.employer_groups,
           stats: conflictReport.stats,
         },
+        questions: phase1Questions,
         phase1_questions: phase1Questions,
         message: `Found ${conflictReport.conflicts.length} conflict(s) and ${conflictReport.gaps.length} gap(s) across your CVs. Please resolve these before we build your Profile Cloud.`,
       });
@@ -473,13 +520,10 @@ export async function POST(request: Request) {
 // Dev-mode parser is now in packages/ai/src/dev-parser.ts
 // ============================================================
 
-function countSkills(parsedCV: Record<string, unknown>): number {
-  const skills = parsedCV.skills as Record<string, string[]> | undefined;
-  if (!skills) return 0;
-  return Object.values(skills).reduce((sum, arr) => sum + (Array.isArray(arr) ? arr.length : 0), 0);
+function countSkills(cv: ParsedCV): number {
+  return Array.isArray(cv.skills) ? cv.skills.length : 0;
 }
 
-function countExperience(parsedCV: Record<string, unknown>): number {
-  const experience = parsedCV.experience as Array<unknown> | undefined;
-  return Array.isArray(experience) ? experience.length : 0;
+function countExperience(cv: ParsedCV): number {
+  return Array.isArray(cv.experience) ? cv.experience.length : 0;
 }

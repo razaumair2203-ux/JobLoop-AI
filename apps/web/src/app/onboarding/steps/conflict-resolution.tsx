@@ -8,27 +8,17 @@ import {
   Clock,
   Building2,
   GitBranch,
-  Calendar,
-  Briefcase,
 } from "lucide-react";
 
 // ============================================================
-// TYPES
+// TYPES — matches Phase1Question from packages/ai/src/cv-cleaner.ts
 // ============================================================
 
 export interface ConflictQuestion {
   id: string;
-  type:
-    | "collapsed_role"
-    | "date_conflict"
-    | "title_mismatch"
-    | "employer_pattern"
-    | "timeline_gap";
-  priority: "critical" | "important" | "minor";
+  type: "conflict" | "gap" | "employer_group";
   question: string;
-  context: string;
   options?: Array<{ label: string; value: string }>;
-  allow_freetext: boolean;
 }
 
 export interface ConflictAnswer {
@@ -44,23 +34,19 @@ interface ConflictResolutionProps {
 }
 
 // ============================================================
-// ICON MAPPING
+// ICON & LABEL MAPPING
 // ============================================================
 
 const typeIcons: Record<ConflictQuestion["type"], typeof AlertTriangle> = {
-  employer_pattern: Building2,
-  collapsed_role: GitBranch,
-  date_conflict: Calendar,
-  title_mismatch: Briefcase,
-  timeline_gap: Clock,
+  conflict: GitBranch,
+  gap: Clock,
+  employer_group: Building2,
 };
 
 const typeLabels: Record<ConflictQuestion["type"], string> = {
-  employer_pattern: "Career Pattern",
-  collapsed_role: "Role Details",
-  date_conflict: "Date Confirmation",
-  title_mismatch: "Title Confirmation",
-  timeline_gap: "Timeline Gap",
+  conflict: "Role Conflict",
+  gap: "Timeline Gap",
+  employer_group: "Career Pattern",
 };
 
 // ============================================================
@@ -76,7 +62,6 @@ export function ConflictResolution({
   const [answers, setAnswers] = useState<Record<string, ConflictAnswer>>({});
 
   if (questions.length === 0) {
-    // No conflicts detected — auto-proceed
     onComplete([]);
     return null;
   }
@@ -84,6 +69,7 @@ export function ConflictResolution({
   const q = questions[current];
   const isLast = current === questions.length - 1;
   const answer = answers[q.id];
+  const allowFreetext = true;
   const hasAnswer =
     (answer?.selected_option ?? "").length > 0 ||
     (answer?.freetext ?? "").trim().length > 0;
@@ -118,7 +104,7 @@ export function ConflictResolution({
     }
   }
 
-  const Icon = typeIcons[q.type];
+  const Icon = typeIcons[q.type] ?? AlertTriangle;
   const answeredCount = Object.keys(answers).length;
 
   return (
@@ -133,7 +119,7 @@ export function ConflictResolution({
             We noticed a few things
           </h2>
           <p className="mt-1 text-sm text-zinc-500">
-            Your CVs have some differences we'd like to clarify. This takes 30
+            Your CVs have some differences we&apos;d like to clarify. This takes 30
             seconds and makes your profile much more accurate.
           </p>
         </div>
@@ -167,23 +153,13 @@ export function ConflictResolution({
         <div className="mb-3 flex items-center gap-2">
           <Icon className="h-4 w-4 text-zinc-400" />
           <span className="text-xs font-medium uppercase tracking-wide text-zinc-400">
-            {typeLabels[q.type]}
+            {typeLabels[q.type] ?? q.type}
           </span>
-          {q.priority === "critical" && (
-            <span className="rounded-full bg-amber-100 px-2 py-0.5 text-[10px] font-semibold text-amber-700">
-              Important
-            </span>
-          )}
         </div>
 
         {/* Question text */}
         <p className="text-sm font-medium leading-relaxed text-zinc-800">
           {q.question}
-        </p>
-
-        {/* Context */}
-        <p className="mt-2 text-xs leading-relaxed text-zinc-500">
-          {q.context}
         </p>
 
         {/* Options */}
@@ -219,16 +195,16 @@ export function ConflictResolution({
           </div>
         )}
 
-        {/* Free text */}
-        {q.allow_freetext && (
+        {/* Free text — shown for gaps and questions without options */}
+        {allowFreetext && (
           <div className="mt-3">
             <textarea
               value={answer?.freetext ?? ""}
               onChange={(e) => setFreetext(e.target.value)}
               placeholder={
                 q.options
-                  ? "Want to add more detail? (optional)"
-                  : "Type your answer..."
+                  ? "None of these quite right? Tell us in your own words..."
+                  : "Tell us in your own words..."
               }
               rows={2}
               className="w-full resize-none rounded-lg border border-zinc-200 bg-white px-3 py-2 text-sm text-zinc-800 placeholder-zinc-400 outline-none transition-colors focus:border-brand-400 focus:ring-1 focus:ring-brand-400"

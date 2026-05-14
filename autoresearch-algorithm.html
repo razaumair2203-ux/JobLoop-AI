@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AutoResearch Algorithm — JobLoop AI (Updated May 10, 2026 — Phase 2 Fixes)</title>
+<title>AutoResearch Algorithm — JobLoop AI (Updated May 13, 2026 — Pipeline Hardening Audit)</title>
 <style>
   :root {
     --bg: #0f172a;
@@ -224,7 +224,7 @@
 <div class="container">
 
 <h1>AutoResearch Algorithm: Complete Pipeline Reference</h1>
-<p class="subtitle">Two optimization loops (CV Generation + JD Parser) | Step-by-step decision trace | Independent audit | Updated May 10, 2026</p>
+<p class="subtitle">Two optimization loops (CV Generation + JD Parser) | Step-by-step decision trace | Independent audit | Updated May 13, 2026</p>
 
 <!-- ========== TABLE OF CONTENTS ========== -->
 <div class="info-box">
@@ -1380,6 +1380,19 @@ The aggregator still uses the per-pair pass/fail ratio (>= 70% of pairs must pas
 <h2>Changelog</h2>
 
 <div class="info-box">
+<strong>May 13, 2026 — Pipeline Hardening Audit (23 findings, 14 fixed)</strong><br>
+- <strong>FIX:</strong> CV gen + cover letter gen now have runtime output validation (validateGeneratedCV, validateGeneratedCoverLetter) — catches malformed LLM output before it reaches UI.<br>
+- <strong>FIX:</strong> Temperature 0.2 for all parsing calls (JD + CV) — was hardcoded 0.7 via default. Deterministic extraction needs low temperature.<br>
+- <strong>FIX:</strong> JD parse now has 2-attempt retry (was single-shot, unlike CV parse which had 3 attempts).<br>
+- <strong>FIX:</strong> Fixture cache hash upgraded from djb2 (32-bit, collision-prone) to SHA-256 (16-char hex). djb2 kept as fallback.<br>
+- <strong>FIX:</strong> Dead code removed — extractJDBasic() (~40 lines, zero callers) + dead imports (getDevResponse, saveDevResponse).<br>
+- <strong>FIX:</strong> Upload route dev bypass: status "parsed" with null parsed_cv → "pending_parse" (honest DB state).<br>
+- <strong>FIX:</strong> Upload route contact overrides wrote to nonexistent top-level fields → now correctly writes to parsedCV.links.<br>
+- <strong>FIX:</strong> Upload route `let parsedCV: any` → `let parsedCV!: ParsedCV` (type safety).<br>
+- <strong>DOWNGRADED:</strong> Both model tiers → same model (BY DESIGN, single-model strategy). Dev mode ephemeral Cloud (BY DESIGN). Dev mode empty arrays (BY DESIGN).<br>
+- <strong>DEFERRED:</strong> Global rate limiter, 60s hard timeout, no structured logging, no circuit breaker — operational concerns, not alpha-blocking.<br>
+- Full audit log: memory/audit-may13-2026.md<br>
+<br>
 <strong>May 10, 2026 — Phase 2 Fixes</strong><br>
 - <strong>FIX:</strong> dateAppearsInText() — was returning true after year match (month check was dead code). Now verifies month near year.<br>
 - <strong>FIX:</strong> Circular fallbacks removed from 3 checks (no_fabrication, no_fabricated_skills, factual_preservation). Now skip when raw_cv_text insufficient.<br>
@@ -1407,7 +1420,7 @@ The aggregator still uses the per-pair pass/fail ratio (>= 70% of pairs must pas
 </div>
 
 <div class="info-box danger">
-<strong>Honest status (May 10, 2026):</strong> Architecture is research-grade. Both scorecards calibrated. 8 bugs fixed across two phases. Hard gate / soft score restructure done. But total_iterations = 0. The system is fully built, independently audited, and completely unproven. First DeepSeek V4 Pro run is the real test.
+<strong>Honest status (May 13, 2026):</strong> Architecture is research-grade. Both scorecards calibrated. 8 scorecard bugs fixed across two phases. Pipeline hardened with 8 additional fixes (output validation, temperature, retry, hash upgrade, dead code removal, type safety). Hard gate / soft score restructure done. But total_iterations = 0. The system is fully built, independently audited, pipeline-hardened, and completely unproven. First DeepSeek V4 Pro run is the real test.
 </div>
 
 </div>

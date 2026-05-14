@@ -73,6 +73,8 @@ export interface ResolvedProfile {
   certifications: string[];
   /** All programs found across career */
   programs: string[];
+  /** Top-level skills from parsed CVs (merged, deduped) */
+  skills: Array<{ name: string; domain: string; category: string; source: string }>;
   /** Flags from user answers (anonymize requests, sensitivity, etc.) */
   flags: string[];
   /** Metadata */
@@ -116,6 +118,8 @@ export interface InputCV {
     end_year?: number | null;
   }>;
   certifications?: string[];
+  /** Top-level skills extracted by parser (may not be linked to specific roles) */
+  skills?: Array<{ name: string; domain: string; category: string; source: string }>;
 }
 
 export interface DirectAnswers {
@@ -495,21 +499,6 @@ export function mergeResolvedProfile(
       }
     }
 
-    // Also check by period matching
-    for (const [desc, corrected] of dateMap) {
-      if (desc.includes("aew") && representative.title.toLowerCase().includes("maintenance")) {
-        startDate = corrected.start;
-        endDate = corrected.end;
-      }
-      if (desc.includes("china") && representative.company.toLowerCase().includes("china")) {
-        startDate = corrected.start;
-        endDate = corrected.end;
-      }
-      if (desc.includes("ms degree") && representative.company.toLowerCase().includes("university")) {
-        // Education — handled separately
-      }
-    }
-
     // Apply title corrections — match role start year to period start (exclusive end)
     let title = representative.title;
     for (const [period, correctedTitle] of titleMap) {
@@ -571,12 +560,45 @@ export function mergeResolvedProfile(
   // ---- Phase D: Sort chronologically ----
   resolvedRoles.sort((a, b) => compareDates(a.start_date, b.start_date));
 
-  // ---- Phase E: Build education ----
+  // ---- Phase E: Build education (with fuzzy dedup) ----
   const educationMap = new Map<string, ResolvedEducation>();
+
+  // Normalize degree names for deduplication (profession-agnostic equivalences)
+  function normalizeDegreeName(degree: string): string {
+    const d = degree.toLowerCase().trim();
+    // Postgraduate medical equivalences
+    if (d.includes("fcps") || d === "fellowship" || d.includes("fellow of college")) return "fellowship";
+    if (d.includes("frcs")) return "fellowship";
+    if (d.includes("mrcp")) return "membership";
+    // Medical degrees
+    if (d.includes("mbbs") || d === "md" || d.includes("bachelor of medicine")) return "mbbs";
+    // Engineering equivalences
+    if (d.includes("b.tech") || d.includes("btech") || d.includes("b.eng") || d.includes("beng") || d.includes("b.sc. eng") || d.includes("bse")) return "bachelor_eng";
+    if (d.includes("m.tech") || d.includes("mtech") || d.includes("m.eng") || d.includes("meng") || d.includes("m.sc. eng")) return "master_eng";
+    // Business
+    if (d.includes("mba")) return "mba";
+    // Accounting
+    if (d === "ca" || d.includes("chartered accountant")) return "ca";
+    return d;
+  }
+
+  function normalizeFieldName(field: string): string {
+    const f = field.toLowerCase().trim();
+    // Normalize common field variations
+    if (f.includes("anesthes") || f.includes("anaesth")) return "anesthesiology";
+    if (f.includes("computer science") || f.includes("cs") && f.length <= 3) return "computer_science";
+    if (f.includes("electrical") && f.includes("eng")) return "electrical_engineering";
+    if (f.includes("mechanical") && f.includes("eng")) return "mechanical_engineering";
+    if (f.includes("medicine") || f === "medical" || f === "mbbs") return "medicine";
+    return f;
+  }
+
   for (const cv of parsedCVs) {
     for (const edu of cv.education ?? []) {
-      // Key by degree + field (same person won't have two BEs in same field)
-      const key = (edu.degree + " " + edu.field).toLowerCase().trim();
+      // Key by NORMALIZED degree + field (catches FCPS=Fellowship, MBBS variants, etc.)
+      const normalizedDegree = normalizeDegreeName(edu.degree);
+      const normalizedField = normalizeFieldName(edu.field);
+      const key = (normalizedDegree + " " + normalizedField).trim();
       if (!educationMap.has(key)) {
         let startDate = "";
         let endDate = "";
@@ -597,19 +619,6 @@ export function mergeResolvedProfile(
           end_date: endDate,
           research_topic: null,
         });
-      }
-    }
-  }
-
-  // Apply education date corrections
-  const educationEntries = Array.from(educationMap.values());
-  for (const [desc, corrected] of dateMap) {
-    if (desc.includes("ms degree") || desc.includes("signal")) {
-      for (const edu of educationEntries) {
-        if (edu.degree.toLowerCase().includes("m") || edu.field.toLowerCase().includes("signal")) {
-          edu.start_date = corrected.start;
-          edu.end_date = corrected.end;
-        }
       }
     }
   }
@@ -640,6 +649,8 @@ export function mergeResolvedProfile(
     totalMonths += curEnd - curStart;
   }
 
+  const educationEntries = Array.from(educationMap.values());
+
   return {
     employer: directAnswers.employer_confirmed,
     persona,
@@ -647,6 +658,7 @@ export function mergeResolvedProfile(
     education: educationEntries,
     certifications: Array.from(allCerts),
     programs: allPrograms,
+    skills: dedupeSkills(parsedCVs),
     flags: allFlags,
     meta: {
       cvs_analyzed: parsedCVs.length,
@@ -656,6 +668,22 @@ export function mergeResolvedProfile(
       total_career_months: totalMonths,
     },
   };
+}
+
+/** Merge and deduplicate top-level skills from all input CVs */
+function dedupeSkills(cvs: InputCV[]): Array<{ name: string; domain: string; category: string; source: string }> {
+  const seen = new Set<string>();
+  const result: Array<{ name: string; domain: string; category: string; source: string }> = [];
+  for (const cv of cvs) {
+    for (const skill of cv.skills ?? []) {
+      const key = skill.name.toLowerCase();
+      if (!seen.has(key)) {
+        seen.add(key);
+        result.push(skill);
+      }
+    }
+  }
+  return result;
 }
 
 // ============================================================
@@ -714,7 +742,7 @@ export function resolvedProfileToParsedCV(profile: ResolvedProfile): ParsedCV {
     for (const t of techs) allTechSet.add(t);
 
     return {
-      company: role.organization,
+      company: role.employer ?? role.organization,
       title: role.title,
       start_date: role.start_date,
       end_date: role.end_date,
@@ -740,6 +768,18 @@ export function resolvedProfileToParsedCV(profile: ResolvedProfile): ParsedCV {
     if (!addedSkills.has(key)) {
       addedSkills.add(key);
       skills.push({ name: prog, domain: "general", category: "program", source: "experience" });
+    }
+  }
+
+  // Carry forward top-level skills from parsed CVs (critical for non-tech professions
+  // where skills like "Anesthesiology", "Critical Care" appear in skills section
+  // but not in technologies_used per role)
+  for (const skill of profile.skills) {
+    const key = skill.name.toLowerCase();
+    if (!addedSkills.has(key)) {
+      addedSkills.add(key);
+      allTechSet.add(skill.name);
+      skills.push(skill);
     }
   }
 

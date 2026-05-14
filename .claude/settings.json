@@ -1,4 +1,17 @@
 {
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"e:/AIloop&JobSpec/.claude/hooks/llm-isolation-guard.js\""
+          }
+        ]
+      }
+    ]
+  },
   "permissions": {
     "allow": [
       "Bash(node -e \":*)",
@@ -48,7 +61,19 @@
       "Bash(python -c \":*)",
       "WebFetch(domain:raw.githubusercontent.com)",
       "Bash(kaggle datasets:*)",
-      "Bash(wc -c \"e:/AIloop&JobSpec/Alpha_CVs/extracted/f3_CS_Resume_Sample.txt\" \"e:/AIloop&JobSpec/Alpha_CVs/extracted/f3_BME_Resume_Sample.txt\" \"e:/AIloop&JobSpec/Alpha_CVs/extracted/f3_4_1_Master_s_Student_Resume_Sample.txt\")"
+      "Bash(wc -c \"e:/AIloop&JobSpec/Alpha_CVs/extracted/f3_CS_Resume_Sample.txt\" \"e:/AIloop&JobSpec/Alpha_CVs/extracted/f3_BME_Resume_Sample.txt\" \"e:/AIloop&JobSpec/Alpha_CVs/extracted/f3_4_1_Master_s_Student_Resume_Sample.txt\")",
+      "Bash(npm ls:*)",
+      "Bash(wc -l \"e:/AIloop&JobSpec/pipeline-uml.html\" \"e:/AIloop&JobSpec/final-approach-visual.html\" \"e:/AIloop&JobSpec/autoresearch-algorithm.html\")",
+      "Bash(ls \"e:/AIloop&JobSpec/packages/ai/tests/fixtures/dr__sibgha_saliha_resume/\")",
+      "Bash(SB_URL=\"https://koyqjfatxreyaaynflrn.supabase.co\")",
+      "Bash(SB_KEY=\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtveXFqZmF0eHJleWFheW5mbHJuIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3NzY1ODg5NSwiZXhwIjoyMDkzMjM0ODk1fQ.mND_hkB1LWOJdR0ETYAMu_5vW33Tk9Hwhsuy_dWaO8Y\")",
+      "Bash(for ID in \"4d7817c1-c61d-45eb-bcdc-00d92ade4af6\" \"728d16dc-b6ff-461a-bb6d-cda353aa6e02\" \"6440f7d8-c15e-4ea0-97ed-1a7957816799\" \"c97eb75b-8ecb-43ff-870d-f15f951fe196\")",
+      "Bash(curl -s \"$SB_URL/rest/v1/cv_uploads?id=eq.$ID&select=filename,extracted_text\" -H \"apikey: $SB_KEY\" -H \"Authorization: Bearer $SB_KEY\")",
+      "Bash(node -e \"const d=JSON.parse\\(require\\(''''fs''''\\).readFileSync\\(0,''''utf8''''\\)\\);console.log\\(d[0].filename,''''|'''',d[0].extracted_text?.length||0,''''chars''''\\)\")",
+      "Bash(SB_URL=\"https://koyqjfatxreyaaynflrn.supabase.co/rest/v1\" SB_KEY=\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtveXFqZmF0eHJleWFheW5mbHJuIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3NzY1ODg5NSwiZXhwIjoyMDkzMjM0ODk1fQ.mND_hkB1LWOJdR0ETYAMu_5vW33Tk9Hwhsuy_dWaO8Y\" SIBGHA=\"ef5231fd-65f4-4421-9c79-38c9640648b1\" __NEW_LINE_e57bf2a2c454478d__ curl -s \"$SB_URL/cv_uploads?user_id=eq.$SIBGHA&select=id,filename,status,created_at\" -H \"apikey: $SB_KEY\" -H \"Authorization: Bearer $SB_KEY\")",
+      "Bash(curl -s \"$SB_URL/cv_uploads?user_id=eq.$SIBGHA&select=id,filename,status,created_at\" -H 'apikey: $SB_KEY' -H 'Authorization: Bearer $SB_KEY')",
+      "Bash(USER_ID=\"ef5231fd-65f4-4421-9c79-38c9640648b1\")",
+      "Bash(__NEW_LINE_81ef82369ae29f8f__ curl:*)"
     ]
   }
 }

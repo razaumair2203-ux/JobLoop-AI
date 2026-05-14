@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>JobLoop AI &mdash; Complete Pipeline v4 (May 12, 2026)</title>
+<title>JobLoop AI &mdash; Complete Pipeline v4 (Audit-Hardened, May 13, 2026)</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
@@ -221,10 +221,11 @@
 </head>
 <body>
 
-<h1>JobLoop AI &mdash; Complete Pipeline v3</h1>
+<h1>JobLoop AI &mdash; Complete Pipeline v4 (Audit-Hardened)</h1>
 <p class="subtitle">
-  46 tasks &bull; 32 code &bull; 14 DeepSeek Flash &bull; Any user, any profession<br>
-  Onboarding: $0.006&ndash;$0.097 &bull; Per JD: $0.02&ndash;$0.05
+  46 tasks &bull; 31 code &bull; 15 DeepSeek Flash &bull; Any user, any profession<br>
+  Onboarding: ~$0.003&ndash;$0.013 &bull; Per JD: ~$0.005&ndash;$0.010<br>
+  <span style="color: #34d399;">Pipeline audit: 23 findings, 14 fixed, 0 TS errors &bull; Output validation on CV gen + cover letter &bull; Temp 0.2 for parsing &bull; JD parse retry &bull; May 13, 2026</span>
 </p>
 
 <!-- ==================== DECISION TREE ==================== -->
@@ -247,18 +248,18 @@
           <div style="flex: 1; background: #1a2e1f; border: 1px solid #166534; border-radius: 8px; padding: 12px;">
             <div class="dt-branch-title" style="color: #6ee7b7;">YES &rarr; LLM</div>
             <div class="dt-branch-detail" style="color: #86efac;">
-              CV parsing, JD parsing,<br>free-text answer parsing,<br>feedback classification,<br>"Why this wording?"
+              CV parsing, JD parsing,<br>free-text answer parsing,<br>feedback classification,<br>outcome parsing, "Why this wording?"
             </div>
-            <div class="dt-branch-count" style="color: #6ee7b7;">9</div>
-            <div style="font-size: 10px; color: #059669;">tasks (19%)</div>
+            <div class="dt-branch-count" style="color: #6ee7b7;">10</div>
+            <div style="font-size: 10px; color: #059669;">tasks (22%)</div>
           </div>
           <div style="flex: 1; background: #172554; border: 1px solid #1e40af; border-radius: 8px; padding: 12px;">
             <div class="dt-branch-title" style="color: #93c5fd;">NO &rarr; CODE</div>
             <div class="dt-branch-detail" style="color: #bfdbfe;">
               Everything else:<br>cleaning, matching,<br>templates, rules,<br>conflict detection
             </div>
-            <div class="dt-branch-count" style="color: #93c5fd;">32</div>
-            <div style="font-size: 10px; color: #2563eb;">tasks (70%)</div>
+            <div class="dt-branch-count" style="color: #93c5fd;">31</div>
+            <div style="font-size: 10px; color: #2563eb;">tasks (67%)</div>
           </div>
         </div>
       </div>
@@ -300,7 +301,7 @@
           ~1,500 in + ~2,000 out tokens/CV<br>
           Unstructured text &rarr; structured JSON
         </div>
-        <div><span class="tag llm">LLM</span><span class="tag cost">~$0.003/CV</span></div>
+        <div><span class="tag llm">LLM</span><span class="tag cost">~$0.001/CV</span></div>
       </div>
       <div class="arrow">&rarr;</div>
       <div class="block output">
@@ -527,7 +528,7 @@
     <div class="confirm-gate" style="margin-top: 16px;">
       <div class="confirm-gate-title">CONFIRMATION GATE</div>
       <div class="confirm-gate-detail">
-        Confirms &rarr; Phase 5 &bull; Corrects &rarr; update + re-render ($0) &bull; Adds free text &rarr; DeepSeek Flash parse ($0.001)
+        Confirms &rarr; Phase 5 &bull; Corrects &rarr; update + re-render ($0) &bull; Adds free text &rarr; DeepSeek Flash parse (&lt;$0.001)
       </div>
     </div>
   </div>
@@ -806,7 +807,7 @@
           Requirements, technologies,<br>
           responsibilities, seniority
         </div>
-        <div><span class="tag llm">LLM</span><span class="tag cost">~$0.007</span></div>
+        <div><span class="tag llm">LLM</span><span class="tag cost">~$0.001</span></div>
       </div>
       <div class="arrow">&rarr;</div>
       <div class="block output">
@@ -909,7 +910,7 @@
           "You lack Kubernetes but your Docker +<br>
           AWS + CI/CD experience transfers. Frame as..."
         </div>
-        <div><span class="tag sonnet-tag">LLM</span><span class="tag cost">~$0.020</span></div>
+        <div><span class="tag llm">LLM</span><span class="tag cost">~$0.001</span></div>
       </div>
       <div class="arrow">&rarr;</div>
       <div class="block sonnet-block" style="flex: 1.3;">
@@ -921,7 +922,7 @@
           "Lead with program management,<br>
           bridge the technical gap by..."
         </div>
-        <div><span class="tag sonnet-tag">LLM</span><span class="tag cost">~$0.015</span></div>
+        <div><span class="tag llm">LLM</span><span class="tag cost">~$0.001</span></div>
       </div>
     </div>
 
@@ -1010,7 +1011,7 @@
           Persuasive, mirrors JD language,<br>
           quantifies impact. Recruiter reads this.
         </div>
-        <div><span class="tag sonnet-tag">LLM</span><span class="tag cost">~$0.039</span></div>
+        <div><span class="tag llm">LLM</span><span class="tag cost">~$0.001</span></div>
       </div>
       <div class="arrow">&rarr;</div>
       <div class="block sonnet-block" style="flex: 1.3;">
@@ -1022,7 +1023,7 @@
           Narrative coherence. First thing<br>
           recruiter reads. Must be compelling.
         </div>
-        <div><span class="tag sonnet-tag">LLM</span><span class="tag cost">~$0.014</span></div>
+        <div><span class="tag llm">LLM</span><span class="tag cost">~$0.001</span></div>
       </div>
     </div>
 
@@ -1035,7 +1036,7 @@
           Explain a decision already made.<br>
           User reads it, but explanatory.
         </div>
-        <div><span class="tag llm">LLM</span><span class="tag cost">~$0.002</span></div>
+        <div><span class="tag llm">LLM</span><span class="tag cost">&lt;$0.001</span></div>
       </div>
       <div class="arrow">&rarr;</div>
       <div class="block process">
@@ -1065,7 +1066,7 @@
           Creative, personalized, persuasive.<br>
           Hiring manager reads this.
         </div>
-        <div><span class="tag sonnet-tag">LLM</span><span class="tag cost">~$0.032</span></div>
+        <div><span class="tag llm">LLM</span><span class="tag cost">~$0.001</span></div>
       </div>
       <div class="arrow">&rarr;</div>
       <div class="block process">
@@ -1082,7 +1083,7 @@
           <span class="model-tag haiku">DeepSeek Flash</span><br>
           Explain the letter strategy
         </div>
-        <div><span class="tag llm">LLM</span><span class="tag cost">~$0.002</span></div>
+        <div><span class="tag llm">LLM</span><span class="tag cost">&lt;$0.001</span></div>
       </div>
     </div>
   </div>
@@ -1253,50 +1254,45 @@
   <div class="scenarios-title">Cost Per User Journey</div>
   <div class="scenario">
     <div class="scenario-name">Onboarding: Simple (1 CV, no conflicts, 3 enrichment answers)</div>
-    <div class="scenario-detail">1 DeepSeek Flash parse + 3 DeepSeek Flash answer parses = 4 LLM calls</div>
-    <div class="scenario-cost">$0.003 + 3&times;$0.001 = $0.006</div>
+    <div class="scenario-detail">1 CV parse + 3 answer parses = 4 LLM calls</div>
+    <div class="scenario-cost">4 &times; ~$0.001 = ~$0.003</div>
   </div>
   <div class="scenario">
     <div class="scenario-name">Onboarding: Complex (5 CVs, 6 conflicts, 2 free-text, 1 afterthought, 5 enrichment)</div>
-    <div class="scenario-detail">5 DeepSeek Flash parses + 2 free-text + 1 afterthought + 5 enrichment parses = 13 LLM calls</div>
-    <div class="scenario-cost">5&times;$0.003 + 3&times;$0.001 + 5&times;$0.001 = $0.023</div>
+    <div class="scenario-detail">5 CV parses + 2 free-text + 1 afterthought + 5 enrichment parses = 13 LLM calls</div>
+    <div class="scenario-cost">13 &times; ~$0.001 = ~$0.013</div>
   </div>
   <div class="scenario">
     <div class="scenario-name">Per JD Analysis (typical: moderate match, 2 gaps, cover letter)</div>
-    <div class="scenario-detail">1 JD parse + 2 DeepSeek Flash strategies + 1 DeepSeek Flash CV bullets + 1 DeepSeek Flash CV summary + 1 DeepSeek Flash cover letter + 1 DeepSeek Flash "why" = 7 LLM calls</div>
-    <div class="scenario-cost">$0.007 + $0.020 + $0.015 + $0.039 + $0.014 + $0.032 + $0.002 = $0.129</div>
+    <div class="scenario-detail">1 JD parse + 2 strategies + CV bullets + CV summary + cover letter + "why" = 7 LLM calls</div>
+    <div class="scenario-cost">7 &times; ~$0.001 = ~$0.007</div>
   </div>
   <div class="scenario">
     <div class="scenario-name">Per JD Analysis (simple: strong match, no cover letter)</div>
-    <div class="scenario-detail">1 JD parse + 1 DeepSeek Flash strategy + 1 DeepSeek Flash CV bullets + 1 DeepSeek Flash CV summary = 4 LLM calls</div>
-    <div class="scenario-cost">$0.007 + $0.015 + $0.039 + $0.014 = $0.075</div>
+    <div class="scenario-detail">1 JD parse + 1 strategy + CV bullets + CV summary = 4 LLM calls</div>
+    <div class="scenario-cost">4 &times; ~$0.001 = ~$0.004</div>
   </div>
   <div class="scenario">
     <div class="scenario-name">Full journey: Complex onboarding + 5 JD applications with cover letters</div>
     <div class="scenario-detail">13 onboarding calls + 5 &times; 7 JD calls = 48 LLM calls total</div>
-    <div class="scenario-cost">$0.023 + 5 &times; $0.129 = $0.668 <span style="color: #64748b; font-weight: 400;">&nbsp;&nbsp;(total cost for heavy user)</span></div>
+    <div class="scenario-cost">48 &times; ~$0.001 = ~$0.048 <span style="color: #64748b; font-weight: 400;">&nbsp;&nbsp;(total cost for heavy user &mdash; ~97% margin at $7/week)</span></div>
   </div>
 </div>
 
 <!-- ==================== API PRICING ==================== -->
 <div class="cost-table" style="margin-top: 24px;">
-  <div class="cost-table-title">Anthropic API Pricing (May 2026)</div>
+  <div class="cost-table-title">DeepSeek V4 Flash API Pricing (June 2026+)</div>
   <table>
     <tr><th>Model</th><th>Input</th><th>Output</th><th>Speed</th><th>Used For (in this product)</th></tr>
     <tr>
-      <td><span class="model-tag haiku">DeepSeek Flash</span></td>
-      <td>$0.80 / 1M</td><td>$4.00 / 1M</td><td>~0.5&ndash;1s</td>
-      <td>All parsing (CV, JD, answers, feedback). All explanations. 9 tasks.</td>
-    </tr>
-    <tr>
-      <td><span class="model-tag sonnet">DeepSeek Flash</span></td>
-      <td>$3.00 / 1M</td><td>$15.00 / 1M</td><td>~1&ndash;3s</td>
-      <td>CV bullets, CV summary, cover letter, bridge strategy, app strategy. 5 tasks.</td>
+      <td><span class="model-tag haiku">DeepSeek V4 Flash</span></td>
+      <td>$0.14 / 1M</td><td>$0.28 / 1M</td><td>~0.5&ndash;2s</td>
+      <td>ALL 14 LLM tasks: parsing, generation, explanations, feedback. Single model strategy &mdash; both fast and quality tiers resolve to deepseek-chat.</td>
     </tr>
     <tr class="note-row">
       <td colspan="5">
-        DeepSeek Flash: cheap bulk worker (extraction, parsing, classification). DeepSeek Flash: quality writer (only when a human judges the output).
-        CODE handles 32 of 46 tasks at $0.
+        Single model, single price. No tier escalation needed &mdash; DeepSeek Flash handles all tasks (parsing AND generation) at the same rate.
+        CODE handles 31 of 46 tasks at $0. Override via DEEPSEEK_MODEL / DEEPSEEK_MODEL_QUALITY env vars if future model split needed.
       </td>
     </tr>
   </table>
@@ -1304,17 +1300,29 @@
 
 <!-- ==================== SINGLE EXCEPTION ==================== -->
 <div class="cost-table" style="margin-top: 24px;">
-  <div class="cost-table-title">The One Exception</div>
+  <div class="cost-table-title">CV Parse Retry Strategy (The One Dynamic Behavior)</div>
   <table>
-    <tr><th>Scenario</th><th>Default</th><th>Escalation</th><th>Trigger</th></tr>
+    <tr><th>Attempt</th><th>Model</th><th>Cost</th><th>Trigger</th></tr>
     <tr>
-      <td>CV parsing (Task #2)</td>
-      <td><span class="model-tag haiku">DeepSeek Flash</span> ($0.003)</td>
-      <td><span class="model-tag sonnet">DeepSeek Flash</span> ($0.013)</td>
-      <td>Parser scorecard fails &mdash; complex CV (military rotational, 20+ roles, multi-employer). Measured by scorecard, not guessed.</td>
+      <td>1 (default)</td>
+      <td><span class="model-tag haiku">DeepSeek Flash</span></td>
+      <td>~$0.001</td>
+      <td>Initial parse attempt</td>
+    </tr>
+    <tr>
+      <td>2 (retry with hint)</td>
+      <td><span class="model-tag haiku">DeepSeek Flash</span></td>
+      <td>~$0.001</td>
+      <td>Schema validation failed &mdash; retry with repair hint</td>
+    </tr>
+    <tr>
+      <td>3 (quality tier)</td>
+      <td><span class="model-tag haiku">DeepSeek Flash (quality)</span></td>
+      <td>~$0.001</td>
+      <td>Both attempts failed &mdash; escalate to DEEPSEEK_MODEL_QUALITY (currently same model, overridable via env var)</td>
     </tr>
     <tr class="note-row">
-      <td colspan="4">This is the ONLY dynamic model selection in the product. Everything else is statically assigned. No maturity matrix, no complexity classifiers.</td>
+      <td colspan="4">Currently both tiers resolve to deepseek-chat (single model strategy). The quality tier exists as an override point &mdash; set DEEPSEEK_MODEL_QUALITY env var to use a different model for complex CVs. JD parse has 2-attempt retry (no tier escalation).</td>
     </tr>
   </table>
 </div>
@@ -1345,7 +1353,7 @@
         <li><strong style="color: #a78bfa;">Flow:</strong> User uploads &rarr; extract &rarr; DeepSeek parses &rarr; Cloud builds automatically</li>
         <li><strong style="color: #a78bfa;">Extraction:</strong> pdf.js-extract (same as dev)</li>
         <li><strong style="color: #a78bfa;">Auth:</strong> Supabase Auth (Google + LinkedIn OAuth)</li>
-        <li><strong style="color: #a78bfa;">Cost:</strong> ~$0.01/CV parse, ~$0.05/JD analysis</li>
+        <li><strong style="color: #a78bfa;">Cost:</strong> ~$0.001/CV parse, ~$0.007/JD analysis (DeepSeek V4 Flash)</li>
         <li><strong style="color: #a78bfa;">Handoff:</strong> Set DEEPSEEK_API_KEY env var. That's it.</li>
         <li><strong style="color: #a78bfa;">Same code:</strong> Zero code changes between dev and prod</li>
       </ul>
