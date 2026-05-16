@@ -134,11 +134,22 @@ export type Evidence =
 
 export type NodeType = "skill" | "capability" | "domain";
 
+/**
+ * Tier determines WHICH SECTION a node appears in — not a score.
+ * - core_skill: Domain expertise demonstrated through roles (Anesthesiology, Software Engineering)
+ * - certification: Industry-standard credentials (ACLS, PMP, AWS SA)
+ * - education: Degrees and formal qualifications (MBBS, FCPS, MBA)
+ * - voluntary: Supplementary certs, MOOCs, workshops (Heart Saver, Coursera)
+ * - license: Practice permits (PMDC, SCFHS, GMC, PE license)
+ */
+export type CloudNodeTier = "core_skill" | "certification" | "education" | "voluntary" | "license";
+
 export interface CloudNode {
   id: string;
   type: NodeType;
   name: string; // "Kafka", "Leadership", "Fintech"
   category: string; // "language", "framework", "infrastructure", "soft_skill", etc.
+  tier: CloudNodeTier; // determines UI section, not rank
   evidence: Evidence[];
 
   // Factual summary — NOT a score, just "does this exist? yes/no"
@@ -184,6 +195,8 @@ export interface CareerTrajectory {
     end_date: string | "present";
     duration_months: number;
     domain: string;
+    seniority_level: number; // 1-5 for career path Y-axis
+    isTraining: boolean; // residency/fellowship = progression, never a dip
   }>;
   progression_pattern: string; // "consistent growth", "lateral moves", "career change"
   domain_consistency: string; // "fintech focused", "diverse"
@@ -192,11 +205,31 @@ export interface CareerTrajectory {
 }
 
 // ============================================================
+// PROFESSIONAL IDENTITY — WHO you are (not what you have)
+// ============================================================
+
+export interface ProfessionalIdentity {
+  core_profession: string;          // "Anesthesiologist" (not "Heart Saver")
+  specializations: string[];        // ["Cardiac Anesthesia", "Critical Care"]
+  career_stage: string;             // "Senior Registrar" (from most recent title)
+  career_stage_generic: string;     // "Experienced Professional" (from years)
+  qualification_country: string | null;
+  qualification_degrees: string[];  // ["MBBS", "FCPS (Anesthesiology)"]
+  niche_differentiators: string[];  // ["AHA Instructor (ACLS/BLS)", "PALS Provider"]
+  identity_basis: {
+    primary_education: string | null;
+    longest_role_domain: string;
+    title_signals: string[];
+  };
+}
+
+// ============================================================
 // THE FULL CLOUD — Everything about this person
 // ============================================================
 
 export interface ProfileCloud {
   user_id: string;
+  identity: ProfessionalIdentity;
   nodes: CloudNode[];
   achievements: Achievement[];
   trajectory: CareerTrajectory;
@@ -213,6 +246,427 @@ export interface ProfileCloud {
   certifications: CertificationEvidence[];
   languages_spoken: string[];
   last_updated: string;
+}
+
+// ============================================================
+// PROFESSIONAL IDENTITY COMPUTATION
+// ============================================================
+
+/** Deduplicate certifications across multiple CVs */
+export function deduplicateCertifications(certs: string[]): string[] {
+  const normalized = new Map<string, string>(); // normalized key -> best version
+
+  for (const cert of certs) {
+    const key = normalizeCertName(cert);
+    const existing = normalized.get(key);
+    // Keep the longer/more specific version
+    if (!existing || cert.length > existing.length) {
+      normalized.set(key, cert);
+    }
+  }
+  return Array.from(normalized.values());
+}
+
+function normalizeCertName(name: string): string {
+  let s = name.toLowerCase().trim();
+  // Strip common prefixes
+  s = s.replace(/^(fellow of |fellowship |certificate in |certified )/i, "");
+  // Normalize parentheses
+  s = s.replace(/[()]/g, " ").replace(/\s+/g, " ").trim();
+  // Normalize medical field names
+  s = s.replace(/\banaesth(esia|esiology|etics)\b/gi, "anesthesiology");
+  s = s.replace(/\banesthesia\b/gi, "anesthesiology");
+  // Normalize common acronyms with full names
+  s = s.replace(/\bcollege of physicians (&|and) surgeons\b/gi, "cpsp");
+  s = s.replace(/\bamerican heart association\b/gi, "aha");
+  // Extract core acronym if present (FCPS, ACLS, BLS, etc.)
+  const acronymMatch = s.match(/\b(fcps|acls|bls|pals|atls|nrp|pmp|pmi|cfa|cpa|pe|mbbs|mrcp|frcs|usmle|plab|smle)\b/i);
+  if (acronymMatch) {
+    const acronym = acronymMatch[1].toLowerCase();
+    // For FCPS/MBBS/MRCP, include the field if present
+    const fieldMatch = s.match(/(?:in|of)\s+([\w\s]+?)(?:\s*$|\s*from|\s*at)/i);
+    if (fieldMatch && ["fcps", "mbbs", "mrcp", "frcs"].includes(acronym)) {
+      return `${acronym}_${fieldMatch[1].trim().replace(/\s+/g, "_")}`;
+    }
+    return acronym;
+  }
+  // Fallback: use first 3 significant words
+  return s.split(/\s+/).filter(w => w.length > 2).slice(0, 3).join("_");
+}
+
+/** Classify certification tier */
+export type CertTier = "professional_qualification" | "industry_gold" | "voluntary";
+
+export function classifyCertTier(certName: string): CertTier {
+  const lower = certName.toLowerCase();
+  // Professional qualifications (prerequisites for the profession)
+  if (/\b(fcps|mbbs|md|frcs|mrcp|do|bds|pharm\.?d|dds|dnb)\b/i.test(lower)) return "professional_qualification";
+  if (/\b(be|bs|ms|phd|m\.?tech|b\.?tech|mba|llb|llm|bcom|mcom)\b/i.test(lower)) return "professional_qualification";
+  if (/\b(license|licence|registration|pmdc|scfhs|dha|doh|haad|gmc)\b/i.test(lower)) return "professional_qualification";
+  // Industry gold (standardized validation)
+  if (/\b(acls|bls|pals|atls|nrp)\b/i.test(lower)) return "industry_gold";
+  if (/\b(pmp|pmi|prince2|csep|pe |professional engineer)\b/i.test(lower)) return "industry_gold";
+  if (/\b(aws|gcp|azure|cisco|oracle|comptia|cissp|cisa|cism)\b/i.test(lower)) return "industry_gold";
+  if (/\b(cpa|cfa|acca|frm|shrm|phr|sphr)\b/i.test(lower)) return "industry_gold";
+  // Everything else is voluntary
+  return "voluntary";
+}
+
+/**
+ * Compute professional identity from parsed CV data.
+ * CODE-first: no LLM needed. Uses education + roles + title signals.
+ */
+export function computeIdentity(
+  education: Array<{ degree: string; field: string; institution: string }>,
+  experience: Array<{ title: string; company: string; start_date?: string; end_date?: string; duration_months: number; domain: string }>,
+  certifications: string[],
+  candidateContext?: { primary_profession?: string; specialization?: string; career_level?: string; country_of_qualification?: string },
+): ProfessionalIdentity {
+  // 1. Core profession from terminal degree + longest domain + most recent title
+  const terminalDegree = findTerminalDegree(education);
+  const longestDomain = findLongestDomain(experience);
+  // Find most recent role by end_date (don't assume sort order)
+  const mostRecentTitle = experience.length > 0
+    ? experience.reduce((best, curr) => {
+        if (curr.end_date?.toLowerCase() === "present") return curr;
+        if (best.end_date?.toLowerCase() === "present") return best;
+        // Compare date strings — "Dec 2024" > "Jan 2014"
+        const bestYear = parseInt(best.end_date?.match(/\d{4}/)?.[0] ?? "0");
+        const currYear = parseInt(curr.end_date?.match(/\d{4}/)?.[0] ?? "0");
+        return currYear > bestYear ? curr : best;
+      }).title
+    : null;
+  const titleSignals = experience.map(e => e.title);
+
+  // Use parser's candidate context if available
+  let coreProfession = candidateContext?.primary_profession || "";
+  if (!coreProfession) {
+    // Infer from terminal degree field
+    if (terminalDegree) {
+      coreProfession = terminalDegree.field;
+    } else if (mostRecentTitle) {
+      // Strip seniority prefixes to get profession
+      coreProfession = mostRecentTitle
+        .replace(/^(senior|junior|lead|head|chief|principal|staff|assistant|associate|deputy)\s+/i, "")
+        .replace(/\s+(officer|specialist|consultant|instructor|trainee|intern|fellow|registrar)$/i, "");
+    }
+  }
+
+  // 2. Career stage from most recent title
+  const careerStage = candidateContext?.career_level ||
+    (mostRecentTitle ? extractCareerStage(mostRecentTitle) : "Professional");
+
+  // 3. Generic career stage from total years
+  const totalYears = experience.reduce((sum, e) => sum + e.duration_months, 0) / 12;
+  let genericStage: string;
+  if (totalYears >= 15) genericStage = "Senior Professional";
+  else if (totalYears >= 8) genericStage = "Experienced Professional";
+  else if (totalYears >= 3) genericStage = "Mid-Career Professional";
+  else genericStage = "Early-Career Professional";
+
+  // 4. Qualification country
+  const country = candidateContext?.country_of_qualification ||
+    detectQualificationCountry(education, certifications);
+
+  // 5. Qualification degrees (terminal/professional only) — dedup across CVs
+  const qualDegreesSet = new Set<string>();
+  const qualDegrees: string[] = [];
+  for (const e of education) {
+    if (!isTerminalDegree(e.degree)) continue;
+    const field = e.field && e.field !== e.degree ? ` (${e.field})` : "";
+    const label = `${e.degree}${field}`;
+    const key = label.toLowerCase().replace(/\s+/g, " ").trim();
+    if (qualDegreesSet.has(key)) continue;
+    qualDegreesSet.add(key);
+    qualDegrees.push(label);
+  }
+
+  // 6. Specializations from candidate context or education field
+  const specializations: string[] = [];
+  if (candidateContext?.specialization) {
+    specializations.push(candidateContext.specialization);
+  }
+
+  // 7. Niche differentiators from certifications — dedup across CVs
+  const differentiators: string[] = [];
+  const seenDiff = new Set<string>();
+  for (const cert of certifications) {
+    const lower = cert.toLowerCase();
+    // Normalize: strip org prefixes for dedup ("AHA Instructor - ACLS" ≈ "American Heart Association Instructor - ACLS")
+    const normalized = lower
+      .replace(/american heart association/g, "aha")
+      .replace(/\s+/g, " ")
+      .trim();
+    if (seenDiff.has(normalized)) continue;
+    if (lower.includes("instructor")) {
+      seenDiff.add(normalized);
+      differentiators.push(cert);
+    } else if (classifyCertTier(cert) === "voluntary") {
+      seenDiff.add(normalized);
+      differentiators.push(cert);
+    }
+  }
+
+  return {
+    core_profession: coreProfession || "Professional",
+    specializations,
+    career_stage: careerStage,
+    career_stage_generic: genericStage,
+    qualification_country: country,
+    qualification_degrees: qualDegrees,
+    niche_differentiators: differentiators,
+    identity_basis: {
+      primary_education: terminalDegree ? `${terminalDegree.degree} in ${terminalDegree.field} from ${terminalDegree.institution}` : null,
+      longest_role_domain: longestDomain,
+      title_signals: titleSignals.slice(0, 5),
+    },
+  };
+}
+
+function findTerminalDegree(education: Array<{ degree: string; field: string; institution: string }>): { degree: string; field: string; institution: string } | null {
+  // Priority order: specialty fellowship > masters/doctorate > bachelors
+  const priority: Array<[RegExp, number]> = [
+    [/\b(fcps|frcs|mrcp|dnb|dm|mch|fellowship)\b/i, 10], // specialty
+    [/\b(phd|dphil|doctorate)\b/i, 9],
+    [/\b(ms|msc|ma|mba|mphil|mtech)\b/i, 7],
+    [/\b(mbbs|md|do|bds|pharmd|dds)\b/i, 6], // medical bachelors (terminal for clinical)
+    [/\b(be|bs|bsc|ba|btech|bcom|llb)\b/i, 4],
+  ];
+
+  let best: { degree: string; field: string; institution: string } | null = null;
+  let bestPriority = -1;
+
+  for (const edu of education) {
+    for (const [pattern, p] of priority) {
+      if (pattern.test(edu.degree) && p > bestPriority) {
+        bestPriority = p;
+        best = edu;
+      }
+    }
+  }
+  return best;
+}
+
+function isTerminalDegree(degree: string): boolean {
+  return /\b(fcps|frcs|mrcp|dnb|phd|dphil|md|do|mbbs|bds|pharmd|ms|msc|mba|be|bs|bsc|btech|llb|llm)\b/i.test(degree);
+}
+
+function findLongestDomain(experience: Array<{ domain: string; duration_months: number }>): string {
+  const counts = new Map<string, number>();
+  for (const e of experience) {
+    const d = e.domain.toLowerCase();
+    if (d && d !== "general") counts.set(d, (counts.get(d) ?? 0) + e.duration_months);
+  }
+  let best = "general";
+  let max = 0;
+  for (const [d, m] of counts) {
+    if (m > max) { max = m; best = d; }
+  }
+  return best;
+}
+
+function extractCareerStage(title: string): string {
+  const t = title.toLowerCase();
+  // Medical hierarchy
+  if (/\bconsultant\b/.test(t)) return "Consultant";
+  if (/\bsenior registrar\b/.test(t) || /\bsenior resident\b/.test(t)) return "Senior Registrar";
+  if (/\bregistrar\b/.test(t) || /\bresident\b/.test(t)) return "Registrar";
+  if (/\b(attending|specialist|physician)\b/.test(t)) return "Specialist";
+  if (/\b(fellow|fellowship)\b/.test(t)) return "Fellow";
+  if (/\bresidency\b/.test(t)) return "Resident";
+  if (/\bmedical officer\b/.test(t)) return "Medical Officer";
+  if (/\bhouse officer\b/.test(t) || /\bintern\b/.test(t)) return "House Officer";
+  // Engineering/tech hierarchy
+  if (/\b(cto|ceo|cfo|coo|vp|vice president)\b/.test(t)) return "Executive";
+  if (/\bdirector\b/.test(t)) return "Director";
+  if (/\b(head|principal|staff)\b/.test(t)) return "Principal";
+  if (/\blead\b/.test(t)) return "Lead";
+  if (/\bsenior\b/.test(t)) return "Senior";
+  if (/\bjunior\b/.test(t)) return "Junior";
+  if (/\b(trainee|apprentice)\b/.test(t)) return "Trainee";
+  // Academic
+  if (/\bprofessor\b/.test(t)) return "Professor";
+  if (/\blecturer\b/.test(t)) return "Lecturer";
+  // Generic
+  if (/\bmanager\b/.test(t)) return "Manager";
+  if (/\banalyst\b/.test(t)) return "Analyst";
+  return "Professional";
+}
+
+function detectQualificationCountry(
+  education: Array<{ institution: string }>,
+  certifications: string[],
+): string | null {
+  const allText = [
+    ...education.map(e => e.institution),
+    ...certifications,
+  ].join(" ").toLowerCase();
+
+  const patterns: Array<[RegExp, string]> = [
+    [/\b(pakistan|lahore|karachi|islamabad|peshawar|quetta|rawalpindi|faisalabad|pmdc|cpsp|pec)\b/i, "Pakistan"],
+    [/\b(india|delhi|mumbai|chennai|bangalore|kolkata|aiims|neet|mci)\b/i, "India"],
+    [/\b(saudi|riyadh|jeddah|dammam|scfhs|smle)\b/i, "Saudi Arabia"],
+    [/\b(uae|dubai|abu dhabi|sharjah|dha |doh |haad)\b/i, "UAE"],
+    [/\b(uk |united kingdom|london|manchester|birmingham|gmc|plab|nhs)\b/i, "United Kingdom"],
+    [/\b(usa|united states|usmle|nbme|acgme)\b/i, "United States"],
+    [/\b(australia|sydney|melbourne|amc)\b/i, "Australia"],
+    [/\b(canada|toronto|vancouver|mcc)\b/i, "Canada"],
+    [/\b(china|beijing|shanghai|chengdu)\b/i, "China"],
+    [/\b(philippines|manila|prc)\b/i, "Philippines"],
+    [/\b(egypt|cairo|alexandria)\b/i, "Egypt"],
+    [/\b(nigeria|lagos|abuja|mdcn)\b/i, "Nigeria"],
+  ];
+
+  for (const [pattern, country] of patterns) {
+    if (pattern.test(allText)) return country;
+  }
+  return null;
+}
+
+// ============================================================
+// CAREER SENIORITY — Title-based, profession-aware
+// ============================================================
+
+export type SeniorityLevel = "entry" | "junior" | "mid" | "senior" | "lead" | "director";
+
+/** Infer seniority from job title. Profession-aware. */
+export function inferSeniority(title: string): SeniorityLevel {
+  const t = title.toLowerCase();
+
+  // Training/fellowship roles: these are PROGRESSION, not demotion
+  if (/\b(residency|resident|fellowship|fellow|trainee|apprentice|intern|house officer)\b/.test(t)) {
+    // Training in a specialty is mid-level progression (not entry, not junior)
+    if (/\b(senior|chief)\b/.test(t)) return "senior";
+    if (/\b(residency|resident|fellowship|fellow)\b/.test(t)) return "mid"; // training = mid, NOT junior
+    return "entry";
+  }
+
+  // Executive/Director
+  if (/\b(cto|ceo|cfo|coo|vp|vice president|chief)\b/.test(t)) return "director";
+  if (/\bdirector\b/.test(t)) return "director";
+
+  // Lead/Principal/Head
+  if (/\b(head|principal|staff|lead)\b/.test(t)) return "lead";
+  if (/\bconsultant\b/.test(t)) return "lead"; // medical consultant = lead level
+
+  // Senior
+  if (/\bsenior\b/.test(t)) return "senior";
+  if (/\bsenior registrar\b/.test(t)) return "senior";
+  if (/\bspecialist\b/.test(t)) return "senior";
+
+  // Mid
+  if (/\b(registrar|medical officer|engineer|analyst|manager|instructor|physician)\b/.test(t)) return "mid";
+
+  // Junior
+  if (/\bjunior\b/.test(t)) return "junior";
+
+  // Default
+  return "mid";
+}
+
+/** Default empty identity for cases where we construct a ProfileCloud from DB without full context */
+export function emptyIdentity(): ProfessionalIdentity {
+  return {
+    core_profession: "",
+    specializations: [],
+    career_stage: "",
+    career_stage_generic: "",
+    qualification_country: null,
+    qualification_degrees: [],
+    niche_differentiators: [],
+    identity_basis: { primary_education: null, longest_role_domain: "", title_signals: [] },
+  };
+}
+
+// ============================================================
+// TIER CLASSIFICATION — Determines which UI section a node belongs to
+// ============================================================
+
+/**
+ * Classify a node into its display tier based on its origin and evidence.
+ * This is CLASSIFICATION (which section), not scoring (how good).
+ */
+export function classifyNodeTier(
+  name: string,
+  category: string,
+  evidence: Evidence[],
+): CloudNodeTier {
+  const lower = name.toLowerCase();
+
+  // Licenses — binary active/expired, never ranked against skills
+  if (/\b(license|licence|registration|pmdc|scfhs|dha|doh|haad|gmc|state board|pec)\b/i.test(lower)) {
+    return "license";
+  }
+
+  // Education — degrees
+  if (/\b(mbbs|md|do|bds|pharmd|dds|phd|dphil|ms|msc|ma|mba|mphil|be|bs|bsc|ba|btech|bcom|llb|llm|dnb)\b/i.test(lower)) {
+    return "education";
+  }
+  // FCPS/FRCS/MRCP are degree+experience combos — education tier
+  if (/\b(fcps|frcs|mrcp|fellowship)\b/i.test(lower) && !/instructor/i.test(lower)) {
+    return "education";
+  }
+
+  // Voluntary certs — supplementary, low-stakes
+  if (/\b(heart saver|heartsaver|first aid|bystander|mooc|coursera|udemy|edx|skillshare)\b/i.test(lower)) {
+    return "voluntary";
+  }
+
+  // Industry certifications — standardized validation
+  if (/\b(acls|bls|pals|atls|nrp|pmp|prince2|aws|gcp|azure|cisco|comptia|cissp|cisa|cpa|cfa|acca|shrm|phr)\b/i.test(lower)) {
+    return "certification";
+  }
+  // If the only evidence is certification type and no role evidence, it's a cert node
+  if (evidence.length > 0 && evidence.every(e => e.type === "certification")) {
+    return "certification";
+  }
+  if (category === "certification") {
+    return "certification";
+  }
+
+  // Everything else with role evidence = core skill
+  return "core_skill";
+}
+
+// ============================================================
+// UNIFIED DEDUPLICATION — One function for all credential normalization
+// ============================================================
+
+/**
+ * Normalize any credential (cert, degree, skill) to a canonical key for deduplication.
+ * "FCPS Anesthesiology", "Fellowship (FCPS) in Anesthesia",
+ * "Fellow of CPSP in Anesthesiology" all → "fcps_anesthesiology"
+ */
+export function normalizeCredential(name: string): string {
+  let s = name.toLowerCase().trim();
+
+  // Strip common prefixes
+  s = s.replace(/^(fellow of|fellowship in|fellowship|certificate in|certified |diploma in|bachelor of|master of|doctor of)\s+/i, "");
+
+  // Normalize field names (profession-agnostic where possible)
+  s = s.replace(/\bana?esth(esia|esiology|etics)\b/g, "anesthesiology");
+  s = s.replace(/\bmedicine and surgery\b/g, "medicine");
+  s = s.replace(/\bcomputer science\b/g, "cs");
+  s = s.replace(/\binformation technology\b/g, "it");
+  s = s.replace(/\belectrical engineering\b/g, "ee");
+  s = s.replace(/\bmechanical engineering\b/g, "me");
+  s = s.replace(/\bcollege of physicians (&|and) surgeons\b/g, "cpsp");
+  s = s.replace(/\bamerican heart association\b/g, "aha");
+
+  // Extract core acronym if present
+  const acronymMatch = s.match(/\b(fcps|mbbs|mrcp|frcs|md|ms|phd|be|bs|bsc|mba|cfa|cpa|pmp|pe|acls|bls|pals|atls|nrp|usmle|plab|smle|dnb)\b/);
+  if (acronymMatch) {
+    const acronym = acronymMatch[1];
+    // Extract field after "in/of" or remaining words
+    const fieldMatch = s.match(/(?:in|of)\s+([\w\s]+?)(?:\s*$|\s*from|\s*at|\s*[-—])/);
+    const field = fieldMatch
+      ? fieldMatch[1].trim().replace(/[^a-z\s]/g, "").trim().replace(/\s+/g, "_")
+      : s.replace(acronym, "").replace(/[^a-z\s]/g, "").trim().replace(/\s+/g, "_");
+    return field && field !== acronym ? `${acronym}_${field}` : acronym;
+  }
+
+  // Fallback: clean and join significant words
+  return s.replace(/[^a-z\s]/g, "").trim().replace(/\s+/g, "_");
 }
 
 // ============================================================
@@ -251,6 +705,14 @@ export function buildCloudFromParsedCV(parsedCV: {
     highlights?: string[];
   }>;
   certifications: string[];
+  // Optional candidate context from parser Step 0
+  candidate_context?: {
+    primary_profession?: string;
+    specialization?: string;
+    career_level?: string;
+    country_of_qualification?: string;
+    candidate_name?: string;
+  };
 }): { cloud: ProfileCloud; classificationReport: SkillClassificationReport } {
   const nodeMap = new Map<string, CloudNode>();
   const report: SkillClassificationReport = {
@@ -335,6 +797,7 @@ export function buildCloudFromParsedCV(parsedCV: {
       type: "skill",
       name: skill.name,
       category: resolvedCategory,
+      tier: classifyNodeTier(skill.name, resolvedCategory, []),
       evidence: [],
       summary: emptySummary(),
     });
@@ -374,6 +837,7 @@ export function buildCloudFromParsedCV(parsedCV: {
           type: "skill",
           name: tech,
           category: techClassification.category,
+          tier: classifyNodeTier(tech, techClassification.category, []),
           evidence: [],
           summary: emptySummary(),
         });
@@ -435,6 +899,7 @@ export function buildCloudFromParsedCV(parsedCV: {
           type: "domain",
           name: role.domain,
           category: "domain",
+          tier: "core_skill",
           evidence: [],
           summary: emptySummary(),
         });
@@ -451,9 +916,18 @@ export function buildCloudFromParsedCV(parsedCV: {
     }
   }
 
-  // Add certification evidence — attach to matching nodes OR create standalone cert nodes
+  // Add certification evidence — deduplicate with normalizeCredential, then attach or create nodes
+  const dedupedCerts = deduplicateCertifications(parsedCV.certifications);
   const certEvidences: CertificationEvidence[] = [];
-  for (const certName of parsedCV.certifications) {
+
+  // Build a normalized key map of existing nodes for credential matching
+  const normalizedNodeMap = new Map<string, string>(); // normalizedKey -> nodeMap key
+  for (const [key] of nodeMap) {
+    const nk = normalizeCredential(key);
+    if (!normalizedNodeMap.has(nk)) normalizedNodeMap.set(nk, key);
+  }
+
+  for (const certName of dedupedCerts) {
     const cert: CertificationEvidence = {
       type: "certification",
       name: certName,
@@ -463,26 +937,41 @@ export function buildCloudFromParsedCV(parsedCV: {
     };
     certEvidences.push(cert);
 
-    // Try to attach cert to relevant skill nodes
+    // Try to attach cert to matching skill node using normalized keys
+    const certNormalized = normalizeCredential(certName);
     let attached = false;
-    for (const [key, node] of nodeMap) {
-      if (certName.toLowerCase().includes(key) || key.includes(certName.toLowerCase())) {
-        node.evidence.push(cert);
-        attached = true;
+
+    // First try: exact normalized match (catches FCPS Anesthesiology = Fellowship FCPS in Anesthesia)
+    const matchingNodeKey = normalizedNodeMap.get(certNormalized);
+    if (matchingNodeKey && nodeMap.has(matchingNodeKey)) {
+      nodeMap.get(matchingNodeKey)!.evidence.push(cert);
+      attached = true;
+    }
+
+    // Second try: substring match on original keys (fallback)
+    if (!attached) {
+      for (const [key, node] of nodeMap) {
+        if (certName.toLowerCase().includes(key) || key.includes(certName.toLowerCase())) {
+          node.evidence.push(cert);
+          attached = true;
+          break; // attach to first match only to avoid duplication
+        }
       }
     }
 
     // If cert didn't match ANY existing node, create a standalone cert node
-    // This ensures certs like ACLS, BLS, PALS, PMP always appear in the Cloud
     if (!attached) {
-      const certKey = certName.toLowerCase();
-      if (!nodeMap.has(certKey)) {
+      // Use normalized key to prevent dupes like "FCPS Anesthesiology" and "Fellow of CPSP..."
+      const certKey = certNormalized;
+      if (!nodeMap.has(certKey) && !nodeMap.has(certName.toLowerCase())) {
         const certClassification = classifySkill(certName, report.primaryDomain);
+        const certTier = classifyNodeTier(certName, "certification", [cert]);
         nodeMap.set(certKey, {
           id: generateId(),
           type: "skill",
           name: certName,
           category: certClassification.category !== "general" ? certClassification.category : "certification",
+          tier: certTier,
           evidence: [cert],
           summary: emptySummary(),
         });
@@ -495,15 +984,65 @@ export function buildCloudFromParsedCV(parsedCV: {
     node.summary = computeSummary(node.evidence);
   }
 
+  // Post-build dedup: merge nodes that normalize to the same credential
+  const seenNormalized = new Map<string, string>(); // normalizedKey -> nodeMap key
+  const dupeKeys: string[] = [];
+  for (const [key, node] of nodeMap) {
+    const nk = normalizeCredential(node.name);
+    const existing = seenNormalized.get(nk);
+    if (existing && existing !== key) {
+      // Merge evidence into the first node, drop the dupe
+      const target = nodeMap.get(existing)!;
+      target.evidence.push(...node.evidence);
+      target.summary = computeSummary(target.evidence);
+      // Keep the longer/more descriptive name
+      if (node.name.length > target.name.length) target.name = node.name;
+      dupeKeys.push(key);
+    } else {
+      seenNormalized.set(nk, key);
+    }
+  }
+  for (const key of dupeKeys) nodeMap.delete(key);
+
   // Build career trajectory
   const trajectory = buildTrajectory(parsedCV.experience, parsedCV.total_experience_years);
 
   // Build achievements from metrics
   const achievements = extractAchievements(parsedCV.experience);
 
+  // Compute professional identity
+  const identity = computeIdentity(
+    parsedCV.education,
+    parsedCV.experience,
+    dedupedCerts,
+    parsedCV.candidate_context,
+  );
+
+  // Sort nodes: within each tier, sort by real evidence (roles > months > impact)
+  const sortedNodes = Array.from(nodeMap.values()).sort((a, b) => {
+    // Primary: tier order (core_skill first, then cert, education, license, voluntary)
+    const tierOrder: Record<CloudNodeTier, number> = {
+      core_skill: 0, certification: 1, education: 2, license: 3, voluntary: 4,
+    };
+    const tierDiff = tierOrder[a.tier] - tierOrder[b.tier];
+    if (tierDiff !== 0) return tierDiff;
+
+    // Within same tier: sort by evidence strength
+    // 1. Number of roles (more roles = more evidence)
+    const roleDiff = b.summary.number_of_roles - a.summary.number_of_roles;
+    if (roleDiff !== 0) return roleDiff;
+    // 2. Total months used
+    const monthDiff = b.summary.total_months_used - a.summary.total_months_used;
+    if (monthDiff !== 0) return monthDiff;
+    // 3. Has impact
+    if (b.summary.has_impact !== a.summary.has_impact) return b.summary.has_impact ? 1 : -1;
+    return 0;
+  });
+
   const cloud: ProfileCloud = {
     user_id: "", // set by caller
-    nodes: Array.from(nodeMap.values()),
+    identity,
+    nodes: sortedNodes,
     achievements,
     trajectory,
     education: parsedCV.education.map((e) => {
@@ -583,14 +1122,28 @@ export function reconstructTrajectory(nodes: CloudNode[]): CareerTrajectory {
     end_date: string; duration_months: number; domain: string;
   }>();
 
+  // First pass: collect domain assignments from domain-type nodes
+  const roleDomainMap = new Map<string, string>();
+  for (const node of nodes) {
+    if (node.type === "domain") {
+      for (const ev of node.evidence) {
+        if (ev.type !== "role") continue;
+        const role = ev as RoleEvidence;
+        const key = `${role.company}|${role.title}|${role.start_date}`;
+        roleDomainMap.set(key, node.name);
+      }
+    }
+  }
+
+  // Second pass: build roles, using domain-node assignment or inferring from category
   for (const node of nodes) {
     for (const ev of node.evidence) {
       if (ev.type !== "role") continue;
       const role = ev as RoleEvidence;
       const key = `${role.company}|${role.title}|${role.start_date}`;
       if (!roleMap.has(key)) {
-        // Determine domain from the node's parent domain nodes or category
-        const domain = node.type === "domain" ? node.name : "general";
+        const domain = roleDomainMap.get(key)
+          ?? (node.type === "domain" ? node.name : node.category !== "general" ? node.category : "general");
         roleMap.set(key, {
           company: role.company,
           title: role.title,
@@ -614,12 +1167,51 @@ export function reconstructTrajectory(nodes: CloudNode[]): CareerTrajectory {
   }
 
   const roles = [...uniqueRoles.values()];
-  return buildTrajectory(roles, Math.round(roles.reduce((s, r) => s + r.duration_months, 0) / 12));
+
+  // Compute total years as date span (earliest start → latest end), NOT sum of durations
+  // Summing durations double-counts overlapping/concurrent roles
+  const totalYears = computeDateSpanYears(roles);
+
+  return buildTrajectory(roles, totalYears);
 }
 
 // ============================================================
 // HELPERS
 // ============================================================
+
+/** Compute career span in years from earliest start_date to latest end_date */
+function computeDateSpanYears(roles: Array<{ start_date?: string; end_date?: string; duration_months: number }>): number {
+  const currentYear = new Date().getFullYear();
+  let earliest = Infinity;
+  let latest = -Infinity;
+
+  for (const role of roles) {
+    const startYear = extractYearFromDateStr(role.start_date);
+    const endYear = role.end_date?.toLowerCase() === "present"
+      ? currentYear
+      : extractYearFromDateStr(role.end_date);
+
+    if (startYear !== null && startYear < earliest) earliest = startYear;
+    if (endYear !== null && endYear > latest) latest = endYear;
+  }
+
+  if (earliest === Infinity || latest === -Infinity) {
+    // Fallback: sum durations (imperfect but better than 0)
+    return Math.round(roles.reduce((s, r) => s + r.duration_months, 0) / 12);
+  }
+
+  const span = latest - earliest;
+  // Safety cap: 0-60 years
+  return Math.max(0, Math.min(60, span));
+}
+
+function extractYearFromDateStr(dateStr?: string): number | null {
+  if (!dateStr) return null;
+  const match = dateStr.match(/\d{4}/);
+  if (!match) return null;
+  const year = parseInt(match[0], 10);
+  return (year >= 1950 && year <= 2100) ? year : null;
+}
 
 export function computeSummary(evidence: Evidence[]): EvidenceSummary {
   const roles = evidence.filter((e): e is RoleEvidence => e.type === "role");
@@ -720,14 +1312,33 @@ function buildTrajectory(
   }>,
   totalYears: number
 ): CareerTrajectory {
-  const roles = experience.map((e) => ({
-    company: e.company,
-    title: e.title,
-    start_date: e.start_date || "unknown",
-    end_date: e.end_date || "unknown",
-    duration_months: e.duration_months,
-    domain: e.domain,
-  }));
+  const seniorityMap: Record<SeniorityLevel, number> = {
+    entry: 1, junior: 2, mid: 3, senior: 4, lead: 5, director: 5,
+  };
+
+  let prevLevel = 0;
+  const roles = experience.map((e) => {
+    const seniority = inferSeniority(e.title);
+    const training = isTrainingRole(e.title);
+    let level = seniorityMap[seniority];
+
+    // Training roles should never dip below previous level
+    if (training && prevLevel > 0) {
+      level = Math.max(level, prevLevel);
+    }
+    prevLevel = level;
+
+    return {
+      company: e.company,
+      title: e.title,
+      start_date: e.start_date || "unknown",
+      end_date: e.end_date || "unknown",
+      duration_months: e.duration_months,
+      domain: e.domain,
+      seniority_level: level,
+      isTraining: training,
+    };
+  });
 
   const avgTenure =
     roles.length > 0
@@ -736,20 +1347,15 @@ function buildTrajectory(
 
   const domains = [...new Set(roles.map((r) => r.domain.toLowerCase()))];
   const domainConsistency =
-    domains.length <= 2 ? `${domains.join("/")} focused` : "diverse";
+    domains.length <= 2 ? `${domains.join(" & ")} focused` : "diverse";
 
-  // Simple progression detection
-  const titles = roles.map((r) => r.title.toLowerCase());
+  const levels = roles.map((r) => r.seniority_level);
   let progression = "lateral moves";
-  const seniorityKeywords = ["intern", "junior", "mid", "senior", "staff", "lead", "principal", "manager", "director"];
-  const levels = titles.map((t) => {
-    for (let i = 0; i < seniorityKeywords.length; i++) {
-      if (t.includes(seniorityKeywords[i])) return i;
-    }
-    return 2; // default to mid
-  });
-  if (levels.length >= 2 && levels[0] > levels[levels.length - 1]) {
-    progression = "consistent growth";
+  if (levels.length >= 2) {
+    const first = levels[0];
+    const last = levels[levels.length - 1];
+    if (last > first) progression = "consistent growth";
+    else if (last < first) progression = "career change";
   }
 
   return {
@@ -759,6 +1365,11 @@ function buildTrajectory(
     avg_tenure_months: avgTenure,
     total_experience_years: totalYears,
   };
+}
+
+/** Check if a role title indicates training/residency/fellowship */
+function isTrainingRole(title: string): boolean {
+  return /\b(residency|resident|fellowship|fellow|trainee|apprentice|intern|house officer|clinical observer)\b/i.test(title);
 }
 
 function extractAchievements(

@@ -35,11 +35,11 @@ export function StepSocratic({ questions, onNext, onSkip }: StepSocraticProps) {
   if (questions.length === 0) {
     return (
       <div className="text-center">
-        <MessageCircle className="mx-auto h-12 w-12 text-zinc-300" />
-        <h2 className="mt-4 text-xl font-semibold text-zinc-900">
+        <MessageCircle className="mx-auto h-12 w-12 text-surface-text-muted" />
+        <h2 className="mt-4 text-xl font-semibold text-surface-text">
           No questions right now
         </h2>
-        <p className="mt-2 text-sm text-zinc-500">
+        <p className="mt-2 text-sm text-surface-text-muted">
           Your Profile Cloud is already well-evidenced. We&apos;ll ask follow-up
           questions when you analyze a job description.
         </p>
@@ -123,17 +123,17 @@ export function StepSocratic({ questions, onNext, onSkip }: StepSocraticProps) {
 
   return (
     <div>
-      <h2 className="text-xl font-semibold text-zinc-900">
+      <h2 className="text-xl font-semibold text-surface-text">
         Deepen your Profile Cloud
       </h2>
-      <p className="mt-1 text-sm text-zinc-500">
+      <p className="mt-1 text-sm text-surface-text-muted">
         These questions target gaps in your evidence. Each answer strengthens
         your Cloud — skip any that don&apos;t apply.
       </p>
 
       {/* Progress */}
       <div className="mt-3 flex items-center gap-2">
-        <div className="flex-1 h-1.5 rounded-full bg-zinc-100">
+        <div className="flex-1 h-1.5 rounded-full bg-surface-2">
           <div
             className="h-1.5 rounded-full bg-brand-500 transition-all duration-300"
             style={{
@@ -141,7 +141,7 @@ export function StepSocratic({ questions, onNext, onSkip }: StepSocraticProps) {
             }}
           />
         </div>
-        <span className="text-xs text-zinc-400 shrink-0">
+        <span className="text-xs text-surface-text-muted shrink-0">
           {current + 1} / {questions.length}
         </span>
       </div>
@@ -151,11 +151,11 @@ export function StepSocratic({ questions, onNext, onSkip }: StepSocraticProps) {
         <div className="flex gap-3">
           <MessageCircle className="mt-0.5 h-5 w-5 shrink-0 text-brand-500" />
           <div className="flex-1">
-            <p className="text-sm font-medium text-zinc-800">{q.question}</p>
+            <p className="text-sm font-medium text-surface-text">{q.question}</p>
             {q.why_asking && (
               <div className="mt-2 flex items-start gap-1.5">
                 <Lightbulb className="mt-0.5 h-3.5 w-3.5 shrink-0 text-amber-500" />
-                <p className="text-xs text-zinc-500 italic">{q.why_asking}</p>
+                <p className="text-xs text-surface-text-muted italic">{q.why_asking}</p>
               </div>
             )}
           </div>
@@ -176,7 +176,7 @@ export function StepSocratic({ questions, onNext, onSkip }: StepSocraticProps) {
           placeholder="Share specific examples — team sizes, budgets, tools, outcomes..."
           rows={3}
           disabled={wasSubmitted || submitting}
-          className="mt-3 w-full rounded-lg border border-zinc-200 px-3 py-2 text-sm text-zinc-900 placeholder:text-zinc-400 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500 disabled:bg-zinc-50 disabled:text-zinc-500"
+          className="mt-3 w-full rounded-lg border border-surface-border px-3 py-2 text-sm text-surface-text placeholder:text-surface-text-muted focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500 disabled:bg-surface-2 disabled:text-surface-text-muted"
         />
       </div>
 
@@ -217,7 +217,7 @@ export function StepSocratic({ questions, onNext, onSkip }: StepSocraticProps) {
             <button
               onClick={handleSkipQuestion}
               disabled={submitting}
-              className="h-10 flex-1 rounded-lg border border-zinc-200 text-sm font-medium text-zinc-600 transition-colors hover:bg-zinc-50 disabled:opacity-40"
+              className="h-10 flex-1 rounded-lg border border-surface-border text-sm font-medium text-surface-text-secondary transition-colors hover:bg-surface-2 disabled:opacity-40"
             >
               {isLast && answeredCount === 0 ? "Skip all" : "Skip"}
             </button>
@@ -252,7 +252,7 @@ export function StepSocratic({ questions, onNext, onSkip }: StepSocraticProps) {
 
       {/* Answered summary */}
       {answeredCount > 0 && (
-        <p className="mt-3 text-center text-xs text-zinc-400">
+        <p className="mt-3 text-center text-xs text-surface-text-muted">
           {answeredCount} answer{answeredCount !== 1 ? "s" : ""} submitted
           {answeredCount < questions.length && ` of ${questions.length}`}
         </p>

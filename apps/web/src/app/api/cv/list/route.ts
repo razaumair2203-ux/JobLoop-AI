@@ -1,4 +1,5 @@
 import { createClient } from "@/lib/supabase/server";
+import { createAdminClient } from "@/lib/supabase/admin";
 import { getAuthUser } from "@/lib/auth";
 
 /**
@@ -16,9 +17,10 @@ export async function GET() {
     return Response.json({ error: "Unauthorized" }, { status: 401 });
   }
 
+  const db = createAdminClient();
   const MAX_SOURCE_CVS = 5;
 
-  const { data: cvs, count } = await supabase
+  const { data: cvs, count } = await db
     .from("cv_uploads")
     .select("id, filename, file_size, status, created_at, parsed_cv", { count: "exact" })
     .eq("user_id", user.id)

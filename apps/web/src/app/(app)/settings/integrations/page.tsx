@@ -40,8 +40,8 @@ export default function IntegrationsPage() {
 
   return (
     <div className="mx-auto max-w-2xl">
-      <h1 className="text-lg font-semibold text-zinc-900">Integrations</h1>
-      <p className="mt-1 text-sm text-zinc-500">
+      <h1 className="text-lg font-semibold text-surface-text">Integrations</h1>
+      <p className="mt-1 text-sm text-surface-text-muted">
         Connect external services to enhance your job search workflow
       </p>
 
@@ -49,28 +49,28 @@ export default function IntegrationsPage() {
         {integrations.map((integration) => (
           <div
             key={integration.id}
-            className="rounded-xl border border-zinc-200 bg-white p-5"
+            className="rounded-lg border border-surface-border bg-surface-0 p-5"
           >
             <div className="flex items-start gap-4">
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-zinc-50">
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-surface-2">
                 <integration.icon className={`h-6 w-6 ${integration.color}`} />
               </div>
               <div className="flex-1">
                 <div className="flex items-center gap-2">
-                  <h3 className="text-sm font-semibold text-zinc-900">{integration.name}</h3>
+                  <h3 className="text-sm font-semibold text-surface-text">{integration.name}</h3>
                   {integration.connected && (
                     <span className="flex items-center gap-1 rounded-full bg-emerald-50 px-2 py-0.5 text-[10px] font-medium text-emerald-600">
                       <Check className="h-3 w-3" /> Connected
                     </span>
                   )}
                 </div>
-                <p className="mt-1 text-xs text-zinc-500">{integration.description}</p>
+                <p className="mt-1 text-xs text-surface-text-muted">{integration.description}</p>
                 <div className="mt-3">
                   <button
                     onClick={() => toggleConnect(integration.id)}
                     className={`rounded-lg px-4 py-1.5 text-xs font-medium transition-colors ${
                       integration.connected
-                        ? "border border-zinc-200 text-zinc-600 hover:bg-zinc-50"
+                        ? "border border-surface-border text-surface-text-secondary hover:bg-surface-2"
                         : "bg-brand-600 text-white hover:bg-brand-700"
                     }`}
                   >
@@ -84,19 +84,19 @@ export default function IntegrationsPage() {
       </div>
 
       {/* What sync does */}
-      <div className="mt-6 rounded-xl border border-zinc-200 bg-zinc-50 p-5">
-        <h3 className="text-sm font-semibold text-zinc-900">How sync works</h3>
-        <ul className="mt-3 space-y-2 text-xs text-zinc-600">
+      <div className="mt-6 rounded-lg border border-surface-border bg-surface-2 p-5">
+        <h3 className="text-sm font-semibold text-surface-text">How sync works</h3>
+        <ul className="mt-3 space-y-2 text-xs text-surface-text-secondary">
           <li className="flex gap-2">
-            <Mail className="mt-0.5 h-3.5 w-3.5 shrink-0 text-zinc-400" />
+            <Mail className="mt-0.5 h-3.5 w-3.5 shrink-0 text-surface-text-muted" />
             <span><strong>Gmail:</strong> Scans for application confirmation emails and interview invitations, then updates your tracker automatically.</span>
           </li>
           <li className="flex gap-2">
-            <Calendar className="mt-0.5 h-3.5 w-3.5 shrink-0 text-zinc-400" />
+            <Calendar className="mt-0.5 h-3.5 w-3.5 shrink-0 text-surface-text-muted" />
             <span><strong>Calendar:</strong> Creates events for upcoming interviews and deadlines. Adds preparation notes from your analysis.</span>
           </li>
         </ul>
-        <div className="mt-3 flex items-center gap-2 text-[10px] text-zinc-400">
+        <div className="mt-3 flex items-center gap-2 text-[10px] text-surface-text-muted">
           <Shield className="h-3.5 w-3.5" />
           We only read job-related emails. Your data is never shared or sold.
         </div>

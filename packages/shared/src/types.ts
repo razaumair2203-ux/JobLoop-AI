@@ -124,11 +124,9 @@ export interface Application {
     recommendation_level: "strong" | "competitive" | "stretch";
   } | null;
   cloud_snapshot_id: string | null;
-  socratic_qa: Array<{ question: string; answer: string }>;
 
-  // Finalized artifacts (stored per application, not on source CVs)
-  tailored_cv: Record<string, unknown> | null; // CVContent JSON for this JD
-  cover_letter_content: Record<string, unknown> | null; // CoverLetterContent JSON
+  // User interest rating (1-5 stars)
+  excitement: number | null;
 
   notes: string | null;
   created_at: string;

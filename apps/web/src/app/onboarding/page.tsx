@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { createClient } from "@/lib/supabase/client";
 import { StepPersona } from "./steps/step-persona";
 import { StepUpload, type SocraticQuestion } from "./steps/step-upload";
@@ -22,11 +22,36 @@ export interface UploadResult {
 }
 
 export default function OnboardingPage() {
-  const [step, setStep] = useState(1);
+  const [step, setStep] = useState(0); // 0 = loading from DB
   const [persona, setPersona] = useState<string | null>(null);
   const [uploadResults, setUploadResults] = useState<UploadResult[]>([]);
   const [socraticQuestions, setSocraticQuestions] = useState<SocraticQuestion[]>([]);
   const supabase = createClient();
+
+  // Resume from saved onboarding step on mount / refresh
+  useEffect(() => {
+    async function loadSavedStep() {
+      const { data: { user } } = await supabase.auth.getUser();
+      if (!user) { setStep(1); return; }
+
+      const { data } = await supabase
+        .from("users")
+        .select("onboarding_step, persona, onboarding_completed")
+        .eq("id", user.id)
+        .single();
+
+      if (data?.onboarding_completed) {
+        window.location.href = "/dashboard";
+        return;
+      }
+
+      const saved = data?.onboarding_step ?? 1;
+      if (data?.persona) setPersona(data.persona);
+      setStep(saved);
+    }
+    loadSavedStep();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   async function updateStep(nextStep: number) {
     const {
@@ -56,6 +81,17 @@ export default function OnboardingPage() {
     window.location.href = "/dashboard";
   }
 
+  // Loading state while fetching saved step
+  if (step === 0) {
+    return (
+      <div className="w-full max-w-2xl">
+        <div className="flex items-center justify-center py-24">
+          <div className="h-8 w-8 animate-spin rounded-full border-4 border-brand-500 border-t-transparent" />
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="w-full max-w-2xl">
       {/* Progress bar */}
@@ -73,14 +109,14 @@ export default function OnboardingPage() {
                       ? "bg-brand-500 text-white"
                       : isActive
                         ? "bg-brand-100 text-brand-700 ring-2 ring-brand-500"
-                        : "bg-zinc-100 text-zinc-400"
+                        : "bg-surface-2 text-surface-text-muted"
                   }`}
                 >
                   {isDone ? "\u2713" : stepNum}
                 </div>
                 <span
                   className={`text-xs ${
-                    isActive ? "font-medium text-brand-700" : "text-zinc-400"
+                    isActive ? "font-medium text-brand-700" : "text-surface-text-muted"
                   }`}
                 >
                   {label}
@@ -89,7 +125,7 @@ export default function OnboardingPage() {
             );
           })}
         </div>
-        <div className="h-1.5 rounded-full bg-zinc-100">
+        <div className="h-1.5 rounded-full bg-surface-2">
           <div
             className="h-1.5 rounded-full bg-brand-500 transition-all duration-300"
             style={{ width: `${((step - 1) / (TOTAL_STEPS - 1)) * 100}%` }}
@@ -98,7 +134,7 @@ export default function OnboardingPage() {
       </div>
 
       {/* Step content */}
-      <div className="rounded-xl border border-zinc-200 bg-white p-8">
+      <div className="rounded-xl border border-surface-border bg-surface-0 p-8">
         {step === 1 && (
           <StepPersona
             selected={persona}

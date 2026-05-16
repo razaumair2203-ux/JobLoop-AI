@@ -1,9 +1,10 @@
 import { createClient } from "@/lib/supabase/server";
+import { createAdminClient } from "@/lib/supabase/admin";
 import { ensureUserExists } from "@/lib/ensure-user";
 import { getAuthUser } from "@/lib/auth";
 import { loadCloudFromDB } from "@/lib/cloud-from-db";
 import { analyzeWithCloud, generateJDQuestions, checkJDSimilarity } from "@jobloop/ai";
-import type { CloudAnalysisResult } from "@jobloop/ai";
+import type { CloudAnalysisResult, SocraticContext, PersonaType } from "@jobloop/ai";
 
 /**
  * Map CloudAnalysisResult to the frontend response shape.
@@ -79,15 +80,6 @@ function mapToResponse(
     { name: "Certifications", icon: "award", count: certCount },
   ].filter((s) => s.count > 0);
 
-  // Generate Socratic question for the biggest gap
-  const gapReq = requirements.find((r) => r.strength === "gap");
-  const socratic = gapReq
-    ? {
-        question: `Can you tell me about any experience you have related to "${gapReq.name}"? Even indirect exposure, side projects, or coursework counts.`,
-        skill_targeted: gapReq.name,
-      }
-    : null;
-
   return {
     company: company || "Unknown Company",
     role: role || "Unknown Role",
@@ -98,7 +90,6 @@ function mapToResponse(
     lead_with: insights.lead_with,
     biggest_risk: insights.biggest_risk,
     insights: insights.insights,
-    socratic,
   };
 }
 
@@ -110,7 +101,8 @@ export async function POST(request: Request) {
     return Response.json({ error: "Unauthorized" }, { status: 401 });
   }
 
-  await ensureUserExists(supabase, user);
+  const db = createAdminClient();
+  await ensureUserExists(db, user);
 
   const body = await request.json();
   const { text, url, company, role } = body;
@@ -123,7 +115,7 @@ export async function POST(request: Request) {
   }
 
   // Create application record
-  const { data: app, error: appError } = await supabase
+  const { data: app, error: appError } = await db
     .from("applications")
     .insert({
       user_id: user.id,
@@ -146,10 +138,10 @@ export async function POST(request: Request) {
   }
 
   // Load user's Cloud from DB (with trajectory reconstruction for domain maturity)
-  const cloud = await loadCloudFromDB(supabase, user.id);
+  const cloud = await loadCloudFromDB(db, user.id);
 
   if (!cloud) {
-    await supabase
+    await db
       .from("applications")
       .update({ stage: "error" })
       .eq("id", app.id);
@@ -162,8 +154,43 @@ export async function POST(request: Request) {
     );
   }
 
+  // Same company detection — check if user has applied to this company before
+  let sameCompanyHistory: Array<{
+    id: string;
+    role: string;
+    outcome: string | null;
+    notes: string | null;
+    applied_date: string | null;
+  }> | null = null;
+
+  if (company) {
+    const companyLower = company.toLowerCase().replace(/\b(inc|ltd|llc|corp|co|plc|gmbh|pty)\b\.?/gi, "").trim();
+    const { data: prevApps } = await db
+      .from("applications")
+      .select("id, role, outcome_status, notes, applied_date, company")
+      .eq("user_id", user.id)
+      .neq("id", app.id)
+      .order("created_at", { ascending: false });
+
+    if (prevApps) {
+      const matches = prevApps.filter(a => {
+        const prevLower = (a.company || "").toLowerCase().replace(/\b(inc|ltd|llc|corp|co|plc|gmbh|pty)\b\.?/gi, "").trim();
+        return prevLower === companyLower || prevLower.includes(companyLower) || companyLower.includes(prevLower);
+      });
+      if (matches.length > 0) {
+        sameCompanyHistory = matches.map(a => ({
+          id: a.id,
+          role: a.role,
+          outcome: a.outcome_status,
+          notes: a.notes,
+          applied_date: a.applied_date,
+        }));
+      }
+    }
+  }
+
   // JD similarity check — log for cost awareness (still run analysis to honor user intent)
-  const { data: previousApps } = await supabase
+  const { data: previousApps } = await db
     .from("applications")
     .select("id, jd_parsed")
     .eq("user_id", user.id)
@@ -203,7 +230,7 @@ export async function POST(request: Request) {
   }
 
   // Snapshot Cloud state before analysis (for Outcome Intelligence correlation)
-  const { data: snapshot } = await supabase
+  const { data: snapshot } = await db
     .from("cloud_snapshots")
     .insert({
       user_id: user.id,
@@ -218,7 +245,7 @@ export async function POST(request: Request) {
     result = await analyzeWithCloud(cloud, text);
   } catch (err) {
     console.error("Analysis pipeline failed:", err);
-    await supabase
+    await db
       .from("applications")
       .update({ stage: "error" })
       .eq("id", app.id);
@@ -232,32 +259,99 @@ export async function POST(request: Request) {
 
   const analysis = mapToResponse(result, company, role);
 
-  // Generate Socratic questions for JD gaps
-  const gapSkills = analysis.requirements
-    .filter((r) => r.strength === "gap" || r.strength === "related")
-    .map((r) => r.name);
+  // Extract industry from parsed JD for niche intelligence
+  const parsedJDExt = result.parsed_jd as unknown as Record<string, unknown> | undefined;
+  const industry = (typeof parsedJDExt?.industry === "string" ? parsedJDExt.industry : null);
 
-  let socraticQuestions: Array<{
-    question: string;
-    skill_targeted: string;
-  }> = [];
-  if (gapSkills.length > 0) {
-    try {
-      const jdQuestions = await generateJDQuestions(cloud, result.parsed_jd);
-      socraticQuestions = jdQuestions.map(q => ({ question: q.question, skill_targeted: q.skill_name }));
-    } catch {
-      // Non-critical — analysis still useful without questions
+  // Load user persona + candidate_context for Socratic question generation
+  const { data: userRow } = await db
+    .from("users")
+    .select("persona")
+    .eq("id", user.id)
+    .single();
+
+  let candidateContext: SocraticContext["candidate_context"];
+  const { data: cvRows } = await db
+    .from("cv_uploads")
+    .select("parsed_cv")
+    .eq("user_id", user.id)
+    .not("parsed_cv", "is", null)
+    .limit(1);
+
+  if (cvRows && cvRows.length > 0) {
+    const parsed = cvRows[0].parsed_cv as Record<string, unknown> | null;
+    if (parsed?.candidate_context) {
+      candidateContext = parsed.candidate_context as SocraticContext["candidate_context"];
     }
   }
 
-  // Update application with analysis + Cloud snapshot + parsed JD (for similarity checks)
-  await supabase
+  const socraticCtx: SocraticContext = {
+    persona: (userRow?.persona as PersonaType) ?? undefined,
+    candidate_context: candidateContext,
+  };
+
+  // Generate Socratic questions for JD gaps — with context and persistence
+  let socraticQuestions: Array<{
+    id: string;
+    question: string;
+    skill_name: string;
+    why_asking: string;
+  }> = [];
+
+  const hasGaps = analysis.requirements.some(
+    (r) => r.strength === "gap" || r.strength === "related",
+  );
+
+  if (hasGaps) {
+    try {
+      const jdQuestions = await generateJDQuestions(cloud, result.parsed_jd, socraticCtx);
+
+      // Volume control: max 3 JD questions (user is evaluating, not onboarding)
+      const limited = jdQuestions.slice(0, 3);
+
+      // Persist questions to socratic_qa with application_id so they survive page refresh
+      for (const q of limited) {
+        await db.from("socratic_qa").insert({
+          user_id: user.id,
+          application_id: app.id,
+          question: q.question,
+          skill_targeted: q.skill_name,
+          gate: "jd_match",
+          answer: null,
+          answered_at: null,
+        });
+      }
+
+      // Re-fetch to get DB-generated UUIDs (scoped to THIS application only)
+      const { data: savedQs } = await db
+        .from("socratic_qa")
+        .select("id, question, skill_targeted")
+        .eq("user_id", user.id)
+        .eq("application_id", app.id)
+        .eq("gate", "jd_match")
+        .is("answer", null);
+
+      socraticQuestions = (savedQs ?? []).map((q) => ({
+        id: q.id,
+        question: q.question,
+        skill_name: q.skill_targeted ?? "",
+        skill_targeted: q.skill_targeted ?? "",
+        why_asking: "",
+      }));
+    } catch (err) {
+      console.error("[analyze] JD Socratic question generation failed:", err);
+    }
+  }
+
+  // Update application with analysis + Cloud snapshot + parsed JD + industry
+  await db
     .from("applications")
     .update({
       stage: "ready_to_apply",
       jd_parsed: result.parsed_jd,
       cloud_snapshot_id: snapshot?.id ?? null,
       position: analysis.position,
+      industry: industry,
       match_analysis: {
         gaps: analysis.requirements
           .filter((r) => r.strength === "gap")
@@ -282,5 +376,6 @@ export async function POST(request: Request) {
     application_id: app.id,
     ...analysis,
     socratic_questions: socraticQuestions,
+    same_company_history: sameCompanyHistory,
   });
 }

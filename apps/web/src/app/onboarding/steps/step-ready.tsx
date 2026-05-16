@@ -13,30 +13,30 @@ export function StepReady({ onFinish }: StepReadyProps) {
         <PartyPopper className="h-8 w-8 text-brand-600" />
       </div>
 
-      <h2 className="mt-4 text-xl font-semibold text-zinc-900">
+      <h2 className="mt-4 text-xl font-semibold text-surface-text">
         You're all set!
       </h2>
-      <p className="mt-2 text-sm text-zinc-500">
+      <p className="mt-2 text-sm text-surface-text-muted">
         Your Profile Cloud is ready. Every recommendation will be backed by
         evidence from your real experience.
       </p>
 
       <div className="mt-8 grid grid-cols-2 gap-4">
-        <div className="rounded-lg border border-zinc-200 p-4">
+        <div className="rounded-lg border border-surface-border p-4">
           <Upload className="mx-auto h-6 w-6 text-brand-500" />
-          <p className="mt-2 text-sm font-medium text-zinc-900">
+          <p className="mt-2 text-sm font-medium text-surface-text">
             Upload more CVs
           </p>
-          <p className="mt-1 text-xs text-zinc-500">
+          <p className="mt-1 text-xs text-surface-text-muted">
             Enrich your Cloud with more experience
           </p>
         </div>
-        <div className="rounded-lg border border-zinc-200 p-4">
+        <div className="rounded-lg border border-surface-border p-4">
           <Search className="mx-auto h-6 w-6 text-blue-500" />
-          <p className="mt-2 text-sm font-medium text-zinc-900">
+          <p className="mt-2 text-sm font-medium text-surface-text">
             Analyze a JD
           </p>
-          <p className="mt-1 text-xs text-zinc-500">
+          <p className="mt-1 text-xs text-surface-text-muted">
             See how your evidence matches a role
           </p>
         </div>

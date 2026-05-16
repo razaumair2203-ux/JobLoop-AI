@@ -18,8 +18,8 @@ const templates: {
     id: "professional",
     name: "Professional",
     description: "Clean, traditional layout. Best for corporate roles and established industries.",
-    accent: "bg-zinc-800",
-    bgAccent: "bg-zinc-50",
+    accent: "bg-surface-text",
+    bgAccent: "bg-surface-2",
     features: ["Single column", "Classic typography", "Subtle dividers"],
   },
   {
@@ -71,17 +71,17 @@ export default function TemplateGalleryPage() {
   return (
     <div className="flex h-[calc(100vh-4rem)] flex-col">
       {/* Header */}
-      <div className="flex items-center justify-between border-b border-zinc-200 bg-white px-6 py-4">
+      <div className="flex items-center justify-between border-b border-surface-border bg-surface-0 px-6 py-4">
         <div className="flex items-center gap-3">
           <Link
             href="/cv"
-            className="rounded-lg p-1.5 text-zinc-400 hover:bg-zinc-100 hover:text-zinc-600"
+            className="rounded-lg p-1.5 text-surface-text-muted hover:bg-surface-2 hover:text-surface-text-secondary"
           >
             <ArrowLeft className="h-5 w-5" />
           </Link>
           <div>
-            <h1 className="text-lg font-semibold text-zinc-900">Template Gallery</h1>
-            <p className="text-sm text-zinc-500">Choose a template that fits your target role</p>
+            <h1 className="text-lg font-semibold text-surface-text">Template Gallery</h1>
+            <p className="text-sm text-surface-text-muted">Choose a template that fits your target role</p>
           </div>
         </div>
         <Link
@@ -100,10 +100,10 @@ export default function TemplateGalleryPage() {
               <button
                 key={t.id}
                 onClick={() => setSelected(t.id)}
-                className={`group relative rounded-xl border-2 p-1 text-left transition-all ${
+                className={`group relative rounded-lg border-2 p-1 text-left transition-all ${
                   selected === t.id
                     ? "border-brand-500 ring-2 ring-brand-200"
-                    : "border-zinc-200 hover:border-zinc-300"
+                    : "border-surface-border hover:border-surface-border"
                 }`}
               >
                 {/* Selection badge */}
@@ -123,7 +123,7 @@ export default function TemplateGalleryPage() {
                         e.stopPropagation();
                         setPreviewing(t.id);
                       }}
-                      className="rounded-lg bg-white px-3 py-1.5 text-xs font-medium text-zinc-700 shadow-md hover:bg-zinc-50"
+                      className="rounded-lg bg-surface-0 px-3 py-1.5 text-xs font-medium text-surface-text-secondary shadow-md hover:bg-surface-2"
                     >
                       <Eye className="mr-1 inline h-3.5 w-3.5" />
                       Preview
@@ -135,14 +135,14 @@ export default function TemplateGalleryPage() {
                 <div className="p-3">
                   <div className="flex items-center gap-2">
                     <div className={`h-2.5 w-2.5 rounded-full ${t.accent}`} />
-                    <h3 className="text-sm font-semibold text-zinc-900">{t.name}</h3>
+                    <h3 className="text-sm font-semibold text-surface-text">{t.name}</h3>
                   </div>
-                  <p className="mt-1 text-xs leading-relaxed text-zinc-500">{t.description}</p>
+                  <p className="mt-1 text-xs leading-relaxed text-surface-text-muted">{t.description}</p>
                   <div className="mt-2 flex flex-wrap gap-1">
                     {t.features.map((f) => (
                       <span
                         key={f}
-                        className="rounded-full bg-zinc-100 px-2 py-0.5 text-[10px] font-medium text-zinc-500"
+                        className="rounded-full bg-surface-2 px-2 py-0.5 text-[10px] font-medium text-surface-text-muted"
                       >
                         {f}
                       </span>
@@ -156,20 +156,20 @@ export default function TemplateGalleryPage() {
 
         {/* Live Preview Panel */}
         {previewing && (
-          <div className="w-[420px] shrink-0 border-l border-zinc-200 bg-zinc-100">
-            <div className="flex items-center justify-between border-b border-zinc-200 bg-white px-4 py-3">
-              <h3 className="text-sm font-semibold text-zinc-900">
+          <div className="w-[420px] shrink-0 border-l border-surface-border bg-surface-2">
+            <div className="flex items-center justify-between border-b border-surface-border bg-surface-0 px-4 py-3">
+              <h3 className="text-sm font-semibold text-surface-text">
                 {templates.find((t) => t.id === previewing)?.name} Preview
               </h3>
               <button
                 onClick={() => setPreviewing(null)}
-                className="rounded p-1 text-zinc-400 hover:bg-zinc-100 hover:text-zinc-600"
+                className="rounded p-1 text-surface-text-muted hover:bg-surface-2 hover:text-surface-text-secondary"
               >
                 <span className="text-xs">Close</span>
               </button>
             </div>
             <div className="overflow-y-auto p-4">
-              <div className="mx-auto aspect-[8.5/11] w-full rounded bg-white shadow-lg">
+              <div className="mx-auto aspect-[8.5/11] w-full rounded bg-surface-0 shadow-lg">
                 <TemplateFullPreview templateId={previewing} />
               </div>
             </div>
@@ -194,11 +194,11 @@ function TemplateThumbnail({ templateId, accent }: { templateId: TemplateId; acc
   const config = configs[templateId];
 
   return (
-    <div className="aspect-[8.5/11] rounded bg-white p-3 shadow-sm">
+    <div className="aspect-[8.5/11] rounded bg-surface-0 p-3 shadow-sm">
       {/* Header block */}
       <div className={config.headerStyle}>
         <div className={`mx-auto h-2 w-16 rounded-full ${accent}`} />
-        <div className="mx-auto mt-1 h-1 w-24 rounded-full bg-zinc-200" />
+        <div className="mx-auto mt-1 h-1 w-24 rounded-full bg-surface-3" />
         {templateId === "creative" && (
           <div className="absolute left-3 top-3 h-full w-1 rounded-full bg-violet-300" />
         )}
@@ -208,22 +208,22 @@ function TemplateThumbnail({ templateId, accent }: { templateId: TemplateId; acc
       <div className={`mt-3 ${config.bodyStyle}`}>
         <div>
           <div className={`h-1 w-12 rounded-full ${accent} opacity-60`} />
-          <div className="mt-1 h-1 w-full rounded-full bg-zinc-100" />
-          <div className="mt-0.5 h-1 w-3/4 rounded-full bg-zinc-100" />
+          <div className="mt-1 h-1 w-full rounded-full bg-surface-2" />
+          <div className="mt-0.5 h-1 w-3/4 rounded-full bg-surface-2" />
         </div>
         <div>
           <div className={`h-1 w-14 rounded-full ${accent} opacity-60`} />
-          <div className="mt-1 h-1 w-full rounded-full bg-zinc-100" />
-          <div className="mt-0.5 h-1 w-5/6 rounded-full bg-zinc-100" />
-          <div className="mt-0.5 h-1 w-2/3 rounded-full bg-zinc-100" />
+          <div className="mt-1 h-1 w-full rounded-full bg-surface-2" />
+          <div className="mt-0.5 h-1 w-5/6 rounded-full bg-surface-2" />
+          <div className="mt-0.5 h-1 w-2/3 rounded-full bg-surface-2" />
         </div>
         <div>
           <div className={`h-1 w-10 rounded-full ${accent} opacity-60`} />
           <div className="mt-1 flex flex-wrap gap-0.5">
-            <div className="h-1 w-6 rounded-full bg-zinc-100" />
-            <div className="h-1 w-8 rounded-full bg-zinc-100" />
-            <div className="h-1 w-5 rounded-full bg-zinc-100" />
-            <div className="h-1 w-7 rounded-full bg-zinc-100" />
+            <div className="h-1 w-6 rounded-full bg-surface-2" />
+            <div className="h-1 w-8 rounded-full bg-surface-2" />
+            <div className="h-1 w-5 rounded-full bg-surface-2" />
+            <div className="h-1 w-7 rounded-full bg-surface-2" />
           </div>
         </div>
       </div>
@@ -234,7 +234,7 @@ function TemplateThumbnail({ templateId, accent }: { templateId: TemplateId; acc
 // --- Full Preview with sample content ---
 function TemplateFullPreview({ templateId }: { templateId: TemplateId }) {
   const styles: Record<TemplateId, { heading: string; accent: string; border: string; font: string }> = {
-    professional: { heading: "text-zinc-800", accent: "text-zinc-600", border: "border-zinc-300", font: "font-sans" },
+    professional: { heading: "text-surface-text", accent: "text-surface-text-secondary", border: "border-surface-border", font: "font-sans" },
     technical: { heading: "text-blue-700", accent: "text-blue-600", border: "border-blue-200", font: "font-mono" },
     modern: { heading: "text-brand-600", accent: "text-brand-500", border: "border-brand-200", font: "font-sans" },
     executive: { heading: "text-slate-700", accent: "text-slate-500", border: "border-slate-200", font: "font-serif" },
@@ -260,7 +260,7 @@ function TemplateFullPreview({ templateId }: { templateId: TemplateId }) {
         <h2 className={`border-b ${s.border} pb-0.5 text-[9px] font-bold uppercase tracking-wider ${s.heading}`}>
           Summary
         </h2>
-        <p className="mt-1 text-zinc-600">
+        <p className="mt-1 text-surface-text-secondary">
           Senior Frontend Engineer with 6+ years building React applications. Led component library adoption across teams.
         </p>
       </div>
@@ -271,17 +271,17 @@ function TemplateFullPreview({ templateId }: { templateId: TemplateId }) {
         </h2>
         <div className="mt-1">
           <div className="flex justify-between">
-            <span className="font-semibold text-zinc-800">Sr. Frontend Engineer</span>
-            <span className="text-[8px] text-zinc-400">2022-Present</span>
+            <span className="font-semibold text-surface-text">Sr. Frontend Engineer</span>
+            <span className="text-[8px] text-surface-text-muted">2022-Present</span>
           </div>
-          <p className="text-zinc-500">Scale Corp</p>
-          <ul className="mt-0.5 space-y-0.5 text-zinc-600">
+          <p className="text-surface-text-muted">Scale Corp</p>
+          <ul className="mt-0.5 space-y-0.5 text-surface-text-secondary">
             <li className="flex gap-1">
-              <span className="mt-1 h-0.5 w-0.5 shrink-0 rounded-full bg-zinc-400" />
+              <span className="mt-1 h-0.5 w-0.5 shrink-0 rounded-full bg-surface-3" />
               Led migration to Next.js 14, serving 2M users
             </li>
             <li className="flex gap-1">
-              <span className="mt-1 h-0.5 w-0.5 shrink-0 rounded-full bg-zinc-400" />
+              <span className="mt-1 h-0.5 w-0.5 shrink-0 rounded-full bg-surface-3" />
               Built 60+ component design system
             </li>
           </ul>
@@ -292,7 +292,7 @@ function TemplateFullPreview({ templateId }: { templateId: TemplateId }) {
         <h2 className={`border-b ${s.border} pb-0.5 text-[9px] font-bold uppercase tracking-wider ${s.heading}`}>
           Skills
         </h2>
-        <p className="mt-1 text-zinc-600">TypeScript, React, Next.js, Node.js, Tailwind</p>
+        <p className="mt-1 text-surface-text-secondary">TypeScript, React, Next.js, Node.js, Tailwind</p>
       </div>
     </div>
   );

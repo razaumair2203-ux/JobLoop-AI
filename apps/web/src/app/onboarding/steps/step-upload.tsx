@@ -165,8 +165,8 @@ export function StepUpload({ onNext, onSkip }: StepUploadProps) {
 
   return (
     <div>
-      <h2 className="text-xl font-semibold text-zinc-900">Upload your CVs</h2>
-      <p className="mt-1 text-sm text-zinc-500">
+      <h2 className="text-xl font-semibold text-surface-text">Upload your CVs</h2>
+      <p className="mt-1 text-sm text-surface-text-muted">
         Upload one or more CVs &mdash; we&apos;ll extract skills, experience,
         and achievements from all of them to build a richer Profile Cloud. PDF or
         DOCX, up to {MAX_FILES} files.
@@ -185,13 +185,13 @@ export function StepUpload({ onNext, onSkip }: StepUploadProps) {
             {atLimit.existing_cvs.map((cv) => (
               <div
                 key={cv.id}
-                className="flex items-center justify-between rounded-md border border-amber-200 bg-white px-3 py-2"
+                className="flex items-center justify-between rounded-md border border-amber-200 bg-surface-0 px-3 py-2"
               >
                 <div className="min-w-0 flex-1">
-                  <p className="truncate text-sm font-medium text-zinc-900">
+                  <p className="truncate text-sm font-medium text-surface-text">
                     {cv.filename}
                   </p>
-                  <p className="text-xs text-zinc-500">
+                  <p className="text-xs text-surface-text-muted">
                     Uploaded {new Date(cv.created_at).toLocaleDateString()}
                   </p>
                 </div>
@@ -246,9 +246,9 @@ export function StepUpload({ onNext, onSkip }: StepUploadProps) {
       </div>
 
       <div className="relative my-5 flex items-center">
-        <div className="flex-1 border-t border-zinc-200" />
-        <span className="px-3 text-xs font-medium text-zinc-400">or upload CVs directly</span>
-        <div className="flex-1 border-t border-zinc-200" />
+        <div className="flex-1 border-t border-surface-border" />
+        <span className="px-3 text-xs font-medium text-surface-text-muted">or upload CVs directly</span>
+        <div className="flex-1 border-t border-surface-border" />
       </div>
 
       {/* Drop zone */}
@@ -256,7 +256,7 @@ export function StepUpload({ onNext, onSkip }: StepUploadProps) {
         className={`mt-6 flex flex-col items-center justify-center rounded-lg border-2 border-dashed p-8 transition-colors ${
           dragging
             ? "border-brand-500 bg-brand-50"
-            : "border-zinc-300 hover:border-brand-400"
+            : "border-surface-border hover:border-brand-400"
         }`}
         onDragOver={(e) => {
           e.preventDefault();
@@ -269,8 +269,8 @@ export function StepUpload({ onNext, onSkip }: StepUploadProps) {
           addFiles(e.dataTransfer.files);
         }}
       >
-        <Upload className="h-10 w-10 text-zinc-400" />
-        <p className="mt-3 text-sm text-zinc-600">
+        <Upload className="h-10 w-10 text-surface-text-muted" />
+        <p className="mt-3 text-sm text-surface-text-secondary">
           Drag and drop your CVs here, or{" "}
           <button
             onClick={() => inputRef.current?.click()}
@@ -279,7 +279,7 @@ export function StepUpload({ onNext, onSkip }: StepUploadProps) {
             browse
           </button>
         </p>
-        <p className="mt-1 text-xs text-zinc-400">
+        <p className="mt-1 text-xs text-surface-text-muted">
           PDF, DOCX, or LinkedIn ZIP export
         </p>
         <input
@@ -301,7 +301,7 @@ export function StepUpload({ onNext, onSkip }: StepUploadProps) {
           {files.map((f) => (
             <div
               key={f.name}
-              className="flex items-center gap-3 rounded-lg border border-zinc-200 bg-zinc-50 px-4 py-2.5"
+              className="flex items-center gap-3 rounded-lg border border-surface-border bg-surface-2 px-4 py-2.5"
             >
               {isZipFile(f) ? (
                 <FileArchive className="h-5 w-5 shrink-0 text-blue-500" />
@@ -309,17 +309,17 @@ export function StepUpload({ onNext, onSkip }: StepUploadProps) {
                 <FileText className="h-5 w-5 shrink-0 text-brand-500" />
               )}
               <div className="min-w-0 flex-1">
-                <p className="truncate text-sm font-medium text-zinc-900">
+                <p className="truncate text-sm font-medium text-surface-text">
                   {f.name}
                 </p>
-                <p className="text-xs text-zinc-500">
+                <p className="text-xs text-surface-text-muted">
                   {(f.size / 1024).toFixed(0)} KB
                 </p>
               </div>
               {!uploading && (
                 <button
                   onClick={() => removeFile(f.name)}
-                  className="shrink-0 rounded-full p-1 text-zinc-400 hover:bg-zinc-200 hover:text-zinc-600"
+                  className="shrink-0 rounded-full p-1 text-surface-text-muted hover:bg-surface-3 hover:text-surface-text-secondary"
                 >
                   <X className="h-4 w-4" />
                 </button>
@@ -330,7 +330,7 @@ export function StepUpload({ onNext, onSkip }: StepUploadProps) {
           {files.length < MAX_FILES && !uploading && (
             <button
               onClick={() => inputRef.current?.click()}
-              className="flex w-full items-center justify-center gap-1.5 rounded-lg border border-dashed border-zinc-300 py-2 text-sm text-zinc-500 transition-colors hover:border-brand-400 hover:text-brand-600"
+              className="flex w-full items-center justify-center gap-1.5 rounded-lg border border-dashed border-surface-border py-2 text-sm text-surface-text-muted transition-colors hover:border-brand-400 hover:text-brand-600"
             >
               <Plus className="h-4 w-4" />
               Add another CV
@@ -350,7 +350,7 @@ export function StepUpload({ onNext, onSkip }: StepUploadProps) {
         <button
           onClick={onSkip}
           disabled={uploading}
-          className="h-10 flex-1 rounded-lg border border-zinc-200 text-sm font-medium text-zinc-600 transition-colors hover:bg-zinc-50 disabled:opacity-40"
+          className="h-10 flex-1 rounded-lg border border-surface-border text-sm font-medium text-surface-text-secondary transition-colors hover:bg-surface-2 disabled:opacity-40"
         >
           Skip for now
         </button>

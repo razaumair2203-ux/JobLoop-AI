@@ -53,27 +53,27 @@ interface TrackerData {
 }
 
 const stageConfig: Record<Stage, { label: string; color: string }> = {
-  saved: { label: "Saved", color: "bg-zinc-100 text-zinc-600" },
+  saved: { label: "Saved", color: "bg-surface-2 text-surface-text-secondary" },
   analyzing: { label: "Analyzing", color: "bg-blue-50 text-blue-600" },
   ready_to_apply: { label: "Ready", color: "bg-amber-50 text-amber-600" },
   applied: { label: "Applied", color: "bg-emerald-50 text-emerald-600" },
 };
 
 const outcomeConfig: Record<Outcome, { label: string; color: string }> = {
-  pending: { label: "Pending", color: "bg-zinc-100 text-zinc-500" },
+  pending: { label: "Pending", color: "bg-surface-2 text-surface-text-muted" },
   callback: { label: "Callback", color: "bg-sky-50 text-sky-600" },
   interview: { label: "Interview", color: "bg-blue-50 text-blue-600" },
   offer: { label: "Offer", color: "bg-emerald-50 text-emerald-700" },
-  closed: { label: "Closed", color: "bg-zinc-100 text-zinc-400" },
-  ghosted: { label: "Ghosted", color: "bg-zinc-50 text-zinc-400" },
+  closed: { label: "Closed", color: "bg-surface-2 text-surface-text-muted" },
+  ghosted: { label: "Ghosted", color: "bg-surface-2 text-surface-text-muted" },
 };
 
 const kanbanColumns = [
-  { key: "saved", label: "Saved", border: "border-l-zinc-400" },
+  { key: "saved", label: "Saved", border: "border-l-surface-text-muted" },
   { key: "applied", label: "Applied", border: "border-l-blue-500" },
   { key: "interview", label: "Interview", border: "border-l-amber-500" },
   { key: "offer", label: "Offer", border: "border-l-emerald-500" },
-  { key: "closed", label: "Closed", border: "border-l-zinc-300" },
+  { key: "closed", label: "Closed", border: "border-l-surface-text-muted" },
 ];
 
 export default function TrackerPage() {
@@ -121,7 +121,7 @@ export default function TrackerPage() {
   if (loading) {
     return (
       <div className="flex items-center justify-center py-20">
-        <Loader2 className="h-6 w-6 animate-spin text-zinc-400" />
+        <Loader2 className="h-6 w-6 animate-spin text-surface-text-muted" />
       </div>
     );
   }
@@ -134,7 +134,7 @@ export default function TrackerPage() {
           {patterns.map((p) => (
             <div
               key={p.gap}
-              className="flex items-start gap-3 rounded-xl border border-amber-200 bg-amber-50 p-4"
+              className="flex items-start gap-3 rounded-lg border border-amber-200 bg-amber-50 p-4"
             >
               <Lightbulb className="mt-0.5 h-5 w-5 shrink-0 text-amber-600" />
               <div>
@@ -154,22 +154,22 @@ export default function TrackerPage() {
       {/* Header */}
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-3">
-          <FolderOpen className="h-5 w-5 text-zinc-400" />
+          <FolderOpen className="h-5 w-5 text-surface-text-muted" />
           <div>
-            <h1 className="text-2xl font-bold text-zinc-900">Applications</h1>
-            <p className="mt-1 text-sm text-zinc-500">
+            <h1 className="text-2xl font-bold text-surface-text">Applications</h1>
+            <p className="mt-1 text-sm text-surface-text-muted">
               {apps.length} application{apps.length !== 1 ? "s" : ""} tracked
             </p>
           </div>
         </div>
         <div className="flex items-center gap-3">
-          <div className="flex rounded-lg border border-zinc-200 bg-zinc-50 p-0.5">
+          <div className="flex rounded-lg border border-surface-border bg-surface-2 p-0.5">
             <button
               onClick={() => setView("table")}
               className={`flex items-center gap-1.5 rounded-md px-3 py-1.5 text-xs font-medium transition-colors ${
                 view === "table"
-                  ? "bg-white text-zinc-900 shadow-sm"
-                  : "text-zinc-500 hover:text-zinc-700"
+                  ? "bg-surface-0 text-surface-text shadow-sm"
+                  : "text-surface-text-muted hover:text-surface-text-secondary"
               }`}
             >
               <Table2 className="h-3.5 w-3.5" />
@@ -179,8 +179,8 @@ export default function TrackerPage() {
               onClick={() => setView("board")}
               className={`flex items-center gap-1.5 rounded-md px-3 py-1.5 text-xs font-medium transition-colors ${
                 view === "board"
-                  ? "bg-white text-zinc-900 shadow-sm"
-                  : "text-zinc-500 hover:text-zinc-700"
+                  ? "bg-surface-0 text-surface-text shadow-sm"
+                  : "text-surface-text-muted hover:text-surface-text-secondary"
               }`}
             >
               <Kanban className="h-3.5 w-3.5" />
@@ -199,10 +199,10 @@ export default function TrackerPage() {
 
       <div className="mt-6">
         {apps.length === 0 ? (
-          <div className="flex flex-col items-center justify-center rounded-xl border border-dashed border-zinc-300 py-16">
-            <FolderOpen className="h-10 w-10 text-zinc-300" />
-            <p className="mt-3 text-sm font-medium text-zinc-500">No applications yet</p>
-            <p className="mt-1 text-xs text-zinc-400">
+          <div className="flex flex-col items-center justify-center rounded-lg border border-dashed border-surface-border py-16">
+            <FolderOpen className="h-10 w-10 text-surface-text-muted" />
+            <p className="mt-3 text-sm font-medium text-surface-text-muted">No applications yet</p>
+            <p className="mt-1 text-xs text-surface-text-muted">
               Paste a job description to get started
             </p>
             <Link
@@ -233,7 +233,7 @@ export default function TrackerPage() {
 // --- Company Initial ---
 function CompanyInitial({ company }: { company: string }) {
   return (
-    <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-zinc-100 text-xs font-bold text-zinc-500">
+    <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-surface-2 text-xs font-bold text-surface-text-muted">
       {company[0]?.toUpperCase() ?? "?"}
     </div>
   );
@@ -265,7 +265,7 @@ function ExcitementStars({
             className={`${iconSize} transition-colors ${
               star <= rating
                 ? "fill-amber-400 text-amber-400"
-                : "text-zinc-300 hover:text-amber-300"
+                : "text-surface-text-muted hover:text-amber-300"
             }`}
           />
         </button>
@@ -285,16 +285,16 @@ function TableView({
   onExcitementChange: (id: string, r: number) => void;
 }) {
   return (
-    <div className="overflow-hidden rounded-xl border border-zinc-200 bg-white">
+    <div className="overflow-hidden rounded-lg border border-surface-border bg-surface-0">
       <table className="w-full text-left text-sm">
         <thead>
-          <tr className="border-b border-zinc-200 bg-zinc-50">
-            <th className="px-4 py-3 font-medium text-zinc-500">Company</th>
-            <th className="px-4 py-3 font-medium text-zinc-500">Role</th>
-            <th className="px-4 py-3 font-medium text-zinc-500">Stage</th>
-            <th className="px-4 py-3 font-medium text-zinc-500">Outcome</th>
-            <th className="px-4 py-3 font-medium text-zinc-500">Priority</th>
-            <th className="px-4 py-3 font-medium text-zinc-500">Date</th>
+          <tr className="border-b border-surface-border bg-surface-2">
+            <th className="px-4 py-3 font-medium text-surface-text-muted">Company</th>
+            <th className="px-4 py-3 font-medium text-surface-text-muted">Role</th>
+            <th className="px-4 py-3 font-medium text-surface-text-muted">Stage</th>
+            <th className="px-4 py-3 font-medium text-surface-text-muted">Outcome</th>
+            <th className="px-4 py-3 font-medium text-surface-text-muted">Priority</th>
+            <th className="px-4 py-3 font-medium text-surface-text-muted">Date</th>
           </tr>
         </thead>
         <tbody>
@@ -302,25 +302,25 @@ function TableView({
             <tr
               key={app.id}
               onClick={() => onSelect(app)}
-              className="cursor-pointer border-b border-zinc-100 transition-colors hover:bg-zinc-50"
+              className="cursor-pointer border-b border-surface-border transition-colors hover:bg-surface-2"
             >
               <td className="px-4 py-3">
                 <div className="flex items-center gap-2.5">
                   <CompanyInitial company={app.company} />
-                  <span className="font-medium text-zinc-900">
+                  <span className="font-medium text-surface-text">
                     {app.company}
                   </span>
                 </div>
               </td>
-              <td className="px-4 py-3 text-zinc-600">{app.role}</td>
+              <td className="px-4 py-3 text-surface-text-secondary">{app.role}</td>
               <td className="px-4 py-3">
-                <span className={`rounded-full px-2.5 py-0.5 text-xs font-medium ${stageConfig[app.stage]?.color ?? "bg-zinc-100 text-zinc-500"}`}>
+                <span className={`rounded-full px-2.5 py-0.5 text-xs font-medium ${stageConfig[app.stage]?.color ?? "bg-surface-2 text-surface-text-muted"}`}>
                   {stageConfig[app.stage]?.label ?? app.stage}
                 </span>
               </td>
               <td className="px-4 py-3">
                 {app.outcome && (
-                  <span className={`rounded-full px-2.5 py-0.5 text-xs font-medium ${outcomeConfig[app.outcome]?.color ?? "bg-zinc-100 text-zinc-500"}`}>
+                  <span className={`rounded-full px-2.5 py-0.5 text-xs font-medium ${outcomeConfig[app.outcome]?.color ?? "bg-surface-2 text-surface-text-muted"}`}>
                     {outcomeConfig[app.outcome]?.label ?? app.outcome}
                   </span>
                 )}
@@ -331,7 +331,7 @@ function TableView({
                   onChange={(r) => onExcitementChange(app.id, r)}
                 />
               </td>
-              <td className="px-4 py-3 text-zinc-500">
+              <td className="px-4 py-3 text-surface-text-muted">
                 {app.applied_date
                   ? new Date(app.applied_date).toLocaleDateString()
                   : new Date(app.created_at).toLocaleDateString()}
@@ -357,17 +357,17 @@ function KanbanCard({
   return (
     <button
       onClick={() => onSelect(app)}
-      className={`w-full rounded-lg border-l-3 bg-white p-3 text-left shadow-sm transition-shadow hover:shadow-md ${border}`}
+      className={`w-full rounded-lg border-l-3 bg-surface-0 p-3 text-left shadow-sm transition-shadow hover:shadow-md ${border}`}
     >
       <div className="flex items-center gap-2">
         <CompanyInitial company={app.company} />
         <div className="min-w-0">
-          <p className="truncate text-sm font-medium text-zinc-900">{app.company}</p>
-          <p className="truncate text-xs text-zinc-500">{app.role}</p>
+          <p className="truncate text-sm font-medium text-surface-text">{app.company}</p>
+          <p className="truncate text-xs text-surface-text-muted">{app.role}</p>
         </div>
       </div>
       {app.position && (
-        <p className="mt-1.5 text-xs text-zinc-400">{app.position.label}</p>
+        <p className="mt-1.5 text-xs text-surface-text-muted">{app.position.label}</p>
       )}
     </button>
   );
@@ -399,12 +399,12 @@ function KanbanView({
       {kanbanColumns.map((col) => {
         const colApps = getColumnApps(col.key);
         return (
-          <div key={col.key} className="w-64 shrink-0 rounded-xl bg-zinc-50 p-3">
+          <div key={col.key} className="w-64 shrink-0 rounded-lg bg-surface-2 p-3">
             <div className="flex items-center justify-between px-1 pb-3">
-              <h3 className="text-xs font-semibold uppercase tracking-wide text-zinc-500">
+              <h3 className="text-xs font-semibold uppercase tracking-wide text-surface-text-muted">
                 {col.label}
               </h3>
-              <span className="flex h-5 min-w-5 items-center justify-center rounded-full bg-zinc-200 px-1.5 text-xs font-medium text-zinc-600">
+              <span className="flex h-5 min-w-5 items-center justify-center rounded-full bg-surface-3 px-1.5 text-xs font-medium text-surface-text-secondary">
                 {colApps.length}
               </span>
             </div>
@@ -445,19 +445,19 @@ function DetailPanel({
   return (
     <div className="fixed inset-y-0 right-0 z-50 flex">
       <div className="flex-1" onClick={onClose} />
-      <div className="w-[400px] border-l border-zinc-200 bg-white shadow-xl">
+      <div className="w-[400px] border-l border-surface-border bg-surface-0 shadow-xl">
         <div className="flex h-full flex-col">
           {/* Header */}
-          <div className="flex items-start justify-between border-b border-zinc-200 p-5">
+          <div className="flex items-start justify-between border-b border-surface-border p-5">
             <div className="flex items-center gap-3">
               <CompanyInitial company={app.company} />
               <div>
-                <h2 className="text-lg font-semibold text-zinc-900">{app.company}</h2>
-                <p className="text-sm text-zinc-500">{app.role}</p>
+                <h2 className="text-lg font-semibold text-surface-text">{app.company}</h2>
+                <p className="text-sm text-surface-text-muted">{app.role}</p>
               </div>
             </div>
-            <button onClick={onClose} className="rounded-lg p-1.5 hover:bg-zinc-100">
-              <X className="h-5 w-5 text-zinc-400" />
+            <button onClick={onClose} className="rounded-lg p-1.5 hover:bg-surface-2">
+              <X className="h-5 w-5 text-surface-text-muted" />
             </button>
           </div>
 
@@ -466,11 +466,11 @@ function DetailPanel({
             {/* Position */}
             {app.position && (
               <div>
-                <label className="text-xs font-medium uppercase text-zinc-400">
+                <label className="text-xs font-medium uppercase text-surface-text-muted">
                   Position Assessment
                 </label>
                 <div className="mt-1.5">
-                  <span className={`rounded-full px-3 py-1 text-sm font-medium ${posColors[app.position.label] || "bg-zinc-100 text-zinc-600"}`}>
+                  <span className={`rounded-full px-3 py-1 text-sm font-medium ${posColors[app.position.label] || "bg-surface-2 text-surface-text-secondary"}`}>
                     {app.position.label}
                   </span>
                 </div>
@@ -479,7 +479,7 @@ function DetailPanel({
 
             {/* Priority */}
             <div>
-              <label className="text-xs font-medium uppercase text-zinc-400">Priority</label>
+              <label className="text-xs font-medium uppercase text-surface-text-muted">Priority</label>
               <div className="mt-1.5">
                 <ExcitementStars
                   rating={app.excitement ?? 0}
@@ -491,12 +491,12 @@ function DetailPanel({
 
             {/* Outcome */}
             <div>
-              <label className="text-xs font-medium uppercase text-zinc-400">Outcome</label>
+              <label className="text-xs font-medium uppercase text-surface-text-muted">Outcome</label>
               <div className="mt-1.5">
                 <select
                   value={app.outcome ?? "pending"}
                   onChange={(e) => onUpdate(app.id, { outcome: e.target.value })}
-                  className="rounded-lg border border-zinc-200 px-3 py-1.5 text-sm text-zinc-700 focus:border-brand-500 focus:outline-none"
+                  className="rounded-lg border border-surface-border px-3 py-1.5 text-sm text-surface-text-secondary focus:border-brand-500 focus:outline-none"
                 >
                   {Object.entries(outcomeConfig).map(([key, cfg]) => (
                     <option key={key} value={key}>{cfg.label}</option>
@@ -508,7 +508,7 @@ function DetailPanel({
             {/* Strengths */}
             {strengths.length > 0 && (
               <div>
-                <label className="text-xs font-medium uppercase text-zinc-400">Strengths</label>
+                <label className="text-xs font-medium uppercase text-surface-text-muted">Strengths</label>
                 <div className="mt-1.5 flex flex-wrap gap-1.5">
                   {strengths.map((s) => (
                     <span key={s} className="rounded-full bg-emerald-50 px-2.5 py-0.5 text-xs font-medium text-emerald-700">
@@ -522,7 +522,7 @@ function DetailPanel({
             {/* Gaps */}
             {gaps.length > 0 && (
               <div>
-                <label className="text-xs font-medium uppercase text-zinc-400">Gaps to Address</label>
+                <label className="text-xs font-medium uppercase text-surface-text-muted">Gaps to Address</label>
                 <div className="mt-1.5 flex flex-wrap gap-1.5">
                   {gaps.map((g) => (
                     <span key={g} className="rounded-full bg-amber-50 px-2.5 py-0.5 text-xs font-medium text-amber-700">
@@ -536,10 +536,10 @@ function DetailPanel({
             {/* Bridge Strategies */}
             {bridges.length > 0 && (
               <div>
-                <label className="text-xs font-medium uppercase text-zinc-400">Bridge Strategies</label>
+                <label className="text-xs font-medium uppercase text-surface-text-muted">Bridge Strategies</label>
                 <ul className="mt-1.5 space-y-1.5">
                   {bridges.map((b, i) => (
-                    <li key={i} className="text-xs text-zinc-600">{b}</li>
+                    <li key={i} className="text-xs text-surface-text-secondary">{b}</li>
                   ))}
                 </ul>
               </div>
@@ -547,7 +547,7 @@ function DetailPanel({
 
             {/* Notes */}
             <div>
-              <label className="text-xs font-medium uppercase text-zinc-400">Notes</label>
+              <label className="text-xs font-medium uppercase text-surface-text-muted">Notes</label>
               <textarea
                 value={notes}
                 onChange={(e) => setNotes(e.target.value)}
@@ -558,13 +558,13 @@ function DetailPanel({
                 }}
                 rows={3}
                 placeholder="Add notes..."
-                className="mt-1.5 w-full rounded-lg border border-zinc-200 px-3 py-2.5 text-sm text-zinc-700 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
+                className="mt-1.5 w-full rounded-lg border border-surface-border px-3 py-2.5 text-sm text-surface-text-secondary focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
               />
             </div>
           </div>
 
           {/* Actions */}
-          <div className="border-t border-zinc-200 p-5 space-y-2">
+          <div className="border-t border-surface-border p-5 space-y-2">
             <Link
               href={`/cv?app=${app.id}`}
               className="flex w-full items-center justify-center gap-2 rounded-lg bg-brand-600 py-2.5 text-sm font-medium text-white hover:bg-brand-700"
@@ -574,7 +574,7 @@ function DetailPanel({
             </Link>
             <Link
               href={`/cv/cover-letter?app=${app.id}`}
-              className="flex w-full items-center justify-center gap-2 rounded-lg border border-zinc-200 py-2.5 text-sm font-medium text-zinc-700 hover:bg-zinc-50"
+              className="flex w-full items-center justify-center gap-2 rounded-lg border border-surface-border py-2.5 text-sm font-medium text-surface-text-secondary hover:bg-surface-2"
             >
               <Mail className="h-4 w-4" />
               Write Cover Letter

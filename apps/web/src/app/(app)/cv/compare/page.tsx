@@ -34,14 +34,14 @@ export default function ComparePage() {
     <div className="mx-auto max-w-6xl">
       <Link
         href="/cv"
-        className="mb-6 flex items-center gap-1.5 text-sm text-zinc-500 hover:text-zinc-900"
+        className="mb-6 flex items-center gap-1.5 text-sm text-surface-text-muted hover:text-surface-text"
       >
         <ArrowLeft className="h-4 w-4" />
         Back to CV Builder
       </Link>
 
-      <h1 className="text-2xl font-bold text-zinc-900">Before / After</h1>
-      <p className="mt-1 text-sm text-zinc-500">
+      <h1 className="text-2xl font-bold text-surface-text">Before / After</h1>
+      <p className="mt-1 text-sm text-surface-text-muted">
         See how your CV was strengthened with evidence from your Profile Cloud
       </p>
 
@@ -52,7 +52,7 @@ export default function ComparePage() {
       </div>
 
       {/* Legend */}
-      <div className="mt-4 flex items-center gap-4 text-xs text-zinc-500">
+      <div className="mt-4 flex items-center gap-4 text-xs text-surface-text-muted">
         <span className="flex items-center gap-1.5">
           <span className="h-3 w-3 rounded border-l-2 border-brand-400 bg-brand-50" />
           Changed text
@@ -68,35 +68,35 @@ export default function ComparePage() {
       </div>
 
       {/* Split comparison */}
-      <div className="mt-6 grid grid-cols-2 gap-0 overflow-hidden rounded-xl border border-zinc-200">
+      <div className="mt-6 grid grid-cols-2 gap-0 overflow-hidden rounded-lg border border-surface-border">
         {/* Before */}
-        <div className="border-r border-zinc-200 bg-zinc-50">
-          <div className="border-b border-zinc-200 px-5 py-3">
-            <h3 className="text-sm font-semibold text-zinc-500">Before</h3>
+        <div className="border-r border-surface-border bg-surface-2">
+          <div className="border-b border-surface-border px-5 py-3">
+            <h3 className="text-sm font-semibold text-surface-text-muted">Before</h3>
           </div>
           <div className="p-6 space-y-5">
             {/* Summary */}
             <div>
-              <h4 className="text-xs font-semibold uppercase text-zinc-400">
+              <h4 className="text-xs font-semibold uppercase text-surface-text-muted">
                 Summary
               </h4>
-              <p className="mt-2 text-sm leading-relaxed text-zinc-600">
+              <p className="mt-2 text-sm leading-relaxed text-surface-text-secondary">
                 {beforeSummary}
               </p>
             </div>
 
             {/* Experience bullets */}
             <div>
-              <h4 className="text-xs font-semibold uppercase text-zinc-400">
+              <h4 className="text-xs font-semibold uppercase text-surface-text-muted">
                 Experience
               </h4>
               <ul className="mt-2 space-y-1.5">
                 {beforeBullets.map((b, i) => (
                   <li
                     key={i}
-                    className="flex gap-2 text-sm text-zinc-600"
+                    className="flex gap-2 text-sm text-surface-text-secondary"
                   >
-                    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-zinc-300" />
+                    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-surface-3" />
                     {b}
                   </li>
                 ))}
@@ -105,27 +105,27 @@ export default function ComparePage() {
 
             {/* Skills */}
             <div>
-              <h4 className="text-xs font-semibold uppercase text-zinc-400">
+              <h4 className="text-xs font-semibold uppercase text-surface-text-muted">
                 Skills
               </h4>
-              <p className="mt-2 text-sm text-zinc-600">{beforeSkills}</p>
+              <p className="mt-2 text-sm text-surface-text-secondary">{beforeSkills}</p>
             </div>
           </div>
         </div>
 
         {/* After */}
-        <div className="bg-white">
-          <div className="border-b border-zinc-200 px-5 py-3">
-            <h3 className="text-sm font-semibold text-zinc-900">After</h3>
+        <div className="bg-surface-0">
+          <div className="border-b border-surface-border px-5 py-3">
+            <h3 className="text-sm font-semibold text-surface-text">After</h3>
           </div>
           <div className="p-6 space-y-5">
             {/* Summary */}
             <div>
-              <h4 className="text-xs font-semibold uppercase text-zinc-400">
+              <h4 className="text-xs font-semibold uppercase text-surface-text-muted">
                 Summary
               </h4>
               <div className="mt-2 rounded border-l-2 border-brand-400 bg-brand-50 px-3 py-2">
-                <p className="text-sm leading-relaxed text-zinc-800">
+                <p className="text-sm leading-relaxed text-surface-text">
                   {afterSummary}
                 </p>
                 <DiffMarker type="improvement" />
@@ -134,20 +134,20 @@ export default function ComparePage() {
 
             {/* Experience bullets */}
             <div>
-              <h4 className="text-xs font-semibold uppercase text-zinc-400">
+              <h4 className="text-xs font-semibold uppercase text-surface-text-muted">
                 Experience
               </h4>
               <ul className="mt-2 space-y-1.5">
                 {afterBullets.map((b, i) => (
                   <li key={i} className="flex gap-2">
-                    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-zinc-400" />
+                    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-surface-3" />
                     {b.changed ? (
                       <div className="flex-1 rounded border-l-2 border-brand-400 bg-brand-50 px-2 py-1">
-                        <span className="text-sm text-zinc-800">{b.text}</span>
+                        <span className="text-sm text-surface-text">{b.text}</span>
                         <DiffMarker type="improvement" />
                       </div>
                     ) : (
-                      <span className="text-sm text-zinc-700">{b.text}</span>
+                      <span className="text-sm text-surface-text-secondary">{b.text}</span>
                     )}
                   </li>
                 ))}
@@ -156,11 +156,11 @@ export default function ComparePage() {
 
             {/* Skills */}
             <div>
-              <h4 className="text-xs font-semibold uppercase text-zinc-400">
+              <h4 className="text-xs font-semibold uppercase text-surface-text-muted">
                 Skills
               </h4>
               <div className="mt-2 rounded border-l-2 border-amber-400 bg-amber-50 px-3 py-2">
-                <p className="text-sm text-zinc-800">{afterSkills}</p>
+                <p className="text-sm text-surface-text">{afterSkills}</p>
                 <DiffMarker type="addition" />
               </div>
             </div>
@@ -172,7 +172,7 @@ export default function ComparePage() {
       <div className="mt-6 flex justify-end gap-3">
         <Link
           href="/cv"
-          className="rounded-lg border border-zinc-200 px-5 py-2.5 text-sm font-medium text-zinc-700 hover:bg-zinc-50"
+          className="rounded-lg border border-surface-border px-5 py-2.5 text-sm font-medium text-surface-text-secondary hover:bg-surface-2"
         >
           Edit CV
         </Link>
@@ -197,14 +197,14 @@ function StrengthBar({
 }) {
   const total = strong + related + gap;
   return (
-    <div className="flex-1 rounded-xl border border-zinc-200 bg-white p-4">
+    <div className="flex-1 rounded-lg border border-surface-border bg-surface-0 p-4">
       <div className="flex items-center justify-between">
-        <span className="text-sm font-medium text-zinc-700">{label}</span>
-        <span className="text-xs text-zinc-500">
+        <span className="text-sm font-medium text-surface-text-secondary">{label}</span>
+        <span className="text-xs text-surface-text-muted">
           {strong} Strong | {related} Related | {gap} Gap
         </span>
       </div>
-      <div className="mt-2 flex h-2 overflow-hidden rounded-full bg-zinc-100">
+      <div className="mt-2 flex h-2 overflow-hidden rounded-full bg-surface-2">
         <div
           className="bg-emerald-500 transition-all"
           style={{ width: `${(strong / total) * 100}%` }}

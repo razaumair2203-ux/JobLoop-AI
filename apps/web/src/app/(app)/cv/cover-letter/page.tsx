@@ -126,8 +126,8 @@ export default function CoverLetterPage() {
       <div className="mx-auto flex max-w-3xl items-center justify-center py-32">
         <div className="text-center">
           <div className="mx-auto h-10 w-10 animate-spin rounded-full border-4 border-brand-200 border-t-brand-600" />
-          <p className="mt-4 text-sm font-medium text-zinc-700">Generating your cover letter...</p>
-          <p className="mt-1 text-xs text-zinc-400">This usually takes 10-20 seconds</p>
+          <p className="mt-4 text-sm font-medium text-surface-text-secondary">Generating your cover letter...</p>
+          <p className="mt-1 text-xs text-surface-text-muted">This usually takes 10-20 seconds</p>
         </div>
       </div>
     );
@@ -136,7 +136,7 @@ export default function CoverLetterPage() {
   if (genError) {
     return (
       <div className="mx-auto flex max-w-3xl items-center justify-center py-32">
-        <div className="max-w-md rounded-xl border border-red-200 bg-red-50 p-6 text-center">
+        <div className="max-w-md rounded-lg border border-red-200 bg-red-50 p-6 text-center">
           <p className="text-sm font-medium text-red-800">Cover Letter Generation Failed</p>
           <p className="mt-2 text-xs text-red-600">{genError}</p>
           <button
@@ -154,14 +154,14 @@ export default function CoverLetterPage() {
     <div className="mx-auto max-w-3xl">
       <Link
         href="/cv"
-        className="mb-6 flex items-center gap-1.5 text-sm text-zinc-500 hover:text-zinc-900"
+        className="mb-6 flex items-center gap-1.5 text-sm text-surface-text-muted hover:text-surface-text"
       >
         <ArrowLeft className="h-4 w-4" />
         Back to CV Builder
       </Link>
 
-      <h1 className="text-2xl font-bold text-zinc-900">Cover Letter</h1>
-      <p className="mt-1 text-sm text-zinc-500">
+      <h1 className="text-2xl font-bold text-surface-text">Cover Letter</h1>
+      <p className="mt-1 text-sm text-surface-text-muted">
         Generated from your Profile Cloud evidence — every claim is backed by
         real experience
       </p>
@@ -177,7 +177,7 @@ export default function CoverLetterPage() {
             className={`rounded-full px-4 py-1.5 text-sm font-medium capitalize transition-colors ${
               tone === t
                 ? "bg-brand-600 text-white"
-                : "border border-zinc-200 bg-white text-zinc-600 hover:border-brand-300"
+                : "border border-surface-border bg-surface-0 text-surface-text-secondary hover:border-brand-300"
             }`}
           >
             {t}
@@ -188,7 +188,7 @@ export default function CoverLetterPage() {
       {/* Evidence sources (collapsible) */}
       <button
         onClick={() => setSourcesExpanded(!sourcesExpanded)}
-        className="mt-4 flex w-full items-center justify-between rounded-lg border border-zinc-200 bg-zinc-50 px-4 py-2.5 text-sm text-zinc-600"
+        className="mt-4 flex w-full items-center justify-between rounded-lg border border-surface-border bg-surface-2 px-4 py-2.5 text-sm text-surface-text-secondary"
       >
         <span className="font-medium">
           Evidence sources ({mockSources.reduce((a, s) => a + s.count, 0)}{" "}
@@ -207,14 +207,14 @@ export default function CoverLetterPage() {
             return (
               <div
                 key={src.name}
-                className="flex shrink-0 items-center gap-2 rounded-lg border border-zinc-200 bg-white px-3 py-2"
+                className="flex shrink-0 items-center gap-2 rounded-lg border border-surface-border bg-surface-0 px-3 py-2"
               >
                 <Icon className="h-4 w-4 text-brand-500" />
                 <div>
-                  <p className="text-xs font-medium text-zinc-700">
+                  <p className="text-xs font-medium text-surface-text-secondary">
                     {src.name}
                   </p>
-                  <p className="text-xs text-zinc-400">{src.count} points</p>
+                  <p className="text-xs text-surface-text-muted">{src.count} points</p>
                 </div>
               </div>
             );
@@ -223,13 +223,13 @@ export default function CoverLetterPage() {
       )}
 
       {/* Letter content */}
-      <div className="mt-6 rounded-xl border border-zinc-200 bg-white shadow-sm">
+      <div className="mt-6 rounded-lg border border-surface-border bg-surface-0 shadow-sm">
         <div className="p-8 space-y-6">
           {paragraphs.map((para, idx) => (
             <div key={idx}>
               {/* Paragraph label */}
               <div className="flex items-center justify-between">
-                <span className="text-[10px] font-semibold uppercase tracking-wide text-zinc-400">
+                <span className="text-[10px] font-semibold uppercase tracking-wide text-surface-text-muted">
                   {para.type}
                 </span>
                 <button
@@ -248,7 +248,7 @@ export default function CoverLetterPage() {
 
               {/* Editable text */}
               <div className="mt-2">
-                <p className="text-sm leading-relaxed text-zinc-800">
+                <p className="text-sm leading-relaxed text-surface-text">
                   {para.text}
                   {/* Inline citation badges */}
                   {para.evidence_used.map((_, eIdx) => (
@@ -297,18 +297,18 @@ export default function CoverLetterPage() {
 
       {/* Controls */}
       <div className="mt-4 flex items-center justify-between">
-        <span className="text-xs text-zinc-400">{wordCount} words</span>
+        <span className="text-xs text-surface-text-muted">{wordCount} words</span>
         <div className="flex gap-2">
           <button
             onClick={() => appId && generateLetter(appId, tone)}
-            className="flex items-center gap-1.5 rounded-lg border border-zinc-200 px-3 py-1.5 text-xs font-medium text-zinc-600 hover:bg-zinc-50"
+            className="flex items-center gap-1.5 rounded-lg border border-surface-border px-3 py-1.5 text-xs font-medium text-surface-text-secondary hover:bg-surface-2"
           >
             <RefreshCw className="h-3.5 w-3.5" />
             Regenerate
           </button>
           <button
             onClick={handleCopy}
-            className="flex items-center gap-1.5 rounded-lg border border-zinc-200 px-3 py-1.5 text-xs font-medium text-zinc-600 hover:bg-zinc-50"
+            className="flex items-center gap-1.5 rounded-lg border border-surface-border px-3 py-1.5 text-xs font-medium text-surface-text-secondary hover:bg-surface-2"
           >
             <Copy className="h-3.5 w-3.5" />
             {copied ? "Copied!" : "Copy"}

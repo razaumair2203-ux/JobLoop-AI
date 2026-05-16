@@ -19,7 +19,7 @@ export function ThemeToggle() {
           key={opt.value}
           onClick={() => setTheme(opt.value)}
           title={opt.label}
-          className={`rounded-md p-1.5 transition-colors ${
+          className={`rounded-md p-1.5 transition-all duration-150 press focus-ring ${
             theme === opt.value
               ? "bg-surface-2 text-surface-text"
               : "text-surface-text-muted hover:text-surface-text-secondary"

@@ -101,8 +101,13 @@ const MONTH_MAP: Record<string, number> = {
   oct: 9, october: 9, nov: 10, november: 10, dec: 11, december: 11,
 };
 
-/** Parse a date string like "Jan 2020", "2020", "2020-01", "Present" into a Date-like object */
-function parseRoleDate(s: string): { year: number; month: number; isPresent: boolean } | null {
+/**
+ * Parse a date string like "Jan 2020", "2020", "2020-01", "Present" into a Date-like object.
+ *
+ * @param asEndDate - When true, year-only dates default to December (month 11) instead of January.
+ *   This prevents false gaps: "end 2019" → Dec 2019, "start 2020" → Jan 2020, gap = 1 month (not 12).
+ */
+function parseRoleDate(s: string, asEndDate = false): { year: number; month: number; isPresent: boolean } | null {
   if (!s) return null;
   const trimmed = s.trim().toLowerCase();
 
@@ -126,16 +131,27 @@ function parseRoleDate(s: string): { year: number; month: number; isPresent: boo
     return { year: parseInt(isoish[1]), month: parseInt(isoish[2]) - 1, isPresent: false };
   }
 
-  // "2020" (year only — assume January)
+  // "2020" (year only — assume January for start dates, December for end dates)
   const yearOnly = trimmed.match(/^(\d{4})$/);
   if (yearOnly) {
-    return { year: parseInt(yearOnly[1]), month: 0, isPresent: false };
+    return { year: parseInt(yearOnly[1]), month: asEndDate ? 11 : 0, isPresent: false };
   }
 
   // "01/2020" or "1/2020"
   const monthSlash = trimmed.match(/^(\d{1,2})\/(\d{4})$/);
   if (monthSlash) {
     return { year: parseInt(monthSlash[2]), month: parseInt(monthSlash[1]) - 1, isPresent: false };
+  }
+
+  // "Dec 25" or "Dec 2025" shorthand — "Dec 25" means Dec 2025, not the 25th
+  const monthShortYear = trimmed.match(/^([a-z]+)\s+(\d{2})$/);
+  if (monthShortYear) {
+    const month = MONTH_MAP[monthShortYear[1]];
+    if (month !== undefined) {
+      const shortYear = parseInt(monthShortYear[2]);
+      const fullYear = shortYear < 50 ? 2000 + shortYear : 1900 + shortYear;
+      return { year: fullYear, month, isPresent: false };
+    }
   }
 
   return null;
@@ -288,10 +304,10 @@ function titlesOverlap(a: string, b: string): number {
 
 /** Check if two date ranges overlap significantly */
 function datesOverlap(a: ParsedRole, b: ParsedRole): boolean {
-  const aStart = parseRoleDate(a.start_date);
-  const aEnd = parseRoleDate(a.end_date);
-  const bStart = parseRoleDate(b.start_date);
-  const bEnd = parseRoleDate(b.end_date);
+  const aStart = parseRoleDate(a.start_date, false);
+  const aEnd = parseRoleDate(a.end_date, true);
+  const bStart = parseRoleDate(b.start_date, false);
+  const bEnd = parseRoleDate(b.end_date, true);
 
   if (!aStart || !aEnd || !bStart || !bEnd) return false;
 
@@ -373,10 +389,10 @@ function detectGaps(
 
   for (const group of roleGroups) {
     const starts = group
-      .map(r => parseRoleDate(r.start_date))
+      .map(r => parseRoleDate(r.start_date, false))
       .filter((d): d is NonNullable<typeof d> => d !== null);
     const ends = group
-      .map(r => parseRoleDate(r.end_date))
+      .map(r => parseRoleDate(r.end_date, true))
       .filter((d): d is NonNullable<typeof d> => d !== null);
 
     if (starts.length === 0 || ends.length === 0) continue;

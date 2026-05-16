@@ -13,9 +13,13 @@ import {
 } from "@jobloop/ai";
 import type { ConflictReport, PersonaType } from "@jobloop/ai";
 
-const SUPABASE_URL = "https://koyqjfatxreyaaynflrn.supabase.co";
-const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtveXFqZmF0eHJleWFheW5mbHJuIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3NzY1ODg5NSwiZXhwIjoyMDkzMjM0ODk1fQ.mND_hkB1LWOJdR0ETYAMu_5vW33Tk9Hwhsuy_dWaO8Y";
-const USER_ID = "ef5231fd-65f4-4421-9c79-38c9640648b1";
+const SUPABASE_URL = process.env.SUPABASE_URL ?? "";
+const SUPABASE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY ?? "";
+if (!SUPABASE_URL || !SUPABASE_KEY) {
+  console.error("Set SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY env vars.");
+  process.exit(1);
+}
+const USER_ID = process.env.TEST_USER_ID ?? "";
 
 async function main() {
   const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);

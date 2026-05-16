@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
+import { createAdminClient } from "@/lib/supabase/admin";
 import { getAuthUser } from "@/lib/auth";
 import {
   parseLinkedInExport,
@@ -8,8 +9,15 @@ import {
   MAX_UNCOMPRESSED_SIZE,
   MAX_CSV_SIZE,
   RELEVANT_FILES,
+  cleanParsedCVs,
+  mergeResolvedProfile,
+  resolvedProfileToParsedCV,
+  buildCloudFromParsedCV,
+  computeSummary,
+  skillsMatch,
+  classifyNodeTier,
 } from "@jobloop/ai";
-import type { LinkedInCSVFiles } from "@jobloop/ai";
+import type { LinkedInCSVFiles, Evidence } from "@jobloop/ai";
 
 /**
  * POST /api/cv/linkedin-import
@@ -34,6 +42,8 @@ export async function POST(request: Request) {
   if (!user) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
+
+  const db = createAdminClient();
 
   // --- Get the uploaded file ---
   const formData = await request.formData();
@@ -98,7 +108,7 @@ export async function POST(request: Request) {
   }
 
   // --- Store as cv_upload record ---
-  const { data: upload, error: dbError } = await supabase
+  const { data: upload, error: dbError } = await db
     .from("cv_uploads")
     .insert({
       user_id: user.id,
@@ -120,23 +130,117 @@ export async function POST(request: Request) {
     );
   }
 
-  // --- Build/update Cloud from parsed data ---
-  // Reuse the same Cloud merge logic as the CV upload route
-  const { data: allParsed } = await supabase
-    .from("cv_uploads")
-    .select("parsed_cv")
-    .eq("user_id", user.id)
-    .eq("status", "parsed")
-    .not("parsed_cv", "is", null);
+  // --- Build/update Cloud from ALL parsed CVs (including this LinkedIn import) ---
+  let cloudRebuilt = false;
+  try {
+    const { data: allParsed } = await supabase
+      .from("cv_uploads")
+      .select("id, filename, parsed_cv, extracted_text")
+      .eq("user_id", user.id)
+      .eq("status", "parsed")
+      .not("parsed_cv", "is", null);
 
-  if (allParsed && allParsed.length > 0) {
-    // Cloud rebuild happens here — same as cv/upload route
-    // TODO: extract mergeIntoCloud into shared utility to avoid duplication
+    if (allParsed && allParsed.length > 0) {
+      const { cleanedCVs } = cleanParsedCVs(
+        allParsed.map((row) => ({
+          id: row.id,
+          filename: row.filename,
+          parsed_cv: row.parsed_cv as Record<string, unknown>,
+          source_text: (row.extracted_text as string) ?? undefined,
+        })),
+      );
+
+      const { data: userRow } = await supabase
+        .from("users")
+        .select("persona")
+        .eq("id", user.id)
+        .single();
+
+      const persona = (userRow?.persona as string) ?? "mid_career";
+
+      const resolvedProfile = mergeResolvedProfile(
+        cleanedCVs,
+        [],
+        { employer_confirmed: null, is_single_employer: false },
+        persona,
+      );
+
+      const cleanParsedCV = resolvedProfileToParsedCV(resolvedProfile);
+      const { cloud } = buildCloudFromParsedCV(cleanParsedCV);
+
+      // Preserve Socratic evidence from previous Cloud
+      const { data: oldNodes } = await supabase
+        .from("cloud_nodes")
+        .select("name, evidence")
+        .eq("user_id", user.id);
+
+      const socraticBySkill = new Map<string, Evidence[]>();
+      if (oldNodes) {
+        for (const row of oldNodes) {
+          const socEvidence = (Array.isArray(row.evidence) ? row.evidence : [])
+            .filter((e: Evidence) => e.type === "socratic");
+          if (socEvidence.length > 0) {
+            socraticBySkill.set(row.name.toLowerCase(), socEvidence);
+          }
+        }
+      }
+
+      if (socraticBySkill.size > 0) {
+        for (const node of cloud.nodes) {
+          const exactMatch = socraticBySkill.get(node.name.toLowerCase());
+          if (exactMatch) {
+            node.evidence.push(...exactMatch);
+            node.summary = computeSummary(node.evidence);
+            socraticBySkill.delete(node.name.toLowerCase());
+            continue;
+          }
+          for (const [oldName, evidence] of socraticBySkill) {
+            if (skillsMatch(node.name, oldName)) {
+              node.evidence.push(...evidence);
+              node.summary = computeSummary(node.evidence);
+              socraticBySkill.delete(oldName);
+              break;
+            }
+          }
+        }
+        for (const [skillName, evidence] of socraticBySkill) {
+          cloud.nodes.push({
+            id: `orphan_${Date.now()}_${Math.random().toString(36).slice(2, 6)}`,
+            type: "skill",
+            name: skillName,
+            category: "other",
+            tier: classifyNodeTier(skillName, "other", evidence),
+            evidence,
+            summary: computeSummary(evidence),
+          });
+        }
+      }
+
+      await db.from("cloud_nodes").delete().eq("user_id", user.id);
+
+      const nodeRows = cloud.nodes.map((node) => ({
+        user_id: user.id,
+        name: node.name,
+        type: node.type,
+        category: node.category,
+        evidence: node.evidence,
+        summary: node.summary,
+      }));
+
+      if (nodeRows.length > 0) {
+        await db.from("cloud_nodes").insert(nodeRows);
+      }
+
+      cloudRebuilt = true;
+    }
+  } catch (err) {
+    console.error("[linkedin-import] Cloud rebuild failed (non-critical):", err);
   }
 
   return NextResponse.json({
     id: upload.id,
     status: "parsed",
+    cloud_rebuilt: cloudRebuilt,
     profile: {
       name: `${result.profile.first_name} ${result.profile.last_name}`.trim(),
       headline: result.profile.headline,
@@ -159,20 +263,9 @@ export async function POST(request: Request) {
 // ZIP extraction with security hardening
 // ---------------------------------------------------------------------------
 
-/**
- * Extract only relevant LinkedIn CSV files from a ZIP buffer.
- *
- * Security measures:
- * 1. Zip bomb protection — tracks total uncompressed size
- * 2. Path traversal protection — uses basename only
- * 3. Allowlist — only extracts known LinkedIn CSV filenames
- * 4. Size limit per file — rejects oversized CSVs
- */
 async function extractLinkedInCSVs(
   buffer: Buffer,
 ): Promise<LinkedInCSVFiles> {
-  // Use JSZip for ZIP handling — it's already a common dependency
-  // and handles the decompression safely in-memory
   const JSZip = (await import("jszip")).default;
 
   let zip;
@@ -184,23 +277,17 @@ async function extractLinkedInCSVs(
     );
   }
 
-  // Allowlist of filenames we'll extract (case-insensitive basename match)
   const allowlist = new Set(RELEVANT_FILES.map((f: string) => f.toLowerCase()));
-
   const csvFiles: LinkedInCSVFiles = {};
   let totalUncompressed = 0;
 
   for (const [path, entry] of Object.entries(zip.files)) {
     if (entry.dir) continue;
 
-    // Security: use basename only (prevents path traversal)
     const basename = path.replace(/\\/g, "/").split("/").pop() || "";
 
-    // Only extract allowlisted files
     if (!allowlist.has(basename.toLowerCase())) continue;
 
-    // Check uncompressed size before extracting
-    // JSZip provides _data.uncompressedSize on some entries
     const entryData = entry as { _data?: { uncompressedSize?: number } };
     const estimatedSize = entryData._data?.uncompressedSize ?? 0;
 
@@ -210,10 +297,8 @@ async function extractLinkedInCSVs(
       );
     }
 
-    // Extract content
     const content = await entry.async("string");
 
-    // Track total uncompressed size (zip bomb protection)
     totalUncompressed += content.length;
     if (totalUncompressed > MAX_UNCOMPRESSED_SIZE) {
       throw new Error(
@@ -221,14 +306,12 @@ async function extractLinkedInCSVs(
       );
     }
 
-    // Per-file size check on actual content
     if (content.length > MAX_CSV_SIZE) {
       throw new Error(
         `File ${basename} is too large (${(content.length / 1024 / 1024).toFixed(1)}MB). Maximum per-file size is 10MB.`,
       );
     }
 
-    // Find the matching canonical filename (preserving case)
     const canonicalName = RELEVANT_FILES.find(
       (f: string) => f.toLowerCase() === basename.toLowerCase(),
     );

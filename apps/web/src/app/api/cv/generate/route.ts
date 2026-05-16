@@ -1,6 +1,6 @@
 import { createClient } from "@/lib/supabase/server";
 import { getAuthUser } from "@/lib/auth";
-import { loadCloudFromDB } from "@/lib/cloud-from-db";
+import { loadCloudFromDB, loadOutcomeContext } from "@/lib/cloud-from-db";
 import {
   generateCloudTailoredCV,
   matchCloudToJD,
@@ -75,6 +75,11 @@ export async function POST(request: Request) {
   // Match Cloud to JD
   const matchReport = matchCloudToJD(cloud, parsedJD);
 
+  // Load outcome context from previous applications (silent, $0)
+  const parsedJDExt = parsedJD as unknown as Record<string, unknown> | undefined;
+  const industry = typeof parsedJDExt?.industry === "string" ? parsedJDExt.industry : null;
+  const outcomeCtx = await loadOutcomeContext(supabase, user.id, industry, app.role);
+
   // Generate tailored CV
   let generatedCV: GeneratedCV;
   try {
@@ -84,6 +89,7 @@ export async function POST(request: Request) {
       app.jd_text,
       instructions,
       model_tier === "fast" ? "fast" : "quality",
+      outcomeCtx,
     );
   } catch (err) {
     console.error("CV generation failed:", err);

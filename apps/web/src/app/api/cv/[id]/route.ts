@@ -1,4 +1,5 @@
 import { createClient } from "@/lib/supabase/server";
+import { createAdminClient } from "@/lib/supabase/admin";
 import { getAuthUser } from "@/lib/auth";
 
 /**
@@ -19,9 +20,10 @@ export async function DELETE(
   }
 
   const { id } = await params;
+  const admin = createAdminClient();
 
-  // Fetch the CV (ownership check via user_id)
-  const { data: cv } = await supabase
+  // Fetch the CV (ownership check via user_id — use admin to bypass RLS)
+  const { data: cv } = await admin
     .from("cv_uploads")
     .select("id, storage_path")
     .eq("id", id)
@@ -34,14 +36,18 @@ export async function DELETE(
 
   // Delete from storage
   if (cv.storage_path) {
-    await supabase.storage.from("cvs").remove([cv.storage_path]);
+    await admin.storage.from("cvs").remove([cv.storage_path]);
   }
 
   // Delete from database
-  await supabase.from("cv_uploads").delete().eq("id", cv.id);
+  const { error: delError } = await admin.from("cv_uploads").delete().eq("id", cv.id);
+  if (delError) {
+    console.error("Failed to delete CV:", delError);
+    return Response.json({ error: "Failed to delete CV" }, { status: 500 });
+  }
 
   // Count remaining CVs
-  const { count } = await supabase
+  const { count } = await admin
     .from("cv_uploads")
     .select("id", { count: "exact", head: true })
     .eq("user_id", user.id)
@@ -71,8 +77,9 @@ export async function GET(
   }
 
   const { id } = await params;
+  const admin = createAdminClient();
 
-  const { data: cv } = await supabase
+  const { data: cv } = await admin
     .from("cv_uploads")
     .select("id, filename, file_size, status, created_at, parsed_cv")
     .eq("id", id)

@@ -1,11 +1,13 @@
 import { NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
+import { createAdminClient } from "@/lib/supabase/admin";
 import { ensureUserExists } from "@/lib/ensure-user";
 import { getAuthUser } from "@/lib/auth";
 import {
   mergeResolvedProfile,
   resolvedProfileToParsedCV,
   buildCloudFromParsedCV,
+  generateInitialQuestions,
 } from "@jobloop/ai";
 import type { AnswerParseResult } from "@jobloop/ai";
 
@@ -30,7 +32,8 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
-  await ensureUserExists(supabase, user);
+  const db = createAdminClient();
+  await ensureUserExists(db, user);
 
   const body = await request.json();
   const {
@@ -41,7 +44,7 @@ export async function POST(request: Request) {
   } = body;
 
   // Load all parsed CVs
-  const { data: uploads, error: loadError } = await supabase
+  const { data: uploads, error: loadError } = await db
     .from("cv_uploads")
     .select("id, filename, parsed_cv")
     .eq("user_id", user.id)
@@ -115,20 +118,21 @@ export async function POST(request: Request) {
   const { cloud } = buildCloudFromParsedCV(parsedCV);
 
   // Delete existing cloud nodes for this user (full rebuild)
-  await supabase.from("cloud_nodes").delete().eq("user_id", user.id);
+  await db.from("cloud_nodes").delete().eq("user_id", user.id);
 
-  // Insert all new cloud nodes
+  // Insert all new cloud nodes (use admin client to bypass RLS)
   const nodeRows = cloud.nodes.map((node) => ({
     user_id: user.id,
     name: node.name,
     type: node.type,
     category: node.category,
+    tier: node.tier,
     evidence: node.evidence,
     summary: node.summary,
   }));
 
   if (nodeRows.length > 0) {
-    const { error: insertError } = await supabase
+    const { error: insertError } = await db
       .from("cloud_nodes")
       .insert(nodeRows);
 
@@ -142,9 +146,23 @@ export async function POST(request: Request) {
   }
 
   // Store the resolved profile for reference
-  await supabase.from("users").update({
+  await db.from("users").update({
     resolved_profile: resolved,
   }).eq("id", user.id);
+
+  // Generate Socratic enrichment questions from the built Cloud
+  let socratic_questions: Array<{ id: string; question: string; skill_name: string; why_asking: string }> = [];
+  try {
+    const questions = await generateInitialQuestions(cloud);
+    socratic_questions = questions.map(q => ({
+      id: q.id,
+      question: q.question,
+      skill_name: q.skill_name,
+      why_asking: q.why_asking ?? "",
+    }));
+  } catch (err) {
+    console.error("Failed to generate Socratic questions:", err);
+  }
 
   return NextResponse.json({
     success: true,
@@ -153,5 +171,6 @@ export async function POST(request: Request) {
     certifications_count: resolved.certifications.length,
     cloud_nodes_count: cloud.nodes.length,
     meta: resolved.meta,
+    socratic_questions,
   });
 }

@@ -69,16 +69,16 @@ export default function AuthPage() {
 
   if (checkEmail) {
     return (
-      <div className="flex min-h-screen items-center justify-center bg-zinc-50">
-        <div className="w-full max-w-sm rounded-xl border border-zinc-200 bg-white p-8 text-center shadow-sm">
-          <h2 className="text-xl font-semibold text-zinc-900">Check your email</h2>
-          <p className="mt-2 text-sm text-zinc-600">
-            We sent a confirmation link to <strong>{email}</strong>. Click the
+      <div className="flex min-h-screen items-center justify-center bg-surface-1">
+        <div className="w-full max-w-sm rounded-lg border border-surface-border bg-surface-0 p-8 text-center">
+          <h2 className="text-lg font-semibold text-surface-text">Check your email</h2>
+          <p className="mt-2 text-sm text-surface-text-secondary">
+            We sent a confirmation link to <strong className="text-surface-text">{email}</strong>. Click the
             link to complete your signup.
           </p>
           <button
             onClick={() => setCheckEmail(false)}
-            className="mt-6 text-sm text-zinc-500 hover:text-zinc-900"
+            className="mt-6 text-sm text-surface-text-muted hover:text-surface-text transition-colors"
           >
             Back to sign in
           </button>
@@ -90,56 +90,73 @@ export default function AuthPage() {
   return (
     <div className="flex min-h-screen">
       {/* Left: Branding */}
-      <div className="hidden w-1/2 flex-col justify-between bg-gradient-to-br from-zinc-900 via-zinc-900 to-brand-700/20 p-12 lg:flex">
-        <div className="flex items-center gap-3">
-          <Image src="/parrot.jpg" alt="JobLoop" width={40} height={40} className="rounded-lg" />
+      <div className="hidden w-1/2 flex-col justify-between bg-zinc-950 p-12 lg:flex dark:bg-zinc-900 relative overflow-hidden">
+        {/* Subtle dot grid pattern */}
+        <div
+          className="absolute inset-0 pointer-events-none opacity-[0.03]"
+          style={{
+            backgroundImage: "radial-gradient(circle, #fff 1px, transparent 1px)",
+            backgroundSize: "24px 24px",
+          }}
+        />
+        {/* Gradient orb */}
+        <div className="absolute -bottom-32 -right-32 w-96 h-96 rounded-full bg-brand-600/10 blur-3xl pointer-events-none" />
+
+        <div className="relative z-10 flex items-center gap-3">
+          <Image src="/parrot.jpg" alt="JobLoop" width={36} height={36} className="rounded-lg" />
           <div>
-            <h1 className="text-2xl font-bold text-white">JobLoop</h1>
-            <p className="text-sm text-zinc-400">Your voice, amplified</p>
+            <h1 className="text-xl font-semibold text-white">JobLoop</h1>
+            <p className="text-xs text-zinc-500">Your voice, amplified</p>
           </div>
         </div>
 
-        <div>
-          <p className="text-xl font-medium leading-relaxed text-zinc-200">
-            The job search assistant that learns your story and helps you tell it
-            in every employer's language.
+        <div className="relative z-10">
+          <p className="text-2xl font-semibold leading-snug tracking-tight text-white">
+            Your career story,{" "}
+            <span className="bg-gradient-to-r from-brand-400 to-indigo-400 bg-clip-text text-transparent">
+              told with evidence.
+            </span>
           </p>
-          <ul className="mt-8 space-y-4">
+          <p className="mt-3 text-sm leading-relaxed text-zinc-400">
+            The job search assistant that learns your story and helps you tell it
+            in every employer&apos;s language.
+          </p>
+          <ul className="mt-8 space-y-3">
             {features.map((feature) => (
-              <li key={feature} className="flex items-start gap-3">
-                <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-brand-400" />
-                <span className="text-sm text-zinc-300">{feature}</span>
+              <li key={feature} className="flex items-start gap-2.5">
+                <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-zinc-600" />
+                <span className="text-sm text-zinc-400">{feature}</span>
               </li>
             ))}
           </ul>
         </div>
 
-        <p className="text-xs text-zinc-600">JobLoop AI</p>
+        <p className="relative z-10 text-xs text-zinc-700">JobLoop AI</p>
       </div>
 
       {/* Right: Auth Form */}
-      <div className="flex w-full items-center justify-center bg-white p-8 lg:w-1/2">
+      <div className="flex w-full items-center justify-center bg-surface-0 p-8 lg:w-1/2">
         <div className="w-full max-w-sm">
           {/* Mobile logo */}
           <div className="mb-8 flex items-center gap-2.5 lg:hidden">
-            <Image src="/parrot.jpg" alt="JobLoop" width={32} height={32} className="rounded" />
-            <h1 className="text-2xl font-bold text-zinc-900">JobLoop</h1>
+            <Image src="/parrot.jpg" alt="JobLoop" width={28} height={28} className="rounded" />
+            <h1 className="text-lg font-semibold text-surface-text">JobLoop</h1>
           </div>
 
-          <h2 className="text-xl font-semibold text-zinc-900">
+          <h2 className="text-lg font-semibold text-surface-text">
             {mode === "signin" ? "Welcome back" : "Create your account"}
           </h2>
-          <p className="mt-1 text-sm text-zinc-500">
+          <p className="mt-0.5 text-sm text-surface-text-muted">
             {mode === "signin"
               ? "Sign in to continue your job search"
               : "Start your evidence-backed job search"}
           </p>
 
           {/* OAuth buttons */}
-          <div className="mt-6 flex flex-col gap-3">
+          <div className="mt-6 flex flex-col gap-2.5">
             <button
               onClick={() => handleOAuth("google")}
-              className="flex h-10 w-full items-center justify-center gap-2 rounded-lg border border-zinc-200 bg-white text-sm font-medium text-zinc-700 transition-colors hover:bg-zinc-50"
+              className="flex h-9 w-full items-center justify-center gap-2 rounded-md border border-surface-border bg-surface-0 text-sm font-medium text-surface-text transition-all duration-150 hover:bg-surface-2 press focus-ring"
             >
               <svg className="h-4 w-4" viewBox="0 0 24 24">
                 <path
@@ -163,7 +180,7 @@ export default function AuthPage() {
             </button>
             <button
               onClick={() => handleOAuth("linkedin_oidc")}
-              className="flex h-10 w-full items-center justify-center gap-2 rounded-lg border border-zinc-200 bg-white text-sm font-medium text-zinc-700 transition-colors hover:bg-zinc-50"
+              className="flex h-9 w-full items-center justify-center gap-2 rounded-md border border-surface-border bg-surface-0 text-sm font-medium text-surface-text transition-all duration-150 hover:bg-surface-2 press focus-ring"
             >
               <svg className="h-4 w-4" viewBox="0 0 24 24" fill="#0A66C2">
                 <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
@@ -173,17 +190,17 @@ export default function AuthPage() {
           </div>
 
           {/* Divider */}
-          <div className="my-6 flex items-center gap-3">
-            <div className="h-px flex-1 bg-zinc-200" />
-            <span className="text-xs text-zinc-400">or</span>
-            <div className="h-px flex-1 bg-zinc-200" />
+          <div className="my-5 flex items-center gap-3">
+            <div className="h-px flex-1 bg-surface-border" />
+            <span className="text-xs text-surface-text-muted">or</span>
+            <div className="h-px flex-1 bg-surface-border" />
           </div>
 
           {/* Email/password form */}
-          <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+          <form onSubmit={handleSubmit} className="flex flex-col gap-3">
             {mode === "signup" && (
               <div>
-                <label htmlFor="fullName" className="block text-sm font-medium text-zinc-700">
+                <label htmlFor="fullName" className="block text-xs font-medium text-surface-text-secondary">
                   Full name
                 </label>
                 <input
@@ -192,13 +209,13 @@ export default function AuthPage() {
                   required
                   value={fullName}
                   onChange={(e) => setFullName(e.target.value)}
-                  className="mt-1 block w-full rounded-lg border border-zinc-200 px-3 py-2 text-sm text-zinc-900 placeholder:text-zinc-400 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
+                  className="mt-1 block w-full rounded-md border border-surface-border bg-surface-0 px-3 py-1.5 text-sm text-surface-text placeholder:text-surface-text-muted focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500 transition-colors"
                   placeholder="John Doe"
                 />
               </div>
             )}
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-zinc-700">
+              <label htmlFor="email" className="block text-xs font-medium text-surface-text-secondary">
                 Email
               </label>
               <input
@@ -207,12 +224,12 @@ export default function AuthPage() {
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="mt-1 block w-full rounded-lg border border-zinc-200 px-3 py-2 text-sm text-zinc-900 placeholder:text-zinc-400 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
+                className="mt-1 block w-full rounded-md border border-surface-border bg-surface-0 px-3 py-1.5 text-sm text-surface-text placeholder:text-surface-text-muted focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500 transition-colors"
                 placeholder="you@example.com"
               />
             </div>
             <div>
-              <label htmlFor="password" className="block text-sm font-medium text-zinc-700">
+              <label htmlFor="password" className="block text-xs font-medium text-surface-text-secondary">
                 Password
               </label>
               <input
@@ -222,19 +239,19 @@ export default function AuthPage() {
                 minLength={6}
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="mt-1 block w-full rounded-lg border border-zinc-200 px-3 py-2 text-sm text-zinc-900 placeholder:text-zinc-400 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
+                className="mt-1 block w-full rounded-md border border-surface-border bg-surface-0 px-3 py-1.5 text-sm text-surface-text placeholder:text-surface-text-muted focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500 transition-colors"
                 placeholder="Min. 6 characters"
               />
             </div>
 
             {error && (
-              <p className="rounded-lg bg-red-50 p-3 text-sm text-red-600">{error}</p>
+              <p className="rounded-md border border-red-200 bg-red-50 px-3 py-2 text-sm text-red-600 dark:border-red-900/50 dark:bg-red-950/30 dark:text-red-400">{error}</p>
             )}
 
             <button
               type="submit"
               disabled={loading}
-              className="h-10 w-full rounded-lg bg-brand-600 text-sm font-medium text-white transition-colors hover:bg-brand-700 disabled:opacity-50"
+              className="mt-1 h-9 w-full rounded-md bg-brand-600 text-sm font-medium text-white transition-all duration-150 hover:bg-brand-700 disabled:opacity-50 press focus-ring"
             >
               {loading
                 ? "Loading..."
@@ -245,14 +262,14 @@ export default function AuthPage() {
           </form>
 
           {/* Toggle mode */}
-          <p className="mt-6 text-center text-sm text-zinc-500">
+          <p className="mt-5 text-center text-xs text-surface-text-muted">
             {mode === "signin" ? "Don't have an account?" : "Already have an account?"}{" "}
             <button
               onClick={() => {
                 setMode(mode === "signin" ? "signup" : "signin");
                 setError(null);
               }}
-              className="font-medium text-brand-600 hover:text-brand-700 hover:underline"
+              className="font-medium text-surface-text-secondary hover:text-surface-text transition-colors"
             >
               {mode === "signin" ? "Sign up" : "Sign in"}
             </button>

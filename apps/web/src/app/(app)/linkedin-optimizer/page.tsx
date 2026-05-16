@@ -51,7 +51,7 @@ const mockSections: SectionScore[] = [
 const statusConfig = {
   strong: { label: "Strong", icon: Check, color: "text-emerald-600", bg: "bg-emerald-50", border: "border-emerald-200" },
   needs_work: { label: "Needs work", icon: AlertTriangle, color: "text-amber-600", bg: "bg-amber-50", border: "border-amber-200" },
-  missing: { label: "Missing", icon: AlertTriangle, color: "text-zinc-500", bg: "bg-zinc-50", border: "border-zinc-200" },
+  missing: { label: "Missing", icon: AlertTriangle, color: "text-surface-text-muted", bg: "bg-surface-2", border: "border-surface-border" },
 };
 
 export default function LinkedInOptimizerPage() {
@@ -62,17 +62,17 @@ export default function LinkedInOptimizerPage() {
 
   return (
     <div className="mx-auto max-w-2xl">
-      <h1 className="text-lg font-semibold text-zinc-900">LinkedIn Optimizer</h1>
-      <p className="mt-1 text-sm text-zinc-500">
+      <h1 className="text-lg font-semibold text-surface-text">LinkedIn Optimizer</h1>
+      <p className="mt-1 text-sm text-surface-text-muted">
         Align your LinkedIn profile with your Profile Cloud for maximum recruiter visibility
       </p>
 
       {/* Overall score */}
-      <div className="mt-6 rounded-xl border border-zinc-200 bg-white p-6">
+      <div className="mt-6 rounded-lg border border-surface-border bg-surface-0 p-6">
         <div className="flex items-center justify-between">
           <div>
-            <p className="text-sm text-zinc-500">Profile alignment</p>
-            <p className="mt-1 text-2xl font-bold text-zinc-900">
+            <p className="text-sm text-surface-text-muted">Profile alignment</p>
+            <p className="mt-1 text-2xl font-bold text-surface-text">
               {strong}/{total} sections optimized
             </p>
           </div>
@@ -80,7 +80,7 @@ export default function LinkedInOptimizerPage() {
             <span className="text-lg font-bold text-brand-700">{Math.round((strong / total) * 100)}%</span>
           </div>
         </div>
-        <div className="mt-4 h-2 w-full overflow-hidden rounded-full bg-zinc-100">
+        <div className="mt-4 h-2 w-full overflow-hidden rounded-full bg-surface-2">
           <div
             className="h-full rounded-full bg-brand-500 transition-all"
             style={{ width: `${(strong / total) * 100}%` }}
@@ -98,22 +98,22 @@ export default function LinkedInOptimizerPage() {
             <button
               key={section.section}
               onClick={() => setExpanded(isExpanded ? null : section.section)}
-              className={`w-full rounded-xl border text-left transition-all ${
-                isExpanded ? `${config.border} ${config.bg}` : "border-zinc-200 bg-white hover:bg-zinc-50"
+              className={`w-full rounded-lg border text-left transition-all ${
+                isExpanded ? `${config.border} ${config.bg}` : "border-surface-border bg-surface-0 hover:bg-surface-2"
               } p-4`}
             >
               <div className="flex items-center gap-3">
                 <config.icon className={`h-4 w-4 ${config.color}`} />
-                <span className="flex-1 text-sm font-medium text-zinc-900">{section.section}</span>
+                <span className="flex-1 text-sm font-medium text-surface-text">{section.section}</span>
                 <span className={`rounded-full px-2 py-0.5 text-[10px] font-medium ${config.bg} ${config.color}`}>
                   {config.label}
                 </span>
-                <ArrowRight className={`h-4 w-4 text-zinc-400 transition-transform ${isExpanded ? "rotate-90" : ""}`} />
+                <ArrowRight className={`h-4 w-4 text-surface-text-muted transition-transform ${isExpanded ? "rotate-90" : ""}`} />
               </div>
               {isExpanded && (
-                <div className="mt-3 flex items-start gap-2 border-t border-zinc-100 pt-3">
+                <div className="mt-3 flex items-start gap-2 border-t border-surface-border pt-3">
                   <Sparkles className="mt-0.5 h-4 w-4 shrink-0 text-brand-400" />
-                  <p className="text-sm leading-relaxed text-zinc-600">{section.suggestion}</p>
+                  <p className="text-sm leading-relaxed text-surface-text-secondary">{section.suggestion}</p>
                 </div>
               )}
             </button>
@@ -122,12 +122,12 @@ export default function LinkedInOptimizerPage() {
       </div>
 
       {/* Sync CTA */}
-      <div className="mt-6 rounded-xl border border-brand-200 bg-brand-50 p-5">
+      <div className="mt-6 rounded-lg border border-brand-200 bg-brand-50 p-5">
         <div className="flex items-center gap-3">
           <Eye className="h-5 w-5 text-brand-500" />
           <div>
-            <h3 className="text-sm font-semibold text-zinc-900">Preview your optimized profile</h3>
-            <p className="mt-0.5 text-xs text-zinc-500">
+            <h3 className="text-sm font-semibold text-surface-text">Preview your optimized profile</h3>
+            <p className="mt-0.5 text-xs text-surface-text-muted">
               See how your profile looks to recruiters with the suggested changes applied
             </p>
           </div>

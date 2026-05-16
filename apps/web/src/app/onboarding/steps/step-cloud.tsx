@@ -28,6 +28,7 @@ import {
   type ConflictQuestion,
   type ConflictAnswer,
 } from "./conflict-resolution";
+import { CloudVisualization, type CloudData } from "@/components/cloud";
 
 // ============================================================
 // TYPES — matching /api/cloud response
@@ -120,10 +121,10 @@ const DOMAIN_COLORS: Record<string, { hex: string; text: string; bg: string; bar
   hr:                 { hex: "#f97316", text: "text-orange-700",  bg: "bg-orange-50",  bar: "bg-orange-500",  barBg: "bg-orange-100",  border: "border-orange-200" },
   marketing:          { hex: "#a855f7", text: "text-purple-700",  bg: "bg-purple-50",  bar: "bg-purple-500",  barBg: "bg-purple-100",  border: "border-purple-200" },
   construction:       { hex: "#78716c", text: "text-stone-700",   bg: "bg-stone-50",   bar: "bg-stone-500",   barBg: "bg-stone-100",   border: "border-stone-200" },
-  legal:              { hex: "#4338ca", text: "text-indigo-700",  bg: "bg-indigo-50",  bar: "bg-indigo-500",  barBg: "bg-indigo-100",  border: "border-indigo-200" },
+  legal:              { hex: "#4338ca", text: "text-indigo-700",  bg: "bg-brand-50",  bar: "bg-brand-500",  barBg: "bg-indigo-100",  border: "border-indigo-200" },
   operations:         { hex: "#0d9488", text: "text-teal-700",    bg: "bg-teal-50",    bar: "bg-teal-500",    barBg: "bg-teal-100",    border: "border-teal-200" },
   energy:             { hex: "#ca8a04", text: "text-yellow-700",  bg: "bg-yellow-50",  bar: "bg-yellow-500",  barBg: "bg-yellow-100",  border: "border-yellow-200" },
-  general:            { hex: "#71717a", text: "text-zinc-600",    bg: "bg-zinc-50",    bar: "bg-zinc-400",    barBg: "bg-zinc-100",    border: "border-zinc-200" },
+  general:            { hex: "#71717a", text: "text-surface-text-secondary",    bg: "bg-surface-2",    bar: "bg-surface-3",    barBg: "bg-surface-2",    border: "border-surface-border" },
 };
 
 const DEPTH_LEVELS = {
@@ -150,7 +151,17 @@ interface StepCloudProps {
 
 export function StepCloud({ uploadResults, onNext }: StepCloudProps) {
   const [cloud, setCloud] = useState<ClassifiedCloud | null>(null);
+  const [identity, setIdentity] = useState<{
+    core_profession: string;
+    specializations: string[];
+    career_stage: string;
+    career_stage_generic: string;
+    qualification_country: string | null;
+    qualification_degrees: string[];
+    niche_differentiators: string[];
+  } | null>(null);
   const [education, setEducation] = useState<Array<{ institution: string; degree: string; field: string }>>([]);
+  const [cloudData, setCloudData] = useState<CloudData | null>(null);
   const [loading, setLoading] = useState(true);
   const [phase, setPhase] = useState(0);
   const [tab, setTab] = useState<ViewTab>("breadth");
@@ -164,6 +175,66 @@ export function StepCloud({ uploadResults, onNext }: StepCloudProps) {
   const [socraticQuestions, setSocraticQuestions] = useState<Array<{ id: string; question: string; skill_name: string; why_asking: string }>>([]);
   const [socraticAnswers, setSocraticAnswers] = useState<Map<string, string>>(new Map());
   const pollRef = useRef<ReturnType<typeof setInterval> | null>(null);
+
+  // Build CloudData for the new visualization from API response
+  function buildCloudData(data: Record<string, unknown>): CloudData | null {
+    if (!data.classified && !data.nodes) return null;
+    const id = data.identity as CloudData["identity"] | undefined;
+    const traj = data.trajectory as CloudData["trajectory"] | undefined;
+    const stats = data.stats as CloudData["stats"] | undefined;
+    const nodes = (data.nodes ?? []) as CloudData["nodes"];
+    const classified = data.classified as ClassifiedCloud | undefined;
+
+    return {
+      identity: {
+        name: (id as unknown as Record<string, unknown>)?.candidate_name as string ?? id?.core_profession ?? "",
+        core_profession: id?.core_profession ?? "Professional",
+        specializations: id?.specializations ?? [],
+        career_stage: id?.career_stage ?? "",
+        qualification_country: id?.qualification_country ?? null,
+        qualification_degrees: id?.qualification_degrees ?? [],
+        niche_differentiators: id?.niche_differentiators ?? [],
+      },
+      nodes: nodes.length > 0 ? nodes : (classified?.topSkills ?? []).map((s, i) => ({
+        id: `s-${i}`,
+        name: s.name,
+        tier: "core_skill" as const,
+        category: s.category ?? "general",
+        domain: s.domain ?? "general",
+        evidence: s.evidence ?? [],
+        summary: {
+          total_months_used: s.depth?.totalMonths ?? 0,
+          number_of_roles: s.depth?.roleCount ?? 0,
+          has_impact: s.depth?.hasImpact ?? false,
+          has_external_validation: s.depth?.hasCertification ?? false,
+          has_depth: false,
+          has_project: false,
+          last_used: null,
+        },
+        depth: s.depth,
+      })),
+      trajectory: {
+        roles: traj?.roles ?? (classified?.roles ?? []).map(r => ({
+          company: r.company,
+          title: r.title,
+          start_date: String(r.startYear ?? ""),
+          end_date: String(r.endYear ?? ""),
+          duration_months: r.durationMonths,
+          domain: r.domain,
+          seniority_level: 3,
+          isTraining: false,
+        })),
+      },
+      stats: stats ?? {
+        years: classified?.careerSpan?.years ?? 0,
+        roles: classified?.totalRoles ?? 0,
+        skills: classified?.topSkills?.length ?? 0,
+        evidencePoints: classified?.totalEvidencePoints ?? 0,
+        domains: classified?.domains?.length ?? 0,
+        certCount: 0,
+      },
+    };
+  }
 
   // Load conflicts → Cloud (called after parsing is confirmed done)
   async function loadConflictsAndCloud() {
@@ -193,6 +264,8 @@ export function StepCloud({ uploadResults, onNext }: StepCloudProps) {
 
       if (data?.classified) {
         setCloud(data.classified);
+        setCloudData(buildCloudData(data));
+        if (data.identity) setIdentity(data.identity);
         if (data.education) setEducation(data.education);
       }
 
@@ -286,6 +359,7 @@ export function StepCloud({ uploadResults, onNext }: StepCloudProps) {
         const data = await res.json();
         if (data.classified) {
           setCloud(data.classified);
+          setCloudData(buildCloudData(data));
           if (data.education) setEducation(data.education);
         }
       }
@@ -297,13 +371,45 @@ export function StepCloud({ uploadResults, onNext }: StepCloudProps) {
     setTimeout(() => setPhase(3), 700);
   }
 
-  // Handle Socratic answers completion — rebuild Cloud with enriched data, then show
+  // Handle Socratic answers completion — batch submit, rebuild Cloud, then show
+  const socraticCompleteRef = useRef(false);
   async function handleSocraticComplete() {
+    // Prevent double-execution (React StrictMode or render-time call)
+    if (socraticCompleteRef.current) return;
+    socraticCompleteRef.current = true;
+
     setLoading(true);
     setStage("loading");
-    // Send Socratic answers to backend (future: rebuild Cloud with enriched context)
-    // For now, just transition to Cloud view
+
+    // Build batch of real answers (exclude skips)
+    const batch = Array.from(socraticAnswers.entries())
+      .map(([questionId, answer]) => {
+        const question = socraticQuestions.find(q => q.id === questionId);
+        return question ? {
+          question_id: questionId,
+          skill_name: question.skill_name,
+          answer: answer,
+          question_text: question.question,
+        } : null;
+      })
+      .filter(Boolean);
+
+    if (batch.length > 0) {
+      try {
+        await fetch("/api/socratic/answer", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ answers: batch }),
+        });
+      } catch {
+        console.error("Failed to persist Socratic answers");
+      }
+    }
+
+    // Rebuild Cloud with enriched data, then show it
+    try { await fetch("/api/cv/build-cloud", { method: "POST" }); } catch { /* non-critical */ }
     await loadAndShowCloud();
+    socraticCompleteRef.current = false;
   }
 
   function handleConflictsSkip() {
@@ -322,6 +428,7 @@ export function StepCloud({ uploadResults, onNext }: StepCloudProps) {
           if (data.socratic_questions && data.socratic_questions.length > 0) {
             if (data.classified) {
               setCloud(data.classified);
+              setCloudData(buildCloudData(data));
               if (data.education) setEducation(data.education);
             }
             setSocraticQuestions(data.socratic_questions);
@@ -338,12 +445,23 @@ export function StepCloud({ uploadResults, onNext }: StepCloudProps) {
   const ok = uploadResults.filter((r) => r.status === "parsed");
   const bad = uploadResults.filter((r) => r.error);
 
+  // Auto-complete when all Socratic questions are answered
+  // IMPORTANT: This useEffect MUST be before any conditional returns (React hooks rule)
+  const allAnswered = stage === "socratic" && socraticQuestions.length > 0 &&
+    !socraticQuestions.find(q => !socraticAnswers.has(q.id));
+  useEffect(() => {
+    if (allAnswered) {
+      handleSocraticComplete();
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [allAnswered]);
+
   if (skipped) {
     return (
       <div className="text-center">
-        <Cloud className="mx-auto h-12 w-12 text-zinc-300" />
-        <h2 className="mt-4 text-xl font-semibold text-zinc-900">No CVs uploaded yet</h2>
-        <p className="mt-2 text-sm text-zinc-500">Upload CVs to build your evidence-based profile.</p>
+        <Cloud className="mx-auto h-12 w-12 text-surface-text-muted" />
+        <h2 className="mt-4 text-xl font-semibold text-surface-text">No CVs uploaded yet</h2>
+        <p className="mt-2 text-sm text-surface-text-muted">Upload CVs to build your evidence-based profile.</p>
         <button onClick={onNext} className="mt-6 h-10 w-full rounded-lg bg-brand-600 text-sm font-medium text-white hover:bg-brand-700">Continue</button>
       </div>
     );
@@ -353,16 +471,16 @@ export function StepCloud({ uploadResults, onNext }: StepCloudProps) {
   if (stage === "pending_parse") {
     return (
       <div className="space-y-4">
-        <div className="rounded-xl bg-gradient-to-r from-indigo-600 via-violet-600 to-purple-600 px-4 py-3 text-white shadow-md">
+        <div className="rounded-xl bg-gradient-to-r from-brand-600 via-violet-600 to-purple-600 px-4 py-3 text-white shadow-md">
           <h2 className="text-lg font-bold tracking-tight">Reading your career history...</h2>
-          <p className="mt-0.5 text-xs text-indigo-100">
+          <p className="mt-0.5 text-xs text-brand-100">
             We&apos;re extracting roles, skills, and achievements from your CVs. This page updates automatically.
           </p>
         </div>
         <div className="flex flex-col items-center py-12">
           <Loader2 className="h-8 w-8 animate-spin text-indigo-500" />
-          <p className="mt-4 text-sm font-medium text-zinc-700">Discovering what makes you stand out</p>
-          <p className="mt-1 text-xs text-zinc-400">
+          <p className="mt-4 text-sm font-medium text-surface-text-secondary">Discovering what makes you stand out</p>
+          <p className="mt-1 text-xs text-surface-text-muted">
             {uploadResults.filter((r) => r.status === "pending_parse").length} CV{uploadResults.filter((r) => r.status === "pending_parse").length > 1 ? "s" : ""} in progress — checking every few seconds
           </p>
         </div>
@@ -388,35 +506,36 @@ export function StepCloud({ uploadResults, onNext }: StepCloudProps) {
     const currentQ = socraticQuestions.find(q => !socraticAnswers.has(q.id));
 
     if (!currentQ) {
-      // All answered — proceed to Cloud
-      handleSocraticComplete();
+      // All answered — useEffect above triggers handleSocraticComplete
       return (
         <div className="flex flex-col items-center py-12">
           <Loader2 className="h-8 w-8 animate-spin text-indigo-500" />
-          <p className="mt-4 text-sm font-medium text-zinc-700">Building your profile with enriched context...</p>
+          <p className="mt-4 text-sm font-medium text-surface-text-secondary">Building your profile with enriched context...</p>
         </div>
       );
     }
 
     return (
       <div className="space-y-4">
-        <div className="rounded-xl bg-gradient-to-r from-violet-600 via-purple-600 to-indigo-600 px-4 py-3 text-white shadow-md">
+        <div className="rounded-xl bg-gradient-to-r from-violet-600 via-purple-600 to-brand-600 px-4 py-3 text-white shadow-md">
           <h2 className="text-lg font-bold tracking-tight">Help us understand you better</h2>
           <p className="mt-0.5 text-xs text-violet-100">
             {answeredCount}/{totalCount} questions · These answers make your profile more accurate
           </p>
         </div>
 
-        <div className="rounded-xl border border-zinc-200 bg-white p-4 shadow-sm">
+        <div className="rounded-xl border border-surface-border bg-surface-0 p-4 shadow-sm">
           <div className="flex items-start gap-3">
             <MessageSquare className="mt-0.5 h-5 w-5 shrink-0 text-violet-500" />
             <div className="flex-1 space-y-2">
-              <p className="text-sm font-medium text-zinc-800">{currentQ.question}</p>
-              <p className="text-xs text-zinc-400">About: {currentQ.skill_name} · {currentQ.why_asking}</p>
+              <p className="text-sm font-medium text-surface-text">{currentQ.question}</p>
+              <p className="text-xs text-surface-text-muted">About: {currentQ.skill_name} · {currentQ.why_asking}</p>
               <textarea
-                className="mt-2 w-full rounded-lg border border-zinc-200 px-3 py-2 text-sm text-zinc-700 placeholder:text-zinc-400 focus:border-violet-400 focus:outline-none focus:ring-1 focus:ring-violet-400"
+                key={currentQ.id}
+                className="mt-2 w-full rounded-lg border border-surface-border px-3 py-2 text-sm text-surface-text-secondary placeholder:text-surface-text-muted focus:border-violet-400 focus:outline-none focus:ring-1 focus:ring-violet-400"
                 placeholder="Your answer (optional — skip if you prefer)"
                 rows={3}
+                autoFocus
                 onKeyDown={(e) => {
                   if (e.key === "Enter" && !e.shiftKey) {
                     e.preventDefault();
@@ -438,7 +557,7 @@ export function StepCloud({ uploadResults, onNext }: StepCloudProps) {
                       return next;
                     });
                   }}
-                  className="rounded-lg border border-zinc-200 px-3 py-1.5 text-xs text-zinc-500 hover:bg-zinc-50"
+                  className="rounded-lg border border-surface-border px-3 py-1.5 text-xs text-surface-text-muted hover:bg-surface-2"
                 >
                   Skip
                 </button>
@@ -470,7 +589,7 @@ export function StepCloud({ uploadResults, onNext }: StepCloudProps) {
         </div>
 
         {/* Progress */}
-        <div className="h-1 rounded-full bg-zinc-100">
+        <div className="h-1 rounded-full bg-surface-2">
           <div
             className="h-1 rounded-full bg-violet-500 transition-all"
             style={{ width: `${(answeredCount / totalCount) * 100}%` }}
@@ -483,9 +602,9 @@ export function StepCloud({ uploadResults, onNext }: StepCloudProps) {
   return (
     <div className="space-y-4">
       {/* Header */}
-      <div className="rounded-xl bg-gradient-to-r from-indigo-600 via-violet-600 to-purple-600 px-4 py-3 text-white shadow-md">
+      <div className="rounded-xl bg-gradient-to-r from-brand-600 via-violet-600 to-purple-600 px-4 py-3 text-white shadow-md">
         <h2 className="text-lg font-bold tracking-tight">Your Profile Cloud</h2>
-        <p className="mt-0.5 text-xs text-indigo-100">
+        <p className="mt-0.5 text-xs text-brand-100">
           {loading ? "Connecting your experience to evidence..." : conflictsResolved ? "Updated with your corrections. Every skill backed by real evidence." : "Every skill backed by real roles, real impact."}
         </p>
       </div>
@@ -501,100 +620,14 @@ export function StepCloud({ uploadResults, onNext }: StepCloudProps) {
       {/* Loading */}
       {loading && <LoadingSkeleton />}
 
-      {/* CLOUD DATA */}
-      {!loading && cloud && (
+      {/* CLOUD DATA — New visualization */}
+      {!loading && cloudData && (
         <>
-          {/* Stat cards — with domain & top skill detail */}
-          <div className={`grid grid-cols-2 gap-2 transition-all duration-500 ${phase >= 1 ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"}`}>
-            <DetailCard
-              icon={<Clock className="h-4 w-4" />}
-              value={`${cloud.careerSpan.years} years`}
-              label="Career span"
-              detail={`${cloud.totalRoles} roles across ${cloud.domains.length} domain${cloud.domains.length !== 1 ? "s" : ""}`}
-            />
-            <DetailCard
-              icon={<TrendingUp className="h-4 w-4" />}
-              value={`${cloud.totalEvidencePoints} evidence points`}
-              label="Profile depth"
-              detail={cloud.topSkills[0] ? `Strongest: ${cloud.topSkills[0].name}` : ""}
-            />
-          </div>
-          {/* Domain chips */}
-          {cloud.domains.length > 0 && (
-            <div className={`flex flex-wrap gap-1.5 transition-all duration-500 ${phase >= 1 ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"}`}>
-              {cloud.domains.map((d) => {
-                const colors = dc(d.name);
-                const skillCount = d.categories.reduce((s, c) => s + c.skills.length, 0);
-                return (
-                  <span
-                    key={d.name}
-                    className={`inline-flex items-center gap-1.5 rounded-full ${colors.bg} ${colors.border} border px-2.5 py-1`}
-                  >
-                    <span className="h-2 w-2 rounded-full" style={{ backgroundColor: colors.hex }} />
-                    <span className={`text-xs font-medium ${colors.text}`}>{d.displayName}</span>
-                    <span className="text-[10px] text-zinc-400">{skillCount}</span>
-                  </span>
-                );
-              })}
-            </div>
-          )}
-
-          {/* Profile Summary Card (includes education + country) */}
-          <ProfileSummaryCard cloud={cloud} education={education} phase={phase} />
-
-          {/* Tabs */}
-          <div className={`transition-all duration-500 ${phase >= 2 ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"}`}>
-            <div className="flex gap-1 rounded-lg bg-zinc-100 p-0.5">
-              {([
-                { key: "breadth" as ViewTab, label: "Breadth", icon: <Radar className="h-3.5 w-3.5" /> },
-                { key: "depth" as ViewTab, label: "Depth", icon: <Layers className="h-3.5 w-3.5" /> },
-                { key: "timeline" as ViewTab, label: "Career Path", icon: <GitBranch className="h-3.5 w-3.5" /> },
-              ]).map((t) => (
-                <button
-                  key={t.key}
-                  onClick={() => setTab(t.key)}
-                  className={`flex flex-1 items-center justify-center gap-1.5 rounded-md py-1.5 text-xs font-medium transition-all ${
-                    tab === t.key ? "bg-white text-zinc-900 shadow-sm" : "text-zinc-500 hover:text-zinc-700"
-                  }`}
-                >
-                  {t.icon} {t.label}
-                </button>
-              ))}
-            </div>
-
-            <div className="mt-3">
-              {tab === "breadth" && <BreadthView cloud={cloud} />}
-              {tab === "depth" && <DepthView cloud={cloud} expanded={expandedDomain} setExpanded={setExpandedDomain} />}
-              {tab === "timeline" && <TimelineView cloud={cloud} />}
-            </div>
-          </div>
-
-          {/* Differentiators */}
-          <DifferentiatorsSection cloud={cloud} phase={phase} />
-
-          {/* Growth Opportunities */}
-          {cloud.gaps.length > 0 && (
-            <div className={`transition-all duration-500 ${phase >= 3 ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"}`}>
-              <SectionLabel text="Where to strengthen" />
-              <div className="space-y-1.5">
-                {cloud.gaps.map((gap) => (
-                  <div key={gap.skillName} className="flex items-start gap-2 rounded-lg border border-amber-200 bg-amber-50 px-3 py-2">
-                    {gap.type === "missing"
-                      ? <Sparkles className="mt-0.5 h-3.5 w-3.5 shrink-0 text-amber-500" />
-                      : <AlertTriangle className="mt-0.5 h-3.5 w-3.5 shrink-0 text-amber-500" />}
-                    <div>
-                      <span className="text-xs font-semibold text-amber-800 capitalize">{gap.skillName}</span>
-                      <p className="text-[10px] text-amber-600 leading-tight">{gap.reason}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
+          <CloudVisualization data={cloudData} animate={true} />
 
           {/* CV sources */}
           {ok.length > 0 && (
-            <div className="flex flex-wrap gap-1">
+            <div className="flex flex-wrap gap-1 mt-4">
               {ok.map((r) => (
                 <span key={r.filename} className="inline-flex items-center gap-1 rounded bg-green-50 px-1.5 py-0.5 text-[10px] text-green-700">
                   <CheckCircle2 className="h-2.5 w-2.5" /> {r.filename}
@@ -603,20 +636,26 @@ export function StepCloud({ uploadResults, onNext }: StepCloudProps) {
             </div>
           )}
 
-          {/* Correction mechanism */}
-          <CorrectionButton />
-
-          <button onClick={onNext} className="h-10 w-full rounded-lg bg-brand-600 text-sm font-medium text-white hover:bg-brand-700">
-            Continue to Socratic Questions
+          <button onClick={onNext} className="mt-4 h-10 w-full rounded-lg bg-brand-600 text-sm font-medium text-white hover:bg-brand-700">
+            Continue
           </button>
         </>
+      )}
+
+      {/* Fallback: old cloud data without new format */}
+      {!loading && cloud && !cloudData && (
+        <div className="py-6 text-center">
+          <Cloud className="mx-auto h-10 w-10 text-surface-text-muted" />
+          <p className="mt-3 text-sm text-surface-text-muted">Profile data loaded in legacy format. Rebuilding...</p>
+          <button onClick={onNext} className="mt-4 h-10 w-full rounded-lg bg-brand-600 text-sm font-medium text-white hover:bg-brand-700">Continue</button>
+        </div>
       )}
 
       {/* Empty */}
       {!loading && !cloud && (
         <div className="py-6 text-center">
-          <Cloud className="mx-auto h-10 w-10 text-zinc-300" />
-          <p className="mt-3 text-sm text-zinc-500">No skills extracted yet.</p>
+          <Cloud className="mx-auto h-10 w-10 text-surface-text-muted" />
+          <p className="mt-3 text-sm text-surface-text-muted">No skills extracted yet.</p>
           <button onClick={onNext} className="mt-4 h-10 w-full rounded-lg bg-brand-600 text-sm font-medium text-white hover:bg-brand-700">Continue</button>
         </div>
       )}
@@ -658,7 +697,7 @@ function BreadthView({ cloud }: { cloud: ClassifiedCloud }) {
                   <span className="h-2.5 w-2.5 rounded-full" style={{ backgroundColor: color.hex }} />
                   <span className={`text-sm font-semibold ${color.text}`}>{d.displayName}</span>
                 </div>
-                <span className="text-[10px] text-zinc-400">
+                <span className="text-[10px] text-surface-text-muted">
                   {d.count} skill{d.count !== 1 ? "s" : ""}{d.experts > 0 ? ` · ${d.experts} expert` : ""}
                 </span>
               </div>
@@ -671,9 +710,9 @@ function BreadthView({ cloud }: { cloud: ClassifiedCloud }) {
             </div>
           );
         })}
-        <p className="text-xs text-zinc-500 text-center pt-1">
-          <span className="font-semibold text-zinc-700">{domains.length} domain{domains.length !== 1 ? "s" : ""}</span> covering{" "}
-          <span className="font-semibold text-zinc-700">
+        <p className="text-xs text-surface-text-muted text-center pt-1">
+          <span className="font-semibold text-surface-text-secondary">{domains.length} domain{domains.length !== 1 ? "s" : ""}</span> covering{" "}
+          <span className="font-semibold text-surface-text-secondary">
             {domains.reduce((s, d) => s + d.categories.reduce((ss, c) => ss + c.skills.length, 0), 0)} skills
           </span>
         </p>
@@ -747,12 +786,12 @@ function BreadthView({ cloud }: { cloud: ClassifiedCloud }) {
         })}
       </svg>
 
-      <p className="text-xs text-zinc-500 text-center">
-        <span className="font-semibold text-zinc-700">{domains.length} domains</span> covering{" "}
-        <span className="font-semibold text-zinc-700">
+      <p className="text-xs text-surface-text-muted text-center">
+        <span className="font-semibold text-surface-text-secondary">{domains.length} domains</span> covering{" "}
+        <span className="font-semibold text-surface-text-secondary">
           {domains.reduce((s, d) => s + d.categories.reduce((ss, c) => ss + c.skills.length, 0), 0)} skills
         </span>{" "}
-        over <span className="font-semibold text-zinc-700">{cloud.careerSpan.years} years</span>
+        over <span className="font-semibold text-surface-text-secondary">{cloud.careerSpan.years} years</span>
       </p>
     </div>
   );
@@ -796,20 +835,20 @@ function DepthView({
           <div key={domain.name} className={`rounded-lg border ${colors.border} overflow-hidden`}>
             <button
               onClick={() => setExpanded(open ? null : domain.name)}
-              className="flex w-full items-center gap-2 px-3 py-2 text-left hover:bg-zinc-50/50"
+              className="flex w-full items-center gap-2 px-3 py-2 text-left hover:bg-surface-2/50"
             >
               <span className="h-2.5 w-2.5 shrink-0 rounded-full" style={{ backgroundColor: colors.hex }} />
               <span className={`flex-1 text-sm font-semibold ${colors.text}`}>{domain.displayName}</span>
-              <span className="text-[10px] text-zinc-400 shrink-0">
+              <span className="text-[10px] text-surface-text-muted shrink-0">
                 {total} skill{total !== 1 ? "s" : ""}{experts > 0 && ` \u00B7 ${experts} expert`}
               </span>
-              {open ? <ChevronUp className="h-4 w-4 text-zinc-400" /> : <ChevronDown className="h-4 w-4 text-zinc-400" />}
+              {open ? <ChevronUp className="h-4 w-4 text-surface-text-muted" /> : <ChevronDown className="h-4 w-4 text-surface-text-muted" />}
             </button>
             {open && (
-              <div className="border-t border-zinc-100 px-3 pb-3 pt-2 space-y-3 bg-white/50">
+              <div className="border-t border-surface-border px-3 pb-3 pt-2 space-y-3 bg-surface-0/50">
                 {domain.categories.map((cat) => (
                   <div key={cat.name}>
-                    <p className="mb-1 text-[10px] font-semibold uppercase tracking-wider text-zinc-400">{cat.displayName}</p>
+                    <p className="mb-1 text-[10px] font-semibold uppercase tracking-wider text-surface-text-muted">{cat.displayName}</p>
                     <div className="space-y-1">
                       {cat.skills.map((s) => <SkillBar key={s.name} skill={s} expandable />)}
                     </div>
@@ -946,8 +985,8 @@ function TimelineView({ cloud }: { cloud: ClassifiedCloud }) {
           return (
             <div key={i} className="flex items-center gap-2 text-[10px]">
               <span className="h-2 w-2 rounded-full shrink-0" style={{ backgroundColor: colors.hex }} />
-              <span className="font-medium text-zinc-700 truncate flex-1" title={r.title}>{r.title}</span>
-              <span className="text-zinc-400 shrink-0">{r.startYear}\u2013{isCurrent ? "now" : r.endYear}</span>
+              <span className="font-medium text-surface-text-secondary truncate flex-1" title={r.title}>{r.title}</span>
+              <span className="text-surface-text-muted shrink-0">{r.startYear}\u2013{isCurrent ? "now" : r.endYear}</span>
               <span className={`rounded px-1.5 py-0.5 text-[8px] font-medium ${colors.bg} ${colors.text}`}>
                 {r.seniority.label}
               </span>
@@ -956,7 +995,7 @@ function TimelineView({ cloud }: { cloud: ClassifiedCloud }) {
         })}
       </div>
 
-      <p className="text-[10px] text-zinc-400 text-center">
+      <p className="text-[10px] text-surface-text-muted text-center">
         {roles.length} role{roles.length !== 1 ? "s" : ""} \u00B7{" "}
         {cloud.careerSpan.startYear}\u2013{cloud.careerSpan.endYear} \u00B7 seniority progression
       </p>
@@ -976,19 +1015,19 @@ function LoadingSkeleton() {
           <Cloud className="h-12 w-12 text-brand-400 animate-pulse" />
           <div className="absolute -right-1 -top-1 h-3 w-3 rounded-full bg-brand-500 animate-ping" />
         </div>
-        <p className="text-sm font-medium text-zinc-700">Building your Profile Cloud</p>
-        <p className="text-xs text-zinc-400">Classifying domains, measuring depth...</p>
+        <p className="text-sm font-medium text-surface-text-secondary">Building your Profile Cloud</p>
+        <p className="text-xs text-surface-text-muted">Classifying domains, measuring depth...</p>
       </div>
       <div className="grid grid-cols-4 gap-2">
-        {[1, 2, 3, 4].map((i) => <div key={i} className="h-14 rounded-lg bg-zinc-100 animate-pulse" />)}
+        {[1, 2, 3, 4].map((i) => <div key={i} className="h-14 rounded-lg bg-surface-2 animate-pulse" />)}
       </div>
-      <div className="mx-auto h-48 w-48 rounded-full bg-zinc-100 animate-pulse" />
+      <div className="mx-auto h-48 w-48 rounded-full bg-surface-2 animate-pulse" />
     </div>
   );
 }
 
 function SectionLabel({ text }: { text: string }) {
-  return <h3 className="mb-1.5 text-[11px] font-semibold uppercase tracking-wider text-zinc-400">{text}</h3>;
+  return <h3 className="mb-1.5 text-[11px] font-semibold uppercase tracking-wider text-surface-text-muted">{text}</h3>;
 }
 
 function DetailCard({ icon, value, label, detail }: { icon: React.ReactNode; value: string; label: string; detail: string }) {
@@ -996,12 +1035,12 @@ function DetailCard({ icon, value, label, detail }: { icon: React.ReactNode; val
     <div className="rounded-xl bg-gradient-to-br from-indigo-50 via-white to-violet-50 border border-indigo-100/50 px-3 py-2.5 shadow-sm">
       <div className="flex items-center gap-2">
         <div className="text-indigo-500">{icon}</div>
-        <span className="text-[10px] font-semibold uppercase tracking-wider text-zinc-400">{label}</span>
+        <span className="text-[10px] font-semibold uppercase tracking-wider text-surface-text-muted">{label}</span>
       </div>
       <p className="mt-1 text-sm font-bold bg-gradient-to-r from-indigo-700 to-violet-700 bg-clip-text text-transparent">
         {value}
       </p>
-      {detail && <p className="mt-0.5 text-[10px] text-zinc-500">{detail}</p>}
+      {detail && <p className="mt-0.5 text-[10px] text-surface-text-muted">{detail}</p>}
     </div>
   );
 }
@@ -1017,7 +1056,7 @@ function SkillBar({ skill, expandable = false }: { skill: ClassifiedSkill; expan
   return (
     <div>
       <div
-        className={`flex items-center gap-2 ${expandable ? "cursor-pointer hover:bg-zinc-50 -mx-1 px-1 rounded" : ""}`}
+        className={`flex items-center gap-2 ${expandable ? "cursor-pointer hover:bg-surface-2 -mx-1 px-1 rounded" : ""}`}
         onClick={expandable ? () => setExpanded(!expanded) : undefined}
       >
         {/* Depth level indicator (colored dot) */}
@@ -1027,11 +1066,11 @@ function SkillBar({ skill, expandable = false }: { skill: ClassifiedSkill; expan
           title={cfg.label}
         />
         {/* Skill name — full width, no truncation */}
-        <span className="min-w-0 flex-shrink text-xs font-medium text-zinc-700" title={skill.name}>
+        <span className="min-w-0 flex-shrink text-xs font-medium text-surface-text-secondary" title={skill.name}>
           {skill.name}
         </span>
         {/* Evidence summary — concise text */}
-        <span className="ml-auto shrink-0 text-[10px] text-zinc-400 tabular-nums">
+        <span className="ml-auto shrink-0 text-[10px] text-surface-text-muted tabular-nums">
           {years > 0 && `${years}yr`}
           {years > 0 && skill.depth.roleCount > 0 && " · "}
           {skill.depth.roleCount > 0 && `${skill.depth.roleCount}r`}
@@ -1046,16 +1085,16 @@ function SkillBar({ skill, expandable = false }: { skill: ClassifiedSkill; expan
         {/* Depth level label */}
         <span className={`shrink-0 rounded px-1 py-0.5 text-[8px] font-medium ${
           skill.depth.level === "expert" ? "bg-indigo-100 text-indigo-700" :
-          skill.depth.level === "proficient" ? "bg-blue-50 text-blue-600" :
-          skill.depth.level === "applied" ? "bg-zinc-100 text-zinc-600" :
-          "bg-zinc-50 text-zinc-400"
+          skill.depth.level === "proficient" ? "bg-brand-50 text-brand-600" :
+          skill.depth.level === "applied" ? "bg-surface-2 text-surface-text-secondary" :
+          "bg-surface-2 text-surface-text-muted"
         }`}>
           {cfg.label}
         </span>
         {expandable && (
           expanded
-            ? <ChevronUp className="h-3 w-3 text-zinc-400 shrink-0" />
-            : <ChevronDown className="h-3 w-3 text-zinc-400 shrink-0" />
+            ? <ChevronUp className="h-3 w-3 text-surface-text-muted shrink-0" />
+            : <ChevronDown className="h-3 w-3 text-surface-text-muted shrink-0" />
         )}
       </div>
       {/* Evidence bar (below the text row) */}
@@ -1067,11 +1106,11 @@ function SkillBar({ skill, expandable = false }: { skill: ClassifiedSkill; expan
       </div>
       {/* Expanded evidence detail */}
       {expandable && expanded && skill.evidence && skill.evidence.length > 0 && (
-        <div className="ml-4 mt-1 mb-2 space-y-1 border-l-2 border-zinc-100 pl-3">
+        <div className="ml-4 mt-1 mb-2 space-y-1 border-l-2 border-surface-border pl-3">
           {skill.evidence.slice(0, 5).map((ev: EvidenceItem, i: number) => (
-            <div key={i} className="text-[10px] text-zinc-500">
+            <div key={i} className="text-[10px] text-surface-text-muted">
               {ev.type === "role" && (
-                <span><span className="font-medium text-zinc-600">{ev.title}</span> at {ev.company} · {Math.round((ev.duration_months ?? 0) / 12)}yr</span>
+                <span><span className="font-medium text-surface-text-secondary">{ev.title}</span> at {ev.company} · {Math.round((ev.duration_months ?? 0) / 12)}yr</span>
               )}
               {ev.type === "certification" && (
                 <span className="font-medium text-blue-600">{ev.name} — {ev.issuer || "Unknown issuer"}</span>
@@ -1104,12 +1143,12 @@ function DepthLegend() {
       {/* Depth levels */}
       <div className="flex flex-wrap gap-x-3 gap-y-1">
         {(["expert", "proficient", "applied", "mentioned"] as const).map((level) => (
-          <span key={level} className="flex items-center gap-1 text-[9px] text-zinc-500">
+          <span key={level} className="flex items-center gap-1 text-[9px] text-surface-text-muted">
             <span className={`h-2 w-2 rounded-full ${
-              level === "expert" ? "bg-indigo-600" :
-              level === "proficient" ? "bg-blue-400" :
-              level === "applied" ? "bg-zinc-400" :
-              "bg-zinc-200"
+              level === "expert" ? "bg-brand-600" :
+              level === "proficient" ? "bg-indigo-400" :
+              level === "applied" ? "bg-surface-3" :
+              "bg-surface-3"
             }`} />
             {DEPTH_LEVELS[level].label}
           </span>
@@ -1117,20 +1156,20 @@ function DepthLegend() {
       </div>
       {/* Badge legend */}
       <div className="flex flex-wrap gap-x-3 gap-y-1">
-        <span className="flex items-center gap-1 text-[9px] text-zinc-400">
+        <span className="flex items-center gap-1 text-[9px] text-surface-text-muted">
           <TrendingUp className="h-2.5 w-2.5 text-emerald-500" /> Impact
         </span>
-        <span className="flex items-center gap-1 text-[9px] text-zinc-400">
+        <span className="flex items-center gap-1 text-[9px] text-surface-text-muted">
           <Shield className="h-2.5 w-2.5 text-blue-500" /> Certified
         </span>
-        <span className="flex items-center gap-1 text-[9px] text-zinc-400">
+        <span className="flex items-center gap-1 text-[9px] text-surface-text-muted">
           <Award className="h-2.5 w-2.5 text-amber-500" /> Award
         </span>
-        <span className="flex items-center gap-1 text-[9px] text-zinc-400">
+        <span className="flex items-center gap-1 text-[9px] text-surface-text-muted">
           <FolderKanban className="h-2.5 w-2.5 text-violet-500" /> Project
         </span>
       </div>
-      <p className="text-[8px] text-zinc-400">Bar = evidence strength · Click a skill to see its evidence chain</p>
+      <p className="text-[8px] text-surface-text-muted">Bar = evidence strength · Click a skill to see its evidence chain</p>
     </div>
   );
 }
@@ -1155,16 +1194,16 @@ function DifferentiatorsSection({ cloud, phase }: { cloud: ClassifiedCloud; phas
 
 function TagRow({ icon, label, items }: { icon: React.ReactNode; label: string; items: string[] }) {
   return (
-    <div className="flex items-start gap-2 rounded-lg border border-zinc-100 bg-zinc-50 px-3 py-2">
+    <div className="flex items-start gap-2 rounded-lg border border-surface-border bg-surface-2 px-3 py-2">
       <div className="mt-0.5 shrink-0">{icon}</div>
       <div className="min-w-0">
-        <span className="text-[10px] font-semibold text-zinc-500">{label}</span>
+        <span className="text-[10px] font-semibold text-surface-text-muted">{label}</span>
         <div className="mt-0.5 flex flex-wrap gap-1">
           {items.slice(0, 6).map((item) => (
-            <span key={item} className="rounded bg-white px-1.5 py-0.5 text-[10px] text-zinc-700 border border-zinc-200">{item}</span>
+            <span key={item} className="rounded bg-surface-0 px-1.5 py-0.5 text-[10px] text-surface-text-secondary border border-surface-border">{item}</span>
           ))}
           {items.length > 6 && (
-            <span className="rounded bg-white px-1.5 py-0.5 text-[10px] text-zinc-400 border border-zinc-200">+{items.length - 6}</span>
+            <span className="rounded bg-surface-0 px-1.5 py-0.5 text-[10px] text-surface-text-muted border border-surface-border">+{items.length - 6}</span>
           )}
         </div>
       </div>
@@ -1178,90 +1217,65 @@ function TagRow({ icon, label, items }: { icon: React.ReactNode; label: string; 
 
 function ProfileSummaryCard({
   cloud,
+  identity,
   education,
   phase,
 }: {
   cloud: ClassifiedCloud;
+  identity: {
+    core_profession: string;
+    specializations: string[];
+    career_stage: string;
+    career_stage_generic: string;
+    qualification_country: string | null;
+    qualification_degrees: string[];
+    niche_differentiators: string[];
+  } | null;
   education: Array<{ institution: string; degree: string; field: string }>;
   phase: number;
 }) {
-  // Core speciality: strongest domain's top skill (by score)
-  const primaryDomain = cloud.domains[0];
-  const topSkill = cloud.topSkills[0];
-  const coreSpeciality = topSkill?.name ?? primaryDomain?.displayName ?? "Professional";
-
-  // Career stage: infer from career span + role count
+  // Use server-computed identity when available, fall back to heuristics
+  const coreSpeciality = identity?.core_profession || cloud.topSkills[0]?.name || cloud.domains[0]?.displayName || "Professional";
+  const careerStage = identity?.career_stage_generic || (cloud.careerSpan.years >= 15 ? "Senior Professional" : cloud.careerSpan.years >= 8 ? "Experienced Professional" : cloud.careerSpan.years >= 3 ? "Mid-Career Professional" : "Early-Career Professional");
+  const qualCountry = identity?.qualification_country || "";
   const years = cloud.careerSpan.years;
-  let careerStage = "Professional";
-  if (years >= 15) careerStage = "Senior Professional";
-  else if (years >= 8) careerStage = "Experienced Professional";
-  else if (years >= 3) careerStage = "Mid-Career Professional";
-  else careerStage = "Early-Career Professional";
 
-  // Qualification country: extract from education institution names
-  // Simple heuristic — look for known country keywords in institution names
-  const institutionText = education.map((e) => e.institution).join(" ").toLowerCase();
-  let qualCountry = "";
-  if (/\b(pakistan|lahore|karachi|islamabad|peshawar|quetta|faisalabad|rawalpindi|multan)\b/i.test(institutionText)) qualCountry = "Pakistan";
-  else if (/\b(india|delhi|mumbai|chennai|bangalore|kolkata|hyderabad|pune|aiims)\b/i.test(institutionText)) qualCountry = "India";
-  else if (/\b(united kingdom|london|oxford|cambridge|manchester|birmingham|edinburgh|glasgow|leeds)\b/i.test(institutionText)) qualCountry = "United Kingdom";
-  else if (/\b(united states|new york|california|texas|harvard|yale|stanford|mit|johns hopkins)\b/i.test(institutionText)) qualCountry = "United States";
-  else if (/\b(saudi|riyadh|jeddah|dammam|ksu|kfupm)\b/i.test(institutionText)) qualCountry = "Saudi Arabia";
-  else if (/\b(uae|dubai|abu dhabi|sharjah|ajman)\b/i.test(institutionText)) qualCountry = "UAE";
-  else if (/\b(australia|sydney|melbourne|brisbane|perth|adelaide)\b/i.test(institutionText)) qualCountry = "Australia";
-  else if (/\b(canada|toronto|vancouver|montreal|ottawa|calgary)\b/i.test(institutionText)) qualCountry = "Canada";
-  else if (/\b(germany|berlin|munich|hamburg|frankfurt)\b/i.test(institutionText)) qualCountry = "Germany";
-  else if (/\b(china|beijing|shanghai|guangzhou|tsinghua|peking)\b/i.test(institutionText)) qualCountry = "China";
-  else if (/\b(japan|tokyo|osaka|kyoto)\b/i.test(institutionText)) qualCountry = "Japan";
-  else if (/\b(south korea|seoul|busan|kaist)\b/i.test(institutionText)) qualCountry = "South Korea";
-  else if (/\b(egypt|cairo|alexandria)\b/i.test(institutionText)) qualCountry = "Egypt";
-  else if (/\b(nigeria|lagos|abuja|ibadan)\b/i.test(institutionText)) qualCountry = "Nigeria";
-  else if (/\b(south africa|johannesburg|cape town|pretoria)\b/i.test(institutionText)) qualCountry = "South Africa";
-  else if (/\b(philippines|manila|cebu|ateneo)\b/i.test(institutionText)) qualCountry = "Philippines";
-  else if (/\b(bangladesh|dhaka|chittagong)\b/i.test(institutionText)) qualCountry = "Bangladesh";
-  else if (/\b(sri lanka|colombo)\b/i.test(institutionText)) qualCountry = "Sri Lanka";
-  else if (/\b(malaysia|kuala lumpur|penang)\b/i.test(institutionText)) qualCountry = "Malaysia";
-  else if (/\b(iran|tehran|isfahan)\b/i.test(institutionText)) qualCountry = "Iran";
-  else if (/\b(iraq|baghdad|erbil)\b/i.test(institutionText)) qualCountry = "Iraq";
-  else if (/\b(jordan|amman)\b/i.test(institutionText)) qualCountry = "Jordan";
-  else if (/\b(turkey|istanbul|ankara)\b/i.test(institutionText)) qualCountry = "Turkey";
-  else if (/\b(qatar|doha)\b/i.test(institutionText)) qualCountry = "Qatar";
-  else if (/\b(oman|muscat)\b/i.test(institutionText)) qualCountry = "Oman";
-  else if (/\b(bahrain|manama)\b/i.test(institutionText)) qualCountry = "Bahrain";
-  else if (/\b(kuwait)\b/i.test(institutionText)) qualCountry = "Kuwait";
+  // Degrees from identity (server-computed, deduped) or education array
+  const degrees = identity?.qualification_degrees ?? education.map(ed => `${ed.degree}${ed.field ? ` (${ed.field})` : ""}`);
 
-  // Niche: certifications + instructor status
-  const certSkills = cloud.topSkills.filter((s) => s.depth.hasCertification).map((s) => s.name);
-  const niches = certSkills.slice(0, 3);
+  // Niche differentiators from identity or cert-backed skills
+  const niches = identity?.niche_differentiators ?? cloud.topSkills.filter(s => s.depth.hasCertification).map(s => s.name).slice(0, 3);
 
   return (
     <div className={`rounded-xl border border-indigo-100/50 bg-gradient-to-br from-indigo-50/50 via-white to-violet-50/50 p-3 shadow-sm transition-all duration-500 ${phase >= 1 ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"}`}>
       <div className="flex items-start gap-3">
         <div className="flex h-10 w-10 items-center justify-center rounded-full bg-indigo-100">
-          <User className="h-5 w-5 text-indigo-600" />
+          <User className="h-5 w-5 text-brand-600" />
         </div>
         <div className="flex-1 min-w-0">
-          <p className="text-sm font-bold text-zinc-900">{coreSpeciality}</p>
-          <p className="text-[11px] text-zinc-500">{careerStage}{years > 0 ? ` · ${years} years` : ""}</p>
+          <p className="text-sm font-bold text-surface-text">{coreSpeciality}</p>
+          <p className="text-[11px] text-surface-text-muted">
+            {identity?.career_stage ? `${identity.career_stage} · ` : ""}{careerStage}{years > 0 ? ` · ${years} years` : ""}
+          </p>
           {qualCountry && (
-            <p className="text-[10px] text-zinc-400 mt-0.5">Qualified in {qualCountry}</p>
+            <p className="text-[10px] text-surface-text-muted mt-0.5">Qualified in {qualCountry}</p>
           )}
-          {/* Education */}
-          {education.length > 0 && (
+          {/* Qualification degrees */}
+          {degrees.length > 0 && (
             <div className="mt-1.5 flex flex-wrap gap-1">
-              {education.map((ed, i) => (
+              {degrees.map((deg, i) => (
                 <span key={i} className="inline-flex items-center gap-1 rounded bg-blue-50 border border-blue-200 px-1.5 py-0.5 text-[9px] font-medium text-blue-700">
                   <GraduationCap className="h-2.5 w-2.5" />
-                  {ed.degree}{ed.field ? ` — ${ed.field}` : ""}
+                  {deg}
                 </span>
               ))}
             </div>
           )}
-          {/* Niche certifications */}
+          {/* Niche differentiators */}
           {niches.length > 0 && (
             <div className="mt-1 flex flex-wrap gap-1">
               {niches.map((n) => (
-                <span key={n} className="rounded bg-indigo-50 border border-indigo-200 px-1.5 py-0.5 text-[9px] font-medium text-indigo-700">
+                <span key={n} className="rounded bg-brand-50 border border-indigo-200 px-1.5 py-0.5 text-[9px] font-medium text-indigo-700">
                   {n}
                 </span>
               ))}
@@ -1307,7 +1321,7 @@ function CorrectionButton() {
     return (
       <button
         onClick={() => setOpen(true)}
-        className="flex w-full items-center justify-center gap-1.5 rounded-lg border border-zinc-200 bg-zinc-50 py-2 text-xs text-zinc-500 hover:bg-zinc-100 hover:text-zinc-700 transition-colors"
+        className="flex w-full items-center justify-center gap-1.5 rounded-lg border border-surface-border bg-surface-2 py-2 text-xs text-surface-text-muted hover:bg-surface-2 hover:text-surface-text-secondary transition-colors"
       >
         <MessageSquare className="h-3.5 w-3.5" />
         Something doesn&apos;t look right?
@@ -1316,26 +1330,26 @@ function CorrectionButton() {
   }
 
   return (
-    <div className="rounded-lg border border-zinc-200 bg-zinc-50 p-3 space-y-2">
-      <p className="text-xs font-medium text-zinc-700">Tell us what needs fixing</p>
+    <div className="rounded-lg border border-surface-border bg-surface-2 p-3 space-y-2">
+      <p className="text-xs font-medium text-surface-text-secondary">Tell us what needs fixing</p>
       <textarea
         value={message}
         onChange={(e) => setMessage(e.target.value)}
         placeholder="e.g., My speciality is Anesthesiology not ACLS, or I was a Registrar not a Junior..."
-        className="w-full rounded border border-zinc-200 bg-white px-2 py-1.5 text-xs text-zinc-700 placeholder:text-zinc-400 focus:border-indigo-300 focus:outline-none focus:ring-1 focus:ring-indigo-200 resize-none"
+        className="w-full rounded border border-surface-border bg-surface-0 px-2 py-1.5 text-xs text-surface-text-secondary placeholder:text-surface-text-muted focus:border-indigo-300 focus:outline-none focus:ring-1 focus:ring-indigo-200 resize-none"
         rows={2}
       />
       <div className="flex gap-2">
         <button
           onClick={handleSubmit}
           disabled={!message.trim()}
-          className="flex-1 rounded bg-indigo-600 py-1.5 text-xs font-medium text-white hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed"
+          className="flex-1 rounded bg-brand-600 py-1.5 text-xs font-medium text-white hover:bg-brand-700 disabled:opacity-50 disabled:cursor-not-allowed"
         >
           Submit
         </button>
         <button
           onClick={() => { setOpen(false); setMessage(""); }}
-          className="rounded px-3 py-1.5 text-xs text-zinc-500 hover:bg-zinc-100"
+          className="rounded px-3 py-1.5 text-xs text-surface-text-muted hover:bg-surface-2"
         >
           Cancel
         </button>
@@ -1346,8 +1360,8 @@ function CorrectionButton() {
 
 function EmptyTab({ label }: { label: string }) {
   return (
-    <div className="flex h-40 items-center justify-center rounded-lg border border-zinc-100 bg-zinc-50">
-      <p className="text-sm text-zinc-400">{label}</p>
+    <div className="flex h-40 items-center justify-center rounded-lg border border-surface-border bg-surface-2">
+      <p className="text-sm text-surface-text-muted">{label}</p>
     </div>
   );
 }

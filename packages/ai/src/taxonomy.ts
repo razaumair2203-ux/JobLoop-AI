@@ -1150,11 +1150,11 @@ export function classifyCloud(nodes: CloudNode[]): ClassifiedCloud {
   for (const skill of classified) {
     const rawScore = skill.depth.score;
     if (skill.domain === primaryDomain && !isSupportingCategory(skill.category)) {
-      // Core domain skills: boost by 1.3x (max 110 to stay in range)
-      skill.depth.score = Math.min(110, Math.round(rawScore * 1.3));
+      // Core domain skills: boost by 1.5x — profession ALWAYS outranks certs
+      skill.depth.score = Math.min(150, Math.round(rawScore * 1.5));
     } else if (isSupportingCategory(skill.category)) {
-      // Supporting certifications/methodologies: cap at 0.6x
-      skill.depth.score = Math.round(rawScore * 0.6);
+      // Supporting certifications/methodologies: cap at 0.3x — differentiators, not identity
+      skill.depth.score = Math.round(rawScore * 0.3);
     }
     // Skills in non-primary domains keep their raw score — no penalty
   }

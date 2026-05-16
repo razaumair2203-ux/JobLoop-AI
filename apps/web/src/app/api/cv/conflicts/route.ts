@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
+import { createAdminClient } from "@/lib/supabase/admin";
 import { getAuthUser } from "@/lib/auth";
 import { detectConflicts, buildConflictQuestions, type PersonaType } from "@jobloop/ai";
 
@@ -17,7 +18,9 @@ export async function GET() {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
-  const { data: uploads, error } = await supabase
+  const db = createAdminClient();
+
+  const { data: uploads, error } = await db
     .from("cv_uploads")
     .select("id, filename, parsed_cv")
     .eq("user_id", user.id)
@@ -33,7 +36,7 @@ export async function GET() {
   }
 
   // Load user's persona for persona-aware conflict filtering
-  const { data: userRow } = await supabase
+  const { data: userRow } = await db
     .from("users")
     .select("persona")
     .eq("id", user.id)

@@ -1,15 +1,21 @@
 import { createClient } from "@/lib/supabase/server";
+import { createAdminClient } from "@/lib/supabase/admin";
 import { ensureUserExists } from "@/lib/ensure-user";
 import { getAuthUser } from "@/lib/auth";
 import { loadCloudFromDB } from "@/lib/cloud-from-db";
 import { processAnswer, skillsMatch, detectContradictions } from "@jobloop/ai";
 import type { SocraticAnswer } from "@jobloop/ai";
 
+const SKIP_PATTERNS = /^(skip|skipped|n\/a|na|none|no|pass|-|\.{1,3})$/i;
+
 /**
  * POST /api/socratic/answer
  *
- * Accepts a Socratic answer, updates the Profile Cloud (source of truth),
- * and persists both the Q&A record and the updated Cloud node.
+ * Accepts Socratic answers (single or batch), updates the Profile Cloud,
+ * and persists Q&A records.
+ *
+ * Body: { answers: Array<{ question_id, skill_name, answer, question_text? }> }
+ *   OR: { question_id, skill_name, answer, answer_text?, question_text? } (legacy single)
  */
 export async function POST(request: Request) {
   const supabase = await createClient();
@@ -19,27 +25,30 @@ export async function POST(request: Request) {
     return Response.json({ error: "Unauthorized" }, { status: 401 });
   }
 
-  await ensureUserExists(supabase, user);
+  const db = createAdminClient();
+  await ensureUserExists(db, user);
 
   const body = await request.json();
-  const { question_id, skill_name, answer, application_id, question_text } = body;
 
-  if (!question_id || !skill_name || !answer) {
-    return Response.json(
-      { error: "Missing required fields: question_id, skill_name, answer" },
-      { status: 400 }
-    );
-  }
-
-  if (typeof answer !== "string" || answer.trim().length < 5) {
-    return Response.json(
-      { error: "Answer must be at least 5 characters" },
-      { status: 400 }
-    );
-  }
+  // Support both batch and single answer formats
+  const answerList: Array<{
+    question_id: string;
+    skill_name: string;
+    answer: string;
+    question_text?: string;
+    application_id?: string;
+  }> = body.answers
+    ? body.answers
+    : [{
+        question_id: body.question_id,
+        skill_name: body.skill_name,
+        answer: body.answer ?? body.answer_text,
+        question_text: body.question_text,
+        application_id: body.application_id,
+      }];
 
   // Load user's Cloud from DB (with trajectory reconstruction)
-  const cloud = await loadCloudFromDB(supabase, user.id);
+  const cloud = await loadCloudFromDB(db, user.id);
 
   if (!cloud) {
     return Response.json(
@@ -48,90 +57,110 @@ export async function POST(request: Request) {
     );
   }
 
-  // Track which nodes existed before (store names for alias-aware comparison later)
-  const existingNodeNames = cloud.nodes.map((n) => n.name);
+  const results: Array<{ skill: string; status: "updated" | "skipped" | "error"; is_new?: boolean }> = [];
+  let updatedCloud = cloud;
 
-  // Process the answer — updates existing node or creates new one
-  const updatedCloud = processAnswer(
-    cloud,
-    { question_id, skill_name, answer: answer.trim() },
-    application_id || null
-  );
+  for (const item of answerList) {
+    const { question_id, skill_name, answer: rawAnswer, question_text, application_id } = item;
 
-  // Find the affected node (either updated or newly created)
-  // Use skillsMatch for alias-aware lookup — must match how processAnswer finds nodes
-  const affectedNode = updatedCloud.nodes.find(
-    (n) => skillsMatch(n.name, skill_name)
-  );
-
-  if (!affectedNode) {
-    // Should not happen — processAnswer always creates or updates
-    return Response.json(
-      { error: "Failed to process answer" },
-      { status: 500 }
-    );
-  }
-
-  // Persist: upsert the affected Cloud node
-  const isNewNode = !existingNodeNames.some((name) => skillsMatch(name, affectedNode.name));
-
-  if (isNewNode) {
-    // INSERT new node
-    const { error: insertError } = await supabase.from("cloud_nodes").insert({
-      user_id: user.id,
-      type: affectedNode.type,
-      name: affectedNode.name,
-      category: affectedNode.category,
-      evidence: affectedNode.evidence,
-      summary: affectedNode.summary,
-    });
-
-    if (insertError) {
-      console.error("Failed to insert new cloud node:", insertError);
-      return Response.json(
-        { error: "Failed to save new skill to cloud" },
-        { status: 500 }
-      );
+    if (!question_id || !skill_name) {
+      results.push({ skill: skill_name ?? "unknown", status: "error" });
+      continue;
     }
-  } else {
-    // UPDATE existing node
-    const { error: updateError } = await supabase
-      .from("cloud_nodes")
-      .update({
+
+    const answer = typeof rawAnswer === "string" ? rawAnswer.trim() : "";
+
+    // Handle skips — mark question as skipped, don't create garbage evidence
+    const isSkip = !answer || answer.length < 5 || SKIP_PATTERNS.test(answer);
+
+    if (isSkip) {
+      // Update existing question row (if persisted from /api/cloud) to mark as skipped
+      await db.from("socratic_qa")
+        .update({ answer: null, answered_at: new Date().toISOString() })
+        .eq("id", question_id)
+        .eq("user_id", user.id);
+
+      results.push({ skill: skill_name, status: "skipped" });
+      continue;
+    }
+
+    // Track existing nodes for new-node detection
+    const existingNodeNames = updatedCloud.nodes.map((n) => n.name);
+
+    // Process the answer — updates existing node or creates new one
+    updatedCloud = processAnswer(
+      updatedCloud,
+      { question_id, skill_name, answer },
+      application_id || null
+    );
+
+    // Find the affected node
+    const affectedNode = updatedCloud.nodes.find(
+      (n) => skillsMatch(n.name, skill_name)
+    );
+
+    if (!affectedNode) {
+      results.push({ skill: skill_name, status: "error" });
+      continue;
+    }
+
+    const isNewNode = !existingNodeNames.some((name) => skillsMatch(name, affectedNode.name));
+
+    // Persist Cloud node update
+    if (isNewNode) {
+      const { error: insertError } = await db.from("cloud_nodes").insert({
+        user_id: user.id,
+        type: affectedNode.type,
+        name: affectedNode.name,
+        category: affectedNode.category,
         evidence: affectedNode.evidence,
         summary: affectedNode.summary,
-      })
-      .eq("id", affectedNode.id);
-
-    if (updateError) {
-      console.error("Failed to update cloud node:", updateError);
-      return Response.json(
-        { error: "Failed to update cloud" },
-        { status: 500 }
-      );
+      });
+      if (insertError) console.error("Failed to insert new cloud node:", insertError);
+    } else {
+      const { error: updateError } = await db
+        .from("cloud_nodes")
+        .update({
+          evidence: affectedNode.evidence,
+          summary: affectedNode.summary,
+        })
+        .eq("id", affectedNode.id);
+      if (updateError) console.error("Failed to update cloud node:", updateError);
     }
+
+    // Update the question row with the answer (if it was pre-persisted from /api/cloud)
+    const { error: updateQError } = await db.from("socratic_qa")
+      .update({
+        answer: answer,
+        skill_targeted: affectedNode.name,
+        answered_at: new Date().toISOString(),
+      })
+      .eq("id", question_id)
+      .eq("user_id", user.id);
+
+    // If update matched 0 rows (question wasn't pre-persisted), insert new row
+    if (updateQError) {
+      await db.from("socratic_qa").insert({
+        user_id: user.id,
+        application_id: application_id || null,
+        question: question_text || question_id,
+        answer: answer,
+        gate: application_id ? "jd_match" : "cv_upload",
+        skill_targeted: affectedNode.name,
+        answered_at: new Date().toISOString(),
+      });
+    }
+
+    results.push({
+      skill: affectedNode.name,
+      status: "updated",
+      is_new: isNewNode,
+    });
   }
 
-  // Save Q&A record — store the actual question text, not just the ID
-  const { error: qaError } = await supabase.from("socratic_qa").insert({
-    user_id: user.id,
-    application_id: application_id || null,
-    question: question_text || question_id, // prefer text, fall back to ID
-    answer: answer.trim(),
-    gate: application_id ? "jd_match" : "cv_upload",
-    skill_targeted: affectedNode.name,
-    answered_at: new Date().toISOString(),
-  });
-
-  if (qaError) {
-    console.error("Failed to save socratic Q&A record:", qaError);
-    // Non-critical — Cloud was already updated, don't fail the request
-  }
-
-  // Check for contradictions across all Socratic answers for this user
-  // Only runs when we have 2+ answered questions (meaningful cross-check)
+  // Check for contradictions across all answered questions
   let contradictions = null;
-  const { data: allQA } = await supabase
+  const { data: allQA } = await db
     .from("socratic_qa")
     .select("question, answer, skill_targeted")
     .eq("user_id", user.id)
@@ -154,10 +183,7 @@ export async function POST(request: Request) {
 
   return Response.json({
     success: true,
-    node_updated: affectedNode.name,
-    is_new_skill: isNewNode,
-    evidence_count: affectedNode.evidence.length,
-    summary: affectedNode.summary,
+    results,
     contradictions,
   });
 }

@@ -584,12 +584,56 @@ export function mergeResolvedProfile(
 
   function normalizeFieldName(field: string): string {
     const f = field.toLowerCase().trim();
-    // Normalize common field variations
+    // Healthcare
     if (f.includes("anesthes") || f.includes("anaesth")) return "anesthesiology";
-    if (f.includes("computer science") || f.includes("cs") && f.length <= 3) return "computer_science";
-    if (f.includes("electrical") && f.includes("eng")) return "electrical_engineering";
-    if (f.includes("mechanical") && f.includes("eng")) return "mechanical_engineering";
     if (f.includes("medicine") || f === "medical" || f === "mbbs") return "medicine";
+    if (f.includes("nurs")) return "nursing";
+    if (f.includes("pharmac") || f.includes("pharm.d") || f.includes("pharmd")) return "pharmacy";
+    if (f.includes("dentist") || f.includes("dental") || f.includes("bds")) return "dentistry";
+    if (f.includes("physiother") || f.includes("physical therapy")) return "physiotherapy";
+    if (f.includes("public health") || f.includes("epidemiol")) return "public_health";
+    if (f.includes("surg")) return "surgery";
+    if (f.includes("cardio")) return "cardiology";
+    if (f.includes("pediatr") || f.includes("paediatr")) return "pediatrics";
+    if (f.includes("radiol")) return "radiology";
+    if (f.includes("psychiatr") || f.includes("psycholog")) return "psychology";
+    // Engineering
+    if (f.includes("computer science") || (f.includes("cs") && f.length <= 3)) return "computer_science";
+    if (f.includes("software")) return "software_engineering";
+    if (f.includes("electrical") && f.includes("eng")) return "electrical_engineering";
+    if (f.includes("electronic")) return "electronics_engineering";
+    if (f.includes("mechanical") && f.includes("eng")) return "mechanical_engineering";
+    if (f.includes("civil") && f.includes("eng")) return "civil_engineering";
+    if (f.includes("chemical") && f.includes("eng")) return "chemical_engineering";
+    if (f.includes("aerospace") || f.includes("aeronaut")) return "aerospace_engineering";
+    if (f.includes("biomedical") && f.includes("eng")) return "biomedical_engineering";
+    if (f.includes("industrial") && f.includes("eng")) return "industrial_engineering";
+    if (f.includes("environmental") && f.includes("eng")) return "environmental_engineering";
+    if (f.includes("information tech") || f === "it") return "information_technology";
+    if (f.includes("data science") || f.includes("data analytics")) return "data_science";
+    // Business & Management
+    if (f.includes("business admin") || f.includes("bba")) return "business_administration";
+    if (f.includes("marketing")) return "marketing";
+    if (f.includes("finance") || f.includes("financial")) return "finance";
+    if (f.includes("human resource") || f.includes("hr")) return "human_resources";
+    if (f.includes("supply chain") || f.includes("logistics")) return "supply_chain";
+    if (f.includes("project management")) return "project_management";
+    if (f.includes("economics") || f.includes("econ")) return "economics";
+    // Accounting & Law
+    if (f.includes("account") || f.includes("acca") || f.includes("cpa")) return "accounting";
+    if (f.includes("law") || f.includes("legal") || f.includes("llb") || f.includes("jd") || f.includes("juris")) return "law";
+    // Arts & Social Sciences
+    if (f.includes("education") || f.includes("teaching") || f.includes("pedagog")) return "education";
+    if (f.includes("architecture")) return "architecture";
+    if (f.includes("design") && !f.includes("eng")) return "design";
+    if (f.includes("journalism") || f.includes("mass comm")) return "journalism";
+    if (f.includes("sociology")) return "sociology";
+    if (f.includes("political") || f.includes("international relation")) return "political_science";
+    // Sciences
+    if (f.includes("physics")) return "physics";
+    if (f.includes("chemistry") || f.includes("chem")) return "chemistry";
+    if (f.includes("biology") || f.includes("biotech")) return "biology";
+    if (f.includes("mathematics") || f.includes("math") || f.includes("statistics")) return "mathematics";
     return f;
   }
 

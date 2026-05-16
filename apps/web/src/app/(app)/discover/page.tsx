@@ -105,8 +105,8 @@ export default function DiscoverPage() {
     <div>
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold text-zinc-900">Discover Jobs</h1>
-          <p className="mt-1 text-sm text-zinc-500">
+          <h1 className="text-2xl font-bold text-surface-text">Discover Jobs</h1>
+          <p className="mt-1 text-sm text-surface-text-muted">
             Jobs matched to your Profile Cloud evidence
           </p>
         </div>
@@ -119,24 +119,24 @@ export default function DiscoverPage() {
       {/* Search + filters */}
       <div className="mt-6 flex gap-3">
         <div className="relative flex-1">
-          <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-zinc-400" />
+          <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-surface-text-muted" />
           <input
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Search roles, companies..."
-            className="w-full rounded-xl border border-zinc-200 bg-white py-2.5 pl-10 pr-4 text-sm placeholder:text-zinc-400 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
+            className="w-full rounded-lg border border-surface-border bg-surface-0 py-2.5 pl-10 pr-4 text-sm placeholder:text-surface-text-muted focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
           />
         </div>
         <div className="relative">
-          <MapPin className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-zinc-400" />
+          <MapPin className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-surface-text-muted" />
           <input
             value={locationFilter}
             onChange={(e) => setLocationFilter(e.target.value)}
             placeholder="Location"
-            className="w-48 rounded-xl border border-zinc-200 bg-white py-2.5 pl-10 pr-4 text-sm placeholder:text-zinc-400 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
+            className="w-48 rounded-lg border border-surface-border bg-surface-0 py-2.5 pl-10 pr-4 text-sm placeholder:text-surface-text-muted focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
           />
         </div>
-        <div className="flex gap-1 rounded-xl border border-zinc-200 bg-zinc-50 p-0.5">
+        <div className="flex gap-1 rounded-lg border border-surface-border bg-surface-2 p-0.5">
           {[
             { id: "all", label: "All" },
             { id: "remote", label: "Remote" },
@@ -148,8 +148,8 @@ export default function DiscoverPage() {
               onClick={() => setTypeFilter(opt.id)}
               className={`rounded-lg px-3 py-1.5 text-xs font-medium transition-colors ${
                 typeFilter === opt.id
-                  ? "bg-white text-zinc-900 shadow-sm"
-                  : "text-zinc-500 hover:text-zinc-700"
+                  ? "bg-surface-0 text-surface-text shadow-sm"
+                  : "text-surface-text-muted hover:text-surface-text-secondary"
               }`}
             >
               {opt.label}
@@ -165,13 +165,13 @@ export default function DiscoverPage() {
           return (
             <div
               key={job.id}
-              className="rounded-xl border border-zinc-200 bg-white p-5 transition-colors hover:border-zinc-300"
+              className="rounded-lg border border-surface-border bg-surface-0 p-5 transition-colors hover:border-surface-border"
             >
               <div className="flex items-start gap-4">
                 <img
                   src={`https://img.logo.dev/${job.companyDomain}?token=pk_anonymous&size=64`}
                   alt={job.company}
-                  className="h-10 w-10 rounded-lg border border-zinc-100"
+                  className="h-10 w-10 rounded-lg border border-surface-border"
                   onError={(e) => {
                     (e.target as HTMLImageElement).style.display = "none";
                   }}
@@ -179,8 +179,8 @@ export default function DiscoverPage() {
                 <div className="flex-1">
                   <div className="flex items-start justify-between">
                     <div>
-                      <h3 className="text-sm font-semibold text-zinc-900">{job.title}</h3>
-                      <div className="mt-0.5 flex items-center gap-2 text-xs text-zinc-500">
+                      <h3 className="text-sm font-semibold text-surface-text">{job.title}</h3>
+                      <div className="mt-0.5 flex items-center gap-2 text-xs text-surface-text-muted">
                         <span className="flex items-center gap-1">
                           <Building2 className="h-3 w-3" /> {job.company}
                         </span>
@@ -199,14 +199,14 @@ export default function DiscoverPage() {
                         <span className={`h-1.5 w-1.5 rounded-full ${match.dot}`} />
                         {match.label}
                       </span>
-                      <span className="text-xs text-zinc-400">{job.posted}</span>
+                      <span className="text-xs text-surface-text-muted">{job.posted}</span>
                     </div>
                   </div>
 
                   {/* Match reason */}
-                  <div className="mt-2 flex items-start gap-2 rounded-lg bg-zinc-50 p-2.5">
+                  <div className="mt-2 flex items-start gap-2 rounded-lg bg-surface-2 p-2.5">
                     <Sparkles className="mt-0.5 h-3.5 w-3.5 shrink-0 text-brand-400" />
-                    <p className="text-xs text-zinc-600">{job.matchReason}</p>
+                    <p className="text-xs text-surface-text-secondary">{job.matchReason}</p>
                   </div>
 
                   {/* Skills */}
@@ -215,7 +215,7 @@ export default function DiscoverPage() {
                       {job.skills.map((skill) => (
                         <span
                           key={skill}
-                          className="rounded-full bg-zinc-100 px-2 py-0.5 text-[10px] font-medium text-zinc-600"
+                          className="rounded-full bg-surface-2 px-2 py-0.5 text-[10px] font-medium text-surface-text-secondary"
                         >
                           {skill}
                         </span>

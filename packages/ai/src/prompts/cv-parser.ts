@@ -157,7 +157,28 @@ Read the ENTIRE CV text once. Before extracting any fields, identify:
 - When extracting role titles, understand the career progression norms for this profession. Medical: House Officer → Medical Officer → Registrar → Senior Registrar → Consultant. Military: rank-based. Tech: Junior → Mid → Senior → Staff → Principal.
 - When extracting education, understand degree equivalences within the candidate's country. FCPS (Pakistan) = Fellowship = postgraduate specialization. MBBS (South Asia) = MD (US) = medical degree. B.Tech (India) = B.Eng (UK) = B.Sc. Engineering (US).
 
-This step produces NO output — it sets your mental model for everything that follows. Do NOT include a "candidate_context" field in the JSON output.
+Output this as a "candidate_context" object in the JSON with fields: primary_profession, specialization, career_level, country_of_qualification, candidate_name.
+
+## STEP 0.5: QUALIFICATION CHAIN
+
+Before extracting experience and skills, identify the candidate's qualification chain. For each degree/qualification found:
+
+1. Is it a DEGREE earned through study + exam? → type: "degree"
+2. Does it include TRAINING/RESIDENCY (clinical/practical hours)? → type: "degree+experience"
+   - The training period IS professional experience. Extract it as BOTH education AND experience.
+   - Examples: FCPS requires 4-year residency (hospital work). PE license requires supervised engineering practice. CPA requires audit hours.
+3. Is it a LICENSE (permission to practice)? → type: "license"
+   - PMDC, SCFHS, GMC, state medical board, PE license, bar admission
+   - Binary: active/expired/pending
+4. Is it a CERTIFICATION (proof of competency)? → type: "certification"
+   - Has levels: Instructor > Provider > Holder
+   - Has issuer and year
+5. Is it a VOLUNTARY CERT (supplementary)? → type: "voluntary"
+   - Heart Saver, First Aid, online courses, MOOCs
+
+IMPORTANT: If the candidate has a professional qualification (FCPS, PE, CPA, FRCS) that requires supervised practice, the practice period IS professional experience. Do NOT create a gap for it. Do NOT classify training as "Junior" — it is progression TOWARD specialist status.
+
+Output this as a "qualification_chain" array in the JSON. Each item: { type, name, institution, year, status, training_component?: { hospital, duration_months } }.
 
 ## TEXT CLEANUP (apply before parsing)
 
@@ -201,6 +222,20 @@ Return ONLY this JSON object. No markdown fences. No commentary.
     "other": ["any other URLs"]
   },
   "summary": "Professional summary/objective text verbatim, or null if absent",
+  "candidate_context": {
+    "primary_profession": "Anesthesiologist",
+    "specialization": "Cardiac Anesthesia",
+    "career_level": "Senior Registrar",
+    "country_of_qualification": "Pakistan",
+    "candidate_name": "Full Name"
+  },
+  "qualification_chain": [
+    { "type": "degree", "name": "MBBS", "institution": "University Name", "year": 2014, "status": "completed" },
+    { "type": "degree+experience", "name": "FCPS Anesthesiology", "institution": "CPSP", "year": 2024, "status": "completed", "training_component": { "hospital": "Hospital Name", "duration_months": 48 } },
+    { "type": "license", "name": "PMDC Registration", "institution": "PMDC", "year": 2014, "status": "active" },
+    { "type": "certification", "name": "ACLS Provider", "institution": "AHA", "year": 2022, "status": "active" },
+    { "type": "voluntary", "name": "Heart Saver", "institution": "AHA", "year": 2023, "status": "active" }
+  ],
   "total_experience_years": 16,
   "experience": [
     {
@@ -430,11 +465,72 @@ Return ONLY this JSON object. No markdown fences. No commentary.
 - Include EVERY skill from every section — skills section, role bullets, certifications, education, summary. Cast a wide net. The Cloud builder will deduplicate.
 - If a skill appears in multiple places (skills section AND a role), include it ONCE with source = "experience" (stronger evidence wins).
 
+#### ROLE-IMPLIED SKILL EXTRACTION (CRITICAL — users understate their skills)
+
+Users are often careless or modest. Their CV bullets describe WHAT they did but omit the SKILLS they used. You must INFER skills from role context:
+
+1. **Read each role title + bullets together.** Identify skills the person MUST have used even if not explicitly stated.
+   - "Managed 500 critical emergencies in ER" → implies: Emergency Triage, Hemodynamic Stabilization, Airway Management, Trauma Assessment
+   - "Led ACLS & BLS workshops for 400 professionals" → implies: Curriculum Development, Adult Education, Clinical Simulation, Assessment & Evaluation
+   - "Deployed Kubernetes clusters across 3 regions" → implies: Container Orchestration, Infrastructure as Code, CI/CD Pipeline, Cloud Networking
+   - "Managed $2M renovation project" → implies: Budget Management, Contractor Coordination, Project Scheduling, Compliance
+
+2. **Use the candidate's profession context (Step 0) to guide inference.** A bullet about "monitoring patients" implies different skills for:
+   - Anesthesiologist → Hemodynamic Monitoring, SpO2/EtCO2 Monitoring, Ventilator Management
+   - ICU Nurse → Vital Signs Assessment, Early Warning Score Systems, Patient Documentation
+   - Biomedical Engineer → Medical Device Calibration, Equipment Maintenance
+
+3. **Mark inferred skills with source = "experience"** (they come from role context, not explicit listing).
+
+4. **DO NOT fabricate.** Only infer skills that are CLEARLY implied by the role + bullets. "Managed a team" → "Team Leadership" is safe. "Worked at a hospital" → "Brain Surgery" is NOT safe.
+
+5. **Extract tools, equipment, and techniques** specific to the profession when mentioned in bullets, even casually:
+   - "Used fiber-optic scope for difficult intubation" → extract "Fiber-Optic Intubation" as a skill
+   - "Configured Terraform modules" → extract "Terraform" as a skill
+   - "Applied FMEA to process improvement" → extract "Failure Mode & Effects Analysis (FMEA)" as a skill
+
 ### Certifications
 - Extract the full name, not just the acronym.
 - issuer: Infer if obvious (PMP → PMI, AWS SA → Amazon, PRINCE2 → Axelos). Use null if unknown.
 - year: Extract if mentioned, null otherwise.
 - active: true unless explicitly stated as "expired" or "lapsed".
+
+#### CREDENTIAL ECOSYSTEM UNDERSTANDING (CRITICAL)
+
+Before classifying certifications, understand the INSTITUTIONAL HIERARCHY behind each credential:
+
+1. **Certification Body** = the organization that DEFINES and ACCREDITS the certification standard.
+   - AHA (American Heart Association) → defines ACLS, BLS, PALS, Heart Saver standards
+   - PMI (Project Management Institute) → defines PMP, PMI-ACP standards
+   - AWS (Amazon Web Services) → defines AWS SA, AWS DevOps certifications
+   - CPSP (College of Physicians & Surgeons, Pakistan) → defines FCPS fellowship
+   - SCFHS (Saudi Commission for Health Specialties) → defines Saudi medical licenses
+
+2. **Training Center / Test Center** = the organization that DELIVERS the training or exam.
+   - A university, hospital, or institution AUTHORIZED by the certification body to conduct exams/workshops
+   - Example: CPSP Pakistan is an AHA-aligned Training Center where AHA Instructor courses are delivered
+   - Example: Prometric is a test center for PMI exams, NOT the certifying body
+   - Example: A hospital runs ACLS courses as an AHA Training Center, NOT as the cert issuer
+
+3. **Credential Level** = the holder's STATUS within the certification hierarchy.
+   - AHA: Instructor > Provider > Holder (Instructor = can teach others, highest level)
+   - PRINCE2: Practitioner > Foundation
+   - AWS: Professional > Associate > Practitioner
+   - Cisco: Expert (CCIE) > Professional (CCNP) > Associate (CCNA)
+   - CFA: Level III > Level II > Level I
+
+**KEY RULE**: When a role says "X Instructor @ Y Organization":
+- If X is a certification body (AHA, PMI, Red Cross, etc.), the role means: "Holds Instructor-level credential from X, physically delivers training at Y"
+- The ISSUER is X (the certification body), not Y (the training center)
+- The EMPLOYER/venue is Y, but the credential comes from X
+- Example: "AHA Instructor @ CPSP Pakistan" → cert issuer = AHA, training venue = CPSP
+
+**KEY RULE**: When multiple licenses appear across CVs (e.g., "Medical License", "Medical License (PMDC)", "License to Practice"):
+- Use the candidate's qualification country to infer the ISSUER when not specified
+- "Medical License" for a Pakistani doctor = PMDC (Pakistan Medical & Dental Council)
+- "License to Practice" for a Pakistani doctor working in Saudi = likely SCFHS
+- Group them by ISSUING AUTHORITY, not by label text
+
 - tier: Classify each certification into ONE of these tiers:
   - "gold" — Industry-standard professional certifications that require exam + experience + maintenance. Examples: PMP, PMI-ACP, PMI-RMP, PE, EASA Part-66, AWS Solutions Architect Professional, CISSP, CPA, PRINCE2 Practitioner, CSEP (INCOSE), Six Sigma Black Belt (ASQ), TOGAF Certified. These PROVE validated expertise.
   - "specialization" — Multi-course structured learning programs (3+ courses) from reputable providers. Examples: Google Project Management Certificate (6 courses), Rice Engineering PM Specialization (3 courses), AWS Cloud Practitioner, Coursera/edX specializations, university certificate programs. These show structured commitment.

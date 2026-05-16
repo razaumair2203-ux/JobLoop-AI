@@ -115,10 +115,10 @@ export function ConflictResolution({
           <AlertTriangle className="h-5 w-5 text-amber-600" />
         </div>
         <div>
-          <h2 className="text-xl font-semibold text-zinc-900">
+          <h2 className="text-xl font-semibold text-surface-text">
             We noticed a few things
           </h2>
-          <p className="mt-1 text-sm text-zinc-500">
+          <p className="mt-1 text-sm text-surface-text-muted">
             Your CVs have some differences we&apos;d like to clarify. This takes 30
             seconds and makes your profile much more accurate.
           </p>
@@ -135,12 +135,12 @@ export function ConflictResolution({
                 ? "bg-brand-500"
                 : i === current
                   ? "bg-brand-300"
-                  : "bg-zinc-100"
+                  : "bg-surface-2"
             }`}
           />
         ))}
       </div>
-      <div className="mt-1.5 flex items-center justify-between text-xs text-zinc-400">
+      <div className="mt-1.5 flex items-center justify-between text-xs text-surface-text-muted">
         <span>
           {current + 1} of {questions.length}
         </span>
@@ -148,17 +148,17 @@ export function ConflictResolution({
       </div>
 
       {/* Question card */}
-      <div className="mt-5 rounded-xl border border-zinc-200 bg-zinc-50 p-5">
+      <div className="mt-5 rounded-xl border border-surface-border bg-surface-2 p-5">
         {/* Type badge */}
         <div className="mb-3 flex items-center gap-2">
-          <Icon className="h-4 w-4 text-zinc-400" />
-          <span className="text-xs font-medium uppercase tracking-wide text-zinc-400">
+          <Icon className="h-4 w-4 text-surface-text-muted" />
+          <span className="text-xs font-medium uppercase tracking-wide text-surface-text-muted">
             {typeLabels[q.type] ?? q.type}
           </span>
         </div>
 
         {/* Question text */}
-        <p className="text-sm font-medium leading-relaxed text-zinc-800">
+        <p className="text-sm font-medium leading-relaxed text-surface-text">
           {q.question}
         </p>
 
@@ -174,14 +174,14 @@ export function ConflictResolution({
                   className={`flex w-full items-center gap-3 rounded-lg border px-4 py-3 text-left text-sm transition-all ${
                     isSelected
                       ? "border-brand-500 bg-brand-50 text-brand-900"
-                      : "border-zinc-200 bg-white text-zinc-700 hover:border-zinc-300 hover:bg-zinc-50"
+                      : "border-surface-border bg-surface-0 text-surface-text-secondary hover:border-surface-border hover:bg-surface-2"
                   }`}
                 >
                   <div
                     className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-full border-2 transition-colors ${
                       isSelected
                         ? "border-brand-500 bg-brand-500"
-                        : "border-zinc-300"
+                        : "border-surface-border"
                     }`}
                   >
                     {isSelected && (
@@ -207,7 +207,7 @@ export function ConflictResolution({
                   : "Tell us in your own words..."
               }
               rows={2}
-              className="w-full resize-none rounded-lg border border-zinc-200 bg-white px-3 py-2 text-sm text-zinc-800 placeholder-zinc-400 outline-none transition-colors focus:border-brand-400 focus:ring-1 focus:ring-brand-400"
+              className="w-full resize-none rounded-lg border border-surface-border bg-surface-0 px-3 py-2 text-sm text-surface-text placeholder-surface-text-muted outline-none transition-colors focus:border-brand-400 focus:ring-1 focus:ring-brand-400"
             />
           </div>
         )}
@@ -217,7 +217,7 @@ export function ConflictResolution({
       <div className="mt-5 flex items-center justify-between">
         <button
           onClick={onSkip}
-          className="text-sm text-zinc-400 transition-colors hover:text-zinc-600"
+          className="text-sm text-surface-text-muted transition-colors hover:text-surface-text-secondary"
         >
           Skip all — build Cloud with what we have
         </button>
@@ -225,7 +225,7 @@ export function ConflictResolution({
           {current > 0 && (
             <button
               onClick={() => setCurrent(current - 1)}
-              className="rounded-lg px-4 py-2 text-sm font-medium text-zinc-600 transition-colors hover:bg-zinc-100"
+              className="rounded-lg px-4 py-2 text-sm font-medium text-surface-text-secondary transition-colors hover:bg-surface-2"
             >
               Back
             </button>
@@ -236,7 +236,7 @@ export function ConflictResolution({
             className={`flex items-center gap-2 rounded-lg px-5 py-2.5 text-sm font-medium text-white transition-all ${
               hasAnswer
                 ? "bg-brand-600 hover:bg-brand-700"
-                : "cursor-not-allowed bg-zinc-300"
+                : "cursor-not-allowed bg-surface-3"
             }`}
           >
             {isLast ? "Build My Cloud" : "Next"}

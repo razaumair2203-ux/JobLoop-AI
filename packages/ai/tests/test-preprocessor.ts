@@ -5,10 +5,13 @@
 import { createClient } from '@supabase/supabase-js';
 import { preprocessExtractedText } from '../src/text-preprocessor';
 
-const sb = createClient(
-  'https://koyqjfatxreyaaynflrn.supabase.co',
-  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtveXFqZmF0eHJleWFheW5mbHJuIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3NzY1ODg5NSwiZXhwIjoyMDkzMjM0ODk1fQ.mND_hkB1LWOJdR0ETYAMu_5vW33Tk9Hwhsuy_dWaO8Y'
-);
+const sbUrl = process.env.SUPABASE_URL ?? '';
+const sbKey = process.env.SUPABASE_SERVICE_ROLE_KEY ?? '';
+if (!sbUrl || !sbKey) {
+  console.error('Set SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY env vars.');
+  process.exit(1);
+}
+const sb = createClient(sbUrl, sbKey);
 
 async function main() {
   const { data, error } = await sb

@@ -1,11 +1,11 @@
 // Cloud — the core data model
-export { buildCloudFromParsedCV, findNode, computeSummary, getValidatedSkills, getWeakClaims, getRepeatedSkills, reconstructTrajectory } from "./cloud";
-export type { ProfileCloud, CloudNode, Evidence, EvidenceSummary, Achievement, CareerTrajectory, VocabularyUpgrade, SkillClassificationReport } from "./cloud";
+export { buildCloudFromParsedCV, findNode, computeSummary, getValidatedSkills, getWeakClaims, getRepeatedSkills, reconstructTrajectory, computeIdentity, deduplicateCertifications, inferSeniority, classifyCertTier, classifyNodeTier, normalizeCredential, emptyIdentity } from "./cloud";
+export type { ProfileCloud, CloudNode, CloudNodeTier, Evidence, EvidenceSummary, Achievement, CareerTrajectory, VocabularyUpgrade, SkillClassificationReport, ProfessionalIdentity, CertTier, SeniorityLevel } from "./cloud";
 export type { RoleEvidence, ImpactEvidence, CertificationEvidence, AwardEvidence, ProjectEvidence, SocraticEvidence } from "./cloud";
 
 // Socratic questioning
 export { generateInitialQuestions, generateJDQuestions, processAnswer, detectContradictions } from "./socratic";
-export type { SocraticQuestion, SocraticAnswer, ContradictionResult } from "./socratic";
+export type { SocraticQuestion, SocraticAnswer, ContradictionResult, SocraticContext } from "./socratic";
 
 // Cloud matcher (JD vs Cloud evidence)
 export { matchCloudToJD } from "./cloud-matcher";
@@ -30,7 +30,7 @@ export type { SuitabilityInsights, Insight, InsightType } from "./insights";
 
 // CV Generation
 export { generateTailoredCV, generateCloudTailoredCV } from "./generate-cv";
-export type { GeneratedCV } from "./generate-cv";
+export type { GeneratedCV, CVOutcomeContext } from "./generate-cv";
 
 // Cover Letter Generation
 export { generateCoverLetter } from "./generate-cover-letter";
@@ -141,6 +141,10 @@ export {
 
 // Config
 export { MODELS } from "./client";
+
+// Outcome Feedback Parsing — free-text → structured skill signals
+export { parseOutcomeFeedback, mapFeedbackToNodeSignals } from "./outcome-feedback";
+export type { ParsedFeedbackSignal, ParsedOutcomeFeedbackResult } from "./outcome-feedback";
 
 // Country/Profession Licensing Lookup — structured, zero hallucination
 export { lookupLicensingRequirement } from "./licensing-lookup";

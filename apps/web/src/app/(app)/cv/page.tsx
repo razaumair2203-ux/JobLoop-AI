@@ -289,8 +289,8 @@ export default function CVBuilderPage() {
       <div className="flex h-[calc(100vh-4rem)] items-center justify-center">
         <div className="text-center">
           <div className="mx-auto h-10 w-10 animate-spin rounded-full border-4 border-brand-200 border-t-brand-600" />
-          <p className="mt-4 text-sm font-medium text-zinc-700">Generating your tailored CV...</p>
-          <p className="mt-1 text-xs text-zinc-400">This usually takes 10-30 seconds</p>
+          <p className="mt-4 text-sm font-medium text-surface-text-secondary">Generating your tailored CV...</p>
+          <p className="mt-1 text-xs text-surface-text-muted">This usually takes 10-30 seconds</p>
         </div>
       </div>
     );
@@ -299,7 +299,7 @@ export default function CVBuilderPage() {
   if (genError) {
     return (
       <div className="flex h-[calc(100vh-4rem)] items-center justify-center">
-        <div className="max-w-md rounded-xl border border-red-200 bg-red-50 p-6 text-center">
+        <div className="max-w-md rounded-lg border border-red-200 bg-red-50 p-6 text-center">
           <p className="text-sm font-medium text-red-800">CV Generation Failed</p>
           <p className="mt-2 text-xs text-red-600">{genError}</p>
           <button
@@ -316,20 +316,20 @@ export default function CVBuilderPage() {
   return (
     <div className="flex h-[calc(100vh-4rem)] flex-col">
       {/* Top bar */}
-      <div className="flex items-center justify-between border-b border-zinc-200 bg-white px-4 py-3">
+      <div className="flex items-center justify-between border-b border-surface-border bg-surface-0 px-4 py-3">
         <div className="flex items-center gap-3">
           {/* Branch selector */}
           <div className="relative">
             <button
               onClick={() => setBranchMenuOpen(!branchMenuOpen)}
-              className="flex items-center gap-1.5 rounded-lg border border-zinc-200 px-2.5 py-1.5 text-xs font-medium text-zinc-600 hover:bg-zinc-50"
+              className="flex items-center gap-1.5 rounded-lg border border-surface-border px-2.5 py-1.5 text-xs font-medium text-surface-text-secondary hover:bg-surface-2"
             >
               <GitBranch className="h-3.5 w-3.5" />
               {mockBranches.find((b) => b.id === activeBranch)?.name ?? "Master"}
               <ChevronDown className="h-3 w-3" />
             </button>
             {branchMenuOpen && (
-              <div className="absolute left-0 top-full z-20 mt-1 w-72 rounded-lg border border-zinc-200 bg-white py-1 shadow-lg">
+              <div className="absolute left-0 top-full z-20 mt-1 w-72 rounded-lg border border-surface-border bg-surface-0 py-1 shadow-lg">
                 {mockBranches.map((b) => (
                   <button
                     key={b.id}
@@ -338,21 +338,21 @@ export default function CVBuilderPage() {
                       setCvName(b.name);
                       setBranchMenuOpen(false);
                     }}
-                    className={`flex w-full items-center gap-3 px-3 py-2.5 text-left hover:bg-zinc-50 ${
+                    className={`flex w-full items-center gap-3 px-3 py-2.5 text-left hover:bg-surface-2 ${
                       activeBranch === b.id ? "bg-brand-50" : ""
                     }`}
                   >
-                    <GitBranch className={`h-3.5 w-3.5 ${b.isBase ? "text-zinc-400" : "text-brand-500"}`} />
+                    <GitBranch className={`h-3.5 w-3.5 ${b.isBase ? "text-surface-text-muted" : "text-brand-500"}`} />
                     <div className="flex-1">
-                      <p className="text-sm font-medium text-zinc-900">{b.name}</p>
-                      <p className="text-xs text-zinc-400">
+                      <p className="text-sm font-medium text-surface-text">{b.name}</p>
+                      <p className="text-xs text-surface-text-muted">
                         {b.isBase ? "Base resume" : b.jobTarget} · {b.lastEdited}
                       </p>
                     </div>
                     {activeBranch === b.id && <Check className="h-4 w-4 text-brand-600" />}
                   </button>
                 ))}
-                <div className="border-t border-zinc-100 px-3 py-2">
+                <div className="border-t border-surface-border px-3 py-2">
                   <button className="flex items-center gap-1.5 text-xs font-medium text-brand-600 hover:text-brand-700">
                     <Plus className="h-3 w-3" /> New tailored version
                   </button>
@@ -369,29 +369,29 @@ export default function CVBuilderPage() {
               onBlur={() => setEditingName(false)}
               onKeyDown={(e) => e.key === "Enter" && setEditingName(false)}
               autoFocus
-              className="rounded border border-brand-300 px-2 py-1 text-sm font-semibold text-zinc-900 focus:outline-none focus:ring-1 focus:ring-brand-500"
+              className="rounded border border-brand-300 px-2 py-1 text-sm font-semibold text-surface-text focus:outline-none focus:ring-1 focus:ring-brand-500"
             />
           ) : (
             <button
               onClick={() => setEditingName(true)}
-              className="flex items-center gap-1.5 text-sm font-semibold text-zinc-900 hover:text-brand-600"
+              className="flex items-center gap-1.5 text-sm font-semibold text-surface-text hover:text-brand-600"
             >
               {cvName}
-              <Pencil className="h-3 w-3 text-zinc-400" />
+              <Pencil className="h-3 w-3 text-surface-text-muted" />
             </button>
           )}
         </div>
         <div className="flex items-center gap-2">
           <button
             onClick={() => setVersionPanelOpen(!versionPanelOpen)}
-            className="flex items-center gap-1.5 rounded-lg border border-zinc-200 px-3 py-1.5 text-xs font-medium text-zinc-600 hover:bg-zinc-50"
+            className="flex items-center gap-1.5 rounded-lg border border-surface-border px-3 py-1.5 text-xs font-medium text-surface-text-secondary hover:bg-surface-2"
           >
             <Clock className="h-3.5 w-3.5" />
             History
           </button>
           <Link
             href="/cv/compare"
-            className="flex items-center gap-1.5 rounded-lg border border-zinc-200 px-3 py-1.5 text-xs font-medium text-zinc-600 hover:bg-zinc-50"
+            className="flex items-center gap-1.5 rounded-lg border border-surface-border px-3 py-1.5 text-xs font-medium text-surface-text-secondary hover:bg-surface-2"
           >
             <GitCompare className="h-3.5 w-3.5" />
             Compare
@@ -405,11 +405,11 @@ export default function CVBuilderPage() {
 
       <div className="flex flex-1 overflow-hidden">
         {/* LEFT: Editor */}
-        <div className="flex w-1/2 flex-col border-r border-zinc-200 bg-white">
+        <div className="flex w-1/2 flex-col border-r border-surface-border bg-surface-0">
           <Tabs.Root value={activeTab} onValueChange={setActiveTab}>
             <DndContext sensors={sensors} collisionDetection={closestCenter} onDragEnd={handleSectionDragEnd}>
               <SortableContext items={sectionOrder} strategy={verticalListSortingStrategy}>
-                <Tabs.List className="flex border-b border-zinc-200">
+                <Tabs.List className="flex border-b border-surface-border">
                   {sectionOrder.map((tab) => (
                     <SortableTab key={tab} id={tab} activeTab={activeTab} onSelect={setActiveTab} />
                   ))}
@@ -451,11 +451,11 @@ export default function CVBuilderPage() {
         </div>
 
         {/* RIGHT: Live Preview */}
-        <div className="flex w-1/2 flex-col bg-zinc-100">
+        <div className="flex w-1/2 flex-col bg-surface-2">
           {/* Template selector + customize */}
-          <div className="flex items-center justify-between border-b border-zinc-200 bg-zinc-50 px-4 py-2.5">
+          <div className="flex items-center justify-between border-b border-surface-border bg-surface-2 px-4 py-2.5">
             <div className="flex items-center gap-2">
-              <span className="text-xs font-medium text-zinc-500">Template:</span>
+              <span className="text-xs font-medium text-surface-text-muted">Template:</span>
               {templateOptions.map((t) => (
                 <button
                   key={t.id}
@@ -463,7 +463,7 @@ export default function CVBuilderPage() {
                   className={`rounded-full px-3 py-1 text-xs font-medium transition-colors ${
                     template === t.id
                       ? "bg-brand-600 text-white"
-                      : "bg-white text-zinc-600 hover:bg-zinc-50 border border-zinc-200"
+                      : "bg-surface-0 text-surface-text-secondary hover:bg-surface-2 border border-surface-border"
                   }`}
                 >
                   {t.label}
@@ -473,7 +473,7 @@ export default function CVBuilderPage() {
             <div className="flex items-center gap-2">
               <Link
                 href="/cv/templates"
-                className="flex items-center gap-1 rounded-lg border border-zinc-200 px-2.5 py-1 text-xs font-medium text-zinc-500 hover:bg-white hover:text-zinc-700"
+                className="flex items-center gap-1 rounded-lg border border-surface-border px-2.5 py-1 text-xs font-medium text-surface-text-muted hover:bg-surface-0 hover:text-surface-text-secondary"
               >
                 <LayoutGrid className="h-3 w-3" />
                 Gallery
@@ -483,7 +483,7 @@ export default function CVBuilderPage() {
                 className={`flex items-center gap-1 rounded-lg border px-2.5 py-1 text-xs font-medium transition-colors ${
                   customizeOpen
                     ? "border-brand-300 bg-brand-50 text-brand-700"
-                    : "border-zinc-200 text-zinc-500 hover:bg-white hover:text-zinc-700"
+                    : "border-surface-border text-surface-text-muted hover:bg-surface-0 hover:text-surface-text-secondary"
                 }`}
               >
                 <Palette className="h-3 w-3" />
@@ -494,11 +494,11 @@ export default function CVBuilderPage() {
 
           {/* Customization panel */}
           {customizeOpen && (
-            <div className="border-b border-zinc-200 bg-zinc-50 px-4 py-3">
+            <div className="border-b border-surface-border bg-surface-2 px-4 py-3">
               <div className="flex items-start gap-6">
                 {/* Font */}
                 <div>
-                  <label className="flex items-center gap-1 text-[10px] font-semibold uppercase tracking-wide text-zinc-400">
+                  <label className="flex items-center gap-1 text-[10px] font-semibold uppercase tracking-wide text-surface-text-muted">
                     <Type className="h-3 w-3" /> Font
                   </label>
                   <div className="mt-1.5 flex gap-1">
@@ -509,7 +509,7 @@ export default function CVBuilderPage() {
                         className={`rounded-md px-2.5 py-1 text-xs transition-colors ${
                           font === f.id
                             ? "bg-brand-600 text-white"
-                            : "bg-white text-zinc-600 border border-zinc-200 hover:border-zinc-300"
+                            : "bg-surface-0 text-surface-text-secondary border border-surface-border hover:border-surface-border"
                         }`}
                       >
                         {f.label}
@@ -520,7 +520,7 @@ export default function CVBuilderPage() {
 
                 {/* Accent Color */}
                 <div>
-                  <label className="flex items-center gap-1 text-[10px] font-semibold uppercase tracking-wide text-zinc-400">
+                  <label className="flex items-center gap-1 text-[10px] font-semibold uppercase tracking-wide text-surface-text-muted">
                     <Palette className="h-3 w-3" /> Accent Color
                   </label>
                   <div className="mt-1.5 flex gap-1.5">
@@ -531,7 +531,7 @@ export default function CVBuilderPage() {
                         title={c.label}
                         className={`h-6 w-6 rounded-full border-2 transition-transform ${
                           accentColor === c.id
-                            ? "scale-110 border-zinc-800"
+                            ? "scale-110 border-surface-text"
                             : "border-transparent hover:scale-105"
                         }`}
                         style={{ backgroundColor: c.color }}
@@ -542,7 +542,7 @@ export default function CVBuilderPage() {
 
                 {/* Spacing */}
                 <div>
-                  <label className="text-[10px] font-semibold uppercase tracking-wide text-zinc-400">
+                  <label className="text-[10px] font-semibold uppercase tracking-wide text-surface-text-muted">
                     Spacing
                   </label>
                   <div className="mt-1.5 flex gap-1">
@@ -553,7 +553,7 @@ export default function CVBuilderPage() {
                         className={`rounded-md px-2.5 py-1 text-xs transition-colors ${
                           spacing === s.id
                             ? "bg-brand-600 text-white"
-                            : "bg-white text-zinc-600 border border-zinc-200 hover:border-zinc-300"
+                            : "bg-surface-0 text-surface-text-secondary border border-surface-border hover:border-surface-border"
                         }`}
                       >
                         {s.label}
@@ -567,7 +567,7 @@ export default function CVBuilderPage() {
 
           {/* Paper preview */}
           <div className="flex-1 overflow-y-auto p-8">
-            <div className="mx-auto aspect-[8.5/11] w-full max-w-[560px] rounded bg-white shadow-lg">
+            <div className="mx-auto aspect-[8.5/11] w-full max-w-[560px] rounded bg-surface-0 shadow-lg">
               <CVPreview cv={cv} template={template} />
             </div>
           </div>
@@ -575,27 +575,27 @@ export default function CVBuilderPage() {
 
         {/* Version History Panel */}
         {versionPanelOpen && (
-          <div className="w-72 shrink-0 border-l border-zinc-200 bg-white">
-            <div className="flex items-center justify-between border-b border-zinc-200 px-4 py-3">
-              <h3 className="text-sm font-semibold text-zinc-900">
+          <div className="w-72 shrink-0 border-l border-surface-border bg-surface-0">
+            <div className="flex items-center justify-between border-b border-surface-border px-4 py-3">
+              <h3 className="text-sm font-semibold text-surface-text">
                 Version History
               </h3>
               <button
                 onClick={() => setVersionPanelOpen(false)}
-                className="rounded p-1 hover:bg-zinc-100"
+                className="rounded p-1 hover:bg-surface-2"
               >
-                <X className="h-4 w-4 text-zinc-400" />
+                <X className="h-4 w-4 text-surface-text-muted" />
               </button>
             </div>
             <div className="space-y-1 p-2">
               {mockVersions.map((v) => (
                 <button
                   key={v.id}
-                  className="w-full rounded-lg px-3 py-2.5 text-left transition-colors hover:bg-zinc-50"
+                  className="w-full rounded-lg px-3 py-2.5 text-left transition-colors hover:bg-surface-2"
                 >
-                  <p className="text-sm font-medium text-zinc-900">{v.name}</p>
-                  <p className="mt-0.5 text-xs text-zinc-500">{v.date}</p>
-                  <p className="mt-0.5 text-xs text-zinc-400">{v.summary}</p>
+                  <p className="text-sm font-medium text-surface-text">{v.name}</p>
+                  <p className="mt-0.5 text-xs text-surface-text-muted">{v.date}</p>
+                  <p className="mt-0.5 text-xs text-surface-text-muted">{v.summary}</p>
                 </button>
               ))}
             </div>
@@ -624,11 +624,11 @@ function SortableTab({ id, activeTab, onSelect }: { id: string; activeTab: strin
       className={`flex items-center gap-1 border-b-2 px-4 py-3 text-sm font-medium capitalize transition-colors ${
         isActive
           ? "border-brand-500 text-brand-700"
-          : "border-transparent text-zinc-500 hover:text-zinc-700"
+          : "border-transparent text-surface-text-muted hover:text-surface-text-secondary"
       }`}
     >
       <GripVertical
-        className="h-3 w-3 cursor-grab text-zinc-300 hover:text-zinc-500"
+        className="h-3 w-3 cursor-grab text-surface-text-muted hover:text-surface-text-muted"
         {...attributes}
         {...listeners}
       />
@@ -643,7 +643,7 @@ function SummaryEditor({ value, onChange }: { value: string; onChange: (v: strin
   return (
     <div>
       <div className="flex items-center justify-between">
-        <h3 className="text-sm font-semibold text-zinc-900">
+        <h3 className="text-sm font-semibold text-surface-text">
           Professional Summary
         </h3>
         <AIButton label="Improve with AI" />
@@ -652,7 +652,7 @@ function SummaryEditor({ value, onChange }: { value: string; onChange: (v: strin
         value={value}
         onChange={(e) => onChange(e.target.value)}
         rows={5}
-        className="mt-3 w-full rounded-lg border border-zinc-200 px-4 py-3 text-sm text-zinc-900 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
+        className="mt-3 w-full rounded-lg border border-surface-border px-4 py-3 text-sm text-surface-text focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
       />
       <button className="mt-1 text-xs text-brand-500 hover:text-brand-600">
         Why this wording?
@@ -692,7 +692,7 @@ function ExperienceEditor({
   return (
     <div className="space-y-6">
       {entries.map((entry, idx) => (
-        <div key={idx} className="rounded-lg border border-zinc-200 p-4">
+        <div key={idx} className="rounded-lg border border-surface-border p-4">
           <div className="grid grid-cols-2 gap-3">
             <input
               value={entry.company}
@@ -702,7 +702,7 @@ function ExperienceEditor({
                 onChange(updated);
               }}
               placeholder="Company"
-              className="rounded border border-zinc-200 px-3 py-2 text-sm focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
+              className="rounded border border-surface-border px-3 py-2 text-sm focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
             />
             <input
               value={entry.title}
@@ -712,19 +712,19 @@ function ExperienceEditor({
                 onChange(updated);
               }}
               placeholder="Title"
-              className="rounded border border-zinc-200 px-3 py-2 text-sm focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
+              className="rounded border border-surface-border px-3 py-2 text-sm focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
             />
             <input
               value={entry.start_date}
               placeholder="Start date"
               readOnly
-              className="rounded border border-zinc-200 bg-zinc-50 px-3 py-2 text-sm text-zinc-600"
+              className="rounded border border-surface-border bg-surface-2 px-3 py-2 text-sm text-surface-text-secondary"
             />
             <input
               value={entry.end_date}
               placeholder="End date"
               readOnly
-              className="rounded border border-zinc-200 bg-zinc-50 px-3 py-2 text-sm text-zinc-600"
+              className="rounded border border-surface-border bg-surface-2 px-3 py-2 text-sm text-surface-text-secondary"
             />
           </div>
           <div className="mt-3 space-y-2">
@@ -735,11 +735,11 @@ function ExperienceEditor({
               return (
                 <div key={bIdx}>
                   <div className="flex items-start gap-2">
-                    <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-zinc-300" />
+                    <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-surface-3" />
                     <textarea
                       value={bullet.text}
                       rows={2}
-                      className="flex-1 rounded border border-zinc-200 px-3 py-2 text-sm focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
+                      className="flex-1 rounded border border-surface-border px-3 py-2 text-sm focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
                       onChange={() => {}}
                     />
                     <button
@@ -777,7 +777,7 @@ function ExperienceEditor({
                         </button>
                         <button
                           onClick={() => setActiveSuggestion(null)}
-                          className="flex items-center gap-1 rounded-md border border-zinc-200 bg-white px-2.5 py-1 text-xs font-medium text-zinc-600 hover:bg-zinc-50"
+                          className="flex items-center gap-1 rounded-md border border-surface-border bg-surface-0 px-2.5 py-1 text-xs font-medium text-surface-text-secondary hover:bg-surface-2"
                         >
                           <X className="h-3 w-3" />
                           Reject
@@ -794,7 +794,7 @@ function ExperienceEditor({
           </button>
         </div>
       ))}
-      <button className="flex w-full items-center justify-center gap-1.5 rounded-lg border border-dashed border-zinc-300 py-3 text-sm text-zinc-500 hover:border-brand-400 hover:text-brand-600">
+      <button className="flex w-full items-center justify-center gap-1.5 rounded-lg border border-dashed border-surface-border py-3 text-sm text-surface-text-muted hover:border-brand-400 hover:text-brand-600">
         <Plus className="h-4 w-4" /> Add experience
       </button>
     </div>
@@ -812,22 +812,22 @@ function SkillsEditor({
     <div className="space-y-4">
       {Object.entries(skills).map(([category, items]) => (
         <div key={category}>
-          <h4 className="text-xs font-semibold uppercase text-zinc-400">
+          <h4 className="text-xs font-semibold uppercase text-surface-text-muted">
             {category}
           </h4>
           <div className="mt-2 flex flex-wrap gap-1.5">
             {items.map((skill) => (
               <span
                 key={skill}
-                className="flex items-center gap-1 rounded-full border border-zinc-200 bg-zinc-50 px-3 py-1 text-xs font-medium text-zinc-700"
+                className="flex items-center gap-1 rounded-full border border-surface-border bg-surface-2 px-3 py-1 text-xs font-medium text-surface-text-secondary"
               >
                 {skill}
-                <button className="ml-0.5 text-zinc-400 hover:text-red-500">
+                <button className="ml-0.5 text-surface-text-muted hover:text-red-500">
                   <X className="h-3 w-3" />
                 </button>
               </span>
             ))}
-            <button className="rounded-full border border-dashed border-zinc-300 px-3 py-1 text-xs text-zinc-400 hover:border-brand-400 hover:text-brand-500">
+            <button className="rounded-full border border-dashed border-surface-border px-3 py-1 text-xs text-surface-text-muted hover:border-brand-400 hover:text-brand-500">
               <Plus className="inline h-3 w-3" /> Add
             </button>
           </div>
@@ -841,12 +841,12 @@ function EducationEditor({ education }: { education: typeof mockCV.education }) 
   return (
     <div className="space-y-4">
       {education.map((edu, idx) => (
-        <div key={idx} className="rounded-lg border border-zinc-200 p-4">
-          <input value={edu.institution} readOnly className="w-full text-sm font-medium text-zinc-900" />
-          <p className="text-sm text-zinc-600">{edu.degree} — {edu.year}</p>
+        <div key={idx} className="rounded-lg border border-surface-border p-4">
+          <input value={edu.institution} readOnly className="w-full text-sm font-medium text-surface-text" />
+          <p className="text-sm text-surface-text-secondary">{edu.degree} — {edu.year}</p>
           <div className="mt-2 flex flex-wrap gap-1.5">
             {edu.highlights.map((h) => (
-              <span key={h} className="rounded-full bg-zinc-100 px-2.5 py-0.5 text-xs text-zinc-600">{h}</span>
+              <span key={h} className="rounded-full bg-surface-2 px-2.5 py-0.5 text-xs text-surface-text-secondary">{h}</span>
             ))}
           </div>
         </div>
@@ -859,11 +859,11 @@ function CertificationsEditor({ certs }: { certs: string[] }) {
   return (
     <div className="space-y-2">
       {certs.map((cert) => (
-        <div key={cert} className="flex items-center gap-2 rounded-lg border border-zinc-200 px-4 py-2.5">
-          <span className="text-sm text-zinc-700">{cert}</span>
+        <div key={cert} className="flex items-center gap-2 rounded-lg border border-surface-border px-4 py-2.5">
+          <span className="text-sm text-surface-text-secondary">{cert}</span>
         </div>
       ))}
-      <button className="flex w-full items-center justify-center gap-1.5 rounded-lg border border-dashed border-zinc-300 py-2.5 text-sm text-zinc-500 hover:border-brand-400 hover:text-brand-600">
+      <button className="flex w-full items-center justify-center gap-1.5 rounded-lg border border-dashed border-surface-border py-2.5 text-sm text-surface-text-muted hover:border-brand-400 hover:text-brand-600">
         <Plus className="h-4 w-4" /> Add certification
       </button>
     </div>
@@ -893,7 +893,7 @@ function CVPreview({
   template: TemplateId;
 }) {
   const templateStyles: Record<TemplateId, { text: string; border: string; font: string; align: string }> = {
-    professional: { text: "text-zinc-800", border: "border-zinc-300", font: "", align: "text-center" },
+    professional: { text: "text-surface-text", border: "border-surface-border", font: "", align: "text-center" },
     technical: { text: "text-blue-700", border: "border-blue-200", font: "font-mono", align: "text-left" },
     modern: { text: "text-brand-600", border: "border-brand-200", font: "", align: "text-center" },
     executive: { text: "text-slate-700", border: "border-slate-200", font: "font-serif", align: "text-center" },
@@ -914,11 +914,11 @@ function CVPreview({
         <h1 className={`text-lg font-bold ${accentColor}`}>
           {cv.contact.full_name}
         </h1>
-        <p className="mt-0.5 text-[10px] text-zinc-500">
+        <p className="mt-0.5 text-[10px] text-surface-text-muted">
           {cv.contact.email} | {cv.contact.phone} | {cv.contact.location}
         </p>
         {cv.contact.linkedin_url && (
-          <p className="text-[10px] text-zinc-400">
+          <p className="text-[10px] text-surface-text-muted">
             {cv.contact.linkedin_url} | {cv.contact.github_url}
           </p>
         )}
@@ -929,7 +929,7 @@ function CVPreview({
         <h2 className={`border-b ${borderColor} pb-0.5 text-xs font-bold uppercase tracking-wide ${accentColor}`}>
           Summary
         </h2>
-        <p className="mt-1.5 text-zinc-700">{cv.summary}</p>
+        <p className="mt-1.5 text-surface-text-secondary">{cv.summary}</p>
       </div>
 
       {/* Experience */}
@@ -940,19 +940,19 @@ function CVPreview({
         {cv.experience.map((exp, idx) => (
           <div key={idx} className="mt-2">
             <div className="flex items-baseline justify-between">
-              <span className="font-semibold text-zinc-800">{exp.title}</span>
-              <span className="text-[10px] text-zinc-500">
+              <span className="font-semibold text-surface-text">{exp.title}</span>
+              <span className="text-[10px] text-surface-text-muted">
                 {exp.start_date} — {exp.end_date}
               </span>
             </div>
-            <p className="text-zinc-600">
+            <p className="text-surface-text-secondary">
               {exp.company}, {exp.location}
             </p>
             <ul className="mt-1 space-y-0.5">
               {exp.bullets.map((b, i) => (
                 <li key={i} className="flex gap-1.5">
-                  <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-zinc-400" />
-                  <span className="text-zinc-700">{b.text}</span>
+                  <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-surface-3" />
+                  <span className="text-surface-text-secondary">{b.text}</span>
                 </li>
               ))}
             </ul>
@@ -968,8 +968,8 @@ function CVPreview({
         <div className="mt-1.5 space-y-0.5">
           {Object.entries(cv.skills).map(([cat, items]) => (
             <p key={cat}>
-              <span className="font-semibold text-zinc-700">{cat}: </span>
-              <span className="text-zinc-600">{items.join(", ")}</span>
+              <span className="font-semibold text-surface-text-secondary">{cat}: </span>
+              <span className="text-surface-text-secondary">{items.join(", ")}</span>
             </p>
           ))}
         </div>
@@ -983,10 +983,10 @@ function CVPreview({
         {cv.education.map((edu, idx) => (
           <div key={idx} className="mt-1.5">
             <div className="flex items-baseline justify-between">
-              <span className="font-semibold text-zinc-800">{edu.degree}</span>
-              <span className="text-[10px] text-zinc-500">{edu.year}</span>
+              <span className="font-semibold text-surface-text">{edu.degree}</span>
+              <span className="text-[10px] text-surface-text-muted">{edu.year}</span>
             </div>
-            <p className="text-zinc-600">{edu.institution}</p>
+            <p className="text-surface-text-secondary">{edu.institution}</p>
           </div>
         ))}
       </div>
@@ -997,7 +997,7 @@ function CVPreview({
           <h2 className={`border-b ${borderColor} pb-0.5 text-xs font-bold uppercase tracking-wide ${accentColor}`}>
             Certifications
           </h2>
-          <p className="mt-1.5 text-zinc-700">
+          <p className="mt-1.5 text-surface-text-secondary">
             {cv.certifications.join(" | ")}
           </p>
         </div>

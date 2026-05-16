@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
+import { createAdminClient } from "@/lib/supabase/admin";
 import { ensureUserExists } from "@/lib/ensure-user";
 import { getAuthUser } from "@/lib/auth";
 import {
@@ -20,6 +21,7 @@ import {
   preprocessExtractedText,
   assessExtractionQuality,
   extractPDFText,
+  classifyNodeTier,
 } from "@jobloop/ai";
 import type { ProfileCloud, Evidence, ConflictReport, PersonaType, ParsedCV } from "@jobloop/ai";
 
@@ -31,14 +33,15 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
-  await ensureUserExists(supabase, user);
+  const db = createAdminClient();
+  await ensureUserExists(db, user);
 
   // ================================================================
   // GUARD: Max 5 source CVs per user
   // Source CVs build the Cloud. Tailored CVs per JD = separate (stored in applications).
   // ================================================================
   const MAX_SOURCE_CVS = 5;
-  const { count: existingCVCount } = await supabase
+  const { count: existingCVCount } = await db
     .from("cv_uploads")
     .select("id", { count: "exact", head: true })
     .eq("user_id", user.id)
@@ -79,7 +82,7 @@ export async function POST(request: Request) {
   // Determine CV parse model from existing Cloud maturity
   // Empty/thin Cloud (first-time user) → quality tier catches garbled PDF structure
   // Rich Cloud (returning user) → fast tier is fine for incremental uploads
-  const { data: existingNodes } = await supabase
+  const { data: existingNodes } = await db
     .from("cloud_nodes")
     .select("id, name, type, category, evidence, summary")
     .eq("user_id", user.id);
@@ -88,14 +91,19 @@ export async function POST(request: Request) {
   if (existingNodes && existingNodes.length > 0) {
     const existingCloud: ProfileCloud = {
       user_id: user.id,
-      nodes: existingNodes.map((n) => ({
-        id: n.id,
-        name: n.name,
-        type: n.type as "skill" | "capability" | "domain",
-        category: n.category,
-        evidence: Array.isArray(n.evidence) ? n.evidence : [],
-        summary: n.summary ?? { total_months_used: 0, number_of_roles: 0, has_impact: false, has_external_validation: false, has_depth: false, has_project: false, last_used: null },
-      })),
+      identity: { core_profession: "", specializations: [], career_stage: "", career_stage_generic: "", qualification_country: null, qualification_degrees: [], niche_differentiators: [], identity_basis: { primary_education: null, longest_role_domain: "", title_signals: [] } },
+      nodes: existingNodes.map((n) => {
+        const evidence = Array.isArray(n.evidence) ? n.evidence : [];
+        return {
+          id: n.id,
+          name: n.name,
+          type: n.type as "skill" | "capability" | "domain",
+          category: n.category,
+          tier: classifyNodeTier(n.name, n.category, evidence),
+          evidence,
+          summary: n.summary ?? { total_months_used: 0, number_of_roles: 0, has_impact: false, has_external_validation: false, has_depth: false, has_project: false, last_used: null },
+        };
+      }),
       achievements: [],
       trajectory: { roles: [], progression_pattern: "", domain_consistency: "", avg_tenure_months: 0, total_experience_years: 0 },
       education: [],
@@ -125,7 +133,7 @@ export async function POST(request: Request) {
     const storagePath = `${user.id}/${Date.now()}-${file.name}`;
     const buffer = Buffer.from(await file.arrayBuffer());
 
-    const { error: storageError } = await supabase.storage
+    const { error: storageError } = await db.storage
       .from("cvs")
       .upload(storagePath, buffer, {
         contentType: file.type,
@@ -320,7 +328,7 @@ export async function POST(request: Request) {
 
   // After all files parsed: CLEAN → DETECT CONFLICTS → RESOLVE → BUILD CLOUD
   // The Cloud is the source of truth. Nothing goes in unclean.
-  const { data: allParsed } = await supabase
+  const { data: allParsed } = await db
     .from("cv_uploads")
     .select("id, filename, parsed_cv, extracted_text")
     .eq("user_id", user.id)
@@ -467,6 +475,7 @@ export async function POST(request: Request) {
           type: "skill",
           name: skillName,
           category: "other",
+          tier: classifyNodeTier(skillName, "other", evidence),
           evidence,
           summary: computeSummary(evidence),
         });
@@ -476,7 +485,7 @@ export async function POST(request: Request) {
     // ================================================================
     // STEP 6: Persist the clean Cloud
     // ================================================================
-    await supabase.from("cloud_nodes").delete().eq("user_id", user.id);
+    await db.from("cloud_nodes").delete().eq("user_id", user.id);
 
     const nodeRows = cloud.nodes.map((node) => ({
       user_id: user.id,
@@ -488,7 +497,7 @@ export async function POST(request: Request) {
     }));
 
     if (nodeRows.length > 0) {
-      await supabase.from("cloud_nodes").insert(nodeRows);
+      await db.from("cloud_nodes").insert(nodeRows);
     }
 
     // ================================================================

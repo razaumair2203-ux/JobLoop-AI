@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
+import { createAdminClient } from "@/lib/supabase/admin";
 import { ensureUserExists } from "@/lib/ensure-user";
 import { getAuthUser } from "@/lib/auth";
 import {
@@ -12,6 +13,7 @@ import {
   resolvedProfileToParsedCV,
   cleanParsedCVs,
   buildConflictQuestions,
+  classifyNodeTier,
 } from "@jobloop/ai";
 import type { ProfileCloud, Evidence, ConflictReport, PersonaType } from "@jobloop/ai";
 
@@ -34,10 +36,11 @@ export async function POST() {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
-  await ensureUserExists(supabase, user);
+  const db = createAdminClient();
+  await ensureUserExists(db, user);
 
   // Load all parsed CVs (status = "parsed" — set by Claude Code after manual parse)
-  const { data: allParsed } = await supabase
+  const { data: allParsed } = await db
     .from("cv_uploads")
     .select("id, filename, parsed_cv, extracted_text")
     .eq("user_id", user.id)
@@ -68,7 +71,7 @@ export async function POST() {
   }
 
   // STEP 2: Detect conflicts
-  const { data: userRow } = await supabase
+  const { data: userRow } = await db
     .from("users")
     .select("persona")
     .eq("id", user.id)
@@ -127,10 +130,24 @@ export async function POST() {
   );
 
   const cleanParsedCV = resolvedProfileToParsedCV(resolvedProfile);
-  const { cloud } = buildCloudFromParsedCV(cleanParsedCV);
+
+  // Extract candidate_context from first parsed CV that has it (parser Step 0)
+  let candidateContext: { primary_profession?: string; specialization?: string; career_level?: string; country_of_qualification?: string; candidate_name?: string } | undefined;
+  for (const row of allParsed) {
+    const parsed = row.parsed_cv as Record<string, unknown> | null;
+    if (parsed?.candidate_context) {
+      candidateContext = parsed.candidate_context as typeof candidateContext;
+      break;
+    }
+  }
+
+  const { cloud } = buildCloudFromParsedCV({
+    ...cleanParsedCV,
+    candidate_context: candidateContext,
+  });
 
   // STEP 5: Preserve Socratic evidence from previous Cloud
-  const { data: oldNodes } = await supabase
+  const { data: oldNodes } = await db
     .from("cloud_nodes")
     .select("name, evidence")
     .eq("user_id", user.id);
@@ -170,6 +187,7 @@ export async function POST() {
         type: "skill",
         name: skillName,
         category: "other",
+        tier: classifyNodeTier(skillName, "other", evidence),
         evidence,
         summary: computeSummary(evidence),
       });
@@ -177,7 +195,13 @@ export async function POST() {
   }
 
   // STEP 6: Persist the clean Cloud
-  await supabase.from("cloud_nodes").delete().eq("user_id", user.id);
+  await db.from("cloud_nodes").delete().eq("user_id", user.id);
+
+  // Clear unanswered Socratic questions (stale after re-build — new ones generated in Step 7)
+  await db.from("socratic_qa")
+    .delete()
+    .eq("user_id", user.id)
+    .is("answer", null);
 
   const nodeRows = cloud.nodes.map((node) => ({
     user_id: user.id,
@@ -189,18 +213,44 @@ export async function POST() {
   }));
 
   if (nodeRows.length > 0) {
-    await supabase.from("cloud_nodes").insert(nodeRows);
+    await db.from("cloud_nodes").insert(nodeRows);
   }
 
-  // STEP 7: Phase 2 — Enrichment questions
+  // STEP 7: Phase 2 — Enrichment questions with context
+  const socraticCtx = {
+    persona: persona ?? undefined,
+    candidate_context: candidateContext,
+  };
+
   let socraticQuestions: Array<{ id: string; question: string; skill_name: string; why_asking: string }> = [];
   try {
-    const questions = await generateInitialQuestions(cloud);
-    socraticQuestions = questions.map((q) => ({
+    const questions = await generateInitialQuestions(cloud, undefined, socraticCtx);
+
+    // Persist questions to socratic_qa so they survive page refresh
+    for (const q of questions) {
+      await db.from("socratic_qa").insert({
+        user_id: user.id,
+        question: q.question,
+        skill_targeted: q.skill_name,
+        gate: "cv_upload",
+        answer: null,
+        answered_at: null,
+      });
+    }
+
+    // Re-fetch to get DB-generated UUIDs
+    const { data: savedQs } = await db
+      .from("socratic_qa")
+      .select("id, question, skill_targeted")
+      .eq("user_id", user.id)
+      .eq("gate", "cv_upload")
+      .is("answer", null);
+
+    socraticQuestions = (savedQs ?? []).map((q) => ({
       id: q.id,
       question: q.question,
-      skill_name: q.skill_name,
-      why_asking: q.why_asking,
+      skill_name: q.skill_targeted ?? "",
+      why_asking: "",
     }));
   } catch (err) {
     console.error("[build-cloud] Phase 2 Socratic question generation failed:", err);

@@ -45,19 +45,34 @@ export async function generateTailoredCV(
   return callCVGeneration(userPrompt);
 }
 
+/** Outcome context from previous applications — injected into CV gen for smarter emphasis */
+export interface CVOutcomeContext {
+  skill_signals: Array<{
+    skill_name: string;
+    signals: Array<{ signal: "positive" | "gap"; context: string; niche: string }>;
+  }>;
+  niche_history: Array<{
+    company: string;
+    role: string;
+    outcome: string;
+    feedback_summary: string | null;
+  }>;
+}
+
 /**
  * Generate a tailored CV using Cloud evidence (preferred path).
- * Includes evidence summaries, achievement bank, and Socratic answers
- * so the AI has richer context for better output.
+ * Includes evidence summaries, achievement bank, Socratic answers,
+ * and outcome intelligence from previous applications.
  */
 export async function generateCloudTailoredCV(
   cloud: ProfileCloud,
   matchReport: CloudMatchReport,
   jd: string,
   instructions?: string,
-  modelTier?: "fast" | "quality"
+  modelTier?: "fast" | "quality",
+  outcomeContext?: CVOutcomeContext | null,
 ): Promise<GeneratedCV> {
-  const cloudContext = buildCloudContext(cloud, matchReport);
+  const cloudContext = buildCloudContext(cloud, matchReport, outcomeContext);
   const userPrompt = buildCloudCVPrompt(cloudContext, jd, instructions);
   return callCVGeneration(userPrompt, modelTier);
 }
@@ -117,7 +132,7 @@ function validateGeneratedCV(cv: GeneratedCV): void {
   }
 }
 
-function buildCloudContext(cloud: ProfileCloud, report: CloudMatchReport): string {
+function buildCloudContext(cloud: ProfileCloud, report: CloudMatchReport, outcomeCtx?: CVOutcomeContext | null): string {
   const sections: string[] = [];
 
   // Career trajectory
@@ -151,6 +166,31 @@ Roles: ${cloud.trajectory.roles.map(r => `${r.title} at ${r.company} (${r.durati
   // Certifications
   if (cloud.certifications.length > 0) {
     sections.push(`CERTIFICATIONS: ${cloud.certifications.map(c => c.name).join(", ")}`);
+  }
+
+  // Outcome Intelligence — what worked/didn't in previous applications for this niche
+  if (outcomeCtx) {
+    const outcomeLines: string[] = [];
+
+    // Skill-level signals from employer feedback
+    for (const ss of outcomeCtx.skill_signals.slice(0, 8)) {
+      const positives = ss.signals.filter(s => s.signal === "positive").length;
+      const gaps = ss.signals.filter(s => s.signal === "gap").length;
+      if (positives > 0) outcomeLines.push(`  + "${ss.skill_name}": ${positives} employer(s) praised this`);
+      if (gaps > 0) outcomeLines.push(`  - "${ss.skill_name}": ${gaps} employer(s) flagged as gap`);
+    }
+
+    // Application history for context
+    for (const app of outcomeCtx.niche_history.slice(0, 5)) {
+      const fb = app.feedback_summary ? ` — "${app.feedback_summary}"` : "";
+      outcomeLines.push(`  ${app.company} (${app.role}): ${app.outcome}${fb}`);
+    }
+
+    if (outcomeLines.length > 0) {
+      sections.push(`APPLICATION HISTORY FOR THIS NICHE (use to inform emphasis decisions):
+${outcomeLines.join("\n")}
+Note: Lead with skills that got positive signals. Address gaps proactively if candidate has new evidence. Do NOT fabricate — this is context, not content.`);
+    }
   }
 
   // Evidence gaps (what to be careful about)

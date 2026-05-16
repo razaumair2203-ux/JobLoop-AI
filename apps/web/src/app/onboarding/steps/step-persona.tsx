@@ -78,10 +78,10 @@ interface StepPersonaProps {
 export function StepPersona({ selected, onSelect, onNext }: StepPersonaProps) {
   return (
     <div>
-      <h2 className="text-xl font-semibold text-zinc-900">
+      <h2 className="text-xl font-semibold text-surface-text">
         Tell us about yourself
       </h2>
-      <p className="mt-1 text-sm text-zinc-500">
+      <p className="mt-1 text-sm text-surface-text-muted">
         This helps us ask the right questions and tailor your experience.
       </p>
 
@@ -95,14 +95,14 @@ export function StepPersona({ selected, onSelect, onNext }: StepPersonaProps) {
               className={`flex items-start gap-3 rounded-lg border p-4 text-left transition-colors ${
                 isSelected
                   ? "border-brand-500 bg-brand-50 ring-1 ring-brand-500"
-                  : "border-zinc-200 hover:border-brand-300 hover:bg-zinc-50"
+                  : "border-surface-border hover:border-brand-300 hover:bg-surface-2"
               }`}
             >
               <div
                 className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-lg ${
                   isSelected
                     ? "bg-brand-100 text-brand-600"
-                    : "bg-zinc-100 text-zinc-500"
+                    : "bg-surface-2 text-surface-text-muted"
                 }`}
               >
                 <p.icon className="h-4 w-4" />
@@ -110,12 +110,12 @@ export function StepPersona({ selected, onSelect, onNext }: StepPersonaProps) {
               <div>
                 <p
                   className={`text-sm font-medium ${
-                    isSelected ? "text-brand-700" : "text-zinc-900"
+                    isSelected ? "text-brand-700" : "text-surface-text"
                   }`}
                 >
                   {p.label}
                 </p>
-                <p className="mt-0.5 text-xs text-zinc-500">{p.description}</p>
+                <p className="mt-0.5 text-xs text-surface-text-muted">{p.description}</p>
               </div>
             </button>
           );

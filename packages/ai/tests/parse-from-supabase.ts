@@ -9,7 +9,7 @@ import * as fs from "fs";
 import * as path from "path";
 import * as crypto from "crypto";
 
-const SB_URL = "https://koyqjfatxreyaaynflrn.supabase.co";
+const SB_URL = process.env.SUPABASE_URL || "https://koyqjfatxreyaaynflrn.supabase.co";
 const SB_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY || (() => {
   // Read from .env.local
   const envPath = path.resolve(__dirname, "..", "..", "..", "apps", "web", ".env.local");
